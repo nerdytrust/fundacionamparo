@@ -5,10 +5,9 @@
 	<title>Fundación Amparo</title>
 	<link href="video/video-js.css" rel="stylesheet" type="text/css">
     <!-- video.js must be in the <head> for older IEs to work. -->
-    <script src="video/video.js"></script>
 
 	<meta name="viewport" content="initial-scale=1">
-	<meta name="decription" content=""/>
+	<meta name="decription" conetent=""/>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 
@@ -97,9 +96,7 @@
 			<h1>DONAR</h1>
 		</article>
 		<article class="caja_1 betosh">
-			<a href="fundacion_becas.html">
-				<img src="images/becas_amparo.jpg" alt="Becas Amparo">
-			</a>
+			<img src="images/becas_amparo.jpg" alt="">
 			<section  class="txt">
 			<h1>BECAS</h1>
 			<p>Aplica para obtener una beca de estudios</p>
@@ -196,7 +193,7 @@
  		<article id="voluntario_sec" class="for_ayuda betosh">
  			<h1>VOLUNTARIO</h1>
  			<p>Vive directamente la experiencia y ayúdanos a seguir adelante.</p>
- 			<a href="fundacion_voluntarios.html"><h2>MÁS INFORMACIÓN +</h2></a>
+ 			<h2>MÁS INFORMACIÓN +</h2>
  		</article>
  		<section id="ultimos_dona"class="betosh">
  			<div class="adorno_fa">
@@ -309,13 +306,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
-	
 	<script src="js/masonry.pkgd.min.js"></script>
 	<script>
 		var container = document.querySelector('#Contenedor');
 		var msnry = new Masonry( container, {
   		// options
+  		isInitLayout: true,
   		columnWidth: 1,
+  		"isOriginLeft": true,
+  		"isOriginTop": true,
   		itemSelector: '.betosh'
 		});
 		$(function(){

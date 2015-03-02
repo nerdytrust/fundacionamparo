@@ -763,8 +763,9 @@ control positioning and full window mode. **
   background-color: #000;
   position: relative;
   padding: 0;
-  width: auto !important;
-  height: auto !important;
+  /*width: auto !important;*/
+  /*height: auto !important;  Amparo*/
+  
   /* Start with 10px for base font size so other dimensions can be em based and
      easily calculable. */
 
