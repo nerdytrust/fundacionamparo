@@ -5,7 +5,6 @@
 	<title>Fundación Amparo</title>
 	<link href="video/video-js.css" rel="stylesheet" type="text/css">
     <!-- video.js must be in the <head> for older IEs to work. -->
-    <script src="video/video.js"></script>
 
 	<meta name="viewport" content="initial-scale=1">
 	<meta name="decription" conetent=""/>
@@ -312,7 +311,10 @@
 		var container = document.querySelector('#Contenedor');
 		var msnry = new Masonry( container, {
   		// options
-  		columnWidth: 0.1,
+  		isInitLayout: true,
+  		columnWidth: 1,
+  		"isOriginLeft": true,
+  		"isOriginTop": true,
   		itemSelector: '.betosh'
 		});
 		$(function(){
