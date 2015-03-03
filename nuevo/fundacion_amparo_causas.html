@@ -3,21 +3,21 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Fundación Amparo</title>
-	<link href="video/video-js.css" rel="stylesheet" type="text/css">
-    <!-- video.js must be in the <head> for older IEs to work. -->
-    <script src="video/video.js"></script>
-
 	<meta name="viewport" content="initial-scale=1">
 	<meta name="decription" conetent=""/>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<link href="video/video-js.css" rel="stylesheet" type="text/css">
+    <!-- video.js must be in the <head> for older IEs to work. -->
+    <script src="video/video.js"></script>
 
 </head>
 <body>
 <div id="meenus">
 	<header>
 		<div id="logo">
-			<a href="#">
+			<a href="index.html">
 				<img src="images/amparo.png" alt="">
 				<h1 id="fundacion-logo">FUNDACIÓN AMPARO</h1>
 			</a>
@@ -29,32 +29,26 @@
 		
 		<nav id="menu_principal">
 			<ul id="menu_uno">
-				<li><a href="#">Como ayudar</a></li>
-				<li><a href="#">Causas vivas</a></li>
-				<li><a href="#">Donadores</a></li>
-				<li><a href="#">Muro del Éxito</a></li>
+				<li><a href="fundacion_como_ayudar.html">Como ayudar</a></li>
+				<li><a href="fundacion_amparo_causas.html">Causas vivas</a></li>
+				<li><a href="fundacion_usuarios.html">Donadores</a></li>
+				<li><a href="fundacion_muro.html">Muro del Éxito</a></li>
 			</ul>
 			<ul id="menu_dos">
-				<li><a href="#">La Fundación</a></li>
-				<li><a href="#">Apoyamos tu causa</a></li>
-				<li><a href="#">Noticias</a></li>
-				<li><a href="#">Faq´s</a></li>
-				<li><a href="#">Contacto</a></li>
+				<li><a href="fundacion01_e.html">La Fundación</a></li>
+				<li><a href="fundacion_apoyamos_causa.html">Apoyamos tu causa</a></li>
+				<li><a href="fundacion_noticias.html">Noticias</a></li>
+				<li><a href="fundacion_faqs.html">Faq´s</a></li>
+				<li><a href="fundacion_contacto.html">Contacto</a></li>
 			</ul>
 		</nav>
-			<!--<a href="#">
-				<div id="btn_donar">
-					<h2>Donar</h2>
-				</div>
-			</a>-->
+			
 			<button id="btn_dona">DONAR</button>
 			<div id="perfil">
 				<img src="images/monito.jpg" alt=""/>
 			</div>
 		</div>
-	</header>
-
-
+	</header> 
 	<div id="conteo_donadores" >
 		<div id="int_contado">
 			<img src="images/icon_donadores.png" alt="">
@@ -68,48 +62,22 @@
 	</div>
 </div>
 	<section id="Contenedor">
-		<div class="re">
-		<article id="titulo_txt" class="">
-			<h1>Conoce Fundación Amparo</h1>
-			<h2>#TomandoAcciónFA</h2>
-			<p>Promover y apoyar actos de beneficio a la población de México</p>
-			<h3><a href="#">MÁS INFORMACIÓN <span>+</span></a></h3>
-			<div id="titulo_img">
-				<img src="images/amparo.png" alt="">
-			</div>
-		</article>
-
-		<div class="vi ">
-		<video controls loop preload="auto" poster="images/video_int_historia.png" class="video-js vjs-default-skin" data-setup="{}">
+		<span class="como">
+		 	<h1>¿Cómo Ayudar?</h1>
+		 	<h2>Tus donaciones construyen sueños y<br/> cambian vidas <b>#TomandoAcciónFA</b></h2>
+		 	<button id="btn_dona">DONAR AHORA</button>
+		 </span>
+		 <div class="vi3 ">
+		 	<video loop preload="auto" poster="images/video_causa.png" controls  class="video-js vjs-default-skin" data-setup="{}">
 			<source src="video/video.mp4">
-		   <!--<source src="http://www.w3schools.com/html/movie.mp4">-->
 		</video>
-		</div>
-
-		<aside class="btns">
-			<article id="btn_twitter" class="">
-				<ul>
-					<li class="fa fa-twitter"></li>
-				</ul>
-			</article>
-			<article id="btn_facebook" class="">
-				<ul>
-					<li class="fa fa-facebook"></li>
-				</ul>
-			</article>
-			<article id="btn_donar2" class="">
-				<h1>DONAR</h1>
-			</article>
-			<article class="caja_1 ">
-				<img src="images/becas_amparo.jpg" alt="">
-				<section  class="txt">
-				<h1>BECAS</h1>
-				<p>Aplica para obtener una beca de estudios</p>
-				</section>
-			</article>
-		</aside>
-
-	</div>
+		</div> 
+		 </div>
+		<!--<video controls loop preload="auto" class="" poster="images/video_causa.png" id="video-causas">
+			
+			<source src="http://www.w3schools.com/html/movie.mp4">
+			<source src="video/fundacionAmparo.webm" media="screen and (min-width:800px)">
+		</video>-->
 	
 		<div id="pleca_causas" class="">
 			<h1>CAUSAS</h1>
@@ -184,84 +152,58 @@
 
 	 			</section>
 	 		</article>
- 		</div><!--termina class re-->
+		</div><!--termina re-->
 
  		<div id="pleca_causas" class="">
 			<h1>FORMAS DE AYUDAR</h1>
  		</div>
+		
+		<div class="re">
+ 		<section id="causa1" class="causas-social ">
+ 				<div id="donativo"><a href=""><p>HAZ TU DONACIÓN</p></a></div>
+ 				<button class="apor"></button>
+ 				<h3>A la Educación</h3>
+ 		</section>
+ 		<section id="causa2" class="causas-social ">
+				<div id="donativo"><a href=""><p>HAZ TU DONACIÓN</p></a></div>
+ 				<button class="apor"></button>
+ 				<h3>Al deporte</h3>
+ 		</section>
+ 		<section id="causa3" class="causas-social ">
+				<div id="donativo"><a href=""><p>HAZ TU DONACIÓN</p></a></div>
+ 				<button class="apor"></button>
+ 				<h3>Asistenciales</h3>
+ 		</section>
+ 		<section id="causa4" class="causas-social ">
+				<div id="donativo"><a href=""><p>HAZ TU DONACIÓN</p></a></div>
+ 				<button class="apor"></button>
+ 				<h3>fundhepa</h3>
+ 		</section>
+ 	</div><!--termina dre-->
 
- 		<div class="dre">
-	 		<article id="donador_sec" class="for_ayuda ">
-	 			<h1>DONADOR</h1>
-	 			<p>Sé parte de nuestra comunidad, con tu aportación continuamos abriendo caminos.</p>
-	 			<h2>MÁS INFORMACIÓN +</h2>
-	 		</article>
-	 		<article id="impulsor_sec" class="for_ayuda ">
-	 			<h1>IMPULSOR</h1>
-	 			<p>Lleguemos a más oídos y toquemos más corazones en una sóla voz</p>
-	 			<h2>MÁS INFORMACIÓN +</h2>
-	 		</article>
-	 		<article id="voluntario_sec" class="for_ayuda ">
-	 			<h1>VOLUNTARIO</h1>
-	 			<p>Vive directamente la experiencia y ayúdanos a seguir adelante.</p>
-	 			<h2>MÁS INFORMACIÓN +</h2>
-	 		</article>
- 		</div>
+ 		
+
  		<section id="ultimos_dona"class="">
  			<div class="adorno_fa">
  				<img src="images/adorno_fa.png" alt="">
  			</div>
+
  			<div>
- 				<h1>ÚLTIMOS DONADORES</h1>
- 				<p>Donadores recientes que se unieron y juntos estamos <span>#TomandoAcciónFA</span></p>
- 				<div class="donador_clas">
- 					<div class="img_redonda">
- 					<img src="images/persona_fa01.jpg" alt="">
- 					</div>
- 					<h1>JORGE CAMACHO</h1>
- 					<h2>DONADOR</h2>
- 				</div>
- 				<div class="donador_clas">
- 					<div class="img_redonda">
- 					<img src="images/persona_fa02.jpg" alt="">
- 					</div>
- 					<h1>JAHIR PÉREZ</h1>
- 					<h2>DONADOR</h2>
- 				</div>
- 				<div class="impulsor_clas">
- 					<div class="img_redonda">
- 					<img src="images/persona_fa03.jpg" alt="">
- 					</div>
- 					<h1>DANIEL GONZÁLEZ</h1>
- 					<h2>IMPULSOR</h2>
- 				</div>
- 				<div class="voluntario_clas">
- 					<div class="img_redonda">
- 					<img src="images/persona_fa04.jpg" alt="">
- 					</div>
- 					<h1>SANDRA LUNA</h1>
- 					<h2>VOLUNTARIO</h2>
- 				</div>
- 				<div class="voluntario_clas">
- 					<div class="img_redonda">
- 					<img src="images/persona_fa05.jpg" alt="">
- 					</div>
- 					<h1>ADRINA MONTES</h1>
- 					<h2>VOLUNTARIO</h2>
- 				</div>
+ 				<h1>APOYAMOS TU CAUSA</h1>
+ 				<h2>Fundación Amparo apoya causas externas</h2>
+ 				<p>Inscribe tu causa llenando un breve formulario, la información será revisada
+detalladamente para determinar una respuesta </p>
+
+ 				
  			</div>
- 			<div class="adorno_fa">
- 				<img src="images/adorno_fa.png" alt="">
- 			</div>
+ 			
  			<div class="txt_fundacion">
  				<div id="titulo_fca">
- 					<h1>FUNDACIÓN AMPARO</h1>
+ 					<h1><button class="causas">Inscribir Causa</button></h1>
  				</div>
- 				<p>En abril de 1979, Don Manuel Esptinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa, y con el pleno consentimiento de sus hijos, quienes con la nobleza de sentimientos que les caracteriza estuvieron totalmente de acuerdo con la misma.</p>
+ 				
  			</div>
- 			<div class="adorno_fa">
- 				<img src="images/adorno_fa.png" alt="">
- 			</div>
+ 			
  			<div class="txt_footer">
  					<h1>¡Tú puedes ayudar!</h1>
  					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
@@ -298,26 +240,82 @@
 			
 		</div>
 	</footer>
-	<!--lightbox
-	<div class="lightbox-h">
-		<div class="lightbox-h-cont">
-			<img src="images/icon_donadores.png" alt="">
-			<button class="cerrar-h"></button>
-			<h1>¡grácias!</h1>
-			<h2>Ya estás <br/> <b>#TomandoAcciónFA</b></h2>
-			<h3>Tus donaciones hacen posible continuar con nuestra causa, pasa la voz</h3>
-			<span>
-				<h4>Compartir </h4>
-				<button class="face"></button>
-				<button class="twit"></button>
-			</span>
-		</div>
-	</div>--><!--termina lightbox-home-->
-	<!--termina lightbox-->
+	<!--lightbox-->
+	<div class="lightbox">
+		<div class="usuario-light">
+			<span class="usuario cau">
+				<div id="txt_evento">						
+							<nav>
+								<ul>
+									<a href=""><li class="fa fa-facebook"></li></a>
+									<a href=""><li class="fa fa-twitter"></li></a>
+									<a href=""><li class="fa fa-heart"></li></a>
+									<p>96 likes</p>
+								</ul>
+							</nav>
+						<div class="cau-dat">
+							<img src="images/icon_donadores.png" alt="">
+							<h1>249,863 <b>Donadores</b></h1>
+							<h2>Tu aportación es importante, cada granito cuenta, con tu ayuda no nos detendremos.</h2>
+						</div>
+						</div><!--termina txt_evento-->
+						
+			</span><!--termina usuario-->
+			<span class="datos">
+				<button class="centros">centros comunitarios</button>
+				<button value="" class="cerrar"></button>
+				<h1>roberto alonso espinosa</h1>
+					
+				<div class="datos-inf caudat">
+					<h4><b>descripción</b> | donadores</h4>
+					<p>Desarrollo y crecimiento del Centro de Desarrollo Comunitario Roberto Alonso Espinosa, ubicado en la colonia Lomas de Chamontoya en la Ciudad de México y otro en el municipio de Zacatlán, Puebla, los cuales brindan atención, bajo el Método Montessori,  a la comunidad infantil de muy escasos recursos, ampliando el beneficio al ambiente familiar. <br/>
+					<b>Selecciona la forma en que deseas ayudar
+						<img src="images/inter.png" alt="">
+					</b>
+					</p>
+					
+				</div><!--termina datos-inf-->
+				<div class="fig">
+				<figure class="cauf">
+					  <span>Haz tu donación</span>
+					  
+					</figure >
+					<figure class="cauf">
+					  <span>Ser impulsor</span>
+					  
+					</figure>
+					<figure class="cauf">
+					  <span>Ser voluntario</span>
+					  
+					</figure>
+				</div>
+				<div id="meta" class="caum">
+						<div id="barra">
+							<progress value="60" max="100"></progress>
+							<!--<span id="relleno"></span>-->
+						</div>
+					<div id="cantidad">
+						<h1>META</h1>
+						<h2>$193,000<span>MXN</span></h2>
+					</div>
+						<p>102,548 MXN <span>RECAUDADOS</span></p>
+						<p>26 <span>DÍAS RESTANTES</span></p>
+					</div>
+			</span><!--termina datos-->
+		</div><!--usuario-light-->
+	</div><!--termina div lightbox-->
+	<!--terina lightbox-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
+	<script>
+		$(function(){
+		    $(".cerrar").click(function(){
+		        $(".lightbox").fadeOut("slow");
+			    });
+			});
+	</script><!---->
 	
 </body>
 </html>

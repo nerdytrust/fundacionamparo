@@ -9,7 +9,7 @@
 }
 /**/
 	#Contenedor{
-		padding: 8.5% 0 0 0;
+		padding: 137px 0 0 0;
 	}
 
 	#titulo_txt{
@@ -297,6 +297,9 @@ article.animacion:hover img{
 	display: inline-block;
 	text-align: right;
 }
+span.donas{
+	
+}
 .dona{
 	display: inline-block;
 	width: auto;
@@ -554,7 +557,8 @@ article.animacion:hover img{
 		}
 		.datos .fig{
 			margin: 0 auto;
-			display: block;
+			display: flex;
+			justify-content: space-between;
 			padding: 0 10%;
 		}
 		.datos figure{
@@ -566,7 +570,7 @@ article.animacion:hover img{
 		.datos>.fig>figure.cauf{
 			width: 31%;
 			height: auto;
-			display: inline-block;
+			display: table;
 			margin: 0 2% 0 0;
 		}
 		.datos figure:last-child, .datos>.fig>figure.cauf:last-child{
@@ -577,10 +581,11 @@ article.animacion:hover img{
 			height: 90px;
 			border-radius: 50%;
 			background: blue;
-			display: block;
+			display: table-cell;
+			vertical-align: middle;
 			text-align: center;
 			font-size: 3.5em;
-			padding-top: 15px;
+			padding-top: 0px;
 			color: #fff;
 		}
 		figure.cauf>span{
@@ -588,10 +593,11 @@ article.animacion:hover img{
 			height: 134px;
 			border-radius: 50%;
 			background: blue;
-			display: block;
+			display: table-cell;
+			vertical-align: middle;
 			text-align: center;
-			font-size: 1.5em;
-			padding-top: 30%;
+			font-size: 1.4em;
+			padding-top: 0%;
 			color: #fff;
 		}
 		.datos>.caum{
@@ -606,14 +612,17 @@ article.animacion:hover img{
 			color: #000 !important;
 		}
 		.datos figure:nth-child(1) span{
-			background: #beda3e;
+			background: url("../images/c1.png") no-repeat center;
+			background-size: contain;
 
 		}
 		.datos figure:nth-child(2) span{
-			background: #63aded;
+			background: url("../images/c2.png") no-repeat center;
+			background-size: contain;
 		}
 		.datos figure:nth-child(3) span{
-			background: #fd9f20;
+			background: url("../images/c3.png") no-repeat center;
+			background-size: contain;
 		}
 		.datos figure figcaption{
 			text-align: center;
@@ -708,8 +717,14 @@ article.animacion:hover img{
 		/*termina lightbox home*/
 	@media screen and (max-width:1024px){
 			.usuario-light{
-				width: 90%;
+				width: 99%;
 				top: 5%;
+			}
+			.lightbox .datos .datos-inf{
+				width: 96%;
+			}
+			.lightbox .datos h1{
+				font-size: 1.2em;
 			}
 			.datos .fig{
 				padding: 0 2%;
@@ -718,6 +733,9 @@ article.animacion:hover img{
 		@media screen and (max-width:1024px){
 			.datos figure{
 				margin: 0 15px 0 0;
+			}
+			.como{
+				width: 25% !important;
 			}
 		}
 		
@@ -737,14 +755,16 @@ article.animacion:hover img{
 		.datos .fig{
 			width: 100%;
 			padding: 0;
+			display: flex;
+justify-content: space-between;
 		}
 		.datos figure{
 			margin: 0 3% 0 3%;
 			width: 24%;
 		}
 		.datos figure span{
-			width: 100%;
-			height: 60%;
+			/*width: 100%;*/
+			font-size: 1.3em;
 			padding: 0;
 		}
 		.lightbox .datos .datos-inf{
@@ -1091,8 +1111,6 @@ progress[value]::-webkit-progress-value{
 .colorin{
 	color: #BEDA4D !important;
 }
-
-
 .caja_fca{
 	height: 350px;
 	background: #212121;	
@@ -1101,6 +1119,20 @@ progress[value]::-webkit-progress-value{
 	width: 16.6667%;
 	vertical-align: top;
 	height: 266px;
+	float: left;
+}
+.caja_fca_usu span.mio{
+width: 100%;
+	height: 266px;
+	display: inherit;
+	overflow: inherit;
+	position: absolute;
+	background: url("../images/gray.png");
+	-webkit-transition: background 1s; /* Safari 3.1 to 6.0 */
+    transition: background 1s;
+}
+.caja_fca_usu span.mio:hover{
+	background: url("../images/blue.png");
 }
 
 #caja_aporta{
@@ -1388,12 +1420,6 @@ progress[value]::-webkit-progress-value{
 	color: #000;
 	width: 20px;
 }
-
-/*#nav_int nav a:hover{
-	color:red;
-	border: 2px solid red;
-	padding: 10px 15px;
-}*/
 #contenedor_int{
 	max-width: 1200px;
 	text-align: center;
@@ -1405,6 +1431,7 @@ progress[value]::-webkit-progress-value{
 }
 #caja_aporta_usuarios{
 	width: 100%;
+	background: red;
 }
 #contenedor_int h1{
 	font-size: 2em;
@@ -1808,7 +1835,8 @@ padding-top: 12px;
 .como{
 	width: 505px;
 	height: 207px;
-	position: absolute !important;top: 10% !important;
+	position: absolute !important;
+	top: 30% !important;
 	left: 2% !important;
 	color: #fff;
 	z-index: 1;
@@ -2378,7 +2406,7 @@ ul.slides li iframe{
 		display: none;
 		}
 	.caja_fca_usu{
-		width: 33%;
+		width: 33.33%;
 	}
 	.showing{
 		display: block;
@@ -2417,6 +2445,9 @@ ul.slides li iframe{
 		min-width: 20px !important;
 		padding-left:13px !important;
 		/*padding-left:0px !important;con numeros 4digitos*/
+	}
+	#Contenedor {
+	padding: 103px 0 0 0;
 	}
 }
 /* 768px */
@@ -2472,7 +2503,7 @@ ul.slides li iframe{
   		width: 100%;
   	}
   	.caja_fca_usu{
-	width: 49%;
+	width: 50%;
 	}
 	#txt_evento{
 		width: 69%;
@@ -2521,13 +2552,17 @@ ul.slides li iframe{
 	ul.slides li iframe, .flexslider .slides > li {
 	height: 500px;
 	}
+	.flex-control-paging{
+		background: red !important;
+		display: none;
+	}
 
 
 }	
 
 	@media screen and (max-width:640px) {
 		#Contenedor {
-			padding: 20% 0 0 0;
+			padding: 36% 0 0 0;
 		}
 		.re, .dre{
 			display: block !important;
@@ -2591,6 +2626,7 @@ ul.slides li iframe{
 	}
 	.como h1{
 		font-size: 2em;
+		display: none;
 	}
 	.como h2{
 		font-size: 1em;
@@ -2614,9 +2650,12 @@ ul.slides li iframe{
 	.info-v{
 		width: 100%;
 		left: 0;
-		top: 39%;
+		top: 32%;
 		height: auto;
 		overflow: hidden;
+	}
+	#controls2{
+		bottom: 0;
 	}
 	.info-v h2 {
 	font-size: 1em;
@@ -2657,13 +2696,21 @@ ul.slides li iframe{
 		display: none;
 	}
 	#btn_dona{
-		width: 83%;
+		width: 100%;
+		font-size: 0.9em;
 	}
 	#conteo_donadores input{
 		width: 87.5%;
 	}
 	.caja_fca_usu{
 		width: 100%;
+	}
+	span.donas{
+		padding: 0% 6%;
+	display: flex;
+	justify-content:space-between;
+	/*background: red;
+	align-items:flex-start;*/
 	}
 	#txt_evento{
 		margin: 40px 0 0 0;
