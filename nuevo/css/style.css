@@ -2773,6 +2773,9 @@ ul.slides li iframe{
 	progress[value]::-webkit-progress-bar {
 	  width: 100%;
 	}
+	progress[value]::-moz-progress-bar {
+	  width: 100%;
+	}
 
 }
 /* 320px (iPhone) */
