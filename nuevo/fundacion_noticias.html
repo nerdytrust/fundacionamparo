@@ -7,6 +7,7 @@
 	<meta name="viewport" content="initial-scale=1">
 	<meta name="decription" conetent="En abril de 1979, el banquero mexicano, Manuel Espinosa Yglesias, creó la Fundación Amparo para realizar actividades de beneficio social, educativo y cultural en México. "/>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/pop.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	
 </head>
@@ -212,9 +213,61 @@
 			
 		</div>
 	</footer>
+
+<!--lightbox-->
+	<div class="lightbox">
+		<div class="usuario-light">
+			<span class="usuario">
+				<div id="txt_evento">						
+							<nav>
+								<ul>
+									<a href=""><li class="fa fa-facebook"></li></a>
+									<a href=""><li class="fa fa-twitter"></li></a>
+									<a href=""><li class="fa fa-heart"></li></a>
+									<p>96 likes</p>
+								</ul>
+							</nav>
+							
+						</div><!--termina txt_evento-->
+					<img src="images/image-not.png" alt="" id="ev-im">	
+			</span><!--termina usuario-->
+			<span class="datos ev">
+				
+				<button value="" class="cerrar"></button>
+				<h1>domingos familiares</h1>
+					<h2>02 Nov 2014</h2>
+				<div class="datos-inf">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nihil modi nulla libero, rem, consequuntur reiciendis voluptas debitis vel facilis, error dolorem in ut ipsa praesentium laudantium dignissimos, saepe quidem.</br>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic eaque ipsum assumenda architecto iste atque earum ratione excepturi, veniam quae rerum provident fuga, quam iure ea recusandae tempora ipsa fugiat.</br>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae veritatis, placeat a adipisci voluptate similique libero deserunt dicta perferendis maxime at sequi est recusandae numquam quis nisi dolore itaque magni.
+					</br>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae veritatis, placeat a adipisci voluptate similique libero deserunt dicta perferendis maxime at sequi est recusandae numquam quis nisi dolore itaque magni.
+					</br>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae veritatis, placeat a adipisci voluptate similique libero deserunt dicta perferendis maxime at sequi est recusandae numquam quis nisi dolore itaque magni.
+					</br>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae veritatis, placeat a adipisci voluptate similique libero deserunt dicta perferendis maxime at sequi est recusandae numquam quis nisi dolore itaque magni.
+				</div><!--termina datos-inf-->
+				
+			</span><!--termina datos-->
+		</div><!--usuario-ligh-->
+	</div><!--termina div lightbox-->
+	<!--terina lightbox-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<!--<script src="js/nav.js"></script>-->
 	<script src="js/script.js"></script>
+
+	<script>
+		$(function(){
+		    $("#txt_noticia h3").click(function(){
+		        $(".lightbox").show("slow");
+		    });
+		$(function(){
+		    $(".cerrar").click(function(){
+		        $(".lightbox").fadeOut("slow");
+			    });
+			});
+		});
+		</script>
 </body>
 </html>
 

@@ -1,0 +1,568 @@
+
+html, body { 
+	height: 100%; 
+	width: 100%; 
+	margin: 0;
+	font-family: 'helvetica', sans-serif;}
+/*lightbox home*/
+		.lightbox-h{
+			width: 100%;
+			height:2000px;
+			background: url("../images/back-li2.png");
+			position: absolute;
+			top: 0;
+			z-index: 100000;
+			/*display: none;*/
+		}
+		.lightbox-h-cont{
+			width: 396px;
+			min-height: 383px;
+			margin: 0 auto;
+			display: block;
+			position: relative;
+			text-align: center;
+			color: #fff;
+			top: 5%;
+			background: #ffac2b;
+			box-shadow: 2px 2px 20px 10px  #ffac2b;
+		}
+		.vol{
+			width:381px;
+			height: 803px; 
+		}
+		.line{
+			width: 100%;
+			height: 2px;
+			display: block;
+			background: url("../images/line.png") repeat-x;
+		}
+
+		.lightbox-h-cont img{
+			display: block;
+			margin: 0 auto;
+			width: 23px;
+			height: 63px;
+		}
+		.lightbox-h-cont h1{
+			text-transform: uppercase;
+			margin: 15px 0 25px 0;
+		}
+		.vol h1{
+			font-size: 3em;
+			width: 100%;
+			margin: 0px auto;
+			text-align: center;
+			margin: 15px 0 2px 0;
+		}
+		.lightbox-h-cont h2{
+			margin: 0 0 11px 0;
+		}
+		.vol h2{
+			font-size: 0.8em;
+			width: 80%;
+			margin: 9px auto 15px auto;
+		}
+		.lightbox-h-cont h2 b{
+			color: #fff;
+		}
+		.lightbox-h-cont h3{
+			margin: 0 0 42px 0;
+		}
+		.vol h3{
+			margin: 10px 0;
+		}
+		.lightbox-h-cont button.cerrar-h{
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			right: 5px;
+			top: 5px;
+			background: url("../images/x1.png");
+			border: none;
+		}
+		.lightbox-h-cont span{
+			width: 50%;
+			margin: 0 auto;
+			display: block;
+			height: auto;
+			text-align: center;
+		}
+		.lightbox-h-cont span button.face{
+			width: 59px;
+			height: 59px;
+			background: url("../images/face.png");
+			display: inline-block;
+			border: none;
+			margin-top: 15px;
+		}
+		.lightbox-h-cont span button.twit{
+			width: 59px;
+			height: 59px;
+			background: url("../images/twit.png");
+			display: inline-block;
+			border: none;
+			margin-top: 15px;
+		}
+		.vol a, .d a, .i a{
+			text-decoration: none;
+			color: #fff;
+			width: auto;
+			display: inline-block;
+		}
+		.vol a img, .d a img, .i a img{
+			width: 23px;
+			height: 23px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		label.vol select {
+			border: 2px solid #ebebeb;
+			width: 282px;
+			height: 52px;
+			margin-bottom: 20px;
+			color: #fff;
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			background: url("../images/flecha.png") no-repeat 92%;
+			cursor: pointer;
+			}
+		label.vol input{
+				width: 100%;
+			height: 52px;
+			border: none;
+			background: transparent;
+			font-size: 1em;
+			box-shadow: 3px 6px 12px 0px #e8e8e8 inset;
+			text-align: center;
+			color: #fff;
+			margin-bottom: 10px;
+			background: url("../images/back-o.png") repeat;
+			}
+		label.vol input[type="submit"]{
+				width: 80%;
+			height: 52px;
+			background:#fff;
+			box-shadow: none;
+			color: #ffaa3b;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		#r::-webkit-input-placeholder {
+			   color: #fff;
+			}
+		label.vol input[type="checkbox"]{
+			width: 21px;
+			height: 21px;
+			box-shadow: none;	
+		}
+		div.d label.vol input[type="submit"]{
+			color: #beda3e;
+		}
+		.i input[type="checkbox"]{
+			width: 21px;
+			height: 21px;
+			box-shadow: none;	
+		}
+		button.feis{
+			width: 100%;
+			height: 52px;
+			background: #fff url("../images/feis.png")no-repeat 2% center;
+			border: none;
+			margin: 6% 0;
+			cursor: pointer;
+		}
+		button.feis #invitar{
+			font-weight: bolder;
+			color: #4892d2;
+			font-size: 1.3em;
+text-transform: uppercase;
+width: 100%;
+text-align: center;
+		}
+	.d{
+		background: url("../images/back-li3.png") !important;; 
+	}
+	.i{
+		background: url("../images/back-li4.png") !important;; 
+	}
+	.donar{
+		min-width: 283px;	
+		background: #beda3e;
+		box-shadow: 2px 2px 20px 10px #beda3e;
+	}
+	.imp{
+		width: 295px;
+		min-height: 600px;
+		background: #539ddd;
+		box-shadow: 2px 2px 20px 10px #539ddd;
+	}	
+	.imagen{
+		width: 282px;
+		height: 280px;
+		display: block;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+	}	
+	.imagen img{
+		width: 100%;
+		height: 100%;
+	}
+	.imagen p{
+		position: absolute;
+		bottom: 2%;
+		left: 4%;
+		margin: 0;
+		padding:0;
+	}
+	.imagen>button{
+		background: url("../images/btn-tra.png");
+		width: 152px;
+		height: 29px;
+		border: none;
+		position: absolute;
+		bottom: 11%;
+		left: 4%;
+		cursor: pointer;
+}
+#ev-im{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+#txt_evento{
+	z-index: 100;
+}
+.ev h1{
+	margin-top: 9%;
+}
+.ev .datos-inf{
+	height: 70% !important;
+	margin-bottom: 0 !important
+}
+		/*termina lightbox home*/
+	.lightbox{
+		width: 100%;
+		height: 1405px;
+		background: url("../images/back-li.png");
+		position: absolute;
+		top: 0;
+		z-index: 100000;
+		/*display: none;*/
+	}
+	.usuario-light{
+		width: 69.1%;
+		/*width: 1093px;
+		height: 534px;*/
+		height: 38%;
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		top: 10%;
+		background: #fff;
+		box-shadow: 0px 0px 20px #000;
+	}
+	.lightbox .usuario{
+		width: 50%;
+		height: 100%;
+		background: #63aded;
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+	}
+	.lightbox .usuario #txt_evento nav{
+		margin: 20px 0 0 20px;
+	}
+	.lightbox .usuario>#txt_evento li, .lightbox .usuario>#txt_evento ul p{
+		color: #fff;
+		border-color: #fff;
+	}
+	#foto-usuario{
+		width: 266px;
+		height: 266px;
+		display: block;
+		margin: 11% auto;
+	}
+	.usuario p{
+		color: #fff;
+		width: 67%;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 0.9em;
+		line-height: 18px;
+	}
+	.usuario p b{
+		color: #fff;
+	}
+	.lightbox .datos{
+		width: 50%;
+		height: 100%;
+		display: inline-block;
+		margin-left: -5px;
+		position: relative;
+	}
+	.lightbox .datos img{
+		margin: 25px 0 11px 22px;
+	}
+	.lightbox .datos h1{
+		text-transform: uppercase;
+		font-size: 1.5em;
+		margin-left: 32px;
+	}
+	.lightbox .datos h2{
+		text-transform: uppercase;
+		font-size: 1em;
+		color: #beda3e;
+		font-weight: bolder;
+		margin-left: 32px;
+		margin-bottom: 16px;
+	}
+	.lightbox .datos button{
+		border:none;
+		background: url("../images/x.png");
+		width: 40px;
+		height: 40px;
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		right: 22px;
+		top: 25px;
+	}
+	.datos>button.centros{
+		display: block;
+		position: initial;
+		background: #000;
+		border: none;
+		color: #fff;
+		width: 155px;
+		height: 30px;
+		border-radius: 5px;
+		text-transform: uppercase;
+		margin: 35px 0 12px 5%;
+	}
+	.lightbox .datos .datos-inf{
+			width: 90%;
+			height: 197px;
+			display: block;
+			margin: 0 auto;
+			overflow-y: auto;
+			font-family: helvetica;
+			color: #000;
+			margin-bottom: 45px;
+		}
+	.lightbox .datos>.caudat{
+		margin-top: 19px !important;
+		margin-bottom: 15px;
+		height: auto;
+	}
+	.datos-inf>h4{
+		text-transform: uppercase;
+		margin-bottom: 16px;
+	}
+	.datos-inf>p{
+		color: #919191;
+		font-size: 0.9em;
+		line-height: 1.4em;
+	}
+	.datos-inf>p>b{
+		color: #000;
+		font-weight: bolder;
+		width: auto;
+		display: block;
+		vertical-align: baseline;
+		height: auto;
+		margin-top: 20px;
+		font-size: 1.07em;
+	}
+	.datos-inf>p>b>img{
+		vertical-align: middle;
+		margin: 0 !important
+	}
+		.datos-inf h3{
+			margin-bottom: 28px;
+		}
+		.datos-inf ul{
+			display: block;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+		}
+		.datos-inf li{
+			width: 100%;
+			list-style: none;
+			display: block;
+			margin-bottom: 26px;
+		}
+		.datos-inf li:before{
+			content: "• ";
+			color: #beda3e;
+		}
+		.datos .fig{
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			padding: 0 10%;
+		}
+		.datos figure{
+			width: 96px;
+			height: 121px;
+			display: inline-block;
+			margin: 0 68px 0 0;
+		}
+		.datos>.fig>figure.cauf{
+			width: 31%;
+			height: auto;
+			display: table;
+			margin: 0 2% 0 0;
+		}
+		.datos figure:last-child, .datos>.fig>figure.cauf:last-child{
+			margin: 0;
+		}
+		.datos figure span{
+			width: 94px;
+			height: 90px;
+			border-radius: 50%;
+			background: blue;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			font-size: 3.5em;
+			padding-top: 0px;
+			color: #fff;
+		}
+		figure.cauf>span{
+			width: 99%;
+			height: 134px;
+			border-radius: 50%;
+			background: blue;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			font-size: 1.4em;
+			padding-top: 0%;
+			color: #fff;
+		}
+		.datos>.caum{
+			
+			padding:0 10%;
+			margin-top: 3%;
+		}
+		.caum>#cantidad{
+			height: auto;
+		}
+		.caum>#cantidad>h2{
+			color: #000 !important;
+		}
+		.datos figure:nth-child(1) span{
+			background: url("../images/c1.png") no-repeat center;
+			background-size: contain;
+
+		}
+		.datos figure:nth-child(2) span{
+			background: url("../images/c2.png") no-repeat center;
+			background-size: contain;
+		}
+		.datos figure:nth-child(3) span{
+			background: url("../images/c3.png") no-repeat center;
+			background-size: contain;
+		}
+		.datos figure figcaption{
+			text-align: center;
+			text-transform: uppercase;
+			margin-top: 14px;
+			font-size: 0.8em;
+		}
+		.datos figure:nth-child(1) figcaption{
+			color: #beda3e;
+		}
+			.datos figure:nth-child(2) figcaption{
+			color: #63aded;
+		}
+
+	.datos figure:nth-child(3) figcaption{
+			color: #fd9f20;
+		}
+		/*termina lightbox usuarios desktop*/
+		
+	@media screen and (max-width:1024px){
+			.usuario-light{
+				width: 99%;
+				top: 5%;
+			}
+			.lightbox .datos .datos-inf{
+				width: 96%;
+			}
+			.lightbox .datos h1{
+				font-size: 1.2em;
+			}
+			.datos .fig{
+				padding: 0 2%;
+			}
+		}
+		@media screen and (max-width:1024px){
+			.datos figure{
+				margin: 0 15px 0 0;
+			}
+			.como{
+				width: 25% !important;
+			}
+		}
+		
+	@media screen and (max-width:640px) {
+	    .usuario-light{width: 100%; top: 0; box-shadow: none;}
+		.lightbox .usuario, .lightbox .datos{
+			width: 100%;
+		}
+		.lightbox .datos{
+			position: initial;
+			background: #fff;
+			margin-left: 0;
+		}
+		.usuario #txt_evento{
+			margin: 0;
+		}
+		.datos .fig{
+			width: 100%;
+			padding: 0;
+			display: flex;
+justify-content: space-between;
+		}
+		.datos figure{
+			margin: 0 3% 0 3%;
+			width: 24%;
+		}
+		.datos figure span{
+			/*width: 100%;*/
+			font-size: 1.3em;
+			padding: 0;
+		}
+		.lightbox .datos .datos-inf{
+			width: 100%;
+			margin: 0 0 12% 0;
+			text-align: center;
+		}
+		.datos figure:last-child{
+			margin: 0 3% 0 3%;
+		}
+		.lightbox .datos img{
+			display: none;
+		}
+		.lightbox .datos h1{
+			margin-top: 5%;
+		}
+		.lightbox .datos button{
+			position: fixed;
+		}
+		.lightbox-h-cont{
+			width: 100%;
+			top: 5%;
+		}
+		.lightbox-h{
+			height: 200%;
+		}
+	}
+	/*termina laghtbox*/
+
