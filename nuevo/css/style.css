@@ -594,6 +594,12 @@ line-height: 20px !important;
 #barra p{
 	color:#FFF;
 }
+#barra progress{
+	width: 100%;
+}
+#barra::-moz-progress{
+	width: 100%;
+}
 progress[value]::-webkit-progress-bar {
   background-color: transparent;
   border-radius: 2px;
@@ -614,12 +620,12 @@ progress[value]::-webkit-progress-value{
   display: block;
 }
 .progress-bar > span {
-  background-color: red;
+  background: #beda3e;
   border-radius: 2px;
   display: block;
   text-indent: -9999px;
+  opacity: 0.8;
 }
-
 #relleno{
 	background: #beda3e;
 	border-radius: 3px;
