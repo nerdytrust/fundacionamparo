@@ -2027,8 +2027,7 @@ ul.slides li iframe{
 	#int_busc{
 		width: 49%;
 	}
-	#nav-toggle { position: absolute; right: 15px; top: 0; }
-	#nav-toggle { cursor: pointer; margin: 25px 35px 16px 0px; }
+	#nav-toggle { position: absolute; right: 15px; top: 0; right: 0; cursor: pointer; margin: 0px; width: 40px; height: 40px; /*background:red;*/ padding: 29px 0;}
 	#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after { cursor: pointer; border-radius: 1px; -moz-border-radius: 1px; -webkit-border-radius: 1px; -o-border-radius: 1px; height: 1.5px; width: 30px; background: #FFF; position: absolute; display: block; content: ''; }
 	#nav-toggle span:before { top: -7px; }
 	#nav-toggle span:after { bottom: -7px; }
