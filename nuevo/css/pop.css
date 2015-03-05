@@ -195,8 +195,8 @@ text-align: center;
 	.imp{
 		width: 295px;
 		min-height: 600px;
-		background: #539ddd;
-		box-shadow: 2px 2px 20px 10px #539ddd;
+		background: #0499D8;
+		box-shadow: 2px 2px 20px 10px #0499D8;
 	}	
 	.imagen{
 		width: 282px;
@@ -231,10 +231,11 @@ text-align: center;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: auto;
 }
 #txt_evento{
-	z-index: 100;
+	z-index: 1000;
+position: inherit;
 }
 .ev h1{
 	margin-top: 9%;
@@ -272,6 +273,7 @@ text-align: center;
 		display: inline-block;
 		vertical-align: top;
 		position: relative;
+		overflow: hidden;
 	}
 	.lightbox .usuario #txt_evento nav{
 		margin: 20px 0 0 20px;
@@ -402,15 +404,16 @@ text-align: center;
 		}
 		.datos .fig{
 			margin: 0 auto;
-			display: flex;
-			justify-content: space-between;
+			/*display: flex;
+			justify-content: space-between;*/
+			display: block;
 			padding: 0 10%;
 		}
 		.datos figure{
 			width: 96px;
 			height: 121px;
-			display: inline-block;
-			margin: 0 68px 0 0;
+			float: left;
+			margin: 0 10% 0 0;
 		}
 		.datos>.fig>figure.cauf{
 			width: 31%;
@@ -563,6 +566,10 @@ justify-content: space-between;
 		.lightbox-h{
 			height: 200%;
 		}
+		#ev-im{
+			
+		}
 	}
+
 	/*termina laghtbox*/
 

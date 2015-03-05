@@ -15,16 +15,17 @@
 	#titulo_txt{
 	background: #000;
 	color: #FFF;
-	display: inline-block;
-	width: 33.33%;
+	/*display: inline-block;*/
+	width: 33%;
 	padding: 45px 25px 30px 25px;
 	height: 519px;
 	vertical-align: top;
 	}
 	.re, .dre{
 		width: 100%;
-		display: flex;
-		justify-content: space-between;
+		/*display: flex;
+		justify-content: space-between;*/
+		display: block;
 		height: auto;
 	}
 	.caja_2{
@@ -49,13 +50,15 @@
 	}
 	aside.btns{
 		width: 17%;
-		display: inline-block;
+		/*display: inline-block;*/
+		float: left;
 		vertical-align: top;
 		height: 519px;
 	}
 	#Contenedor article{
 	cursor: pointer;
-	display: inline-block;
+	/*display: inline-block;*/
+	float: left;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
@@ -76,7 +79,7 @@
 	height: 133px;
 	background: #567cbd;
 	vertical-align: top;
-	margin-left: -5px;
+	margin-left: 0px;
 	}
 	#btn_facebook ul{
 	font-size: 3em;
@@ -1463,6 +1466,7 @@ padding-top: 12px;
 	width: 24.99%;
 	height: 396px;
 	position: relative;
+	float: left;
 }
 .causas-social>#donativo{
 	position: absolute;
@@ -1616,6 +1620,7 @@ label.contact select{
 	appearance:none;
 	-webkit-appearance:none;
 	-moz-appearance:none;
+	-ms-appearance:none;
 	background: url("../images/flecha.png") no-repeat 92%;
 	cursor: pointer;
 }
@@ -1874,8 +1879,9 @@ ul.slides li iframe{
 	width: 50%;
 	height: 519px;
 	background: #000;
-	display: inline-block;
-	/*margin-left: -4px;*/
+	/*display: inline-block;
+	margin-left: -4px;*/
+	float: left;
 	overflow: hidden;
 	vertical-align: top;
 }
@@ -2411,29 +2417,21 @@ ul.slides li iframe{
 	display: none;
 }
 /*Safari Only*/
-@media screen and (-webkit-min-device-pixel-ratio:0) {
- ::i-block-chrome, .vi{
- 	float: left;
+ @media screen and (-webkit-min-device-pixel-ratio:0) {
+ 	::i-block-chrome, .vi video .video-js{
+ 		display: none;
  	}
- ::i-block-chrome, #titulo_txt{
-  	float: left;
-  	}
- ::i-block-chrome, aside.btns{
- 	float: left;
- 	margin-left: -4px;
- }
- ::i-block-chrome, .vi video{
- 	display: block;
- }
-
- ::i-block-chrome, .vi video .safari-video{
- 	display: block;
- 	background: #000;
- }
- ::i-block-chrome, .caja_2, ::i-block-chrome, .for_ayuda{
- 	float: left;
- }
-
-
+ 	::i-block-chrome, .vi video{
+ 		background: #000;
+ 		display: block;
+ 	}
+ 	::i-block-chrome, .vi3 video .video-js{
+ 		display: none;
+ 	}
+ 	::i-block-chrome, .vi3 video{
+ 		background: #000;
+ 		display: block;
+ 	}
+ 	
  }
 

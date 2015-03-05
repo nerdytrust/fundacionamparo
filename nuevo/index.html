@@ -71,7 +71,7 @@
 </div>
 	<section id="Contenedor">
 		<div class="re">
-		<article id="titulo_txt" class="">
+		<article id="titulo_txt" class="" onclick="location.href='fundacion01_e.html';">
 			<h1>Conoce Fundación Amparo</h1>
 			<h2>#TomandoAcciónFA</h2>
 			<p>Promover y apoyar actos de beneficio a la población de México</p>
@@ -83,10 +83,6 @@
 
 		<div class="vi ">
 		<video controls loop preload="auto" poster="images/video_int_historia.png" class="video-js vjs-default-skin" data-setup="{}">
-			<source src="video/video.mp4">
-		   <!--<source src="http://www.w3schools.com/html/movie.mp4">-->
-		</video>
-		<video controls loop preload="auto" poster="images/video_int_historia.png" class="safari-video">
 			<source src="video/video.mp4">
 		   <!--<source src="http://www.w3schools.com/html/movie.mp4">-->
 		</video>
@@ -305,7 +301,7 @@
 		</div>
 	</footer>
 	<!--lightbox-->
-	<div class="lightbox-h">
+	<div class="lightbox-h" id="naranja1">
 		<div class="lightbox-h-cont">
 			<img src="images/icon_donadores.png" alt="">
 			<button class="cerrar-h"></button>
@@ -318,8 +314,74 @@
 				<button class="twit"></button>
 			</span>
 		</div>
-	</div>--><!--termina lightbox-home-->
-	<!--termina lightbox-->
+	</div>
+	<!--termina lightbox-home-->
+	<!--lightbox verde1-->
+	<div class="lightbox-h d" id="verde1">
+		<div class="lightbox-h-cont donar">
+			<img src="images/icon_donadores.png" alt="">
+			<button class="cerrar-h"></button>
+			<h1>donar</h1>
+			<p>Tu ayuda es importante y </br>
+marca la diferencia para muchos.</p>
+			<label for="" class="vol">
+				<p>Escoge la causa que quieras apoyar</p>
+				<form action="">
+					<select name="" id="">
+								<option value="">Museo Amparo</option>
+								<option value=""></option>
+								<option value=""></option>
+					</select>
+					<p>Ingresa el monto que desaes donar</p>
+
+					<input type="text" name="monto" placeholder="$10.00 MXN" required id="r">
+
+					<input type="checkbox" name="ossm" value=""> 
+
+						<label for="osssm">
+							<a href="">Acepto términos y condiciones</a>
+						</label>
+</br></br>
+						 <input type="submit" value="ACEPTAR" id="ac">							
+				</form>	
+			</label>
+			</br>
+			<a href="">
+					Si necesitas ayuda dal click aquí 
+					<img src="images/i.png" alt=""></br>
+					Mas Información +
+				</a>
+		</div>
+	</div>
+	<!--Termina lightbox verde1-->
+	
+	<!--lightbox azul1-->
+	<div class="lightbox-h i" id="azul1">
+		<div class="lightbox-h-cont imp">
+			<img src="images/icon_donadores.png" alt="">
+			<h1>impulsar!</h1>
+			<button class="cerrar-h"></button>
+			<div class="imagen">
+				<img src="images/image.png" alt="">
+					<button></button>
+					<p>Roberto Alonso Espinoza</p>
+			</div>
+		</br>
+			<input type="checkbox" name="ossm" value=""> 
+						<label for="osssm">
+							<a href="">No mostrar mi perfil en el sitio</a>
+						</label>
+					<button class="feis">
+						<div id="invitar">Invitar a 10 amigos</div>
+					</button>	
+			<a href="">
+					Si necesitas ayuda dal click aquí 
+					<img src="images/i.png" alt=""></br>
+					Mas Información +
+				</a>			
+		</div>	
+	</div>
+	<!--Termina lightbox azul1-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
@@ -328,15 +390,17 @@
 
 		$(function(){
 		    $("#btn_dona").click(function(){
-		        $(".lightbox-h").show("slow");
-		    });
-
-		    $("#btn_donar2").click(function(){
-		        $(".lightbox-h").show("slow");
+		        $("#naranja1").show("slow");
 		    });
 
 		    $("#donativo").click(function(){
-		        $(".lightbox-h").show("slow");
+		        $("#verde1").show("slow");
+		    });
+		    $("#btn_donar2").click(function(){
+		        $("#verde1").show("slow");
+		    });
+		    $("#impulsor_sec").click(function(){
+		        $("#azul1").show("slow");
 		    });
 		});
 
