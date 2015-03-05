@@ -258,22 +258,50 @@
 		</div><!--usuario-ligh-->
 	</div>
 	<!--terina lightbox-->
+	<!--lightbox verde1-->
+	<div class="lightbox-h d" id="verde1">
+		<div class="lightbox-h-cont donar">
+			<img src="images/icon_donadores.png" alt="">
+			<button class="cerrar-h"></button>
+			<h1>donar</h1>
+			<p>Tu ayuda es importante y </br>
+marca la diferencia para muchos.</p>
+			<label for="" class="vol">
+				<p>Escoge la causa que quieras apoyar</p>
+				<form action="">
+					<select name="" id="">
+								<option value="">Museo Amparo</option>
+								<option value=""></option>
+								<option value=""></option>
+					</select>
+					<p>Ingresa el monto que desaes donar</p>
+
+					<input type="text" name="monto" placeholder="$10.00 MXN" required id="r">
+
+					<input type="checkbox" name="ossm" value=""> 
+
+						<label for="osssm">
+							<a href="">Acepto términos y condiciones</a>
+						</label>
+</br></br>
+						 <input type="submit" value="ACEPTAR" id="ac">							
+				</form>	
+			</label>
+			</br>
+			<a href="">
+					Si necesitas ayuda dal click aquí 
+					<img src="images/i.png" alt=""></br>
+					Mas Información +
+				</a>
+		</div>
+	</div>
+	<!--Termina lightbox verde1-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
-	<script>
-		$(function(){
-		    $("#txt_evento").click(function(){
-		        $(".lightbox").show("slow");
-		    });
-		$(function(){
-		    $(".cerrar").click(function(){
-		        $(".lightbox").fadeOut("slow");
-			    });
-			});
-		});
-		</script>
+	<script src="js/pop.js"></script>
+	
 </body>
 </html>
 

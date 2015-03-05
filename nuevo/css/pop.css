@@ -9,7 +9,7 @@ html, body {
 			width: 100%;
 			height:2000px;
 			background: url("../images/back-li2.png");
-			position: absolute;
+			position: fixed;
 			top: 0;
 			z-index: 100000;
 			display: none;
@@ -28,7 +28,8 @@ html, body {
 		}
 		.vol{
 			width:381px;
-			height: 803px; 
+			height: 803px;
+			top: 1% !important; 
 		}
 		.line{
 			width: 100%;
@@ -46,6 +47,7 @@ html, body {
 		.lightbox-h-cont h1{
 			text-transform: uppercase;
 			margin: 15px 0 25px 0;
+			font-size: 3em;
 		}
 		.vol h1{
 			font-size: 3em;
@@ -70,6 +72,9 @@ html, body {
 		}
 		.vol h3{
 			margin: 10px 0;
+		}
+		.vol p{
+			margin: 2% 0;
 		}
 		.lightbox-h-cont button.cerrar-h{
 			width: 40px;
@@ -128,7 +133,7 @@ html, body {
 			cursor: pointer;
 			}
 		label.vol input{
-				width: 100%;
+				width: 282px;
 			height: 52px;
 			border: none;
 			background: transparent;
@@ -177,12 +182,14 @@ html, body {
 			font-weight: bolder;
 			color: #4892d2;
 			font-size: 1.3em;
-text-transform: uppercase;
-width: 100%;
-text-align: center;
+			text-transform: uppercase;
+			width: 100%;
+			text-align: center;
 		}
 	.d{
-		background: url("../images/back-li3.png") !important;; 
+		background: url("../images/back-li3.png") !important; 
+		/*background: #beda3e;
+		opacity: 0.9;*/
 	}
 	.i{
 		background: url("../images/back-li4.png") !important;; 
@@ -190,13 +197,13 @@ text-align: center;
 	.donar{
 		min-width: 283px;	
 		background: #beda3e;
-		box-shadow: 2px 2px 20px 10px #beda3e;
+		box-shadow: 2px 2px 70px 50px #beda3e;
 	}
 	.imp{
 		width: 295px;
 		min-height: 600px;
 		background: #0499D8;
-		box-shadow: 2px 2px 20px 10px #0499D8;
+		box-shadow: 2px 2px 70px 50px #0499D8;
 	}	
 	.imagen{
 		width: 282px;
@@ -216,6 +223,15 @@ text-align: center;
 		left: 4%;
 		margin: 0;
 		padding:0;
+	}
+	.donar p{
+		margin: 3% 0;
+	}
+	.donar label.vol input{
+		width: 282px;
+	}
+	.donar label.vol input[type="checkbox"]{
+		width: 28% !important;
 	}
 	.imagen>button{
 		background: url("../images/btn-tra.png");
@@ -249,7 +265,7 @@ position: inherit;
 		width: 100%;
 		height: 1405px;
 		background: url("../images/back-li.png");
-		position: absolute;
+		position: fixed;
 		top: 0;
 		z-index: 100000;
 		display: none;
