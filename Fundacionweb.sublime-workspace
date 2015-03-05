@@ -4,24 +4,36 @@
 		"selected_items":
 		[
 			[
-				"ba",
-				"background"
+				"mar",
+				"margin-bottom"
 			],
 			[
-				"pa",
-				"padding-left"
+				"datos",
+				"datos-inf"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"back",
+				"back-li"
 			],
 			[
 				"font",
 				"font-weight"
 			],
 			[
-				"text",
-				"text-align"
+				"inpu",
+				"webkit-input-placeholder"
 			],
 			[
-				"mar",
-				"margin"
+				"ba",
+				"background"
+			],
+			[
+				"pa",
+				"padding-left"
 			],
 			[
 				"bor",
@@ -78,10 +90,6 @@
 			[
 				"marg",
 				"margin"
-			],
-			[
-				"back",
-				"background"
 			],
 			[
 				"bo",
@@ -215,6 +223,54 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "nuevo/index.html",
+			"settings":
+			{
+				"buffer_size": 10735,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "nuevo/pop.html",
+			"settings":
+			{
+				"buffer_size": 8071,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "nuevo/fundacion_eventos.html",
+			"settings":
+			{
+				"buffer_size": 10550,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "nuevo/fundacion_noticias.html",
+			"settings":
+			{
+				"buffer_size": 10026,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "nuevo/css/style.css",
+			"settings":
+			{
+				"buffer_size": 41188,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "nuevo/css/pop.css",
+			"settings":
+			{
+				"buffer_size": 10375,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -252,6 +308,13 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_usuarios.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_voluntarios.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_amparo_causas.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/fundacion_amparo_causas.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/fundacion_usuarios.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/index.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/css/style.css",
 		"/C/xampp/htdocs/fundacion/FUNDACION/fundacion_muro.html",
 		"/C/xampp/htdocs/fundacion/FUNDACION/video/video-js.css",
 		"/C/xampp/htdocs/fundacion/FUNDACION/js/jquery.flexslider.js",
@@ -370,6 +433,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"placeholder",
+			"lightbox-h",
+			"lightbox",
+			"betosh",
+			"lightbox",
 			".vi",
 			"640px",
 			"flex-direction-nav",
@@ -494,6 +562,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"betosh",
 			"betoshR"
 		],
@@ -506,8 +575,177 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "nuevo/index.html",
+					"settings":
+					{
+						"buffer_size": 10735,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2695,
+								2903
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1539.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "nuevo/pop.html",
+					"settings":
+					{
+						"buffer_size": 8071,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5715,
+								7906
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5240.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "nuevo/fundacion_eventos.html",
+					"settings":
+					{
+						"buffer_size": 10550,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								277,
+								235
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "nuevo/fundacion_noticias.html",
+					"settings":
+					{
+						"buffer_size": 10026,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7829,
+								7829
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6073.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "nuevo/css/style.css",
+					"settings":
+					{
+						"buffer_size": 41188,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								41186,
+								40782
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 45543.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "nuevo/css/pop.css",
+					"settings":
+					{
+						"buffer_size": 10375,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4496,
+								4496
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4215.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -528,11 +766,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.509103641457,
 			1.0
 		],
 		"rows":
@@ -567,6 +812,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 172.0,
+	"side_bar_width": 213.0,
 	"status_bar_visible": true
 }

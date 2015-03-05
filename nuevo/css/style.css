@@ -2406,6 +2406,29 @@ ul.slides li iframe{
 	padding: 35px;
 	}
 
-
 }
+.vi video .safari-video{
+	display: none;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+ ::i-block-chrome, .vi{
+ 	float: left;
+ 	}
+ ::i-block-chrome, #titulo_txt{
+  	float: left;
+  	}
+ ::i-block-chrome, aside.btns{
+ 	float: left;
+ 	margin-left: -4px;
+ }
+ ::i-block-chrome, .vi video{
+ 	display: block;
+ }
+
+ ::i-block-chrome, .vi video .safari-video{
+ 	display: block;
+ 	background: #000;
+ }
+
+ }
 
