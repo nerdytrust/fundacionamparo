@@ -2410,6 +2410,7 @@ ul.slides li iframe{
 .vi video .safari-video{
 	display: none;
 }
+/*Safari Only*/
 @media screen and (-webkit-min-device-pixel-ratio:0) {
  ::i-block-chrome, .vi{
  	float: left;
@@ -2429,6 +2430,10 @@ ul.slides li iframe{
  	display: block;
  	background: #000;
  }
+ ::i-block-chrome, .caja_2, ::i-block-chrome, .for_ayuda{
+ 	float: left;
+ }
+
 
  }
 
