@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"text-align"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
 				"font",
 				"font-size"
 			],
@@ -14,10 +22,6 @@
 			[
 				"datos",
 				"datos-inf"
-			],
-			[
-				"text",
-				"text-transform"
 			],
 			[
 				"back",
@@ -38,10 +42,6 @@
 			[
 				"bor",
 				"border-radius"
-			],
-			[
-				"border",
-				"border"
 			],
 			[
 				"ma",
@@ -224,27 +224,19 @@
 	"buffers":
 	[
 		{
-			"file": "nuevo/index.html",
+			"file": "nuevo/fundacion_muro-2.html",
 			"settings":
 			{
-				"buffer_size": 16130,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "nuevo/css/style.css",
-			"settings":
-			{
-				"buffer_size": 41616,
+				"buffer_size": 10137,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "nuevo/js/pop.js",
+			"file": "nuevo/css/flexslider.css",
 			"settings":
 			{
-				"buffer_size": 700,
-				"line_ending": "Windows"
+				"buffer_size": 7225,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -284,9 +276,14 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/froogaloop.js",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/jquery.flexslider.js",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/flexslider2.css",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/style.css",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/pop.js",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/index.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/pop.css",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/pop.html",
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/pop.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_usuarios.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_como_ayudar.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion07.html",
@@ -406,12 +403,7 @@
 		"/C/Users/TheBeksor/Documents/menu_prueba/menu.html",
 		"/C/Users/TheBeksor/Desktop/re.html",
 		"/C/xampp/htdocs/sanesy/css/styles-sistema.css",
-		"/C/xampp/htdocs/sanesy/css/styles.css",
-		"/C/xampp/htdocs/sanesy/home.html",
-		"/C/xampp/htdocs/sanesy/index.html",
-		"/C/Users/TheBeksor/Desktop/rpDell/htdocs/sadi/home.html",
-		"/C/xampp/htdocs/sanesy/alert.html",
-		"/C/xampp/htdocs/sanesy/css/flexslider.css"
+		"/C/xampp/htdocs/sanesy/css/styles.css"
 	],
 	"find":
 	{
@@ -430,6 +422,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"button",
+			".flex-control-nav",
+			"flexslider",
+			"..flex",
+			".flexslider",
+			"FlexSlider",
+			"flexslider",
+			"slides",
+			".flexslider",
 			"progress",
 			">\n",
 			"active",
@@ -548,16 +549,7 @@
 			"div",
 			"language",
 			"define('WP",
-			"portaf_r",
-			"1024px",
-			"shadow",
-			"last ",
-			"bold",
-			"#menuNav li",
-			"topfirst",
-			"background",
-			">\n",
-			"select"
+			"portaf_r"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -565,6 +557,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"flexslider2",
+			".flexslider2",
 			"<div id=\"donativo\"><p>HAZ TU DONACIÓN</p></div>",
 			"",
 			"betosh",
@@ -584,18 +578,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "nuevo/index.html",
+					"file": "nuevo/fundacion_muro-2.html",
 					"settings":
 					{
-						"buffer_size": 16130,
+						"buffer_size": 10137,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4317,
-								4411
+								4954,
+								4954
 							]
 						],
 						"settings":
@@ -604,67 +598,35 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2933.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 1,
-					"file": "nuevo/css/style.css",
-					"settings":
-					{
-						"buffer_size": 41616,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10248,
-								10254
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 11279.0,
+						"translation.y": 2297.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "nuevo/js/pop.js",
+					"buffer": 1,
+					"file": "nuevo/css/flexslider.css",
 					"settings":
 					{
-						"buffer_size": 700,
+						"buffer_size": 7225,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								606,
-								606
+								4930,
+								4913
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3701.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -689,18 +651,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.475217556381,
 			1.0
 		],
 		"rows":

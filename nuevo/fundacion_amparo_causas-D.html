@@ -3,24 +3,23 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Fundación Amparo</title>
+	<meta name="viewport" content="initial-scale=1">
+	<meta name="decription" conetent=""/>
+	<link rel="stylesheet" href="css/pop.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/tabs.css">
+
 	<link href="video/video-js.css" rel="stylesheet" type="text/css">
     <!-- video.js must be in the <head> for older IEs to work. -->
     <script src="video/video.js"></script>
-
-	<!--<meta name="viewport" content="initial-scale=1">
-	-->
-	<meta name="decription" conetent=""/>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/pop.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/tabs.css">
 
 </head>
 <body>
 <div id="meenus">
 	<header>
 		<div id="logo">
-			<a href="#">
+			<a href="index.html">
 				<img src="images/amparo.png" alt="">
 				<h1 id="fundacion-logo">FUNDACIÓN AMPARO</h1>
 			</a>
@@ -45,19 +44,13 @@
 				<li><a href="fundacion_contacto.html">Contacto</a></li>
 			</ul>
 		</nav>
-			<!--<a href="#">
-				<div id="btn_donar">
-					<h2>Donar</h2>
-				</div>
-			</a>-->
+			
 			<button id="btn_dona">DONAR</button>
 			<div id="perfil">
 				<img src="images/monito.jpg" alt=""/>
 			</div>
 		</div>
-	</header>
-
-
+	</header> 
 	<div id="conteo_donadores" >
 		<div id="int_contado">
 			<img src="images/icon_donadores.png" alt="">
@@ -71,48 +64,22 @@
 	</div>
 </div>
 	<section id="Contenedor">
-		<div class="re">
-		<article id="titulo_txt" class="" onclick="location.href='fundacion01_e.html';">
-			<h1>Conoce Fundación Amparo</h1>
-			<h2>#TomandoAcciónFA</h2>
-			<p>Promover y apoyar actos de beneficio a la población de México</p>
-			<h3><a href="#">MÁS INFORMACIÓN <span>+</span></a></h3>
-			<div id="titulo_img">
-				<img src="images/amparo.png" alt="">
-			</div>
-		</article>
-
-		<div class="vi ">
-		<video controls loop preload="auto" poster="images/video_int_historia.png" class="video-js vjs-default-skin" data-setup="{}">
+		<span class="como">
+		 	<h1>¿Cómo Ayudar?</h1>
+		 	<h2>Tus donaciones construyen sueños y<br/> cambian vidas <b>#TomandoAcciónFA</b></h2>
+		 	<button id="btn_dona">DONAR AHORA</button>
+		 </span>
+		 <div class="vi3 ">
+		 	<video loop preload="auto" poster="images/video_causa.png" controls  class="video-js vjs-default-skin" data-setup="{}">
 			<source src="video/video.mp4">
-		   <!--<source src="http://www.w3schools.com/html/movie.mp4">-->
 		</video>
-		</div>
-
-		<aside class="btns">
-			<article id="btn_twitter" class="">
-				<ul>
-					<li class="fa fa-twitter"></li>
-				</ul>
-			</article>
-			<article id="btn_facebook" class="">
-				<ul>
-					<li class="fa fa-facebook"></li>
-				</ul>
-			</article>
-			<article id="btn_donar2" class="">
-				<h1>DONAR</h1>
-			</article>
-			<article class="caja_1" onclick="location.href='fundacion_becas.html';">
-				<img src="images/becas_amparo.jpg" alt="">
-				<section  class="txt">
-				<h1>BECAS</h1>
-				<p>Aplica para obtener una beca de estudios</p>
-				</section>
-			</article>
-		</aside>
-
-	</div>
+		</div> 
+		 </div>
+		<!--<video controls loop preload="auto" class="" poster="images/video_causa.png" id="video-causas">
+			
+			<source src="http://www.w3schools.com/html/movie.mp4">
+			<source src="video/fundacionAmparo.webm" media="screen and (min-width:800px)">
+		</video>-->
 	
 		<div id="pleca_causas" class="">
 			<h1>CAUSAS</h1>
@@ -138,11 +105,7 @@
 					<div id="meta">
 
 						<div id="barra">
-							<progress value="60" max="100">
-								<div class="progress-bar">
-							        <span style="width: 60%;">-</span>
-							    </div>
-							</progress>
+							<progress value="60" max="100"></progress>
 							<!--<span id="relleno"></span>-->
 						</div>
 					<div id="cantidad">
@@ -168,7 +131,7 @@
 					<div id="donativo"><p>HAZ TU DONACIÓN</p></div>
 				</section>
 	 			<section class="txt_int cul">
-	 				<h1 onclick="location.href='fundacion05.html';">CULTURA</h1>
+	 				<h1>CULTURA</h1>
 	 				<h2>MUSEO AMPARO</h2>
 	 			</section>
 	 		</article>
@@ -186,89 +149,63 @@
 					<div id="donativo"><p>HAZ TU DONACIÓN</p></div>
 				</section>
 	 			<section class="txt_int cul">
-	 				<h1 onclick="location.href='fundacion06.html';">RESTAURACIÓN</h1>
+	 				<h1>RESTAURACIÓN</h1>
 	 				<h2>CENTRO COMERCIAL "LA VICTORIA"</h2>
 
 	 			</section>
 	 		</article>
- 		</div><!--termina class re-->
+		</div><!--termina re-->
 
  		<div id="pleca_causas" class="">
 			<h1>FORMAS DE AYUDAR</h1>
  		</div>
+		
+		<div class="re">
+ 		<section id="causa1" class="causas-social ">
+ 				<div id="donativo"><p>HAZ TU DONACIÓN</p></div>
+ 				<button class="apor"></button>
+ 				<h3>A la Educación</h3>
+ 		</section>
+ 		<section id="causa2" class="causas-social ">
+				<div id="donativo"><p>HAZ TU DONACIÓN</p></div>
+ 				<button class="apor"></button>
+ 				<h3>Al deporte</h3>
+ 		</section>
+ 		<section id="causa3" class="causas-social ">
+				<div id="donativo"><p>HAZ TU DONACIÓN</p></div>
+ 				<button class="apor"></button>
+ 				<h3>Asistenciales</h3>
+ 		</section>
+ 		<section id="causa4" class="causas-social ">
+				<div id="donativo"><p>HAZ TU DONACIÓN</p></div>
+ 				<button class="apor"></button>
+ 				<h3>fundhepa</h3>
+ 		</section>
+ 	</div><!--termina dre-->
 
- 		<div class="dre">
-	 		<article id="donador_sec" class="for_ayuda ">
-	 			<h1>DONADOR</h1>
-	 			<p>Sé parte de nuestra comunidad, con tu aportación continuamos abriendo caminos.</p>
-	 			<h2>MÁS INFORMACIÓN +</h2>
-	 		</article>
-	 		<article id="impulsor_sec" class="for_ayuda ">
-	 			<h1>IMPULSOR</h1>
-	 			<p>Lleguemos a más oídos y toquemos más corazones en una sóla voz</p>
-	 			<h2>MÁS INFORMACIÓN +</h2>
-	 		</article>
-	 		<article id="voluntario_sec" class="for_ayuda">
-	 			<h1>VOLUNTARIO</h1>
-	 			<p>Vive directamente la experiencia y ayúdanos a seguir adelante.</p>
-	 			<h2 onclick="location.href='fundacion_voluntarios.html';">MÁS INFORMACIÓN +</h2>
-	 		</article>
- 		</div>
+ 		
+
  		<section id="ultimos_dona"class="">
  			<div class="adorno_fa">
  				<img src="images/adorno_fa.png" alt="">
  			</div>
+
  			<div>
- 				<h1>ÚLTIMOS DONADORES</h1>
- 				<p>Donadores recientes que se unieron y juntos estamos <span>#TomandoAcciónFA</span></p>
- 				<div class="donador_clas">
- 					<div class="img_redonda">
- 					<img src="images/persona_fa01.jpg" alt="">
- 					</div>
- 					<h1>JORGE CAMACHO</h1>
- 					<h2>DONADOR</h2>
- 				</div>
- 				<div class="donador_clas">
- 					<div class="img_redonda">
- 					<img src="images/persona_fa02.jpg" alt="">
- 					</div>
- 					<h1>JAHIR PÉREZ</h1>
- 					<h2>DONADOR</h2>
- 				</div>
- 				<div class="impulsor_clas">
- 					<div class="img_redonda">
- 					<img src="images/persona_fa03.jpg" alt="">
- 					</div>
- 					<h1>DANIEL GONZÁLEZ</h1>
- 					<h2>IMPULSOR</h2>
- 				</div>
- 				<div class="voluntario_clas">
- 					<div class="img_redonda">
- 					<img src="images/persona_fa04.jpg" alt="">
- 					</div>
- 					<h1>SANDRA LUNA</h1>
- 					<h2>VOLUNTARIO</h2>
- 				</div>
- 				<div class="voluntario_clas">
- 					<div class="img_redonda">
- 					<img src="images/persona_fa05.jpg" alt="">
- 					</div>
- 					<h1>ADRINA MONTES</h1>
- 					<h2>VOLUNTARIO</h2>
- 				</div>
+ 				<h1 onclick="fundacion_apoyamos_causa.html';">APOYAMOS TU CAUSA</h1>
+ 				<h2>Fundación Amparo apoya causas externas</h2>
+ 				<p>Inscribe tu causa llenando un breve formulario, la información será revisada
+detalladamente para determinar una respuesta </p>
+
+ 				
  			</div>
- 			<div class="adorno_fa">
- 				<img src="images/adorno_fa.png" alt="">
- 			</div>
+ 			
  			<div class="txt_fundacion">
  				<div id="titulo_fca">
- 					<h1>FUNDACIÓN AMPARO</h1>
+ 					<h1><button class="causas" onclick="location.href='fundacion_apoyamos_causa.html';">Inscribir Causa</button></h1>
  				</div>
- 				<p>En abril de 1979, Don Manuel Esptinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa, y con el pleno consentimiento de sus hijos, quienes con la nobleza de sentimientos que les caracteriza estuvieron totalmente de acuerdo con la misma.</p>
+ 				
  			</div>
- 			<div class="adorno_fa">
- 				<img src="images/adorno_fa.png" alt="">
- 			</div>
+ 			
  			<div class="txt_footer">
  					<h1>¡Tú puedes ayudar!</h1>
  					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
@@ -305,136 +242,6 @@
 			
 		</div>
 	</footer>
-	<!--lightbox NARANJA-->
-	<div class="lightbox-h" id="naranja1">
-		<div class="lightbox-h-cont vol">
-			<img src="images/icon_donadores.png" alt="">
-			<button class="cerrar-h"></button>
-			<h1>Voluntario!</h1>
-			<h2>Vive directamente la experiencia y
-ayúdanos a seguir adelante.</h2>
-<div class="line"></div>
-				
-					<form action="">
-						<p>¿En qué causa nos quieres ayudar?</p>
-						<label for="" class="vol">
-							
-							<select name="" id="">
-								<option value="">Museo Amparo</option>
-								<option value=""></option>
-								<option value=""></option>
-							</select>
-							<p>¿Cómo puedes ayudar?</p>
-							<select name="" id="">
-								<option value="">Capacitación</option>
-								<option value=""></option>
-								<option value=""></option>
-							</select>
-							<div class="line"></div>
-							<p>
-								IMPORTANTE </br>
-								Para poder ser voluntario en esta causa
-								es indispensable que vivas en Puebla.
-							</p>
-							<input type="text" name="Name" placeholder="Nombre" required id="r">
-
-							<input type="email" name="email" placeholder="Correo electrónico" required id="r">
-
-							<input type="number" name="email" placeholder="Teléfono" required id="r">				
-							 <input type="submit" value="ACEPTAR">
-
-						</label>
-					</form>
-				<a href="">
-					Si necesitas ayuda dal click aquí 
-					<img src="images/i.png" alt=""></br>
-					Mas Información +
-				</a>
-		</div>
-	</div><!--terminalightbox-naranja1-->
-
-	<div class="lightbox-h" id="naranja2">
-		<div class="lightbox-h-cont">
-			<img src="images/icon_donadores.png" alt="">
-			<button class="cerrar-h"></button>
-			<h1>¡grácias!</h1>
-			<h2>Ya estás <br/> <b>#TomandoAcciónFA</b></h2>
-			<h3>Tus donaciones hacen posible continuar con nuestra causa, pasa la voz</h3>
-			<span>
-				<h4>Compartir </h4>
-				<button class="face"></button>
-				<button class="twit"></button>
-			</span>
-		</div>
-	</div>
-	<!--termina lightbox-home-->
-	<!--lightbox verde1-->
-	<div class="lightbox-h d" id="verde1">
-		<div class="lightbox-h-cont donar">
-			<img src="images/icon_donadores.png" alt="">
-			<button class="cerrar-h"></button>
-			<h1>donar</h1>
-			<p>Tu ayuda es importante y </br>
-marca la diferencia para muchos.</p>
-			<label for="" class="vol">
-				<p>Escoge la causa que quieras apoyar</p>
-				<form action="">
-					<select name="" id="">
-								<option value="">Museo Amparo</option>
-								<option value=""></option>
-								<option value=""></option>
-					</select>
-					<p>Ingresa el monto que desaes donar</p>
-
-					<input type="text" name="monto" placeholder="$10.00 MXN" required id="r">
-
-					<input type="checkbox" name="ossm" value=""> 
-
-						<label for="osssm">
-							<a href="">Acepto términos y condiciones</a>
-						</label>
-</br></br>
-						 <input type="submit" value="ACEPTAR" id="ac">							
-				</form>	
-			</label>
-			</br>
-			<a href="">
-					Si necesitas ayuda dal click aquí 
-					<img src="images/i.png" alt=""></br>
-					Mas Información +
-				</a>
-		</div>
-	</div>
-	<!--Termina lightbox verde1-->
-	
-	<!--lightbox azul1-->
-	<div class="lightbox-h i" id="azul1">
-		<div class="lightbox-h-cont imp">
-			<img src="images/icon_donadores.png" alt="">
-			<h1>impulsar!</h1>
-			<button class="cerrar-h"></button>
-			<div class="imagen">
-				<img src="images/image.png" alt="">
-					<button></button>
-					<p>Roberto Alonso Espinoza</p>
-			</div>
-		</br>
-			<input type="checkbox" name="ossm" value=""> 
-						<label for="osssm">
-							<a href="">No mostrar mi perfil en el sitio</a>
-						</label>
-					<button class="feis">
-						<div id="invitar">Invitar a 10 amigos</div>
-					</button>	
-			<a href="">
-					Si necesitas ayuda dal click aquí 
-					<img src="images/i.png" alt=""></br>
-					Mas Información +
-				</a>			
-		</div>	
-	</div>
-	<!--Termina lightbox azul1-->
-
 	<!--lightbox blanco1-->
 	<div class="lightbox" id="blanco1">
 		<div class="usuario-light">
@@ -562,10 +369,51 @@ marca la diferencia para muchos.</p>
 	</div>
 	<!--terina lightbox blanco1-->
 
+	<!--lightbox verde1-->
+	<div class="lightbox-h d" id="verde1">
+		<div class="lightbox-h-cont donar">
+			<img src="images/icon_donadores.png" alt="">
+			<button class="cerrar-h"></button>
+			<h1>donar</h1>
+			<p>Tu ayuda es importante y </br>
+marca la diferencia para muchos.</p>
+			<label for="" class="vol">
+				<p>Escoge la causa que quieras apoyar</p>
+				<form action="">
+					<select name="" id="">
+								<option value="">Museo Amparo</option>
+								<option value=""></option>
+								<option value=""></option>
+					</select>
+					<p>Ingresa el monto que desaes donar</p>
+
+					<input type="text" name="monto" placeholder="$10.00 MXN" required id="r">
+
+					<input type="checkbox" name="ossm" value=""> 
+
+						<label for="osssm">
+							<a href="">Acepto términos y condiciones</a>
+						</label>
+</br></br>
+						 <input type="submit" value="ACEPTAR" id="ac">							
+				</form>	
+			</label>
+			</br>
+			<a href="">
+					Si necesitas ayuda dal click aquí 
+					<img src="images/i.png" alt=""></br>
+					Mas Información +
+				</a>
+		</div>
+	</div>
+	<!--Termina lightbox verde1-->
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
-	<script src="js/pop.js"></script>	
+	<script src="js/pop.js"></script>
+	
+	
 </body>
 </html>
 

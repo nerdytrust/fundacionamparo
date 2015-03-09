@@ -1229,6 +1229,9 @@ b{color: #beda3e;}
 	font-weight: lighter;
 	line-height: 12px;
 }
+.cau #txt_evento{
+	height: 100%;
+}
 #txt_evento{
 	width: 100%;
 	display: inline-block;
@@ -2084,6 +2087,7 @@ ul.slides li iframe{
 	#Contenedor {
 	padding: 103px 0 0 0;
 	}
+
 }
 /* 768px */
 @media screen and (max-width:768px) {
@@ -2192,12 +2196,11 @@ ul.slides li iframe{
 		display: none;
 	}
 
-
 }	
 
 	@media screen and (max-width:640px) {
 		#Contenedor {
-			padding: 36% 0 0 0;
+			/*padding: 36% 0 0 0;*/
 		}
 		.re, .dre{
 			display: block !important;
@@ -2410,6 +2413,18 @@ ul.slides li iframe{
 	}
 	progress[value]::-moz-progress-bar {
 	  width: 100%;
+	}
+	.muro2 .info-v {
+	width: 75% !important;
+	top: 25%;
+	}
+	.muro2 .info-v p{
+		display: none;
+	}
+	.muro2 #social_top{
+		height: auto !important;
+		text-align: left;
+		width: auto !important;
 	}
 
 }

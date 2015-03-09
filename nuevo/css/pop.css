@@ -363,6 +363,7 @@ position: inherit;
 	}
 	.lightbox .datos .datos-inf{
 			width: 90%;
+			/*width: 100%;*/
 			height: 197px;
 			display: block;
 			margin: 0 auto;
@@ -375,6 +376,24 @@ position: inherit;
 		margin-top: 19px !important;
 		margin-bottom: 15px;
 		height: auto;
+	}
+	.donadores-c{
+		width: 100%;
+		height: 349px;
+		display: block;
+		overflow: hidden;
+	}
+	.donadores-c span#fotos{
+		width: 14.2%;
+		height: 70px;
+		float: left;
+		background: #fff;
+	}
+	.donadores-c span#fotos img{
+		width: 100%;
+		margin: 0;
+		padding:0;
+		height: 100%;
 	}
 	.datos-inf>h4{
 		text-transform: uppercase;
@@ -505,14 +524,18 @@ position: inherit;
 			color: #fd9f20;
 		}
 		/*termina lightbox usuarios desktop*/
-		
+		@media screen and (max-width: 1400px){
+			.datos .fig{
+				padding: 0;
+			}
+		}
 	@media screen and (max-width:1024px){
 			.usuario-light{
 				width: 99%;
 				top: 5%;
 			}
 			.lightbox .datos .datos-inf{
-				width: 96%;
+				width: 100%;
 			}
 			.lightbox .datos h1{
 				font-size: 1.2em;
@@ -529,7 +552,18 @@ position: inherit;
 				width: 25% !important;
 			}
 		}
+		@media screen and (max-width: 768px){
+			.tabs{
+				width:98% !important;
+			}
+			.content-1>.fig{
+				top: 46% !important;
+			}
+			.content-1>#meta{
+				top: 77% !important;
+			}
 		
+		}
 	@media screen and (max-width:640px) {
 	    .usuario-light{width: 100%; top: 0; box-shadow: none;}
 		.lightbox .usuario, .lightbox .datos{
