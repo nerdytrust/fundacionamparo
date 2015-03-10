@@ -105,13 +105,17 @@
 	width: 100%;
 	background: #212121;
 	vertical-align: top;
-	padding: 20px 0;
+	padding: 20px 0 0 0;
 	display: block;
 	}
 	#pleca_causas h1{
 		color: #FFF;
 		text-align: center;	
 		font-weight: medium;
+		height: 60px;
+		display: inline-block;
+		width: 100%;
+		line-height: 60px;
 	}
 /**/
 #meenus{
@@ -501,12 +505,12 @@ span.donas{
 }
 .cul h1{
 	position: absolute;
-	bottom: 70px;
+	bottom: 55px;
 }
 .cul h2{
 	position: absolute;bottom: 14px;
-height: 41px;
-line-height: 20px !important;
+	height: 25px;
+	line-height: 20px !important;
 }
 .txt_int, .txt_fca, .bull_color{
 	bottom: 0;
@@ -849,6 +853,9 @@ width: 100%;
 }
 #ultimos_dona p{
 	color: #a3a3a3;
+	width: 60%;
+	margin: 0 auto;
+	line-height: 29px;
 }
 #ultimos_dona span{
 	color: #beda3e;

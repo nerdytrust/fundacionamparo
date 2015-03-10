@@ -201,7 +201,7 @@
 	<!--lightbox verde1-->
 	<div class="lightbox-h d" id="verde1">
 		<div class="lightbox-h-cont donar">
-			<img src="images/icon_donadores.png" alt="">
+			<img src="images/icon_donadores-v.png" alt="">
 			<button class="cerrar-h"></button>
 			<h1>donar</h1>
 			<p>Tu ayuda es importante y </br>
@@ -216,32 +216,36 @@ marca la diferencia para muchos.</p>
 					</select>
 					<p>Ingresa el monto que desaes donar</p>
 
-					<input type="text" name="monto" placeholder="$10.00 MXN" required id="r">
+					<span class="op">
+						<input type="text" name="monto" placeholder="10.00" maxlength="8" required id="r"></span>
+					
+					<div class="check-verde">
+							<input type="checkbox" value="None" id="check-verde" name="check" />
+							<label for="check-verde"></label>
+							No mostrar mi perfil en el sitio
+						</div>
 
-					<input type="checkbox" name="ossm" value=""> 
-
-						<label for="osssm">
-							<a href="">Acepto términos y condiciones</a>
-						</label>
-</br></br>
+							</br></br>
 						 <input type="submit" value="ACEPTAR" id="ac">							
 				</form>	
 			</label>
+			
 			</br>
-			<a href="">
+				<a href="">
 					Si necesitas ayuda dal click aquí 
-					<img src="images/i.png" alt=""></br>
-					Mas Información +
+					<img src="images/i.png" alt="">		
 				</a>
 		</div>
 	</div>
 	<!--Termina lightbox verde1-->
-
+	
 	<!--lightbox azul1-->
 	<div class="lightbox-h i" id="azul1">
 		<div class="lightbox-h-cont imp">
-			<img src="images/icon_donadores.png" alt="">
-			<h1>impulsar!</h1>
+			<img src="images/icon_donadores-v.png" alt="">
+			<h1>impulsar</h1>
+			
+			<p>Lleguemos a más oídos y toquemos más corazones en una sóla voz</p>
 			<button class="cerrar-h"></button>
 			<div class="imagen">
 				<img src="images/image.png" alt="">
@@ -249,17 +253,18 @@ marca la diferencia para muchos.</p>
 					<p>Roberto Alonso Espinoza</p>
 			</div>
 		</br>
-			<input type="checkbox" name="ossm" value=""> 
-						<label for="osssm">
-							<a href="">No mostrar mi perfil en el sitio</a>
-						</label>
+			<div class="check-azul">
+							<input type="checkbox" value="None" id="check-azul" name="check" />
+							<label for="check-azul"></label>
+							No mostrar mi perfil en el sitio
+						</div>
+
 					<button class="feis">
 						<div id="invitar">Invitar a 10 amigos</div>
 					</button>	
 			<a href="">
 					Si necesitas ayuda dal click aquí 
-					<img src="images/i.png" alt=""></br>
-					Mas Información +
+					<img src="images/i.png" alt="">
 				</a>			
 		</div>	
 	</div>
@@ -268,11 +273,11 @@ marca la diferencia para muchos.</p>
 	<!--lightbox NARANJA-->
 	<div class="lightbox-h" id="naranja1">
 		<div class="lightbox-h-cont vol">
-			<img src="images/icon_donadores.png" alt="">
+			<img src="images/icon_donadores-v.png" alt="">
 			<button class="cerrar-h"></button>
-			<h1>Voluntario!</h1>
-			<h2>Vive directamente la experiencia y
-ayúdanos a seguir adelante.</h2>
+			<h1>Voluntario</h1>
+			<p>Vive directamente la experiencia y
+ayúdanos a seguir adelante.</p>
 <div class="line"></div>
 				
 					<form action="">
@@ -307,8 +312,7 @@ ayúdanos a seguir adelante.</h2>
 					</form>
 				<a href="">
 					Si necesitas ayuda dal click aquí 
-					<img src="images/i.png" alt=""></br>
-					Mas Información +
+					<img src="images/i.png" alt="">
 				</a>
 		</div>
 	</div><!--terminalightbox-naranja1-->

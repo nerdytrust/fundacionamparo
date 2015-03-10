@@ -29,7 +29,7 @@ html, body {
 		.vol{
 			width:381px;
 			height: 803px;
-			top: 1% !important; 
+			top: 0.7% !important; 
 		}
 		.line{
 			width: 100%;
@@ -46,8 +46,9 @@ html, body {
 		}
 		.lightbox-h-cont h1{
 			text-transform: uppercase;
-			margin: 15px 0 25px 0;
-			font-size: 3em;
+			margin: 15px 0 0px 0;
+			font-size: 3.3em;
+			letter-spacing: -3px;
 		}
 		.vol h1{
 			font-size: 3em;
@@ -74,7 +75,17 @@ html, body {
 			margin: 10px 0;
 		}
 		.vol p{
-			margin: 2% 0;
+			margin: 2% 0 3% 0 !important;
+		}
+		#naranja1 .vol p{
+			margin: 3% auto !important;
+			width: 80%;
+		}
+		#naranja1 .vol label.vol p{
+			margin: 2% auto !important;
+		}
+		label.vol .line{
+			margin: 4% auto;
 		}
 		.lightbox-h-cont button.cerrar-h{
 			width: 40px;
@@ -120,29 +131,83 @@ html, body {
 			display: inline-block;
 			vertical-align: middle;
 		}
+		label.donar-l{
+			/*background: red;*/
+			position: relative;
+		}
+		/*label.donar-l input[type="checkbox"]{
+			width: 10%;
+			vertical-align: top;
+		}*/
+		span.input-v{
+			width: 21px;
+			height: 21px;
+			background: url("../images/input-v.png");
+			position: absolute;
+			top: 0;
+			left: 13%;
+		}
 		label.vol select {
 			border: 2px solid #ebebeb;
 			width: 282px;
 			height: 52px;
-			margin-bottom: 20px;
+			margin-bottom: 9px;
 			color: #fff;
 			appearance: none;
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			background: url("../images/flecha.png") no-repeat 92%;
 			cursor: pointer;
+			border-radius: none;
+			padding-left: 13px;
+			font-size: 1em;
 			}
 		label.vol input{
-				width: 282px;
+			width: 282px;
 			height: 52px;
 			border: none;
 			background: transparent;
 			font-size: 1em;
-			box-shadow: 3px 6px 12px 0px #e8e8e8 inset;
+			box-shadow: 1px 2px 8px -2px #515050 inset;
 			text-align: center;
 			color: #fff;
 			margin-bottom: 10px;
 			background: url("../images/back-o.png") repeat;
+			position: relative;
+			text-align: left;
+			padding-left: 35px;
+			font-size: 2em;
+			}
+			#naranja1 label.vol input{
+				font-size: 1em;
+				margin: 2% 0;
+				text-align: center;
+				padding-left: 0;
+			}
+			#naranja1 label.vol input[type="submit"]{
+				width: 282px;
+			}
+			span.op{
+				display: block;
+			margin: 0 auto;
+			position: relative;
+			width: 282px;
+			}
+			span.op:before{
+				content: "$";
+				color: #fff;
+				position: absolute;
+				font-size: 2em;
+				top: 14%;
+				left: 5%;
+			}
+			span.op:after{
+				content: "MXN";
+				color: #fff;
+				position: absolute;
+				font-size: 2em;
+				top: 14%;
+				right: 5%;
 			}
 		label.vol input[type="submit"]{
 				width: 80%;
@@ -153,23 +218,25 @@ html, body {
 			font-weight: bold;
 			cursor: pointer;
 		}
-
+		
 		#r::-webkit-input-placeholder {
 			   color: #fff;
+			   /*font-size: 2em;*/
 			}
-		label.vol input[type="checkbox"]{
+		/*label.vol input[type="checkbox"]{
 			width: 21px;
 			height: 21px;
 			box-shadow: none;	
-		}
+		}*/
 		div.d label.vol input[type="submit"]{
 			color: #beda3e;
+			font-size: 1.3em;
 		}
-		.i input[type="checkbox"]{
+		/*.i input[type="checkbox"]{
 			width: 21px;
 			height: 21px;
 			box-shadow: none;	
-		}
+		}*/
 		button.feis{
 			width: 100%;
 			height: 52px;
@@ -181,7 +248,8 @@ html, body {
 		button.feis #invitar{
 			font-weight: bolder;
 			color: #4892d2;
-			font-size: 1.3em;
+			font-size: 1.7em;
+			padding-left: 43px;
 			text-transform: uppercase;
 			width: 100%;
 			text-align: center;
@@ -205,6 +273,9 @@ html, body {
 		background: #0499D8;
 		box-shadow: 2px 2px 70px 50px #0499D8;
 	}	
+	.imp p{
+		margin: 3% auto 7% auto;
+	}
 	.imagen{
 		width: 282px;
 		height: 280px;
@@ -225,14 +296,14 @@ html, body {
 		padding:0;
 	}
 	.donar p{
-		margin: 3% 0;
+		margin: 1% 0 5% 0;
 	}
 	.donar label.vol input{
 		width: 282px;
 	}
-	.donar label.vol input[type="checkbox"]{
+	/*.donar label.vol input[type="checkbox"]{
 		width: 28% !important;
-	}
+	}*/
 	.imagen>button{
 		background: url("../images/btn-tra.png");
 		width: 152px;
@@ -623,3 +694,105 @@ justify-content: space-between;
 
 	/*termina laghtbox*/
 
+	/*checkboxeses*/
+.check-verde {
+	width: 70%;	
+	margin: 4% auto;
+	display: inline-block;
+	height: 21px;
+	position: relative;
+	vertical-align: top;
+}
+.check-verde label {
+	cursor: pointer;
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	top: 0;
+	left: 0;
+	background: url("../images/input-v.png");
+}
+.check-verde>input[type="checkbox"]{
+	width: 22px !important;
+	height: 22px !important;
+	margin: 0;
+	padding:0;
+	visibility: hidden;
+}
+.check-verde label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 8px;
+	background: transparent;
+	top: 6px;
+	left: 4px;
+	border: 3px solid #fcfff4;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.check-verde input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+/*check azul*/
+.check-azul {
+	width: 90%;	
+	margin: 4% auto;
+	display: inline-block;
+	height: 21px;
+	position: relative;
+	vertical-align: top;
+}
+.check-azul label {
+	cursor: pointer;
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	top: 0;
+	left: 0;
+	background: url("../images/input-a.png");
+}
+.check-azul>input[type="checkbox"]{
+	width: 22px !important;
+	height: 22px !important;
+	margin: 0;
+	padding:0;
+	visibility: hidden;
+}
+.check-azul label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 8px;
+	background: transparent;
+	top: 6px;
+	left: 4px;
+	border: 3px solid #fcfff4;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.check-azul input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
