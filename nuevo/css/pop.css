@@ -344,8 +344,8 @@ position: inherit;
 	.usuario-light{
 		width: 69.1%;
 		/*width: 1093px;
-		height: 534px;*/
-		height: 38%;
+		height: 38px;*/
+		height: 565px;
 		display: block;
 		position: relative;
 		margin: 0 auto;
@@ -473,7 +473,7 @@ position: inherit;
 	.datos-inf>p{
 		color: #919191;
 		font-size: 0.9em;
-		line-height: 1.4em;
+		line-height: 1.3em;
 	}
 	.datos-inf>p>b{
 		color: #000;
@@ -513,13 +513,13 @@ position: inherit;
 			/*display: flex;
 			justify-content: space-between;*/
 			display: block;
-			padding: 0 10%;
+			padding: 0 0%;
 		}
 		.datos figure{
-			width: 96px;
-			height: 121px;
+			width: 135px;
+			height: auto;
 			float: left;
-			margin: 0 10% 0 0;
+			margin: 0 3%;
 		}
 		.datos>.fig>figure.cauf{
 			width: 31%;
