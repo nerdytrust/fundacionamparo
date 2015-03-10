@@ -217,6 +217,8 @@ html, body {
 			color: #ffaa3b;
 			font-weight: bold;
 			cursor: pointer;
+			padding: 0;
+			text-align: center;
 		}
 		
 		#r::-webkit-input-placeholder {
@@ -516,7 +518,7 @@ position: inherit;
 			padding: 0 0%;
 		}
 		.datos figure{
-			width: 135px;
+			width: 27.4%;
 			height: auto;
 			float: left;
 			margin: 0 3%;
