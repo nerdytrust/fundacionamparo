@@ -138,6 +138,7 @@ button{
 	outline: none;
 	background: #fff;
 	font-size: .7em;
+	font-weight: 600;
 }
 
 button:hover{
@@ -160,6 +161,7 @@ hr{
 	width: 22px;
 	display: inline-block;
 	vertical-align: middle;
+	opacity: 0.3;
 }
 footer{
 	background: #212121;
@@ -374,6 +376,21 @@ span.donas{
 		font-weight: bolder;
 		background: url("../images/sep.png") no-repeat left;
 	}
+	h2.text-causas{
+		background: #FFF;
+		border-radius: .5em;
+		color: #000;
+		display: inline-block;
+		font-size: .8em;
+		padding: 2px 8px;
+		line-height: 2em;
+		letter-spacing: -.8px;
+		text-transform: uppercase;
+		position: absolute;
+		bottom: 14%;
+		left: 9%;
+		font-weight: bolder;
+	}
 	/**/
 	.cau{
 		background: url("../images/light-cau.png") !important;
@@ -381,7 +398,7 @@ span.donas{
 		background-size: 100% 100%;		
 	}
 	div.cau-dat{
-	width: 50%;
+	width: 100%;
 	height: auto;
 	display: block;
 	/*background:red;*/
@@ -405,6 +422,8 @@ span.donas{
 	}
 	div.cau-dat>h2{
 				margin: 0 0 0 6% !important;
+				width: 65%;
+font-size: 1em !important;
 	}
 	/**/
 	
@@ -611,7 +630,7 @@ span.donas{
 progress[value]::-webkit-progress-bar {
   background-color: transparent;
   border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;*/
   width: 310px;
   opacity: 0.8;
   height: 22px;
@@ -625,7 +644,7 @@ progress[value]::-webkit-progress-value{
 progress[value]::-moz-progress-bar {
   background-color: #beda3e;
   border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+ /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;*/
   width: 310px;
   opacity: 0.8;
   height: 22px;
@@ -782,6 +801,7 @@ span.esquina{
 .caja_fca{
 	height: 350px;
 	background: #212121;	
+	margin: 2px;
 }
 .caja_fca_usu{
 	width: 16.6667%;
@@ -806,6 +826,7 @@ width: 100%;
 #caja_aporta{
 	width: 80%;
 	margin: 0 auto;
+	min-height: 710px;
 }
 #caja_aporta2{
 	width: 100%;
@@ -880,6 +901,7 @@ width: 100%;
 .adorno_fa{
 	margin: 55px 0;
 	text-align: center;
+	height: 32px;
 }
 #ultimos_dona h1{
 	font-size: 2em;
@@ -887,13 +909,14 @@ width: 100%;
 }
 #ultimos_dona p{
 	color: #a3a3a3;
-	width: 60%;
-	margin: 0 auto;
+	width: 40%;
+	margin: 1.2% auto;
 	line-height: 20pt;
 }
 #ultimos_dona span{
 	color: #beda3e;
 }
+
 #ultimos_dona .donador_clas h1, #ultimos_dona .impulsor_clas h1, #ultimos_dona .voluntario_clas h1{
 	font-size: 1em;
 }
@@ -922,12 +945,19 @@ width: 100%;
 	text-align: left;
 	display: block;
 	font-size: 1.3em; font-weight: bold;
+	width: 90%;
+margin: 0 auto;
 }
 .txt_fundacion2 p{
 	text-align: left;
+	line-height: 29px;
+	width: 90%;
+	margin: 0 auto;
+	text-align: justify;
 }
 .txt_fundacion2 p span{
 	color: #000;
+	font-weight: bold;
 }
 .txt_fundacion2 ul{
 	list-style: none;
@@ -940,11 +970,11 @@ width: 100%;
     color: #a3a3a3;
     line-height: 3em;
 }
-.txt_fundacion2 li:before{
+/*.txt_fundacion2 li:before{
 	content: "• ";
     color: #beda3e;
     font-weight: bold;
-}
+}*/
 .txt_footer{
 	width: 65%;
 	display: inline-block;
@@ -1034,6 +1064,17 @@ width: 100%;
 	display: inline-block;
 	vertical-align: top;
 }
+.img_txt h3{
+	font-size: 1.6em !important;
+}
+.img_txt p{
+
+}
+.img_txt a{
+	display: block;
+	margin-top: 8px;
+	text-transform: uppercase;
+}
 .cja_membresias{
 	margin: 45px 0;
 	display: inline-block;
@@ -1049,7 +1090,7 @@ width: 100%;
 .txt_mask h1{
 	color: #FFF;
 	font-size: 2.2em;
-	font-weight: normal;
+	
 }
 .txt_mask h3{
 	color: #FFF;
@@ -1087,6 +1128,23 @@ width: 100%;
 	margin: 0 0 25px 0;
 	text-align: center;
 }
+#titulo_fca h2{
+	font-size: 2.2em;
+font-weight: bold;
+}
+.txt_fundacion #titulo_fca button{
+	width: 181px;
+	height: 50px;
+	font-size: 1em;
+	margin: 1% auto;
+}
+.txt_fundacion2 .ayudar{
+	margin: 40px 0 0 0 !important;
+}
+.txt_fundacion2 .ayudar h2{
+	margin: 20px 0 0 0 !important;
+	padding: 0 !important;
+}
 #titulo_fca span{
 	color: #000;
 	width: 20px;
@@ -1112,7 +1170,7 @@ width: 100%;
 #contenedor_int p{
 	color: #a3a3a3;
 }
-b{color: #beda3e;}
+b{color: #beda3e; font-weight: normal;}
 
 #contenedor_int .txt_fca h1{
 	background: none;
@@ -1135,6 +1193,9 @@ b{color: #beda3e;}
 #contenedor_btn{
 	padding: 2.5em 0 0;
 	font-size: 1.4em;
+}
+#contenedor_btn button{
+	width: 200px; height: 50px;
 }
 #social_footer{
 	display: block;
@@ -1272,18 +1333,21 @@ b{color: #beda3e;}
 }
 .cau #txt_evento{
 	height: 100%;
+	background: url("../images/light-cau-over.png");
 }
 #txt_evento{
 	width: 100%;
 	display: inline-block;
 	vertical-align: top;
 	text-align: left;
+	
 }
 #txt_evento h1{
 	font-size: 1.2em;
 	display: inline-block;
 	margin: 0;
 	width: 59%;
+	/*background: red;*/
 }
 #txt_evento h2{
 	font-size: .8em;
@@ -1296,7 +1360,7 @@ b{color: #beda3e;}
 	color: #beda3e;
 }
 #txt_evento  li{
-	color: #a3a3a3;
+	/*color: #a3a3a3;
 	border: 2px solid #a3a3a3;
 	border-radius: 30px;
 	font-size: 1em;
@@ -1304,6 +1368,15 @@ b{color: #beda3e;}
 	line-height: 30px;
 	margin: 3px;
 	width: 30px;
+	text-align: center;*/
+	color: #C5C5C5;
+	border: 2px solid #C5C5C5;
+	border-radius: 30px;
+	font-size: 1.2em;
+	height: 38px;
+	line-height: 35px;
+	margin: 3px;
+	width: 38px;
 	text-align: center;
 }
 #txt_evento  ul p{
@@ -1311,6 +1384,7 @@ b{color: #beda3e;}
 	color: #a3a3a3;
 	font-weight: lighter;
 	font-size: 1em;
+	text-transform: uppercase;
 }
 #txt_evento	 a li:hover{
 	color: #beda3e;
@@ -1349,6 +1423,7 @@ b{color: #beda3e;}
 	font-size: .8em;
 	margin: 0;
 	cursor: pointer;
+	font-weight: bold;
 }
 #txt_noticia h3 span{
 	color: #BEDA4D;	
@@ -1359,14 +1434,14 @@ b{color: #beda3e;}
 	line-height: 1.3; 
 }
 #txt_noticia  li{
-	color: #a3a3a3;
-	border: 2px solid #a3a3a3;
+	color: #C5C5C5;
+	border: 2px solid #C5C5C5;
 	border-radius: 30px;
-	font-size: 1em;
-	height: 30px;
-	line-height: 30px;
+	font-size: 1.2em;
+	height: 38px;
+	line-height: 35px;
 	margin: 3px;
-	width: 30px;
+	width: 38px;
 	text-align: center;
 }
 #txt_noticia  ul p{
@@ -1374,6 +1449,7 @@ b{color: #beda3e;}
 	color: #a3a3a3;
 	font-weight: lighter;
 	font-size: 1em;
+	text-transform: uppercase;
 }
 #txt_noticia	 a li:hover{
 	color: #beda3e;
@@ -1381,9 +1457,13 @@ b{color: #beda3e;}
 	-webkit-transition:.5s;
 	transition:.5s;
 }
+#cja_donativos{
+	height: 380px;
+	margin: 30px 0 0 0 !important;
+}
 #cja_donativos, #cja_pasos{
 	text-align: center;
-	margin: 60px 0;
+	margin: 30px 0;
 	cursor: pointer;
 }
 #donativo_btn{
@@ -1412,16 +1492,16 @@ b{color: #beda3e;}
 }
 #cja_donativos h1{ 
 	font-size: 1.5em !important;
-	font-weight: 300;
+	font-weight: 600;
 }
 #cja_donativos h4{ 
 	color: #000;
 	font-size: .8em !important;
-	font-weight: 400;
+	font-weight: 600;
 	opacity: .5;
 }
 .txt_circ{
-	margin: 20px 0;
+	margin: 32px 0;
 	text-align: center;
 }
 .txt_circ p{
@@ -1432,11 +1512,22 @@ b{color: #beda3e;}
 .txt_circ h2{
 	font-size: .8em;
 	padding: 0;
+	font-weight: bold;
 }
+.txt_circ h2:after{
+	content: "+";
+	color: #beda3e;
+	font-size: 1.4em;
+margin-left: 5px;
+}
+
 .pasos_txt, .division{
 	display: inline-block;
 	vertical-align: bottom;
-	width: 170px;
+	width: 115px;
+}
+.pasos_txt{
+	width: 207px !important;
 }
 .division{
 }
@@ -1444,7 +1535,7 @@ b{color: #beda3e;}
 	color: #000 !important;
 	line-height: 21px;
 	text-align: center;
-	font-weight: 400;
+	font-weight: 600;
 }
 .bull_color{
 	top: 0;
@@ -1475,7 +1566,7 @@ b{color: #beda3e;}
 }
 #cja_faqs{
 	border-bottom: 1px solid #DDD;
-	margin: 20px 0;
+	padding: 20px 0;
 }
 #cja_faqs h1{
 	font-size: 1.1em;
@@ -1484,6 +1575,22 @@ b{color: #beda3e;}
 #cja_faqs p{
 	font-size: .8em;
 	margin: 0 0 20px 0;
+}
+.membresia-red{
+	width: 50% !important;
+	float: left;
+	margin-left: 5%;
+}
+.membresia-red nav ul a{
+	float: left;
+}
+.membresia-red nav{
+	width: 52% !important;
+}
+.membresia-red nav ul p{
+	width: auto;
+	margin-top: 17px;
+text-transform: uppercase !important;
 }
 .mostrar-ocultar,.mostrar-ocultar2,.mostrar-ocultar3,.mostrar-ocultar4,.mostrar-ocultar5{
 	cursor: pointer;
@@ -1519,11 +1626,14 @@ padding-top: 12px;
 	background: transparent !important;
 }
 .como h1{
-	font-size: 3em;
+	font-size: 4em;
 }
 .como h2{
-	font-size: 1.35em;
+	font-size: 1.7em;
 	margin: 1% 0;
+}
+.como button{
+	font-size: 1.3em !important;
 }
 .causas-social{
 	width: 24.99%;
@@ -1588,22 +1698,28 @@ label.contact h1{
 	display: block;
 	padding:0;
 	text-align: left;
+	font-weight: 300;
 }
 label.contact h2{
 	color: #a3a3a3;
-	font-size: 0.8em !important;
+	font-size: 1em !important;
 	text-align: left;
-	margin: 0 auto 15px auto !important;
-	width: 100%;
+	margin: 5px auto 25px auto !important;
+	width: 81%;
 	padding: 0;
-	font-weight: bold;
+	font-weight: normal;
+	line-height: 20px;
+}
+label.contact h4{
+	font-weight: 300;
 }
 label.contact input{
 	width: 97%;
-	height: 46px;
+	height: 48px;
 	border: 2px solid #ebebeb;
 	padding-left: 2.6%;
 	margin-bottom: 3%;
+	font-size: 1em;
 }
 label.contact span b{
 	display: inline-block;
@@ -1626,6 +1742,8 @@ label.contact textarea{
 	margin-bottom: 3%;
 	padding-top: 3%;
 	resize: none;
+	font-family: helvetica;
+	font-size: 1em;
 }
 label.contact button{
 	width: 150px;
@@ -1652,15 +1770,16 @@ label.contact p:before{
 	width: 289px;
 	height: 229px;
 	display: inline-block;
-	margin-top: 6%;
+	margin-top: 8.2%;
 	vertical-align: top;
 }
 .contact-inf b{
-	font-size: 0.9em !important;
+	font-size: 1.1em !important;
 	width: 100% !important;
 	display: block;
 	line-height: 20px;
 	text-align: left !important;
+	font-weight: normal !important;
 }
 .contact-inf p{
 	font-size: 0.9em;
@@ -1687,6 +1806,8 @@ label.contact select{
 	-ms-appearance:none;
 	background: url("../images/flecha.png") no-repeat 92%;
 	cursor: pointer;
+	font-size: 1em;
+	padding-left: 2.6%;
 }
 label.becas{
 	/*border: 1px solid red;*/
@@ -1939,6 +2060,20 @@ ul.slides li iframe{
 	font-weight: bold;
 }
 /*termina timeline*/
+ul.ben{
+	width: 90%;
+	margin: 0 auto;
+	
+}
+ul.ben li:before{
+	content: "• ";
+    color: #beda3e;
+    font-weight: bold;
+}
+.li p{
+	width: 55%;
+	margin: 0 auto;
+}
 .vi{
 	width: 50%;
 	height: 519px;
@@ -1956,16 +2091,18 @@ ul.slides li iframe{
 	height: 519px !important;
 }
 .vi2{
-	width: 100%;
+	width: 80%;
 	height: 519px;
 	background: #000;
 	display: inline-block;
+	overflow: hidden;
+	margin: 35px auto;
 }
 .vi3{
 	width: 100%;
 	height: 519px;
 	background: #000;
-	display: inline-block;
+	display: block;
 }
 .vi3 video{
 	width: 100%;
@@ -1976,6 +2113,12 @@ ul.slides li iframe{
 .flecha1{display: block; margin: 0 auto;}
 	.flecha2{display: none;}
 /*termina contact*/
+
+@media screen and (max-width:1400px) {
+	span.donas{
+		display: none;
+	}
+}
 /* 1200px (Small Desktop, Netbook) */
 @media screen and (max-width:1280px) {
 	#logo{

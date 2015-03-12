@@ -320,7 +320,7 @@ html, body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: auto;
+	/*width: auto;*/ width: 106%;
 }
 #txt_evento{
 	z-index: 1000;
@@ -366,6 +366,28 @@ position: inherit;
 	}
 	.lightbox .usuario #txt_evento nav{
 		margin: 20px 0 0 20px;
+		width: 45%;
+	}
+	.lightbox .usuario #txt_evento nav ul{
+		text-align: left;
+	}
+	.lightbox .usuario #txt_evento nav ul p{
+		width: auto;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-left: 4px;
+		font-size: 1.2em;
+
+	}
+	.lightbox .usuario #txt_evento nav ul a li{
+		width: 38px;
+		height: 38px;
+		font-size: 1.3em;
+		line-height: 37px
+	}
+	.lightbox .usuario #txt_evento nav ul a li:hover{
+		color: #bfda3f;
+		border-color: #bfda3f;
 	}
 	.lightbox .usuario>#txt_evento li, .lightbox .usuario>#txt_evento ul p{
 		color: #fff;
@@ -444,6 +466,10 @@ position: inherit;
 			font-family: helvetica;
 			color: #000;
 			margin-bottom: 45px;
+
+		}
+		.lightbox .datos .caudat{
+			width: 100%;
 		}
 	.lightbox .datos>.caudat{
 		margin-top: 19px !important;

@@ -127,6 +127,22 @@ background: #fff;
 	width: 100% !important;
 	top:86% !important;
 }
+.content-1>#meta #barra{
+	border: solid 1px #000;
+	background: url("../images/back-barra2.png");
+}
+.content-1>#meta #cantidad h1{
+	top: 0;
+}
+.content-1>#meta #cantidad h2{
+	margin: 14px 0 0 0;
+	font-weight: bold;
+}
+.content-1>#meta p{
+	color: #000 !important;
+	font-weight: bolder;
+	font-size: 0.78em;
+}
 .content div {
     position: absolute;
 	top: 0;
