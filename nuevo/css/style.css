@@ -112,7 +112,7 @@
 		color: #FFF;
 		text-align: center;	
 		font-weight: medium;
-		height: 60px;
+		height: 62px;
 		display: inline-block;
 		width: 100%;
 		line-height: 60px;
@@ -480,6 +480,7 @@ span.donas{
 	color: #7e7e7e;
 	font-size: 1em;	
 	padding: 0 190px 0 0;
+	line-height: 17pt;
 }
 #titulo_img{
 	text-align: right;
@@ -547,6 +548,7 @@ span.donas{
 	font-size: 1em;
 	font-weight: lighter;
 	line-height: 1.3em;
+	line-height: 17pt;
 }
 .txt_int a{
 	line-height: 3em;
@@ -586,14 +588,16 @@ span.donas{
 	color: #AAA;
 }
 #barra{
-	border: solid 1px #AAA;
+	border: solid 1px #fff;
 	border-radius: 5px;
-	display: inline-block;
+	float: left;
 	height: 30px;
 	position: relative;
-	margin: 10px 0 0 0;
+	margin: 7px 0 0 0;
 	padding: 3px;
 	width: 65%;
+	background: url("../images/back-barra.png")repeat-x;
+	background-position-y: 50%;
 }
 #barra p{
 	color:#FFF;
@@ -612,16 +616,35 @@ progress[value]::-webkit-progress-bar {
   opacity: 0.8;
   height: 22px;
   border-radius: 3px;
+  height: 20px;
 }
 progress[value]::-webkit-progress-value{
 	background: #beda3e;
 	border-radius: 3px 0 0 3px;
+}
+progress[value]::-moz-progress-bar {
+  background-color: #beda3e;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  width: 310px;
+  opacity: 0.8;
+  height: 22px;
+  border-radius: 3px;
+  height: 17px;
+}
+progress[value]::-moz-progress-bar > span{
+	background-color: transparent;
+	border-radius: 3px 0 0 3px;
+	height: 17px;
 }
  .progress-bar {
   width: 100%;
   height: 20px;
   position: relative;
   display: block;
+  background: transparent;
+  margin: 0;
+  padding: 0;
 }
 .progress-bar > span {
   background: #beda3e;
@@ -629,6 +652,7 @@ progress[value]::-webkit-progress-value{
   display: block;
   text-indent: -9999px;
   opacity: 0.8;
+  height: 17px;
 }
 #relleno{
 	background: #beda3e;
@@ -638,19 +662,29 @@ progress[value]::-webkit-progress-value{
 	opacity: .8;
 	width: 60%;
 }
+span.esquina{
+	width: 71px;
+	height: 70px;
+	position: absolute;
+	background: url("../images/esquina.png");
+	right: 0;
+	bottom: 0;
+}
 #cantidad{
 	display: inline-block;
 	width: 30%;
-	position: relative; height: 45px;
+	position: relative; height: 42px;
+	margin-left: 8px;
+	margin-top: 2px;
 }
 #cantidad h1{
 	background: none;
 	color:#beda3e;
-	font-size: 1em;
-	font-weight: lighter;
+	font-size: 0.9em;
+	font-weight: bolder;
 	padding: 0 0 0 2px;
 	position: absolute;
-	top: -11px;
+	top: -8px;
 }
 #cantidad h2{
 	color: #FFF;
@@ -855,7 +889,7 @@ width: 100%;
 	color: #a3a3a3;
 	width: 60%;
 	margin: 0 auto;
-	line-height: 29px;
+	line-height: 20pt;
 }
 #ultimos_dona span{
 	color: #beda3e;
@@ -1050,7 +1084,7 @@ width: 100%;
 	text-align: left;
 }
 #titulo_fca{
-	margin: 60px 0;
+	margin: 0 0 25px 0;
 	text-align: center;
 }
 #titulo_fca span{
