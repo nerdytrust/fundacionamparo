@@ -1,19 +1,19 @@
 		$(function(){
 		    $("#voluntario_sec, #fca-v").click(function(){
-		        $("#naranja1").show("slow");
+		        $("#naranja1").slideToggle("slow");
 		    });
 
 		    $("#donativo, #btn_dona, #donador_sec, #btn_donar2, #fca-d").click(function(){
 		        $("#verde1").slideToggle("slow");
 		    });
 		    $("#impulsor_sec, #fca-i").click(function(){
-		        $("#azul1").show("slow");
+		        $("#azul1").slideToggle("slow");
 		    });
 		    $(".txt_int").click(function(){
-		        $("#blanco1").show("slow");
+		        $("#blanco1").slideToggle("slow");
 		    });
 		    $(".caja_fca_usu, #txt_noticia h3, #txt_evento").click(function(){
-		        $(".lightbox").show("slow");
+		        $(".lightbox").slideToggle("slow");
 		    });
 		});
 
