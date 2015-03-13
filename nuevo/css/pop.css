@@ -3,7 +3,7 @@ html, body {
 	height: 100%; 
 	width: 100%; 
 	margin: 0;
-	font-family: 'helvetica', sans-serif;}
+}
 /*lightbox home*/
 		.lightbox-h{
 			width: 100%;
@@ -462,11 +462,10 @@ position: inherit;
 			height: 197px;
 			display: block;
 			margin: 0 auto;
-			overflow-y: auto;
+			/*overflow-y: auto;*/
 			font-family: helvetica;
 			color: #000;
 			margin-bottom: 45px;
-
 		}
 		.lightbox .datos .caudat{
 			width: 100%;
@@ -622,6 +621,29 @@ position: inherit;
 	.datos figure:nth-child(3) figcaption{
 			color: #fd9f20;
 		}
+		/*custom scroll*/
+		.force-overflow{
+					height: 800px;
+				}
+				.scrollbar{
+					overflow-y: scroll;
+				}
+				#style-scroll::-webkit-scrollbar-track
+				{/*este en el riel del scoll*/
+					-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+					background-color: #F5F5F5;
+				}
+				#style-scroll::-webkit-scrollbar
+				{/*este en el ancho del el scroll*/
+					width: 5px;
+					
+				}
+				#style-scroll::-webkit-scrollbar-thumb
+				{
+					background-color: black;
+					border-radius: 15px;
+				}
+		/*termina custom scroll*/
 		/*termina lightbox usuarios desktop*/
 		@media screen and (max-width: 1400px){
 			.datos .fig{

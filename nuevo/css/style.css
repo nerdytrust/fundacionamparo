@@ -1,3 +1,13 @@
+@font-face{
+	font-family: helveticaNeue;
+	src: url(../fonts/helvetica-neue-bold.woff);
+}
+body{
+	font-size: 1em;
+	/*font-family: 'helvetica', sans-serif;*/
+	font-family: helveticaNeue;
+}
+
 *, *:after, *:before{
 	border: 0;
 	-ms-box-sizing:border-box;
@@ -32,14 +42,25 @@
 		width: 33.33% !important;
 		display: inline-block;
 	}
-	.caja_2:hover{
+	/*.caja_2:hover{
 		opacity: 0.7;
 	}
+	*/
 	.txt_int{
-		bottom: -165px !important;
+	bottom: -165px;
+	height: 131%;
+	position: absolute;
+	top: auto;
+	width: 100%;
+	padding: 84% 20px 20px 20px;
+	opacity: 1;
+	transition:bottom 2s, background 2s;
+	background: url("../images/back-t1.png")repeat;
+	cursor: pointer;
 	}
 	.txt_int:hover{
 		bottom: 0 !important;
+		background: url("../images/back-t.png")repeat;
 	}
 	.caja_2 img{
 		width: 100%; height: 100%;
@@ -137,10 +158,7 @@ a{
 	color: #FFF;	
 	text-decoration: none;
 }
-body{
-	font-size: 1em;
-	font-family: 'helvetica', sans-serif;
-}
+
 button{
 	padding: .6em 1em;
 	border: 2px solid #beda3e;
@@ -324,6 +342,7 @@ span.donas{
 	color: #fff;
 	margin-right: 25px;
 	vertical-align: middle;
+	font-size: 0.9em;
 	}
 	.dona:last-child{
 		margin-right: 0;
@@ -495,7 +514,7 @@ font-size: 1em !important;
 	font-size: 2em;
 	letter-spacing: -1px;
 	line-height: 2.3em;
-	font-weight: bold;
+	
 }
 #titulo_txt h3{
 	font-size: 1em;
@@ -541,7 +560,7 @@ font-size: 1em !important;
 	height: 25px;
 	line-height: 20px !important;
 }
-.txt_int, .txt_fca, .bull_color{
+.txt_fca, .bull_color{
 	bottom: 0;
 	height: 50%;
 	position: absolute;
@@ -754,10 +773,11 @@ span.esquina{
 #social_top{
 	display: block;
 	position: absolute;
-	padding: 20px;
+	padding: 20px 20px 0px 20px;;
 	text-align: left;
 	top:8px;
 	width: 100%;
+	z-index: 1000;
 }
 #social_top li{
 	color: #FFF;
@@ -1751,7 +1771,7 @@ label.contact textarea{
 	margin-bottom: 3%;
 	padding-top: 3%;
 	resize: none;
-	font-family: helvetica;
+	/*font-family: helvetica;*/
 	font-size: 1em;
 }
 label.contact button{
@@ -1958,7 +1978,7 @@ ul.pasos li:nth-of-type(3)>span select{
 ul.pasos li:nth-of-type(3) textarea{
 	width: 100%;
 	height: 245px;
-	font-family: helvetica;
+	/*font-family: helvetica;*/
 	color: #7f7f7f;
 }
 ul.pasos li:nth-of-type(3) input[type="checkbox"]{
