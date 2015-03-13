@@ -536,6 +536,9 @@ font-size: 1em !important;
 }
 #titulo_img{
 	text-align: right;
+	  position: absolute;
+  right: 40px;
+  bottom: 40px;
 }
 #video{
 	display: inline-block;

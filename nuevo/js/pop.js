@@ -4,7 +4,7 @@
 		    });
 
 		    $("#donativo, #btn_dona, #donador_sec, #btn_donar2, #fca-d").click(function(){
-		        $("#verde1").show("slow");
+		        $("#verde1").slideToggle("slow");
 		    });
 		    $("#impulsor_sec, #fca-i").click(function(){
 		        $("#azul1").show("slow");
