@@ -262,7 +262,8 @@ html, body {
 		opacity: 0.9;*/
 	}
 	.i{
-		background: url("../images/back-li4.png") !important;; 
+		background: url("../images/back-li4.png") !important;
+		/*background: #4f99d9;*/
 	}
 	.donar{
 		min-width: 283px;	
@@ -272,8 +273,8 @@ html, body {
 	.imp{
 		width: 295px;
 		min-height: 600px;
-		background: #0499D8;
-		box-shadow: 2px 2px 70px 50px #0499D8;
+		/*background: #0499D8;*/background: #519bdb;
+		box-shadow: 2px 2px 70px 50px #519bdb;
 	}	
 	.imp p{
 		margin: 3% auto 7% auto;

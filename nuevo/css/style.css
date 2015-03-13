@@ -19,14 +19,14 @@ body{
 }
 /**/
 	#Contenedor{
-		padding: 137px 0 0 0;
+		padding: 136px 0 0 0;
 	}
 	#titulo_txt{
 	background: #000;
 	color: #FFF;
 	/*display: inline-block;*/
 	width: 33%;
-	padding: 45px 25px 30px 25px;
+	padding: 45px 40px 30px 25px;
 	height: 519px;
 	vertical-align: top;
 	}
@@ -48,11 +48,12 @@ body{
 	*/
 	.txt_int{
 	bottom: -165px;
-	height: 131%;
+	/*height: 131%;*/
+	height: 680px;
 	position: absolute;
 	top: auto;
 	width: 100%;
-	padding: 84% 20px 20px 20px;
+	padding: 440px 20px 20px 20px;
 	opacity: 1;
 	transition:bottom 2s, background 2s;
 	background: url("../images/back-t1.png")repeat;
@@ -306,7 +307,7 @@ article.animacion:hover img{
 #logo h1{
 	display: inline-block;
 	color: #FFF;	
-	font-size: 1em;
+	font-size: 1.1em;
 	font-weight: normal;
 	vertical-align: middle;
 }
@@ -487,15 +488,20 @@ font-size: 1em !important;
 #conteo_donadores button:focus{
 	outline:0; 
 }
-#int_contado, #int_busc{
-	display: inline-block;
-	width: 49%;
-}
+
 #int_contado{
 	text-align: left;
+	display: inline-block;
+	width: 59%;
+}
+#int_contado img{
+	margin-top: -6px;
+  margin-left: 16px;
 }
 #int_busc{
 	text-align: right;
+	display: inline-block;
+	width: 40%;
 }
 #conteo_donadores ::-webkit-input-placeholder { font-size:1em;letter-spacing: -1px; color: #7b7b7b;}
 #conteo_donadores :-moz-placeholder { font-size:1em;letter-spacing: -1px;color: #7b7b7b; }
@@ -513,8 +519,7 @@ font-size: 1em !important;
 	color: #beda3e;
 	font-size: 2em;
 	letter-spacing: -1px;
-	line-height: 2.3em;
-	
+	line-height: 2em;
 }
 #titulo_txt h3{
 	font-size: 1em;
@@ -816,6 +821,14 @@ span.esquina{
 	height: 125px;
 	padding-top: 42px;
 	width: 125px;
+	color: #fff;
+	text-align: center;
+	transition: background 1s ease, color 1s ease;
+	-webkit-transition: background 1s ease, color 1s ease;
+}
+#donativo:hover{
+	background: #fff;
+	color: #000;
 }
 #donativo p{
 	color: #FFF;
@@ -824,6 +837,7 @@ span.esquina{
 	text-align: center;
 	font-weight: lighter;
 }
+
 .colorin{
 	color: #BEDA4D !important;
 }
