@@ -91,10 +91,10 @@ The default control bar that is a container for most of the controls.
 }
 /* Show the control bar only once the video has started playing */
 .vjs-default-skin.vjs-has-started .vjs-control-bar {
-  display: block;
+  display: none;
   /* Visibility needed to make sure things hide in older browsers too. */
 
-  visibility: hidden;
+  visibility: hidden !important;
   opacity: 1;
   /* transition */
   -webkit-transition: visibility 0.1s, opacity 0.1s;

@@ -1753,17 +1753,46 @@ padding-top: 12px;
 	left: 8%;
 	bottom: 4%;
 }
+.csa{
+	width: 100%;
+	min-height: 396px;
+	display: block;
+	background: #000;
+}
 #causa1{
-	background: url("../images/causa1.png") !important;
+	background: url("../images/causa1.png");
+	background-position-x: 50%;
+	background-size: cover;
+	opacity: 1;
+	-webkit-transition:opacity 1s;
+	transition: opacity 1s;
+}
+#causa1:hover, #causa2:hover, #causa3:hover, #causa4:hover{
+	opacity: 0.6;
 }
 #causa2{
-	background: url("../images/causa2.png") !important;
+	background: url("../images/causa2.png");
+	background-position-x: 50%;
+	background-size: cover;
+	opacity: 1;
+	-webkit-transition:opacity 1s;
+	transition: opacity 1s;
 }
 #causa3{
-	background: url("../images/causa3.png") !important;
+	background: url("../images/causa3.png");
+	background-position-x: 50%;
+	background-size: cover;
+	opacity: 1;
+	-webkit-transition:opacity 1s;
+	transition: opacity 1s;
 }
 #causa4{
 	background: #a44951 url("../images/causa4.png");
+	background-position-x: 50%;
+	background-size: cover;
+	opacity: 1;
+	-webkit-transition:opacity 1s;
+	transition: opacity 1s;
 }
 /*contact*/
 .text-contact{
@@ -2616,6 +2645,7 @@ ul.ben li:before{
 		background-size: 100% !important;
 	}
 	.como{
+		display: none;
 		width: 100%;
 		left: 0 !important;
 		height: auto;
@@ -2700,6 +2730,9 @@ ul.ben li:before{
 		width: 87.5%;
 	}
 	.caja_fca_usu{
+		width: 100%;
+	}
+	.caja_fca_usu img{
 		width: 100%;
 	}
 	span.donas{
@@ -2818,6 +2851,9 @@ ul.ben li:before{
 	.txt_int:hover{
 		bottom: 0 !important;
 		background: url("../images/back-t.png")repeat;
+	}
+	#causa1, #causa2, #causa3, #causa4{
+		background-size: 100% !important;
 	}
 	
 
