@@ -94,7 +94,7 @@ The default control bar that is a container for most of the controls.
   display: block;
   /* Visibility needed to make sure things hide in older browsers too. */
 
-  visibility: visible;
+  visibility: hidden;
   opacity: 1;
   /* transition */
   -webkit-transition: visibility 0.1s, opacity 0.1s;

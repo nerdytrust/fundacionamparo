@@ -2,6 +2,10 @@
 	font-family: helveticaNeue;
 	src: url(../fonts/helvetica-neue-bold.woff);
 }
+html, body { 
+	height: 100%; 
+	width: 100%;
+	}
 body{
 	font-size: 1em;
 	/*font-family: 'helvetica', sans-serif;*/
@@ -2195,13 +2199,59 @@ ul.ben li:before{
 	background: #000;
 	height: 519px !important;
 }
+
 .flecha1{display: block; margin: 0 auto;}
 	.flecha2{display: none;}
 /*termina contact*/
+@media screen and (min-width: 768px) and (max-width:1024px ){
+	.txt_int{
+  padding: 453px 7px 5px 7px;
+	}
+	.txt_int h2 {
+  line-height: 7px;
+  margin-top: 7px;
+  font-size: 0.9em;
+}
 
+#social_top{
+	padding: 5px;
+}
+#social_top ul{
+	width: auto;
+}
+.txt_int p{
+	font-size: 0.8em;
+}
+#cantidad h2{
+	font-size: 1em;
+}
+#donativo {
+  height: 80px !Important;
+  padding-top: 25px !Important;
+  width: 80px !Important;
+  float: right;
+  font-size: 0.8em;
+}
+#cja_donativos{
+		height: auto;
+	}
+
+
+ 
+}
 @media screen and (max-width:1400px) {
 	span.donas{
 		display: none;
+	}
+	.caja_2{
+		height: auto;
+	}
+	#donativo {
+	  border-radius: 50%;
+	  display: inline-block;
+	  height: 100px;
+	  padding-top: 29px;
+	  width: 100px;
 	}
 }
 /* 1200px (Small Desktop, Netbook) */
@@ -2321,7 +2371,7 @@ ul.ben li:before{
   	}
   	/*mios*/
   	.txt_int h2{line-height: 20px; margin-top: 7px;}
-  	.txt_int{padding: 0px 20px 0px 20px;}
+  	
   	#cantidad{vertical-align: top;}
   	#cantidad h2{margin-top: 20px;}
   	#conteo_donadores input{padding: 0.5em;}
@@ -2354,8 +2404,9 @@ ul.ben li:before{
 		/*padding-left:0px !important;con numeros 4digitos*/
 	}
 	#Contenedor {
-	padding: 103px 0 0 0;
+	padding: 102px 0 0 0;
 	}
+
 
 }
 /* 768px */
@@ -2369,19 +2420,37 @@ ul.ben li:before{
 	#titulo_txt p{
 		padding: 0;
 	}
+	.caja_2{
+		height: auto;
+		width: 100% !important;
+	}
 	#btn_donar2 h1{
 		font-size: 1.8em;
 	}
 	#social_top ul{
-		width: 100%;
+		margin-top: 4%;
 	}
 	#social_top{
 		text-align: center;
+		
 	}
 	.txt_int{
-		top: 42%;
-		height: auto;
+	bottom: 0px;
+	height: auto;
+	position: absolute;
+	top: auto;
+	width: 100%;
+	padding: 20px 20px 20px 20px;
+	opacity: 1;
+	transition:bottom 2s, background 2s;
+	background: url("../images/back-t.png")repeat;
+	cursor: pointer;
 	}
+	.txt_int:hover{
+		bottom: 0 !important;
+		background: url("../images/back-t.png")repeat;
+	}
+	
 	.txt_int p{
 		height: 21%;
 		overflow: hidden;
@@ -2464,6 +2533,10 @@ ul.ben li:before{
 		background: red !important;
 		display: none;
 	}
+	#cja_donativos{
+		height: auto;
+	}
+
 
 }	
 
@@ -2486,10 +2559,27 @@ ul.ben li:before{
 			padding: 4% 0;
 		}
 		.txt_int{
-			top: 35%;
-		}
+			bottom: 0;
+			  height: auto;
+			  position: absolute;
+			  top: auto;
+			  width: 100%;
+			  padding: 20px 20px 20px 20px;
+			  opacity: 1;
+			  transition: bottom 2s, background 2s;
+			  background: url("../images/back-t.png")repeat;
+			  cursor: pointer;
+			}
+			.txt_int:hover{
+				bottom: 0 !important;
+				background: url("../images/back-t.png")repeat;
+			}
+
 		.txt_int p{
 			display: none;
+		}
+		#meta{
+			display:  none;
 		}
 		.for_ayuda{
 			width: 100% !important;
@@ -2631,7 +2721,7 @@ ul.ben li:before{
 	}
 	.pasos_txt, .division{
 		display: block;
-		margin: 50px 0;
+		margin: 50px auto;
 		width: 100%;
 	}
 	.social_mask{
@@ -2639,6 +2729,7 @@ ul.ben li:before{
 	}
 	#titulo_txt, #video, #btn_donar2{
 		width: 100%;
+		height: auto;
 	}
 	.caja_1,.caja_2{
 		width: 100% !important; 
@@ -2666,6 +2757,10 @@ ul.ben li:before{
 		width: 80px;
 		height: 80px;
 		padding-top: 27px;
+		font-size: 0.8em;
+	}
+	#titulo_img{
+		display: none;
 	}
 	#donativo p{
 		font-size: 0.8em;
@@ -2695,7 +2790,9 @@ ul.ben li:before{
 		text-align: left;
 		width: auto !important;
 	}
-
+.txt_int h2{
+		font-size: 1em !important;
+	}
 }
 /* 320px (iPhone) */
 @media screen and (max-width:320px) {
@@ -2714,8 +2811,19 @@ ul.ben li:before{
 	#nav_int{
 	padding: 35px;
 	}
+	.txt_int{
+	
+	padding: 10px;
+	}
+	.txt_int:hover{
+		bottom: 0 !important;
+		background: url("../images/back-t.png")repeat;
+	}
+	
 
 }
+
+
 .vi video .safari-video{
 	display: none;
 }
