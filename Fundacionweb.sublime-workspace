@@ -4,32 +4,56 @@
 		"selected_items":
 		[
 			[
-				"back",
-				"back-t"
+				"be",
+				"before"
 			],
 			[
-				"pa",
-				"padding-top"
+				"border",
+				"border-radius"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"back",
+				"background-size"
 			],
 			[
 				"mar",
-				"margin"
+				"margin-top"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"ho",
+				"hover"
+			],
+			[
+				"font",
+				"font-size"
 			],
 			[
 				"fon",
 				"font-weight"
-			],
-			[
-				"font",
-				"font-weight"
-			],
-			[
-				"text",
-				"text-transform"
-			],
-			[
-				"min",
-				"min-height"
 			],
 			[
 				"ligh",
@@ -48,10 +72,6 @@
 				"input-v"
 			],
 			[
-				"max",
-				"max-width"
-			],
-			[
 				"m",
 				"important	!important"
 			],
@@ -64,20 +84,12 @@
 				"content-1"
 			],
 			[
-				"border",
-				"border-radius"
-			],
-			[
 				"datos",
 				"datos-inf"
 			],
 			[
 				"inpu",
 				"webkit-input-placeholder"
-			],
-			[
-				"ba",
-				"background"
 			],
 			[
 				"bor",
@@ -255,7 +267,7 @@
 			"file": "nuevo/css/style.css",
 			"settings":
 			{
-				"buffer_size": 45479,
+				"buffer_size": 51029,
 				"line_ending": "Unix"
 			}
 		},
@@ -263,24 +275,40 @@
 			"file": "nuevo/index.html",
 			"settings":
 			{
-				"buffer_size": 20762,
+				"buffer_size": 20806,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "nuevo/fundacion_usuarios.html",
+			"file": "nuevo/js/script.js",
 			"settings":
 			{
-				"buffer_size": 13564,
+				"buffer_size": 341,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "nuevo/scroll.html",
+			"settings":
+			{
+				"buffer_size": 4345,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "nuevo/css/pop.css",
+			"file": "nuevo/fundacion_faqs.html",
 			"settings":
 			{
-				"buffer_size": 15864,
-				"line_ending": "Windows"
+				"buffer_size": 8017,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "nuevo/js/nav.js",
+			"settings":
+			{
+				"buffer_size": 686,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -320,19 +348,22 @@
 	},
 	"file_history":
 	[
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/scroll.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/nav.js",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/video/video-js.css",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_amparo_causas.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_como_ayudar.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/pop.css",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/pop.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_usuarios.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/scroll.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion02.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion01_a.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/tabs.css",
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/pop.css",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion01_b.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion01_d.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_contacto.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion01_c.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_apoyamos_causa.html",
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_amparo_causas.html",
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_como_ayudar.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/style.css",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/index.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_faqs.html",
@@ -347,7 +378,6 @@
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_muro-2.html",
 		"/C/Users/TheBeksor/Downloads/CSS_checkbox_full/demo2.html",
 		"/C/Users/TheBeksor/Downloads/CSS_checkbox_full/demo.html",
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/video/video-js.css",
 		"/C/xampp/htdocs/fundacion/webfundacion/index.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_amparo_causas-D.html",
 		"/C/Users/TheBeksor/Downloads/CSS3ContentTabs/index2.html",
@@ -360,11 +390,9 @@
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/froogaloop.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/jquery.flexslider.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/flexslider2.css",
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/pop.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_voluntarios.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_eventos.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_becas.html",
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/nav.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/js/nav.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/fundacion_amparo_causas.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/video/video.html",
@@ -466,6 +494,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"more",
+			"	\n",
+			"jquery",
+			"logo",
+			"0",
+			"640",
+			".txt_int:hover",
+			"768px",
+			"640px",
+			"768px",
+			";\n",
+			"<span class=\"mio\"></span>",
+			"video",
+			";*/\n",
+			"donativo",
+			"helvetica",
 			"causas",
 			"icon",
 			"content",
@@ -577,23 +621,7 @@
 			".re",
 			"re",
 			"dre",
-			"556",
-			"768",
-			"important",
-			"betosh",
-			".betosh",
-			"re",
-			"betoshR",
-			"betosh",
-			"donacion_wrap",
-			"section",
-			"bd",
-			"vd",
-			"coprimavera",
-			"mysql",
-			"data",
-			"database",
-			"sef"
+			"556"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -601,6 +629,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"<span class=\"mio\"><span id=\"name\">Gabriel Caballero<b>México, DF</b></span>",
 			"check-verde",
 			"icon_donadores-v.png",
 			"flexslider2",
@@ -619,7 +648,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -627,15 +656,19 @@
 					"file": "nuevo/css/style.css",
 					"settings":
 					{
-						"buffer_size": 45479,
+						"buffer_size": 51029,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7678,
-								7678
+								29868,
+								29868
+							],
+							[
+								30047,
+								30047
 							]
 						],
 						"settings":
@@ -644,7 +677,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 8356.0,
+						"translation.y": 32996.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -654,15 +687,15 @@
 					"file": "nuevo/index.html",
 					"settings":
 					{
-						"buffer_size": 20762,
+						"buffer_size": 20806,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7335,
-								7335
+								924,
+								924
 							]
 						],
 						"settings":
@@ -671,25 +704,77 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 870.0,
+						"translation.y": 380.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "nuevo/fundacion_usuarios.html",
+					"file": "nuevo/js/script.js",
 					"settings":
 					{
-						"buffer_size": 13564,
+						"buffer_size": 341,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10478,
-								10478
+								324,
+								330
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "nuevo/scroll.html",
+					"settings":
+					{
+						"buffer_size": 4345,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3696,
+								3582
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2264.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "nuevo/fundacion_faqs.html",
+					"settings":
+					{
+						"buffer_size": 8017,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2576,
+								2566
 							]
 						],
 						"settings":
@@ -698,34 +783,34 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 6038.0,
+						"translation.y": 1242.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "nuevo/css/pop.css",
+					"buffer": 5,
+					"file": "nuevo/js/nav.js",
 					"settings":
 					{
-						"buffer_size": 15864,
+						"buffer_size": 686,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12017,
-								12017
+								679,
+								679
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 11529.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -789,6 +874,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 248.0,
+	"side_bar_width": 349.0,
 	"status_bar_visible": true
 }

@@ -8,6 +8,9 @@
     font-family: neue;
     src: url(fonts/helvetica-neue-bold.woff);
 }
+body{
+	background: black;
+}
 #wrapper
 {
 	text-align: center;
@@ -46,7 +49,104 @@
 	background-color: black;
 	border-radius: 15px;
 }
+/**/
+#nav-toggle { position: absolute; right: 15px; top: 0; right: 0; cursor: pointer; margin: 0px; width: 40px; height: 40px; padding: 29px 0;}
+	#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after { 
+		cursor: pointer; border-radius: 1px; 
+		-moz-border-radius: 1px; 
+		-webkit-border-radius: 1px; 
+		-o-border-radius: 1px; 
+		height: 1.5px; width: 30px; 
+		background: #FFF; 
+		position: absolute; 
+		display: block; 
+		content: ''; }
+	#nav-toggle span:before { top: -7px; background: gold;}
+	#nav-toggle span:after { bottom: -7px; background: greenyellow;}
+	#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after { 
+		transition: all 500ms ease-in-out; 
+		-webkit-transition: all 500ms ease-in-out; 
+		-moz-transition: all 500ms ease-in-out; 
+		-o-transition: all 500ms ease-in-out; }
+	#nav-toggle:hover span { background-color: transparent; }
+	#nav-toggle:hover span:before, #nav-toggle.active span:after { top: 0; }
+	#nav-toggle:hover span:before { 
+		transform: rotate(45deg); 
+		-webkit-transform: translateY(-10px)rotate(45deg); 
+		-ms-transform: rotate(45deg); }
+	#nav-toggle:hover span:after { 
+		transform: translateY(-10px) rotate(-45deg); 
+		-webkit-transform: translateY(-10px) rotate(-45deg); 
+		-ms-transform: translateY(-10px) rotate(-45deg); 
+		top: 10px; }
+
+		/*mio*/
+		.more{
+			width: 40px;
+			height: 40px;
+			background: #000;
+			position: absolute;left: 50%; top: 70%;
+			border-radius: 50%;
+			border:2px solid #BEDA4D;
+			cursor: pointer;
+		}
+		.more span{
+			width: 30px;
+			height: 1.5px;
+			background: #BEDA4D;
+			position: absolute;top: 50%; left: 13%;
+			transition:all 500ms ease-in-out;
+			-webkit-transition:all 500ms ease-in-out;
+			-moz-transition:all 500ms ease-in-out;
+			-o-transition:all 500ms ease-in-out;
+		}
+		.more span:before{
+			width: 30px;
+			height: 1.5px;
+			background: #BEDA4D;
+			position: absolute;
+			top: 0%; left: 0%;
+			transform:rotate(90deg);
+			-webkit-transform:rotate(90deg);
+			-moz-transform:rotate(90deg);
+			-o-transform:rotate(90deg);
+			content: '';
+			-webkit-transition:all 500ms ease-in-out;
+			transition:all 500ms ease-in-out;
+			-moz-transition:all 500ms ease-in-out;
+			-o-transition:all 500ms ease-in-out;
+		}
+		.more:hover span:before{
+			transform:rotate(0deg);
+			-webkit-transform:rotate(0deg);
+			-moz-transform:rotate(0deg);
+			-o-transform:rotate(0deg);
+			background: #BEDA4D;
+		}
+		.more:hover span{
+			transform:rotate(0deg);
+			-webkit-transform:rotate(0deg);
+			-moz-transform:rotate(0deg);
+			-o-transform:rotate(0deg);
+			background: transparent;
+		}
 	</style>
+	<script>
+	$(window).load(function() {
+
+	$('.nav_slide_button').click(function() {
+		$('.pull').slideToggle();
+	});
+	
+});
+
+/***************** Nav Transformicon ******************/
+
+document.querySelector("#nav-toggle").addEventListener("click", function() {
+	this.classList.toggle("active");
+});
+
+	</script>
 </head>
 <body>
 	<div id="wrapper">
@@ -56,5 +156,15 @@
       </div>
     </div>
     </div>
+
+       <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+
+       <div class="more">
+       	<span></span>
+       </div>
+         
+		
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </body>
 </html>
