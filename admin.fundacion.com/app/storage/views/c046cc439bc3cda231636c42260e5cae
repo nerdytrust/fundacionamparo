@@ -1,0 +1,47 @@
+
+
+<div class="padding-top-lg">
+
+	<div class="combo-msg"></div>
+
+	<form role="form">
+		<div class="form-group">
+			<select name="" id="" equired="required" class="form-control combo">
+				<option value="" selected="selected">Choose a Module...</option>
+				<?php foreach($permission->combo->get() as $combo): ?>
+
+					<option value="<?php echo $combo->id_permissions; ?>"><?php echo $combo->name; ?></option>
+				<?php endforeach; ?>	
+			</select>
+
+
+
+
+		</div>
+	</form>
+
+	<div class="table-responsive combo-table hidden">
+	  <table class="table table-striped">
+	  	<thead>
+		  	<tr>
+		  		<th>Action</th>
+		  		<th>Role Deny</th>
+		  		<th>User Deny</th>
+		  	</tr>
+	  	</thead>
+	  	<tbody>
+	  		
+			
+				<?php foreach($permission->user as $index => $user): ?>
+				<tr opt-id-parent="<?php echo $user["id_parent_permissions"]; ?>" class="hidden">	
+					<td><?php echo $user["display_name"]; ?></td>
+					<td>  <input readonly class="switch" type="checkbox" <?php if($permission->role[$index]["deny"]): ?> checked <?php endif; ?> ></td>
+					<td>  <input class="switch" type="checkbox" opt-id-permissions-users="<?php echo $user["id_permissions_users"]; ?>"  opt-id-permissions="<?php echo $user["id_permissions"]; ?>" opt-id-users="<?php echo $key_value; ?>" <?php if($user["deny"] == "True"): ?> checked  <?php elseif($user["deny"] == "False"): ?>  <?php elseif(is_numeric($permission->role[$index]["id_permissions_roles"])): ?> checked <?php endif; ?> ></td>
+				</tr>	
+				<?php endforeach; ?>
+
+		  	
+		</tbody>  	
+	  </table>
+	</div>
+</div>

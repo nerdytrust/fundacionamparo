@@ -1,0 +1,9 @@
+
+<div class="form-group @if ($errors->has('$name')) has-error @endif">
+
+ {{ Form::label("$kind", "$label") }}
+   
+      $input
+    
+ <span class="help-block">{{ $errors->first('$name') }}</span>
+</div>

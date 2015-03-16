@@ -1,0 +1,101 @@
+<?php $__env->startSection("form"); ?>
+
+
+
+<div class="form-group <?php if($errors->has('first_name')): ?> has-error <?php endif; ?>">
+
+ <?php echo Form::label("text", "First name"); ?>
+
+   
+      <input class="form-control" placeholder="First name" required="1" name="first_name" type="text" value="<?php echo $record->first_name; ?>" autocomplete="off">
+    
+ <span class="help-block"><?php echo $errors->first('first_name'); ?></span>
+</div>
+
+<div class="form-group <?php if($errors->has('last_name')): ?> has-error <?php endif; ?>">
+
+ <?php echo Form::label("text", "Last name"); ?>
+
+   
+      <input class="form-control" placeholder="Last name" required="1" name="last_name" type="text" value="<?php echo $record->last_name; ?>" autocomplete="off">
+    
+ <span class="help-block"><?php echo $errors->first('last_name'); ?></span>
+</div>
+
+<div class="form-group <?php if($errors->has('sex')): ?> has-error <?php endif; ?>">
+
+ <?php echo Form::label("select", "Sex"); ?>
+
+   
+      <select class="form-control" name="sex"></select>
+    
+ <span class="help-block"><?php echo $errors->first('sex'); ?></span>
+</div>
+
+<div class="form-group <?php if($errors->has('email')): ?> has-error <?php endif; ?>">
+
+ <?php echo Form::label("email", "Email"); ?>
+
+   
+      <input class="form-control" placeholder="Email" required="1" name="email" type="email" value="<?php echo $record->email; ?>" autocomplete="off">
+    
+ <span class="help-block"><?php echo $errors->first('email'); ?></span>
+</div>
+
+<div class="form-group <?php if($errors->has('password')): ?> has-error <?php endif; ?>">
+
+ <?php echo Form::label("text", "Password"); ?>
+
+   
+      <input class="form-control" placeholder="Password" required="1" name="password" type="text" value="<?php echo $record->password; ?>" autocomplete="off">
+    
+ <span class="help-block"><?php echo $errors->first('password'); ?></span>
+</div>
+
+<div class="form-group <?php if($errors->has('last_ip')): ?> has-error <?php endif; ?>">
+
+ <?php echo Form::label("text", "Last ip"); ?>
+
+   
+      <input class="form-control" placeholder="Last ip" required="" name="last_ip" type="text" value="<?php echo $record->last_ip; ?>" autocomplete="off">
+    
+ <span class="help-block"><?php echo $errors->first('last_ip'); ?></span>
+</div>
+
+<div class="form-group <?php if($errors->has('ip_mask')): ?> has-error <?php endif; ?>">
+
+ <?php echo Form::label("text", "Ip mask"); ?>
+
+   
+      <input class="form-control" placeholder="Ip mask" required="" name="ip_mask" type="text" value="<?php echo $record->ip_mask; ?>" autocomplete="off">
+    
+ <span class="help-block"><?php echo $errors->first('ip_mask'); ?></span>
+</div>
+
+<div class="form-group <?php if($errors->has('status')): ?> has-error <?php endif; ?>">
+
+ <?php echo Form::label("select", "Status"); ?>
+
+   
+      <select class="form-control" name="status"></select>
+    
+ <span class="help-block"><?php echo $errors->first('status'); ?></span>
+</div>
+
+<div class="form-group <?php if($errors->has('id_roles')): ?> has-error <?php endif; ?>">
+
+ <?php echo Form::label("number", "Role"); ?>
+
+   
+      <input class="form-control" placeholder="Role" required="1" name="id_roles" type="number" value="<?php echo $record->id_roles; ?>" autocomplete="off">
+    
+ <span class="help-block"><?php echo $errors->first('id_roles'); ?></span>
+</div>
+
+     
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php echo $__env->make("crud.layout-form", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

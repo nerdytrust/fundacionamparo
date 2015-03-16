@@ -1,0 +1,10 @@
+<?php echo Form::open(array('url' => 'temp_view', 'method' => 'post')); ?>
+
+
+<input type="text" name="first">
+<input type="text" name="second">
+
+<?php echo Form::submit("SEND", array('class' => 'btn btn-success')); ?>
+
+
+<?php echo Form::close(); ?>

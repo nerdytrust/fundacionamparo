@@ -1,0 +1,142 @@
+
+
+body 
+	position relative
+	padding-top 50px
+	color #666
+	overflow-x hidden
+	background-color #EEEEEE
+
+
+.white
+	background-color white
+
+.bottom
+	position absolute
+	bottom 0
+	width 100%
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.margin-top-xs
+	margin-top .2em
+
+
+
+@media (min-width $screen-lg-min)
+	.vertical-align {
+	    display: flex;
+	    align-items: center;
+	}
+
+@media (min-width $screen-lg-min)
+	.margin-left-xs 
+		margin-left ceil($line-height-computed / 4)  
+	.margin-left-sm 
+		margin-left ceil($line-height-computed / 2)
+	.margin-left-md 
+		margin-left $line-height-computed
+	.margin-left-lg 
+		margin-left ceil($line-height-computed * 2) 
+		
+@media (min-width $screen-lg-min)
+	.margin-right-xs 
+		margin-right ceil($line-height-computed / 4)  
+	.margin-right-sm 
+		margin-right ceil($line-height-computed / 2)
+	.margin-right-md 
+		margin-right $line-height-computed
+	.margin-right-lg 
+		margin-right ceil($line-height-computed * 2) 
+
+
+//PADDING
+
+@media (max-width $screen-xs-max)
+	.no-margin-xs
+		margin 0 !important
+	.no-padding-xs
+		padding 0 !important
+	.no-text-align
+		text-align inherit !important	
+
+.padding-xs 
+	padding ceil($line-height-computed / 4)  
+.padding-sm 
+	padding ceil($line-height-computed / 2)
+.padding-md 
+	padding $line-height-computed
+.padding-lg 
+	padding ceil($line-height-computed * 2) 
+
+
+.padding-top-xs 
+	padding-top ceil($line-height-computed / 4)  
+.padding-top-sm 
+	padding-top ceil($line-height-computed / 2)
+.padding-top-md 
+	padding-top $line-height-computed
+.padding-top-lg 
+	padding-top ceil($line-height-computed * 2) 
+
+
+
+.padding-bottom-xs 
+	padding-bottom ceil($line-height-computed / 4)  
+.padding-bottom-sm 
+	padding-bottom ceil($line-height-computed / 2)
+.padding-bottom-md 
+	padding-bottom $line-height-computed
+.padding-bottom-lg 
+	padding-bottom ceil($line-height-computed * 2)
+
+
+
+
+// MARGING
+
+.margin-top-xs 
+	margin-top ceil($line-height-computed / 4)  
+.margin-top-sm 
+	margin-top ceil($line-height-computed / 2)
+.margin-top-md 
+	margin-top $line-height-computed
+.margin-top-lg 
+	margin-top ceil($line-height-computed * 2) 
+
+
+
+.margin-bottom-xs 
+	margin-bottom ceil($line-height-computed / 4)  
+.margin-bottom-sm 
+	margin-bottom ceil($line-height-computed / 2)
+.margin-bottom-md 
+	margin-bottom $line-height-computed
+.margin-bottom-lg 
+	margin-bottom ceil($line-height-computed * 2) 
+
+
+.text-line
+	overflow: hidden;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+
+.no-margin
+	margin 0 !important
+
+.no-padding
+	padding 0 !important	 
+
+.no-bold
+	font-weight normal	
+
+.inline-block
+	display inline-block

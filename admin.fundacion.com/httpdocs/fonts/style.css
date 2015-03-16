@@ -1,0 +1,49 @@
+@font-face {
+	font-family: 'cube';
+	src:url('fonts/cube.eot?vbbbw1');
+	src:url('fonts/cube.eot?#iefixvbbbw1') format('embedded-opentype'),
+		url('fonts/cube.woff?vbbbw1') format('woff'),
+		url('fonts/cube.ttf?vbbbw1') format('truetype'),
+		url('fonts/cube.svg?vbbbw1#cube') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'cube';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-code:before {
+	content: "\e606";
+}
+.icon-clock:before {
+	content: "\e607";
+}
+.icon-square:before {
+	content: "\e600";
+}
+.icon-heart:before {
+	content: "\e601";
+}
+.icon-people:before {
+	content: "\e602";
+}
+.icon-twitter:before {
+	content: "\e605";
+}
+.icon-facebook:before {
+	content: "\e604";
+}
+.icon-youtube:before {
+	content: "\e603";
+}

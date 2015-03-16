@@ -1,0 +1,45 @@
+
+
+<div class="padding-top-lg">
+
+	<div class="combo-msg"></div>
+
+	<form role="form">
+		<div class="form-group">
+			<select name="" id="" equired="required" class="form-control combo">
+				<option value="" selected="selected">Choose a Module...</option>
+				<?php foreach($permission->combo->get() as $combo): ?>
+
+					<option value="<?php echo $combo->id_permissions; ?>"><?php echo $combo->name; ?></option>
+				<?php endforeach; ?>	
+			</select>
+
+
+
+
+		</div>
+	</form>
+
+	<div class="table-responsive combo-table hidden">
+	  <table class="table table-striped">
+	  	<thead>
+		  	<tr>
+		  		<th>Action</th>
+		  		<th>Deny</th>
+		  	</tr>
+	  	</thead>
+	  	<tbody>
+	  		
+			
+				<?php foreach($permission->groups->get() as $groups): ?>
+				<tr opt-id-parent="<?php echo $groups->id_parent_permissions; ?>" class="hidden">	
+					<td><?php echo $groups->display_name; ?></td>
+					<td>  <input class="switch" type="checkbox" opt-id-permissions-roles="<?php echo $groups->id_permissions_roles; ?>"  opt-id-permissions="<?php echo $groups->id_permissions; ?>" opt-id-roles="<?php echo $key_value; ?>" <?php if(is_numeric($groups->id_permissions_roles)): ?> checked <?php endif; ?> ></td>
+				</tr>	
+				<?php endforeach; ?>
+
+		  	
+		</tbody>  	
+	  </table>
+	</div>
+</div>

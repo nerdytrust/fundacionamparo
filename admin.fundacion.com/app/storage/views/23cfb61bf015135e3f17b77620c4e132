@@ -1,0 +1,185 @@
+<?php $__env->startSection("class"); ?>
+dashboard
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection("jumbotron"); ?>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection("content"); ?>
+
+
+<div class="row equal">
+	<div class="col-lg-4 col-md-4">
+		<div class="panel panel-primary">
+	      <div class="panel-heading">
+	        <h3 class="panel-title">Freight Manager</h3>
+	      </div>
+	      <div class="panel-body">
+
+			<ul>
+				<li>
+					Customers
+					<ul>
+						<li><?php echo HTML::link('pcustomer','Customers Manager'); ?></li>
+						<li>Points</li>
+						<ul>
+							<li><?php echo HTML::link('cmb_points','Points Manager'); ?></li>
+							<li><?php echo HTML::link('cmb_invitation','Customers Invitations'); ?></li>
+						</ul>
+						<li><?php echo HTML::link('cmb_crmtickets','Tickets'); ?></li>
+						<li><?php echo HTML::link('invoice','Invoices'); ?></li>
+						<li><?php echo HTML::link('payments','Payments'); ?></li>						
+						</ul>						
+				
+				</li>
+				<li>
+					Package Work Flow
+					<ul>
+						<li><?php echo HTML::link('tracking','Trackings'); ?></li>
+							<ul>
+								<li><?php echo HTML::link('cmb_nf_lost_items','Unidentified Items.'); ?></li>		
+							</ul>
+						<li><?php echo HTML::link('pobox','Warehouse Receipt'); ?></li>
+						<li><?php echo HTML::link('awb','AWB'); ?></li>
+						<li><?php echo HTML::link('manifest','Manifest'); ?></li>
+						<li>
+							Documents
+							<ul>
+								<li><?php echo HTML::link('mawb','Master AWB'); ?></li>
+								<li><?php echo HTML::link('certificate','Certificates'); ?></li>
+								<li><?php echo HTML::link('handover','HandOver'); ?></li>
+								<li><?php echo HTML::link('blading','Bill of Lading'); ?></li>
+							</ul>
+						</li>						
+						<li><?php echo HTML::link('delivery_reports','Delivery Report'); ?></li>
+					</ul>
+				</li>
+				<li>
+					Reports
+					<ul>
+						<li>TBD 1</li>
+						<li>TBD 2</li>
+						<li><?php echo HTML::link('reports','Custom Reports'); ?></li>
+					</ul>
+				</li>
+				<li>
+					Tools
+					<ul>
+						<li><?php echo HTML::link('rates','Rates'); ?></li>
+						<li><?php echo HTML::link('reports','Reports'); ?></li>
+						<li><?php echo HTML::link('tracking_carrier','Carriers'); ?></li>
+						<li>Shipping Calculator</li>
+					</ul>
+				</li>
+
+			</ul>
+
+	      </div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4">
+		<div class="panel panel-primary">
+	      <div class="panel-heading">
+	        <h3 class="panel-title">CRM</h3>
+	      </div>
+	      <div class="panel-body">
+
+			<ul>
+				<li>New Applications</li>
+				<li>
+					HelpDesk
+					<ul>
+						<li>Messages</li>
+					</ul>
+				</li>
+				<li>
+					Forms
+					<ul>
+						<li><?php echo HTML::link('cmb_nf_probshp','Problem Shipments'); ?></li>
+						<li><?php echo HTML::link('cmb_nf_shop','Shop America'); ?></li>
+						<li><?php echo HTML::link('cmb_nf_pickup','Pick Up Instructions'); ?></li>
+						<li><?php echo HTML::link('cmb_nf_claims','Claims'); ?></li>
+						<li><?php echo HTML::link('cmb_nf_shpinst','Shipping Instructions'); ?></li>
+						<li><?php echo HTML::link('cmb_nf_lost','Unidentifed Shipments'); ?></li>
+					</ul>
+				</li>
+				<li>Newsletter</li>
+				<li>Tutorials</li>
+
+			</ul>
+			<form target="_blank" class="form-inline" method="POST" action="customer/autologin">
+			  <div class="form-group">
+			    <label for="exampleInputName2">Customer Login</label>
+			    <input type="text" class="form-control" name="id" placeholder="" size="4">
+			  </div>
+			
+			  <button type="submit" class="btn btn-default">GO</button>
+			</form>
+
+	      </div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4">
+		<div class="panel panel-primary">
+	      <div class="panel-heading">
+	        <h3 class="panel-title">Administration</h3>
+	      </div>
+	      <div class="panel-body">
+
+			<ul>
+				<li>General</li>
+					<ul>
+						<li>Users Administration</li>
+						<ul>
+							<li><?php echo HTML::link('users','User manager'); ?></li>
+							<li><?php echo HTML::link('roles','Roles'); ?></li>
+							<li>Logs</li>
+					</ul>
+					<li>Setup</li>
+						<ul>
+							<li>Task manager (Cron)</li>
+							<li>Setup</li>
+					</ul>
+					<li>Agency</li>
+						<ul>
+							<li><?php echo HTML::link('agency','Agency manager'); ?></li>
+							<li><?php echo HTML::link('agency','Templates'); ?></li>
+					</ul>
+
+
+					</ul>
+				
+				<li>Web Site</li>
+				<ul>
+						<li><?php echo HTML::link('cms_pages','Content Manager'); ?></li>
+						<li><?php echo HTML::link('cms_images','Images Manager'); ?></li>
+						<li><?php echo HTML::link('cms_videos','Video Manager'); ?></li>
+						<li>Forms</li>
+					<ul>
+							<li><?php echo HTML::link('web_career','Career'); ?></li>
+							<li><?php echo HTML::link('web_contactus','Contact  Us'); ?></li>
+							<li><?php echo HTML::link('web_cmbaplication','CMB Application'); ?></li>
+							<li><?php echo HTML::link('web_shop','Shop America'); ?></li>
+							
+					</ul>	
+				</ul>	
+				<li>CMB Site</li>
+				<ul>
+						<li><?php echo HTML::link('cmb_cms','Content Manager'); ?></li>
+						<li><?php echo HTML::link('cms_images','Images Manager'); ?></li>
+						<li><?php echo HTML::link('cms_videos','Video Manager'); ?></li>
+				</ul>
+			</ul>
+
+	      </div>
+		</div>
+	</div>
+
+
+</div>
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("layout", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
