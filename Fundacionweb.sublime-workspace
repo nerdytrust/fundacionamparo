@@ -267,7 +267,7 @@
 			"file": "nuevo/css/style.css",
 			"settings":
 			{
-				"buffer_size": 51029,
+				"buffer_size": 51023,
 				"line_ending": "Unix"
 			}
 		},
@@ -299,7 +299,7 @@
 			"file": "nuevo/fundacion_faqs.html",
 			"settings":
 			{
-				"buffer_size": 8017,
+				"buffer_size": 8054,
 				"line_ending": "Unix"
 			}
 		},
@@ -307,7 +307,7 @@
 			"file": "nuevo/js/nav.js",
 			"settings":
 			{
-				"buffer_size": 686,
+				"buffer_size": 1024,
 				"line_ending": "Unix"
 			}
 		}
@@ -648,7 +648,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -656,19 +656,15 @@
 					"file": "nuevo/css/style.css",
 					"settings":
 					{
-						"buffer_size": 51029,
+						"buffer_size": 51023,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								29868,
-								29868
-							],
-							[
-								30047,
-								30047
+								42606,
+								42606
 							]
 						],
 						"settings":
@@ -677,7 +673,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 32996.0,
+						"translation.y": 46490.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -753,7 +749,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 2264.0,
@@ -766,15 +763,15 @@
 					"file": "nuevo/fundacion_faqs.html",
 					"settings":
 					{
-						"buffer_size": 8017,
+						"buffer_size": 8054,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2576,
-								2566
+								4917,
+								4917
 							]
 						],
 						"settings":
@@ -783,7 +780,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1242.0,
+						"translation.y": 2078.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -793,15 +790,15 @@
 					"file": "nuevo/js/nav.js",
 					"settings":
 					{
-						"buffer_size": 686,
+						"buffer_size": 1024,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								679,
-								679
+								775,
+								776
 							]
 						],
 						"settings":
