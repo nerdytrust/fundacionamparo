@@ -2323,10 +2323,13 @@ ul.ben li:before{
 .flecha1{display: block; margin: 0 auto;}
 	.flecha2{display: none;}
 /*termina contact*/
-@media screen and (min-width: 1600px){
+@media screen and (min-width: 1650px){
 	.caja_2{
 		height: auto;
-		
+	}
+	.txt_int{
+		height: 1004px;
+		padding: 762px 20px 20px 20px;
 	}
 }
 @media screen and (min-width: 768px) and (max-width:1024px ){
