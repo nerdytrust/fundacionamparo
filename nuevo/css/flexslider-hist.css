@@ -65,9 +65,9 @@ html[xmlns] .flexslider .slides {
  * ====================================================================================================================*/
 .flexslider {
   margin: 0px;
-  background: #000;
-  /*height: 662px;*/
-  height: 765px;
+  background: #fff;
+  height: 662px;
+  /*height: auto;*/
   border: 0px solid #fff;
   position: relative;
   zoom: 1;
@@ -226,12 +226,13 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
  /* min-width: 20px; con numeros 4digitos*/
   height: 16px;
   display: block;
-  background: url("../images/back-linea.png") no-repeat 2% 50%;
+  background: url("../images/back-linea2.png") no-repeat 2% 50%;
   cursor: pointer;
   /*text-indent: -9999px;*/
   text-align: center;
   text-align: right;
   padding-left: 17px;
+  color: #cbcbcb;
 /* padding-left: 25%;con numeros 4digitos*/
   /*border: 1px solid blue;*/
 }
@@ -248,7 +249,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   text-align: right;
   font-weight: bold;
   font-size: 1.5em;
-  content: "1954"
+  content: "";
+  color:#000;
 }
 .flex-control-thumbs {
   margin: 5px 0 0;

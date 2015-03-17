@@ -14,7 +14,6 @@
 	<link rel="stylesheet" href="css/pop.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/tabs.css">
-
 </head>
 <body>
 <div id="meenus">
@@ -83,10 +82,12 @@
 		</article>
 
 		<div class="vi ">
-		<video controls loop preload="auto" poster="images/video_int_historia.png" class="video-js vjs-default-skin" data-setup="{}">
-			<source src="video/video.mp4">
-		   <!--<source src="http://www.w3schools.com/html/movie.mp4">-->
-		</video>
+	<video controls loop preload="auto" poster="images/video_int_historia.png" class="video-js vjs-default-skin" data-setup="{}">
+		<source src="video/video.ogv" type='video/ogg; codecs="theora, vorbis"'/>
+		<source src="video/video.webm" type='video/webm' >
+		<source src="video/video.mp4" type='video/mp4'>
+		<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
+	</video>
 		</div>
 
 		<aside class="btns">
@@ -610,7 +611,14 @@ marca la diferencia para muchos.</p>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
-	<script src="js/pop.js"></script>	
+	<script src="js/pop.js"></script>
+	<script>
+	$(document).ready(function(){
+		$(".txt_int").hover(function(){
+			$("#barra progress").toggleClass("barramover");
+		});
+	});
+	</script>	
 </body>
 </html>
 

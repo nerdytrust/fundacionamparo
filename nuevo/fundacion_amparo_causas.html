@@ -90,7 +90,7 @@
 						<a href=""><li class="fa fa-heart"></li></a>
 						<p>96 likes</p>
 					</ul>
-					<div id="donativo"><p>HAZ TU DONACIÓN</p></div>
+					<div id="donativo">HAZ TU DONACIÓN</div>
 				</section>
 				<section class="txt_int">
 					<h1 onclick="location.href='fundacion07.html';">CENTROS COMUNITARIOS</h1>
@@ -100,7 +100,7 @@
 					<div id="meta">
 
 						<div id="barra">
-							<progress value="60" max="100"></progress>
+							<progress value="0" max="100"></progress>
 							<!--<span id="relleno"></span>-->
 						</div>
 					<div id="cantidad">
@@ -124,7 +124,7 @@
 						<a href=""><li class="fa fa-heart"></li></a>
 						<p>96 likes</p>
 					</ul>
-					<div id="donativo"><p>HAZ TU DONACIÓN</p></div>
+					<div id="donativo">HAZ TU DONACIÓN</div>
 				</section>
 
 	 			<section class="txt_int">
@@ -135,7 +135,7 @@
 					<div id="meta">
 
 						<div id="barra">
-							<progress value="60" max="100"></progress>
+							<progress value="0" max="100"></progress>
 							<!--<span id="relleno"></span>-->
 						</div>
 					<div id="cantidad">
@@ -159,7 +159,7 @@
 						<a href=""><li class="fa fa-heart"></li></a>
 						<p>96 likes</p>
 					</ul>
-					<div id="donativo"><p>HAZ TU DONACIÓN</p></div>
+					<div id="donativo">HAZ TU DONACIÓN</div>
 				</section>
 
 	 				<section class="txt_int">
@@ -170,7 +170,7 @@
 					<div id="meta">
 
 						<div id="barra">
-							<progress value="60" max="100"></progress>
+							<progress value="0" max="100"></progress>
 							<!--<span id="relleno"></span>-->
 						</div>
 					<div id="cantidad">
@@ -338,7 +338,7 @@ detalladamente para determinar una respuesta </p>
 							</div>
 							<div id="meta" class="caum">
 						<div id="barra">
-							<progress value="60" max="100"></progress>
+							<progress value="0" max="100"></progress>
 							<!--<span id="relleno"></span>-->
 						</div>
 					<div id="cantidad">
@@ -447,6 +447,13 @@ marca la diferencia para muchos.</p>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/pop.js"></script>
+	<script>
+	$(document).ready(function(){
+		$(".txt_int").hover(function(){
+			$("#barra progress").toggleClass("barramover");
+		});
+	});
+	</script>	
 	
 </body>
 </html>
