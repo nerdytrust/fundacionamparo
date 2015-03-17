@@ -107,10 +107,10 @@ body{
 			background: transparent;
 		}
 		.more.intro span:before{
-			transform:rotate(0deg);
-			-webkit-transform:rotate(0deg);
-			-moz-transform:rotate(0deg);
-			-o-transform:rotate(0deg);
+			transform:rotate(180deg);
+			-webkit-transform:rotate(180deg);
+			-moz-transform:rotate(180deg);
+			-o-transform:rotate(180deg);
 			background: #BEDA4D;
 		}
 		.more.intro span{
@@ -124,7 +124,7 @@ body{
 	</style>
 	<script>
 	$(document).ready(function(){
-		$("button").hover(function(){
+		$("button").click(function(){
 			$("#mores").toggleClass("intro");
 		});
 	});
