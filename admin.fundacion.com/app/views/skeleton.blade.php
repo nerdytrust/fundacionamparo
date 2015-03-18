@@ -53,6 +53,8 @@
         <script src="{{ asset('js/moment-with-locales.js') }}"></script>
         <script src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
 
+        <script src="{{ asset('js/bootstrap-scrollertab.js') }}"></script>
+
 
         <script src="{{ asset('js/plugins.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
@@ -83,6 +85,11 @@
                 $this.tab('show');
                 return false;
             });
+
+            // load first tab content
+            $('.nav-tabs .active a').trigger("click")
+
+
 
             // dates
 
