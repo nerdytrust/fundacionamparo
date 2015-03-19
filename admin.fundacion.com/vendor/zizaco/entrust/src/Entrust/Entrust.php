@@ -59,6 +59,7 @@ class Entrust
      */
     public function can($permission)
     {
+
         if ($user = $this->user()) {
             return $user->can( $permission );
         }

@@ -267,30 +267,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "nuevo/scroll.html",
-			"settings":
-			{
-				"buffer_size": 3315,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "nuevo/js/pop.js",
-			"settings":
-			{
-				"buffer_size": 735,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "nuevo/js/nav.js",
-			"settings":
-			{
-				"buffer_size": 1024,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -328,6 +304,9 @@
 	},
 	"file_history":
 	[
+		"/Users/miguelmartinez/Sites/fundacion/nuevo/js/pop.js",
+		"/Users/miguelmartinez/Sites/fundacion/nuevo/js/nav.js",
+		"/Users/miguelmartinez/Sites/fundacion/nuevo/scroll.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/script.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/index.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/style.css",
@@ -452,10 +431,7 @@
 		"/C/xampp/htdocs/site/js/thumbnailGridEffects.js",
 		"/C/xampp/htdocs/nitla/nitla.php",
 		"/C/xampp/htdocs/site/js/jquery.ui.totop.js",
-		"/C/xampp/htdocs/site/css/camera.css",
-		"/C/xampp/htdocs/flexbox/geo.html",
-		"/C/Users/TheBeksor/Desktop/rpDell/escritorio/2013/gbhunjimk/mio.html",
-		"/C/xampp/htdocs/flexbox/index.html"
+		"/C/xampp/htdocs/site/css/camera.css"
 	],
 	"find":
 	{
@@ -628,90 +604,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "nuevo/scroll.html",
-					"settings":
-					{
-						"buffer_size": 3315,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2393,
-								2393
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1672.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "nuevo/js/pop.js",
-					"settings":
-					{
-						"buffer_size": 735,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								425,
-								425
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "nuevo/js/nav.js",
-					"settings":
-					{
-						"buffer_size": 1024,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								214,
-								222
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

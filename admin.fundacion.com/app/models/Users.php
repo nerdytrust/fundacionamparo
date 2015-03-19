@@ -92,13 +92,13 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         // if you want Chart Report tab you will write chart_report
         // ["chart_report","permissions","settings"]
         //
-        "tabs"      => ["chart_report"=>"Chart Report"],
+        "tabs"      => [],
         // 
         // Default Tabs
         // if you can change the columns and inputs you will go to model
         // for example users_notes go to app/models/UsersNotes.php
         //
-        "default_tabs" => ["notes","logs"],
+        "default_tabs" => ["tab_nueva","notes","logs"],
         //
         // Validate inputs
         // Rules by column
@@ -132,9 +132,10 @@ class Users extends Crud implements UserInterface, RemindableInterface {
 
     ];
 
-    public function chart_report()
+    public function tab_nueva()
     {
-        return View::make("dashboard.dashboard");
+        // return $this->tab($table_name,$id);
+        return "nueva tableta desde el modelo Users";
     }
 
 	public function getAuthIdentifier()

@@ -12,6 +12,9 @@ class Crud extends \BaseModel {
 
     protected $guarded = [];  // Important
 
+
+
+
     public function __construct($attributes = array())
     {
 
@@ -20,6 +23,7 @@ class Crud extends \BaseModel {
 
         parent::__construct($attributes);
     }
+
 
     //
     // RELATIONS
@@ -203,6 +207,84 @@ class Crud extends \BaseModel {
             return "Please create a function $method in <strong>app/models/".get_class($this).".php</strong>";
 
         return parent::__call($method, $params);
+    }
+
+
+    protected function getPathView($viewName,$name,$default=null)
+    {
+        
+        $view = ($viewName).".".$name;
+
+        if(!$default)
+            $default = $name;
+
+        if (!View::exists($view))
+            $view = "crud.".$default;
+
+        return $view;    
+    }
+
+
+    public function tab($table,$where = null)
+    {
+        $current_class_name = get_class($this);
+
+        $className = ucfirst(camel_case($table));
+        $viewName  = strtolower(snake_case($className));
+        $modelName = $viewName;
+
+        if (!File::exists(app_path()."/models/".$className.".php"))
+            return "Please create a model in <strong>app/models/".$className.".php</strong>";
+
+        $class     = new $className();
+
+        $title     = $class->getCrud("title");
+        $btn       = $class->getCrud("btn_in_index");
+        $fk_column = $class->getCrud("fk_column");
+
+        $tables = $class->getRelationsByTables();
+
+        $relations = $class->getFKRelations();
+
+        if(count($relations) > 0)
+            $records = call_user_func_array([$class,"with"],$relations);
+        else
+            $records = $class;
+     
+        if(is_numeric($where))
+            $records = $records->where($this->getKeyName(),$where);
+
+        $records = $records->paginate();
+
+        $columns  = $class->getColumnsByView("index");
+
+        $path     = $this->getPathView(strtolower(snake_case($current_class_name)),"tabs.".$viewName,"tabs.default-tab");
+        $key_name = $class->getKeyName();
+        $model    = $modelName;
+
+        $params =(object)[
+                    "me"        => &$this,
+                    "btn"       => &$btn,
+                    "fk_column" => &$fk_column,
+                    "title"     => &$title,
+                    "class"     => &$class,
+                    "model"     => &$model,
+                    "key_name"  => &$key_name,
+                    "action"    => "index",
+                    "records"   => &$records,
+                    "columns"   => &$columns,
+                    "path"      => &$path
+                  ];
+
+        return View::make($path)
+            ->with('title',$title)
+            ->with('btn',$btn)
+            ->with('fk_column',$fk_column)
+            ->with('key_name',$key_name)
+            ->with('action',"index")
+            ->with('model',$model)
+            ->with('records',$records)
+            ->with('columns',$columns);
     }
 
 
