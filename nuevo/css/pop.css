@@ -147,6 +147,12 @@ html, body {
 			top: 0;
 			left: 13%;
 		}
+		#verde1 label.vol select{
+			background: #beda3e url("../images/flecha.png") no-repeat 92%;
+		}
+		#naranja1 label.vol select{
+			background: #ffac2b url("../images/flecha.png") no-repeat 92%;
+		}
 		label.vol select {
 			border: 2px solid #ebebeb;
 			width: 282px;

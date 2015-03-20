@@ -2,6 +2,10 @@
 	font-family: helveticaNeue;
 	src: url(../fonts/helvetica-neue-bold.woff);
 }
+@font-face{
+font-family: helveticaNeueMedium;
+	src: url(../fonts/helvetica-neue-medium.woff);
+}
 html, body { 
 	height: 100%; 
 	width: 100%;
@@ -1027,6 +1031,7 @@ span#name span button:after{
 	width: 40%;
 	margin: 1.2% auto;
 	line-height: 20pt;
+	font-family: helveticaNeueMedium !important;
 }
 #ultimos_dona span{
 	color: #beda3e;
