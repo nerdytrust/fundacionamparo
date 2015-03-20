@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"pu",
+				"public"
+			],
+			[
+				"is_n",
+				"is_numeric"
+			],
+			[
 				"doc",
 				"document"
 			],
@@ -167,14 +175,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/controllers/CrudController.php",
-			"settings":
-			{
-				"buffer_size": 21882,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -276,6 +276,25 @@
 	},
 	"file_history":
 	[
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/helpers.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/controllers/CrudController.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/models/Crud.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/models/Users.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/views/crud/tabs/default-tab.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/models/UsersNotes.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/views/skeleton.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/models/PermissionsUsers.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/vendor/zizaco/entrust/src/Entrust/Entrust.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/models/Eventos.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/models/Model.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/models/Causas.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/commands/CrudCreate.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/models/UsersChartReport.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/app/views/crud/tabs/tabs.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/httpdocs/js/bootstrap-scrollertab.js",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/stylus/plugins/bootstrap-scrollerbar.css",
+		"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/stylus/bootstrap/theme.styl",
 		"/Users/miguelmartinez/Sites/admin.fundacion.com/app/models/Crud.php",
 		"/Users/miguelmartinez/Sites/admin.fundacion.com/app/views/crud/index.blade.php",
 		"/Users/miguelmartinez/Sites/admin.fundacion.com/app/views/crud/show.blade.php",
@@ -384,26 +403,7 @@
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/NspPages.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/NspPagesGroup.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Payments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/PaymentsInf.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Pcustomer.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/PcustomerNotepad.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/PermissionsRoles.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/PermissionsUsers.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Plogfile.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Pmessages.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Pobox.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/PoboxItems.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Prntemplates.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Rates.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Reports.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/ReturnedItems.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Roles.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/RolesAssigned.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Shopinfo.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/ShopinfoComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Templates.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/TempPcustomer.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Tracking.php"
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/PaymentsInf.php"
 	],
 	"find":
 	{
@@ -411,9 +411,11 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 99.0,
 		"where_history":
 		[
+			"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/vendor",
+			"/Users/miguelmartinez/Sites/fundacion/admin.fundacion.com/stylus",
 			"/Users/miguelmartinez/Sites/admin.fundacion.com/stylus",
 			"/Users/miguelmartinez/Sites/admin.fundacion.com/vendor",
 			"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/vendor",
@@ -449,6 +451,55 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"setT",
+			"user",
+			"can",
+			"Entrust",
+			"setT",
+			"foreach ($fk_column[$c",
+			"getFKColumn",
+			"setkey",
+			"getKe",
+			"getNam",
+			"getTable",
+			"setTable",
+			"Table",
+			"table",
+			"setTa",
+			"setT",
+			"setTable",
+			"Table",
+			"table",
+			"Table",
+			"table",
+			"Table",
+			"table",
+			"Table",
+			"table",
+			"primaryKey",
+			"table",
+			"setTable",
+			"getPathView",
+			"Crud",
+			"app_path",
+			"File::exists",
+			"class_tab",
+			"getKey",
+			"getPathView",
+			"tab(",
+			"tab",
+			"className",
+			"viewName",
+			"modelName",
+			"className",
+			"$class",
+			".tab-content",
+			"tab-content",
+			"margin-left",
+			".list",
+			"List",
+			"list",
+			"nav-tabs",
 			"$schema",
 			"getCRUD",
 			"fk_column",
@@ -527,56 +578,7 @@
 			"die",
 			"tab",
 			"resourceDefaults",
-			"printItem",
-			"show",
-			"routeNeedsPermission",
-			"getClassName",
-			"crud",
-			"currentRouteName",
-			"crud",
-			"Agency",
-			"agency",
-			"app_path",
-			"printItem",
-			"gett",
-			"$tab",
-			"show",
-			"GETTA",
-			"getCRUD",
-			"show",
-			"getCrud",
-			"getTabs",
-			"tabs",
-			"tab",
-			"show",
-			"beforeShowTabs",
-			"(object)",
-			">beforeShow((object)",
-			"beforeStore",
-			"getCrud",
-			"btn",
-			"printItem",
-			"fk_column",
-			"addResource",
-			"resourceDefaults",
-			"getResourceMethods",
-			"resourceDefaults",
-			"verbs",
-			"resourceDefaults",
-			"resource",
-			"destroy",
-			"Route",
-			"resource",
-			"echo",
-			"$input",
-			"getInput",
-			"$column->data",
-			"in_array_match",
-			"links",
-			"->paginate()",
-			"->paginate();",
-			"pag",
-			"Dotenv"
+			"printItem"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -614,41 +616,13 @@
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
-		"wrap": false
+		"wrap": true
 	},
 	"groups":
 	[
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/controllers/CrudController.php",
-					"settings":
-					{
-						"buffer_size": 21882,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2813,
-								2822
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1513.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1092,6 +1066,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 352.0,
+	"side_bar_width": 390.0,
 	"status_bar_visible": true
 }

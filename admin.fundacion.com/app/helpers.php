@@ -1,28 +1,33 @@
 <?php
 
+
+
+
 function getFKColumn($fk_column = [],$column = [],$record = [],$first = true)
 {
     $fk_column_name = "";
-
-
 
     if($first)
         $record = $record->{$column->name."_record"}()->first();
     else
         $record = $record->{$column->name."_record"};
 
+        
 
-    if(is_array($fk_column[$column->name]))
+    if(array_key_exists($column->name,$fk_column) and is_array($fk_column[$column->name]))
     {
+
         foreach ($fk_column[$column->name] as $fk_column_record) 
         {
             if(isset($record->{$fk_column_record}))
                 $fk_column_name.= $record->{$fk_column_record}." ";
         }
 
-    }else
+    }else if(array_key_exists($column->name,$fk_column))
         $fk_column_name = $record->{$fk_column[$column->name]};
-
+    else
+        $fk_column_name = $record->{$column->name};
+            
     return $fk_column_name;
 }
 

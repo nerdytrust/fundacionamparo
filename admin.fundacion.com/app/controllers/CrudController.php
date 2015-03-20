@@ -36,13 +36,16 @@ class CrudController extends \BaseController {
     }
 
 
-    protected function getPathView($name)
+    protected function getPathView($name,$default=null)
     {
         
         $view = ($this->viewName).".".$name;
 
+        if(!$default)
+            $default = $name;
+
         if (!View::exists($view))
-            $view = "crud.".$name;
+            $view = "crud.".$default;
 
         return $view;    
     }
@@ -661,71 +664,34 @@ class CrudController extends \BaseController {
 
     public function tab($id,$tab)
     {
+
         $class  = new $this->className(); 
         $return = $class->$tab();
 
-        $path = ($this->viewName).".".$tab;
+        $path = ($this->viewName).".tabs.".$tab;
 
+        $table = strtolower($this->className)."_".$tab;
 
         if (!View::exists($path))
-            return "Please create a view in <strong>".$path."</strong>";
+            $path = "crud.tabs.default-tab";
+            //return "Please create a view in <strong>".$path."</strong>";
 
 
 
         if($tab == "notes" or $tab == "logs")
         {
-            $class_tab = $this->className."_".$tab;
+            if (!Schema::hasTable($table))
+                return "Please create a table <strong>".$table."</strong>";
 
-            $crud     = new Crud();
-            $crud->setTable($class_tab);
-
-            $title     = $crud->getCrud("title");
-            $btn       = $crud->getCrud("btn_in_show");
-            $fk_column = $crud->getCrud("fk_column");
-
-            $key_value= $id;
-            $key_name = $crud->getKeyName();
-            $model    = $this->modelName;
-            $columns  = $crud->getColumnsByView("index",$id);
-            $path     = $this->getPathView("index");
-
-            $record   = $crud::findOrFail($id);
-
-            $params = (object)[
-                        "me"            => &$this,
-                        "title"         => &$title,
-                        "btn"           => &$btn,
-                        "fk_column"     => &$fk_column,
-                        "class"         => &$crud,
-                        "model"         => &$model,
-                        "key_value"     => &$key_value,
-                        "key_name"      => &$key_name,
-                        "action"        => __FUNCTION__,
-                        "record"        => &$record,
-                        "columns"       => &$columns,
-                        "path"          => &$path
-                      ];
-                      
-            return View::make($path)
-                ->with('title',$title)
-                ->with('btn',$btn)
-                ->with('fk_column',$fk_column)
-                ->with('key_value',$key_value)
-                ->with('key_name',$class->getKeyName())
-                ->with('action',__FUNCTION__)
-                ->with('model',$model)
-                ->with('record',(object)$record)
-                ->with('tabs',$tabs)
-                ->with('columns',$columns);
+            return $class->tab($table);
 
         }
 
-        if(is_object($return) and get_class($return) == "Illuminate\View\View")
-            return $return;
+        // if(is_object($return) and get_class($return) == "Illuminate\View\View")
+        //     return $return;
 
+       return $return;
 
-        return View::make($path)
-            ->with($tab,$return);
     }
 
 }
