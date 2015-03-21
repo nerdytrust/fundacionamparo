@@ -267,6 +267,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "nuevo/css/style.css",
+			"settings":
+			{
+				"buffer_size": 52269,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "nuevo/fundacion_faqs.html",
+			"settings":
+			{
+				"buffer_size": 8055,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "nuevo/css/pop.css",
+			"settings":
+			{
+				"buffer_size": 16183,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -304,13 +328,13 @@
 	},
 	"file_history":
 	[
-		"/Users/miguelmartinez/Sites/fundacion/nuevo/js/pop.js",
-		"/Users/miguelmartinez/Sites/fundacion/nuevo/js/nav.js",
-		"/Users/miguelmartinez/Sites/fundacion/nuevo/scroll.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/pop.css",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/scroll.html",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/nav.js",
+		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/pop.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/script.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/index.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/style.css",
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/scroll.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_amparo_causas.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion01_e.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion01_d.html",
@@ -322,12 +346,9 @@
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/flexslider-hist.css",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_muro.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_amparo_causas-D.html",
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/nav.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_faqs.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/video/video-js.css",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_como_ayudar.html",
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/pop.css",
-		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/js/pop.js",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion_usuarios.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/fundacion02.html",
 		"/C/xampp/htdocs/fundacion/webfundacion/nuevo/css/tabs.css",
@@ -431,7 +452,10 @@
 		"/C/xampp/htdocs/site/js/thumbnailGridEffects.js",
 		"/C/xampp/htdocs/nitla/nitla.php",
 		"/C/xampp/htdocs/site/js/jquery.ui.totop.js",
-		"/C/xampp/htdocs/site/css/camera.css"
+		"/C/xampp/htdocs/site/css/camera.css",
+		"/C/xampp/htdocs/flexbox/geo.html",
+		"/C/Users/TheBeksor/Desktop/rpDell/escritorio/2013/gbhunjimk/mio.html",
+		"/C/xampp/htdocs/flexbox/index.html"
 	],
 	"find":
 	{
@@ -604,8 +628,90 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "nuevo/css/style.css",
+					"settings":
+					{
+						"buffer_size": 52269,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4371,
+								4371
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4424.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "nuevo/fundacion_faqs.html",
+					"settings":
+					{
+						"buffer_size": 8055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1967,
+								1967
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1045.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "nuevo/css/pop.css",
+					"settings":
+					{
+						"buffer_size": 16183,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								935,
+								935
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 616.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

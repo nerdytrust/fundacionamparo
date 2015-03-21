@@ -177,6 +177,7 @@ button{
 	background: #fff;
 	font-size: .7em;
 	font-weight: 600;
+	font-family: helveticaNeueMedium;
 }
 
 button:hover{
@@ -255,6 +256,7 @@ article.animacion:hover img{
 }
 #btn_dona{
 	font-size: 1.1em;
+	font-family: helveticaNeueMedium;
 }
 #btn_dona:hover{
 	background: #FFF;
@@ -292,6 +294,7 @@ article.animacion:hover img{
 	text-align: right;
 	vertical-align: middle;
 	margin: 5px;
+	font-family: helveticaNeueMedium;
 }
 #menu_uno, #menu_dos{
 	letter-spacing: -.1px;
@@ -543,6 +546,7 @@ font-size: 1em !important;
 	font-size: 1em;	
 	padding: 0 190px 0 0;
 	line-height: 17pt;
+	font-family: helveticaNeueMedium;
 }
 #titulo_img{
 	text-align: right;
@@ -614,6 +618,7 @@ font-size: 1em !important;
 	font-weight: lighter;
 	line-height: 1.3em;
 	line-height: 17pt;
+	font-family: helveticaNeueMedium;
 }
 .txt_int a{
 	line-height: 3em;
@@ -633,6 +638,7 @@ font-size: 1em !important;
 .txt p{
 	color: #FFF;
 	font-size: 1em;
+	font-family: helveticaNeueMedium;
 }
 ::selection{
 	background: #beda3e;
@@ -860,6 +866,7 @@ span.esquina{
 	width: 125px;
 	color: #fff;
 	text-align: center;
+	font-family: helveticaNeueMedium;
 	transition: background 1s ease, color 1s ease;
 	-webkit-transition: background 1s ease, color 1s ease;
 }
@@ -872,7 +879,7 @@ span.esquina{
 	font-size: 1.2em;
 	line-height: 1em;
 	text-align: center;
-	font-weight: lighter;
+	font-family: helveticaNeueMedium;
 }
 
 .colorin{
@@ -926,6 +933,7 @@ span#name b{
 	color: #fff;
 	font-size: 0.7em;
 	opacity: 0.7;
+	font-family: helveticaNeueMedium;
 }
 span#name span button{
 	border: none;
@@ -968,6 +976,7 @@ span#name span button:after{
 	font-size: 1em;
 	color: #000;
 	opacity: .5;
+	font-family: helveticaNeueMedium;
 }
 #donador_sec{
 	background: #beda3e;
@@ -1250,7 +1259,7 @@ margin: 0 auto;
 }
 #titulo_fca h2{
 	font-size: 2.2em;
-font-weight: bold;
+font-family: helveticaNeueMedium;
 }
 .txt_fundacion #titulo_fca button{
 	width: 181px;
@@ -1289,6 +1298,7 @@ font-weight: bold;
 }
 #contenedor_int p{
 	color: #a3a3a3;
+	font-family: helveticaNeueMedium;
 }
 b{color: #beda3e; font-weight: normal;}
 
@@ -1612,7 +1622,7 @@ b{color: #beda3e; font-weight: normal;}
 }
 #cja_donativos h1{ 
 	font-size: 1.5em !important;
-	font-weight: 600;
+	font-family: helveticaNeueMedium;
 }
 #cja_donativos h4{ 
 	color: #000;
@@ -1803,6 +1813,7 @@ padding-top: 12px;
 .como h2{
 	font-size: 1.7em;
 	margin: 1% 0;
+	font-family: helveticaNeueMedium;
 }
 .como button{
 	font-size: 1.3em !important;
@@ -1910,6 +1921,7 @@ label.contact h2{
 	padding: 0;
 	font-weight: normal;
 	line-height: 20px;
+	font-family: helveticaNeueMedium;
 }
 label.contact h4{
 	font-weight: 300;
@@ -1921,6 +1933,7 @@ label.contact input{
 	padding-left: 2.6%;
 	margin-bottom: 3%;
 	font-size: 1em;
+	font-family: helveticaNeueMedium;
 }
 label.contact span b{
 	display: inline-block;
@@ -1943,7 +1956,7 @@ label.contact textarea{
 	margin-bottom: 3%;
 	padding-top: 3%;
 	resize: none;
-	/*font-family: helvetica;*/
+	font-family: helveticaNeueMedium;
 	font-size: 1em;
 }
 label.contact button{
@@ -1980,7 +1993,8 @@ label.contact p:before{
 	display: block;
 	line-height: 20px;
 	text-align: left !important;
-	font-weight: normal !important;
+	
+	font-family: helveticaNeueMedium;
 }
 .contact-inf p{
 	font-size: 0.9em;
@@ -2250,6 +2264,7 @@ ul.slides li iframe{
 	margin: 14px 0;
 	font-size: 1em;
 	text-align: left;
+	font-family: helveticaNeueMedium;
 }
 .info-v a{
 	color: #fff;
