@@ -46,9 +46,10 @@ body{
 		height: auto;
 	}
 	.caja_2{
-		height: 519px;
+		/*height: 519px;*/
 		width: 33.33% !important;
 		display: inline-block;
+		height: auto;
 	}
 	/*.caja_2:hover{
 		opacity: 0.7;
@@ -2345,7 +2346,7 @@ ul.ben li:before{
 /*termina contact*/
 @media screen and (min-width: 1650px){
 	.caja_2{
-		height: auto;
+		/*height: auto;*/
 	}
 	.txt_int{
 		height: 1004px;
@@ -2393,7 +2394,7 @@ ul.ben li:before{
 		display: none;
 	}
 	.caja_2{
-		height: auto;
+		/*height: auto;*/
 	}
 	#donativo {
 	  border-radius: 50%;
@@ -2404,6 +2405,15 @@ ul.ben li:before{
 	}
 	.usuario-light{
 		top: 2%;
+	}
+	.lightbox-h-cont{
+		top: 0 !important;
+	}
+	#verde1 .lightbox-h-cont{
+		top: 2% !important;
+	}
+	.usuario-light{
+		top: 4% !important;
 	}
 }
 /* 1200px (Small Desktop, Netbook) */
@@ -2592,7 +2602,7 @@ ul.ben li:before{
 		padding: 0;
 	}
 	.caja_2{
-		height: auto;
+		/*height: auto;*/
 		width: 100% !important;
 	}
 	#btn_donar2 h1{
@@ -2906,9 +2916,13 @@ ul.ben li:before{
 		width: 100%;
 		height: auto;
 	}
-	.caja_1,.caja_2{
+	.caja_1{
 		width: 100% !important; 
 		height: auto;
+	}
+	.caja_2{
+		width: 100% !important; 
+		/*-height: auto;*/
 	}
 	#btn_twitter, #btn_facebook{
 		width: 50%;
@@ -3021,6 +3035,10 @@ ul.ben li:before{
  		background: #000;
  		display: block;
  	}
+ 	::i-block-chrome, .caja_2{
+		height: 519px;
+
+	}
  	
  }
 

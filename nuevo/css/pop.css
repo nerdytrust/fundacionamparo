@@ -590,6 +590,7 @@ position: inherit;
 			padding-top: 0%;
 			color: #fff;
 			line-height: inherit;
+			font-family: helveticaNeueMedium;
 		}
 		.datos>.caum{
 			
@@ -631,6 +632,9 @@ position: inherit;
 	.datos figure:nth-child(3) figcaption{
 			color: #fd9f20;
 		}
+		.scN{
+			height: auto;
+		}
 		/*custom scroll*/
 		.force-overflow{
 					height: 800px;
@@ -659,6 +663,28 @@ position: inherit;
 			.datos .fig{
 				padding: 0;
 			}
+			.scN{
+			width: auto;
+			height: 56%;
+			overflow-y:scroll;
+			display: block;
+			/*background: red;*/
+			}
+			#style-3::-webkit-scrollbar-track{/*este en el riel del scoll*/
+				-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+				background-color: #F5F5F5;
+			}
+			#style-3::-webkit-scrollbar{/*este en el ancho del el scroll*/
+				width: 5px;
+				
+			}
+			#style-3::-webkit-scrollbar-thumb{
+				background-color: rgb(237, 150, 15);
+				border-radius: 15px;
+			}
+
+
+
 		}
 	@media screen and (max-width:1024px){
 			.usuario-light{
