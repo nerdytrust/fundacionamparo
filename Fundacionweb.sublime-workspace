@@ -271,7 +271,7 @@
 			"file": "nuevo/css/style.css",
 			"settings":
 			{
-				"buffer_size": 52269,
+				"buffer_size": 52541,
 				"line_ending": "Windows"
 			}
 		},
@@ -287,7 +287,31 @@
 			"file": "nuevo/css/pop.css",
 			"settings":
 			{
-				"buffer_size": 16183,
+				"buffer_size": 16722,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "nuevo/index.html",
+			"settings":
+			{
+				"buffer_size": 21169,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "nuevo/css/tabs.css",
+			"settings":
+			{
+				"buffer_size": 4585,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "nuevo/scroll.html",
+			"settings":
+			{
+				"buffer_size": 4616,
 				"line_ending": "Windows"
 			}
 		}
@@ -474,6 +498,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"scN",
+			"naranja",
+			".caja_2",
+			".caja_",
+			".caja_2",
 			"keyframe",
 			"249249",
 			".hist",
@@ -596,12 +625,7 @@
 			"-webkit-appearance:none;\n    -moz-appearance:none;\n    appearance:none;",
 			".caja_fca_usu",
 			"}\n",
-			"txt_noticia",
-			"mostrar-ocultar",
-			"h1",
-			"fonts",
-			"fa-facebook",
-			"video"
+			"txt_noticia"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -628,7 +652,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -636,15 +660,15 @@
 					"file": "nuevo/css/style.css",
 					"settings":
 					{
-						"buffer_size": 52269,
+						"buffer_size": 52541,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4371,
-								4371
+								3070,
+								3070
 							]
 						],
 						"settings":
@@ -653,7 +677,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4424.0,
+						"translation.y": 2162.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -680,7 +704,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1045.0,
+						"translation.y": 399.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -690,15 +714,15 @@
 					"file": "nuevo/css/pop.css",
 					"settings":
 					{
-						"buffer_size": 16183,
+						"buffer_size": 16722,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								935,
-								935
+								12396,
+								12396
 							]
 						],
 						"settings":
@@ -707,7 +731,86 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 616.0,
+						"translation.y": 12479.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "nuevo/index.html",
+					"settings":
+					{
+						"buffer_size": 21169,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11796,
+								11796
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6733.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "nuevo/css/tabs.css",
+					"settings":
+					{
+						"buffer_size": 4585,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2018,
+								2018
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2021.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "nuevo/scroll.html",
+					"settings":
+					{
+						"buffer_size": 4616,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3905,
+								3917
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3230.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

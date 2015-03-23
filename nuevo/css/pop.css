@@ -1,8 +1,10 @@
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 html, body { 
 	height: 100%; 
 	width: 100%; 
 	margin: 0;
+	font-family: 'Open Sans', sans-serif;
 }
 /*lightbox home*/
 		.lightbox-h{
@@ -49,7 +51,7 @@ html, body {
 			margin: 15px 0 0px 0;
 			font-size: 3.3em;
 			letter-spacing: -3px;
-			font-family: helveticaNeueMedium;
+			/*font-family: helveticaNeueMedium;*/
 		}
 		.vol h1{
 			font-size: 3em;
@@ -57,7 +59,7 @@ html, body {
 			margin: 0px auto;
 			text-align: center;
 			margin: 15px 0 2px 0;
-			font-family: helveticaNeueMedium;
+			/*font-family: helveticaNeueMedium;*/
 		}
 		.lightbox-h-cont h2{
 			margin: 0 0 11px 0;
@@ -166,7 +168,7 @@ html, body {
 			-moz-appearance: none;
 			background: url("../images/flecha.png") no-repeat 92%;
 			cursor: pointer;
-			border-radius: none;
+			border-radius: 0;
 			padding-left: 13px;
 			font-size: 1em;
 			}
@@ -206,16 +208,18 @@ html, body {
 				color: #fff;
 				position: absolute;
 				font-size: 2em;
-				top: 14%;
+				top: 5%;
 				left: 5%;
+				/*font-family: helveticaNeueMedium;*/
 			}
 			span.op:after{
 				content: "MXN";
 				color: #fff;
 				position: absolute;
 				font-size: 2em;
-				top: 14%;
+				top: 5%;
 				right: 5%;
+				/*font-family: helveticaNeueMedium;*/
 			}
 		label.vol input[type="submit"]{
 				width: 80%;
@@ -510,7 +514,7 @@ position: inherit;
 		color: #919191;
 		font-size: 0.9em;
 		line-height: 1.3em;
-		font-family: helveticaNeueMedium;
+		/*font-family: helveticaNeueMedium;*/
 	}
 	.datos-inf>p>b{
 		color: #000;
@@ -590,7 +594,7 @@ position: inherit;
 			padding-top: 0%;
 			color: #fff;
 			line-height: inherit;
-			font-family: helveticaNeueMedium;
+			/*font-family: helveticaNeueMedium;*/
 		}
 		.datos>.caum{
 			
@@ -659,7 +663,7 @@ position: inherit;
 				}
 		/*termina custom scroll*/
 		/*termina lightbox usuarios desktop*/
-		@media screen and (max-width: 1400px){
+		@media screen and (max-width: 1500px){
 			.datos .fig{
 				padding: 0;
 			}
