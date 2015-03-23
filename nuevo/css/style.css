@@ -151,7 +151,9 @@ button, input{
 		height: 262px;
 	}
 	.caja_1 img{
-		width: 100%; height: 100%;
+		width: auto; 
+		height: 100%;
+		float: right;
 	}
 	#pleca_causas{
 	width: 100%;
@@ -907,24 +909,39 @@ span.esquina{
 	background: #212121;	
 	margin: 2px;
 }
-.caja_fca_usu{
+/*.caja_fca_usu{
 	width: 16.6667%;
 	vertical-align: top;
 	height: 266px;
 	float: left;
-}
+}*/
+.caja_fca_usu{
+		width: 16.8%;
+		height: auto;
+		overflow: hidden;
+		display: inline-block;
+		margin-right: -4px;
+		position: relative;
+		vertical-align: top;
+	}
+	.caja_fca_usu img{
+		width: 156%;
+		display: block;
+	}
 .caja_fca_usu span.mio{
 width: 100%;
-	height: 266px;
+	height: 100%;
 	display: inherit;
 	overflow: inherit;
 	position: absolute;
 	background: url("../images/gray.png");
+	background-size: cover;
 	-webkit-transition: background 1s; /* Safari 3.1 to 6.0 */
     transition: background 1s;
 }
 .caja_fca_usu span.mio:hover{
 	background: url("../images/blue.png");
+	background-size: cover;
 }
 .caja_fca_usu span.mio span#name:hover{
 	opacity: 1;
@@ -939,8 +956,8 @@ width: 100%;
 	margin-left: 0px;
 	opacity: 0;
 	width: 100%;
-	height: 266px;
-	padding-top: 200px;
+	height: 100%;
+	padding-top: 70%;
   	padding-left: 4%;
   	-webkit-transition: opacity 1s; /* Safari 3.1 to 6.0 */
     transition: opacity 1s;
@@ -1310,7 +1327,7 @@ margin: 0 auto;
 }
 #caja_aporta_usuarios{
 	width: 100%;
-	background: red;
+	/*background: red;*/
 }
 #contenedor_int h1{
 	font-size: 2em;
