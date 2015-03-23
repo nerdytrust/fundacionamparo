@@ -14,7 +14,7 @@
 
 Route::get('/', function(){
     if(Auth::guest())
-        return View::make('home.login');
+        return View::make('admin.home.login');
     else
     	return Redirect::to('/dashboard');
         
@@ -22,16 +22,16 @@ Route::get('/', function(){
 
 
 
-Route::get('login', ['as' => 'login', 'uses' => 'UsersController@login']);
-Route::post('login/email', ['as' => 'login/email', 'uses' => 'UsersController@loginEmail']);
-Route::get('logout', ['as' => 'logout', 'uses' => 'UsersController@logout']);
+Route::get('login', ['as' => 'login', 'uses' => 'admin\UsersController@login']);
+Route::post('login/email', ['as' => 'login/email', 'uses' => 'admin\UsersController@loginEmail']);
+Route::get('logout', ['as' => 'logout', 'uses' => 'admin\UsersController@logout']);
 
 
 Route::group(array('before' => 'auth'), function()
 {
 	// Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'DashBoardController@index']);
 	Route::get('dashboard', function(){
-		return View::make('dashboard.dashboard');
+		return View::make('admin.dashboard.dashboard');
 	});
 
 	Route::get('customer-site', function(){
@@ -43,5 +43,5 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::post('customer/autologin',['as' => 'custumer/autologin', 'uses' => 'PcustomerController@autologin']);
 
-	Route::crud('CrudController');
+	Route::crud('admin\CrudController');
 });

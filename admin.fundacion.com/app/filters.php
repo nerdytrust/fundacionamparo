@@ -53,7 +53,7 @@ Route::filter('/', function()
 	if (Auth::guest())
 		return View::make('dashboard.dashboard');
 	else
-		return View::make('home.login');
+		return View::make('admin.home.login');
 });
 
 Route::filter('auth', function()
@@ -66,7 +66,7 @@ Route::filter('auth', function()
 		}
 		else
 		{
-			return View::make('home.login');
+			return View::make('admin.home.login');
 			//return Redirect::guest('login');
 		}
 	}

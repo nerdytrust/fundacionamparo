@@ -318,7 +318,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 		$missing->where('_missing', '(.*)');
 	}
 
-	public function crud($controller = 'CrudController',$prefix = '')
+	public function crud($controller = 'admin\CrudController',$prefix = '')
 	{
 
         $models = File::files(app_path("models"));
@@ -332,7 +332,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
             $pathinfo = pathinfo($model);
             $snake    = snake_case($pathinfo['filename']);
 
-            $this->resource($prefix.$snake,'CrudController');
+            $this->resource($prefix.$snake,$controller);
         }
 	}
 
