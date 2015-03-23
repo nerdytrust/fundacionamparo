@@ -170,7 +170,6 @@ button, input{
 		display: inline-block;
 		width: 100%;
 		line-height: 60px;
-		font-weight: normal;
 	}
 /**/
 #meenus{
@@ -318,6 +317,7 @@ article.animacion:hover img{
 #menu_uno{
 	color: #FFF;
 	text-transform: uppercase;
+	font-weight: 600;
 }
 #menu_uno a:hover{
 	color: #beda3e;
@@ -337,7 +337,7 @@ article.animacion:hover img{
 	display: inline-block;
 	color: #FFF;	
 	font-size: 1.1em;
-	font-weight: normal;
+	font-weight: 600;
 	vertical-align: middle;
 }
 #logo img{
@@ -491,7 +491,7 @@ font-size: 1em !important;
 	vertical-align: middle;
 	margin: 2px;
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
+	font-weight: 600;
 }
 #conteo_donadores h2{
 	color: #7e7e7e;
@@ -1298,6 +1298,7 @@ margin: 0 auto;
 #titulo_fca h2{
 	font-size: 2.2em;
 /*font-family: helveticaNeueMedium;*/
+font-weight: 400;
 }
 .txt_fundacion #titulo_fca button{
 	width: 181px;
@@ -1851,6 +1852,7 @@ padding-top: 12px;
 .como h2{
 	font-size: 1.7em;
 	margin: 1% 0;
+	font-weight: 400;
 	/*font-family: helveticaNeueMedium;*/
 }
 .como button{
@@ -1944,7 +1946,6 @@ label.contact h1{
 	display: block;
 	padding:0;
 	text-align: left;
-	font-weight: 300;
 }
 label.contact h2{
 	color: #a3a3a3;
@@ -1953,7 +1954,7 @@ label.contact h2{
 	margin: 5px auto 25px auto !important;
 	width: 81%;
 	padding: 0;
-	font-weight: normal;
+	font-weight: 400;
 	line-height: 20px;
 	/*font-family: helveticaNeueMedium;*/
 }
