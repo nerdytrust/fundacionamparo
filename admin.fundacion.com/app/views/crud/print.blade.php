@@ -1,4 +1,4 @@
-@extends("skeleton")
+@extends("admin.skeleton")
 @section("skeleton")
 
 

@@ -140,20 +140,20 @@ class CrudCreate extends Command
         $name     = strtolower($name);
         //$plural   = str_plural($name);
 
-        if (!File::isDirectory($this->getPath("views/".$name))) {
-            File::makeDirectory($this->getPath("views/".$name), $mode = 0777, true, true);
+        if (!File::isDirectory($this->getPath("views/admin/".$name))) {
+            File::makeDirectory($this->getPath("views/admin/".$name), $mode = 0777, true, true);
         }
 
-        if (!File::isDirectory($this->getPath("views/".$name."/tabs"))) {
-            File::makeDirectory($this->getPath("views/".$name."/tabs"), $mode = 0777, true, true);
+        if (!File::isDirectory($this->getPath("views/admin/".$name."/tabs"))) {
+            File::makeDirectory($this->getPath("views/admin/".$name."/tabs"), $mode = 0777, true, true);
         }
 
         $views = ["create","edit","index","show"];
 
         // $this->line("***** VIEWS *****");
         foreach ($views as $view) {
-            $content = File::get($this->getPath("views/crud/".$view.".blade.php"));
-            $this->createFile("views/".$name,$view.".blade.php.rename","");
+            $content = File::get($this->getPath("views/admin/crud/".$view.".blade.php"));
+            $this->createFile("views/admin/".$name,$view.".blade.php.rename","");
             
         }
         
@@ -200,7 +200,7 @@ class CrudCreate extends Command
         );
         $content = str_replace($search, $replace, $controller);
 
-        return $this->createFile("controllers",ucwords(camel_case($name)."Controller.php"),$content);
+        return $this->createFile("controllers","admin/".ucwords(camel_case($name)."Controller.php"),$content);
     }
 
 
