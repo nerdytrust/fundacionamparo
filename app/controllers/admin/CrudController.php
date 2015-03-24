@@ -238,15 +238,9 @@ class CrudController extends \BaseController {
             //$record->{$column->name} = Input::get($column->name);
 
 
-        if (\Schema::hasColumn($class->getTable(), "created_by"))
-            $record["created_by"] = \Auth::id(); 
-
-        if (\Schema::hasColumn($class->getTable(), "updated_by"))
-            $record["updated_by"] = 0; 
-
-
         if($record->save())
         {
+
             $file_inputs = $class->getFileNameInputs($inputs);
 
             $params->key_value = $record->{$key_name};
@@ -489,10 +483,6 @@ class CrudController extends \BaseController {
                 $record->{$column->name} = \Input::get($column->name);
         }
 
-        if (\Schema::hasColumn($class->getTable(), "updated_by"))
-        {
-            $record["updated_by"] = \Auth::id();
-        }
 
         if($record->save())
         {
@@ -677,22 +667,27 @@ class CrudController extends \BaseController {
             $path = "crud.tabs.default-tab";
             //return "Please create a view in <strong>".$path."</strong>";
 
-
-
         if($tab == "notes" or $tab == "logs")
         {
+
+            if($tab == "logs")
+                $table = "logfile";
+
             if (!\Schema::hasTable($table))
                 return "Please create a table <strong>".$table."</strong>";
 
-            return $class->tab($table);
+            return $class->tab($table,$id);
 
         }
 
-        // if(is_object($return) and get_class($return) == "Illuminate\View\View")
-        //     return $return;
+        if(is_object($return))
+             return $return;
 
-       return $return;
+       //return $return;
 
     }
+
+
+
 
 }

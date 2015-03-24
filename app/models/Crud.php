@@ -13,15 +13,80 @@ class Crud extends \BaseModel {
     protected $guarded = [];  // Important
 
 
-
+    // Project::creating(function($project) { }); // *
+    // Project::created(function($project) { });
+    // Project::updating(function($project) { }); // *
+    // Project::updated(function($project) { });
+    // Project::saving(function($project) { });  // *
+    // Project::saved(function($project) { });
+    // Project::deleting(function($project) { }); // *
+    // Project::deleted(function($project) { });
 
     public function __construct($attributes = array())
     {
-
+        $me = $this;
         $this->schema = \DB::getDoctrineSchemaManager();
         $this->inputTypes = array_merge($this->inputTypes,$this->inputFiles);
 
+
+        $this::creating(function($table) use( $me )
+        {
+            if (\Schema::hasColumn($me->getTable(), "created_by"))
+                $table->created_by = \Auth::id(); 
+
+            if (\Schema::hasColumn($me->getTable(), "updated_by"))
+                $table->updated_by = 0; 
+        });
+
+        $this::created(function($table) use( $me )
+        {
+            $id =  $table->{$me->getKeyName()};
+            $me->logfile($id,"created");
+        });
+
+        $this::updating(function($table) use( $me )
+        {
+            if (\Schema::hasColumn($me->getTable(), "updated_by"))
+                $table->updated_by = \Auth::id(); 
+        });
+
+
         parent::__construct($attributes);
+    }
+
+
+    protected function updateTimestamps()
+    {
+        $time = $this->freshTimestamp();
+
+        if ( ! $this->isDirty(static::UPDATED_AT))
+        {
+            $this->setUpdatedAt($time);
+
+            $id =  $this->{$this->getKeyName()};
+            $this->logfile($id,"updated");
+        }
+
+        if ( ! $this->exists && ! $this->isDirty(static::CREATED_AT))
+        {
+            $this->setCreatedAt($time);
+        }
+    }
+
+
+
+    public function logfile($id,$action)
+    {
+        if (File::exists(app_path()."/models/Logfile.php") and $this->getTable() != "logfile")
+        {
+            Logfile::create([
+                'primary_key' => $id,
+                'table'       => $this->getTable(),
+                'action'      => $action,
+                'ip'          => \Request::getClientIp(),
+            ]);
+
+        }
     }
 
 
@@ -117,7 +182,7 @@ class Crud extends \BaseModel {
         // if you can change the columns and inputs you will go to model
         // for example users_notes go to app/models/UsersNotes.php
         //
-        "default_tabs"      => [],
+        "default_tabs"      => ["notes","logs"],
         //
         // New permissions, by default at the framework we have permissions of 
         // index,create,edit,show,destroy and print
@@ -229,7 +294,11 @@ class Crud extends \BaseModel {
     {
         $current_class_name = get_class($this);
 
+        if($table == "log")
+            $table = "logfile";
+
         $className = ucfirst(camel_case($table));
+
         $viewName  = strtolower(snake_case($className));
         $modelName = $viewName;
 
@@ -246,13 +315,24 @@ class Crud extends \BaseModel {
 
         $relations = $class->getFKRelations();
 
+        $records = DB::table($table);
+
+
         if(count($relations) > 0)
-            $records = call_user_func_array([$class,"with"],$relations);
-        else
-            $records = $class;
-     
+            $records = call_user_func_array([$records,"with"],$relations);
+
+        
+
         if(is_numeric($where))
-            $records = $records->where($this->getKeyName(),$where);
+        {
+            if($table == "logfile")
+            {
+                $records = $records->where("primary_key",$where)->where("table",$this->getTable());
+            }
+            elseif (Schema::hasColumn($table, $this->getKeyName()))
+                $records = $records->where($this->getKeyName(),$where);
+        }
+            
 
         $records = $records->paginate();
 
