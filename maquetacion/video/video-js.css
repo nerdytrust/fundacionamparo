@@ -460,7 +460,7 @@ easily in the skin designer. http://designer.videojs.com/
   vertical-align: middle;
   cursor: pointer;
   opacity: 1;
-  background: url("../images/play.png") no-repeat;
+  background: url("../images/play.png") no-repeat center;
   background-size: contain;
   /* transition */
   -webkit-transition: all 0.4s;

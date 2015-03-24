@@ -159,6 +159,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": ".env",
+			"settings":
+			{
+				"buffer_size": 208,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/skeleton.blade.php",
+			"settings":
+			{
+				"buffer_size": 1783,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/home/home.blade.php",
+			"settings":
+			{
+				"buffer_size": 106,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/routes.php",
+			"settings":
+			{
+				"buffer_size": 2338,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layout.blade.php",
+			"settings":
+			{
+				"buffer_size": 3395,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -260,13 +300,21 @@
 	},
 	"file_history":
 	[
+		"/Users/miguelmartinez/Sites/fundacion/app/views/home/home.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/skeleton.blade.php",
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/routes.php",
+		"/Users/miguelmartinez/Sites/fundacion/.env",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/dashboard/toolbar.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/filters.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/error/404.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/error/403.blade.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/views/admin/cmb_crmtickets/tab_logs.blade.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/controllers/admin/CrudController.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Crud.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbCrmtickets.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/commands/CrudCreate.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/commands/crud/template/create.crud",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/storage/logs/laravel.log",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/views/admin/dashboard/dashboard.blade.php",
@@ -379,15 +427,7 @@
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebClaimComments.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebCmbaplication.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebContactus.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebInvoice.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebInvoiceComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebInvoiceItems.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebLost.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebLostComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebPickup.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebPickupComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebShop.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebShopComments.php"
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebInvoice.php"
 	],
 	"find":
 	{
@@ -395,9 +435,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 99.0,
 		"where_history":
 		[
+			"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/vendor",
 			"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app",
 			"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/",
 			"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app",
@@ -438,6 +479,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"HTML::link('./",
+			"CrudController",
+			"admin\\CrudController",
 			"tab(",
 			"primary_key",
 			"create(",
@@ -562,10 +606,7 @@
 			"$tab",
 			"show",
 			"GETTA",
-			"getCRUD",
-			"show",
-			"getCrud",
-			"getTabs"
+			"getCRUD"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -609,8 +650,143 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": ".env",
+					"settings":
+					{
+						"buffer_size": 208,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								25,
+								25
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/skeleton.blade.php",
+					"settings":
+					{
+						"buffer_size": 1783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1065,
+								1065
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/home/home.blade.php",
+					"settings":
+					{
+						"buffer_size": 106,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10,
+								10
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/routes.php",
+					"settings":
+					{
+						"buffer_size": 2338,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2279,
+								2279
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1303.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/layout.blade.php",
+					"settings":
+					{
+						"buffer_size": 3395,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								580,
+								580
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

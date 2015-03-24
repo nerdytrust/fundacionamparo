@@ -170,7 +170,7 @@ button, input{
 		height: 62px;
 		display: inline-block;
 		width: 100%;
-		line-height: 60px;
+		line-height: 63px;
 	}
 /**/
 #meenus{
@@ -685,7 +685,7 @@ font-size: 15px !important;
 	color: #FFF;
 	display: inline-block;
 	font-size: .7em;
-	margin: 0 7% 0 0;
+	margin: 0 5% 0 0;
 }
 #meta span{
 	color: #AAA;
@@ -802,7 +802,7 @@ span.esquina{
 	width: 30%;
 	position: relative; height: 42px;
 	margin-left: 8px;
-	margin-top: 2px;
+	margin-top: -8px;
 }
 #cantidad h1{
 	background: none;
@@ -873,7 +873,7 @@ span.esquina{
 #social_top ul p{
 	display: inline-block;
 	color: #FFF;
-	font-weight: lighter;
+	font-weight: 600 !important;
 }
 #pull{
 	display: inline-block;
@@ -1868,7 +1868,7 @@ padding-top: 12px;
 	font-size: 4em;
 }
 .como h2{
-	font-size: 1.7em;
+	font-size: 1.5em;
 	margin: 1% 0;
 	font-weight: 400;
 	/*font-family: helveticaNeueMedium;*/
@@ -2437,7 +2437,7 @@ ul.ben li:before{
 	font-size: 0.8em;
 }
 #cantidad h2{
-	font-size: 1em;
+	/*font-size: 1em;*/
 }
 #donativo {
   height: 80px !Important;
@@ -2472,6 +2472,12 @@ ul.ben li:before{
 	.lightbox-h-cont{
 		top: 0 !important;
 	}
+	#azul1 .imp{
+		top: 2% !important;
+	}
+	#gracias .donar{
+		top: 5% !important;
+	}
 	#verde1 .lightbox-h-cont{
 		top: 2% !important;
 	}
@@ -2481,6 +2487,9 @@ ul.ben li:before{
 	#titulo_txt p{
 		padding: 0;
 		width: 77%;
+	}
+	#cantidad h2 {
+  letter-spacing: -2px
 	}
 }
 /* 1200px (Small Desktop, Netbook) */
@@ -2509,14 +2518,23 @@ ul.ben li:before{
 	.datos-inf>p {
   font-size: 14px !important;
   line-height: 20px !important;
-}
+	}
+	.content-1>.fig {
+	  top: 47% !important;
+	}
 
 }
 /* xGA iPad */
 @media screen and (max-width:1024px) {
+	h2.text-causas{
+		bottom: 18%;
+	}
 	#donador_sec, #impulsor_sec, #voluntario_sec{
 	padding: 30px 1% 0 1%;
 	
+}
+#cantidad h2 {
+  letter-spacing: 0px;
 }
 #titulo_txt{
 	 padding: 45px 25px 30px 1%
