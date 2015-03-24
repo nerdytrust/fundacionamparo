@@ -1,9 +1,0 @@
-fundacion_eventos.html
-fundacion_voluntarios.html
-fundacion02.html
-fundacion03.html
-fundacion04.html
-fundacion05.html
-fundacion06.html
-fundacion07.html
-fundacion_becas.html

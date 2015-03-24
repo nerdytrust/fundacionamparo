@@ -91,10 +91,10 @@ The default control bar that is a container for most of the controls.
 }
 /* Show the control bar only once the video has started playing */
 .vjs-default-skin.vjs-has-started .vjs-control-bar {
-  display: block;
+  display: none;
   /* Visibility needed to make sure things hide in older browsers too. */
 
-  visibility: visible;
+  visibility: hidden !important;
   opacity: 1;
   /* transition */
   -webkit-transition: visibility 0.1s, opacity 0.1s;
@@ -446,16 +446,16 @@ Positioning of the play button in the center or other corners can be done more
 easily in the skin designer. http://designer.videojs.com/
 */
 .vjs-default-skin .vjs-big-play-button {
-  left: 43.5%;
-  top: 37%;
+  left: 39%;
+  top: 34%;
   font-size: 3em;
   display: block;
   z-index: 2;
   position: absolute;
  /* width: 4em;
   height: 2.6em;*/
-  width: 13%;
-  height: 25%;
+  width: 20.5%;
+  height: 31.5%;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -763,9 +763,8 @@ control positioning and full window mode. **
   background-color: #000;
   position: relative;
   padding: 0;
-  /*width: auto !important;*/
-  /*height: auto !important;  Amparo*/
-  
+  width: auto !important;
+  height: auto !important;
   /* Start with 10px for base font size so other dimensions can be em based and
      easily calculable. */
 

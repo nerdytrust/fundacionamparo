@@ -11,8 +11,11 @@
 |
 */
 /* FILTERS */
-
 Route::get('/', function(){
+    return View::make('home.home');
+});
+
+Route::get('/admin', function(){
     if(Auth::guest())
         return View::make('admin.home.login');
     else
@@ -43,5 +46,46 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::post('customer/autologin',['as' => 'custumer/autologin', 'uses' => 'PcustomerController@autologin']);
 
-	Route::crud('admin\CrudController');
+	Route::crud('admin\CrudController','admin');
+});
+
+
+Route::get('como-ayudar', function(){
+	return View::make('home.como-ayudar');
+});
+
+Route::get('causas-vivas', function(){
+	return View::make('home.como-ayudar');
+});
+
+Route::get('como-ayudar', function(){
+	return View::make('home.como-ayudar');
+});
+
+Route::get('donadores', function(){
+	return View::make('home.como-ayudar');
+});
+
+Route::get('muro-del-exito', function(){
+	return View::make('home.como-ayudar');
+});
+
+Route::get('la-fundacion', function(){
+	return View::make('home.como-ayudar');
+});
+
+Route::get('apoyamos-tu-causa', function(){
+	return View::make('home.como-ayudar');
+});
+
+Route::get('noticias', function(){
+	return View::make('home.como-ayudar');
+});
+
+Route::get('faq', function(){
+	return View::make('home.como-ayudar');
+});
+
+Route::get('contacto', function(){
+	return View::make('home.como-ayudar');
 });

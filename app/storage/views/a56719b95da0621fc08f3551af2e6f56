@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <base href="<?php echo asset(""); ?>">
-        <title><?php echo getenv('APP_TITLE'); ?></title>
+        <title> ADMIN :: <?php echo getenv('APP_TITLE'); ?></title>
         <meta charset="utf-8">
         
         <link rel="shortcut icon" href="<?php echo asset('favicon.ico'); ?>">

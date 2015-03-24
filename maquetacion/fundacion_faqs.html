@@ -7,6 +7,7 @@
 	<meta name="decription" conetent=""/>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/pop.css">
 </head>
 <body>
 <div id="meenus">
@@ -59,7 +60,7 @@
 			<section class="mask_head back_img11" >
 				<div class="txt_mask">
 					<img src="images/logo_mask_header.jpg" alt="">
-					<h1>FA'S</h1>
+					<h1>FAQ'S</h1>
 					<h3>Comunícate, resolvemos tus dudas</h3>
 					<nav class="social_mask">
 						<ul>
@@ -77,8 +78,10 @@
 						<h1 class="colorin"><span><hr></span> GENERALES <span><hr></span></h1>
 					</div>
 					<div id="cja_faqs">
-						<div class="mostrar-ocultar">
-							<span class="more"></span>
+						<div class="mostrar-ocultar">	
+							<div class="more" id="reder">
+					       		<span></span>
+					       </div>
 						<h1 >¿Cuáles son las formas de ayudar?</h1>
 						</div>
 						<div class="deslizante">
@@ -87,7 +90,9 @@
 					</div>
 					<div id="cja_faqs">
 						<div class="mostrar-ocultar2">
-							<span class="more"></span>
+							<div class="more" id="reder2">
+					       		<span></span>
+					       </div>
 						<h1>¿Cómo puedo ser donador?</h1>
 						</div>
 						<div class="deslizante2">
@@ -96,7 +101,9 @@
 					</div>
 					<div id="cja_faqs">
 						<div class="mostrar-ocultar3">
-							<span class="more"></span>
+							<div class="more" id="reder3">
+					       		<span></span>
+					       </div>
 						<h1>¿Cómo puedo ser impulsor?</h1>
 						</div>
 						<div class="deslizante3">
@@ -105,7 +112,9 @@
 					</div>
 					<div id="cja_faqs">
 						<div class="mostrar-ocultar4">
-							<span class="more"></span>
+							<div class="more" id="reder4">
+					       		<span></span>
+					       </div>
 						<h1>¿Cómo puedo ser voluntario?</h1>
 						</div>
 						<div class="deslizante4">
@@ -114,7 +123,9 @@
 					</div>
 					<div id="cja_faqs">
 						<div class="mostrar-ocultar5">
-							<span class="more"></span>
+							<div class="more" id="reder5">
+					       		<span></span>
+					       </div>
 						<h1>¿Las donaciones con mi tarjeta de crédito o débito son seguras?</h1>
 						</div>
 						<div class="deslizante5">
@@ -160,9 +171,52 @@
 			
 		</div>
 	</footer>
+	
+	<!--lightbox verde1-->
+	<div class="lightbox-h d" id="verde1">
+		<div class="lightbox-h-cont donar">
+			<img src="images/icon_donadores-v.png" alt="">
+			<button class="cerrar-h"></button>
+			<h1>donar</h1>
+			<p>Tu ayuda es importante y </br>
+marca la diferencia para muchos.</p>
+			<label for="" class="vol">
+				<p>Escoge la causa que quieras apoyar</p>
+				<form action="">
+					<select name="" id="">
+								<option value="">Museo Amparo</option>
+								<option value=""></option>
+								<option value=""></option>
+					</select>
+					<p>Ingresa el monto que desaes donar</p>
+
+					<span class="op">
+						<input type="text" name="monto" placeholder="10.00" maxlength="8" required id="r"></span>
+					
+					<div class="check-verde">
+							<input type="checkbox" value="None" id="check-verde" name="check" />
+							<label for="check-verde"></label>
+							No mostrar mi perfil en el sitio
+						</div>
+
+							</br></br>
+						 <input type="submit" value="ACEPTAR" id="ac">							
+				</form>	
+			</label>
+			
+			</br>
+				<a href="">
+					Si necesitas ayuda dal click aquí 
+					<img src="images/i.png" alt="">		
+				</a>
+		</div>
+	</div>
+	<!--Termina lightbox verde1-->
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/pop.js"></script>
 </body>
 </html>
 

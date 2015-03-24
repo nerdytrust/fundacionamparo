@@ -21,17 +21,17 @@
             </li>
 
             <li><a href="">Inicio</a></li>
-            <li>{{ HTML::link('./causas', 'Causas')}}</li>
-            <li>{{ HTML::link('./donadores', 'Donadores')}}</li>
-            <li>{{ HTML::link('./noticias', 'Noticias')}}</li>
-            <li>{{ HTML::link('./eventos', 'Eventos')}}</li>
-            <li>{{ HTML::link('./faq', 'FAQ')}}</li>
+            <li>{{ HTML::link('./admin/causas', 'Causas')}}</li>
+            <li>{{ HTML::link('./admin/donadores', 'Donadores')}}</li>
+            <li>{{ HTML::link('./admin/noticias', 'Noticias')}}</li>
+            <li>{{ HTML::link('./admin/eventos', 'Eventos')}}</li>
+            <li>{{ HTML::link('./admin/faq', 'FAQ')}}</li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Formularios <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li>{{ HTML::link('./contacto', 'Contacto')}}</li>
-                <li>{{ HTML::link('./unete_nosotros', 'Únete a nosotros')}}</li>
-                <li>{{ HTML::link('./apoyamos_causa', 'Apoyamos tu causa')}}</li>
+                <li>{{ HTML::link('./admin/contacto', 'Contacto')}}</li>
+                <li>{{ HTML::link('./admin/unete_nosotros', 'Únete a nosotros')}}</li>
+                <li>{{ HTML::link('./admin/apoyamos_causa', 'Apoyamos tu causa')}}</li>
               </ul>
             </li>
           </ul>

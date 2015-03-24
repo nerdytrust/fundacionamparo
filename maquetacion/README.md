@@ -1,2 +1,0 @@
-# fundacionamparo
-Fundación Amparo

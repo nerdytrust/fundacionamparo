@@ -10,9 +10,18 @@
 	body{
 		margin: 0;
 		padding: 0;
-		background: #000;
+		/*background: #000;*/
 	}
-
+/*Safari Only*/
+ @media screen and (-webkit-min-device-pixel-ratio:0) {
+ ::i-block-chrome, .cont-vid video .video-js{
+ 		display: none;
+ 	}
+ 	::i-block-chrome, .cont-vid video{
+ 		background: #000;
+ 		display: block;
+ 	}
+ 	}
 	#cont-vid{
 		width: 100%;
 		height: auto;
@@ -25,11 +34,12 @@
 			display: inline-block;
 			position: relative !important;		
 		}
+
 		
 	</style>
 </head>
 <body>
-	<div id="cont-vid">
+	<div id="cont-vid" class="cont-vid">
 	<video loop preload="auto" poster="../images/poster.png" controls  class="video-js vjs-default-skin" data-setup="{}">
 			<source src="video.mp4">
 		</video>

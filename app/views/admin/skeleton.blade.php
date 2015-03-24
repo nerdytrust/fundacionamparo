@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <base href="{{ asset("") }}">
-        <title>{{ getenv('APP_TITLE') }}</title>
+        <title> ADMIN :: {{ getenv('APP_TITLE') }}</title>
         <meta charset="utf-8">
         
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">

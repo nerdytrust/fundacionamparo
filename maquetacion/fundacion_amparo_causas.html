@@ -5,9 +5,10 @@
 	<title>Fundación Amparo</title>
 	<meta name="viewport" content="initial-scale=1">
 	<meta name="decription" conetent=""/>
-	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/pop.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/tabs.css">
 
 	<link href="video/video-js.css" rel="stylesheet" type="text/css">
     <!-- video.js must be in the <head> for older IEs to work. -->
@@ -43,11 +44,7 @@
 				<li><a href="fundacion_contacto.html">Contacto</a></li>
 			</ul>
 		</nav>
-			<!--<a href="#">
-				<div id="btn_donar">
-					<h2>Donar</h2>
-				</div>
-			</a>-->
+			
 			<button id="btn_dona">DONAR</button>
 			<div id="perfil">
 				<img src="images/monito.jpg" alt=""/>
@@ -72,24 +69,19 @@
 		 	<h2>Tus donaciones construyen sueños y<br/> cambian vidas <b>#TomandoAcciónFA</b></h2>
 		 	<button id="btn_dona">DONAR AHORA</button>
 		 </span>
-		 <div class="vi3 betosh">
+		 <div class="vi3 ">
 		 	<video loop preload="auto" poster="images/video_causa.png" controls  class="video-js vjs-default-skin" data-setup="{}">
 			<source src="video/video.mp4">
 		</video>
 		</div> 
 		 </div>
-		<!--<video controls loop preload="auto" class="betosh" poster="images/video_causa.png" id="video-causas">
-			
-			<source src="http://www.w3schools.com/html/movie.mp4">
-			<source src="video/fundacionAmparo.webm" media="screen and (min-width:800px)">
-		</video>-->
-	
-		<div id="pleca_causas" class="betosh">
-			<h1>CAUSAS</h1>
+		
+		<div id="pleca_causas" class="">
+			<h1>CAUSAS FUNDACIÓN AMPARO</h1>
  		</div>
 
- 		
-	 		<article id="donacion_wrap" class="caja_2 betosh">
+ 		<div class="re">
+	 		<article id="donacion_wrap" class="caja_2 ">
 	 			<img src="images/img_01.jpg" alt="">
 	 			<section id="social_top">
 					<ul>
@@ -98,17 +90,17 @@
 						<a href=""><li class="fa fa-heart"></li></a>
 						<p>96 likes</p>
 					</ul>
-					<div id="donativo"><a href=""><p>HAZ TU DONACIÓN</p></a></div>
+					<div id="donativo">HAZ TU DONACIÓN</div>
 				</section>
 				<section class="txt_int">
-					<h1>CENTROS COMUNITARIOS</h1>
+					<h1 onclick="location.href='fundacion07.html';">CENTROS COMUNITARIOS</h1>
 					<h2>Roberto Alonso Espinosa</h2>
 					<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
 					<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
 					<div id="meta">
 
 						<div id="barra">
-							<progress value="60" max="100"></progress>
+							<progress value="0" max="100"></progress>
 							<!--<span id="relleno"></span>-->
 						</div>
 					<div id="cantidad">
@@ -119,10 +111,11 @@
 						<p>26 <span>DÍAS RESTANTES</span></p>
 					</div>
 				</section>
+				<span class="esquina"></span>
 	 		</article>
 
 
-	 		<article class="caja_2 betosh">
+	 		<article class="caja_2 ">
 	 			<img src="images/img_02.jpg" alt="">
 	 			<section id="social_top">
 					<ul>
@@ -131,16 +124,33 @@
 						<a href=""><li class="fa fa-heart"></li></a>
 						<p>96 likes</p>
 					</ul>
-					<div id="donativo"><a href=""><p>HAZ TU DONACIÓN</p></a></div>
+					<div id="donativo">HAZ TU DONACIÓN</div>
 				</section>
-	 			<section class="txt_int cul">
-	 				<h1>CULTURA</h1>
-	 				<h2>MUSEO AMPARO</h2>
-	 			</section>
+
+	 			<section class="txt_int">
+					<h1 onclick="location.href='fundacion07.html';">CULTURA</h1>
+					<h2>MUSEO AMPARO</h2>
+					<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
+					<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
+					<div id="meta">
+
+						<div id="barra">
+							<progress value="0" max="100"></progress>
+							<!--<span id="relleno"></span>-->
+						</div>
+					<div id="cantidad">
+						<h1>META</h1>
+						<h2>$193,000<span>MXN</span></h2>
+					</div>
+						<p>102,548 MXN <span>RECAUDADOS</span></p>
+						<p>26 <span>DÍAS RESTANTES</span></p>
+					</div>
+				</section>
+	 			<span class="esquina"></span>
 	 		</article>
 
 
-	 		<article class="caja_2 betosh" id="dre">
+	 		<article class="caja_2 " id="dre">
 	 			<img src="images/img_03.jpg" alt="">
 	 			<section id="social_top">
 					<ul>
@@ -149,48 +159,73 @@
 						<a href=""><li class="fa fa-heart"></li></a>
 						<p>96 likes</p>
 					</ul>
-					<div id="donativo"><a href=""><p>HAZ TU DONACIÓN</p></a></div>
+					<div id="donativo">HAZ TU DONACIÓN</div>
 				</section>
-	 			<section class="txt_int cul">
-	 				<h1>RESTAURACIÓN</h1>
-	 				<h2>CENTRO COMERCIAL "LA VICTORIA"</h2>
 
-	 			</section>
+	 				<section class="txt_int">
+					<h1 onclick="location.href='fundacion07.html';">CULTURA</h1>
+					<h2>CENTRO COMERCIAL "LA VICTORIA"</h2>
+					<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
+					<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
+					<div id="meta">
+
+						<div id="barra">
+							<progress value="0" max="100"></progress>
+							<!--<span id="relleno"></span>-->
+						</div>
+					<div id="cantidad">
+						<h1>META</h1>
+						<h2>$193,000<span>MXN</span></h2>
+					</div>
+						<p>102,548 MXN <span>RECAUDADOS</span></p>
+						<p>26 <span>DÍAS RESTANTES</span></p>
+					</div>
+				</section>
+	 			<span class="esquina"></span>
 	 		</article>
+		</div><!--termina re-->
 
- 		<div id="pleca_causas" class="betosh">
+ 		<div id="pleca_causas" class="">
 			<h1>FORMAS DE AYUDAR</h1>
  		</div>
- 		<section id="causa1" class="causas-social betosh">
- 				<div id="donativo"><a href=""><p>HAZ TU DONACIÓN</p></a></div>
- 				<button class="apor"></button>
+		
+		<div class="re csa">
+ 		<section id="causa1" class="causas-social ">
+ 			<img src="images/causa1.png" alt="">
+ 				<div id="donativo">HAZ TU DONACIÓN</div>
+ 				<h2 class="text-causas">aportaciones</h2>
+ 				<!--<button class="apor"></button>-->
  				<h3>A la Educación</h3>
  		</section>
- 		<section id="causa2" class="causas-social betosh">
-				<div id="donativo"><a href=""><p>HAZ TU DONACIÓN</p></a></div>
- 				<button class="apor"></button>
+ 		<section id="causa2" class="causas-social ">
+ 			<img src="images/causa2.png" alt="">
+				<div id="donativo">HAZ TU DONACIÓN</div>
+ 				<h2 class="text-causas">aportaciones</h2>
  				<h3>Al deporte</h3>
  		</section>
- 		<section id="causa3" class="causas-social betosh">
-				<div id="donativo"><a href=""><p>HAZ TU DONACIÓN</p></a></div>
- 				<button class="apor"></button>
+ 		<section id="causa3" class="causas-social ">
+ 			<img src="images/causa3.png" alt="">
+				<div id="donativo">HAZ TU DONACIÓN</div>
+ 				<h2 class="text-causas">aportaciones</h2>
  				<h3>Asistenciales</h3>
  		</section>
- 		<section id="causa4" class="causas-social betosh">
-				<div id="donativo"><a href=""><p>HAZ TU DONACIÓN</p></a></div>
- 				<button class="apor"></button>
+ 		<section id="causa4" class="causas-social ">
+ 			<img src="images/causa4.png" alt="">
+				<div id="donativo">HAZ TU DONACIÓN</div>
+ 				<h2 class="text-causas">aportaciones</h2>
  				<h3>fundhepa</h3>
  		</section>
+ 	</div><!--termina dre-->
 
  		
 
- 		<section id="ultimos_dona"class="betosh">
+ 		<section id="ultimos_dona"class="">
  			<div class="adorno_fa">
  				<img src="images/adorno_fa.png" alt="">
  			</div>
 
  			<div>
- 				<h1>APOYAMOS TU CAUSA</h1>
+ 				<h1 onclick="fundacion_apoyamos_causa.html';">APOYAMOS TU CAUSA</h1>
  				<h2>Fundación Amparo apoya causas externas</h2>
  				<p>Inscribe tu causa llenando un breve formulario, la información será revisada
 detalladamente para determinar una respuesta </p>
@@ -200,7 +235,7 @@ detalladamente para determinar una respuesta </p>
  			
  			<div class="txt_fundacion">
  				<div id="titulo_fca">
- 					<h1><button class="causas">Inscribir Causa</button></h1>
+ 					<button class="causas" onclick="location.href='fundacion_apoyamos_causa.html';">Inscribir Causa</button>
  				</div>
  				
  			</div>
@@ -241,8 +276,10 @@ detalladamente para determinar una respuesta </p>
 			
 		</div>
 	</footer>
-	<!--lightbox-->
-	<div class="lightbox">
+	
+
+	<!--lightbox blanco1-->
+	<div class="lightbox" id="blanco1">
 		<div class="usuario-light">
 			<span class="usuario cau">
 				<div id="txt_evento">						
@@ -254,8 +291,9 @@ detalladamente para determinar una respuesta </p>
 									<p>96 likes</p>
 								</ul>
 							</nav>
+
 						<div class="cau-dat">
-							<img src="images/icon_donadores.png" alt="">
+							<img src="images/icon_donadores-c.png" alt="">
 							<h1>249,863 <b>Donadores</b></h1>
 							<h2>Tu aportación es importante, cada granito cuenta, con tu ayuda no nos detendremos.</h2>
 						</div>
@@ -266,33 +304,45 @@ detalladamente para determinar una respuesta </p>
 				<button class="centros">centros comunitarios</button>
 				<button value="" class="cerrar"></button>
 				<h1>roberto alonso espinosa</h1>
-					
-				<div class="datos-inf caudat">
-					<h4><b>descripción</b> | donadores</h4>
-					<p>Desarrollo y crecimiento del Centro de Desarrollo Comunitario Roberto Alonso Espinosa, ubicado en la colonia Lomas de Chamontoya en la Ciudad de México y otro en el municipio de Zacatlán, Puebla, los cuales brindan atención, bajo el Método Montessori,  a la comunidad infantil de muy escasos recursos, ampliando el beneficio al ambiente familiar. <br/>
-					<b>Selecciona la forma en que deseas ayudar
-						<img src="images/inter.png" alt="">
-					</b>
-					</p>
-					
-				</div><!--termina datos-inf-->
-				<div class="fig">
-				<figure class="cauf">
-					  <span>Haz tu donación</span>
-					  
-					</figure >
-					<figure class="cauf">
-					  <span>Ser impulsor</span>
-					  
-					</figure>
-					<figure class="cauf">
-					  <span>Ser voluntario</span>
-					  
-					</figure>
-				</div>
-				<div id="meta" class="caum">
+
+				<!--tabs-->
+				<section class="tabs">
+	            <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+		        <label for="tab-1" class="tab-label-1">Descripción</label>
+		
+	            <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+		        <label for="tab-2" class="tab-label-2">Donadores</label>
+		
+			    <div class="clear-shadow"></div>
+			
+		        <div class="content">
+			        <div class="content-1">
+						
+						<div class="datos-inf caudat">
+							
+							<p>Desarrollo y crecimiento del Centro de Desarrollo Comunitario Roberto Alonso Espinosa, ubicado en la colonia Lomas de Chamontoya en la Ciudad de México y otro en el municipio de Zacatlán, Puebla, los cuales brindan atención, bajo el Método Montessori,  a la comunidad infantil de muy escasos recursos, ampliando el beneficio al ambiente familiar. <br/>
+							<b>Selecciona la forma en que deseas ayudar
+								<img src="images/inter.png" alt="">
+							</b>
+							</p>	
+						</div><!--termina datos-inf-->
+							<div class="fig">
+								<figure class="cauf">
+									  <span>Haz tu donación</span>
+									  
+									</figure >
+									<figure class="cauf">
+									  <span>Ser impulsor</span>
+									  
+									</figure>
+									<figure class="cauf">
+									  <span>Ser voluntario</span>
+									  
+									</figure>
+							</div>
+							<div id="meta" class="caum">
 						<div id="barra">
-							<progress value="60" max="100"></progress>
+							<progress value="0" max="100"></progress>
 							<!--<span id="relleno"></span>-->
 						</div>
 					<div id="cantidad">
@@ -302,21 +352,112 @@ detalladamente para determinar una respuesta </p>
 						<p>102,548 MXN <span>RECAUDADOS</span></p>
 						<p>26 <span>DÍAS RESTANTES</span></p>
 					</div>
-			</span><!--termina datos-->
-		</div><!--usuario-light-->
-	</div><!--termina div lightbox-->
-	<!--terina lightbox-->
+                       
+						
+				    </div>
+			        <div class="content-2">
+					  <div class="donadores-c">
+					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
+					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
+					  	
+					  </div>	
+                       
+						
+				    </div>
+			       
+		        </div>
+			</section>
+				<!--tabs-->			
+			</span>
+		</div>
+	</div>
+	<!--terina lightbox blanco1-->
+
+	<!--lightbox verde1-->
+	<div class="lightbox-h d" id="verde1">
+		<div class="lightbox-h-cont donar">
+			<img src="images/icon_donadores-v.png" alt="">
+			<button class="cerrar-h"></button>
+			<h1>donar</h1>
+			<p>Tu ayuda es importante y </br>
+marca la diferencia para muchos.</p>
+			<label for="" class="vol">
+				<p>Escoge la causa que quieras apoyar</p>
+				<form action="">
+					<select name="" id="">
+								<option value="">Museo Amparo</option>
+								<option value=""></option>
+								<option value=""></option>
+					</select>
+					<p>Ingresa el monto que desaes donar</p>
+
+					<span class="op">
+						<input type="text" name="monto" placeholder="10.00" maxlength="8" required id="r"></span>
+					
+					<div class="check-verde">
+							<input type="checkbox" value="None" id="check-verde" name="check" />
+							<label for="check-verde"></label>
+							No mostrar mi perfil en el sitio
+						</div>
+
+							</br></br>
+						 <input type="submit" value="ACEPTAR" id="ac">							
+				</form>	
+			</label>
+			
+			</br>
+				<a href="">
+					Si necesitas ayuda dal click aquí 
+					<img src="images/i.png" alt="">		
+				</a>
+		</div>
+	</div>
+	<!--Termina lightbox verde1-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/pop.js"></script>
 	<script>
-		$(function(){
-		    $(".cerrar").click(function(){
-		        $(".lightbox").fadeOut("slow");
-			    });
-			});
-	</script><!---->
+	$(document).ready(function(){
+		$(".txt_int").hover(function(){
+			$("#barra progress").toggleClass("barramover");
+		});
+	});
+	</script>	
 	
 </body>
 </html>

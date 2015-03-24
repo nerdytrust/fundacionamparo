@@ -8,16 +8,13 @@
         <title>{{ getenv('APP_TITLE') }}</title>
         <meta charset="utf-8">
         
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{{ asset('css/stylus.css') }}">
-
-        <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
 
     </head>
     <body class="@yield('class')">
@@ -27,216 +24,29 @@
 
 
         @yield("skeleton")
-
-        <!--
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        -->
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
-
-        <script src="{{ asset('js/jquery.plugin.min.js') }}"></script>
-
-        <script src="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('js/js-webshim/minified/polyfiller.js') }}"></script>
-
-        <script src="{{ asset('js/jasny-bootstrap.min.js') }}"></script>
         
-        <script src="{{ asset('js/bootstrap-confirmation.js') }}"></script>
-        <script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>
 
-        <script src="{{ asset('js/bootstrap-combobox.js') }}"></script>
-
-        <script src="{{ asset('js/bootstrap-switch.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
-
-       
-        <script src="{{ asset('js/moment-with-locales.js') }}"></script>
-        <script src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
-
-        <script src="{{ asset('js/bootstrap-scrollertab.js') }}"></script>
-
-
-        <script src="{{ asset('js/plugins.js') }}"></script>
-        <script src="{{ asset('js/main.js') }}"></script>
-
-        <script>
-
-        $(function () { 
-
-            // money format
-                webshims.setOptions('forms-ext', {
-                    replaceUI: 'auto',
-                    types: 'number'
-                });
-                webshims.polyfill('forms forms-ext');
-
-            // tabs
-            // http://jsfiddle.net/adrienne/La2765jn/
-
-            $('[data-toggle="tabajax"]').click(function(e) {
-                var $this = $(this),
-                    loadurl = $this.attr('href'),
-                    targ = $this.attr('data-target');
-
-                $.get(loadurl, function(data) {
-                    $(targ).html(data);
-                });
-
-                $this.tab('show');
-                return false;
-            });
-
-            // load first tab content
-            $('.nav-tabs .active a').trigger("click")
-
-
-
-            // dates
-
-            $('.datetime').datetimepicker({
-                format: "YYYY-MM-DD HH:mm:ss",
-                sideBySide:true,
-                collapse:true
-            });
-
-            $('.date').datetimepicker({
-                format: "YYYY-MM-DD",
-                collapse:true
-            });
-
-            $('.time').datetimepicker({
-                format: "HH:mm:ss",
-                collapse:true
-            });
-
-
-            $('[data-toggle="confirmation"]').confirmation({
-                onConfirm: function(event, element){
-                    $(element).closest("form").submit();
-                }
-            });
-
-            // Show errors at validate
-            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
-
-            $('.combobox').combobox();
-
-            $(".switch").bootstrapSwitch();
-
-
-            $(".combo").change(function()
-            {
-                var $id_parent = $(this).val();
-                $(".combo-table").removeClass("hidden");
-
-                $(".combo-table").find("[opt-id-parent]").addClass("hidden");
-                $(".combo-table").find("[opt-id-parent='"+$id_parent+"']").removeClass("hidden");
-
-            });
-
-
-            $('.combo-table .switch').on('switchChange.bootstrapSwitch', function(event, deny) {
-
-                var $me                     = $(this),
-                    $id_permissions         = $me.attr("opt-id-permissions"),
-                    $id_permissions_roles   = $me.attr("opt-id-permissions-roles"),
-                    $id_roles               = $me.attr("opt-id-roles"),
-                    $id_permissions_users   = $me.attr("opt-id-permissions-users"),
-                    $id_users               = $me.attr("opt-id-users");
-
-
-                if($id_users)
-                {
-
-                    if($id_permissions_users)
-                    {
-
-                            $.ajax({
-                              headers: { 'X-CSRF-Token' : "{{ csrf_token() }}" },  
-                              type: "POST", 
-                              url: "./permissions_user/"+$id_permissions_users,
-                              data : { _method:"PUT", id_permissions_users:$id_permissions_users, id_permissions: $id_permissions, id_users: $id_users, deny: deny } 
-                            })
-                            .done(function(msg) {
-                              var json = jQuery.parseJSON( msg );
-
-                              $(".combo-msg").html('<div class="alert alert-'+( json.success ? "success" : "danger" )+'" role="alert"> '+ json.msg + ' ' +( json.success ? ":)" : ":(" )+' </div>');
-                            });
-
-                    }else 
-                    {
-
-                        $.ajax({
-                          headers: { 'X-CSRF-Token' : "{{ csrf_token() }}" },  
-                          type: "POST", 
-                          url: "./permissions_user",
-                          data : { id_permissions: $id_permissions, id_users: $id_users, deny: deny } 
-                        })
-                        .done(function(msg) {
-                          var json = jQuery.parseJSON( msg );
-
-                          if(json.success)
-                            $me.attr("opt-id-permissions-users",json.id);
-
-                          $(".combo-msg").html('<div class="alert alert-'+( json.success ? "success" : "danger" )+'" role="alert"> '+ json.msg + ' ' +( json.success ? ":)" : ":(" )+' </div>');
-                        });
-                        
-
-                    }
-
-                }else if($id_roles)
-                {
-                    if(deny)
-                    {
-                        $.ajax({
-                          headers: { 'X-CSRF-Token' : "{{ csrf_token() }}" },  
-                          type: "POST", 
-                          url: "./permissions_role",
-                          data : { id_permissions: $id_permissions, id_roles: $id_roles, deny: deny } 
-                        })
-                        .done(function(msg) {
-                          var json = jQuery.parseJSON( msg );
-
-                          if(json.success)
-                            $me.attr("opt-id-permissions-roles",json.id);
-
-                          $(".combo-msg").html('<div class="alert alert-'+( json.success ? "success" : "danger" )+'" role="alert"> '+ json.msg + ' ' +( json.success ? ":)" : ":(" )+' </div>');
-                        });
-
-                    }else {
-
-
-                        $.ajax({
-                          headers: { 'X-CSRF-Token' : "{{ csrf_token() }}" },  
-                          type: "POST", 
-                          url: "./permissions_role/"+$id_permissions_roles,
-                          data : { _method:"DELETE" } 
-                        })
-                        .done(function(msg) {
-                          var json = jQuery.parseJSON( msg );
-                          $(".combo-msg").html('<div class="alert alert-'+( json.success ? "success" : "danger" )+'" role="alert"> '+ json.msg + ' ' +( json.success ? ":)" : ":(" )+' </div>');
-                        });
-                    }  
-                }
-
-
-
-
-
-            });
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script>
+        var container = document.querySelector('#Contenedor');
+        var msnry = new Masonry( container, {
+        // options
+        isInitLayout: true,
+        columnWidth: 1,
+        "isOriginLeft": true,
+        "isOriginTop": true,
+        itemSelector: '.betosh'
         });
-        </script>
+        $(function(){
+            $(".cerrar-h").click(function(){
+                $(".lightbox-h").fadeOut("slow");
+                });
+            });
+    </script><!---->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
 
 
     </body>

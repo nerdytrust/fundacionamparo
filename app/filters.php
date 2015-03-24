@@ -4,11 +4,13 @@
 App::error(function(Exception $exception, $code)
 {
 
+
     switch ($code)
     {
         case 403:
-            return Response::view( 'error.403', compact('message'), 403);
-
+            return Response::view( 'admin.error.403', compact('message'), 403);
+        case 404:
+            return Response::view( 'admin.error.404', compact('message'), 404);
     }
 });
 
