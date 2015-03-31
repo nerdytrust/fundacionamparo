@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <base href="{{ asset("") }}">
-        <title> ADMIN :: {{ getenv('APP_TITLE') }}</title>
+        <title>{{ getenv('APP_TITLE') }}</title>
         <meta charset="utf-8">
         
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
@@ -26,217 +26,41 @@
         <![endif]-->
 
 
+
         @yield("skeleton")
 
-        <!--
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        -->
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
 
+        <?php 
 
-        <script src="{{ asset('js/jquery.plugin.min.js') }}"></script>
+            $js =  [
+                    '/js/vendor/jquery-1.9.1.min.js',
+                    '/js/vendor/jquery.plugin.min.js',
 
-        <script src="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('js/js-webshim/minified/polyfiller.js') }}"></script>
+                    '/js/vendor/bootstrap.min.js',
 
-        <script src="{{ asset('js/jasny-bootstrap.min.js') }}"></script>
-        
-        <script src="{{ asset('js/bootstrap-confirmation.js') }}"></script>
-        <script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>
+                    '/js/vendor/js-webshim/minified/polyfiller.js',
+                    '/js/vendor/jasny-bootstrap.min.js',
+                    '/js/vendor/bootstrap-confirmation.js',
+                    '/js/vendor/bootstrap-combobox.js',
+                    '/js/vendor/bootstrap-switch.min.js',
+                    '/js/vendor/moment-with-locales.js',
+                    '/js/vendor/bootstrap-datetimepicker.js',
+                    '/js/vendor/bootstrap-scrollertab.js',
+                    '/js/vendor/bootstrap-modalajax.js',
+                    '/js/vendor/bootstrap-formajax.js',
 
-        <script src="{{ asset('js/bootstrap-combobox.js') }}"></script>
+                    '/js/vendor/plugins.js',
+                    '/js/vendor/main.js',
 
-        <script src="{{ asset('js/bootstrap-switch.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+                    '/js/admin/permissions.js'
 
-       
-        <script src="{{ asset('js/moment-with-locales.js') }}"></script>
-        <script src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
-
-        <script src="{{ asset('js/bootstrap-scrollertab.js') }}"></script>
-
-
-        <script src="{{ asset('js/plugins.js') }}"></script>
-        <script src="{{ asset('js/main.js') }}"></script>
-
-        <script>
-
-        $(function () { 
-
-            // money format
-                webshims.setOptions('forms-ext', {
-                    replaceUI: 'auto',
-                    types: 'number'
-                });
-                webshims.polyfill('forms forms-ext');
-
-            // tabs
-            // http://jsfiddle.net/adrienne/La2765jn/
-
-            $('[data-toggle="tabajax"]').click(function(e) {
-                var $this = $(this),
-                    loadurl = $this.attr('href'),
-                    targ = $this.attr('data-target');
-
-                $.get(loadurl, function(data) {
-                    $(targ).html(data);
-                });
-
-                $this.tab('show');
-                return false;
-            });
-
-            // load first tab content
-            $('.nav-tabs .active a').trigger("click")
+                    ]; 
+        ?>
+        {{ Minify::javascript($js,['js_build_path'=>'js/']) }}
 
 
 
-            // dates
-
-            $('.datetime').datetimepicker({
-                format: "YYYY-MM-DD HH:mm:ss",
-                sideBySide:true,
-                collapse:true
-            });
-
-            $('.date').datetimepicker({
-                format: "YYYY-MM-DD",
-                collapse:true
-            });
-
-            $('.time').datetimepicker({
-                format: "HH:mm:ss",
-                collapse:true
-            });
-
-
-            $('[data-toggle="confirmation"]').confirmation({
-                onConfirm: function(event, element){
-                    $(element).closest("form").submit();
-                }
-            });
-
-            // Show errors at validate
-            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
-
-            $('.combobox').combobox();
-
-            $(".switch").bootstrapSwitch();
-
-
-            $(".combo").change(function()
-            {
-                var $id_parent = $(this).val();
-                $(".combo-table").removeClass("hidden");
-
-                $(".combo-table").find("[opt-id-parent]").addClass("hidden");
-                $(".combo-table").find("[opt-id-parent='"+$id_parent+"']").removeClass("hidden");
-
-            });
-
-
-            $('.combo-table .switch').on('switchChange.bootstrapSwitch', function(event, deny) {
-
-                var $me                     = $(this),
-                    $id_permissions         = $me.attr("opt-id-permissions"),
-                    $id_permissions_roles   = $me.attr("opt-id-permissions-roles"),
-                    $id_roles               = $me.attr("opt-id-roles"),
-                    $id_permissions_users   = $me.attr("opt-id-permissions-users"),
-                    $id_users               = $me.attr("opt-id-users");
-
-
-                if($id_users)
-                {
-
-                    if($id_permissions_users)
-                    {
-
-                            $.ajax({
-                              headers: { 'X-CSRF-Token' : "{{ csrf_token() }}" },  
-                              type: "POST", 
-                              url: "./permissions_user/"+$id_permissions_users,
-                              data : { _method:"PUT", id_permissions_users:$id_permissions_users, id_permissions: $id_permissions, id_users: $id_users, deny: deny } 
-                            })
-                            .done(function(msg) {
-                              var json = jQuery.parseJSON( msg );
-
-                              $(".combo-msg").html('<div class="alert alert-'+( json.success ? "success" : "danger" )+'" role="alert"> '+ json.msg + ' ' +( json.success ? ":)" : ":(" )+' </div>');
-                            });
-
-                    }else 
-                    {
-
-                        $.ajax({
-                          headers: { 'X-CSRF-Token' : "{{ csrf_token() }}" },  
-                          type: "POST", 
-                          url: "./permissions_user",
-                          data : { id_permissions: $id_permissions, id_users: $id_users, deny: deny } 
-                        })
-                        .done(function(msg) {
-                          var json = jQuery.parseJSON( msg );
-
-                          if(json.success)
-                            $me.attr("opt-id-permissions-users",json.id);
-
-                          $(".combo-msg").html('<div class="alert alert-'+( json.success ? "success" : "danger" )+'" role="alert"> '+ json.msg + ' ' +( json.success ? ":)" : ":(" )+' </div>');
-                        });
-                        
-
-                    }
-
-                }else if($id_roles)
-                {
-                    if(deny)
-                    {
-                        $.ajax({
-                          headers: { 'X-CSRF-Token' : "{{ csrf_token() }}" },  
-                          type: "POST", 
-                          url: "./permissions_role",
-                          data : { id_permissions: $id_permissions, id_roles: $id_roles, deny: deny } 
-                        })
-                        .done(function(msg) {
-                          var json = jQuery.parseJSON( msg );
-
-                          if(json.success)
-                            $me.attr("opt-id-permissions-roles",json.id);
-
-                          $(".combo-msg").html('<div class="alert alert-'+( json.success ? "success" : "danger" )+'" role="alert"> '+ json.msg + ' ' +( json.success ? ":)" : ":(" )+' </div>');
-                        });
-
-                    }else {
-
-
-                        $.ajax({
-                          headers: { 'X-CSRF-Token' : "{{ csrf_token() }}" },  
-                          type: "POST", 
-                          url: "./permissions_role/"+$id_permissions_roles,
-                          data : { _method:"DELETE" } 
-                        })
-                        .done(function(msg) {
-                          var json = jQuery.parseJSON( msg );
-                          $(".combo-msg").html('<div class="alert alert-'+( json.success ? "success" : "danger" )+'" role="alert"> '+ json.msg + ' ' +( json.success ? ":)" : ":(" )+' </div>');
-                        });
-                    }  
-                }
-
-
-
-
-
-            });
-
-        });
-        </script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
 
 
     </body>

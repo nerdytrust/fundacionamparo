@@ -131,6 +131,9 @@ return array(
 		//'Zofe\Rapyd\RapydServiceProvider',
 		'Jenssegers\Date\DateServiceProvider',
 		'Schickling\Backup\BackupServiceProvider',
+		'Anouar\Paypalpayment\PaypalpaymentServiceProvider',
+		'CeesVanEgmond\Minify\MinifyServiceProvider',
+		'Jenssegers\Agent\AgentServiceProvider',
 	),
 
 	/*
@@ -200,7 +203,9 @@ return array(
 
 		'Entrust'    	  => 'Zizaco\Entrust\EntrustFacade',
 		'Date'            => 'Jenssegers\Date\Date',
-
+		'Agent'           => 'Jenssegers\Agent\Facades\Agent',
+		//https://github.com/xroot/laravel-paypalpayment
+		'Paypalpayment'   => 'Anouar\Paypalpayment\Facades\PaypalPayment',
 	),
 
 );

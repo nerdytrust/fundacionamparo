@@ -31,7 +31,9 @@
         "Braunson\\LaravelHTML5Forms\\LaravelHTML5FormsServiceProvider",
         "Zizaco\\Entrust\\EntrustServiceProvider",
         "Jenssegers\\Date\\DateServiceProvider",
-        "Schickling\\Backup\\BackupServiceProvider"
+        "Schickling\\Backup\\BackupServiceProvider",
+        "Anouar\\Paypalpayment\\PaypalpaymentServiceProvider",
+        "CeesVanEgmond\\Minify\\MinifyServiceProvider"
     ],
     "eager": [
         "Illuminate\\Cookie\\CookieServiceProvider",
@@ -45,7 +47,9 @@
         "Xethron\\MigrationsGenerator\\MigrationsGeneratorServiceProvider",
         "Zizaco\\Entrust\\EntrustServiceProvider",
         "Jenssegers\\Date\\DateServiceProvider",
-        "Schickling\\Backup\\BackupServiceProvider"
+        "Schickling\\Backup\\BackupServiceProvider",
+        "Anouar\\Paypalpayment\\PaypalpaymentServiceProvider",
+        "CeesVanEgmond\\Minify\\MinifyServiceProvider"
     ],
     "deferred": {
         "artisan": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

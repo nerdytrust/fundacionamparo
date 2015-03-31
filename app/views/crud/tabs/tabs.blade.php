@@ -16,7 +16,7 @@
   	<?php $index = 0 ?>
     @foreach ($tabs as $table => $name)
       
-  		<li class="@if($index == 0) active @endif"><a data-toggle="tabajax" href="{{ $model }}/{{ $key_value }}/tab/{{ $table }}"  rel="tooltip" data-target="#{{$table}}">{{$name}}</a></li>
+  		<li class="@if($index == 0) active @endif"><a data-toggle="tabajax" href="{{ getenv('APP_ADMIN_PREFIX') }}/{{ $model }}/{{ $key_value }}/tab/{{ $table }}"  rel="tooltip" data-target="#{{$table}}">{{$name}}</a></li>
       <?php $index++ ?>
 
       

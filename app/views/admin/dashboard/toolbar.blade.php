@@ -1,17 +1,8 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand logo" href="#"></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
 
+        <div class="navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
             <li>
               <button type="button" class="navbar-toggle show" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
                 <span class="icon-bar"></span>
@@ -19,31 +10,32 @@
                 <span class="icon-bar"></span>
               </button>
             </li>
-
-            <li><a href="">Inicio</a></li>
-            <li>{{ HTML::link('./admin/causas', 'Causas')}}</li>
-            <li>{{ HTML::link('./admin/donadores', 'Donadores')}}</li>
-            <li>{{ HTML::link('./admin/noticias', 'Noticias')}}</li>
-            <li>{{ HTML::link('./admin/eventos', 'Eventos')}}</li>
-            <li>{{ HTML::link('./admin/faq', 'FAQ')}}</li>
-            <li class="dropdown">
+            <li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/',getenv('APP_TITLE'),array('class' => 'navbar-brand')) }}</li>
+            <li class="hidden-xs">{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/','Home') }}</li>
+            
+            <li class="hidden-xs">{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/causas', 'Causas')}}</li>
+            <li class="hidden-xs">{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/donadores', 'Donadores')}}</li>
+            <li class="hidden-xs">{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/noticias', 'Noticias')}}</li>
+            <li class="hidden-xs">{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/eventos', 'Eventos')}}</li>
+            <li class="hidden-xs">{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/faq', 'FAQ')}}</li>
+            <li class="dropdown hidden-xs">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Formularios <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li>{{ HTML::link('./admin/contacto', 'Contacto')}}</li>
-                <li>{{ HTML::link('./admin/unete_nosotros', 'Únete a nosotros')}}</li>
-                <li>{{ HTML::link('./admin/apoyamos_causa', 'Apoyamos tu causa')}}</li>
+                <li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/contacto', 'Contacto')}}</li>
+                <li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/unete_nosotros', 'Únete a nosotros')}}</li>
+                <li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/apoyamos_causa', 'Apoyamos tu causa')}}</li>
               </ul>
             </li>
           </ul>
 
 
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right hidden-xs">
 
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li>{{ HTML::link('users','Usuarios') }}</li>
-                    <li>{{ HTML::link('roles','Roles') }}</li>
+                    <li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/users','Usuarios') }}</li>
+                    <li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/roles','Roles') }}</li>
 
                   </ul>
                 </li>

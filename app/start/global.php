@@ -79,6 +79,11 @@ App::down(function()
 |
 */
 
+require app_path().'/start/filters.php';
+require app_path().'/start/routes.php';
+require app_path().'/start/helpers.php';
+
+
 require app_path().'/filters.php';
 require app_path().'/events.php';
 require app_path().'/helpers.php';

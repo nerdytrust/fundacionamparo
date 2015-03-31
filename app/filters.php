@@ -1,22 +1,4 @@
 <?php
-
-
-App::error(function(Exception $exception, $code)
-{
-
-
-    switch ($code)
-    {
-        case 403:
-            return Response::view( 'admin.error.403', compact('message'), 403);
-        case 404:
-            return Response::view( 'admin.error.404', compact('message'), 404);
-    }
-});
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Application & Route Filters
@@ -50,97 +32,12 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('/', function()
-{
-	if (Auth::guest())
-		return View::make('dashboard.dashboard');
-	else
-		return View::make('admin.home.login');
-});
-
-Route::filter('auth', function()
-{
-	if (Auth::guest())
-	{
-		if (Request::ajax())
-		{
-			return Response::make('Unauthorized', 401);
-		}
-		else
-		{
-			return View::make('admin.home.login');
-			//return Redirect::guest('login');
-		}
-	}
-});
-
-
-Route::filter('auth.basic', function()
-{
-	return Auth::basic();
-});
-
-/*
-|--------------------------------------------------------------------------
-| Guest Filter
-|--------------------------------------------------------------------------
-|
-| The "guest" filter is the counterpart of the authentication filters as
-| it simply checks that the current user is not logged in. A redirect
-| response will be issued if they are, which you may freely change.
-|
-*/
-
-Route::filter('guest', function()
-{
-	if (Auth::check()) return Redirect::to('/');
-});
-
-/*
-|--------------------------------------------------------------------------
-| CSRF Protection Filter
-|--------------------------------------------------------------------------
-|
-| The CSRF filter is responsible for protecting your application against
-| cross-site request forgery attacks. If this special token in a user
-| session does not match the one given in this request, we'll bail.
-|
-*/
-
-
-Route::filter('csrf', function() {
-    $token = Request::ajax() ? Request::header('X-CSRF-Token') : Input::get('_token');
-    if (Session::token() != $token)
-        throw new Illuminate\Session\TokenMismatchException;
-});
-
-// Route::filter('csrf', function()
+// Route::filter('/', function()
 // {
-// 	if (Session::token() != Input::get('_token'))
-// 	{
-// 		throw new Illuminate\Session\TokenMismatchException;
-// 	}
+
 // });
 
-/*
-|--------------------------------------------------------------------------
-| Permissions by Controller and method 
-|--------------------------------------------------------------------------
-| https://github.com/Zizaco/entrust
-|
-| Example:
-| str_singular => controller
-| DeliveryReportsController => delivery_report
-|
-| Route::when('controller/method*', 'controller/method');
-|
-*/
+// Route::filter('auth', function()
+// {
 
-
-/*
-|--------------------------------------------------------------------------
-| UsersController Permissions
-|--------------------------------------------------------------------------
-*/
-Entrust::crud();
-
+// });

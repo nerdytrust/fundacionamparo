@@ -14,15 +14,12 @@ crud form
 @include("crud.toolbar-form")
 
 
-
-
-
 <div class="container">
-	
+
 	@if($action == "create")
-    	{{ Form::model($model, array('route' => array($model.'.store'), 'method' => 'POST','files'  => true)) }}
+    	{{ Form::open( array('url' => array(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'), 'method' => 'POST','files'  => true)) }}
     @elseif ($action == "edit")
-    	{{ Form::model($model, array('route' => array($model.'.update', $key_value), 'method' => 'PUT','files'  => true)) }}
+    	{{ Form::open( array('url' => array(getenv('APP_ADMIN_PREFIX').'/'.$model, $key_value), 'method' => 'PUT','files'  => true)) }}
 	@endif
 
         
@@ -37,7 +34,7 @@ crud form
 		  {{ Form::submit(trans('crud.'.$action), array('class' => 'btn btn-success')) }}
     @endif
     @if(in_array("cancel",$btn))
-      <a href="{{ call_user_func("URL::to",$model."/".$key_value) }}" class="btn btn-default">{{ trans('crud.cancel') }}</a>
+      <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value) }}" class="btn btn-default">{{ trans('crud.cancel') }}</a>
     @endif
     @if(in_array("create",$btn))
       {{ Form::close() }}
@@ -49,7 +46,7 @@ crud form
       {{ Form::submit(trans('crud.'.$action), array('class' => 'btn btn-success')) }}
     @endif
     @if(in_array("cancel",$btn))
-      <a href="{{ call_user_func("URL::to",$model."/".$key_value) }}" class="btn btn-default">{{ trans('crud.cancel') }}</a>
+      <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value) }}" class="btn btn-default">{{ trans('crud.cancel') }}</a>
     @endif
     @if(in_array("edit",$btn))
       {{ Form::close() }}
@@ -60,32 +57,32 @@ crud form
   @if($action == "show")
 
     @if(in_array("edit",$btn))
-      <a href="{{ call_user_func("URL::to",$model."/".$key_value."/edit") }}" class="btn btn-success">{{ trans('crud.edit') }}</a>
+      <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value."/edit") }}" class="btn btn-success">{{ trans('crud.edit') }}</a>
     @endif
 
     @if(in_array("cancel",$btn))
-      <a href="{{ call_user_func("URL::to",$model) }}" class="btn btn-default">{{ trans('crud.cancel') }}</a>
+      <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model) }}" class="btn btn-default">{{ trans('crud.cancel') }}</a>
     @endif
     
     @if(in_array("print",$btn))
-      <a class="btn btn-small btn-default" target="_blank" href="{{ URL::to($model.'/'. $key_value.'/print') }}">{{ trans('crud.print') }}</a>
+      <a class="btn btn-small btn-default" target="_blank" href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'. $key_value.'/print') }}">{{ trans('crud.print') }}</a>
     @endif
 
   @endif  
 
 
+
 </div>
 
-<div class="padding-top-lg">
-  @include("crud.toolbar-form")
-</div>
+  <div class="padding-top-lg">
+    @include("crud.toolbar-form")
+  </div>
 
 
-  @if($action == "show")
-    <div class="container margin-top-md">
-      @yield("form-tabs")
-    </div>
-  @endif
+    @if($action == "show")
+      <div class="container margin-top-md">
+        @yield("form-tabs")
+      </div>
+    @endif
 
 @stop
-

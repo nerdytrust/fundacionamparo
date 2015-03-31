@@ -152,7 +152,7 @@ class CrudCreate extends Command
 
         // $this->line("***** VIEWS *****");
         foreach ($views as $view) {
-            $content = File::get($this->getPath("views/admin/crud/".$view.".blade.php"));
+            $content = File::get($this->getPath("views/crud/".$view.".blade.php"));
             $this->createFile("views/admin/".$name,$view.".blade.php.rename","");
             
         }
