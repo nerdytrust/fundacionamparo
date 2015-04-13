@@ -6,7 +6,25 @@ html, body {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 }
+
+img.bg {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 /*lightbox home*/
+#verdeimagen, #verde1, #gracias{
+	display: block;
+}
+#verdeimagen button.cerrar-h, #verde1 button.cerrar-h, #gracias button.cerrar-h{
+	display: none;
+}
+
 		.lightbox-h{
 			width: 100%;
 			height:2000px;
@@ -14,6 +32,7 @@ html, body {
 			position: fixed;
 			top: 0;
 			z-index: 100000;
+			/*display: block;*/
 			display: none;
 		}
 		.lightbox-h-cont {
@@ -33,12 +52,13 @@ html, body {
 			background: #feb84a;
 		}
 		#naranja1 label.vol select{
-
+			/*background: #feb84a !important;*/
 		}
 		.vol{
 			width:381px;
 			height: 803px;
 			top: 0.7% !important; 
+			/*background: gold;*/
 		}
 		.line{
 			width: 100%;
@@ -217,6 +237,13 @@ html, body {
 			padding-left: 13px;
 			font-size: 14px;
 			}
+			label.vol select option{
+				background: #fff;
+				height: 48px;
+				display: block;
+				border-bottom: 1px solid #a3a3a3;
+				color: #a3a3a3;
+			}
 		label.vol input{
 			width: 282px;
 			height: 52px;
@@ -346,7 +373,94 @@ html, body {
 		font-weight: 600 !important;
 		font-size: 14px !important;
 		margin: 0 0 7px 0;
+	}
+	.imagen.p2{
+		height: 124px;
+		/*background: red;*/
+		margin-top: 25px;
+	}
+	.imagen.p2 img{
+		width: 40%;
+		height: 100%;
+		float: left;
+	}
+	.imagen.p2 button{
+		top: 2px;
+		  left: 125px;
+		  width: 30%;
+		  /* height: 22px; */
+		  background-size: contain;
+		  width: 155px;
+		  height: 30px;
+	}
+	.imagen.p2 p{
+		left: 126px;
+		  top: 27px;
+		  height: auto;
+		  text-align: left;
+		  width: 155px;
+	}
+	.imagen.p2 p#apor{
+		  top: 72px;
+		  font-size: 23px !important;
+	}
+	.imagen.p2 p#apor b{
+		  display: block;
+		  color: #fff;
+		  font-size: 14px;
+		  text-transform: capitalize;
+	}
+	.check.p2{
+		/*background: red;*/
+		width: 282px !Important;
+  		margin: 0 auto 10px auto;
+	}
+	.check.p2 label{
+		margin-bottom: 2px;
+		  width: 100%;
+		  text-align: left;
+		  font-size: 13px;
+  			font-weight: 600;
+  			  vertical-align: top;
+  line-height: 35px;
+	}
+	.check.p2 span{
+	/*background: red;*/
+	width: 100%;
 
+	}
+	.p3{
+		margin-top: 5%;
+	}
+	.p3 h1{
+		font-size: 32px;
+ 	 letter-spacing: -1px;
+	}
+	.p3 p{
+		width: 100%;
+		margin: 25px auto;
+		font-size: 14px;
+	}
+	.p3 img{
+		width: auto;
+		margin-top: 15px;
+	}
+	.p3 p b{
+		color: #fff;
+		font-weight: 600;
+	}
+	div.check.p2 label:before {
+	  content: "";
+	  display: inline-block;
+	  width: 35px;
+	  height: 35px;
+	  margin-right: 10px;
+	  left: 0;
+	  bottom: 1px;
+	  background: url("../images/checkp2.png");
+	}
+	div.check.p2 input[type="radio"]:checked + label:before {
+  		background: url("../images/checkedp2.png");
 	}
 	.imagen{
 		width: 282px;
@@ -381,7 +495,7 @@ html, body {
 		width: 28% !important;
 	}*/
 	.imagen>button{
-		background: url("../images/btn-tra.png");
+		background: url("../images/btn-tra.png") no-repeat;
 		width: 152px;
 		height: 29px;
 		border: none;
@@ -439,7 +553,7 @@ position: inherit;
 		overflow: hidden;
 	}
 	.lightbox .usuario #txt_evento nav{
-		margin: 20px 0 0 20px;
+		margin: 15px 0 0 20px;
 		width: 50%;
 	}
 	.lightbox .usuario #txt_evento nav ul{
@@ -447,7 +561,7 @@ position: inherit;
 	}
 	.lightbox .usuario #txt_evento nav ul p{
 		width: auto;
-		font-weight: bold !important;
+		font-weight: 600 !important;
 		text-transform: uppercase;
 		margin-left: 4px;
 		font-size: 1.2em;
@@ -483,6 +597,8 @@ position: inherit;
 	}
 	.usuario p b{
 		color: #fff;
+		display: block;
+  font-weight: 600;
 	}
 	.lightbox .datos{
 		width: 50%;
@@ -490,6 +606,7 @@ position: inherit;
 		display: inline-block;
 		margin-left: -5px;
 		position: relative;
+		overflow: hidden;
 	}
 	.lightbox .datos img{
 		margin: 25px 0 11px 22px;
@@ -504,8 +621,9 @@ position: inherit;
 		font-size: 1em;
 		color: #beda3e;
 		font-weight: bolder;
-		margin-left: 32px;
+		margin-left: 5%;
 		margin-bottom: 16px;
+		  margin-top: -3px;
 	}
 	.lightbox .datos button{
 		border:none;
@@ -536,13 +654,27 @@ position: inherit;
 			height: 197px;
 			display: block;
 			margin: 0 auto;
-			/*overflow-y: auto;*/
-			font-family: helvetica;
+			font-size: 14px;
+			line-height: 25px;
 			color: #000;
 			margin-bottom: 45px;
+			overflow-y: scroll;
 		}
+		#style-4::-webkit-scrollbar-track{/*este en el riel del scoll*/
+				-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+				background-color: #F5F5F5;
+			}
+			#style-4::-webkit-scrollbar{/*este en el ancho del el scroll*/
+				width: 3px;
+				
+			}
+			#style-4::-webkit-scrollbar-thumb{
+				background-color: rgb(142, 142, 142);
+				border-radius: 15px;
+			}
 		.lightbox .datos .caudat{
 			width: 100%;
+			overflow: hidden;
 		}
 	.lightbox .datos>.caudat{
 		margin-top: 19px !important;
@@ -551,7 +683,7 @@ position: inherit;
 	}
 	.donadores-c{
 		width: 100%;
-		height: 349px;
+		height: auto;
 		display: block;
 		overflow: hidden;
 	}
@@ -672,6 +804,7 @@ position: inherit;
 		}
 		.caum>#cantidad{
 			height: auto;
+			margin-top: -8px;
 		}
 		.caum>#cantidad>h2{
 			color: #000 !important;
@@ -723,7 +856,7 @@ position: inherit;
 				}
 				#style-scroll::-webkit-scrollbar
 				{/*este en el ancho del el scroll*/
-					width: 5px;
+					width: 3px;
 					
 				}
 				#style-scroll::-webkit-scrollbar-thumb
@@ -757,14 +890,15 @@ position: inherit;
 				border-radius: 15px;
 			}
 
-
-
 		}
-	@media screen and (max-width:1024px){
+		@media screen and (max-width: 1280px){
 			.usuario-light{
-				width: 99%;
+				width: 95%;
 				top: 5%;
 			}
+		}
+	@media screen and (max-width:1024px){
+			
 			.lightbox .datos .datos-inf{
 				width: 100%;
 			}
@@ -808,12 +942,16 @@ position: inherit;
 		}
 		.usuario #txt_evento{
 			margin: 0;
+			width: 100%;
 		}
 		.datos .fig{
 			width: 100%;
 			padding: 0;
 			display: flex;
 justify-content: space-between;
+		}
+		.datos .fig>figure{
+			background: red !important;
 		}
 		.datos figure{
 			margin: 0 3% 0 3%;
@@ -823,11 +961,15 @@ justify-content: space-between;
 			/*width: 100%;*/
 			font-size: 1.3em;
 			padding: 0;
+			display: none;
 		}
 		.lightbox .datos .datos-inf{
 			width: 100%;
 			margin: 0 0 12% 0;
 			text-align: center;
+			height: auto;
+		  display: block;
+		  
 		}
 		.datos figure:last-child{
 			margin: 0 3% 0 3%;
@@ -839,7 +981,7 @@ justify-content: space-between;
 			margin-top: 5%;
 		}
 		.lightbox .datos button{
-			position: fixed;
+			/*position: fixed;*/
 		}
 		.lightbox-h-cont{
 			width: 100%;
@@ -848,8 +990,35 @@ justify-content: space-between;
 		.lightbox-h{
 			height: 200%;
 		}
-		#ev-im{
-			
+		.donadores-c span#fotos{
+			width: 20%;
+		}
+		.tabs{
+			margin-top: 5px;
+			width: 90% !important;
+		}
+		.donadores-c{
+			height: 220px;
+		}
+		#nav_int nav li{
+			width: 90%;
+			padding: 5px;
+		}
+		.regresa{
+			width: 50%;
+		}
+		label.contact input{
+			width: 95%;
+		}
+		.lightbox .usuario{
+			display: none;
+		}
+		label.becas ul.pasos li h2{
+			width: 100%;
+			font-size: 22px !important;
+		}
+		ul.pasos button{
+			margin-bottom: 20px !important;
 		}
 	}
 
@@ -957,6 +1126,59 @@ justify-content: space-between;
 	transform: rotate(-45deg);
 }
 .check-azul input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+.check-gris {
+	width: 70%;	
+	margin: 4% auto;
+	display: inline-block;
+	height: 30px;
+	position: relative;
+	vertical-align: top;
+	text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    font-size: 16px;
+}
+.check-gris label {
+	cursor: pointer;
+	position: absolute;
+	width: 95%;
+	height: 30px;
+	top: 0;
+	left: 0;
+	background: url("../images/input-g.png") no-repeat;
+}
+.check-gris>input[type="checkbox"]{
+	width: 22px !important;
+	height: 22px !important;
+	margin: 0 7px 0 0;
+	padding:0;
+	visibility: hidden;
+}
+.check-gris label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 19px;
+	height: 9px;
+	background: transparent;
+	top: 6px;
+	left: 6px;
+	border: 3px solid #000;
+	border-top: none;
+	border-right: none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.check-gris input[type=checkbox]:checked + label:after {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
 	opacity: 1;

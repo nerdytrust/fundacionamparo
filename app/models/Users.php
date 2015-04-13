@@ -68,7 +68,7 @@ class Users extends Crud implements UserInterface, RemindableInterface {
     */
 
     protected $crud = [
-        "title"     => "ssss",
+        "title"     => "Usuarios",
         //
         //  Rename the columns names.
         //  if not wrote label the column rename like this: 
@@ -80,7 +80,7 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         // ["first_name" => "text"] 
         // text,hidden,textarea,password,digit,file,email,title
         //
-        "inputs"    => [],
+        "inputs"    => ["first_name"=>"file"],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
@@ -92,13 +92,13 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         // if you want Chart Report tab you will write chart_report
         // ["chart_report","permissions","settings"]
         //
-        "tabs"      => [],
+        "tabs"      => ["tab_nueva"],
         // 
         // Default Tabs
         // if you can change the columns and inputs you will go to model
         // for example users_notes go to app/models/UsersNotes.php
         //
-        "default_tabs" => ["tab_nueva","notes","logs"],
+        "default_tabs" => ["notes","logs"],
         //
         // Validate inputs
         // Rules by column
@@ -118,7 +118,7 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         "show"      => [],
 
         "not_in_create"   => ["remember_token"],
-        "not_in_edit"     => ["remember_token"],
+        "not_in_edit"     => ["first_name","remember_token"],
         "not_in_show"     => ["password","remember_token"],
         "not_in_index"    => ["ip_mask","last_ip","password","remember_token","created_at","updated_at"],
         //
@@ -131,6 +131,8 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         // "btn_in_edit"   => [],
 
     ];
+
+
 
     public function tab_nueva()
     {

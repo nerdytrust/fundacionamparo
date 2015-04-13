@@ -15,7 +15,10 @@
 		"jenssegers/agent": "~2.1",
 		"sunra/php-simple-html-dom-parser": "~1.5",
 		"intervention/image": "~2.0",
-		"intervention/imagecache": "~2.1"
+		"intervention/imagecache": "~2.1",
+		"nicolaslopezj/searchable": "~1.4",
+		"anouar/paypalpayment": "1.0",
+		"ceesvanegmond/minify": "2.0.*"
 	},
 	"require-dev": {
 	    "way/generators": "~2.0",

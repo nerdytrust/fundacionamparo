@@ -40,9 +40,9 @@ crud index
 					@foreach ($columns as $column)
 						@if($column->is_foreign_key)
 							@if(count($fk_column) > 0)
-								<td> {{ HTML::link(strtolower($columns->{$column->name}->model)."/".$record->{$column->name},getFKColumn($fk_column,$column,$record,false)) }}  </td>
+								<td> {{ HTML::link(strtolower(getenv('APP_ADMIN_PREFIX').'/'.$columns->{$column->name}->model)."/".$record->{$column->name},getFKColumn($fk_column,$column,$record,false)) }}  </td>
 							@else
-								<td> {{ HTML::link(strtolower($columns->{$column->name}->model)."/".$record->{$column->name},$record->{$column->name}) }}  </td>
+								<td> {{ HTML::link(strtolower(getenv('APP_ADMIN_PREFIX').'/'.$columns->{$column->name}->model)."/".$record->{$column->name},$record->{$column->name}) }}  </td>
 							@endif
 						@else
 							<td> {{ $record->{$column->name} }}  </td> 
@@ -54,22 +54,22 @@ crud index
 					<!-- we will also add show, edit, and delete buttons -->
 					<td style="width:300px">
 
-						{{ Form::open(array('url' => $model.'/' . $record->{ $key_name })) }}
+						{{ Form::open(array('url' => getenv('APP_ADMIN_PREFIX').'/'.$model.'/' . $record->{ $key_name })) }}
 						<div class="btn-group input-group btn-group-justified" role="group" aria-label="...">
 
 						  @if(!Entrust::can($model."/show") and in_array("show",$btn))
 							  <div class="btn-group" role="group">
-							    <a class="btn btn-small btn-success" href="{{ URL::to($model.'/' . $record->{ $key_name }) }}">{{ trans('crud.show') }}</a>
+							    <a class="btn btn-small btn-success" href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/' . $record->{ $key_name }) }}">{{ trans('crud.show') }}</a>
 							  </div>
 						  @endif
 						  @if(!Entrust::can($model."/print") and in_array("print",$btn))
 							  <div class="btn-group" role="group">
-							    <a class="btn btn-small btn-default" target="_blank" href="{{ URL::to($model.'/'. $record->{ $key_name }.'/print') }}">{{ trans('crud.print') }}</a>
+							    <a class="btn btn-small btn-default" target="_blank" href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'. $record->{ $key_name }.'/print') }}">{{ trans('crud.print') }}</a>
 							  </div>
 						  @endif
 						  @if(!Entrust::can($model."/edit") and in_array("edit",$btn))
 							  <div class="btn-group" role="group">
-							    <a class="btn btn-small btn-info"  href="{{ URL::to($model.'/' . $record->{ $key_name } . '/edit') }}">{{ trans('crud.edit') }}</a>
+							    <a class="btn btn-small btn-info"  href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/' . $record->{ $key_name } . '/edit') }}">{{ trans('crud.edit') }}</a>
 							  </div>
 						   @endif
 						   	  

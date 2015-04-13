@@ -8,7 +8,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="{{ call_user_func("URL::to",$model."/") }}">
+		      <a class="navbar-brand" href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/") }}">
 		      		@if(empty($title))
 		      			{{ strtoupper($model) }}
 		      		@else
@@ -24,15 +24,37 @@
 		        
 		        
 		        @if(!Entrust::can($model."/create") and in_array("create",$btn))
-		        	<li><a href="{{ call_user_func("URL::to",$model."/create") }}">{{ trans('crud.create') }}</a></li>
+		        	<li><a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/create") }}">{{ trans('crud.create') }}</a></li>
 		        @endif
 
 		        @if(!Entrust::can($model."/search") and in_array("search",$btn))
-		        	<li><a href="{{ call_user_func("URL::to",$model."/create") }}">{{ trans('crud.search') }}</a></li>
+		        	<li>
+		        		{{ Form::open( array('url' => array(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'), 'method' => 'GET','class'  => 'navbar-form form-search-toolbar','role' =>'search')) }}
+			                <div class="input-group">
+
+			                    {{ Form::text("search",Input::get('search'),array('class' => 'form-control','placeholder'=> trans('crud.search')) ); }}
+			                    <span class="input-group-btn">
+			                    	<a href="{{ getenv('APP_ADMIN_PREFIX').'/'.$model.'/' }}" class="btn btn-default">
+			                            <span class="glyphicon glyphicon-remove">
+			                                <span class="sr-only">Close</span>
+			                            </span>
+			                    	</a>
+
+			                        <button type="submit" class="btn btn-default">
+			                            <span class="glyphicon glyphicon-search">
+			                                <span class="sr-only">Tracking Code</span>
+			                            </span>
+			                        </button>
+			                    </span>
+			                </div>
+			            
+			            {{ Form::close() }}
+		        	</li>
+		        	
 		        @endif
 
 		        @if(!Entrust::can($model."/advance-search") and in_array("advance-search",$btn))
-		        	<li><a href="{{ call_user_func("URL::to",$model."/create") }}">{{ trans('crud.advance_search') }}</a></li>
+		        	<li><a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/create") }}">{{ trans('crud.advance_search') }}</a></li>
 		        @endif
 		      </ul>
 			  

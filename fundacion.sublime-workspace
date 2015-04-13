@@ -159,46 +159,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": ".env",
-			"settings":
-			{
-				"buffer_size": 208,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/skeleton.blade.php",
-			"settings":
-			{
-				"buffer_size": 1783,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/home/home.blade.php",
-			"settings":
-			{
-				"buffer_size": 106,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/routes.php",
-			"settings":
-			{
-				"buffer_size": 2338,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/layout.blade.php",
-			"settings":
-			{
-				"buffer_size": 3395,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -300,17 +260,61 @@
 	},
 	"file_history":
 	[
-		"/Users/miguelmartinez/Sites/fundacion/app/views/home/home.blade.php",
-		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/skeleton.blade.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/start/global.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/models/Users.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/controllers/HomeController.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/controllers/BaseController.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/start/routes.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/modal.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/dashboard/dashboard.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/layout-form.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/users/create.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/routes.php",
-		"/Users/miguelmartinez/Sites/fundacion/.env",
-		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/dashboard/toolbar.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/helpers.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/filters.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/events.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/skeleton.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/models/Crud.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/controllers/admin/CrudController.php",
+		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/vendor/bootstrap-modalajax.js",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/layout.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/stylus/bootstrap/navbar.styl",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/skeleton.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/stylus/stylus.styl",
+		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/vendor/bootstrap-formajax.js",
+		"/Users/miguelmartinez/Sites/fundacion/app/config/packages/ceesvanegmond/minify/config.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/tabs/tabs.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/lang/es/crud.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/lang/en/crud.php",
+		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/vendor/bootstrap-confirmation.js",
+		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/vendor/bootstrap-combobox.js",
+		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/admin/permissions.js",
+		"/Users/miguelmartinez/Sites/fundacion/stylus/plugins/bootstrap-modalajax.css",
+		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/bootstrap-modalajax.js",
+		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/vendor/bootstrap-datetimepicker.js",
+		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/vendor/script.js",
+		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/vendor/jqBootstrapValidation.js",
+		"/Users/miguelmartinez/Sites/fundacion/vendor/ceesvanegmond/minify/src/CeesVanEgmond/Minify/Minify.php",
+		"/Users/miguelmartinez/Sites/fundacion/vendor/ceesvanegmond/minify/src/CeesVanEgmond/Minify/Providers/JavaScript.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/config/app.php",
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/config/app.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/index.blade.php",
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/controllers/admin/CrudController.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/dashboard/toolbar.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/dashboard/leftbar.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/.env.local",
+		"/Users/miguelmartinez/Sites/fundacion/.env",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/home/home.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/layout.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/controllers/admin/UsersController.php",
+		"/Users/miguelmartinez/Sites/fundacion/.env.example",
+		"/Users/miguelmartinez/Sites/fundacion/app/controllers/admin/RolesController.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/toolbar.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/toolbar-form.blade.php",
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/error/404.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/error/403.blade.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/views/admin/cmb_crmtickets/tab_logs.blade.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/controllers/admin/CrudController.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Crud.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbCrmtickets.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
@@ -323,7 +327,6 @@
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/commands/CrudMigration.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/commands/CrudData.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/vendor/schickling/backup/src/Schickling/Backup/Databases/MySQLDatabase.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/config/app.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/composer.json",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/start/artisan.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/.env",
@@ -384,50 +387,7 @@
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Handover.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/HandoverItems.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Insurance.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/InsuranceNotes.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Invoice.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/InvoiceAwb.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/InvoiceAwbchg.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/InvoiceChgs.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Logfile.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Manifest.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/MasterAwb.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Mawb.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/NspPages.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/NspPagesGroup.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Payments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/PaymentsInf.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Pcustomer.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/PcustomerNotepad.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/PermissionsRoles.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/PermissionsUsers.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Plogfile.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Pmessages.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Pobox.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/PoboxItems.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Prntemplates.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Rates.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Reports.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/ReturnedItems.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Roles.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/RolesAssigned.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Shopinfo.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/ShopinfoComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Templates.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/TempPcustomer.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Tracking.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/TrackingCarrier.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Vars.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Warehouse.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WarehouseItems.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Wcustomer.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebCareer.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebCareerComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebClaim.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebClaimComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebCmbaplication.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebContactus.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebInvoice.php"
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/InsuranceNotes.php"
 	],
 	"find":
 	{
@@ -438,6 +398,13 @@
 		"height": 99.0,
 		"where_history":
 		[
+			"/Users/miguelmartinez/Sites/fundacion/app/",
+			"/Users/miguelmartinez/Sites/fundacion/app/start",
+			"/Users/miguelmartinez/Sites/fundacion/app/config",
+			"/Users/miguelmartinez/Sites/fundacion/app",
+			"/Users/miguelmartinez/Sites/fundacion/stylus",
+			"/Users/miguelmartinez/Sites/fundacion/",
+			"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/",
 			"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/vendor",
 			"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app",
 			"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/",
@@ -479,6 +446,36 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Modal header",
+			"admin",
+			"helpers",
+			"close",
+			"ajax-modal",
+			"navbar-fixed-top",
+			"echo",
+			"Error",
+			"create",
+			"load",
+			"load = ",
+			"load =  ",
+			"load(",
+			"load",
+			"progress progress-striped active",
+			"create",
+			"msg",
+			"Successfully Created",
+			"base_url",
+			"getBaseUrl",
+			"process",
+			"js_build_path",
+			"javascript",
+			"deleted",
+			"msg",
+			"crud.",
+			"crud",
+			"msg",
+			"Successfully deleted",
+			"redirect",
 			"HTML::link('./",
 			"CrudController",
 			"admin\\CrudController",
@@ -576,37 +573,7 @@
 			"listTableColumns",
 			"getRelationsByTables",
 			"listTables",
-			"guarded",
-			"getCRUD",
-			"getCrud",
-			"permission",
-			"CrudController",
-			"routeNeedsPermission",
-			"class",
-			"getPathView",
-			"get_c",
-			"model",
-			"addResourceTab",
-			"addResource",
-			"die",
-			"tab",
-			"resourceDefaults",
-			"printItem",
-			"show",
-			"routeNeedsPermission",
-			"getClassName",
-			"crud",
-			"currentRouteName",
-			"crud",
-			"Agency",
-			"agency",
-			"app_path",
-			"printItem",
-			"gett",
-			"$tab",
-			"show",
-			"GETTA",
-			"getCRUD"
+			"guarded"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -650,143 +617,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": ".env",
-					"settings":
-					{
-						"buffer_size": 208,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								25,
-								25
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/skeleton.blade.php",
-					"settings":
-					{
-						"buffer_size": 1783,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1065,
-								1065
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/home/home.blade.php",
-					"settings":
-					{
-						"buffer_size": 106,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10,
-								10
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/routes.php",
-					"settings":
-					{
-						"buffer_size": 2338,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2279,
-								2279
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1303.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/layout.blade.php",
-					"settings":
-					{
-						"buffer_size": 3395,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								580,
-								580
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1234,6 +1066,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 297.0,
+	"side_bar_width": 347.0,
 	"status_bar_visible": true
 }

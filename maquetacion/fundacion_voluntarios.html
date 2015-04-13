@@ -80,6 +80,11 @@
 						<h2>Tu apoyo hace posible continuar con nuestra causa, pasa la voz</h2>
 						<ul class="pasos">
 							<li>
+								<div class="n-vol">
+									<img src="images/icon_donadores-vol.png" alt="">
+									<span>49,863</span>
+									<span>VOLUNTARIOS</span>
+								</div>
 								<h1>Paso 1</h1>
 								<h2>apoyo</h2>
 								<h3>Selecciona la ciudad y el proyecto que deseas apoyar</h3>
@@ -91,7 +96,7 @@
 										<option value=""></option>
 									</select>
 								</span>
-								<div class="check vol">
+								<div class="check c2">
 									<br/>								
 									<input type="radio" name="proyect" value="museo" id="museo" required checked>
 									<label for="museo"></label>
@@ -140,7 +145,7 @@
 									<option value="">1995</option>
 								</select>
 								</div>
-								<div class="check vol">
+								<div class="check c2">
 									Sexo <br/>								
 									<input type="radio" name="sexo" value="fem" id="fem" required checked>
 									<label for="fem"></label>
@@ -163,7 +168,7 @@
 										<option value="">Bimestral</option>
 									</select>
 								</span>
-								<div class="check vol">
+								<div class="check c2">
 									Horario<br/>									
 									<input type="radio" name="horario" id="mat" value="mat" required checked>
 									<label for="mat"></label>
@@ -181,10 +186,11 @@
 									</select>
 														
 								
-									<input type="checkbox" name="ossm" value=""> 
-									<label for="osssm">
-										<a href="">Acepto términos y condiciones</a>
-									</label>
+									<div class="check-gris">
+									<input type="checkbox" value="None" id="check-verde" name="check">
+									<label for="check-verde"></label>
+									Acepto términos y condiciones
+								</div>
 								
 							</li>
 							<button>Acetar</button>
@@ -234,44 +240,7 @@
 		</div>
 	</footer>
 
-	<!--lightbox verde1-->
-	<div class="lightbox-h d" id="verde1">
-		<div class="lightbox-h-cont donar">
-			<img src="images/icon_donadores.png" alt="">
-			<button class="cerrar-h"></button>
-			<h1>donar</h1>
-			<p>Tu ayuda es importante y </br>
-marca la diferencia para muchos.</p>
-			<label for="" class="vol">
-				<p>Escoge la causa que quieras apoyar</p>
-				<form action="">
-					<select name="" id="">
-								<option value="">Museo Amparo</option>
-								<option value=""></option>
-								<option value=""></option>
-					</select>
-					<p>Ingresa el monto que desaes donar</p>
-
-					<input type="text" name="monto" placeholder="$10.00 MXN" required id="r">
-
-					<input type="checkbox" name="ossm" value=""> 
-
-						<label for="osssm">
-							<a href="">Acepto términos y condiciones</a>
-						</label>
-</br></br>
-						 <input type="submit" value="ACEPTAR" id="ac">							
-				</form>	
-			</label>
-			</br>
-			<a href="">
-					Si necesitas ayuda dal click aquí 
-					<img src="images/i.png" alt=""></br>
-					Mas Información +
-				</a>
-		</div>
-	</div>
-	<!--Termina lightbox verde1-->
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>

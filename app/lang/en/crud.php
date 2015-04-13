@@ -20,4 +20,12 @@ return array(
 	'change' 			=> 'Change',
 	'remove' 			=> 'Remove',
 
+	'error-fields'		=> 'Error Fields',
+	'error-updated'		=> 'Error Updated',
+	'error-created'		=> 'Error Created',
+	'error-deleted'		=> 'Error Deleted',
+
+	'success-deleted'	=> 'Successfully Deleted',
+	'success-created'	=> 'Successfully Created',
+	'success-updated'	=> 'Successfully Updated',
 );

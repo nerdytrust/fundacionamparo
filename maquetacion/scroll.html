@@ -172,11 +172,35 @@ label:before {
 		background: #fff;
 		text-align: center;
 	}	
+	.yo{
+		width: 30px;
+		height: 30px;
+		display: block;
+		background: red;
+	}
+	span.esquina{
+	width: 71px;
+	height: 70px;
+	/*position: absolute;*/
+	background: url("images/esquina.png");
+	right: 0;
+	bottom: 0;
+	display: block;
+	transition:opacity 2s;
+	-webkit-transition:opacity 2s;
+	opacity: 0;
+	}
+	span.esquina.mover-ski{
+		opacity: 1;
+	}
 	</style>
 	<script>
 	$(document).ready(function(){
-		$("button").click(function(){
+		$("button").hover(function(){
 			$("#mores").toggleClass("intro");
+		});
+		$(".yo").click(function(){
+			$("#ski").toggleClass("mover-ski");
 		});
 	});
 		
@@ -190,6 +214,9 @@ label:before {
       </div>
     </div>
     </div>
+
+    <div class="yo">yo</div>
+    <span class="esquina" id="ski"></span>
 
 <button>hey</button>
 

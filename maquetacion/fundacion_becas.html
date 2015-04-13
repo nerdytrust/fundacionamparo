@@ -81,6 +81,11 @@
 <b>El único requisito es que vivas en el estado de Puebla</b></h2>
 						<ul class="pasos">
 							<li>
+								<div class="n-vol bec">
+									<img src="images/icon_donadores-bec.png" alt="">
+									<span>49,863</span>
+									<span>BECAS OTORGADAS</span>
+								</div>
 								<h1>Paso 1</h1>
 								<h2>beca</h2>
 								<h3>Selecciona el lugar en donde deseas estudiar</h3>
@@ -174,7 +179,7 @@
 								<span>
 									Promedio<br/>
 									<div>
-									<select name="" id="" required>
+									<select name="" id="promedio" required>
 									<option value="">Promedio</option>
 									<option value="">10</option>
 									<option value="">9.8</option>
@@ -186,10 +191,11 @@
 								<h3>Comentanos el por que necesitas una beca</h3>
 								<textarea name="" id="" cols="30" rows="10" maxlenght="150"></textarea>
 								
-								<input type="checkbox" name="ossm" value=""> 
-								<label for="osssm">
-									<a href="">Acepto términos y condiciones</a>
-								</label> 
+								<div class="check-gris">
+									<input type="checkbox" value="None" id="check-verde" name="check">
+									<label for="check-verde"></label>
+									Acepto términos y condiciones
+								</div>
 							</li>
 							<button>Acetar</button>
 							<button>Cancelar</button>
@@ -237,44 +243,7 @@
 			
 		</div>
 	</footer>
-	<!--lightbox verde1-->
-	<div class="lightbox-h d" id="verde1">
-		<div class="lightbox-h-cont donar">
-			<img src="images/icon_donadores.png" alt="">
-			<button class="cerrar-h"></button>
-			<h1>donar</h1>
-			<p>Tu ayuda es importante y </br>
-marca la diferencia para muchos.</p>
-			<label for="" class="vol">
-				<p>Escoge la causa que quieras apoyar</p>
-				<form action="">
-					<select name="" id="">
-								<option value="">Museo Amparo</option>
-								<option value=""></option>
-								<option value=""></option>
-					</select>
-					<p>Ingresa el monto que desaes donar</p>
-
-					<input type="text" name="monto" placeholder="$10.00 MXN" required id="r">
-
-					<input type="checkbox" name="ossm" value=""> 
-
-						<label for="osssm">
-							<a href="">Acepto términos y condiciones</a>
-						</label>
-</br></br>
-						 <input type="submit" value="ACEPTAR" id="ac">							
-				</form>	
-			</label>
-			</br>
-			<a href="">
-					Si necesitas ayuda dal click aquí 
-					<img src="images/i.png" alt=""></br>
-					Mas Información +
-				</a>
-		</div>
-	</div>
-	<!--Termina lightbox verde1-->
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>

@@ -53,7 +53,7 @@ class CrudMake extends Command
         Artisan::call('migrate'); // create tables
         // https://github.com/schickling/laravel-backup
         Artisan::call('db:restore'); // restore tables data
-
+        Artisan::call('crud:data'); // restore tables data
     }
 
 

@@ -1,4 +1,4 @@
-@extends("admin.crud.layout-form")
+@extends("crud.layout-form")
 
 @section("form")
 

@@ -1,7 +1,10 @@
 <?php
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Crud extends \BaseModel {
 
+    use SearchableTrait;
+    
 	private $schema = null;
 	protected $perPage = 25;
 
@@ -12,6 +15,9 @@ class Crud extends \BaseModel {
 
     protected $guarded = [];  // Important
 
+
+    protected $searchable = [
+    ];
 
     // Project::creating(function($project) { }); // *
     // Project::created(function($project) { });
@@ -32,7 +38,7 @@ class Crud extends \BaseModel {
         $this::creating(function($table) use( $me )
         {
             if (\Schema::hasColumn($me->getTable(), "created_by"))
-                $table->created_by = \Auth::id(); 
+                $table->created_by = \Auth::id() ? \Auth::id() : 0; 
 
             if (\Schema::hasColumn($me->getTable(), "updated_by"))
                 $table->updated_by = 0; 
@@ -41,13 +47,14 @@ class Crud extends \BaseModel {
         $this::created(function($table) use( $me )
         {
             $id =  $table->{$me->getKeyName()};
-            $me->logfile($id,"created");
+            if (\Auth::check() and $id)
+                $me->logfile($id,"created");
         });
 
         $this::updating(function($table) use( $me )
         {
             if (\Schema::hasColumn($me->getTable(), "updated_by"))
-                $table->updated_by = \Auth::id(); 
+                $table->updated_by = \Auth::id() ? \Auth::id() : 0 ; 
         });
 
 
@@ -64,7 +71,8 @@ class Crud extends \BaseModel {
             $this->setUpdatedAt($time);
 
             $id =  $this->{$this->getKeyName()};
-            $this->logfile($id,"updated");
+            if (\Auth::check() and $id)
+                $this->logfile($id,"updated");
         }
 
         if ( ! $this->exists && ! $this->isDirty(static::CREATED_AT))
@@ -77,7 +85,7 @@ class Crud extends \BaseModel {
 
     public function logfile($id,$action)
     {
-        if (File::exists(app_path()."/models/Logfile.php") and $this->getTable() != "logfile")
+        if (File::exists(app_path()."/models/Logfile.php") and $this->getTable() != "logfile" and \Auth::check())
         {
             Logfile::create([
                 'primary_key' => $id,
@@ -265,11 +273,16 @@ class Crud extends \BaseModel {
         $relations = $this->getRelations();
 
         $method = str_replace("_record", "", $method);
+        $current_class_name = get_class($this);
+
+        $methodVariable = array($this, $method);
 
         if (array_key_exists($method, $relations)) {
             return $this->createRelation($method);
-        }elseif($method!="paginate")
+        }elseif(!is_callable($methodVariable, true)){
             return "Please create a function $method in <strong>app/models/".get_class($this).".php</strong>";
+        }
+            
 
         return parent::__call($method, $params);
     }
@@ -465,26 +478,26 @@ class Crud extends \BaseModel {
 
         }
 
-        if($kind == self::HAS_MANY or $kind == "")
-        {
-        	$tables = $this->getRelationsByTables();
+        // if($kind == self::HAS_MANY or $kind == "")
+        // {
+        // 	$tables = $this->getRelationsByTables();
 
-        	foreach ($tables as $table) {
+        // 	foreach ($tables as $table) {
 
-        		$model = $this->toModel($table);
+        // 		$model = $this->toModel($table);
 
-		        if (File::exists(app_path()."/models/".$model.".php"))
-		        {
-		        	$class 	   = new $model();
-	        		$return[$table] = [
-		                "relation"      => self::HAS_MANY,
-		                "local_key"     => $class->getKeyName(),
-		                "parent_key"    => $this->getKeyName()
-	        		];
-		        }
+		      //   if (File::exists(app_path()."/models/".$model.".php"))
+		      //   {
+		      //   	$class 	   = new $model();
+	       //  		$return[$table] = [
+		      //           "relation"      => self::HAS_MANY,
+		      //           "local_key"     => $class->getKeyName(),
+		      //           "parent_key"    => $this->getKeyName()
+	       //  		];
+		      //   }
 
-        	}
-        }
+        // 	}
+        // }
 
 
         foreach ($relations as $local_key => $relation) {

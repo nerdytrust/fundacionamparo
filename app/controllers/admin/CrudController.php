@@ -51,19 +51,19 @@ class CrudController extends \BaseController {
         return $view;    
     }
     
-	/**
-	 * Setup the layout used by the controller.
-	 *
-	 * @return void
-	 */
-	protected function setupLayout()
-	{
-		if ( ! is_null($this->layout))
-		{
-			$this->layout = \View::make($this->layout);
-		}
-	}
-	
+    /**
+     * Setup the layout used by the controller.
+     *
+     * @return void
+     */
+    protected function setupLayout()
+    {
+        if ( ! is_null($this->layout))
+        {
+            $this->layout = \View::make($this->layout);
+        }
+    }
+    
 
     /**
      * Display a listing of the resource.
@@ -83,10 +83,16 @@ class CrudController extends \BaseController {
         $relations = $class->getFKRelations();
 
         if(count($relations) > 0)
-            $records = call_user_func_array([$class,"with"],$relations)->paginate();
+            $records = call_user_func_array([$class,"with"],$relations);
         else
-            $records = $class::paginate();
+            $records = $class;
      
+
+        if (\Input::has('search'))
+            $records->search(\Input::get('search'));
+
+        $records = $records->paginate();
+
         $columns  = $class->getColumnsByView("index");
 
         $path     = $this->getPathView(__FUNCTION__);
@@ -222,14 +228,14 @@ class CrudController extends \BaseController {
 
             if(\Request::ajax())
             {
-                echo '{ "success": "false", "msg": "Error Fields" }';
+                return '{ "success": "false", "msg": "'.trans("crud.error-fields").'" }';
             }else{
                 return \Redirect::back()
                     ->withErrors($validator)
                     ->withInput(\Input::except("password")); 
             }
 
-		}
+        }
 
         $record = $class;
 
@@ -278,22 +284,22 @@ class CrudController extends \BaseController {
 
             if(\Request::ajax())
             {
-                echo '{ "success": "false", "msg": "Error Created" }';
+                return '{ "success": "false", "msg": "'.trans("crud.error-created").'" }';
             }else
             {
                 \Session::flash('error', 'Error Created');
-                    return \Redirect::to($this->viewName.'/');
+                    return \Redirect::to(getenv('APP_ADMIN_PREFIX')."/".$this->viewName.'/');
             }
 
         }
 
         if(\Request::ajax())
         {
-            echo '{ "success": "true", "msg": "Successfully Created", "id":"'.$key_value.'" }';
+            return '{ "success": "true", "msg": "'.trans('crud.success-created').'", "id":"'.$key_value.'" }';
         }else
         {
-            \Session::flash('success', 'Successfully Created');
-                return \Redirect::to($path.'/');  
+            \Session::flash('success', trans('crud.success-created'));
+                return \Redirect::to(getenv('APP_ADMIN_PREFIX')."/".$path.'/');  
         }
 
  
@@ -415,7 +421,7 @@ class CrudController extends \BaseController {
     public function update($id)
     {
 
-    	$class     = new $this->className();
+        $class     = new $this->className();
         $columns   = $class->getColumnsByView("edit");
 
         $validations     = $class->getValidations($columns,$id);
@@ -464,7 +470,7 @@ class CrudController extends \BaseController {
 
             if(\Request::ajax())
             {
-                echo '{ "success": "false", "msg": "Error Fields" }';
+                return '{ "success": "false", "msg": "'.trans('crud.error-fields').'" }';
             }else
             {
                 return \Redirect::back()
@@ -522,22 +528,22 @@ class CrudController extends \BaseController {
 
             if(\Request::ajax())
             {
-                echo '{ "success": "false", "msg": "Error Updated" }';
+                return '{ "success": "false", "msg": "'.trans('crud.error-updated').'" }';
             }else
             {
                 \Session::flash('error', 'Error Updated');
-                    return \Redirect::to($this->viewName.'/');
+                    return \Redirect::to(getenv('APP_ADMIN_PREFIX')."/".$this->viewName.'/');
             }
 
         }
 
         if(\Request::ajax())
         {
-            echo '{ "success": "true", "msg": "Successfully Updated" }';
+            return '{ "success": "true", "msg": "'.trans("crud.success-updated").'" }';
         }else
         {
-            \Session::flash('success', 'Successfully Updated');
-            return \Redirect::to($path.'/');
+            \Session::flash('success', trans("crud.success-updated"));
+            return \Redirect::to(getenv('APP_ADMIN_PREFIX')."/".$path.'/');
         }
 
  
@@ -551,7 +557,7 @@ class CrudController extends \BaseController {
      */
     public function destroy($id)
     {
-    	$class     = new $this->className();
+        $class     = new $this->className();
 
         $key_value= $id;
         $key_name = $class->getKeyName();
@@ -585,23 +591,23 @@ class CrudController extends \BaseController {
 
             if(\Request::ajax())
             {
-                echo '{ "success": "false", "msg": "Error deleted" }';
+                return '{ "success": "false", "msg": "'.trans("crud.error-deleted").'" }';
             }else
             {
-                \Session::flash('error', 'Error deleted');
-                return \Redirect::to($model.'/');
+                \Session::flash('error', trans("crud.error-deleted"));
+                return \Redirect::to(getenv('APP_ADMIN_PREFIX')."/".$model.'/');
             }
 
         }
 
         if(\Request::ajax())
         {
-            echo '{ "success": "true", "msg": "Successfully deleted" }';
+            return '{ "success": "true", "msg": "'.trans("crud.success-deleted").'" }';
         }else
         {
             // redirect
-            \Session::flash('success', 'Successfully deleted');
-            return \Redirect::to($model.'/');
+            \Session::flash('success', trans("crud.success-deleted"));
+            return \Redirect::to(getenv('APP_ADMIN_PREFIX')."/".$model.'/');
         }
 
     }
@@ -680,8 +686,7 @@ class CrudController extends \BaseController {
 
         }
 
-        if(is_object($return))
-             return $return;
+        return $return;
 
        //return $return;
 

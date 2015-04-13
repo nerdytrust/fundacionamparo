@@ -45,7 +45,18 @@ class CrudData extends Command
 
         Artisan::call('dump-autoload'); // refresh config
         //https://github.com/schickling/laravel-backup
-        Artisan::call('db:restore'); // call seeders
+
+        $files = File::allFiles(app_path("storage/dumps"));
+        $dump = "";
+        foreach ($files as $file)
+        {
+            $pathinfo = pathinfo($file);
+            $dump  = $pathinfo['basename'];
+        }
+        if($dump)
+            Artisan::call('db:restore',["dump" => $dump]); // call seeders
+        else
+            return "doesnt exits dumps :(";
 
     }
 

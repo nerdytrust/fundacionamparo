@@ -1,6 +1,6 @@
     <div class="navmenu-push navmenu navmenu-default navmenu-fixed-left offcanvas">
-      <a class="navmenu-brand" href="#">ADMIN</a>
-
+      <a class="navmenu-brand" href="#">{{ getenv('APP_TITLE') }}</a>
+      
 
 		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 		  <ul class="nav navmenu-nav">
