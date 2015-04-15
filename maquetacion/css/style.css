@@ -487,6 +487,9 @@ span.donas{
 		/*background: url("../images/sep.png") no-repeat left;*/
 		background: none;  vertical-align: baseline;
 	}
+	#int_busc button:hover{
+		color: #beda3e;
+	}
 	h2.text-causas{
 		background: #FFF;
 		border-radius: .5em;
@@ -782,7 +785,7 @@ font-size: 15px !important;
 	-moz-animation: movebarra 30s infinite; 
 	-ms-animation: movebarra 30s infinite; 
 	animation: movebarra 30s infinite;  */ 
-	height: 17px;
+	height: 18px;
 	opacity: 0.8;
 	background: transparent;
 }
@@ -989,12 +992,6 @@ span.esquina{
 	background: #212121;	
 	margin: 2px;
 }
-/*.caja_fca_usu{
-	width: 16.6667%;
-	vertical-align: top;
-	height: 266px;
-	float: left;
-}*/
 .caja_fca_usu{
 		width: 16.8%;
 		height: auto;
@@ -1172,11 +1169,20 @@ span#name span button:after{
 #donador_sec{
 	background: #beda3e;
 }
+#donador_sec:hover{
+	background: #cfee44;
+}
 #impulsor_sec{
-	background: #3db3f0;
+	background: #4f99d9;
+}
+#impulsor_sec:hover{
+	background: #42c3ff;
 }
 #voluntario_sec{
 	background: #ffa93c;
+}
+#voluntario_sec:hover{
+	background: #ffb841;
 }
 .img_redonda{
 	display: inline-block;
@@ -1221,7 +1227,7 @@ span#name span button:after{
 	color: #beda3e;
 }
 .impulsor_clas h2{
-	color: #62adee;
+	color: #4f99d9;
 }
 .voluntario_clas h2{
 	color: #ffa93c;
@@ -1583,7 +1589,7 @@ b{color: #beda3e; font-weight: normal;}
 	font-size: 1.5em;
 	height: 60px;
 	line-height: 60px;
-	margin: 3px 10px;
+	margin: 3px 4px;
 	width: 60px;
 	text-align: center;
 }
@@ -1673,6 +1679,10 @@ b{color: #beda3e; font-weight: normal;}
 	height: 30px;
 	position: absolute;
 	bottom: 0;
+}
+#imp-r{
+	margin: 10% 0 0% 0;
+	display: block;
 }
 /* EVENTOS */
 
@@ -1860,8 +1870,11 @@ b{color: #beda3e; font-weight: normal;}
 	height: 200px;
 	width: 200px;
 }
+.circulo_btn:hover, .circulo_btn2:hover, .circulo_btn3:hover{
+	opacity: .8;
+}
 .circulo_btn2{
-	background: #3db3f0;
+	background: #4f99d9;
 }
 .circulo_btn3{
 	background: #ffa93c;
@@ -2764,7 +2777,12 @@ span.esquina-pop{
 	}
  
 }
-@media screen and (max-width:1400px) {
+@media screen and (max-width:1445px) {
+	
+	.como{
+		  top: 280px !important;
+	}
+
 	/*span.donas{
 		display: none;
 	}*/
@@ -2802,10 +2820,13 @@ span.esquina-pop{
 		width: 77%;
 	}
 	#cantidad h2 {
-  letter-spacing: -2px
+  letter-spacing: -3px
 	}
 }
 @media screen and (max-width: 1350px){
+		.caja_fca_usu span.mio span#name, .caja_fca_usu span.mio3 span#name, .caja_fca_usu span.mio2 span#name{
+	padding-top: 70%;
+}
 	span.donas{
 		display: block;
 		width: 100%;
@@ -2820,6 +2841,10 @@ span.esquina-pop{
 }
 /* 1200px (Small Desktop, Netbook) */
 @media screen and (max-width:1280px) {
+	.caja_fca_usu span.mio span#name, .caja_fca_usu span.mio3 span#name, .caja_fca_usu span.mio2 span#name{
+			padding-top: 75%;
+	}
+
 	#logo{
 		width: 28%;
 	}
@@ -2827,7 +2852,11 @@ span.esquina-pop{
 		width: 71%;
 	}
 	.caja_fca_usu{
-		width: 20%;
+		width: 25% ;
+		/*border: solid 1px red;*/
+	}
+	.cu{
+		padding: 157px 0 0 0 !important; 
 	}
 	.txt_fundacion3{
   		width: 100%;
@@ -2835,9 +2864,6 @@ span.esquina-pop{
   	#caja_aporta2{
   		margin: 10px;
   	}
-  	.caja_fca_usu{
-	width: 25%;
-	}
 
 	.datos-inf>p {
   font-size: 14px !important;
@@ -2851,7 +2877,9 @@ span.esquina-pop{
 /* xGA iPad */
 @media screen and (max-width:1024px) {
 
-
+	.como{
+		  top: 33% !important;
+	}
 	h2.text-causas{
 		bottom: 12%;
 		font-size: .57em;
@@ -3740,6 +3768,7 @@ label.becas ul.pasos li:first-child{
 	#donador_sec, #impulsor_sec, #voluntario_sec{
 		padding: 8% !important;
 	}
+
 	progress[value]::-webkit-progress-bar {
 	  width: 100%;
 	}
@@ -4341,7 +4370,7 @@ text-align: left;
 		  margin-top: 10% !important;
 		}
 		#verde1 .donar{
-			margin-top: 9%;
+			margin-top: 4%;
 		}
 		#azul1 .imp{
 			margin-top: 3%;
@@ -4362,6 +4391,13 @@ text-align: left;
 		#entrar .donar{
 			margin-top: 3%;
 		}
+		#azul2 .imp{
+			margin-top: 11%;
+		}
+		#naranja1 .vol {
+		  margin-top: 5% !important;
+		}
+		
 
   }
 
@@ -4377,6 +4413,9 @@ text-align: left;
 		}
 		#azul1 .imp{
 			margin-top: 21%;
+		}
+		#azul2 .imp{
+			margin-top: 31%;
 		}
 		#naranja1 .vol{
 			margin-top: 12%;
@@ -4401,7 +4440,7 @@ text-align: left;
 		  margin-top: 36% !important;
 		}
 		#verdeimagen>.donar{
-			margin-top: 17% !important;
+			margin-top: 14% !important;
 		}
 		#verdeimagen .p3{
 			margin-top: 31% !important;
