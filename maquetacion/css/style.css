@@ -228,11 +228,12 @@ a{
 .rt{
 		margin: 9% auto 0 1% !important;
 		height: auto;
-		/*background: red;*/
+		/*background: pink;*/
 	}
 	.rt2{
 		margin: 7% auto 0 1% !important;
 		height: auto;	
+	/*	background: red;*/
 	}
 
 button{
@@ -3201,9 +3202,9 @@ label.contact textarea{
 		/*background: red;*/
 	}
 	.contact-inf {
- width: 95% ;
- /*  background: red;*/
-}
+	 width: 95% ;
+	 /* background: red;*/
+	}
 	
 	label.contact span:after{
 		display: none;
@@ -4367,19 +4368,19 @@ text-align: left;
 	  padding: 130px 0 0 0 !important;
 	}
 	.usuario-light {
-		  margin-top: 10% !important;
+		  margin-top: 8% !important;
 		}
 		#verde1 .donar{
 			margin-top: 4%;
 		}
 		#azul1 .imp{
-			margin-top: 3%;
+			margin-top: 0%;
 		}
 		#gracias .donar {
 		  margin-top: 14% !important;
 		}
 		#verdeimagen>.donar{
-			margin-top: 2% !important;
+			margin-top: -2% !important;
 		}
 		#verdeimagen .p3{
 			margin-top: 11% !important;
@@ -4397,22 +4398,56 @@ text-align: left;
 		#naranja1 .vol {
 		  margin-top: 5% !important;
 		}
+		.rt{
+		margin: 16% auto 0 2% !important;
+		height: auto;
+		/*background: pink;*/
+		}
+		.rt2{
+		margin: 5% auto 0 2% !important;
+		height: auto;
+		/*background: black;*/
+		}
+		button.str {
+		margin-top: 1% !important;
+		 /*background: gold !important;*/
+		}
+		label.contact button{
+			 margin-top: 5%;
+		 
+		}
+		
 		
 
   }
 
 @media screen and (max-width: 768px) and (min-width: 639px) and (orientation:portrait) {
+	button.str {
+		margin-top: 1% !important;
+		 /*background: gold !important;*/
+		}
+	.rt{
+		margin: 21% auto 0 4% !important;
+		height: auto;
+		/*background: orange;*/
+	}
+	.rt2{
+		margin: 6% auto 0 4% !important;
+		height: auto;
+		/*background: red;*/
+		}
+	
 	.cu {
 	  padding: 137px 0 0 0 !important;
 	}
 	#verde1 .donar{
-			margin-top: 27%;
+			margin-top: 21%;
 		}
 		#entrar .donar{
 			margin-top: 17%;
 		}
 		#azul1 .imp{
-			margin-top: 21%;
+			margin-top: 16%;
 		}
 		#azul2 .imp{
 			margin-top: 31%;
@@ -4440,7 +4475,7 @@ text-align: left;
 		  margin-top: 36% !important;
 		}
 		#verdeimagen>.donar{
-			margin-top: 14% !important;
+			margin-top: 10% !important;
 		}
 		#verdeimagen .p3{
 			margin-top: 31% !important;
