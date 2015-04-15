@@ -1,10 +1,30 @@
-vendor/*
+#Laravel
+/bootstrap/compiled.php
+/vendor
+.env.*.php
+.env.php
+
+# Configuration
+/app/config/local
+/app/config/staging
+/app/config/production
+
+# Composer
+composer.phar
+composer.lock
+
+# System
 .bash_logout
 .bashrc
 .profile
 */.htaccess
 *.htaccess
+
+# OS
 .DS_Store
+.idea/
+vagrant
+.vagrant
 .DS_Store?
 .Spotlight-V100
 .Trashes
