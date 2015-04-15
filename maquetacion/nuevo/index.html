@@ -14,8 +14,9 @@
 	<link rel="stylesheet" href="css/pop.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/tabs.css">
+	<link rel="stylesheet" href="css/animsition.min.css">
 </head>
-<body>
+<body class="animsition">
 <div id="meenus">
 	<header>
 		<div id="logo">
@@ -34,7 +35,7 @@
 				<li><a href="fundacion_como_ayudar.html">Como ayudar</a></li>
 				<li><a href="fundacion_amparo_causas.html">Causas vivas</a></li>
 				<li><a href="fundacion_usuarios.html">Donadores</a></li>
-				<li><a href="fundacion_muro.html">Muro del Éxito</a></li>
+				<li><a href="fundacion_muro.html" class="animsition-link">Muro del Éxito</a></li>
 			</ul>
 			<ul id="menu_dos">
 				<li><a href="fundacion01_e.html">La Fundación</a></li>
@@ -550,10 +551,29 @@
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/pop.js"></script>
+	<script src="js/jquery.animsition.min.js"></script>
 	<script>
 	$(document).ready(function(){
 		$(".txt_int").hover(function(){
 			$("#barra progress").toggleClass("barramover");
+		});
+
+		$(".animsition").animsition({
+			inClass               :   'fade-in',
+			outClass              :   'fade-out',
+			inDuration            :    1500,
+			outDuration           :    800,
+			loading               :    true,
+			linkElement           :   '.animsition-link',
+			loadingParentElement  :   'body', //animsition wrapper element
+			loadingClass          :   'animsition-loading',
+			unSupportCss          : [ 'animation-duration',
+										'-webkit-animation-duration',
+										'-o-animation-duration'
+									],
+			overlay               :   false,
+			overlayClass          :   'animsition-overlay-slide',
+			overlayParentElement  :   'body'
 		});
 	});
 	</script>	

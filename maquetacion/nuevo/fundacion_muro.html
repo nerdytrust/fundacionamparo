@@ -8,11 +8,11 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/animsition.min.css">
 	<link rel="stylesheet" href="css/pop.css">
 	<link rel="stylesheet" href="css/timeline.css">
-	
 </head>
-<body>
+<body class="animsition">
 <div id="meenus">
 	<header>
 		<div id="logo">
@@ -69,12 +69,12 @@
 	<section id="Contenedor" class="success_wall container-fluid">
 		<div id="success_wall" class="row">
 			<section id="main_time" class="container-fluid">
-				<div id="carousel-timeline" class="row carousel slide" data-ride="carousel">
-					<a href="#carousel-timeline" class="left carousel-control" role="button" data-slide="prev">
+				<div id="carousel-timeline" class="row carousel slide" data-ride="carousel" data-interval="false">
+					<a href="#carousel-timeline" class="left carousel-control main-rol" role="button" data-slide="prev">
 						<span class="left-arrow" aria-hidden="true"></span>
 						<span class="sr-only">Previo</span>
 					</a>
-					<a href="#carousel-timeline" class="right carousel-control" role="button" data-slide="next">
+					<a href="#carousel-timeline" class="right carousel-control main-rol" role="button" data-slide="next">
 						<span class="right-arrow" aria-hidden="true"></span>
 						<span class="sr-only">Siguiente</span>
 					</a>
@@ -102,7 +102,7 @@
 								<p>
 									En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
 								</p>
-								<a href="#" data-timeline-content="1987">MÁS INFORMACIÓN <b>+</b></a>
+								<a href="#" data-timeline-content="1986">MÁS INFORMACIÓN <b>+</b></a>
 							</span>
 						</div>
 						<div class="slide col-sm-12 item">
@@ -113,7 +113,7 @@
 								<p>
 									En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
 								</p>
-								<a href="#" data-timeline-content="1988">MÁS INFORMACIÓN <b>+</b></a>
+								<a href="#" data-timeline-content="1986">MÁS INFORMACIÓN <b>+</b></a>
 							</span>
 			  	    	</div>
 			  	    </div>
@@ -129,12 +129,10 @@
 			  	    <div class="navigator-buttons col-sm-12">
 						<a href="#carousel-timeline" class="left carousel-control secondary" role="button" data-slide="prev">
 							<span class="left-arrow-secondary" aria-hidden="true"></span>
-							<!--<span class="sr-only">Previo</span>-->
 						</a>
 						<span class="navigator-legend">Seleccionar año</span>
 						<a href="#carousel-timeline" class="right carousel-control secondary" role="button" data-slide="next">
 							<span class="right-arrow-secondary" aria-hidden="true"></span>
-							<!--<span class="sr-only">Siguiente</span>-->
 						</a>
 		  	    		
 		  	    	</div>
@@ -142,19 +140,19 @@
 			</section>
 			<section id="moments_time" class="container-fluid">
 				<button class="btn btn-cerrar"></button>
-				<div id="carousel-timeline-moments" class="row carousel slide" data-ride="carousel">
-					<a href="#carousel-timeline-moments" class="left carousel-control" role="button" data-slide="prev">
+				<div id="carousel-timeline-moments" class="row carousel slide" data-ride="carousel" data-interval="false">
+					<a href="#carousel-timeline-moments" class="left carousel-control main-rol" role="button" data-slide="prev">
 						<span class="left-arrow" aria-hidden="true"></span>
 						<span class="sr-only">Previo</span>
 					</a>
-					<a href="#carousel-timeline-moments" class="right carousel-control" role="button" data-slide="next">
+					<a href="#carousel-timeline-moments" class="right carousel-control main-rol" role="button" data-slide="next">
 						<span class="right-arrow" aria-hidden="true"></span>
 						<span class="sr-only">Siguiente</span>
 					</a>
 					<div class="slide_container col-sm-12 carousel-inner" role="listbox">
 						<div class="slide col-sm-12 active item">
 							<img src="images/slider1.png" alt="" class="img-responsive">
-							<span class="moment-description col-sm-12 col-md-6">
+							<span class="moment-description col-sm-12 col-md-5 col-lg-6">
 								<button class="btn btn-default">EDUCACIÓN</button>
 								<h1>1986</h1>
 								<h2>Creación de la fundación amparo</h2>
@@ -177,7 +175,7 @@
 						</div>
 						<div class="slide col-sm-12 item">
 							<img src="images/slider1.png" alt="" class="img-responsive">
-							<span class="moment-description col-sm-12 col-md-6">
+							<span class="moment-description col-sm-12 col-md-5 col-lg-6">
 								<button class="btn btn-default">EDUCACIÓN</button>
 								<h1>1986</h1>
 								<h2>Creación de la fundación amparo</h2>
@@ -196,7 +194,7 @@
 						</div>
 						<div class="slide col-sm-12 item">
 							<img src="images/slider1.png" alt="" class="img-responsive">
-							<span class="moment-description col-sm-12 col-md-6">
+							<span class="moment-description col-sm-12 col-md-5 col-lg-6">
 								<button class="btn btn-default">EDUCACIÓN</button>
 								<h1>1986</h1>
 								<h2>Creación de la fundación amparo</h2>
@@ -226,52 +224,62 @@
 			  	    <div class="navigator-buttons col-sm-12">
 						<a href="#carousel-timeline-moments" class="left carousel-control secondary" role="button" data-slide="prev">
 							<span class="left-arrow-secondary" aria-hidden="true"></span>
-							<span class="sr-only">Previo</span>
 						</a>
-						<span class="navigator-legend">Seleccionar año</span>
+						<span class="navigator-legend">1986</span>
 						<a href="#carousel-timeline-moments" class="right carousel-control secondary" role="button" data-slide="next">
 							<span class="right-arrow-secondary" aria-hidden="true"></span>
-							<span class="sr-only">Siguiente</span>
 						</a>
-		  	    		
 		  	    	</div>
 		  	    </div>
 			</section>
-			<!--<section id="moments_line">
-				<div class="slide_container">
-					<button class="cerrar-h"></button>
-				</div>
-			</section>-->
 		</div><!--termina cont-time-->
 	</section>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.core.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/pop.js"></script>
-
+	<script src="js/jquery.animsition.min.js"></script>
 	<script type="text/javascript">
 		// $(function(){
 		// 	SyntaxHighlighter.all();
 		// });
 		
 		$(function(){
+			$(".animsition").animsition({
+				inClass               :   'fade-in',
+				outClass              :   'fade-out',
+				inDuration            :    1500,
+				outDuration           :    800,
+				loading               :    true,
+				linkElement           :   '.animsition-link',
+				loadingParentElement  :   'body', //animsition wrapper element
+				loadingClass          :   'animsition-loading',
+				unSupportCss          : [ 'animation-duration',
+											'-webkit-animation-duration',
+											'-o-animation-duration'
+										],
+				overlay               :   false,
+				overlayClass          :   'animsition-overlay-slide',
+				overlayParentElement  :   'body'
+			});
+
 			$('#main_time .carousel-inner .item a').click(function(e){
 				e.preventDefault();
-				$('#main_time').slideUp();
-				$('#moments_time').slideDown();
+				$('#main_time').hide().fadeOut(200, "swing", function(){
+					$('#moments_time').fadeIn(800);
+				});
 			});
 
 			$('#moments_time .btn-cerrar').click(function(e){
 				e.preventDefault();
-				$('#moments_time').slideUp();
-				$('#main_time').slideDown();
+				$('#moments_time').hide().fadeOut(200, "swing", function(){
+					$('#main_time').fadeIn(800);	
+				});
 			})
 		});
 	</script>
-    <!-- Optional FlexSlider Additions -->
-    <script src="js/froogaloop.js"></script>
-	<script src="js/jquery.fitvid.js"></script>
 </body>
 </html>
 

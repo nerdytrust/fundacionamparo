@@ -382,6 +382,8 @@ button.regresar{
 			cursor: pointer;
 			padding: 0;
 			text-align: center;
+			-webkit-appearance: none;
+			border-radius: 0;
 		}
 		
 		#r::-webkit-input-placeholder {
