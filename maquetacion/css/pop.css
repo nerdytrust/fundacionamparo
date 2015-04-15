@@ -1,8 +1,8 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 html, body { 
-	height: 100%; 
-	width: 100%; 
+	/*height: 100%; 
+	width: 100%; */
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -16,7 +16,61 @@ img.bg {
   top: 0;
   left: 0;
 }
-
+.logo2{
+	width: auto !important;
+	height: auto !important;
+	display: block !important;
+}
+h1.bien{
+	margin: 0;
+	padding: 0;
+	display: block;
+	/*background: gold;*/
+	text-align: left;
+	width: 100%;
+	letter-spacing: -5px !important;
+	height: 57px;
+}
+h2.entrar{
+	margin: 0 0 37px 0 !important;
+	padding: 0;
+	display: block;
+	/*background: red;*/
+	text-align: center;
+	  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: -2px;
+  width: 100% !important
+}
+label.intro input{
+	font-size: 1em !important;
+	text-align: center !important;
+	color: #fff;
+	padding: 0 !important;
+	margin: 0 0 19px 0 !important;
+}
+button.face-btn{
+	width: 280px;
+	height: 53px;
+	display: block;
+	margin: 5px auto 19px auto;
+	border:none;
+	background: url("../images/face-btn.png");
+}
+a.olvido{
+	  margin: 0px 0 19px 0 !important;
+ 	 display: block !Important;
+}
+#entrar div label .check-verde{
+	font-size: 14px !important;	
+	font-weight: 600;
+	margin-bottom: 25px;
+	letter-spacing: 0.5px;
+}
+#entrar div label .check-verde input#check-verde{
+	margin-right: 5px !important;
+	/*background: red;*/
+}
 /*lightbox home*/
 #verdeimagen, #verde1, #gracias{
 	display: block;
@@ -24,19 +78,32 @@ img.bg {
 #verdeimagen button.cerrar-h, #verde1 button.cerrar-h, #gracias button.cerrar-h{
 	display: none;
 }
-
+button.regresar{
+	background: transparent;
+	  font-size: 14px;
+	  color: #fff;
+	  border: none;
+	  position: absolute;
+	 right: 0px;
+	  top: 5px;
+	  padding: 0;
+}
 		.lightbox-h{
 			width: 100%;
-			height:2000px;
-			background: url("../images/back-li2.png");
-			position: fixed;
+			min-height:100%;
+			/*background: url("../images/back-li2.png");*/
+			background: #ffa93c;
+			/*position: fixed;*/
+			position: absolute;
 			top: 0;
 			z-index: 100000;
-			/*display: block;*/
-			display: none;
+			display: block;
+			/*display: none;*/
+			padding-top: 3%;
+			padding-bottom: 5%;
 		}
-		.lightbox-h-cont {
-			width: 396px;
+		.lightbox-h-cont{
+			width: 281px;
 			min-height: 383px;
 			margin: 0 auto;
 			display: block;
@@ -55,9 +122,10 @@ img.bg {
 			/*background: #feb84a !important;*/
 		}
 		.vol{
-			width:381px;
-			height: 803px;
-			top: 0.7% !important; 
+			/*width:381px !important;*/
+			width:281px !important;
+			height: auto;
+			top: 3% !important; 
 			/*background: gold;*/
 		}
 		.line{
@@ -65,6 +133,7 @@ img.bg {
 			height: 2px;
 			display: block;
 			background: url("../images/line.png") repeat-x;
+			  margin: 6% auto !important;
 		}
 
 		.lightbox-h-cont img{
@@ -138,7 +207,7 @@ img.bg {
 		}
 		#naranja1 .vol p{
 			margin: 3% auto !important;
-			width: 80%;
+			width: 100%;
 			font-weight: 600 !important;
 			font-size: 14px;
 		}
@@ -192,12 +261,14 @@ img.bg {
 			width: auto;
 			display: inline-block;
 			  font-size: 14px;
+			  margin-top: 3%;
+			  /*margin-bottom: 5%;*/
 		}
 		.vol a img, .d a img, .i a img{
 			width: 23px;
 			height: 23px;
 			display: inline-block;
-			vertical-align: middle;
+			vertical-align: bottom;
 			margin-left: 5px;
 		}
 		label.donar-l{
@@ -238,10 +309,11 @@ img.bg {
 			font-size: 14px;
 			}
 			label.vol select option{
-				background: #fff;
+				/*background: #fff;
 				height: 48px;
 				display: block;
 				border-bottom: 1px solid #a3a3a3;
+				-webkit-border-bottom: 1px solid #a3a3a3;*/
 				color: #a3a3a3;
 			}
 		label.vol input{
@@ -251,11 +323,13 @@ img.bg {
 			background: transparent;
 			font-size: 1em;
 			  box-shadow: 1px 2px 8px 0px #95c23c inset;
+			   -moz-box-shadow: 1px 2px 8px 0px #95c23c inset;
+			   -webkit-box-shadow: 1px 2px 8px 0px #95c23c inset;
 			text-align: center;
 			color: #fff;
 			margin-bottom: 10px;
 			/*background: url("../images/back-o.png") repeat;*/
-			background: #badb48;
+			background: #c3e138;
 			position: relative;
 			text-align: left;
 			padding-left: 35px;
@@ -310,6 +384,8 @@ img.bg {
 			cursor: pointer;
 			padding: 0;
 			text-align: center;
+			-webkit-appearance:none;
+			border-radius: 0;
 		}
 		
 		#r::-webkit-input-placeholder {
@@ -330,12 +406,15 @@ img.bg {
 			height: 21px;
 			box-shadow: none;	
 		}*/
+		label.vol input[type="submit"]{
+			margin-bottom: 0;
+		}
 		button.feis{
 			width: 100%;
 			height: 52px;
-			background: #fff url("../images/feis.png")no-repeat 10% center;
+			background: #fff url("../images/feis.png")no-repeat 7% center;
 			border: none;
-			margin: 6% 0;
+			margin: 6% 0 0 0;
 			cursor: pointer;
 		}
 		button.feis #invitar{
@@ -349,21 +428,22 @@ img.bg {
 			font-weight: 600 !important;
 		}
 	.d{
-		background: url("../images/back-li3.png") !important; 
-		/*background: #beda3e;
-		opacity: 0.9;*/
+		/*background: url("../images/back-li3.png") !important; */
+		background: #beda3e;
+		
 	}
 	.i{
-		background: url("../images/back-li4.png") !important;
-		/*background: #4f99d9;*/
+		/*background: url("../images/back-li4.png") !important;*/
+		background: #4f99d9;
 	}
 	.donar{
-		min-width: 283px;	
+		min-width: 281px;	
 		background: none;
 		box-shadow: none;
 	}
 	.imp{
-		width: 295px;
+		/*width: 295px !important;*/
+		width: 281px !important;
 		min-height: 600px;
 		background: none;
 		box-shadow: none;
@@ -390,8 +470,9 @@ img.bg {
 		  width: 30%;
 		  /* height: 22px; */
 		  background-size: contain;
-		  width: 155px;
+		  width: 129px;
 		  height: 30px;
+		  font-size: .7em;
 	}
 	.imagen.p2 p{
 		left: 126px;
@@ -495,30 +576,51 @@ img.bg {
 		width: 28% !important;
 	}*/
 	.imagen>button{
-		background: url("../images/btn-tra.png") no-repeat;
+		/*background: url("../images/btn-tra.png") no-repeat;
 		width: 152px;
 		height: 29px;
 		border: none;
 		position: absolute;
 		bottom: 14%;
 		left: 4%;
+		cursor: pointer;*/
+		min-width: 152px;
+		height: 29px;
+		border: none;
+		position: absolute;
+		bottom: 14%;
+		left: 4%;
 		cursor: pointer;
+		  background: #FFF;
+		  border-radius: .5em;
+		  color: #000;
+		  display: inline-block;
+		  font-size: .8em;
+		  padding: 2px 8px;
+		  line-height: 2em;
+		  letter-spacing: -.8px;
+		  text-transform: uppercase;
 }
 #ev-im{
 	position: absolute;
   top: 0;
   left: -20%;
   width: 126%;
+  /*width: 100%;
+height: auto;
+display: block;
+margin: 0px auto;
+position: inherit;*/
 }
 #txt_evento{
 	z-index: 1000;
-position: inherit;
+/*position: inherit;-*/
 }
 .ev h1{
 	margin-top: 9%;
 }
 .ev .datos-inf{
-	height: 70% !important;
+	height: 100% !important;
 	margin-bottom: 0 !important
 }
 		/*termina lightbox home*/
@@ -532,13 +634,13 @@ position: inherit;
 		display: none;
 	}
 	.usuario-light{
-		width: 69.1%;
-		/*width: 1093px;
-		height: 38px;*/
+		/*width: 69.1%;*/
+		width: 972px;
+		/*height: 38px;*/
 		height: 565px;
 		display: block;
 		position: relative;
-		margin: 0 auto;
+		margin: 10% auto 0 auto;
 		top: 10%;
 		background: #fff;
 		box-shadow: 0px 0px 12px #A5A5A5;
@@ -553,7 +655,7 @@ position: inherit;
 		overflow: hidden;
 	}
 	.lightbox .usuario #txt_evento nav{
-		margin: 15px 0 0 20px;
+		margin: 15px 0 0 15px;
 		width: 50%;
 	}
 	.lightbox .usuario #txt_evento nav ul{
@@ -585,15 +687,17 @@ position: inherit;
 		width: 266px;
 		height: 266px;
 		display: block;
-		margin: 11% auto;
+		margin: 10% auto 3% auto;
 	}
 	.usuario p{
 		color: #fff;
-		width: 67%;
+		/*width: 67%;*/
+		width: 55%;
 		margin: 0 auto;
 		text-align: center;
 		font-size: 0.9em;
 		line-height: 18px;
+		/*background: red;*/
 	}
 	.usuario p b{
 		color: #fff;
@@ -711,7 +815,12 @@ position: inherit;
 		color: #919191;
 		font-size: 14px;
 		line-height: 22px;
-		/*font-family: helveticaNeueMedium;*/
+		font-weight: normal !important;
+		-moz-font-weight: normal !important;
+		-webkit-font-weight: normal !important;
+		/*font-family: helveticaNeueMedium;
+		background: red;*/
+		width: 93%;
 	}
 	.datos-inf>p>b{
 		color: #000;
@@ -740,7 +849,7 @@ position: inherit;
 			width: 100%;
 			list-style: none;
 			display: block;
-			margin-bottom: 26px;
+			margin-bottom: 10px;
 		}
 		.datos-inf li:before{
 			content: "• ";
@@ -873,7 +982,7 @@ position: inherit;
 			.scN{
 			width: auto;
 			height: 56%;
-			overflow-y:scroll;
+			/*overflow-y:scroll;*/
 			display: block;
 			/*background: red;*/
 			}
@@ -893,14 +1002,14 @@ position: inherit;
 		}
 		@media screen and (max-width: 1280px){
 			.usuario-light{
-				width: 95%;
+				/*width: 95%;*/
 				top: 5%;
 			}
 		}
 	@media screen and (max-width:1024px){
 			
 			.lightbox .datos .datos-inf{
-				width: 100%;
+				/*width: 100%;*/
 			}
 			.lightbox .datos h1{
 				font-size: 1.2em;
@@ -918,23 +1027,174 @@ position: inherit;
 				width: 25% !important;
 			}
 		}
-		@media screen and (max-width: 768px){
+	@media screen and (max-width: 768px){
 			.tabs{
 				width:98% !important;
 			}
 			.content-1>.fig{
-				top: 46% !important;
+				top: 37% !important;
 			}
-			.content-1>#meta{
-				top: 77% !important;
-			}
-		
-		}
-	@media screen and (max-width:640px) {
-	    .usuario-light{width: 100%; top: 0; box-shadow: none;}
-		.lightbox .usuario, .lightbox .datos{
+			
+			.usuario-light{width: 100%; top: 0 !important; box-shadow: none;}
+			.lightbox .usuario, .lightbox .datos{
 			width: 100%;
 		}
+		.usuario{
+			background: #fff !important;
+		}
+
+		.lightbox .datos{
+			margin-top: 5%;
+			position: initial;
+		}
+		.cau img{
+			width: 90%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+			position: inherit;
+
+		}
+		.lightbox .cau{
+			background: #fff !important;
+		}
+		.cot-scroll{
+			width: auto;
+			height: 1050px;
+			display: block;
+			background: #fff;
+			overflow-y:scroll;
+			padding-top: 10%;
+		}
+		figure.cauf>span{
+			font-size: 2.5vw;
+		}
+		.tabs{
+			margin-top: 5px;
+			width: 90% !important;
+			
+		}
+		.donadores-c span#fotos{
+			width: 11%;
+		}
+		span.esquina-pop{
+			display: none;
+			position: inherit;
+		}
+		.content-1>#meta{
+			width: 100% !important;
+			top: 77% !important;
+		}
+		#foto-usuario {
+		  width: 100%;
+		  margin: 0;
+		  height: 90%;
+		}
+		#foto-usuario img{
+			width: 90%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+		.datos{
+			position: inherit;
+		}
+		.lightbox .datos img{
+			display: none;
+		}
+		.lightbox .datos button{
+			top: -50px;
+  			right: 37px;
+		}
+		#ev-im{
+			position: relative;
+			width: 90%;
+			left: 0;
+			display: block;
+			margin: 0 auto;
+		}
+		.foto {
+ height: auto;
+    width: 100% !important;
+    display: block !important;
+    margin: 0px auto;
+}
+
+		}
+		
+	@media screen and (max-width:640px) {
+		button.feis{
+			
+			background: #fff url("../images/feis.png")no-repeat 33px center;
+			
+		}
+		.content-1>#meta #cantidad h1{
+			top: -3px !important;
+		}
+
+		figure.cauf>span{
+			font-size: 3vw;
+		}
+		#foto-usuario{
+			margin: 11% auto;
+			height: 266px;
+		}
+		.lightbox{
+			background: #fff;
+		}
+		.lightbox .datos button{
+			top: -42px;
+			right: 16px;
+		}
+		.content-1>.fig{
+				top: 49% !important;
+
+			}
+			.lightbox .datos{
+				margin-top: 0px;
+			}
+			.lightbox .sr{
+				margin-top: 0px;
+			}
+		.cot-scroll{
+			height: 480px;
+			padding-top: 45px;
+		}
+		.datos-inf > p{
+			text-align: left;
+			line-height: 20px !important;
+		}
+
+		button.cerrar{
+			width: 30px !important;
+			height: 30px !important;
+			background-size: contain !important;
+		}
+		.ev h1, .ev h2{
+			/*margin-top: 25% !important;*/
+			width: 84%;
+			
+			display: block;
+		}
+		.ev h1{
+			margin: 5% 0 0 5% !important;
+		}
+		.ev h2{
+			margin-bottom: 5% !important;
+			margin-left: 5%;
+		}
+		.ev p{
+			text-align: left;
+			width: 84%;
+			margin-left: 5%;
+
+		}
+		 span.esquina-pop{
+			background:none;
+			position: inherit;
+		}
+	    
+		
 		.lightbox .datos{
 			position: initial;
 			background: #fff;
@@ -945,27 +1205,27 @@ position: inherit;
 			width: 100%;
 		}
 		.datos .fig{
-			width: 100%;
+			width: 98%;
 			padding: 0;
 			display: flex;
 justify-content: space-between;
 		}
 		.datos .fig>figure{
-			background: red !important;
+			/*background: red !important;*/
 		}
 		.datos figure{
 			margin: 0 3% 0 3%;
 			width: 24%;
 		}
 		.datos figure span{
-			/*width: 100%;*/
-			font-size: 1.3em;
+			/*width: 100%;
+			font-size: 1.3em;*/
 			padding: 0;
-			display: none;
+			/*display: none;*/
 		}
 		.lightbox .datos .datos-inf{
 			width: 100%;
-			margin: 0 0 12% 0;
+			/*margin: 0 0 12% 0;*/
 			text-align: center;
 			height: auto;
 		  display: block;
@@ -983,20 +1243,15 @@ justify-content: space-between;
 		.lightbox .datos button{
 			/*position: fixed;*/
 		}
-		.lightbox-h-cont{
-			width: 100%;
-			top: 5%;
-		}
+		
 		.lightbox-h{
-			height: 200%;
+			min-height: 130%;
+			height: auto !important;
 		}
 		.donadores-c span#fotos{
 			width: 20%;
 		}
-		.tabs{
-			margin-top: 5px;
-			width: 90% !important;
-		}
+		
 		.donadores-c{
 			height: 220px;
 		}
@@ -1008,25 +1263,142 @@ justify-content: space-between;
 			width: 50%;
 		}
 		label.contact input{
-			width: 95%;
+			width: 100%;
 		}
-		.lightbox .usuario{
-			display: none;
-		}
+		
 		label.becas ul.pasos li h2{
 			width: 100%;
-			font-size: 22px !important;
+			font-size: 22px;
+			
 		}
 		ul.pasos button{
 			margin-bottom: 20px !important;
 		}
+		.force-overflow {
+		  height: 300px;
+		}
+		.lightbox .usuario{
+			/*height: 78%;*/
+			background: #fff;
+		}
+		select#promedio{
+			padding-left: 3%;
+		}
+		select#promedio, ul.pasos li:nth-of-type(3) textarea{
+			width: 100% !important;
+		}
 	}
 
-	/*termina laghtbox*/
+
+	@media screen and (max-width:380px){
+
+		#cantidad h1{
+			margin-left: 0 !important;
+		}
+		.tabs{
+			margin: -2px auto !important;
+		}
+		#meta p{
+			margin: 0 !important;
+			display: inline-block !important;
+		}
+		.datos > button.centros{
+			margin: 20px 0px 12px 5%;
+		}
+		.tabs{
+			margin: 0 auto;
+		}
+		#cantidad{
+			margin-left: 0;
+			width: auto;
+			margin-right: 50px;
+		}
+
+		/*.cot-scroll{
+			height: 50%;
+		}
+		.usuario-light{
+			height: 100%;
+		}*/
+		div.cau-dat > h1 > b{
+			font-size: 11px !important;
+		}
+			.lightbox-h-cont{
+			/*width: 100% !important;*/
+			padding-top: 3% !important;
+		}
+		.datos-inf>p>b{
+			font-size: .9em;
+		}
+		.datos figure{
+			width: 27%;
+		}
+		.content-1>#meta{
+			top:80% !important;
+		}
+		#meta p{
+			display: block;
+			margin: 1% 0 0 0;
+		}
+		.tabs{
+			height: 82% !important;
+		}
+		button.feis{
+			width: 282px;
+		}
+		
+		ul.pasos li:nth-of-type(3) > span:nth-of-type(3){
+			width: 100%;
+		}
+
+
+		}
+		@media screen and (max-width: 320px){
+			.lightbox-h{
+			min-height: 158%;
+		}
+		#entrar{
+			min-height: 120% !important;
+		}
+		}
+		@media screen and (max-width:640px) and (min-width:420px){
+			.cot-scroll {
+				height: 300px !important;
+				/*height: auto !important;*/
+				padding-top: 55px;
+				}
+				.content-1>.fig {
+				top: 40% !important;
+				}
+				.content-1>#meta {
+				top: 81% !important;
+				}
+				.cau{
+					/*height: auto !important ;*/
+				}
+				.datos-inf{
+					overflow-y:hidden !important;
+					margin: 0 !important;
+				}
+				.force-overflow {
+				  height: 250px;
+				 /* background: red;*/
+				}
+				.datos .fig{
+					margin: 5% 0 !important;
+				}
+
+		}
+		/*@media only screen and (max-device-width: 640px) and (orientation: landscape)  {
+		    
+		}
+
+	termina laghtbox*/
 
 	/*checkboxeses*/
 .check-verde {
-	width: 70%;	
+	/*width: 70%;	*/
+	width: 282px;
 	margin: 4% auto;
 	display: inline-block;
 	height: 21px;
@@ -1079,7 +1451,9 @@ justify-content: space-between;
 }
 /*check azul*/
 .check-azul {
-	width: 90%;	
+	/*width: 90%;	*/
+	width: 282px;
+
 	margin: 2% auto 4% auto;
 	display: inline-block;
 	height: 21px;

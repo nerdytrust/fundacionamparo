@@ -6,656 +6,280 @@
 	<meta name="viewport" content="initial-scale=1">
 	<meta name="decription" conetent=""/>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/animsition.min.css">
 	<link rel="stylesheet" href="css/pop.css">
-	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/timeline.css">
-	<style>
-		.muro2 .flex-control-paging li a{
-			background: url("images/back-linea-m.png") no-repeat 2% 50%;
-			height: 21px;
-			min-width: 75px;
-			content: "1";
-		}
-		.muro2 .flex-control-paging li a.flex-active{
-			background: url("images/back-lineaH.png")no-repeat 0% 50%;
-			height: 25px;
-			width: 92px
-		}
-		.muro2 .flex-control-paging li a:before{
-			content: "X";
-		}
-		.muro2 button{
-			background: #fff;
-			border: none;
-			width: auto;
-			height: 29px;
-			border-radius: 5px;
-			text-transform: uppercase;
-			text-align: center;
-			margin: 0;
-		}
-		.muro2 button:hover{
-			color: #000;
-		}
-		.muro2 .info-v{
-			width: 40%;
-		}
-		.muro2 #social_top{
-			/*background: red;*/
-			width: 50%;
-			height: 45px;
-			padding: 0;
-			position: initial;
-		}
-		.muro2 #social_top a{
-			display: inline-block;
-		}
-	</style>
 </head>
-<body>
-	<div id="meenus">
-		<header>
-			<div id="logo">
-				<a href="index.html">
-					<img src="images/amparo.png" alt="">
-					<h1 id="fundacion-logo">FUNDACIÓN AMPARO</h1>
-				</a>
-				<div>
-					<a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+<body class="animsition">
+<div id="meenus">
+	<header>
+		<div id="logo">
+			<a href="#">
+				<img src="images/amparo.png" alt="">
+				<h1 id="fundacion-logo">FUNDACIÓN AMPARO</h1>
+			</a>
+			<div>
+                  <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+            </div>
+		</div>
+		<div id="section_menu" class="pull">
+		
+		<nav id="menu_principal">
+			<ul id="menu_uno">
+				<li><a href="fundacion_como_ayudar.html">Como ayudar</a></li>
+				<li><a href="fundacion_amparo_causas.html">Causas vivas</a></li>
+				<li><a href="fundacion_usuarios.html">Donadores</a></li>
+				<li><a href="fundacion_muro.html">Muro del Éxito</a></li>
+			</ul>
+			<ul id="menu_dos">
+				<li><a href="fundacion01_e.html">La Fundación</a></li>
+				<li><a href="fundacion_apoyamos_causa.html">Apoyamos tu causa</a></li>
+				<li><a href="fundacion_noticias.html">Noticias</a></li>
+				<li><a href="fundacion_faqs.html">Faq´s</a></li>
+				<li><a href="fundacion_contacto.html">Contacto</a></li>
+			</ul>
+		</nav>
+			<!--<a href="#">
+				<div id="btn_donar">
+					<h2>Donar</h2>
 				</div>
-			</div>
-			<div id="section_menu" class="pull">
-				<nav id="menu_principal">
-					<ul id="menu_uno">
-						<li><a href="fundacion_como_ayudar.html">Como ayudar</a></li>
-						<li><a href="fundacion_amparo_causas.html">Causas vivas</a></li>
-						<li><a href="fundacion_usuarios.html">Donadores</a></li>
-						<li><a href="fundacion_muro.html">Muro del Éxito</a></li>
-					</ul>
-					<ul id="menu_dos">
-						<li><a href="fundacion01_e.html">La Fundación</a></li>
-						<li><a href="fundacion_apoyamos_causa.html">Apoyamos tu causa</a></li>
-						<li><a href="fundacion_noticias.html">Noticias</a></li>
-						<li><a href="fundacion_faqs.html">Faq´s</a></li>
-						<li><a href="fundacion_contacto.html">Contacto</a></li>
-					</ul>
-				</nav>
-				<button id="btn_dona">DONAR</button>
-				<div id="perfil">
-					<img src="images/monito.jpg" alt=""/>
-				</div>
-			</div>
-		</header> 
-		<div id="conteo_donadores" >
-			<div id="int_contado">
-				<img src="images/icon_donadores.png" alt="">
-				<h2>249,863</h2>
-				<h3>Donadores <span>#TomandoAcciónFA</span></h3>
-			</div>
-			<div id="int_busc">
-				<input type="text" placeholder="Buscar">
-				<button class="fa fa-search busc"></button>
+			</a>-->
+			<button id="btn_dona">DONAR</button>
+			<div id="perfil">
+				<img src="images/monito.jpg" alt="">
 			</div>
 		</div>
+	</header>
+
+
+	<div id="conteo_donadores">
+		<div id="int_contado">
+			<img src="images/icon_donadores.png" alt="">
+			<h2>249,863</h2>
+			<h3>Donadores <span>#TomandoAcciónFA</span></h3>
+		</div>
+		<div id="int_busc">
+			<input type="text" placeholder="Buscar">
+			<button class="fa fa-search busc"></button>
+		</div>
 	</div>
-	<section id="Contenedor">
-		<div class="cont-time">
-			<section class="slider" id="main_time">
-				<div class="flexslider">
-					<ul id="controls2">
-						<span>Seleccionar Año</span>
-						<li><a class="flex-prev2" href="#"></a></li>
-						<li><a class="flex-next2" href="#"></a></li>
-					</ul>
-					<ul class="slides">
-						<li>
-							<span class="info-v">
+</div>
+	<section id="Contenedor" class="success_wall container-fluid">
+		<div id="success_wall" class="row">
+			<section id="main_time" class="container-fluid">
+				<div id="carousel-timeline" class="row carousel slide" data-ride="carousel" data-interval="false">
+					<a href="#carousel-timeline" class="left carousel-control main-rol" role="button" data-slide="prev">
+						<span class="left-arrow" aria-hidden="true"></span>
+						<span class="sr-only">Previo</span>
+					</a>
+					<a href="#carousel-timeline" class="right carousel-control main-rol" role="button" data-slide="next">
+						<span class="right-arrow" aria-hidden="true"></span>
+						<span class="sr-only">Siguiente</span>
+					</a>
+					<div class="slide_container col-sm-12 carousel-inner" role="listbox">
+						<div class="slide col-sm-12 active item">
+							<img src="images/slider1.png" alt="" class="img-responsive">
+							<span class="moment-description col-xs-12 col-sm-10 col-md-4">
 								<h1>1986</h1>
 								<h2>Creación de la fundación amparo</h2>
 								<p>
 									En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
 								</p>
-								<a href="">MÁS INFORMACIÓN <b>+</b></a>
+								<a href="#" data-timeline-content="1986">MÁS INFORMACIÓN <b>+</b></a>
 							</span>
 							<!--<video controls>
 								<source src="video/video.mp4" type="video/mp4">
 								Your browser does not support the video tag.
 							</video>-->
-							<!--<iframe id="player_1" src="http://localhost/fundacion/webfundacion/nuevo/video/video.html" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
-							</iframe>-->
-							<!--<p>Your browser does not support iframes.</p>-->
-						</li>
-						<li>
-							<span class="info-v">
+						</div>
+						<div class="slide col-sm-12 item">
+							<img src="images/slider1.png" alt="" class="img-responsive">
+							<span class="moment-description col-xs-12 col-sm-10 col-md-4">
 								<h1>1987</h1>
 								<h2>Creación de la fundación amparo</h2>
 								<p>
 									En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
 								</p>
-								<a href="">MÁS INFORMACIÓN <b>+</b></a>
+								<a href="#" data-timeline-content="1986">MÁS INFORMACIÓN <b>+</b></a>
 							</span>
-							<img src="images/slider1.png" />
-						</li>
-						<li>
-							<span class="info-v">
+						</div>
+						<div class="slide col-sm-12 item">
+							<img src="images/slider1.png" alt="" class="img-responsive">
+							<span class="moment-description col-xs-12 col-sm-10 col-md-4">
 								<h1>1988</h1>
 								<h2>Creación de la fundación amparo</h2>
 								<p>
 									En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
 								</p>
-								<a href="">MÁS INFORMACIÓN <b>+</b></a>
+								<a href="#" data-timeline-content="1986">MÁS INFORMACIÓN <b>+</b></a>
 							</span>
-							<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>1989</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>1990</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>1991</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>1992</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>1993</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>1994</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>1995</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>1996</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>1997</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>1998</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>1999</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2000</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2001</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2002</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2003</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2004</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2005</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2006</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2007</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2008</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2009</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2010</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2011</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2012</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2013</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2014</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    	<li>
-			  	    		<span class="info-v">
-			  	    			<h1>2015</h1>
-			  	    			<h2>Creación de la fundación amparo</h2>
-			  	    			<p>
-			  	    				En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-			  	    			</p>
-			  	    			<a href="">MÁS INFORMACIÓN <b>+</b></a>
-			  	    		</span>
-			  	    		<img src="images/slider1.png" />
-			  	    	</li>
-			  	    </ul>
-			  	    <div class="controls-line-container">
-						<ol id="manual_controls" class="flex-control-nav flex-control-paging" style="background:red;">
-							<li><span class="timeline-pipe"></span>1986</li>
-							<li><span class="timeline-pipe"></span>1987</li>
-							<li><span class="timeline-pipe"></span>1988</li>
-							<li><span class="timeline-pipe"></span>1989</li>
-							<li><span class="timeline-pipe"></span>1990</li>
-							<li><span class="timeline-pipe"></span>1991</li>
-							<li><span class="timeline-pipe"></span>1992</li>
-							<li><span class="timeline-pipe"></span>1993</li>
-							<li><span class="timeline-pipe"></span>1994</li>
-							<li><span class="timeline-pipe"></span>1995</li>
-							<li><span class="timeline-pipe"></span>1996</li>
-							<li><span class="timeline-pipe"></span>1997</li>
-							<li><span class="timeline-pipe"></span>1998</li>
-							<li><span class="timeline-pipe"></span>1999</li>
-							<li><span class="timeline-pipe"></span>2000</li>
-							<li><span class="timeline-pipe"></span>2001</li>
-							<li><span class="timeline-pipe"></span>2002</li>
-							<li><span class="timeline-pipe"></span>2003</li>
-							<li><span class="timeline-pipe"></span>2004</li>
-							<li><span class="timeline-pipe"></span>2005</li>
-							<li><span class="timeline-pipe"></span>2006</li>
-							<li><span class="timeline-pipe"></span>2007</li>
-							<li><span class="timeline-pipe"></span>2008</li>
-							<li><span class="timeline-pipe"></span>2009</li>
-							<li><span class="timeline-pipe"></span>2010</li>
-							<li><span class="timeline-pipe"></span>2011</li>
-							<li><span class="timeline-pipe"></span>2012</li>
-							<li><span class="timeline-pipe"></span>2013</li>
-							<li><span class="timeline-pipe"></span>2014</li>
-							<li><span class="timeline-pipe"></span>2015</li>
-						</ol>
-					</div>
-			  </div>
+			  	    	</div>
+			  	    </div>
+			  	    <div class="timeline-navigator col-sm-12">
+			  	    	<div class="navigator-container">
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-timeline" data-slide-to="0" class="active"><span>1986</span></li>
+								<li data-target="#carousel-timeline" data-slide-to="1"><span>1990</span></li>
+								<li data-target="#carousel-timeline" data-slide-to="2"><span>1992</span></li>
+							</ol>
+						</div>
+			  	    </div>
+			  	    <div class="navigator-buttons col-sm-12">
+						<a href="#carousel-timeline" class="left carousel-control secondary" role="button" data-slide="prev">
+							<span class="left-arrow-secondary" aria-hidden="true"></span>
+						</a>
+						<span class="navigator-legend">Seleccionar año</span>
+						<a href="#carousel-timeline" class="right carousel-control secondary" role="button" data-slide="next">
+							<span class="right-arrow-secondary" aria-hidden="true"></span>
+						</a>
+		  	    		
+		  	    	</div>
+		  	    </div>
 			</section>
-			<section class="slider muro2" id="secondary_time">
-				<button class="cerrar-h"></button>
-				<div class="flexslider">
-					<ul id="controls2">
-						<span>2014</span>
-						<li><a class="flex-prev2" href="#"></a></li>
-						<li><a class="flex-next2" href="#"></a></li>
-					</ul>
-					<ul class="slides">
-						<li>
-							<span class="info-v">
-								<button>educación</button>
-								<h1>2004-2014</h1>
-								<h2>Becas a estudiantes destacados de diversas Universidades e Instituciones</h2>
-								<p>
-									En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-								</p>
-								<section id="social_top">
-									<ul>
-										<a href="http://www.facebook.com" target="_blank"><li class="fa fa-facebook"></li></a>
-										<a href="www.twitter.com" target="_blank"><li class="fa fa-twitter"></li></a>
-										<a href=""><li class="fa fa-heart"></li></a>
-										<p>96 likes</p>
-									</ul>	
-								</section>
-
-							</span>
-							<img src="images/slider1.png" />
-						</li>
-						<li>
-							<span class="info-v">
-								<h1>2004-2014</h1>
-								<button>educación</button>
+			<section id="moments_time" class="container-fluid">
+				<button class="btn btn-cerrar"></button>
+				<div id="carousel-timeline-moments" class="row carousel slide" data-ride="carousel" data-interval="false">
+					<a href="#carousel-timeline-moments" class="left carousel-control main-rol" role="button" data-slide="prev">
+						<span class="left-arrow" aria-hidden="true"></span>
+						<span class="sr-only">Previo</span>
+					</a>
+					<a href="#carousel-timeline-moments" class="right carousel-control main-rol" role="button" data-slide="next">
+						<span class="right-arrow" aria-hidden="true"></span>
+						<span class="sr-only">Siguiente</span>
+					</a>
+					<div class="slide_container col-sm-12 carousel-inner" role="listbox">
+						<div class="slide col-sm-12 active item">
+							<img src="images/slider1.png" alt="" class="img-responsive">
+							<span class="moment-description col-sm-12 col-md-5 col-lg-6">
+								<button class="btn btn-default">EDUCACIÓN</button>
+								<h1>1986</h1>
 								<h2>Creación de la fundación amparo</h2>
 								<p>
 									En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
 								</p>
-								<section id="social_top">
-									<ul>
-										<a href="http://www.facebook.com" target="_blank"><li class="fa fa-facebook"></li></a>
-										<a href="www.twitter.com" target="_blank"><li class="fa fa-twitter"></li></a>
-										<a href=""><li class="fa fa-heart"></li></a>
+								<section class="social_top">
+									<ul class="col-sm-12 col-md-6">
+										<li><a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+										<li><a href=""><i class="fa fa-heart"></i></a></li>
 										<p>96 likes</p>
 									</ul>	
 								</section>
 							</span>
-							<iframe id="player_1" src="http://localhost/fundacion/FUNDACION/video/video.html" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
-							</iframe>
-							<p>Your browser does not support iframes.</p>
-						</li>
-					</ul>
-				</div>
+							<!--<video controls>
+								<source src="video/video.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>-->
+						</div>
+						<div class="slide col-sm-12 item">
+							<img src="images/slider1.png" alt="" class="img-responsive">
+							<span class="moment-description col-sm-12 col-md-5 col-lg-6">
+								<button class="btn btn-default">EDUCACIÓN</button>
+								<h1>1986</h1>
+								<h2>Creación de la fundación amparo</h2>
+								<p>
+									En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
+								</p>
+								<section class="social_top">
+									<ul class="col-sm-12 col-md-6">
+										<li><a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+										<li><a href=""><i class="fa fa-heart"></i></a></li>
+										<p>96 likes</p>
+									</ul>	
+								</section>
+							</span>
+						</div>
+						<div class="slide col-sm-12 item">
+							<img src="images/slider1.png" alt="" class="img-responsive">
+							<span class="moment-description col-sm-12 col-md-5 col-lg-6">
+								<button class="btn btn-default">EDUCACIÓN</button>
+								<h1>1986</h1>
+								<h2>Creación de la fundación amparo</h2>
+								<p>
+									En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
+								</p>
+								<section class="social_top">
+									<ul class="col-sm-12 col-md-6">
+										<li><a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+										<li><a href=""><i class="fa fa-heart"></i></a></li>
+										<p>96 likes</p>
+									</ul>	
+								</section>
+							</span>
+			  	    	</div>
+			  	    </div>
+			  	    <div class="timeline-navigator col-sm-12">
+			  	    	<div class="navigator-container">
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-timeline-moments" data-slide-to="0" class="active"><span>Marzo</span></li>
+								<li data-target="#carousel-timeline-moments" data-slide-to="1"><span>Abril</span></li>
+								<li data-target="#carousel-timeline-moments" data-slide-to="2"><span>Mayo</span></li>
+							</ol>
+						</div>
+			  	    </div>
+			  	    <div class="navigator-buttons col-sm-12">
+						<a href="#carousel-timeline-moments" class="left carousel-control secondary" role="button" data-slide="prev">
+							<span class="left-arrow-secondary" aria-hidden="true"></span>
+						</a>
+						<span class="navigator-legend">1986</span>
+						<a href="#carousel-timeline-moments" class="right carousel-control secondary" role="button" data-slide="next">
+							<span class="right-arrow-secondary" aria-hidden="true"></span>
+						</a>
+		  	    	</div>
+		  	    </div>
 			</section>
 		</div><!--termina cont-time-->
 	</section>
-	
-	<!--lightbox verde1-->
-	<div class="lightbox-h d" id="verde1">
-		<div class="lightbox-h-cont donar">
-			<img src="images/icon_donadores-v.png" alt="">
-			<button class="cerrar-h"></button>
-			<h1>donar</h1>
-			<p>Tu ayuda es importante y </br>
-				marca la diferencia para muchos.</p>
-				<label for="" class="vol">
-					<p>Escoge la causa que quieras apoyar</p>
-					<form action="">
-						<select name="" id="">
-							<option value="">Museo Amparo</option>
-							<option value=""></option>
-							<option value=""></option>
-						</select>
-						<p>Ingresa el monto que desaes donar</p>
-
-						<span class="op">
-							<input type="text" name="monto" placeholder="10.00" maxlength="8" required id="r"></span>
-
-							<div class="check-verde">
-								<input type="checkbox" value="None" id="check-verde" name="check" />
-								<label for="check-verde"></label>
-								No mostrar mi perfil en el sitio
-							</div>
-
-						</br></br>
-						<input type="submit" value="ACEPTAR" id="ac">							
-					</form>	
-				</label>
-
-			</br>
-			<a href="">
-				Si necesitas ayuda dal click aquí 
-				<img src="images/i.png" alt="">		
-			</a>
-		</div>
-	</div>
-	<!--Termina lightbox verde1-->
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.core.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/pop.js"></script>
-	<!--<script src="js/jquery.drilldown.min.js"></script>-->
-
-	<!-- FlexSlider -->
-	<script defer src="js/jquery.flexslider.js"></script>
-
+	<script src="js/jquery.animsition.min.js"></script>
 	<script type="text/javascript">
 		// $(function(){
 		// 	SyntaxHighlighter.all();
 		// });
-		$(window).load(function(){
-			// Vimeo API nonsense
-			var player = document.getElementById('player_1');
-			$f(player).addEvent('ready', ready);
+		
+		$(function(){
+			$(".animsition").animsition({
+				inClass               :   'fade-in',
+				outClass              :   'fade-out',
+				inDuration            :    1500,
+				outDuration           :    800,
+				loading               :    true,
+				linkElement           :   '.animsition-link',
+				loadingParentElement  :   'body', //animsition wrapper element
+				loadingClass          :   'animsition-loading',
+				unSupportCss          : [ 'animation-duration',
+											'-webkit-animation-duration',
+											'-o-animation-duration'
+										],
+				overlay               :   false,
+				overlayClass          :   'animsition-overlay-slide',
+				overlayParentElement  :   'body'
+			});
 
-			function addEvent(element, eventName, callback) {
-				(element.addEventListener) ? element.addEventListener(eventName, callback, false) : element.attachEvent(eventName, callback, false);
-			}
-
-			function ready(player_id) {
-				var froogaloop = $f(player_id);
-
-				froogaloop.addEvent('play', function(data) {
-					$('.flexslider').flexslider("pause");
+			$('#main_time .carousel-inner .item a').click(function(e){
+				e.preventDefault();
+				$('#main_time').hide().fadeOut(200, "swing", function(){
+					$('#moments_time').fadeIn(800);
 				});
+			});
 
-				froogaloop.addEvent('pause', function(data) {
-					$('.flexslider').flexslider("play");
+			$('#moments_time .btn-cerrar').click(function(e){
+				e.preventDefault();
+				$('#moments_time').hide().fadeOut(200, "swing", function(){
+					$('#main_time').fadeIn(800);	
 				});
-			}
-			// Call fitVid before FlexSlider initializes, so the proper initial height can be retrieved.
-			$(".flexslider")
-			.fitVids()
-			.flexslider({
-				animation: "slide",
-				video: true,
-				useCSS: false,
-				animationLoop: false,
-				smoothHeight: true,
-				manualControls: '.flex-control-nav li',
-				start: function(slider){
-					$('body').removeClass('loading');
-				},
-				before: function(slider){
-					$f(player).api('pause');
-				}
-			});
-	  	});
-
-	  	$(function(){
-			//var object = '{"slides":[{"age":"1992","month":"Febrero","title":"Creación de la Fundación Amparo","content":"En abril de 1979, Don Manuel Espinona Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.","link":"#","image":"htpp://amparo.nerdy.dev/maquetacion/images/slider1.png"},{"age":"1992","month":"Marzo","title":"Creación de la Fundación Amparo","content":"En abril de 1979, Don Manuel Espinona Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.","link":"#","image":"htpp://amparo.nerdy.dev/maquetacion/images/slider1.png"},{"age":"1992","month":"Junio","title":"Creación de la Fundación Amparo","content":"En abril de 1979, Don Manuel Espinona Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.","link":"#","image":"htpp://amparo.nerdy.dev/maquetacion/images/slider1.png"},{"age":"1992","month":"Agosto","title":"Creación de la Fundación Amparo","content":"En abril de 1979, Don Manuel Espinona Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.","link":"#","image":"htpp://amparo.nerdy.dev/maquetacion/images/slider1.png"}]}';
-			$('#main_time .flex-control-nav li').click(function(){
-				//$('#secondary_time').delay(600).slideUp("slow");
-				$('#main_time').fadeOut();
-				$('#secondary_time').slideDown("slow");
-				$('#secondary_time button.cerrar-h').css('visibility', 'visible');
-				/*object = $.parseJSON( object );
-				console.log(object);
-				$('#secondary_time ul.slides').html( $.parseJSON(object) );*/
-				return;
-			});
-
-			$('.cerrar-h').click(function(){
-				$('#secondary_time').delay(600).slideUp("slow");
-				$('#secondary_time button.cerrar-h').css('visibility', 'hidden');
-				$('#main_time').hide().slideDown("slow");
-				$('#secondary_time ul.slides').html("");
-				return;
-			});
+			})
 		});
 	</script>
-<!-- Optional FlexSlider Additions -->
-<script src="js/froogaloop.js"></script>
-<script src="js/jquery.fitvid.js"></script>
 </body>
 </html>
 

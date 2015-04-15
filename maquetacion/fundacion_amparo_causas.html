@@ -3,18 +3,18 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Fundación Amparo</title>
-	<meta name="viewport" content="initial-scale=1">
-	<meta name="decription" conetent=""/>
-	<link rel="stylesheet" href="css/pop.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/tabs.css">
-
-	<link href="video/video-js.css" rel="stylesheet" type="text/css">
+		<link href="video/video-js.css" rel="stylesheet" type="text/css">
     <!-- video.js must be in the <head> for older IEs to work. -->
     <script src="video/video.js"></script>
-
+	<!--<meta name="viewport" content="initial-scale=1">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="decription" conetent=""/>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/pop.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/tabs.css">
 </head>
+
 <body>
 <div id="meenus">
 	<header>
@@ -38,6 +38,7 @@
 			</ul>
 			<ul id="menu_dos">
 				<li><a href="fundacion01_e.html">La Fundación</a></li>
+				<li><a href="fundacion_becas.html">Becas</a></li>
 				<li><a href="fundacion_apoyamos_causa.html">Apoyamos tu causa</a></li>
 				<li><a href="fundacion_noticias.html">Noticias</a></li>
 				<li><a href="fundacion_faqs.html">Faq´s</a></li>
@@ -66,7 +67,7 @@
 	<section id="Contenedor">
 		<span class="como">
 		 	<h1>¿Cómo Ayudar?</h1>
-		 	<h2>Tus donaciones construyen sueños y<br/> cambian vidas <b>#TomandoAcciónFA</b></h2>
+		 	<h2>Tus donaciones construyen sueños y cambian vidas <b>#TomandoAcciónFA</b></h2>
 		 	<button id="btn_dona">DONAR AHORA</button>
 		 </span>
 		 <div class="vi3 ">
@@ -276,10 +277,12 @@ detalladamente para determinar una respuesta </p>
 			
 		</div>
 	</footer>
-	
 
 	<!--lightbox blanco1-->
 	<div class="lightbox" id="blanco1">
+
+		<div class="cot-scroll">
+
 		<div class="usuario-light">
 			<span class="usuario cau">
 				<img src="images/light-cau.png" alt="">
@@ -322,20 +325,20 @@ detalladamente para determinar una respuesta </p>
 							
 							<p>Desarrollo y crecimiento del Centro de Desarrollo Comunitario Roberto Alonso Espinosa, ubicado en la colonia Lomas de Chamontoya en la Ciudad de México y otro en el municipio de Zacatlán, Puebla, los cuales brindan atención, bajo el Método Montessori,  a la comunidad infantil de muy escasos recursos, ampliando el beneficio al ambiente familiar. <br/>
 							<b>Selecciona la forma en que deseas ayudar
-								<img src="images/inter.png" alt="">
+								<img src="images/inter.png" alt="" id="icon">
 							</b>
 							</p>	
 						</div><!--termina datos-inf-->
 							<div class="fig">
-								<figure class="cauf">
+								<figure class="cauf" id="cauf-d">
 									  <span>Haz tu donación</span>
 									  
 									</figure >
-									<figure class="cauf">
+									<figure class="cauf" id="cauf-i">
 									  <span>Ser</br>impulsor</span>
 									  
 									</figure>
-									<figure class="cauf">
+									<figure class="cauf" id="cauf-v">
 									  <span>Ser</br>voluntario</span>
 									  
 									</figure>
@@ -403,10 +406,16 @@ detalladamente para determinar una respuesta </p>
 				<!--tabs-->			
 			</span>
 		</div>
+	  </div><!--termina cot-scroll-->
 	</div>
 	<!--terina lightbox blanco1-->
+	
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+
+
+	<script src="js/jquery.min.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/pop.js"></script>
