@@ -28,7 +28,8 @@
 		        return false;
 		    });
 		    $(".caja_fca2, #txt_noticia h1, .caja_fca_usu, #txt_noticia h3, #txt_evento").click(function(){
-		        $(".lightbox").slideToggle("slow");
+		        // $(".lightbox").slideToggle("slow");
+		        $(".lightbox").fadeIn(800, 'swing', function(){});
 		    });
 		    $("#ultimos_dona .donador_clas").click(function(){
 		        $("#ficha-d").slideToggle("slow");
@@ -50,9 +51,10 @@
 
 		$(function(){
 		    $(".cerrar-h, .cerrar").click(function(){
-		        $(".lightbox-h, .lightbox").fadeOut("slow");
-			    });
+		        // $(".lightbox-h, .lightbox").fadeOut("slow");
+		        $(".lightbox-h, .lightbox").fadeOut(800, 'swing', function(){} );
 			});
+		});
 
 
 $(document).ready(function(){

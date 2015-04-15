@@ -7,12 +7,13 @@
 	<meta name="decription" conetent=""/>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/animsition.min.css">
 	<link rel="stylesheet" href="css/pop.css">
 
      <link rel="stylesheet" href="css/flexslider-hist.css" type="text/css" media="screen" />
 
 </head>
-<body>
+<body class="animsition">
 <div id="meenus">
 	<header>
 		<div id="logo">
@@ -28,18 +29,18 @@
 		
 		<nav id="menu_principal">
 			<ul id="menu_uno">
-				<li><a href="fundacion_como_ayudar.html">Como ayudar</a></li>
-				<li><a href="fundacion_amparo_causas.html">Causas vivas</a></li>
-				<li><a href="fundacion_usuarios.html">Donadores</a></li>
-				<li><a href="fundacion_muro.html">Muro del Éxito</a></li>
+				<li><a href="fundacion_como_ayudar.html" class="animsition-link">Como ayudar</a></li>
+				<li><a href="fundacion_amparo_causas.html" class="animsition-link">Causas vivas</a></li>
+				<li><a href="fundacion_usuarios.html" class="animsition-link">Donadores</a></li>
+				<li><a href="fundacion_muro.html" class="animsition-link">Muro del Éxito</a></li>
 			</ul>
 			<ul id="menu_dos">
-				<li><a href="fundacion01_e.html">La Fundación</a></li>
-				<li><a href="fundacion_becas.html">Becas</a></li>
-				<li><a href="fundacion_apoyamos_causa.html">Apoyamos tu causa</a></li>
-				<li><a href="fundacion_noticias.html">Noticias</a></li>
-				<li><a href="fundacion_faqs.html">Faq´s</a></li>
-				<li><a href="fundacion_contacto.html">Contacto</a></li>
+				<li><a href="fundacion01_e.html" class="animsition-link">La Fundación</a></li>
+				<li><a href="fundacion_becas.html" class="animsition-link">Becas</a></li>
+				<li><a href="fundacion_apoyamos_causa.html" class="animsition-link">Apoyamos tu causa</a></li>
+				<li><a href="fundacion_noticias.html" class="animsition-link">Noticias</a></li>
+				<li><a href="fundacion_faqs.html" class="animsition-link">Faq´s</a></li>
+				<li><a href="fundacion_contacto.html" class="animsition-link">Contacto</a></li>
 			</ul>
 		</nav>
 			<button id="btn_dona">DONAR</button>
@@ -80,11 +81,11 @@
 				<div id="nav_int">
 					<nav >
 						<ul>
-							<li><a href="fundacion01_e.html">LA FUNDACIÓN</a></li>
-							<li class="activo"><a href="fundacion01_a.html">HISTORIA</a></li>
-							<li><a href="fundacion01_b.html">APORTACIONES</a></li>
-							<li><a href="fundacion01_c.html">MEMBRESÍAS U ORGANISMOS</a></li>
-							<li><a href="fundacion01_d.html">CONSIDERACIONES FISCALES</a></li>
+							<li><a href="fundacion01_e.html" class="animsition-link">LA FUNDACIÓN</a></li>
+							<li class="activo"><a href="fundacion01_a.html" class="animsition-link">HISTORIA</a></li>
+							<li><a href="fundacion01_b.html" class="animsition-link">APORTACIONES</a></li>
+							<li><a href="fundacion01_c.html" class="animsition-link">MEMBRESÍAS U ORGANISMOS</a></li>
+							<li><a href="fundacion01_d.html" class="animsition-link">CONSIDERACIONES FISCALES</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -224,6 +225,28 @@
 	<script src="js/jquery.fitvid.js"></script>
 	<!-- FlexSlider -->
   <script defer src="js/jquery.flexslider.js"></script>
+  	<script src="js/jquery.animsition.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.animsition').animsition({
+				inClass               :   'fade-in',
+				outClass              :   'fade-out',
+				inDuration            :    1500,
+				outDuration           :    800,
+				linkElement           :   '.animsition-link',
+				loading               :    true,
+				loadingParentElement  :   'body', //animsition wrapper element
+				loadingClass          :   'animsition-loading',
+				unSupportCss          : [ 'animation-duration',
+					'-webkit-animation-duration',
+					'-o-animation-duration'
+				],  
+				overlay               :   false,
+				overlayClass          :   'animsition-overlay-slide',
+				overlayParentElement  :   'body'
+			});
+		});
+	</script>
 </body>
 </html>
 
