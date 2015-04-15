@@ -323,11 +323,13 @@ button.regresar{
 			background: transparent;
 			font-size: 1em;
 			  box-shadow: 1px 2px 8px 0px #95c23c inset;
+			   -moz-box-shadow: 1px 2px 8px 0px #95c23c inset;
+			   -webkit-box-shadow: 1px 2px 8px 0px #95c23c inset;
 			text-align: center;
 			color: #fff;
 			margin-bottom: 10px;
 			/*background: url("../images/back-o.png") repeat;*/
-			background: #badb48;
+			background: #c3e138;
 			position: relative;
 			text-align: left;
 			padding-left: 35px;
@@ -382,7 +384,7 @@ button.regresar{
 			cursor: pointer;
 			padding: 0;
 			text-align: center;
-			-webkit-appearance: none;
+			-webkit-appearance:none;
 			border-radius: 0;
 		}
 		
@@ -618,7 +620,7 @@ position: inherit;*/
 	margin-top: 9%;
 }
 .ev .datos-inf{
-	height: 70% !important;
+	height: 100% !important;
 	margin-bottom: 0 !important
 }
 		/*termina lightbox home*/
@@ -1121,6 +1123,14 @@ position: inherit;*/
 		}
 		
 	@media screen and (max-width:640px) {
+		button.feis{
+			
+			background: #fff url("../images/feis.png")no-repeat 33px center;
+			
+		}
+		.content-1>#meta #cantidad h1{
+			top: -3px !important;
+		}
 
 		figure.cauf>span{
 			font-size: 3vw;
@@ -1271,6 +1281,9 @@ justify-content: space-between;
 			/*height: 78%;*/
 			background: #fff;
 		}
+		select#promedio{
+			padding-left: 3%;
+		}
 		select#promedio, ul.pasos li:nth-of-type(3) textarea{
 			width: 100% !important;
 		}
@@ -1331,7 +1344,7 @@ justify-content: space-between;
 			height: 82% !important;
 		}
 		button.feis{
-			width: 90%;
+			width: 282px;
 		}
 		
 		ul.pasos li:nth-of-type(3) > span:nth-of-type(3){
@@ -1438,7 +1451,9 @@ justify-content: space-between;
 }
 /*check azul*/
 .check-azul {
-	width: 90%;	
+	/*width: 90%;	*/
+	width: 282px;
+
 	margin: 2% auto 4% auto;
 	display: inline-block;
 	height: 21px;

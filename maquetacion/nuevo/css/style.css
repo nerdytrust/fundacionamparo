@@ -222,6 +222,18 @@ a{
 	color: #FFF;	
 	text-decoration: none;
 }
+.rt2 a, .rt a{
+	color: #beda3e;
+}
+.rt{
+		margin: 9% auto 0 1% !important;
+		height: auto;
+		/*background: red;*/
+	}
+	.rt2{
+		margin: 7% auto 0 1% !important;
+		height: auto;	
+	}
 
 button{
 	padding: .6em 1em;
@@ -1172,6 +1184,13 @@ span#name span button:after{
 	height: 124px;
 	width: 124px;
 	overflow: hidden;
+}
+.img_redonda img{
+	width: 100%;
+}
+.img_redonda img:hover{
+	opacity: .5;
+	border-radius: 120px;
 }
 .img_redonda2{
 	display: inline-block;
@@ -2209,7 +2228,7 @@ label.contact p:before{
 	width: 289px;
 	height: 229px;
 	display: inline-block;
-	margin-top: 8.2%;
+	/*margin-top: 8.2%;*/
 	vertical-align: top;
 	margin-left: 12px;
 	font-size: 14px;
@@ -2274,6 +2293,7 @@ label.becas ul.pasos{
 	margin: 0;
 	padding: 0;
 	position: relative;
+	height: auto;
 }
 .n-vol{
 	width: 200px !important;
@@ -2339,6 +2359,7 @@ label.becas ul.pasos li{
 	margin-bottom: 4%;
 	position: relative;
 	/*background: red;*/
+	/*overflow: hidden;*/
 }
 select{
 	border-radius: 0;
@@ -2419,6 +2440,7 @@ ul.pasos button{
 select#promedio{
 	  width: 130px;
   background: url("../images/flecha.png") no-repeat 86%;
+  padding-left: 16%;
 }
 /*empiezan button radio css3*/
 div.check, span.check{
@@ -2674,7 +2696,7 @@ span.esquina-pop{
 .flecha1{display: block; margin: 0 auto;}
 	.flecha2{display: none;}
 	.neces{
-		width: 40% !important;
+		width: 41% !important;
 	}
 	select.period{
 		background-position: 96% center !important;
@@ -2872,7 +2894,7 @@ span.esquina-pop{
 		width: auto;
 	}
 	#btn_dona{
-		width: 100%;
+		width: 92%;
 	}
 	#menu_principal{
 		width: 100%;
@@ -2997,6 +3019,9 @@ span.esquina-pop{
 	#Contenedor {
 	padding: 102px 0 0 0;
 	}
+	.cu{
+		padding: 120px 0 0 0 !important;
+	}
 	.txt_int{
 	bottom: 0px;
 	height: auto;
@@ -3037,7 +3062,7 @@ span.esquina-pop{
   padding: 0px 0px;
 	}
 	#perfil{
-		display: none !important;
+		/*display: none !important;*/
 	}
 	.img_redonda2 {
   margin: 0 !important;
@@ -3065,14 +3090,84 @@ label.contact textarea{
 .como h2 {
   font-size: 1.2em;
   }
+
   .rt #txt_evento{
 		display: none;
 	}
+	
+	#section_menu>button#btn_dona{
+			display: none;
+		}
+		#perfil{
+			/*background: red;*/
+			margin: 0 auto;
+			width: 98%;
+			position: relative;
+			cursor: pointer;
+			display: block;
+		}
+		#perfil:after{
+			  content: "Cerrar sesión";
+			  position: absolute;
+			  color: #747474;
+			  left: 0;
+			  top: 0;
+			  width: 100%;
+			  height: auto;
+			  /*background: gold;*/
+			  text-align: left;
+			  padding: 1.1% 8px;
+			  font-size: 13px;
+			  border-top: 1px solid #212121;
+			  /*border-bottom: 1px solid #212121;*/
+		}
+		#perfil img{
+			visibility: hidden;
+		}
+	
 
 
 }
 /* 768px */
 @media screen and (max-width:768px) {
+	#titulo_img{
+		display: none;
+	}
+	#titulo_txt{
+		height: 400px;
+	}
+		.vi {
+		  width: 46%;
+		  height: 400px;
+		}
+		aside.btns {
+		  width: 21%;
+		  height: 400px;
+		}
+		#btn_twitter, #btn_facebook{
+			height: 100px;
+			line-height: 2;
+		}
+		#btn_facebook ul{
+			line-height: 2;
+		}
+		#btn_donar2{
+			height: 100px;
+			padding: 1%;
+		}
+		.caja_1{
+			height: 198px
+		}
+		.txt {
+		  padding: 5px 10px;
+		}
+		.txt p{
+			line-height: 1;
+		}
+
+	#perfil:after{
+			  padding: 1.5% 11px;;
+		}
 	#txt_evento{
 		position: absolute;
 		/*background: red;*/
@@ -3159,6 +3254,7 @@ label.contact textarea{
 	}
 	#int_busc{
 		width: 50%;
+		/*margin-bottom: 2%;*/
 	}
 	.txt_fundacion3{
   		width: 100%;
@@ -3287,12 +3383,26 @@ label.becas ul.pasos li:first-child{
 .usuario p{
 		display: none !important;		
 	}
-
-
-
 }	
 
 	@media screen and (max-width:640px) {
+		.txt {
+		  padding: 10px 10px;
+		}
+		.bull_color{
+			padding: 2px 8px;
+		}
+			#perfil::after {
+			    padding: 3% 15px;
+			}
+		
+		#int_busc{
+		width: 100%;
+		/*margin-bottom: 2%;*/
+	}
+	#int_busc label, #int_busc button.todos{
+		display: none;
+	}
 
 		.fr{
 		width: 84%;
@@ -3463,7 +3573,14 @@ label.becas ul.pasos li:first-child{
 		display: block;
 	}
 
-	.text-contact{width:98%}
+	.text-contact{
+		width:98%;
+		height: auto !important;
+		/*min-height: 1000px;
+		background: pink;*/
+		overflow: hidden;
+		display: block;
+	}
 
 	label.becas ul.pasos li input:nth-of-type(even){
 	margin-left:0}
@@ -3523,17 +3640,18 @@ label.becas ul.pasos li:first-child{
 		display: none;
 	}
 	#btn_dona{
-		width: 100%;
+		width: 84%;
 		font-size: 0.9em;
 	}
 	#conteo_donadores input{
-		width: 87.5%;
+		width: 89%;
 	}
 	.caja_fca_usu{
 		width: 50%;
 	}
 	.caja_fca_usu img{
-		width: 100%;
+		/*width: 100%;*/
+		width: auto;
 	}
 	span.donas{
 		padding: 0% 6%;
@@ -3700,6 +3818,9 @@ label.becas ul.pasos li:first-child{
 			display: block;
 			margin: 0 auto;
 		}
+		#contenedor_int h4.gt{
+			width: 99%;
+		}
 		#contenedor_int p{
 			font-size: 0.8em;
 			text-align: left;
@@ -3855,6 +3976,15 @@ label.contact textarea{
 .more{
 	margin-right: 2%;
 }
+.rt{
+		margin: 15% auto  auto !important;
+		height: auto;
+		/*background: red;*/
+	}
+	.rt2{
+		margin: 10% auto  auto !important;
+		height: auto;	
+	}
 
 
 
@@ -3863,6 +3993,9 @@ label.contact textarea{
 }
 /* */
 @media screen and (max-width:380px) {
+	#perfil::after {
+			    padding: 3% 14px;
+			}
 	#cja_noticia h3{
 		/*background: red;*/
 		margin-bottom: 6%;
@@ -3874,6 +4007,10 @@ label.contact textarea{
 		margin: 15% auto  auto !important;
 		height: auto;
 		/*background: red;*/
+	}
+	.rt2{
+		margin: 10% auto  auto !important;
+		height: auto;	
 	}
 	.txt_circ {
   margin: 32px 0 32px 0;
@@ -3966,7 +4103,13 @@ text-align: left;
 		width: 100%;
 	}
 	label.contact{
-		height: 510px;
+		min-height: 600px;
+		/*background: pink;*/
+	}
+	label.red{
+		min-height:400px !important;
+	/*background: orange;*/
+	max-height: 500px;
 	}
 
 	.contact-inf #txt_evento{
@@ -4011,7 +4154,7 @@ text-align: left;
 	}
 	#contenedor_int h1{
 		min-width: 80%;
-		font-size: 1.3em !important;
+		font-size: 1.2em !important;
 		/*background: red;*/
 	}
 	#contenedor_int h2{
@@ -4082,10 +4225,10 @@ text-align: left;
 		z-index: 99999;
 	}
 	#btn_dona{
-		width: 100%;
+		width: 78%;
 	}
 	#conteo_donadores input{
-	width: 84.5%;
+	width: 85%;
 	}
 	.caja_fca_usu{
 	width: 100%;
@@ -4268,6 +4411,35 @@ text-align: left;
 			padding: 0 8%;
 			/*background: red;*/
 		}
-
-
 }
+
+
+/*iphone4 portrait
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) { 
+	.cot-scroll{
+		
+		height: 480px  !important;
+	}
+}
+/*iphone5 portrait
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) { 
+	.cot-scroll{
+		
+		height: 568px  !important;
+	}
+}
+/*iphone6 portrait
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) { 
+	.cot-scroll{
+		
+		height: 667px  !important;
+	}
+ }
+ iphone6 plus portrait
+@media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : portrait) { 
+	.cot-scroll{
+		
+		height: 736px  !important;
+	}
+}
+*/

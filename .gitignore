@@ -1,0 +1,15 @@
+.bash_logout
+.bashrc
+.profile
+*/.htaccess
+*.htaccess
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+Thumbs.db
+*.com
+*.dll
+*.so
+*.exe
+*.sql

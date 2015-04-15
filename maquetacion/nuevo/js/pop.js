@@ -53,3 +53,13 @@
 		        $(".lightbox-h, .lightbox").fadeOut("slow");
 			    });
 			});
+
+
+$(document).ready(function(){
+   var altura = $(window).height();
+   var ancho = $(window).width();
+   if(ancho<=640){
+   		$('.cot-scroll').first().css('height',altura+'px');
+   }
+
+});
