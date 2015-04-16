@@ -13,7 +13,8 @@
      <link rel="stylesheet" href="css/flexslider-hist.css" type="text/css" media="screen" />
 
 </head>
-<body class="animsition">
+<body>
+<div class="animsition">
 <div id="meenus">
 	<header>
 		<div id="logo">
@@ -170,7 +171,7 @@
 			
 		</div>
 	</footer>
-	
+</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
@@ -219,15 +220,15 @@
       });
     });
   </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Optional FlexSlider Additions -->
-    <script src="js/froogaloop.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Optional FlexSlider Additions -->
+	<script src="js/froogaloop.js"></script>
 	<script src="js/jquery.fitvid.js"></script>
 	<!-- FlexSlider -->
-  <script defer src="js/jquery.flexslider.js"></script>
-  	<script src="js/jquery.animsition.min.js"></script>
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script src="js/jquery.animsition.min.js"></script>
 	<script type="text/javascript">
-		$(function(){
+		$(document).ready(function(){
 			$('.animsition').animsition({
 				inClass               :   'fade-in',
 				outClass              :   'fade-out',
@@ -238,8 +239,8 @@
 				loadingParentElement  :   'body', //animsition wrapper element
 				loadingClass          :   'animsition-loading',
 				unSupportCss          : [ 'animation-duration',
-					'-webkit-animation-duration',
-					'-o-animation-duration'
+											'-webkit-animation-duration',
+											'-o-animation-duration'
 				],  
 				overlay               :   false,
 				overlayClass          :   'animsition-overlay-slide',
