@@ -35,6 +35,10 @@ button, input{
 	padding: 0;
 	margin: 0;
 }
+
+.caja_fca2 img:hover{
+	opacity: .7;
+}
 #plc_blck{
 	display: none;
 }
@@ -475,6 +479,7 @@ span.donas{
 	    appearance:none;
 	    cursor: pointer;
 	    background: rgb(33, 33, 33) url("../images/select.png") no-repeat right 50%;
+	    font-weight: 400 !important;
 	}
 	#int_busc label{
 		position: relative;
@@ -3011,6 +3016,7 @@ span.esquina-pop{
 		display: block;
     	max-height: 2em;
   	}
+  	
   	/*mios*/
   	.txt_int h2{line-height: 20px; margin-top: 7px;}
   	
