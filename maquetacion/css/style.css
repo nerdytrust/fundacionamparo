@@ -3675,7 +3675,7 @@ label.becas ul.pasos li:first-child{
 	}
 	
 	#int_busc{
-		/*display: none;*/
+		display: none;
 	}
 	#btn_dona{
 		width: 84%;
