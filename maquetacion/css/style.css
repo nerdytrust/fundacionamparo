@@ -1987,6 +1987,8 @@ margin-left: 5px;
 	width: auto;
 	margin-top: 17px;
 text-transform: uppercase !important;
+/*background: red;*/
+float: left;
 }
 .mostrar-ocultar,.mostrar-ocultar2,.mostrar-ocultar3,.mostrar-ocultar4,.mostrar-ocultar5{
 	cursor: pointer;
@@ -2068,7 +2070,8 @@ padding-top: 12px;
 	width: 415px;
 	height: 207px;
 	position: absolute !important;
-	top: 30% !important;
+	/*top: 30% !important;*/
+	top: 280px !important;
 	left: 2% !important;
 	color: #fff;
 	z-index: 1;
