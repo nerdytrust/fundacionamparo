@@ -1182,7 +1182,7 @@ span#name span button:after{
 	background: #4f99d9;
 }
 #impulsor_sec:hover{
-	background: #42c3ff;
+	background: #53a1e5;
 }
 #voluntario_sec{
 	background: #ffa93c;
@@ -4141,6 +4141,11 @@ text-align: left;
 	label.contact{
 		min-height: 600px;
 		/*background: pink;*/
+	}
+	label#fre{
+		min-height: 400px !important;
+		max-height: 500px !important;
+		/*background: orange;*/
 	}
 	label.red{
 		min-height:400px !important;
