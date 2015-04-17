@@ -5,6 +5,7 @@
 			/*$("#donativo, #btn_dona, #btn_donar2, .circulo_btn, #cauf-d").click(function(){
 				  window.location = 'donar.html';
 			});*/
+
 			$("#donativo, #cauf-d").click(function(){
 				  window.location = 'verdePago.html';
 			});
@@ -23,14 +24,17 @@
 			$("#voluntario_sec, #fca-v, #cauf-v").click(function(){
 				window.location = 'voluntario.html';
 			});
-			$(".txt_int, #causa1, #causa2, #causa3, #causa4").click(function(){
+			$(".re .txt_int,.re #causa1,.re #causa2,.re #causa3,.re #causa4").click(function(){
 				window.location = 'ficha-donadoreshome.html';//este lleva a las fichas pero ya externas
+				return false;
 			});
-			$(".caja_fca_usu, #txt_evento").click(function(){
+			$(".re .caja_fca_usu,.re #txt_evento").click(function(){
 				window.location = 'ficha-donadores.html';//este lleva a las fichas pero ya externas
+				return false;
 			}); 
-			$(".caja_fca2, #txt_noticia h1,  #txt_noticia h3").click(function(){
+			$(".re .caja_fca2,.re #txt_noticia h1, .re #txt_noticia h3").click(function(){
 				window.location = 'ficha-noticias.html';//este lleva a las fichas pero ya externas
+				return false;
 			}); 
 			
 		    /*$(".txt_int, #causa1, #causa2, #causa3, #causa4").click(function(){

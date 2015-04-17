@@ -4044,6 +4044,18 @@ label.contact textarea{
 }
 /* */
 @media screen and (max-width:380px) {
+	/*#perfil{
+		height: 37px !important;
+	}
+	header{
+		  padding: 15px 10px 0 10px;
+	}*/
+	#section_menu nav a{
+		padding: .7.5em !important;
+	}
+	nav li {
+	  margin: 0px 8px;
+	}
 	#perfil::after {
 			    padding: 3% 14px;
 			}
