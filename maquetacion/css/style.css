@@ -103,6 +103,8 @@ div.subtitleM{
 	padding: 440px 20px 20px 20px;
 	opacity: 1;
 	transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
+	-moz-transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
+	-webkit-transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
 	background: url("../images/back-t1.png")repeat;
 	cursor: pointer;
 
@@ -785,6 +787,21 @@ font-size: 15px !important;
 	animation: movebarra 10s infinite;  
 }
 /**/
+@-moz-document url-prefix() {
+	.txt_int>div#meta>div#barra progress{
+		
+		height: 22px !important
+	}
+}
+
+#barra::-moz-progress{
+	width: 100%;
+	/*-webkit-animation: movebarra 30s infinite;  Chrome, Safari, Opera  
+	-moz-animation: movebarra 30s infinite; 
+	-ms-animation: movebarra 30s infinite; 
+	animation: movebarra 30s infinite;  */
+	height: 22px;
+}
 #barra progress{
 	width: 100%;
 	/*-webkit-animation: movebarra 30s infinite;  Chrome, Safari, Opera 
@@ -793,17 +810,9 @@ font-size: 15px !important;
 	animation: movebarra 30s infinite;  */ 
 	height: 18px;
 	opacity: 0.8;
-	background: transparent;
+	
 }
-#barra::-moz-progress{
-	width: 100%;
-	/*-webkit-animation: movebarra 30s infinite;  Chrome, Safari, Opera  
-	-moz-animation: movebarra 30s infinite; 
-	-ms-animation: movebarra 30s infinite; 
-	animation: movebarra 30s infinite;  */
-	height: 17px;
 
-}
 progress[value]::-webkit-progress-bar {
   background-color: transparent;
   border-radius: 2px;
@@ -2822,7 +2831,7 @@ span.esquina-pop{
 		top: 2% !important;
 	}
 	.usuario-light{
-		margin-top: 4% !important;
+		margin-top: 10%;
 	}
 	#titulo_txt p{
 		padding: 0;
@@ -3424,6 +3433,9 @@ label.becas ul.pasos li:first-child{
 }	
 
 	@media screen and (max-width:640px) {
+		.usuario-light{
+		margin-top: 17% !important;
+	}
 		.txt {
 		  padding: 10px 10px;
 		}

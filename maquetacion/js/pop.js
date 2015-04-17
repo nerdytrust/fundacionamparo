@@ -22,15 +22,25 @@
 			});
 			$("#voluntario_sec, #fca-v, #cauf-v").click(function(){
 				window.location = 'voluntario.html';
+			});
+			$(".txt_int, #causa1, #causa2, #causa3, #causa4").click(function(){
+				window.location = 'ficha-donadoreshome.html';//este lleva a las fichas pero ya externas
+			});
+			$(".caja_fca_usu, #txt_evento").click(function(){
+				window.location = 'ficha-donadores.html';//este lleva a las fichas pero ya externas
 			}); 
-		    $(".txt_int, #causa1, #causa2, #causa3, #causa4").click(function(){
+			$(".caja_fca2, #txt_noticia h1,  #txt_noticia h3").click(function(){
+				window.location = 'ficha-noticias.html';//este lleva a las fichas pero ya externas
+			}); 
+			
+		    /*$(".txt_int, #causa1, #causa2, #causa3, #causa4").click(function(){
 		        $("#blanco1").slideToggle("slow");
 		        return false;
 		    });
 		    $(".caja_fca2, #txt_noticia h1, .caja_fca_usu, #txt_noticia h3, #txt_evento").click(function(){
 		        // $(".lightbox").slideToggle("slow");
 		        $(".lightbox").fadeIn(800, 'swing', function(){});
-		    });
+		    });*/
 		    $("#ultimos_dona .donador_clas").click(function(){
 		        $("#ficha-d").slideToggle("slow");
 		    });
@@ -57,11 +67,11 @@
 		});
 
 
-$(document).ready(function(){
+/*$(document).ready(function(){
    var altura = $(window).height();
    var ancho = $(window).width();
    if(ancho<=640){
    		$('.cot-scroll').first().css('height',altura+'px');
    }
 
-});
+});*/

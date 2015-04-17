@@ -626,9 +626,9 @@ position: inherit;*/
 		/*termina lightbox home*/
 	.lightbox{
 		width: 100%;
-		height: 1405px;
+		height: auto;
 		background: url("../images/back-li.png");
-		position: fixed;
+		position: relative;
 		top: 0;
 		z-index: 100000;
 		display: none;
@@ -1171,8 +1171,11 @@ position: inherit;*/
 				margin-top: 0px;
 			}
 		.cot-scroll{
-			height: 480px;
+			height: auto;
 			padding-top: 45px;
+			margin-bottom: 10%;
+			background: red;
+			display: block;
 		}
 		.datos-inf > p{
 			text-align: left;
