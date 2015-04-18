@@ -399,6 +399,66 @@ header {
 	}
 }
 
+.w-360 {
+	&.portrait {
+		body {
+			padding-top: 107px;
+		}
+
+		#moments_time {
+			.moment-description {
+				label {
+					&.label {
+						font-size: 45%;
+					}
+				}
+			}
+
+			.navigator-legend {
+				font-size: 24px;
+				margin: 18px 0 0 138px;
+			}
+		}
+
+		.carousel-control {
+			&.left, &.right {
+				display: none;
+				&.secondary {
+					display: inline-block;
+					margin: 0;
+				}
+			}
+		}
+
+		.img-responsive {
+			max-width: none;
+			width: 308%;
+		}
+
+		.moment-description {
+			left: 0;
+			top: 0;
+			h1 {
+				font-size: 38px;
+			}
+
+			h2 {
+				font-size: 28px;
+			}
+
+			p {
+				font-size: 14.5px;
+			}
+		}
+
+		.navigator-buttons {
+			&.navigator-legend {
+				margin: 25px 0 0 108px;
+			}
+		}
+	}
+}
+
 .w-412 {
 	&.landscape {}
 	&.portrait {
@@ -632,7 +692,66 @@ header {
 }
 
 .w-640 {
-	&.landscape {}
+	&.landscape {
+		body {
+			padding-top: 107px;
+		}
+
+		#moments_time {
+			.moment-description {
+				label {
+					&.label {
+						font-size: 45%;
+					}
+				}
+
+				.social_top {
+					display: none;
+				}
+			}
+		}
+
+		.carousel-control {
+			&.left, &.right {
+				display: none;
+				&.secondary {
+					display: inline-block;
+					margin: 0;
+				}
+			}
+		}
+
+		.moment-description {
+			left: 0;
+			top: 0;
+			a {
+				font-size: 14px;
+			}
+
+			h1 {
+				font-size: 30px;
+			}
+
+			h2 {
+				font-size: 20px;
+			}
+
+			p {
+				font-size: 12.5px;
+			}
+		}
+
+		.navigator-buttons {
+			bottom: 27px;
+			.navigator-legend {
+				display: none;
+			}
+		}
+
+		.timeline-navigator {
+			bottom: 20px;
+		}
+	}
 	&.portrait {
 		body {
 			padding-top: 105px;
