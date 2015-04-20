@@ -24,15 +24,15 @@
 			$("#voluntario_sec, #fca-v, #cauf-v").click(function(){
 				window.location = 'voluntario.html';
 			});
-			$(".re .txt_int,.re #causa1,.re #causa2,.re #causa3,.re #causa4").click(function(){
+			$(".txt_int, #causa1, #causa2, #causa3, #causa4").click(function(){
 				window.location = 'ficha-donadoreshome.html';//este lleva a las fichas pero ya externas
 				return false;
 			});
-			$(".re .caja_fca_usu,.re #txt_evento").click(function(){
+			$(".caja_fca_usu, #txt_evento").click(function(){
 				window.location = 'ficha-donadores.html';//este lleva a las fichas pero ya externas
 				return false;
 			}); 
-			$(".re .caja_fca2,.re #txt_noticia h1, .re #txt_noticia h3").click(function(){
+			$(".caja_fca2, #txt_noticia h1, #txt_noticia h3").click(function(){
 				window.location = 'ficha-noticias.html';//este lleva a las fichas pero ya externas
 				return false;
 			}); 

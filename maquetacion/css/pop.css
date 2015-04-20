@@ -1295,7 +1295,7 @@ justify-content: space-between;
 		  height: 300px;
 		}
 		.lightbox .usuario{
-			/*height: 78%;*/
+			height: auto;
 			background: #fff;
 		}
 		select#promedio{
@@ -1308,6 +1308,10 @@ justify-content: space-between;
 
 
 	@media screen and (max-width:380px){
+		.content-1>.fig{
+				top: 53% !important;
+
+			}
 
 		#cantidad h1{
 			margin-left: 0 !important;
