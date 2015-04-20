@@ -28,7 +28,7 @@
 				window.location = 'ficha-donadoreshome.html';//este lleva a las fichas pero ya externas
 				return false;
 			});
-			$(".caja_fca_usu, #txt_evento").click(function(){
+			$(".caja_fca_usu, #txt_evento, .donador_clas, .impulsor_clas, .voluntario_clas").click(function(){
 				window.location = 'ficha-donadores.html';//este lleva a las fichas pero ya externas
 				return false;
 			}); 
