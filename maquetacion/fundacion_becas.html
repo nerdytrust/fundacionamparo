@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="css/animsition.min.css">
 	<link rel="stylesheet" href="css/pop.css">
 </head>
-<body class="animsition">
+<body>
+	<div class="animsition">
 <div id="meenus">
 	<header>
 		<div id="logo">
@@ -245,6 +246,7 @@
 			
 		</div>
 	</footer>
+</div>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
@@ -253,20 +255,7 @@
 	<script src="js/jquery.animsition.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('.animsition').animsition({
-				inClass					: 'fade-in',
-				outClass				: 'fade-out',
-				inDuration				: 1500,
-				outDuration				: 800,
-				linkElement				: '.animsition-link',
-				loading 				: true,
-				loadingParentElement 	: 'body',
-				loadingClass 			: 'animsition-loading',
-				unSupportCss 			: [ 'animsition-duration', '-webkit-animation-duration', '-o-animation-duration' ],
-				overlay 				: false,
-				overlayClass 			: 'animsition-overlay-slide',
-				overlayParentElement 	: 'body'
-			});
+			$('.animsition').animsition();
 		});
 
 		$(window).bind("pageshow", function(event) {

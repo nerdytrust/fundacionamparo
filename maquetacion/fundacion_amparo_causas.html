@@ -15,7 +15,8 @@
 	<link rel="stylesheet" href="css/tabs.css">
 </head>
 
-<body class="animsition">
+<body>
+	<div class="animsition">
 <div id="meenus">
 	<header>
 		<div id="logo">
@@ -277,6 +278,7 @@ detalladamente para determinar una respuesta </p>
 			
 		</div>
 	</footer>
+</div>
 
 	<!--lightbox blanco1-->
 	<div class="lightbox" id="blanco1">
@@ -422,20 +424,7 @@ detalladamente para determinar una respuesta </p>
 			$("#barra progress").toggleClass("barramover");
 		});
 
-		$('.animsition').animsition({
-			inClass					: 'fade-in',
-			outClass				: 'fade-out',
-			inDuration				: 1500,
-			outDuration				: 800,
-			linkElement				: '.animsition-link',
-			loading 				: true,
-			loadingParentElement 	: 'body',
-			loadingClass 			: 'animsition-loading',
-			unSupportCss 			: [ 'animsition-duration', '-webkit-animation-duration', '-o-animation-duration' ],
-			overlay 				: false,
-			overlayClass 			: 'animsition-overlay-slide',
-			overlayParentElement 	: 'body'
-		});
+		$('.animsition').animsition();
 	});
 
 	$(window).bind("pageshow", function(event) {

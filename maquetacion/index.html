@@ -6,7 +6,6 @@
 	<link href="video/video-js.css" rel="stylesheet" type="text/css">
     <!-- video.js must be in the <head> for older IEs to work. -->
     <script src="video/video.js"></script>
-	<meta http-equiv="expires" content="0">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<meta name="decription" conetent=""/>
 	<link rel="stylesheet" href="css/style.css">
@@ -17,54 +16,54 @@
 </head>
 <body>
 <div class="animsition">
-<div id="meenus">
-	<header>
-		<div id="logo">
-			<a href="#">
-				<img src="images/amparo.png" alt="">
-				<h1 id="fundacion-logo">FUNDACIÓN AMPARO</h1>
-			</a>
-			<div>
-                  <a id="nav-toggle" class="nav_slide_button" href="javascript:void(0);"><span></span></a>
-            </div>
-		</div>
-		<div id="section_menu" class="pull">
-			<nav id="menu_principal">
-				<ul id="menu_uno">
-					<li><a href="fundacion_como_ayudar.html" class="animsition-link">Como ayudar</a></li>
-					<li><a href="fundacion_amparo_causas.html" class="animsition-link">Causas vivas</a></li>
-					<li><a href="fundacion_usuarios.html" class="animsition-link">Donadores</a></li>
-					<!--<li><a href="#" class="animsition-link">Muro del Éxito</a></li>-->
-				</ul>
-				<ul id="menu_dos">
-					<li><a href="fundacion01_e.html" class="animsition-link">La Fundación</a></li>
-					<li><a href="fundacion_becas.html" class="animsition-link">Becas</a></li>
-					<li><a href="fundacion_apoyamos_causa.html" class="animsition-link">Apoyamos tu causa</a></li>
-					<li><a href="fundacion_noticias.html" class="animsition-link">Noticias</a></li>
-					<li><a href="fundacion_faqs.html" class="animsition-link">Faq´s</a></li>
-					<li><a href="fundacion_contacto.html" class="animsition-link">Contacto</a></li>
-				</ul>
-			</nav>
-			<button id="btn_dona">DONAR</button>
-			<div id="perfil">
-				<img src="images/monito.jpg" alt=""/>
+	<div id="meenus">
+		<header>
+			<div id="logo">
+				<a href="#">
+					<img src="images/amparo.png" alt="">
+					<h1 id="fundacion-logo">FUNDACIÓN AMPARO</h1>
+				</a>
+				<div>
+	                  <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+	            </div>
+			</div>
+			<div id="section_menu" class="pull">
+				<nav id="menu_principal">
+					<ul id="menu_uno">
+						<li><a href="fundacion_como_ayudar.html" class="animsition-link">Como ayudar</a></li>
+						<li><a href="fundacion_amparo_causas.html" class="animsition-link">Causas vivas</a></li>
+						<li><a href="fundacion_usuarios.html" class="animsition-link">Donadores</a></li>
+						<!--<li><a href="#" class="animsition-link">Muro del Éxito</a></li>-->
+					</ul>
+					<ul id="menu_dos">
+						<li><a href="fundacion01_e.html" class="animsition-link">La Fundación</a></li>
+						<li><a href="fundacion_becas.html" class="animsition-link">Becas</a></li>
+						<li><a href="fundacion_apoyamos_causa.html" class="animsition-link">Apoyamos tu causa</a></li>
+						<li><a href="fundacion_noticias.html" class="animsition-link">Noticias</a></li>
+						<li><a href="fundacion_faqs.html" class="animsition-link">Faq´s</a></li>
+						<li><a href="fundacion_contacto.html" class="animsition-link">Contacto</a></li>
+					</ul>
+				</nav>
+				<button id="btn_dona">DONAR</button>
+				<div id="perfil">
+					<img src="images/monito.jpg" alt=""/>
+				</div>
+			</div>
+		</header>
+
+
+		<div id="conteo_donadores" >
+			<div id="int_contado">
+				<img src="images/icon_donadores.png" alt="">
+				<h2>249,863</h2>
+				<h3>Donadores <span>#TomandoAcciónFA</span></h3>
+			</div>
+			<div id="int_busc">
+				<input type="text" placeholder="Buscar">
+				<button class="fa fa-search busc"></button>
 			</div>
 		</div>
-	</header>
-
-
-	<div id="conteo_donadores" >
-		<div id="int_contado">
-			<img src="images/icon_donadores.png" alt="">
-			<h2>249,863</h2>
-			<h3>Donadores <span>#TomandoAcciónFA</span></h3>
-		</div>
-		<div id="int_busc">
-			<input type="text" placeholder="Buscar">
-			<button class="fa fa-search busc"></button>
-		</div>
 	</div>
-</div>
 	<section id="Contenedor">
 		<div class="re">
 		<article id="titulo_txt" class="" onclick="location.href='fundacion01_e.html';">
@@ -499,7 +498,7 @@
 						</span><!--termina foto-usuario-->
 						<p>
 							Forma parte de nuestro círculo de donadores desde el 12 de Agosto 2014  una persona más que se suma.
-<b>Muchas gracias.</b></p>
+						<b>Muchas gracias.</b></p>
 			</span><!--termina usuario-->
 			<span class="datos">
 				<img src="images/icon_donadores-d.png" alt="">
@@ -570,21 +569,8 @@
 			$(".txt_int").hover(function(){
 				$("#barra progress").toggleClass("barramover");
 			});
-
-			$('.animsition').animsition({
-				inClass					: 'fade-in',
-				outClass				: 'fade-out',
-				inDuration				: 1500,
-				outDuration				: 800,
-				linkElement				: '.animsition-link',
-				loading 				: true,
-				loadingParentElement 	: 'body',
-				loadingClass 			: 'animsition-loading',
-				unSupportCss 			: [ 'animsition-duration', '-webkit-animation-duration', '-o-animation-duration' ],
-				overlay 				: false,
-				overlayClass 			: 'animsition-overlay-slide',
-				overlayParentElement 	: 'body'
-			});
+			
+			$('.animsition').animsition();
 		});
 
 		$(window).bind("pageshow", function(event) {

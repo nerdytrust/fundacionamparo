@@ -158,20 +158,7 @@
 	<script src="js/jquery.animsition.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			$('.animsition').animsition({
-				inClass					: 'fade-in',
-				outClass				: 'fade-out',
-				inDuration				: 1500,
-				outDuration				: 800,
-				linkElement				: '.animsition-link',
-				loading 				: true,
-				loadingParentElement 	: 'body',
-				loadingClass 			: 'animsition-loading',
-				unSupportCss 			: [ 'animsition-duration', '-webkit-animation-duration', '-o-animation-duration' ],
-				overlay 				: false,
-				overlayClass 			: 'animsition-overlay-slide',
-				overlayParentElement 	: 'body'
-			});
+			$('.animsition').animsition();
 		});
 
 		$(window).bind("pageshow", function(event) {

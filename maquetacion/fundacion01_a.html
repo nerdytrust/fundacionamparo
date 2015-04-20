@@ -9,8 +9,7 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/animsition.min.css">
 	<link rel="stylesheet" href="css/pop.css">
-
-     <link rel="stylesheet" href="css/flexslider-hist.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/flexslider-hist.css" type="text/css" media="screen" />
 
 </head>
 <body>
@@ -179,48 +178,47 @@
 	<script src="js/pop.js"></script>
 	
 	<script type="text/javascript">
-    $(function(){
-      SyntaxHighlighter.all();
-    });
-    $(window).load(function(){
+		// $(function(){
+		// 	SyntaxHighlighter.all();
+		// });
+		$(window).load(function(){
 
-      // Vimeo API nonsense
-      var player = document.getElementById('player_1');
-      $f(player).addEvent('ready', ready);
+			// Vimeo API nonsense
+			var player = document.getElementById('player_1');
+			$f(player).addEvent('ready', ready);
 
-      function addEvent(element, eventName, callback) {
-        (element.addEventListener) ? element.addEventListener(eventName, callback, false) : element.attachEvent(eventName, callback, false);
-      }
+			function addEvent(element, eventName, callback) {
+				(element.addEventListener) ? element.addEventListener(eventName, callback, false) : element.attachEvent(eventName, callback, false);
+			}
 
-      function ready(player_id) {
-        var froogaloop = $f(player_id);
+			function ready(player_id) {
+				var froogaloop = $f(player_id);
 
-        froogaloop.addEvent('play', function(data) {
-          $('.flexslider').flexslider("pause");
-        });
+				froogaloop.addEvent('play', function(data) {
+					$('.flexslider').flexslider("pause");
+				});
 
-        froogaloop.addEvent('pause', function(data) {
-          $('.flexslider').flexslider("play");
-        });
-      }
-      // Call fitVid before FlexSlider initializes, so the proper initial height can be retrieved.
-      $(".flexslider")
-        .fitVids()
-        .flexslider({
-          animation: "slide",
-          useCSS: false,
-          animationLoop: false,
-          smoothHeight: true,
-          start: function(slider){
-            $('body').removeClass('loading');
-          },
-          before: function(slider){
-            $f(player).api('pause');
-          }
-      });
-    });
-  </script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+				froogaloop.addEvent('pause', function(data) {
+					$('.flexslider').flexslider("play");
+				});
+			}
+			// Call fitVid before FlexSlider initializes, so the proper initial height can be retrieved.
+			$(".flexslider")
+				.fitVids()
+				.flexslider({
+					animation: "slide",
+					useCSS: false,
+					animationLoop: false,
+					smoothHeight: true,
+					start: function(slider){
+						$('body').removeClass('loading');
+					},
+					before: function(slider){
+						$f(player).api('pause');
+					}
+			});
+		});
+	</script>
 	<!-- Optional FlexSlider Additions -->
 	<script src="js/froogaloop.js"></script>
 	<script src="js/jquery.fitvid.js"></script>
@@ -229,20 +227,7 @@
 	<script src="js/jquery.animsition.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('.animsition').animsition({
-				inClass					: 'fade-in',
-				outClass				: 'fade-out',
-				inDuration				: 1500,
-				outDuration				: 800,
-				linkElement				: '.animsition-link',
-				loading 				: true,
-				loadingParentElement 	: 'body',
-				loadingClass 			: 'animsition-loading',
-				unSupportCss 			: [ 'animsition-duration', '-webkit-animation-duration', '-o-animation-duration' ],
-				overlay 				: false,
-				overlayClass 			: 'animsition-overlay-slide',
-				overlayParentElement 	: 'body'
-			});
+			$('.animsition').animsition();
 		});
 
 		$(window).bind("pageshow", function(event) {
