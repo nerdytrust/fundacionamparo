@@ -2458,9 +2458,9 @@ ul.pasos li:nth-of-type(3)>span{
 	width: auto;
 }
 ul.pasos li:nth-of-type(3)>span:nth-of-type(2){
-	width: 27.7%;
-	margin-left: 3%;
-	margin-right: 7%;
+	width: 23.7%;
+/*	margin-left: 3%;
+	margin-right: 7%;*/
 }
 ul.pasos li:nth-of-type(3)>span input[type="text"]{
 	width: 458px;
@@ -2475,7 +2475,9 @@ select#promedio{
 }
 /*empiezan button radio css3*/
 div.check, span.check{
-	width: auto !important;
+	/*max-width: 320px;*/
+	/*width: auto !important;*/
+	width: 250px !important;
 }
 div.check input[type="radio"], span.check input[type="radio"]{
 	display: none;
@@ -2483,6 +2485,11 @@ div.check input[type="radio"], span.check input[type="radio"]{
 span.check label, div.check label{
 	display: inline-block;
 }
+
+div.check label {
+	padding: 5px 0;
+}
+
 span.check label:before, div.check label:before{
 	border-radius: 50%;
 }
@@ -4526,6 +4533,17 @@ text-align: left;
 			padding: 0 8%;
 			/*background: red;*/
 		}
+}
+
+.label-fake {
+	display: inline-block;
+	vertical-align: top;
+	width: 66px !important;
+}
+
+.schedule-form {
+	margin-top: 20px;
+	padding-left: 1.5%;
 }
 
 
