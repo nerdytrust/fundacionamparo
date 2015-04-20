@@ -214,22 +214,25 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('.animsition').animsition({
-				inClass               :   'fade-in',
-				outClass              :   'fade-out',
-				inDuration            :    1500,
-				outDuration           :    800,
-				linkElement           :   '.animsition-link',
-				loading               :    true,
-				loadingParentElement  :   'body', //animsition wrapper element
-				loadingClass          :   'animsition-loading',
-				unSupportCss          : [ 'animation-duration',
-					'-webkit-animation-duration',
-					'-o-animation-duration'
-				],  
-				overlay               :   false,
-				overlayClass          :   'animsition-overlay-slide',
-				overlayParentElement  :   'body'
+				inClass					: 'fade-in',
+				outClass				: 'fade-out',
+				inDuration				: 1500,
+				outDuration				: 800,
+				linkElement				: '.animsition-link',
+				loading 				: true,
+				loadingParentElement 	: 'body',
+				loadingClass 			: 'animsition-loading',
+				unSupportCss 			: [ 'animsition-duration', '-webkit-animation-duration', '-o-animation-duration' ],
+				overlay 				: false,
+				overlayClass 			: 'animsition-overlay-slide',
+				overlayParentElement 	: 'body'
 			});
+		});
+
+		$(window).bind("pageshow", function(event) {
+		    if (event.originalEvent.persisted) {
+		    	location.reload();
+		    }
 		});
 	</script>
 </body>
