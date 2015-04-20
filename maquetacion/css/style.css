@@ -4044,6 +4044,10 @@ label.contact textarea{
 }
 /* */
 @media screen and (max-width:380px) {
+	.content-2{
+	height: 425px !important;
+	background: #fff;
+	}
 	/*#perfil{
 		height: 37px !important;
 	}
