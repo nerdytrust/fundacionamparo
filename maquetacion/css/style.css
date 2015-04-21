@@ -2471,7 +2471,7 @@ ul.pasos button{
 select#promedio{
 	  width: 130px;
   background: url("../images/flecha.png") no-repeat 86%;
-  padding-left: 16%;
+ /* padding-left: 16%;*/
 }
 /*empiezan button radio css3*/
 div.check, span.check{
