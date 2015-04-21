@@ -4051,6 +4051,9 @@ label.contact textarea{
 }
 /* */
 @media screen and (max-width:380px) {
+	.rt #txt_evento, .rt2 #txt_evento{
+		display: none !important;
+	}
 	.membresia-red{
 		display: none !important;
 		background: green;
