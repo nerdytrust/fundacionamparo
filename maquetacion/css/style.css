@@ -4051,6 +4051,12 @@ label.contact textarea{
 }
 /* */
 @media screen and (max-width:380px) {
+	.membresia-red{
+		display: none !important;
+		background: green;
+		top: 30% !important;
+		position: absolute !important;
+	}
 	#cja_noticia #caja_aporta2 #txt_noticia>nav, #cja_noticia #caja_aporta2 #txt_noticia>nav a{
 		/*background: red !important;*/
 		float: left;
