@@ -2471,7 +2471,7 @@ ul.pasos button{
 select#promedio{
 	  width: 130px;
   background: url("../images/flecha.png") no-repeat 86%;
-  padding-left: 16%;
+ /* padding-left: 16%;*/
 }
 /*empiezan button radio css3*/
 div.check, span.check{
@@ -4051,6 +4051,19 @@ label.contact textarea{
 }
 /* */
 @media screen and (max-width:380px) {
+	.rt #txt_evento, .rt2 #txt_evento{
+		display: none !important;
+	}
+	.membresia-red{
+		display: none !important;
+		background: green;
+		top: 30% !important;
+		position: absolute !important;
+	}
+	#cja_noticia #caja_aporta2 #txt_noticia>nav, #cja_noticia #caja_aporta2 #txt_noticia>nav a{
+		/*background: red !important;*/
+		float: left;
+	}
 	.content-2{
 	height: 425px !important;
 	background: #fff;
