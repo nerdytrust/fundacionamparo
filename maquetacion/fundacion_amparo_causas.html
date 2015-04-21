@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Fundación Amparo</title>
-		<link href="video/video-js.css" rel="stylesheet" type="text/css">
-    <!-- video.js must be in the <head> for older IEs to work. -->
-    <script src="video/video.js"></script>
+	<link href="video/video-js.css" rel="stylesheet" type="text/css">
+	<!-- video.js must be in the <head> for older IEs to work. -->
+	<script src="video/video.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<meta name="decription" conetent=""/>
 	<link rel="stylesheet" href="css/style.css">
@@ -14,406 +14,387 @@
 	<link rel="stylesheet" href="css/animsition.min.css">
 	<link rel="stylesheet" href="css/tabs.css">
 </head>
-
 <body>
 	<div class="animsition">
-<div id="meenus">
-	<header>
-		<div id="logo">
-			<a href="index.html">
-				<img src="images/amparo.png" alt="">
-				<h1 id="fundacion-logo">FUNDACIÓN AMPARO</h1>
-			</a>
-			<div>
-                  <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
-            </div>
-		</div>
-		<div id="section_menu" class="pull">
-		
-		<nav id="menu_principal">
-			<ul id="menu_uno">
-				<li><a href="fundacion_como_ayudar.html" class="animsition-link">Como ayudar</a></li>
-				<li><a href="fundacion_amparo_causas.html" class="animsition-link">Causas vivas</a></li>
-				<li><a href="fundacion_usuarios.html" class="animsition-link">Donadores</a></li>
-				<!--<li><a href="fundacion_muro.html" class="animsition-link">Muro del Éxito</a></li>-->
-			</ul>
-			<ul id="menu_dos">
-				<li><a href="fundacion01_e.html" class="animsition-link">La Fundación</a></li>
-				<li><a href="fundacion_becas.html" class="animsition-link">Becas</a></li>
-				<li><a href="fundacion_apoyamos_causa.html" class="animsition-link">Apoyamos tu causa</a></li>
-				<li><a href="fundacion_noticias.html" class="animsition-link">Noticias</a></li>
-				<li><a href="fundacion_faqs.html" class="animsition-link">Faq´s</a></li>
-				<li><a href="fundacion_contacto.html" class="animsition-link">Contacto</a></li>
-			</ul>
-		</nav>
-			
-			<button id="btn_dona">DONAR</button>
-			<div id="perfil">
-				<img src="images/monito.jpg" alt=""/>
+		<div id="meenus">
+			<header>
+				<div id="logo">
+					<a href="index.html">
+						<img src="images/amparo.png" alt="">
+						<h1 id="fundacion-logo">FUNDACIÓN AMPARO</h1>
+					</a>
+					<div>
+						<a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+					</div>
+				</div>
+				<div id="section_menu" class="pull">
+					<nav id="menu_principal">
+						<ul id="menu_uno">
+							<li><a href="fundacion_como_ayudar.html" class="animsition-link">Como ayudar</a></li>
+							<li><a href="fundacion_amparo_causas.html" class="animsition-link">Causas vivas</a></li>
+							<li><a href="fundacion_usuarios.html" class="animsition-link">Donadores</a></li>
+							<!--<li><a href="fundacion_muro.html" class="animsition-link">Muro del Éxito</a></li>-->
+						</ul>
+						<ul id="menu_dos">
+							<li><a href="fundacion01_e.html" class="animsition-link">La Fundación</a></li>
+							<li><a href="fundacion_becas.html" class="animsition-link">Becas</a></li>
+							<li><a href="fundacion_apoyamos_causa.html" class="animsition-link">Apoyamos tu causa</a></li>
+							<li><a href="fundacion_noticias.html" class="animsition-link">Noticias</a></li>
+							<li><a href="fundacion_faqs.html" class="animsition-link">Faq´s</a></li>
+							<li><a href="fundacion_contacto.html" class="animsition-link">Contacto</a></li>
+						</ul>
+					</nav>
+
+					<button id="btn_dona">DONAR</button>
+					<div id="perfil">
+						<img src="images/monito.jpg" alt=""/>
+					</div>
+				</div>
+			</header> 
+			<div id="conteo_donadores" >
+				<div id="int_contado">
+					<img src="images/icon_donadores.png" alt="">
+					<h2>249,863</h2>
+					<h3>Donadores <span>#TomandoAcciónFA</span></h3>
+				</div>
+				<div id="int_busc">
+					<input type="text" placeholder="Buscar">
+					<button class="fa fa-search busc"></button>
+				</div>
 			</div>
 		</div>
-	</header> 
-	<div id="conteo_donadores" >
-		<div id="int_contado">
-			<img src="images/icon_donadores.png" alt="">
-			<h2>249,863</h2>
-			<h3>Donadores <span>#TomandoAcciónFA</span></h3>
-		</div>
-		<div id="int_busc">
-			<input type="text" placeholder="Buscar">
-			<button class="fa fa-search busc"></button>
-		</div>
+		<section id="Contenedor">
+			<span class="como">
+				<h1>¿Cómo Ayudar?</h1>
+				<h2>Tus donaciones construyen sueños y cambian vidas <b>#TomandoAcciónFA</b></h2>
+				<button id="btn_dona">DONAR AHORA</button>
+			</span>
+			<div class="vi3 ">
+				<video loop preload="auto" poster="images/video_causa.png" controls  class="video-js vjs-default-skin" data-setup="{}">
+					<source src="video/video.mp4">
+				</video>
+			</div>
+			<div id="pleca_causas" class="">
+				<h1>CAUSAS FUNDACIÓN AMPARO</h1>
+			</div>
+			<div class="re">
+				<article id="donacion_wrap" class="caja_2 ">
+					<img src="images/img_01.jpg" alt="">
+					<section id="social_top">
+						<ul>
+							<a href="http://www.facebook.com" target="_blank"><li class="fa fa-facebook"></li></a>
+							<a href="www.twitter.com" target="_blank"><li class="fa fa-twitter"></li></a>
+							<a href=""><li class="fa fa-heart"></li></a>
+							<p>96 likes</p>
+						</ul>
+						<div id="donativo">HAZ TU DONACIÓN</div>
+					</section>
+					<section class="txt_int">
+						<h1 onclick="location.href='fundacion07.html';">CENTROS COMUNITARIOS</h1>
+						<h2>Roberto Alonso Espinosa</h2>
+						<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
+						<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
+						<div id="meta">
+
+							<div id="barra">
+								<progress value="0" max="100"></progress>
+								<!--<span id="relleno"></span>-->
+							</div>
+							<div id="cantidad">
+								<h1>META</h1>
+								<h2>$193,000<span>MXN</span></h2>
+							</div>
+							<p>102,548 MXN <span>RECAUDADOS</span></p>
+							<p>26 <span>DÍAS RESTANTES</span></p>
+						</div>
+					</section>
+					<span class="esquina"></span>
+				</article>
+				<article class="caja_2 ">
+					<img src="images/img_02.jpg" alt="">
+					<section id="social_top">
+						<ul>
+							<a href="http://www.facebook.com" target="_blank"><li class="fa fa-facebook"></li></a>
+							<a href="www.twitter.com" target="_blank"><li class="fa fa-twitter"></li></a>
+							<a href=""><li class="fa fa-heart"></li></a>
+							<p>96 likes</p>
+						</ul>
+						<div id="donativo">HAZ TU DONACIÓN</div>
+					</section>
+
+					<section class="txt_int">
+						<h1 onclick="location.href='fundacion07.html';">CULTURA</h1>
+						<h2>MUSEO AMPARO</h2>
+						<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
+						<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
+						<div id="meta">
+
+							<div id="barra">
+								<progress value="0" max="100"></progress>
+								<!--<span id="relleno"></span>-->
+							</div>
+							<div id="cantidad">
+								<h1>META</h1>
+								<h2>$193,000<span>MXN</span></h2>
+							</div>
+							<p>102,548 MXN <span>RECAUDADOS</span></p>
+							<p>26 <span>DÍAS RESTANTES</span></p>
+						</div>
+					</section>
+					<span class="esquina"></span>
+				</article>
+				<article class="caja_2 " id="dre">
+					<img src="images/img_03.jpg" alt="">
+					<section id="social_top">
+						<ul>
+							<a href="http://www.facebook.com" target="_blank"><li class="fa fa-facebook"></li></a>
+							<a href="www.twitter.com" target="_blank"><li class="fa fa-twitter"></li></a>
+							<a href=""><li class="fa fa-heart"></li></a>
+							<p>96 likes</p>
+						</ul>
+						<div id="donativo">HAZ TU DONACIÓN</div>
+					</section>
+
+					<section class="txt_int">
+						<h1 onclick="location.href='fundacion07.html';">CULTURA</h1>
+						<h2>CENTRO COMERCIAL "LA VICTORIA"</h2>
+						<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
+						<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
+						<div id="meta">
+
+							<div id="barra">
+								<progress value="0" max="100"></progress>
+								<!--<span id="relleno"></span>-->
+							</div>
+							<div id="cantidad">
+								<h1>META</h1>
+								<h2>$193,000<span>MXN</span></h2>
+							</div>
+							<p>102,548 MXN <span>RECAUDADOS</span></p>
+							<p>26 <span>DÍAS RESTANTES</span></p>
+						</div>
+					</section>
+					<span class="esquina"></span>
+				</article>
+			</div><!--termina re-->
+			<div id="pleca_causas" class="">
+				<h1>CAUSAS EXTERNAS</h1>
+			</div>
+			<div class="re csa">
+				<section id="causa1" class="causas-social ">
+					<img src="images/causa1.png" alt="">
+					<div id="donativo">HAZ TU DONACIÓN</div>
+					<h2 class="text-causas">aportaciones</h2>
+					<!--<button class="apor"></button>-->
+					<h3>A la Educación</h3>
+				</section>
+				<section id="causa2" class="causas-social ">
+					<img src="images/causa2.png" alt="">
+					<div id="donativo">HAZ TU DONACIÓN</div>
+					<h2 class="text-causas">aportaciones</h2>
+					<h3>Al deporte</h3>
+				</section>
+				<section id="causa3" class="causas-social ">
+					<img src="images/causa3.png" alt="">
+					<div id="donativo">HAZ TU DONACIÓN</div>
+					<h2 class="text-causas">aportaciones</h2>
+					<h3>Asistenciales</h3>
+				</section>
+				<section id="causa4" class="causas-social ">
+					<img src="images/causa4.png" alt="">
+					<div id="donativo">HAZ TU DONACIÓN</div>
+					<h2 class="text-causas">aportaciones</h2>
+					<h3>fundhepa</h3>
+				</section>
+			</div><!--termina dre-->
+			<section id="ultimos_dona"class="">
+				<div class="adorno_fa">
+					<img src="images/adorno_fa.png" alt="">
+				</div>
+				<div>
+					<h1 onclick="fundacion_apoyamos_causa.html';">APOYAMOS TU CAUSA</h1>
+					<h2>Fundación Amparo apoya causas externas</h2>
+					<p>
+						Inscribe tu causa llenando un breve formulario, la información será revisada
+						detalladamente para determinar una respuesta
+					</p>
+				</div>
+				<div class="txt_fundacion">
+					<div id="titulo_fca">
+						<button class="causas animsition-link" onclick="location.href='fundacion_apoyamos_causa.html';">Inscribir Causa</button>
+					</div>
+				</div>
+				<div class="txt_footer">
+					<h1>¡Tú puedes ayudar!</h1>
+					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
+					<div id="social_footer">
+						<ul>
+							<a href=""><li class="fa fa-facebook"></li></a>
+							<a href=""><li class="fa fa-twitter"></li></a>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</section>
+		<footer>
+			<div id="in_footer">
+				<nav id="footer_nav">
+					<ul>
+						<a href=""><li class="fa fa-facebook"></li></a>
+						<a href=""><li class="fa fa-twitter"></li></a>
+						<a href=""><li class="fa fa-youtube"></li></a>
+						<a href=""><li class="fa fa-instagram"></li></a>
+
+					</ul>
+				</nav>
+				<div id="terminos_footer">
+					<img src="images/logo_footer.png" alt="">
+					<h1>TÉRMINOS Y  CONDICIONES   |   POLÍTICAS DE PRIVACIDAD <br /><span>© TODOS LOS DERECHOS RESERVADOS POR FUNDACIÓN AMPARO 2014 </span></h1>
+				</div>
+				<div id="logo_3indesign">
+					<a href="http://3indesign.com/" target="_blank"><img src="images/3indesign_footer.png" alt=""></a>
+				</div>
+			</div>
+			<div di="plc_blck">
+
+			</div>
+		</footer>
 	</div>
-</div>
-	<section id="Contenedor">
-		<span class="como">
-		 	<h1>¿Cómo Ayudar?</h1>
-		 	<h2>Tus donaciones construyen sueños y cambian vidas <b>#TomandoAcciónFA</b></h2>
-		 	<button id="btn_dona">DONAR AHORA</button>
-		 </span>
-		 <div class="vi3 ">
-		 	<video loop preload="auto" poster="images/video_causa.png" controls  class="video-js vjs-default-skin" data-setup="{}">
-			<source src="video/video.mp4">
-		</video>
-		</div> 
-		 </div>
-		
-		<div id="pleca_causas" class="">
-			<h1>CAUSAS FUNDACIÓN AMPARO</h1>
- 		</div>
-
- 		<div class="re">
-	 		<article id="donacion_wrap" class="caja_2 ">
-	 			<img src="images/img_01.jpg" alt="">
-	 			<section id="social_top">
-					<ul>
-						<a href="http://www.facebook.com" target="_blank"><li class="fa fa-facebook"></li></a>
-						<a href="www.twitter.com" target="_blank"><li class="fa fa-twitter"></li></a>
-						<a href=""><li class="fa fa-heart"></li></a>
-						<p>96 likes</p>
-					</ul>
-					<div id="donativo">HAZ TU DONACIÓN</div>
-				</section>
-				<section class="txt_int">
-					<h1 onclick="location.href='fundacion07.html';">CENTROS COMUNITARIOS</h1>
-					<h2>Roberto Alonso Espinosa</h2>
-					<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
-					<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
-					<div id="meta">
-
-						<div id="barra">
-							<progress value="0" max="100"></progress>
-							<!--<span id="relleno"></span>-->
-						</div>
-					<div id="cantidad">
-						<h1>META</h1>
-						<h2>$193,000<span>MXN</span></h2>
-					</div>
-						<p>102,548 MXN <span>RECAUDADOS</span></p>
-						<p>26 <span>DÍAS RESTANTES</span></p>
-					</div>
-				</section>
-				<span class="esquina"></span>
-	 		</article>
-
-
-	 		<article class="caja_2 ">
-	 			<img src="images/img_02.jpg" alt="">
-	 			<section id="social_top">
-					<ul>
-						<a href="http://www.facebook.com" target="_blank"><li class="fa fa-facebook"></li></a>
-						<a href="www.twitter.com" target="_blank"><li class="fa fa-twitter"></li></a>
-						<a href=""><li class="fa fa-heart"></li></a>
-						<p>96 likes</p>
-					</ul>
-					<div id="donativo">HAZ TU DONACIÓN</div>
-				</section>
-
-	 			<section class="txt_int">
-					<h1 onclick="location.href='fundacion07.html';">CULTURA</h1>
-					<h2>MUSEO AMPARO</h2>
-					<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
-					<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
-					<div id="meta">
-
-						<div id="barra">
-							<progress value="0" max="100"></progress>
-							<!--<span id="relleno"></span>-->
-						</div>
-					<div id="cantidad">
-						<h1>META</h1>
-						<h2>$193,000<span>MXN</span></h2>
-					</div>
-						<p>102,548 MXN <span>RECAUDADOS</span></p>
-						<p>26 <span>DÍAS RESTANTES</span></p>
-					</div>
-				</section>
-	 			<span class="esquina"></span>
-	 		</article>
-
-
-	 		<article class="caja_2 " id="dre">
-	 			<img src="images/img_03.jpg" alt="">
-	 			<section id="social_top">
-					<ul>
-						<a href="http://www.facebook.com" target="_blank"><li class="fa fa-facebook"></li></a>
-						<a href="www.twitter.com" target="_blank"><li class="fa fa-twitter"></li></a>
-						<a href=""><li class="fa fa-heart"></li></a>
-						<p>96 likes</p>
-					</ul>
-					<div id="donativo">HAZ TU DONACIÓN</div>
-				</section>
-
-	 				<section class="txt_int">
-					<h1 onclick="location.href='fundacion07.html';">CULTURA</h1>
-					<h2>CENTRO COMERCIAL "LA VICTORIA"</h2>
-					<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
-					<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
-					<div id="meta">
-
-						<div id="barra">
-							<progress value="0" max="100"></progress>
-							<!--<span id="relleno"></span>-->
-						</div>
-					<div id="cantidad">
-						<h1>META</h1>
-						<h2>$193,000<span>MXN</span></h2>
-					</div>
-						<p>102,548 MXN <span>RECAUDADOS</span></p>
-						<p>26 <span>DÍAS RESTANTES</span></p>
-					</div>
-				</section>
-	 			<span class="esquina"></span>
-	 		</article>
-		</div><!--termina re-->
-
- 		<div id="pleca_causas" class="">
-			<h1>CAUSAS EXTERNAS</h1>
- 		</div>
-		
-		<div class="re csa">
- 		<section id="causa1" class="causas-social ">
- 			<img src="images/causa1.png" alt="">
- 				<div id="donativo">HAZ TU DONACIÓN</div>
- 				<h2 class="text-causas">aportaciones</h2>
- 				<!--<button class="apor"></button>-->
- 				<h3>A la Educación</h3>
- 		</section>
- 		<section id="causa2" class="causas-social ">
- 			<img src="images/causa2.png" alt="">
-				<div id="donativo">HAZ TU DONACIÓN</div>
- 				<h2 class="text-causas">aportaciones</h2>
- 				<h3>Al deporte</h3>
- 		</section>
- 		<section id="causa3" class="causas-social ">
- 			<img src="images/causa3.png" alt="">
-				<div id="donativo">HAZ TU DONACIÓN</div>
- 				<h2 class="text-causas">aportaciones</h2>
- 				<h3>Asistenciales</h3>
- 		</section>
- 		<section id="causa4" class="causas-social ">
- 			<img src="images/causa4.png" alt="">
-				<div id="donativo">HAZ TU DONACIÓN</div>
- 				<h2 class="text-causas">aportaciones</h2>
- 				<h3>fundhepa</h3>
- 		</section>
- 	</div><!--termina dre-->
-
- 		
-
- 		<section id="ultimos_dona"class="">
- 			<div class="adorno_fa">
- 				<img src="images/adorno_fa.png" alt="">
- 			</div>
-
- 			<div>
- 				<h1 onclick="fundacion_apoyamos_causa.html';">APOYAMOS TU CAUSA</h1>
- 				<h2>Fundación Amparo apoya causas externas</h2>
- 				<p>Inscribe tu causa llenando un breve formulario, la información será revisada
-detalladamente para determinar una respuesta </p>
-
- 				
- 			</div>
- 			
- 			<div class="txt_fundacion">
- 				<div id="titulo_fca">
- 					<button class="causas animsition-link" onclick="location.href='fundacion_apoyamos_causa.html';">Inscribir Causa</button>
- 				</div>
- 				
- 			</div>
- 			
- 			<div class="txt_footer">
- 					<h1>¡Tú puedes ayudar!</h1>
- 					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
- 					<div id="social_footer">
- 						<ul>
- 							<a href=""><li class="fa fa-facebook"></li></a>
- 							<a href=""><li class="fa fa-twitter"></li></a>
- 						</ul>
- 					</div>
- 				</div>
- 		</section>
-	</section>
-
-	<footer>
-		<div id="in_footer">
-			<nav id="footer_nav">
-				<ul>
-					<a href=""><li class="fa fa-facebook"></li></a>
-					<a href=""><li class="fa fa-twitter"></li></a>
-					<a href=""><li class="fa fa-youtube"></li></a>
-					<a href=""><li class="fa fa-instagram"></li></a>
-
-				</ul>
-			</nav>
-			<div id="terminos_footer">
-				<img src="images/logo_footer.png" alt="">
-				<h1>TÉRMINOS Y  CONDICIONES   |   POLÍTICAS DE PRIVACIDAD <br /><span>© TODOS LOS DERECHOS RESERVADOS POR FUNDACIÓN AMPARO 2014 </span></h1>
-			</div>
-			<div id="logo_3indesign">
-				<a href="http://3indesign.com/" target="_blank"><img src="images/3indesign_footer.png" alt=""></a>
-			</div>
-		</div>
-		<div di="plc_blck">
-			
-		</div>
-	</footer>
-</div>
 
 	<!--lightbox blanco1-->
 	<div class="lightbox" id="blanco1">
 
 		<div class="cot-scroll">
 
-		<div class="usuario-light">
-			<span class="usuario cau">
-				<img src="images/light-cau.png" alt="">
-				<div id="txt_evento">						
-							<nav>
-								<ul>
-									<a href=""><li class="fa fa-facebook"></li></a>
-									<a href=""><li class="fa fa-twitter"></li></a>
-									<a href=""><li class="fa fa-heart"></li></a>
-									<p>96 likes</p>
-								</ul>
-							</nav>
+			<div class="usuario-light">
+				<span class="usuario cau">
+					<img src="images/light-cau.png" alt="">
+					<div id="txt_evento">						
+						<nav>
+							<ul>
+								<a href=""><li class="fa fa-facebook"></li></a>
+								<a href=""><li class="fa fa-twitter"></li></a>
+								<a href=""><li class="fa fa-heart"></li></a>
+								<p>96 likes</p>
+							</ul>
+						</nav>
 						<div class="cau-dat">
 							<img src="images/icon_donadores-c.png" alt="">
 							<h1>249,863 <b>Donadores</b></h1>
 							<h2>Tu aportación es importante, cada granito cuenta, con tu ayuda no nos detendremos.</h2>
 						</div>
-						</div><!--termina txt_evento-->
-						
-			</span><!--termina usuario-->
-			<span class="datos">
-				<button class="centros">centros comunitarios</button>
-				<button value="" class="cerrar"></button>
-				<h1>roberto alonso espinosa</h1>
+					</div><!--termina txt_evento-->
 
-				<!--tabs-->
-				<section class="tabs">
-	            <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
-		        <label for="tab-1" class="tab-label-1">Descripción</label>
-		
-	            <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
-		        <label for="tab-2" class="tab-label-2">Donadores</label>
-		
-			    <div class="clear-shadow"></div>
-			
-		        <div class="content">
-			        <div class="content-1">
-						
-						<div class="datos-inf caudat">
-							
-							<p>Desarrollo y crecimiento del Centro de Desarrollo Comunitario Roberto Alonso Espinosa, ubicado en la colonia Lomas de Chamontoya en la Ciudad de México y otro en el municipio de Zacatlán, Puebla, los cuales brindan atención, bajo el Método Montessori,  a la comunidad infantil de muy escasos recursos, ampliando el beneficio al ambiente familiar. <br/>
-							<b>Selecciona la forma en que deseas ayudar
-								<img src="images/inter.png" alt="" id="icon">
-							</b>
-							</p>	
-						</div><!--termina datos-inf-->
-							<div class="fig">
-								<figure class="cauf" id="cauf-d">
-									  <span>Haz tu donación</span>
-									  
+				</span><!--termina usuario-->
+				<span class="datos">
+					<button class="centros">centros comunitarios</button>
+					<button value="" class="cerrar"></button>
+					<h1>roberto alonso espinosa</h1>
+
+					<!--tabs-->
+					<section class="tabs">
+						<input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+						<label for="tab-1" class="tab-label-1">Descripción</label>
+
+						<input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+						<label for="tab-2" class="tab-label-2">Donadores</label>
+
+						<div class="clear-shadow"></div>
+
+						<div class="content">
+							<div class="content-1">
+
+								<div class="datos-inf caudat">
+
+									<p>Desarrollo y crecimiento del Centro de Desarrollo Comunitario Roberto Alonso Espinosa, ubicado en la colonia Lomas de Chamontoya en la Ciudad de México y otro en el municipio de Zacatlán, Puebla, los cuales brindan atención, bajo el Método Montessori,  a la comunidad infantil de muy escasos recursos, ampliando el beneficio al ambiente familiar. <br/>
+										<b>Selecciona la forma en que deseas ayudar
+											<img src="images/inter.png" alt="" id="icon">
+										</b>
+									</p>	
+								</div><!--termina datos-inf-->
+								<div class="fig">
+									<figure class="cauf" id="cauf-d">
+										<span>Haz tu donación</span>
+
 									</figure >
 									<figure class="cauf" id="cauf-i">
-									  <span>Ser</br>impulsor</span>
-									  
+										<span>Ser</br>impulsor</span>
+
 									</figure>
 									<figure class="cauf" id="cauf-v">
-									  <span>Ser</br>voluntario</span>
-									  
+										<span>Ser</br>voluntario</span>
+
 									</figure>
+								</div>
+								<div id="meta" class="caum">
+									<div id="barra">
+										<progress value="0" max="100"></progress>
+										<!--<span id="relleno"></span>-->
+									</div>
+									<div id="cantidad">
+										<h1>META</h1>
+										<h2>$193,000<span>MXN</span></h2>
+									</div>
+									<p>102,548 MXN <span>RECAUDADOS</span></p>
+									<p>26 <span>DÍAS RESTANTES</span></p>
+								</div>
+
+
 							</div>
-							<div id="meta" class="caum">
-						<div id="barra">
-							<progress value="0" max="100"></progress>
-							<!--<span id="relleno"></span>-->
+							<div class="content-2">
+								<div class="donadores-c">
+									<span id="fotos"><img src="images/foto.png" alt=""></span>
+									<span id="fotos"><img src="images/foto2.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto.png" alt=""></span>
+									<span id="fotos"><img src="images/foto2.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto.png" alt=""></span>
+									<span id="fotos"><img src="images/foto2.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto.png" alt=""></span>
+									<span id="fotos"><img src="images/foto2.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto.png" alt=""></span>
+									<span id="fotos"><img src="images/foto2.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto.png" alt=""></span>
+									<span id="fotos"><img src="images/foto2.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto.png" alt=""></span>
+									<span id="fotos"><img src="images/foto2.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto.png" alt=""></span>
+									<span id="fotos"><img src="images/foto2.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto.png" alt=""></span>
+									<span id="fotos"><img src="images/foto2.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto.png" alt=""></span>
+									<span id="fotos"><img src="images/foto2.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+									<span id="fotos"><img src="images/foto.png" alt=""></span>
+									<span id="fotos"><img src="images/foto2.png" alt=""></span>
+									<span id="fotos"><img src="images/foto3.png" alt=""></span>
+
+								</div>	
+
+							</div>
+
 						</div>
-					<div id="cantidad">
-						<h1>META</h1>
-						<h2>$193,000<span>MXN</span></h2>
-					</div>
-						<p>102,548 MXN <span>RECAUDADOS</span></p>
-						<p>26 <span>DÍAS RESTANTES</span></p>
-					</div>
-                       
-						
-				    </div>
-			        <div class="content-2">
-					  <div class="donadores-c">
-					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto2.png" alt=""></span>
-					  	<span id="fotos"><img src="images/foto3.png" alt=""></span>
-					  	
-					  </div>	
-                       
-					  </div>
-			       
-		        </div>
-			</section>
-			<span class="esquina-pop" id="ski"></span>
-				<!--tabs-->			
-			</span>
-		</div>
-	  </div><!--termina cot-scroll-->
+					</section>
+					<span class="esquina-pop" id="ski"></span>
+					<!--tabs-->			
+				</span>
+			</div>
+		</div><!--termina cot-scroll-->
 	</div>
 	<!--terina lightbox blanco1-->
-	
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/pop.js"></script>
@@ -428,12 +409,10 @@ detalladamente para determinar una respuesta </p>
 	});
 
 	$(window).bind("pageshow", function(event) {
-	    if (event.originalEvent.persisted) {
-	    	location.reload();
-	    }
+		if (event.originalEvent.persisted) {
+			location.reload();
+		}
 	});
-	</script>	
-	
+	</script>
 </body>
 </html>
-
