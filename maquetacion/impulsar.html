@@ -7,46 +7,62 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/pop.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/animsition.min.css">
 </head>
 <body>
+	<div class="animsition">
+		<!--lightbox azul1-->
+		<div class="lightbox-h i" id="azul1">
+			<div class="lightbox-h-cont imp">
+				<img src="images/icon_donadores-v.png" alt="">
+				<h1>impulsar</h1>
+				
+				<p>Lleguemos a más oídos y toquemos más corazones en una sóla voz</p>
+				<!--<button class="cerrar-h"></button>-->
+				<button onClick="history.back()" class="regresar"> Regresar</button>
+				<div class="imagen">
+					<img src="images/image.png" alt="">
+						<button>centros comunitarios</button>
+						<p>Roberto Alonso Espinoza</p>
+				</div>
+			</br>
+				<div class="check-azul">
+								<input type="checkbox" value="None" id="check-azul" name="check" />
+								<label for="check-azul"></label>
+								No mostrar mi perfil en el sitio
+							</div>
 
-	<!--lightbox azul1-->
-	<img src="images/back-home.png" class="bg" alt="">
-	<div class="lightbox-h i" id="azul1">
-		<div class="lightbox-h-cont imp">
-			<img src="images/icon_donadores-v.png" alt="">
-			<h1>impulsar</h1>
-			
-			<p>Lleguemos a más oídos y toquemos más corazones en una sóla voz</p>
-			<!--<button class="cerrar-h"></button>-->
-			<button onClick="history.back()" class="regresar"> Regresar</button>
-			<div class="imagen">
-				<img src="images/image.png" alt="">
-					<button>centros comunitarios</button>
-					<p>Roberto Alonso Espinoza</p>
-			</div>
-		</br>
-			<div class="check-azul">
-							<input type="checkbox" value="None" id="check-azul" name="check" />
-							<label for="check-azul"></label>
-							No mostrar mi perfil en el sitio
-						</div>
-
-					<button class="feis">
-						<div id="invitar">Invitar a 10 amigos</div>
-					</button>	
-			<a href="fundacion_faqs.html">
-					Si necesitas ayuda dar click aquí 
-					<img src="images/i.png" alt="">
-				</a>			
-		</div>	
+						<button class="feis">
+							<div id="invitar">Invitar a 10 amigos</div>
+						</button>	
+				<a href="fundacion_faqs.html">
+						Si necesitas ayuda dar click aquí 
+						<img src="images/i.png" alt="">
+					</a>			
+			</div>	
+		</div>
+		<!--Termina lightbox azul1-->
 	</div>
-	<!--Termina lightbox azul1-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/pop.js"></script>
-	
+	<script src="js/jquery.animsition.min.js"></script>
+	<script>
+		$(document).ready(function(){		
+			$('.animsition').animsition();
+
+			$('body').css({
+				'background': '#4f99d9'
+			});
+		});
+
+		$(window).bind("pageshow", function(event) {
+		    if (event.originalEvent.persisted) {
+		    	location.reload();
+		    }
+		});
+	</script>
 </body>
 </html>
