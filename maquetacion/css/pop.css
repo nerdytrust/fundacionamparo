@@ -49,6 +49,10 @@ label.intro input{
 	padding: 0 !important;
 	margin: 0 0 19px 0 !important;
 }
+label.intro select{
+
+	margin: 0 0 19px 0 !important;
+}
 button.face-btn{
 	width: 280px;
 	height: 53px;
