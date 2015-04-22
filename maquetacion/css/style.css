@@ -3440,6 +3440,12 @@ label.becas ul.pasos li:first-child{
 }	
 
 	@media screen and (max-width:640px) {
+		.rt #txt_evento, .rt2 #txt_evento{
+		display: none !important;
+	}
+	.membresia-red{
+		display: none !important;
+	}
 		.usuario-light{
 		margin-top: 17% !important;
 	}
@@ -4051,15 +4057,7 @@ label.contact textarea{
 }
 /* */
 @media screen and (max-width:380px) {
-	.rt #txt_evento, .rt2 #txt_evento{
-		display: none !important;
-	}
-	.membresia-red{
-		display: none !important;
-		background: green;
-		top: 30% !important;
-		position: absolute !important;
-	}
+	
 	#cja_noticia #caja_aporta2 #txt_noticia>nav, #cja_noticia #caja_aporta2 #txt_noticia>nav a{
 		/*background: red !important;*/
 		float: left;
