@@ -3440,6 +3440,9 @@ label.becas ul.pasos li:first-child{
 }	
 
 	@media screen and (max-width:640px) {
+		#txt_noticia{
+			margin: 5% 0 0 0 !important;
+		}
 		.rt #txt_evento, .rt2 #txt_evento{
 		display: none !important;
 	}
@@ -4058,10 +4061,6 @@ label.contact textarea{
 /* */
 @media screen and (max-width:380px) {
 	
-	#cja_noticia #caja_aporta2 #txt_noticia>nav, #cja_noticia #caja_aporta2 #txt_noticia>nav a{
-		/*background: red !important;*/
-		float: left;
-	}
 	.content-2{
 	height: 425px !important;
 	background: #fff;
