@@ -460,7 +460,6 @@ header {
 }
 
 .w-412 {
-	&.landscape {}
 	&.portrait {
 		body {
 			padding-top: 107px;
@@ -882,14 +881,9 @@ header {
 			}
 		}
 	}
-
-	.portrait {
-
-	}
 }
 
 .w-768 {
-	&.landscape {}
 	&.portrait {
 		body {
 			padding-top: 100px;
@@ -984,7 +978,6 @@ header {
 			}
 		}
 	}
-	&.portrait {}
 }
 
 .w-960 {
@@ -1053,7 +1046,6 @@ header {
 			width: 117%;
 		}
 	}
-	&.portrait {}
 }
 
 .w-1024 {
@@ -1158,8 +1150,6 @@ header {
 			}
 		}
 	}
-
-	&.portrait {}
 }
 
 .w-1280 {
@@ -1223,8 +1213,6 @@ header {
 			top: 20%;
 		}
 	}
-
-	&.portrait {}
 }
 
 .w-1366 {
@@ -1281,10 +1269,6 @@ header {
 			top: 18%;
 		}
 	}
-
-	&.portrait {
-
-	}
 }
 
 .w-1440 {
@@ -1318,5 +1302,26 @@ header {
 			width: 110.5%;
 		}
 	}
-	&.portrait {}
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1024px) and (max-width: 1530px) {
+	.moment-description {
+		h1 {
+			font-size: 3.5vw;
+		}
+
+		h2 {
+			font-size: 2.5vw;
+		}
+
+		p {
+			font-size: 1.5vw;
+		}
+
+		a {
+			font-size: 1.5vw;
+			b {}
+		}
+	}
 }

@@ -53,8 +53,6 @@
 						</div>
 					</div>
 				</header>
-
-
 				<div id="conteo_donadores">
 					<div id="int_contado">
 						<img src="images/icon_donadores.png" alt="">
@@ -82,7 +80,7 @@
 							<div class="slide_container col-sm-12 carousel-inner" role="listbox">
 								<div class="slide col-sm-12 active item">
 									<img src="images/slider1.png" alt="" class="img-responsive">
-									<span class="moment-description col-xs-12 col-sm-10 col-md-4">
+									<span class="moment-description col-xs-12 col-sm-10 col-md-7 col-lg-7">
 										<h1>1986</h1>
 										<h2>Creación de la fundación amparo</h2>
 										<p>
@@ -97,7 +95,7 @@
 								</div>
 								<div class="slide col-sm-12 item">
 									<img src="images/slider1.png" alt="" class="img-responsive">
-									<span class="moment-description col-xs-12 col-sm-10 col-md-4">
+									<span class="moment-description col-xs-12 col-sm-10 col-md-7 col-lg-7">
 										<h1>1987</h1>
 										<h2>Creación de la fundación amparo</h2>
 										<p>
@@ -108,7 +106,7 @@
 								</div>
 								<div class="slide col-sm-12 item">
 									<img src="images/slider1.png" alt="" class="img-responsive">
-									<span class="moment-description col-xs-12 col-sm-10 col-md-4">
+									<span class="moment-description col-xs-12 col-sm-10 col-md-7 col-lg-7">
 										<h1>1988</h1>
 										<h2>Creación de la fundación amparo</h2>
 										<p>
@@ -152,7 +150,7 @@
 							<div class="slide_container col-sm-12 carousel-inner" role="listbox">
 								<div class="slide col-sm-12 active item">
 									<img src="images/slider1.png" alt="" class="img-responsive">
-									<span class="moment-description col-sm-12 col-md-5 col-lg-6">
+									<span class="moment-description col-sm-12 col-md-7 col-lg-7">
 										<h3><label class="label label-default label-white">EDUCACIÓN</label></h3>
 										<h1>1986</h1>
 										<h2>Creación de la fundación amparo</h2>
@@ -175,7 +173,7 @@
 								</div>
 								<div class="slide col-sm-12 item">
 									<img src="images/slider1.png" alt="" class="img-responsive">
-									<span class="moment-description col-sm-12 col-md-5 col-lg-6">
+									<span class="moment-description col-sm-12 col-md-7 col-lg-7">
 										<h3><label class="label label-default label-white">EDUCACIÓN</label></h3>
 										<h1>1986</h1>
 										<h2>Creación de la fundación amparo</h2>
@@ -194,7 +192,7 @@
 								</div>
 								<div class="slide col-sm-12 item">
 									<img src="images/slider1.png" alt="" class="img-responsive">
-									<span class="moment-description col-sm-12 col-md-5 col-lg-6">
+									<span class="moment-description col-sm-12 col-md-7 col-lg-7">
 										<h3><label class="label label-default label-white">EDUCACIÓN</label></h3>
 										<h1>1986</h1>
 										<h2>Creación de la fundación amparo</h2>
@@ -242,28 +240,27 @@
 		<script src="js/script.js"></script>
 		<script src="js/pop.js"></script>
 		<script src="js/jquery.animsition.min.js"></script>
-		<script type="text/javascript">
-			// $(function(){
-			// 	SyntaxHighlighter.all();
-			// });
-			
+		<script type="text/javascript">		
 			$(function(){
-				$(".animsition").animsition({
-					inClass               :   'fade-in',
-					outClass              :   'fade-out',
-					inDuration            :    1500,
-					outDuration           :    800,
-					loading               :    true,
-					linkElement           :   '.animsition-link',
-					loadingParentElement  :   'body', //animsition wrapper element
-					loadingClass          :   'animsition-loading',
-					unSupportCss          : [ 'animation-duration',
-												'-webkit-animation-duration',
-												'-o-animation-duration'
-											],
-					overlay               :   false,
-					overlayClass          :   'animsition-overlay-slide',
-					overlayParentElement  :   'body'
+				$(".animsition").animsition();
+
+				$(window).resize(function(){
+					$('.carousel-control.left, .carousel-control.right').css({
+						'margin-top': ( $(window).height() / 98 ) + '%'
+					});
+
+					$('.carousel-control.left.secondary, .carousel-control.right.secondary').css({
+						'margin': 0
+					});
+
+					$('.carousel-control.right.secondary').css({
+						'left': 'auto',
+						'right': '15px'
+					});
+
+					$('.carousel-control.left.secondary').css({
+						'left': '15px'
+					});
 				});
 
 				$('#main_time .carousel-inner .item a').click(function(e){
