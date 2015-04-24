@@ -118,39 +118,6 @@ header {
 	}
 }
 
-.carousel-control {
-	text-shadow: none;
-	width: 4%;
-	z-index: 15;
-	&.left, &.right {
-		background-image: none;
-		height: 65px;
-		margin-top: 145px;
-		&.secondary {
-			background-image: none;
-			height: 40px;
-			margin: 0;
-			width: 30px;
-		}
-	}
-
-	&.left {
-		left: 65px;
-		&.secondary {
-			left: 0;
-		}
-	}
-
-	&.right {
-		left: 105px;
-		right: auto;
-		&.secondary {
-			left: auto;
-			right: 0;
-		}
-	}
-}
-
 .carousel-indicators {
 	border-bottom: 1px solid $fundacion;
 	left: 0;
@@ -185,10 +152,6 @@ header {
 	padding: 0;
 }
 
-.img-responsive {
-	width: 100%;
-}
-
 .left-arrow, .right-arrow {
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -220,10 +183,53 @@ header {
 	background-image: url(../images/fv-2.png);
 }
 
+.main-navigator-container {
+	background-color: rgb(190,218,62);
+	border-radius: 50px;
+	display: inline-block;
+	height: 95px;
+	left: auto;
+	margin-top: 15px;
+	right: 15px;
+	position: absolute;
+	width: 95px;
+	z-index: 5;
+	.carousel-control {
+		text-shadow: none;
+		width: 55px;
+		z-index: 15;
+		&.left, &.right {
+			background-image: none;
+			height: 65px;
+			padding: 16px 0;
+			&.secondary {
+				background-image: none;
+				height: 40px;
+				margin: 0;
+				width: 30px;
+			}
+		}
+
+		&.left {
+			&.secondary {
+				left: 15px;
+			}
+		}
+
+		&.right {
+			&.secondary {
+				left: auto;
+				right: 15px;
+			}
+		}
+	}
+}
+
 .moment-description {
 	left: 65px;
 	position: absolute;
-	top: 25%;
+	// top: 25%;
+	top: 15px;
 	h1 {
 		color: $fundacion;
 		font-size: 49px;
@@ -291,6 +297,21 @@ header {
 	height: 40px;
 	position: absolute;
 	z-index: 16;
+	.carousel-control {
+		width: 20px;
+		&.left, &.right {
+			background-image: none;
+		}
+
+		&.left {
+			left: 25px;
+		}
+
+		&.right {
+			left: auto;
+			right: 25px;
+		}
+	}
 }
 
 .navigator-legend {
@@ -309,6 +330,10 @@ header {
 	.slide {
 		margin: 0;
 		padding: 0;
+		img {
+			display: block;
+			left: 0;
+		}
 	}
 }
 
@@ -428,11 +453,6 @@ header {
 					margin: 0;
 				}
 			}
-		}
-
-		.img-responsive {
-			max-width: none;
-			width: 308%;
 		}
 
 		.moment-description {
@@ -592,11 +612,6 @@ header {
 			}
 		}
 
-		.img-responsive {
-			max-width: none;
-			width: 145%;
-		}
-
 		.moment-description {
 			left: 0;
 			top: 0;
@@ -675,11 +690,6 @@ header {
 					right: 15px;
 				}
 			}
-		}
-
-		.img-responsive {
-			max-width: none;
-			width: 240%;
 		}
 
 		.moment-description {
@@ -786,11 +796,6 @@ header {
 					right: 15px;
 				}
 			}
-		}
-
-		.img-responsive {
-			max-width: none;
-			width: 276%;
 		}
 
 		.moment-description {
@@ -930,11 +935,6 @@ header {
 			bottom: 165px;
 		}
 
-		.img-responsive {
-			max-width: none;
-			width: 250%;
-		}
-
 		.timeline-navigator {
 			bottom: 200px;
 		}
@@ -964,11 +964,6 @@ header {
 					margin: 0;
 				}
 			}
-		}
-
-		.img-responsive {
-			max-width: none;
-			width: 129.5%;
 		}
 
 		.moment-description {
@@ -1040,11 +1035,6 @@ header {
 				font-size: 30px;
 			}
 		}
-
-		.img-responsive {
-			max-width: none;
-			width: 117%;
-		}
 	}
 }
 
@@ -1091,14 +1081,14 @@ header {
 			}
 
 			&.left {
-				left: 75px;
+				left: 85px;
 				&.secondary {
 					left: 25px;
 				}
 			}
 
 			&.right {
-				left: 115px;
+				left: 125px;
 				&.secondary {
 					left: auto;
 					right: 25px;
@@ -1112,11 +1102,6 @@ header {
 
 		.col-md-5 {
 			width: 60.333333%;
-		}
-
-		.img-responsive {
-			max-width: none;
-			width: 135.5%;
 		}
 
 		.left-arrow-secondary, .right-arrow-secondary {
@@ -1204,11 +1189,6 @@ header {
 			width: 50.333333%;
 		}
 
-		.img-responsive {
-			max-width: none;
-			width: 108%;
-		}
-
 		.moment-description {
 			top: 20%;
 		}
@@ -1239,30 +1219,31 @@ header {
 			}
 		}
 
-		.carousel-control {
-			&.left, &.right {
-				margin-top: 65px;
-				&.secondary {
-					margin: 0;
-				}
-			}
-
-			&.left {
-				&.secondary {
-					left: 25px;
-				}
-			}
-
-			&.right {
-				&.secondary {
-					left: auto;
-					right: 25px;
-				}
-			}
-		}
-
 		.left-arrow-secondary, .right-arrow-secondary {
 			margin: 18px 0 0 0;
+		}
+
+		.main-navigator-container {
+			.carousel-control {
+				&.left, &.right {
+					&.secondary {
+						margin: 0;
+					}
+				}
+
+				&.left {
+					&.secondary {
+						left: 25px;
+					}
+				}
+
+				&.right {
+					&.secondary {
+						left: auto;
+						right: 25px;
+					}
+				}
+			}
 		}
 
 		.moment-description {
@@ -1296,32 +1277,6 @@ header {
 					margin: 0;
 				}
 			}
-		}
-		.img-responsive {
-			max-width: none;
-			width: 110.5%;
-		}
-	}
-}
-
-/* Desktops and laptops ----------- */
-@media only screen and (min-width : 1024px) and (max-width: 1530px) {
-	.moment-description {
-		h1 {
-			font-size: 3.5vw;
-		}
-
-		h2 {
-			font-size: 2.5vw;
-		}
-
-		p {
-			font-size: 1.5vw;
-		}
-
-		a {
-			font-size: 1.5vw;
-			b {}
 		}
 	}
 }

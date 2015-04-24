@@ -69,18 +69,20 @@
 				<div id="success_wall" class="row">
 					<section id="main_time" class="container-fluid">
 						<div id="carousel-timeline" class="row carousel slide" data-ride="carousel" data-interval="false">
-							<a href="#carousel-timeline" class="left carousel-control main-rol" role="button" data-slide="prev">
-								<span class="left-arrow" aria-hidden="true"></span>
-								<span class="sr-only">Previo</span>
-							</a>
-							<a href="#carousel-timeline" class="right carousel-control main-rol" role="button" data-slide="next">
-								<span class="right-arrow" aria-hidden="true"></span>
-								<span class="sr-only">Siguiente</span>
-							</a>
+							<div class="main-navigator-container">
+								<a href="#carousel-timeline" class="left carousel-control main-rol" role="button" data-slide="prev">
+									<span class="left-arrow" aria-hidden="true"></span>
+									<span class="sr-only">Previo</span>
+								</a>
+								<a href="#carousel-timeline" class="right carousel-control main-rol" role="button" data-slide="next">
+									<span class="right-arrow" aria-hidden="true"></span>
+									<span class="sr-only">Siguiente</span>
+								</a>
+							</div>
 							<div class="slide_container col-sm-12 carousel-inner" role="listbox">
 								<div class="slide col-sm-12 active item">
-									<img src="images/slider1.png" alt="" class="img-responsive">
-									<span class="moment-description col-xs-12 col-sm-10 col-md-7 col-lg-7">
+									<img src="images/slider1.png" alt="">
+									<span class="moment-description col-xs-12 col-sm-6 col-md-4">
 										<h1>1986</h1>
 										<h2>Creación de la fundación amparo</h2>
 										<p>
@@ -94,8 +96,8 @@
 									</video>-->
 								</div>
 								<div class="slide col-sm-12 item">
-									<img src="images/slider1.png" alt="" class="img-responsive">
-									<span class="moment-description col-xs-12 col-sm-10 col-md-7 col-lg-7">
+									<img src="images/slider1.png" alt="">
+									<span class="moment-description col-xs-12 col-sm-6 col-md-4">
 										<h1>1987</h1>
 										<h2>Creación de la fundación amparo</h2>
 										<p>
@@ -105,8 +107,8 @@
 									</span>
 								</div>
 								<div class="slide col-sm-12 item">
-									<img src="images/slider1.png" alt="" class="img-responsive">
-									<span class="moment-description col-xs-12 col-sm-10 col-md-7 col-lg-7">
+									<img src="images/slider1.png" alt="">
+									<span class="moment-description col-xs-12 col-sm-6 col-md-4">
 										<h1>1988</h1>
 										<h2>Creación de la fundación amparo</h2>
 										<p>
@@ -149,7 +151,7 @@
 							</a>
 							<div class="slide_container col-sm-12 carousel-inner" role="listbox">
 								<div class="slide col-sm-12 active item">
-									<img src="images/slider1.png" alt="" class="img-responsive">
+									<img src="images/slider1.png" alt="">
 									<span class="moment-description col-sm-12 col-md-7 col-lg-7">
 										<h3><label class="label label-default label-white">EDUCACIÓN</label></h3>
 										<h1>1986</h1>
@@ -172,7 +174,7 @@
 									</video>-->
 								</div>
 								<div class="slide col-sm-12 item">
-									<img src="images/slider1.png" alt="" class="img-responsive">
+									<img src="images/slider1.png" alt="">
 									<span class="moment-description col-sm-12 col-md-7 col-lg-7">
 										<h3><label class="label label-default label-white">EDUCACIÓN</label></h3>
 										<h1>1986</h1>
@@ -191,7 +193,7 @@
 									</span>
 								</div>
 								<div class="slide col-sm-12 item">
-									<img src="images/slider1.png" alt="" class="img-responsive">
+									<img src="images/slider1.png" alt="">
 									<span class="moment-description col-sm-12 col-md-7 col-lg-7">
 										<h3><label class="label label-default label-white">EDUCACIÓN</label></h3>
 										<h1>1986</h1>
@@ -244,24 +246,36 @@
 			$(function(){
 				$(".animsition").animsition();
 
+				$('.slide_container .slide img').css({
+					'height': ( parseInt( $(window).height() ) - $('#meenus').height() ) + 'px',
+					'width': $(window).width() + 'px'
+				});
+
 				$(window).resize(function(){
-					$('.carousel-control.left, .carousel-control.right').css({
-						'margin-top': ( $(window).height() / 98 ) + '%'
-					});
-
-					$('.carousel-control.left.secondary, .carousel-control.right.secondary').css({
-						'margin': 0
-					});
-
-					$('.carousel-control.right.secondary').css({
-						'left': 'auto',
-						'right': '15px'
-					});
-
-					$('.carousel-control.left.secondary').css({
-						'left': '15px'
+					$('.slide_container .slide img').css({
+						'height': ( parseInt( $(window).height() ) - $('#meenus').height() ) + 'px',
+						'width': $(window).width() + 'px'
 					});
 				});
+
+				// $(window).resize(function(){
+				// 	$('.carousel-control.left, .carousel-control.right').css({
+				// 		'margin-top': ( $(window).height() / 98 ) + '%'
+				// 	});
+
+				// 	$('.carousel-control.left.secondary, .carousel-control.right.secondary').css({
+				// 		'margin': 0
+				// 	});
+
+				// 	$('.carousel-control.right.secondary').css({
+				// 		'left': 'auto',
+				// 		'right': '15px'
+				// 	});
+
+				// 	$('.carousel-control.left.secondary').css({
+				// 		'left': '15px'
+				// 	});
+				// });
 
 				$('#main_time .carousel-inner .item a').click(function(e){
 					e.preventDefault();
