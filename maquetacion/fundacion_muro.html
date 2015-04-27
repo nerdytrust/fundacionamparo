@@ -69,7 +69,7 @@
 				<div id="success_wall" class="row">
 					<section id="main_time" class="container-fluid">
 						<div id="carousel-timeline" class="row carousel slide" data-ride="carousel" data-interval="false">
-							<div class="main-navigator-container">
+							<!--<div class="main-navigator-container">-->
 								<a href="#carousel-timeline" class="left carousel-control main-rol" role="button" data-slide="prev">
 									<span class="left-arrow" aria-hidden="true"></span>
 									<span class="sr-only">Previo</span>
@@ -78,11 +78,11 @@
 									<span class="right-arrow" aria-hidden="true"></span>
 									<span class="sr-only">Siguiente</span>
 								</a>
-							</div>
+							<!--</div>-->
 							<div class="slide_container col-sm-12 carousel-inner" role="listbox">
 								<div class="slide col-sm-12 active item">
 									<img src="images/slider1.png" alt="">
-									<span class="moment-description col-xs-12 col-sm-6 col-md-4">
+									<span class="moment-description col-xs-10 col-sm-6 col-md-5">
 										<h1>1986</h1>
 										<h2>Creación de la fundación amparo</h2>
 										<p>
@@ -97,7 +97,7 @@
 								</div>
 								<div class="slide col-sm-12 item">
 									<img src="images/slider1.png" alt="">
-									<span class="moment-description col-xs-12 col-sm-6 col-md-4">
+									<span class="moment-description col-xs-10 col-sm-6 col-md-5">
 										<h1>1987</h1>
 										<h2>Creación de la fundación amparo</h2>
 										<p>
@@ -108,7 +108,7 @@
 								</div>
 								<div class="slide col-sm-12 item">
 									<img src="images/slider1.png" alt="">
-									<span class="moment-description col-xs-12 col-sm-6 col-md-4">
+									<span class="moment-description col-xs-10 col-sm-6 col-md-5">
 										<h1>1988</h1>
 										<h2>Creación de la fundación amparo</h2>
 										<p>
@@ -246,36 +246,7 @@
 			$(function(){
 				$(".animsition").animsition();
 
-				$('.slide_container .slide img').css({
-					'height': ( parseInt( $(window).height() ) - $('#meenus').height() ) + 'px',
-					'width': $(window).width() + 'px'
-				});
-
-				$(window).resize(function(){
-					$('.slide_container .slide img').css({
-						'height': ( parseInt( $(window).height() ) - $('#meenus').height() ) + 'px',
-						'width': $(window).width() + 'px'
-					});
-				});
-
-				// $(window).resize(function(){
-				// 	$('.carousel-control.left, .carousel-control.right').css({
-				// 		'margin-top': ( $(window).height() / 98 ) + '%'
-				// 	});
-
-				// 	$('.carousel-control.left.secondary, .carousel-control.right.secondary').css({
-				// 		'margin': 0
-				// 	});
-
-				// 	$('.carousel-control.right.secondary').css({
-				// 		'left': 'auto',
-				// 		'right': '15px'
-				// 	});
-
-				// 	$('.carousel-control.left.secondary').css({
-				// 		'left': '15px'
-				// 	});
-				// });
+				citrussized();
 
 				$('#main_time .carousel-inner .item a').click(function(e){
 					e.preventDefault();
@@ -297,6 +268,63 @@
 			    	location.reload();
 			    }
 			});
+
+			function citrussized(){
+				var ratio = $(window).width() / $(window).height();
+				/*var _ratio = ( Math.abs(ratio - 4 / 3 ) < Math.abs( ratio - 16 / 9 ) ) ? '4:3' : '16:9';*/
+				var title = 48;
+				var subtitle = 33;
+				var description = 16.5;
+				var left = 0;
+				var height = $(window).height();
+				var percent = height / 768;
+				var newtitle = Math.floor( title * percent ) - 1;
+				var newsubtitle = Math.floor( subtitle * percent ) - 1;
+				var newdescription = Math.floor( description * percent ) - 1;
+				if ( Math.abs( ratio - 4 / 3 ) < Math.abs( ratio - 16 / 9 ) ){
+					left = ( Math.abs( ratio - 4 / 3 ) * 100 ) * 9;
+				}
+
+				$('.slide_container .slide img').css({
+					'height': ( parseInt( $(window).height() ) - $('#meenus').height() ) + 'px',
+					'max-width': 'none',
+					'width': $(window).width() + left + 'px'
+				});
+
+				$('.moment-description h1').css({'font-size': newtitle });
+				$('.moment-description h2').css({'font-size': newsubtitle });
+				$('.moment-description p').css({'font-size': newdescription });
+				$('.moment-description a').css({'font-size': newdescription });
+
+				$(window).resize(function(){
+					var ratio = $(window).width() / $(window).height();
+					var title = 48;
+					var subtitle = 33;
+					var description = 16.5;
+					var height = $(window).height();
+					var percent = height / 768;
+					var newtitle = Math.floor( title * percent ) - 1;
+					var newsubtitle = Math.floor( subtitle * percent ) - 1;
+					var newdescription = Math.floor( description * percent ) - 1;
+					/*var _ratio = ( Math.abs(ratio - 4 / 3 ) < Math.abs( ratio - 16 / 9 ) ) ? '4:3' : '16:9';*/
+					var left = 0;
+					if ( Math.abs( ratio - 4 / 3 ) < Math.abs( ratio - 16 / 9 ) ){
+						left = ( Math.abs( ratio - 4 / 3 ) * 100 ) * 9;
+					}
+					
+
+					$('.slide_container .slide img').css({
+						'height': ( parseInt( $(window).height() ) - $('#meenus').height() ) + 'px',
+						'max-width': 'none',
+						'width': $(window).width() + left + 'px'
+					});
+
+					$('.moment-description h1').css({'font-size': newtitle });
+					$('.moment-description h2').css({'font-size': newsubtitle });
+					$('.moment-description p').css({'font-size': newdescription });
+					$('.moment-description a').css({'font-size': newdescription });
+				});
+			}
 		</script>
 	</body>
 </html>

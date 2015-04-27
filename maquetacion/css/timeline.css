@@ -28,6 +28,14 @@ header { display: inline-block !important; }
 #moments_time .btn-cerrar:hover { background-color: inherit; border: none; }
 #moments_time .btn-cerrar:focus { outline: none; }
 
+.carousel-control { text-shadow: none; width: 4%; z-index: 15; }
+.carousel-control.left, .carousel-control.right { background-image: none; height: 65px; margin-top: 145px; }
+.carousel-control.left.secondary, .carousel-control.right.secondary { background-image: none; height: 40px; margin: 0; width: 30px; }
+.carousel-control.left { left: 65px; }
+.carousel-control.left.secondary { left: 0; }
+.carousel-control.right { left: 105px; right: auto; }
+.carousel-control.right.secondary { left: auto; right: 0; }
+
 .carousel-indicators { border-bottom: 1px solid #BEDA3E; left: 0; margin: 0; padding-left: 65px; width: 100%; }
 .carousel-indicators li { border-radius: inherit; float: left; margin: 0 25px; text-align: center; width: 2px; }
 .carousel-indicators li span { float: left; font-size: 15px; height: 100%; margin-top: -540px; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); transform: rotate(-90deg); width: 100%; }
@@ -47,14 +55,7 @@ header { display: inline-block !important; }
 
 .right-arrow-secondary { background-image: url(../images/fv-2.png); }
 
-.main-navigator-container { background-color: #beda3e; border-radius: 50px; display: inline-block; height: 95px; left: auto; margin-top: 15px; right: 15px; position: absolute; width: 95px; z-index: 5; }
-.main-navigator-container .carousel-control { text-shadow: none; width: 55px; z-index: 15; }
-.main-navigator-container .carousel-control.left, .main-navigator-container .carousel-control.right { background-image: none; height: 65px; padding: 16px 0; }
-.main-navigator-container .carousel-control.left.secondary, .main-navigator-container .carousel-control.right.secondary { background-image: none; height: 40px; margin: 0; width: 30px; }
-.main-navigator-container .carousel-control.left.secondary { left: 15px; }
-.main-navigator-container .carousel-control.right.secondary { left: auto; right: 15px; }
-
-.moment-description { left: 65px; position: absolute; top: 15px; }
+.moment-description { left: 65px; position: absolute; top: 25%; }
 .moment-description h1 { color: #BEDA3E; font-size: 49px; font-weight: 700; margin-bottom: 0; }
 .moment-description h2 { font-size: 33px; font-weight: 700; margin-top: 7px; text-transform: uppercase; }
 .moment-description p { font-size: 16.5px; margin-bottom: 15px; }
@@ -67,10 +68,6 @@ header { display: inline-block !important; }
 .moment-description .social_top ul p { display: inline-block; }
 
 .navigator-buttons { bottom: 45px; height: 40px; position: absolute; z-index: 16; }
-.navigator-buttons .carousel-control { width: 20px; }
-.navigator-buttons .carousel-control.left, .navigator-buttons .carousel-control.right { background-image: none; }
-.navigator-buttons .carousel-control.left { left: 25px; }
-.navigator-buttons .carousel-control.right { left: auto; right: 25px; }
 
 .navigator-legend { display: inline-block; font-size: 15px; margin: 25px 0 25px 65px; vertical-align: top; }
 
@@ -78,7 +75,7 @@ header { display: inline-block !important; }
 
 .slide_container { padding: 0; }
 .slide_container .slide { margin: 0; padding: 0; }
-.slide_container .slide img { display: block; left: 0; }
+.slide_container .slide img { display: inline; position: relative; }
 
 .timeline-navigator { bottom: 70px; }
 
@@ -236,9 +233,9 @@ header { display: inline-block !important; }
 .w-1024.landscape #moments_time .navigator-legend { font-size: 26px; margin: 20px 0 10px 65px; }
 .w-1024.landscape .carousel-control.left, .w-1024.landscape .carousel-control.right { margin-top: 110px; }
 .w-1024.landscape .carousel-control.left.secondary, .w-1024.landscape .carousel-control.right.secondary { margin: 0; }
-.w-1024.landscape .carousel-control.left { left: 85px; }
+.w-1024.landscape .carousel-control.left { left: 75px; }
 .w-1024.landscape .carousel-control.left.secondary { left: 25px; }
-.w-1024.landscape .carousel-control.right { left: 125px; }
+.w-1024.landscape .carousel-control.right { left: 115px; }
 .w-1024.landscape .carousel-control.right.secondary { left: auto; right: 25px; }
 .w-1024.landscape .col-md-4 { width: 50.333333%; }
 .w-1024.landscape .col-md-5 { width: 60.333333%; }
@@ -264,10 +261,11 @@ header { display: inline-block !important; }
 .w-1366.landscape #moments_time .carousel-control.left, .w-1366.landscape #moments_time .carousel-control.right { margin-top: 40px; }
 .w-1366.landscape #moments_time .carousel-control.left.secondary, .w-1366.landscape #moments_time .carousel-control.right.secondary { margin: 0; }
 .w-1366.landscape #moments_time .navigator-legend { margin: 15px 0 18px 65px; }
+.w-1366.landscape .carousel-control.left, .w-1366.landscape .carousel-control.right { margin-top: 65px; }
+.w-1366.landscape .carousel-control.left.secondary, .w-1366.landscape .carousel-control.right.secondary { margin: 0; }
+.w-1366.landscape .carousel-control.left.secondary { left: 25px; }
+.w-1366.landscape .carousel-control.right.secondary { left: auto; right: 25px; }
 .w-1366.landscape .left-arrow-secondary, .w-1366.landscape .right-arrow-secondary { margin: 18px 0 0 0; }
-.w-1366.landscape .main-navigator-container .carousel-control.left.secondary, .w-1366.landscape .main-navigator-container .carousel-control.right.secondary { margin: 0; }
-.w-1366.landscape .main-navigator-container .carousel-control.left.secondary { left: 25px; }
-.w-1366.landscape .main-navigator-container .carousel-control.right.secondary { left: auto; right: 25px; }
 .w-1366.landscape .moment-description { top: 18%; }
 
 .w-1440.landscape #moments_time .carousel-control.left.main-rol { margin-top: 90px; }
