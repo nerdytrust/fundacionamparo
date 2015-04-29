@@ -159,30 +159,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/views/public/home/home.blade.php",
-			"settings":
-			{
-				"buffer_size": 159,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/public/header.blade.php",
-			"settings":
-			{
-				"buffer_size": 6,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/public/footer.blade.php",
-			"settings":
-			{
-				"buffer_size": 6,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -284,6 +260,17 @@
 	},
 	"file_history":
 	[
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/routes.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/routes.php",
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/helpers.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/helpers.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/filters.php",
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/filters.php",
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/events.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/events.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/public/home/home.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/public/header.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/public/footer.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/start/global.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/models/Users.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/controllers/HomeController.php",
@@ -293,10 +280,6 @@
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/dashboard/dashboard.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/layout-form.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/users/create.blade.php",
-		"/Users/miguelmartinez/Sites/fundacion/app/routes.php",
-		"/Users/miguelmartinez/Sites/fundacion/app/helpers.php",
-		"/Users/miguelmartinez/Sites/fundacion/app/filters.php",
-		"/Users/miguelmartinez/Sites/fundacion/app/events.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/skeleton.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/models/Crud.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/controllers/admin/CrudController.php",
@@ -364,7 +347,6 @@
 		"/Users/miguelmartinez/Sites/acorrerle/stylus/stylus.styl",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/vendor/zizaco/entrust/src/Entrust/Entrust.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/controllers/CrudController.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/filters.php",
 		"/Users/miguelmartinez/Downloads/edigitales_tvsa_middleware.sql",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/WebTracking.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Agency.php",
@@ -405,13 +387,7 @@
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmsVideos.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Customer.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CustomerNotes.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Delivery.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/DeliveryReports.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/DeliveryReportsNotes.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Handover.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/HandoverItems.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Insurance.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/InsuranceNotes.php"
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Delivery.php"
 	],
 	"find":
 	{
@@ -643,86 +619,6 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/views/public/home/home.blade.php",
-					"settings":
-					{
-						"buffer_size": 159,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								150,
-								150
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/public/header.blade.php",
-					"settings":
-					{
-						"buffer_size": 6,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6,
-								6
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/public/footer.blade.php",
-					"settings":
-					{
-						"buffer_size": 6,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6,
-								6
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
