@@ -159,6 +159,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/views/public/home/home.blade.php",
+			"settings":
+			{
+				"buffer_size": 159,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/public/header.blade.php",
+			"settings":
+			{
+				"buffer_size": 6,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/public/footer.blade.php",
+			"settings":
+			{
+				"buffer_size": 6,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -395,7 +419,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 99.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/miguelmartinez/Sites/fundacion/app/",
@@ -619,6 +643,86 @@
 		{
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/views/public/home/home.blade.php",
+					"settings":
+					{
+						"buffer_size": 159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								150,
+								150
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/public/header.blade.php",
+					"settings":
+					{
+						"buffer_size": 6,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6,
+								6
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/public/footer.blade.php",
+					"settings":
+					{
+						"buffer_size": 6,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6,
+								6
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

@@ -1,7 +1,6 @@
 {
     "providers": [
         "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",
-        "Illuminate\\Auth\\AuthServiceProvider",
         "Illuminate\\Cache\\CacheServiceProvider",
         "Illuminate\\Session\\CommandsServiceProvider",
         "Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider",
@@ -33,7 +32,10 @@
         "Jenssegers\\Date\\DateServiceProvider",
         "Schickling\\Backup\\BackupServiceProvider",
         "Anouar\\Paypalpayment\\PaypalpaymentServiceProvider",
-        "CeesVanEgmond\\Minify\\MinifyServiceProvider"
+        "CeesVanEgmond\\Minify\\MinifyServiceProvider",
+        "Jenssegers\\Agent\\AgentServiceProvider",
+        "Ollieread\\Multiauth\\MultiauthServiceProvider",
+        "Mews\\Purifier\\PurifierServiceProvider"
     ],
     "eager": [
         "Illuminate\\Cookie\\CookieServiceProvider",
@@ -49,13 +51,15 @@
         "Jenssegers\\Date\\DateServiceProvider",
         "Schickling\\Backup\\BackupServiceProvider",
         "Anouar\\Paypalpayment\\PaypalpaymentServiceProvider",
-        "CeesVanEgmond\\Minify\\MinifyServiceProvider"
+        "CeesVanEgmond\\Minify\\MinifyServiceProvider",
+        "Jenssegers\\Agent\\AgentServiceProvider",
+        "Ollieread\\Multiauth\\MultiauthServiceProvider",
+        "Mews\\Purifier\\PurifierServiceProvider"
     ],
     "deferred": {
         "artisan": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",
         "command.changes": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",
         "command.environment": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",
-        "auth": "Illuminate\\Auth\\AuthServiceProvider",
         "cache": "Illuminate\\Cache\\CacheServiceProvider",
         "cache.store": "Illuminate\\Cache\\CacheServiceProvider",
         "memcached.connector": "Illuminate\\Cache\\CacheServiceProvider",
@@ -127,7 +131,6 @@
     },
     "when": {
         "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider": [],
-        "Illuminate\\Auth\\AuthServiceProvider": [],
         "Illuminate\\Cache\\CacheServiceProvider": [],
         "Illuminate\\Session\\CommandsServiceProvider": [],
         "Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider": [],

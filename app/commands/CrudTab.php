@@ -90,19 +90,19 @@ class CrudTab extends Command
             
             if(!str_contains(($name)."/index", $filter))
             {
-                $new_filter.= "\n";
-                $new_filter.= "\n/*";
-                $new_filter.= "\n|--------------------------------------------------------------------------";
-                $new_filter.= "\n| ".$name."Controller Permissions";
-                $new_filter.= "\n|--------------------------------------------------------------------------";
-                $new_filter.= "\n*/";
+                // $new_filter.= "\n";
+                // $new_filter.= "\n/*";
+                // $new_filter.= "\n|--------------------------------------------------------------------------";
+                // $new_filter.= "\n| ".$name."Controller Permissions";
+                // $new_filter.= "\n|--------------------------------------------------------------------------";
+                // $new_filter.= "\n*/";
 
-                $new_filter.= "\nEntrust::routeNeedsPermission('".($name)."', '".($name)."/index');";
-                $new_filter.= "\nEntrust::routeNeedsPermission('".($name)."/create', '".($name)."/create');";
-                $new_filter.= "\nEntrust::routeNeedsPermission('".($name)."/*', '".($name)."/show');";
-                $new_filter.= "\nEntrust::routeNeedsPermission('".($name)."/*/edit', '".($name)."/edit');";
-                $new_filter.= "\nEntrust::routeNeedsPermission('".($name)."/*/destroy', '".($name)."/destroy');";
-                $new_filter.= "\n";
+                // $new_filter.= "\nEntrust::routeNeedsPermission('".($name)."', '".($name)."/index');";
+                // $new_filter.= "\nEntrust::routeNeedsPermission('".($name)."/create', '".($name)."/create');";
+                // $new_filter.= "\nEntrust::routeNeedsPermission('".($name)."/*', '".($name)."/show');";
+                // $new_filter.= "\nEntrust::routeNeedsPermission('".($name)."/*/edit', '".($name)."/edit');";
+                // $new_filter.= "\nEntrust::routeNeedsPermission('".($name)."/*/destroy', '".($name)."/destroy');";
+                // $new_filter.= "\n";
             
                 // $permissions = new Permissions;
 

@@ -39,14 +39,20 @@ class CrudController extends \BaseController {
 
     protected function getPathView($name,$default=null)
     {
-        
+       
         $view = "admin.".$this->viewName.".".$name;
 
         if(!$default)
             $default = $name;
 
         if (!\View::exists($view))
+        {
             $view = "crud.".$default;
+
+            if(\Request::ajax())
+                $view = "crud.tabs.form-ajax";
+        }
+            
 
         return $view;    
     }
@@ -144,6 +150,7 @@ class CrudController extends \BaseController {
         $key_name = $class->getKeyName();
         $model    = $this->modelName;
         $columns  = $class->getColumnsByView(__FUNCTION__);
+
         $path     = $this->getPathView(__FUNCTION__);
 
         foreach ($columns as $column) 
@@ -230,6 +237,9 @@ class CrudController extends \BaseController {
             {
                 return '{ "success": "false", "msg": "'.trans("crud.error-fields").'" }';
             }else{
+
+                //Input::get('name', 'Sally');
+
                 return \Redirect::back()
                     ->withErrors($validator)
                     ->withInput(\Input::except("password")); 
@@ -661,13 +671,11 @@ class CrudController extends \BaseController {
 
     public function tab($id,$tab)
     {
-
         $class  = new $this->className(); 
-        $return = $class->$tab();
+        $record   = $class::findOrFail($id);
 
-        $path = ($this->viewName).".tabs.".$tab;
-
-        $table = strtolower($this->className)."_".$tab;
+        $path = $this->viewName.".tabs.".$tab;
+        $table = $this->viewName."_".$tab;
 
         if (!\View::exists($path))
             $path = "crud.tabs.default-tab";
@@ -682,11 +690,11 @@ class CrudController extends \BaseController {
             if (!\Schema::hasTable($table))
                 return "Please create a table <strong>".$table."</strong>";
 
-            return $class->tab($table,$id);
+            return $class->$tab($id,$record);
 
         }
 
-        return $return;
+        return $class->$tab($id,$record);
 
        //return $return;
 

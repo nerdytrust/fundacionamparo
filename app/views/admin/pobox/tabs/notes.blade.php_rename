@@ -1,0 +1,19 @@
+<?php
+
+## TODO-MM
+## 
+## Listado sobre TABLA: pcustomer_notes  WHERE id_pcustomer = {id registro que se esta viendo
+## ordenanda por las mas nuevas primero
+##
+## Mostrar columnas
+## id_pcustomer_notes, notes, type, created_by (ID+nombre), created_at
+##
+## Nota
+## Debe permitir agregar nuevas notas y ver el listado de las notas existentes, no se pueden borrar
+
+
+
+?>
+
+
+<p>--- Notes Here ---</p>

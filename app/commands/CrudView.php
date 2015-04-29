@@ -82,12 +82,12 @@ class CrudView extends Command
         $name     = strtolower($name);
         //$plural   = str_plural($name);
 
-        if (!File::isDirectory($this->getPath("views/".$name))) {
-            File::makeDirectory($this->getPath("views/".$name), $mode = 0777, true, true);
+        if (!File::isDirectory($this->getPath("views/admin/".$name))) {
+            File::makeDirectory($this->getPath("views/admin/".$name), $mode = 0777, true, true);
         }
 
-        if (!File::isDirectory($this->getPath("views/".$name."/tabs"))) {
-            File::makeDirectory($this->getPath("views/".$name."/tabs"), $mode = 0777, true, true);
+        if (!File::isDirectory($this->getPath("views/admin/".$name."/tabs"))) {
+            File::makeDirectory($this->getPath("views/admin/".$name."/tabs"), $mode = 0777, true, true);
         }
 
         $views = ["create"/*,"edit","index","show"*/];
@@ -104,7 +104,7 @@ class CrudView extends Command
             $content = File::get($this->getPath("commands/crud/template/".$view.".crud"));
             $content = str_replace(['$inputs'], [$inputs], $content);
 
-            $this->createFile("views/".$name,$view.".blade.php.rename",$content);
+            $this->createFile("views/admin/".$name,$view.".blade.php.rename",$content);
             
         }
         

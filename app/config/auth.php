@@ -2,6 +2,20 @@
 
 return array(
 
+
+    'multi' => array(
+        'customer' => array(
+            'driver' => 'eloquent',
+            'model' => 'Pcustomer',
+            'table' => 'pcustomer'
+        ),
+        'admin' => array(
+            'driver' => 'eloquent',
+            'model' => 'Users',
+            'table' => 'users'
+        )
+    ),
+
 	/*
 	|--------------------------------------------------------------------------
 	| Default Authentication Driver
@@ -15,7 +29,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'eloquent',
+	//'driver' => 'eloquent',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -28,7 +42,7 @@ return array(
 	|
 	*/
 
-	'model' => 'Users',
+	//'model' => 'Users',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +55,7 @@ return array(
 	|
 	*/
 
-	'table' => 'users',
+	//'table' => 'users',
 
 	/*
 	|--------------------------------------------------------------------------

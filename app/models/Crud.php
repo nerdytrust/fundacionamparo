@@ -263,8 +263,6 @@ class Crud extends \BaseModel {
         "simple_array"  => "text"
     ];
 
-
-
     //
     // RELATIONS create functions
     //
@@ -275,23 +273,21 @@ class Crud extends \BaseModel {
         $method = str_replace("_record", "", $method);
         $current_class_name = get_class($this);
 
-        $methodVariable = array($this, $method);
-
         if (array_key_exists($method, $relations)) {
             return $this->createRelation($method);
-        }elseif(!is_callable($methodVariable, true)){
+        }elseif(!method_exists($this->newBaseQueryBuilder(),$method) and !method_exists($this,$method)){
             return "Please create a function $method in <strong>app/models/".get_class($this).".php</strong>";
         }
-            
 
         return parent::__call($method, $params);
     }
 
 
+
     protected function getPathView($viewName,$name,$default=null)
     {
         
-        $view = ($viewName).".".$name;
+        $view = "admin.".($viewName).".".$name;
 
         if(!$default)
             $default = $name;
@@ -303,8 +299,45 @@ class Crud extends \BaseModel {
     }
 
 
-    public function tab($table,$where = null)
+    public function notes($id)
     {
+        $table = $this->getTable();
+        $table = $table."_notes";
+        $table = strtolower(snake_case($table));
+
+        $className = ucfirst(camel_case($table));
+        $class     = new $className();
+
+        $columns = $class->getColumns();
+        $not_in_index = [];
+
+        foreach ($columns as $column) {
+            if($column->is_foreign_key and $column->name!="created_by")
+                $not_in_index[] = $column->name;
+        }
+        //id_crmtickets_notes, notes, type, created_by (ID+nombre), created_at
+
+        $not_in_index[] = "updated_at";
+
+
+        $arguments = [
+            "fk_column"    => ["created_by" => ["id_users","first_name","last_name"]],
+            "not_in_index" => $not_in_index
+        ];
+
+        return $this->tab($table,$id,$arguments);
+    }
+
+
+    public function logs($id)
+    {
+        $table = "logfile";
+        return $this->tab($table,$id);
+    }
+
+    public function tab($table,$where = null,$arguments=[])
+    {
+
         $current_class_name = get_class($this);
 
         if($table == "log")
@@ -313,6 +346,14 @@ class Crud extends \BaseModel {
         $className = ucfirst(camel_case($table));
 
         $viewName  = strtolower(snake_case($className));
+            if(ends_with($table,"notes"))
+                $viewName = "notes";
+
+            if(ends_with($table,"logs") or ends_with($table,"logfile"))
+                $viewName = "logs";
+
+
+
         $modelName = $viewName;
 
         if (!File::exists(app_path()."/models/".$className.".php"))
@@ -320,15 +361,20 @@ class Crud extends \BaseModel {
 
         $class     = new $className();
 
+
+        foreach ($arguments as $option => $value)
+            $class->crud[$option] = $value;
+
+
         $title     = $class->getCrud("title");
         $btn       = $class->getCrud("btn_in_index");
         $fk_column = $class->getCrud("fk_column");
 
+
         $tables = $class->getRelationsByTables();
 
         $relations = $class->getFKRelations();
-
-        $records = DB::table($table);
+        $records = $class;
 
 
         if(count($relations) > 0)
@@ -344,6 +390,11 @@ class Crud extends \BaseModel {
             }
             elseif (Schema::hasColumn($table, $this->getKeyName()))
                 $records = $records->where($this->getKeyName(),$where);
+        }elseif(is_array($where))
+        {
+            foreach ($where as $function => $function_arguments) {
+                $records = $records->$function($function_arguments);
+            }
         }
             
 
@@ -351,7 +402,14 @@ class Crud extends \BaseModel {
 
         $columns  = $class->getColumnsByView("index");
 
-        $path     = $this->getPathView(strtolower(snake_case($current_class_name)),"tabs.".$viewName,"tabs.default-tab");
+        $default_view = "tabs.default-tab";
+
+        if($viewName == "notes")
+            $default_view = "tabs.notes";
+
+        $path     = $this->getPathView(strtolower(snake_case($current_class_name)),"tabs.".$viewName,$default_view);
+        
+
         $key_name = $class->getKeyName();
         $model    = $modelName;
 
@@ -371,6 +429,7 @@ class Crud extends \BaseModel {
 
         return View::make($path)
             ->with('title',$title)
+            ->with('table',$table)
             ->with('btn',$btn)
             ->with('fk_column',$fk_column)
             ->with('key_name',$key_name)
@@ -461,7 +520,7 @@ class Crud extends \BaseModel {
         {
 
         	$columns = $this->getColumns();
-        	
+
         	foreach ($columns as $local_key => $column) {
 
         		if($column->is_foreign_key)
@@ -555,11 +614,11 @@ class Crud extends \BaseModel {
 
     public function getCRUD($view = "")
     {
-        if(isset($this->crud[$view]))
+        if(isset($this->crud[$view]) and !empty($this->crud[$view]))
     	{
     		if(isset($this->default_crud[$view]))
             {
-                if(is_array($this->default_crud[$view]) and !starts_with($view,"btn_in_"))
+                if(is_array($this->default_crud[$view]) and !starts_with($view,"btn_in_") and !starts_with($view,"not_in_") and $view != "fk_column")
                     return array_merge($this->crud[$view],$this->default_crud[$view]);
                 else
                     return $this->crud[$view];
@@ -669,7 +728,11 @@ class Crud extends \BaseModel {
                 $is_foreign_key = false;
 
             if($name == "created_by" or $name == "updated_by")
+            {
+                $model = "Users";
                 $is_foreign_key = 1;
+            }
+                
 
 			$return->{$name}= (object)[
 						"is_primary" 	 => $is_primary,

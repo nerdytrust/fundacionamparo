@@ -18,37 +18,42 @@ if(getenv('APP_ADMIN_PREFIX'))
 
 
 Route::get('/'.getenv('APP_ADMIN_PREFIX'), function(){
-    if(Auth::guest())
+    if(Auth::admin()->guest())
         return View::make('admin.home.login');
-    else
-    	return Redirect::to('/dashboard');
+    elseif(Auth::admin()->check())
+    	return Redirect::to(getenv('APP_ADMIN_PREFIX').'/dashboard');
         
 });
 
 
 
-Route::get('login', ['as' => 'login', 'uses' => getenv('APP_ADMIN_PREFIX').'\UsersController@login']);
-Route::post('login/email', ['as' => 'login/email', 'uses' => getenv('APP_ADMIN_PREFIX').'\UsersController@loginEmail']);
-Route::get('logout', ['as' => 'logout', 'uses' => getenv('APP_ADMIN_PREFIX').'\UsersController@logout']);
+Route::get(getenv('APP_ADMIN_PREFIX').'/login', ['as' => 'admin/login', 'uses' => 'admin\UsersController@login']);
+Route::post(getenv('APP_ADMIN_PREFIX').'/login/email', ['as' => 'admin/login/email', 'uses' => 'admin\UsersController@loginEmail']);
+Route::get(getenv('APP_ADMIN_PREFIX').'/logout', ['as' => 'admin/logout', 'uses' => 'admin\UsersController@logout']);
 
 
 Route::group(array('before' => 'auth'), function()
 {
-	// Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'DashBoardController@index']);
-	Route::get('dashboard', function(){
-		return View::make('admin.dashboard.dashboard');
-	});
+	if (Request::is(getenv('APP_ADMIN_PREFIX').'/*') and Auth::admin()->check())
+	{
+		// Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'DashBoardController@index']);
+		Route::get(getenv('APP_ADMIN_PREFIX').'/dashboard', function(){
+			return View::make('admin.dashboard.dashboard');
+		});
 
-	Route::get('customer-site', function(){
-		return View::make('customer.customer-site');
-	});
-	
-	Route::get('temp_view', 'TempViewController@index');
-	Route::post('temp_view', 'TempViewController@index');
+		Route::get('customer-site', function(){
+			return View::make('customer.customer-site');
+		});
+		
+		Route::get('temp_view', 'TempViewController@index');
+		Route::post('temp_view', 'TempViewController@index');
 
-	Route::post('customer/autologin',['as' => 'custumer/autologin', 'uses' => 'PcustomerController@autologin']);
+		Route::post('customer/autologin',['as' => 'custumer/autologin', 'uses' => 'PcustomerController@autologin']);
 
-	Route::crud('admin\CrudController',getenv('APP_ADMIN_PREFIX'));
+		Route::crud('admin\CrudController',getenv('APP_ADMIN_PREFIX'));
+	}else
+		return Redirect::to(getenv('APP_ADMIN_PREFIX').'/login');
+
 });
 
 

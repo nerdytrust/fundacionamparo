@@ -1,7 +1,7 @@
 <?php
+namespace admin;
 
-
-class RolesController extends \CrudController {
+class RolesController extends CrudController {
 
     public function __construct()
     {

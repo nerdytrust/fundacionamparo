@@ -1,17 +1,37 @@
 <?php
 
+App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $e){
+
+    return Response::view('public.error.model',compact('message'),404);
+});
+
 
 App::error(function(Exception $exception, $code)
 {
 
+	if (Request::is(getenv('APP_ADMIN_PREFIX').'/*'))
+	{
+	    switch ($code)
+	    {
+	        case 403:
+	            return Response::view( 'admin.error.403', compact('message'), 403);
+	        case 404:
+	            return Response::view( 'admin.home.login', compact('message'), 404);
+	    }
+	}
 
-    switch ($code)
-    {
-        case 403:
-            return Response::view( 'admin.error.403', compact('message'), 403);
-        case 404:
-            return Response::view( 'admin.error.404', compact('message'), 404);
-    }
+	if (Request::is('public/*'))
+	{
+	    switch ($code)
+	    {
+	        case 403:
+	            return Response::view( 'public.error.403', compact('message'), 403);
+	        case 404:
+	            return Response::view( 'public.error.404', compact('message'), 404);
+	    }
+	}
+
+
 });
 
 
@@ -50,28 +70,36 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('/', function()
+Route::filter('/'.getenv('APP_ADMIN_PREFIX'), function()
 {
-	if (Auth::guest())
-		return View::make('dashboard.dashboard');
-	else
-		return View::make('admin.home.login');
+	if (Request::is(getenv('APP_ADMIN_PREFIX').'/*'))
+	{
+		if (Auth::admin()->check())
+			return View::make('dashboard.dashboard');
+		elseif(Auth::admin()->guest())
+			return View::make('admin.home.login');
+	}
+
 });
 
 Route::filter('auth', function()
 {
-	if (Auth::guest())
+	if (Request::is(getenv('APP_ADMIN_PREFIX').'/*'))
 	{
-		if (Request::ajax())
+		if (Auth::admin()->guest())
 		{
-			return Response::make('Unauthorized', 401);
-		}
-		else
-		{
-			return View::make('admin.home.login');
-			//return Redirect::guest('login');
+			if (Request::ajax())
+			{
+				return Response::make('Unauthorized', 401);
+			}
+			else
+			{
+				return View::make('admin.home.login');
+				//return Redirect::guest('login');
+			}
 		}
 	}
+
 });
 
 
@@ -93,7 +121,11 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if (Request::is(getenv('APP_ADMIN_PREFIX').'/*'))
+	{
+		if (Auth::admin()->check()) return Redirect::to('/');
+	}
+	
 });
 
 /*

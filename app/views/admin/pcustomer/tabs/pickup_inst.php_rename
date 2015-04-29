@@ -1,0 +1,19 @@
+<?php
+
+## TODO-MM
+## 
+## Listado sobre TABLA: cmb_nf_pickup  WHERE id_pcustomer = {id registro que se esta viendo
+## ordenanda por las mas nuevas primero
+##
+## Mostrar columnas
+## id_cmb_nf_pickup, order_num, pieces, status
+##
+## Botones
+## ---
+
+
+
+?>
+
+
+<p>--- Pickup instruction list Here ---</p>

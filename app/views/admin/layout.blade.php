@@ -24,7 +24,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron @yield('jumbotron')">
 
-      @if (Auth::check())
+      @if (Auth::admin()->check())
         @include("admin.dashboard.leftbar")
         @include("admin.dashboard.toolbar")
       @endif

@@ -24,7 +24,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron <?php echo $__env->yieldContent('jumbotron'); ?>">
 
-      <?php if(Auth::check()): ?>
+      <?php if(Auth::admin()->check()): ?>
         <?php echo $__env->make("admin.dashboard.leftbar", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         <?php echo $__env->make("admin.dashboard.toolbar", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
       <?php endif; ?>

@@ -68,7 +68,7 @@ class Users extends Crud implements UserInterface, RemindableInterface {
     */
 
     protected $crud = [
-        "title"     => "Usuarios",
+        "title"     => "",
         //
         //  Rename the columns names.
         //  if not wrote label the column rename like this: 
@@ -80,7 +80,7 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         // ["first_name" => "text"] 
         // text,hidden,textarea,password,digit,file,email,title
         //
-        "inputs"    => ["first_name"=>"file"],
+        "inputs"    => [],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
@@ -92,7 +92,7 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         // if you want Chart Report tab you will write chart_report
         // ["chart_report","permissions","settings"]
         //
-        "tabs"      => ["tab_nueva"],
+        "tabs"      => ["chart_report"=>"Chart Report"],
         // 
         // Default Tabs
         // if you can change the columns and inputs you will go to model
@@ -118,7 +118,7 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         "show"      => [],
 
         "not_in_create"   => ["remember_token"],
-        "not_in_edit"     => ["first_name","remember_token"],
+        "not_in_edit"     => ["remember_token"],
         "not_in_show"     => ["password","remember_token"],
         "not_in_index"    => ["ip_mask","last_ip","password","remember_token","created_at","updated_at"],
         //
@@ -132,12 +132,9 @@ class Users extends Crud implements UserInterface, RemindableInterface {
 
     ];
 
-
-
-    public function tab_nueva()
+    public function chart_report()
     {
-        // return $this->tab($table_name,$id);
-        return "nueva tableta desde el modelo Users";
+        return View::make("dashboard.dashboard");
     }
 
 	public function getAuthIdentifier()

@@ -98,7 +98,7 @@ return array(
 	'providers' => array(
 
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
-		'Illuminate\Auth\AuthServiceProvider',
+		//'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
 		'Illuminate\Session\CommandsServiceProvider',
 		'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
@@ -134,6 +134,9 @@ return array(
 		'Anouar\Paypalpayment\PaypalpaymentServiceProvider',
 		'CeesVanEgmond\Minify\MinifyServiceProvider',
 		'Jenssegers\Agent\AgentServiceProvider',
+
+		'Ollieread\Multiauth\MultiauthServiceProvider',
+		'Mews\Purifier\PurifierServiceProvider',
 	),
 
 	/*
@@ -206,6 +209,8 @@ return array(
 		'Agent'           => 'Jenssegers\Agent\Facades\Agent',
 		//https://github.com/xroot/laravel-paypalpayment
 		'Paypalpayment'   => 'Anouar\Paypalpayment\Facades\PaypalPayment',
+		// https://github.com/mewebstudio/Purifier/tree/master-l4
+		'Purifier' 		  => 'Mews\Purifier\Facades\Purifier',
 	),
 
 );

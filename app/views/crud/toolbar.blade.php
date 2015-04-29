@@ -20,7 +20,7 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="{{ call_user_func("URL::to",$model."/") }}">{{ trans('crud.view_all') }}</a></li>
+		        <li class="active"><a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX')."/".$model."/") }}">{{ trans('crud.view_all') }}</a></li>
 		        
 		        
 		        @if(!Entrust::can($model."/create") and in_array("create",$btn))

@@ -90,9 +90,9 @@ class UsersController extends CrudController {
 			$credentials = ["email" => $data["email"], "password" => $data["password"]];
 
 
-			if(\Auth::attempt($credentials))
+			if(\Auth::admin()->attempt($credentials))
 			{
-				return \Redirect::intended('dashboard')->with('success', 'You have logged in successfully');
+				return \Redirect::intended(getenv('APP_ADMIN_PREFIX').'/dashboard')->with('success', 'You have logged in successfully');
 				//return Redirect::back();
 			}
 
@@ -109,7 +109,7 @@ class UsersController extends CrudController {
 	 */
 	public function logout()
 	{
-		\Auth::logout();
+		\Auth::admin()->logout();
 		return \View::make('admin.home.login');
 	}
 

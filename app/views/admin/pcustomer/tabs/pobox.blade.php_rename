@@ -1,0 +1,19 @@
+<?php
+
+## TODO-MM
+## 
+## Listado sobre TABLA: pobox WHERE id_pcustomer = {id registro que se esta viendo
+## ordenanda por las mas nuevas primero
+##
+## Mostrar columnas
+## id_pobox, created_at, description, status
+##
+## Botones
+## Boton para crear que se diriga a pobox con el id_pcustomer ya ingresado
+
+
+
+?>
+
+
+<p>--- POBOX List Here ---</p>

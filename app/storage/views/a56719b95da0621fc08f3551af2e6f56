@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <base href="<?php echo asset(""); ?>">
-        <title><?php echo getenv('APP_TITLE'); ?></title>
+        <title>Admin :: <?php echo getenv('APP_TITLE'); ?></title>
         <meta charset="utf-8">
         
         <link rel="shortcut icon" href="<?php echo asset('favicon.ico'); ?>">
@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="<?php echo asset('css/stylus.css'); ?>">
+        <link rel="stylesheet" href="<?php echo asset('css/admin.css'); ?>">
 
         <script src="<?php echo asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js'); ?>"></script>
 
@@ -26,10 +26,18 @@
         <![endif]-->
 
 
+        <!-- Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                </div><!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        
 
         <?php echo $__env->yieldContent("skeleton"); ?>
 
-        <div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
 
         <?php 
 
@@ -47,7 +55,6 @@
                     '/js/vendor/moment-with-locales.js',
                     '/js/vendor/bootstrap-datetimepicker.js',
                     '/js/vendor/bootstrap-scrollertab.js',
-                    '/js/vendor/bootstrap-modalajax.js',
                     '/js/vendor/bootstrap-formajax.js',
 
                     '/js/vendor/plugins.js',

@@ -35,7 +35,7 @@
 
         @if(!Entrust::can($model."/print") and in_array("print",$btn))
           @if ($action != "create")
-              <li class="@if ($action == 'edit') active @endif"><a href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'. $key_value.'/print') }}">{{ trans('crud.print') }}</a></li>
+              <li class="@if ($action == 'edit') active @endif"><a href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'. $key_value.'/print') }}" target="_blank">{{ trans('crud.print') }}</a></li>
           @endif
         @endif
 

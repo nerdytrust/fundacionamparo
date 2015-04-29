@@ -3,16 +3,15 @@
 
 
 
-function getFKColumn($fk_column = [],$column = [],$record = [],$first = true)
+function getFKColumn($fk_column = [],$column = [],$default_record = [],$first = true)
 {
     $fk_column_name = "";
 
     if($first)
-        $record = $record->{$column->name."_record"}()->first();
+        $record = $default_record->{$column->name."_record"}()->first();
     else
-        $record = $record->{$column->name."_record"};
+        $record = $default_record->{$column->name."_record"};
 
-        
 
     if(array_key_exists($column->name,$fk_column) and is_array($fk_column[$column->name]))
     {
@@ -26,7 +25,9 @@ function getFKColumn($fk_column = [],$column = [],$record = [],$first = true)
     }else if(array_key_exists($column->name,$fk_column))
         $fk_column_name = $record->{$fk_column[$column->name]};
     else
-        $fk_column_name = $record->{$column->name};
+        $fk_column_name = $default_record->{$column->name};
+    
+        
             
     return $fk_column_name;
 }

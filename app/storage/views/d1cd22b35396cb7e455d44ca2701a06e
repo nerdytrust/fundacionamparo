@@ -1,0 +1,42 @@
+<?php $__env->startSection("skeleton"); ?>
+
+    <?php if(!isset($disable_header)): ?>
+      <?php echo $__env->make("public.header", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endif; ?>
+
+    <!-- if there are creation errors, they will show here -->
+    <?php if($errors->all()): ?>
+      <div class="alert alert-danger" role="alert">
+        <?php echo HTML::ul($errors->all()); ?>
+
+      </div>
+    <?php endif; ?>
+
+    <!-- will be used to show any messages -->
+    <?php if(Session::has('success')): ?>
+      <div class="alert alert-success" role="alert"><?php echo Session::get('success'); ?> :)</div>
+    <?php endif; ?>
+
+    <?php if(Session::has('error')): ?>
+      <div class="alert alert-danger" role="alert">
+        <?php echo Session::get('error'); ?> :(
+      </div>
+    <?php endif; ?>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron <?php echo $__env->yieldContent('jumbotron'); ?>">
+
+        <?php echo $__env->yieldContent("top-content"); ?>
+      <div class="container">
+        <?php echo $__env->yieldContent("content"); ?>
+      </div>
+
+    </div>
+
+    <?php if(!isset($disable_footer)): ?>
+      <?php echo $__env->make("public.footer", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endif; ?>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("public.skeleton", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

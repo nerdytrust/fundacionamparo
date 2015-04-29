@@ -18,7 +18,9 @@
 		"intervention/imagecache": "~2.1",
 		"nicolaslopezj/searchable": "~1.4",
 		"anouar/paypalpayment": "1.0",
-		"ceesvanegmond/minify": "2.0.*"
+		"ceesvanegmond/minify": "2.0.*",
+		"ollieread/multiauth": "dev-master",
+		"mews/purifier": "dev-master-l4"
 	},
 	"require-dev": {
 	    "way/generators": "~2.0",

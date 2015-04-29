@@ -1,0 +1,20 @@
+<?php $__env->startSection("class"); ?>
+home
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection("jumbotron"); ?>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection("top-content"); ?>
+top
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection("content"); ?>
+content
+<?php $__env->stopSection(); ?>
+
+
+
+<?php echo $__env->make("public.layout", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

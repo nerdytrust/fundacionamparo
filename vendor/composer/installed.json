@@ -3493,5 +3493,147 @@
             "laravel",
             "minify"
         ]
+    },
+    {
+        "name": "ollieread/multiauth",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ollieread/multiauth.git",
+            "reference": "841b85cd7852a95b254f0244c0d0644df5eaf934"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ollieread/multiauth/zipball/841b85cd7852a95b254f0244c0d0644df5eaf934",
+            "reference": "841b85cd7852a95b254f0244c0d0644df5eaf934",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/auth": "~4.1",
+            "illuminate/console": "~4.1",
+            "illuminate/database": "~4.1",
+            "illuminate/filesystem": "~4.1",
+            "illuminate/support": "~4.1",
+            "php": ">=5.3.0"
+        },
+        "time": "2014-12-08 14:56:41",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Ollieread\\Multiauth": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ollie Read",
+                "email": "labs@ollieread.com"
+            }
+        ],
+        "description": "Multiple auth driver for Laravel",
+        "keywords": [
+            "auth",
+            "laravel",
+            "multi"
+        ]
+    },
+    {
+        "name": "ezyang/htmlpurifier",
+        "version": "v4.6.0",
+        "version_normalized": "4.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ezyang/htmlpurifier.git",
+            "reference": "6f389f0f25b90d0b495308efcfa073981177f0fd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/6f389f0f25b90d0b495308efcfa073981177f0fd",
+            "reference": "6f389f0f25b90d0b495308efcfa073981177f0fd",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "time": "2013-11-30 08:25:19",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "HTMLPurifier": "library/"
+            },
+            "files": [
+                "library/HTMLPurifier.composer.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Edward Z. Yang",
+                "email": "admin@htmlpurifier.org",
+                "homepage": "http://ezyang.com"
+            }
+        ],
+        "description": "Standards compliant HTML filter written in PHP",
+        "homepage": "http://htmlpurifier.org/",
+        "keywords": [
+            "html"
+        ]
+    },
+    {
+        "name": "mews/purifier",
+        "version": "dev-master-l4",
+        "version_normalized": "dev-master-l4",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mewebstudio/Purifier.git",
+            "reference": "06886a087fcf064d335697e3af46852589f771a7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mewebstudio/Purifier/zipball/06886a087fcf064d335697e3af46852589f771a7",
+            "reference": "06886a087fcf064d335697e3af46852589f771a7",
+            "shasum": ""
+        },
+        "require": {
+            "ezyang/htmlpurifier": "4.6.*",
+            "illuminate/support": "4.*",
+            "php": ">=5.3.0"
+        },
+        "time": "2015-04-03 06:50:55",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Mews\\Purifier": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Muharrem ERIN",
+                "email": "me@mewebstudio.com"
+            }
+        ],
+        "description": "HTMLPurifier Package for Laravel 4",
+        "homepage": "http://github.com/mewebstudio/Purifier",
+        "keywords": [
+            "L4",
+            "Laravel 4",
+            "Purifier",
+            "htmlpurifier",
+            "laravel"
+        ]
     }
 ]

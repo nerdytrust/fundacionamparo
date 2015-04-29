@@ -65,7 +65,7 @@ crud form
     @endif
     
     @if(in_array("print",$btn))
-      <a class="btn btn-small btn-default" target="_blank" href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'. $key_value.'/print') }}">{{ trans('crud.print') }}</a>
+      <a class="btn btn-small btn-default" target="_blank" href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'. $key_value.'/print') }}" target="_blank">{{ trans('crud.print') }}</a>
     @endif
 
   @endif  

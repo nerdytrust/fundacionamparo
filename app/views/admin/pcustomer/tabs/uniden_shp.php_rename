@@ -1,0 +1,23 @@
+<?php
+
+## TODO-MM
+## 
+## Listado sobre tabla: cmb_nf_lost y cmb_nf_lost_items  WHERE id_pcustomer = {id registro que se esta viendo}
+## ordenanda por las mas nuevas primero
+##
+## Mostrar columnas
+## id_cmb_nf_lost , comments, items, status
+##
+## En el caso que exista un registro en cmb_nf_lost_items con el mismo id_cmb_nf_lost mostrar en
+## items lo siguiente sino (---(
+## 	id_cmb_nf_lost_items,	shipper_name, carrier, tracking
+##
+## Botones
+## Boton para crear que se diriga a cmb_nf_lost con el id_pcustomer ya ingresado
+
+
+
+?>
+
+
+<p>--- Lost Shipment asociados al cliente List Here ---</p>
