@@ -1,6 +1,6 @@
 #Laravel
 /bootstrap/compiled.php
-/vendor
+#/vendor
 .env.*.php
 .env.php
 
