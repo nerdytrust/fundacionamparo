@@ -1,0 +1,80 @@
+<?php  ?>
+
+	<?php $__env->startSection("class"); ?>ficha-donador
+	<?php $__env->stopSection(); ?>
+	<?php $__env->startSection("content"); ?>
+		<div class="lightbox" style="display:block;">
+			<div class="usuario-light">
+				<span class="usuario">
+					<div id="txt_evento">
+						<nav>
+							<ul>
+								<a href=""><li class="fa fa-facebook"></li></a>
+								<a href=""><li class="fa fa-twitter"></li></a>
+								<a href=""><li class="fa fa-heart"></li></a>
+								<p>96 likes</p>
+							</ul>
+						</nav>
+					</div><!--termina txt_evento-->
+					<span id="foto-usuario">
+						<img src="<?php echo asset( 'images/usuario.png' ); ?>" alt="">
+					</span><!--termina foto-usuario-->
+					<p>
+						Forma parte de nuestro círculo de donadores desde el 12 de Agosto 2014  una persona más que se suma.
+						<b>Muchas gracias.</b>
+					</p>
+				</span><!--termina usuario-->
+				<span class="datos sr">
+					<img src="<?php echo asset( 'images/icon_donadores-d.png' ); ?>" alt="">
+					<button value="" class="cerrar" onClick="history.back()"></button>
+					<h1>gabriel caballero</h1>
+					<h2>Mexico D.F</h2>
+					<div class="datos-inf scrollbar" id="style-scroll">
+						<div class="force-overflow">
+							<h3>Causas en las que ha contribuido:</h3>
+							<ul>
+								<li>Apoyo a talentos</li>
+								<li>Apoyo a salud</li>
+								<li>Apoyo a deporte</li>
+								<li>Apoyo a educación</li>
+								<li>Apoyo a cultura</li>
+								<li>Apoyo a restauración</li>
+								<li>Apoyo a talentos</li>
+								<li>Apoyo a salud</li>
+								<li>Apoyo a deporte</li>
+								<li>Apoyo a educación</li>
+								<li>Apoyo a cultura</li>
+								<li>Apoyo a restauración</li>
+								<li>Apoyo a talentos</li>
+								<li>Apoyo a salud</li>
+								<li>Apoyo a deporte</li>
+								<li>Apoyo a educación</li>
+								<li>Apoyo a cultura</li>
+								<li>Apoyo a restauración</li>
+								<li>Apoyo a talentos</li>
+								<li>Apoyo a salud</li>
+								<li>Apoyo a deporte</li>
+							</ul>
+						</div>
+					</div>
+					<!--termina datos-inf-->
+					<div class="fig">
+						<figure>
+							<span>5</span>
+							<figcaption>donacion</figcaption>
+						</figure>
+						<figure>
+							<span>4</span>
+							<figcaption>impulsor</figcaption>
+						</figure>
+						<figure>
+							<span>3</span>
+							<figcaption>voluntario</figcaption>
+						</figure>
+					</div>
+				</span><!--termina datos-->
+			</div><!--usuario-ligh-->
+		</div>
+	<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make( "public.cover.layout" , array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
