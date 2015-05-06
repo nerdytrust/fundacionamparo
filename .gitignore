@@ -34,3 +34,4 @@ Thumbs.db
 *.so
 *.exe
 *.sql
+storage/uploads/*
