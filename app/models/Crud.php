@@ -646,16 +646,22 @@ class Crud extends \BaseModel {
     		if(isset($this->default_crud[$view]))
             {
                 if(is_array($this->default_crud[$view]) and !starts_with($view,"btn_in_") and !starts_with($view,"not_in_") /*and $view != "fk_column"*/)
-                    return array_merge($this->crud[$view],$this->default_crud[$view]);
+                    return array_merge($this->default_crud[$view],$this->crud[$view]);
                 else
                     return $this->crud[$view];
-            }else
-    			return $this->crud[$view];
+            }else{
+                return $this->crud[$view];
+            }
+    			
     	}
 		elseif(isset($this->default_crud[$view]))
-    		return $this->default_crud[$view];
+        {
+            return $this->default_crud[$view];
+        }
     	else
     		return [];
+
+
     }
 
     protected function getClassName()
