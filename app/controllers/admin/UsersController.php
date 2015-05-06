@@ -44,19 +44,6 @@ class UsersController extends CrudController {
         
     }
 
-	public function beforeIndex(&$params)
-	{
-	   $records = $params->records;
-
-	   foreach ($records as $record) {
-	   	
-	   		$record->email = "<a href='mailto:".$record->email."'>".$record->email."</a>";
-	   }
-
-	
-
-	}
-
 	/**
 	 * [login description]
 	 * @return [type]

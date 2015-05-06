@@ -2,7 +2,10 @@
 
 App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $e){
 
-    return Response::view('public.error.model',compact('message'),404);
+	if (Request::is(getenv('APP_ADMIN_PREFIX').'/*'))
+    	return Response::view('admin.error.model',compact('message'),404);
+    else if (Request::is('public/*'))
+    	return Response::view('public.error.model',compact('message'),404);
 });
 
 

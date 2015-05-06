@@ -1,5 +1,7 @@
 <?php
 
+
+
 class Logfile extends \Crud {
 
 
@@ -11,9 +13,6 @@ class Logfile extends \Crud {
 
     protected $attributes = [
     ];
-
-    protected $guarded = [];  // Important
-
 
     // Events
     //  $params return array object link this
@@ -49,7 +48,7 @@ class Logfile extends \Crud {
     public function beforePrint(&$params){}
 
     public function beforeShow(&$params){}
-    
+
     /* 
         CRUD
     */
@@ -64,7 +63,7 @@ class Logfile extends \Crud {
         //  if not wrote label the column rename like this: 
         //  ["first_name" => "First Name"]
         // 
-        "labels"    => [],
+        "labels"    => ["created_at"=>"Date","created_by"=>"User"],
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
@@ -75,7 +74,7 @@ class Logfile extends \Crud {
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
-        "fk_column" => [],
+        "fk_column" => ["created_by" => ["id_users","first_name","last_name"]],
         // 
         // Tabs
         // Allways create names of tabs with snake case for example
@@ -109,17 +108,22 @@ class Logfile extends \Crud {
 
         // "not_in_create" => ["created_at","updated_at"],
         // "not_in_edit"   => ["created_at","updated_at"],
-        // "not_in_index"  => ["created_at","updated_at"],
+        "not_in_index"  => ["primary_key","table","updated_at","updated_by"],
         // "not_in_show"   => ["created_at","updated_at"],
 
         //
         // Buttons
-        // ["print","create","edit","show","delete","search","advance-search"]
+        //
 
-        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
-        // "btn_in_show"   => ["print","edit","cancel"],
-        // "btn_in_create" => ["create","cancel"],
-        // "btn_in_edit"   => ["edit","cancel"],
+        // "btn_in_index"  => ["print","create","edit","show","delete","search"],
+        // "btn_in_show"   => [],
+        // "btn_in_create" => [],
+        // "btn_in_edit"   => [],
+
+        // HAS_ONE, HAS_MANY, BELONGS_TO
+        // "role"      => self::BELONGS_TO,
+
+        "relations" => []
 
     ];
 

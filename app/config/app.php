@@ -137,6 +137,7 @@ return array(
 
 		'Ollieread\Multiauth\MultiauthServiceProvider',
 		'Mews\Purifier\PurifierServiceProvider',
+		'Torann\Currency\CurrencyServiceProvider',
 	),
 
 	/*
@@ -208,9 +209,11 @@ return array(
 		'Date'            => 'Jenssegers\Date\Date',
 		'Agent'           => 'Jenssegers\Agent\Facades\Agent',
 		//https://github.com/xroot/laravel-paypalpayment
-		'Paypalpayment'   => 'Anouar\Paypalpayment\Facades\PaypalPayment',
+		'Paypal'   		  => 'Anouar\Paypalpayment\Facades\PaypalPayment',
 		// https://github.com/mewebstudio/Purifier/tree/master-l4
 		'Purifier' 		  => 'Mews\Purifier\Facades\Purifier',
+		//https://github.com/Torann/laravel-currency
+		'Currency' 		  => 'Torann\Currency\Facades\Currency',
 	),
 
 );

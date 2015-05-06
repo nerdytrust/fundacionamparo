@@ -3,6 +3,9 @@
 #/vendor
 .env.*.php
 .env.php
+# Storage
+
+/app/storage/uploads/*
 
 # Configuration
 /app/config/local
@@ -34,4 +37,3 @@ Thumbs.db
 *.so
 *.exe
 *.sql
-storage/uploads/*

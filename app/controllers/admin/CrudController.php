@@ -84,20 +84,11 @@ class CrudController extends \BaseController {
         $btn       = $class->getCrud("btn_in_index");
         $fk_column = $class->getCrud("fk_column");
 
-        $tables = $class->getRelationsByTables();
-
-        $relations = $class->getFKRelations();
-
-        if(count($relations) > 0)
-            $records = call_user_func_array([$class,"with"],$relations);
-        else
-            $records = $class;
-     
 
         if (\Input::has('search'))
             $records->search(\Input::get('search'));
 
-        $records = $records->paginate();
+        $records = $class->paginate();
 
         $columns  = $class->getColumnsByView("index");
 
@@ -269,7 +260,7 @@ class CrudController extends \BaseController {
                 foreach ($file_inputs as $file) {
                     if (\Input::file($file)->isValid()) {
 
-                      $fileName = \Crypt::encrypt($class->getTable()."|".$file."|".$params->key_value); // renameing image
+                      $fileName = md5($class->getTable()."|".$file."|".$params->key_value); // renameing image
                       \Input::file($file)->move($destinationPath, $fileName); // uploading file to given path
 
                       if($columns->{$file}->type == "text")
@@ -334,7 +325,8 @@ class CrudController extends \BaseController {
         $columns  = $class->getColumnsByView(__FUNCTION__,$id);
         $path     = $this->getPathView(__FUNCTION__);
 
-        $record   = $class::findOrFail($id);
+        $record   = $class->findOrFail($id);
+
 
         $tabs     = $class->getTabs();
 
@@ -514,7 +506,7 @@ class CrudController extends \BaseController {
                     if (\Input::file($file)->isValid()) {
 
 
-                      $fileName = \Crypt::encrypt($class->getTable()."|".$file."|".$params->key_value); // renameing image
+                      $fileName = md5($class->getTable()."|".$file."|".$params->key_value); // renameing image
                       
                       \File::delete($destinationPath."/".$fileName);
                       \Input::file($file)->move($destinationPath, $fileName); // uploading file to given path

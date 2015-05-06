@@ -12,8 +12,9 @@ function getFKColumn($fk_column = [],$column = [],$default_record = [],$first = 
     else
         $record = $default_record->{$column->name."_record"};
 
-
-    if(array_key_exists($column->name,$fk_column) and is_array($fk_column[$column->name]))
+    if(!$record)
+        $fk_column_name = "Does not exits ".$column->name." ".$default_record->{$column->name};
+    elseif(array_key_exists($column->name,$fk_column) and is_array($fk_column[$column->name]))
     {
 
         foreach ($fk_column[$column->name] as $fk_column_record) 

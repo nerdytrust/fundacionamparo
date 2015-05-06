@@ -1,1 +1,0 @@
-esta es la vista default
