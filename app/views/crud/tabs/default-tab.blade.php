@@ -18,12 +18,10 @@
 			<tr>
 
 				@foreach ($columns as $column)
-					@if($column->is_foreign_key)
-						@if(count($fk_column) > 0)
-							<td> {{ HTML::link(strtolower($columns->{$column->name}->model)."/".$record->{$column->name},getFKColumn($fk_column,$column,$record,false)) }}  </td>
-						@else
-							<td> {{ HTML::link(strtolower($columns->{$column->name}->model)."/".$record->{$column->name},$record->{$column->name}) }}  </td>
-						@endif
+					@if(starts_with($column->name,"id_"))
+					
+							<td> {{ HTML::link( getenv('APP_ADMIN_PREFIX')."/".substr( $column->name,3)."/".$record->{$column->name},$record->{$column->name}) }}  </td>
+
 					@else
 						<td> {{ $record->{$column->name} }}  </td> 
 					@endif

@@ -10,7 +10,7 @@
                 <div class="col-xs-2 text-right bg-primary">
 									<h4>{{ Form::label($column->input, $column->label) }}</h4>
 								</div>
-								<div class="col-xs-10 bg-primary">
+								<div class="col-xs-10 ">
 									<h4>{{$column->is_primary}}</h4>
                 </div>
 

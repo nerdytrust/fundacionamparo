@@ -35,7 +35,8 @@
         "CeesVanEgmond\\Minify\\MinifyServiceProvider",
         "Jenssegers\\Agent\\AgentServiceProvider",
         "Ollieread\\Multiauth\\MultiauthServiceProvider",
-        "Mews\\Purifier\\PurifierServiceProvider"
+        "Mews\\Purifier\\PurifierServiceProvider",
+        "Torann\\Currency\\CurrencyServiceProvider"
     ],
     "eager": [
         "Illuminate\\Cookie\\CookieServiceProvider",
@@ -54,7 +55,8 @@
         "CeesVanEgmond\\Minify\\MinifyServiceProvider",
         "Jenssegers\\Agent\\AgentServiceProvider",
         "Ollieread\\Multiauth\\MultiauthServiceProvider",
-        "Mews\\Purifier\\PurifierServiceProvider"
+        "Mews\\Purifier\\PurifierServiceProvider",
+        "Torann\\Currency\\CurrencyServiceProvider"
     ],
     "deferred": {
         "artisan": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

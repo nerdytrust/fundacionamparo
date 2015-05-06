@@ -38,7 +38,7 @@ class Crud extends \BaseModel {
         $this::creating(function($table) use( $me )
         {
             if (\Schema::hasColumn($me->getTable(), "created_by"))
-                $table->created_by = \Auth::id() ? \Auth::id() : 0; 
+                $table->created_by = \Auth::admin()->id() ? \Auth::admin()->id() : 0; 
 
             if (\Schema::hasColumn($me->getTable(), "updated_by"))
                 $table->updated_by = 0; 
@@ -47,19 +47,35 @@ class Crud extends \BaseModel {
         $this::created(function($table) use( $me )
         {
             $id =  $table->{$me->getKeyName()};
-            if (\Auth::check() and $id)
+            if (\Auth::admin()->check() and $id)
                 $me->logfile($id,"created");
         });
 
         $this::updating(function($table) use( $me )
         {
             if (\Schema::hasColumn($me->getTable(), "updated_by"))
-                $table->updated_by = \Auth::id() ? \Auth::id() : 0 ; 
+                $table->updated_by = \Auth::admin()->id() ? \Auth::admin()->id() : 0 ; 
         });
+
 
 
         parent::__construct($attributes);
     }
+
+
+    public function newQuery()
+    {
+
+        // do relations automatic
+        $relations = $this->getFKRelations();
+
+        if(count($relations) > 0)
+            return call_user_func_array([parent::newQuery(),"with"],$relations);
+        else
+            return parent::newQuery();
+
+    }
+
 
 
     protected function updateTimestamps()
@@ -71,7 +87,7 @@ class Crud extends \BaseModel {
             $this->setUpdatedAt($time);
 
             $id =  $this->{$this->getKeyName()};
-            if (\Auth::check() and $id)
+            if (\Auth::admin()->check() and $id)
                 $this->logfile($id,"updated");
         }
 
@@ -85,7 +101,7 @@ class Crud extends \BaseModel {
 
     public function logfile($id,$action)
     {
-        if (File::exists(app_path()."/models/Logfile.php") and $this->getTable() != "logfile" and \Auth::check())
+        if (File::exists(app_path()."/models/Logfile.php") and $this->getTable() != "logfile" and \Auth::admin()->check())
         {
             Logfile::create([
                 'primary_key' => $id,
@@ -145,7 +161,13 @@ class Crud extends \BaseModel {
     public function beforeDestroy(&$params){}
     public function afterDestroy(&$params){}
 
-    public function beforeIndex(&$params){}
+    public function beforeIndex(&$params){
+
+        foreach ($params->records as $record) {
+            //$record-
+        }
+        
+    }
     public function beforeCreate(&$params){}
     public function beforeEdit(&$params){}
     public function beforePrint(&$params){}
@@ -280,6 +302,21 @@ class Crud extends \BaseModel {
         }
 
         return parent::__call($method, $params);
+    }
+
+    public function getEmailAttribute($value)
+    {
+        return "<a href='mailto:".$value."'>".$value."</a>";
+    }
+
+    public function created_by_record()
+    {
+        return $this->belongsTo('Users', 'created_by', 'id_users');
+    }
+
+    public function updated_by_record()
+    {
+        return $this->belongsTo('Users', 'updated_by', 'id_users');
     }
 
 
@@ -440,16 +477,6 @@ class Crud extends \BaseModel {
     }
 
 
-    public function created_by_record()
-    {
-        return $this->belongsTo('Users', 'created_by', 'id_users');
-    }
-
-    public function updated_by_record()
-    {
-        return $this->belongsTo('Users', 'updated_by', 'id_users');
-    }
-
 
     public function getName()
     {
@@ -494,7 +521,6 @@ class Crud extends \BaseModel {
         //$class 	   = new $model();
         $call      = isset($function["relation"]) ? $function["relation"] : $function;
 
-        
         return $this->$call($model,$local_key,$parent_key);
     }
 
@@ -536,6 +562,7 @@ class Crud extends \BaseModel {
         	}
 
         }
+
 
         // if($kind == self::HAS_MANY or $kind == "")
         // {
@@ -618,7 +645,7 @@ class Crud extends \BaseModel {
     	{
     		if(isset($this->default_crud[$view]))
             {
-                if(is_array($this->default_crud[$view]) and !starts_with($view,"btn_in_") and !starts_with($view,"not_in_") and $view != "fk_column")
+                if(is_array($this->default_crud[$view]) and !starts_with($view,"btn_in_") and !starts_with($view,"not_in_") /*and $view != "fk_column"*/)
                     return array_merge($this->crud[$view],$this->default_crud[$view]);
                 else
                     return $this->crud[$view];
