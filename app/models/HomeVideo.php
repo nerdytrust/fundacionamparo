@@ -70,7 +70,7 @@ class HomeVideo extends \Crud {
         // ["first_name" => "text"] 
         // text,hidden,textarea,password,digit,file,email,title
         //
-        "inputs"    => [ 'cover' => 'file', 'video' => 'file' ],
+        "inputs"    => [],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
