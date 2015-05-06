@@ -11,11 +11,11 @@
 |
 */
 
-Route::get( '/', function(){ return View::make( 'public.home.index' ); });
+Route::get( '/', 'HomeController@index' );
 
 ## Menú
-Route::get( '/becas', function(){ return View::make('public.becas.index'); });
-Route::get( '/fundacion', function(){ return View::make('public.fundacion.index'); });
+Route::get( '/becas', 'BecasController@index' );
+Route::get( '/fundacion', 'FundacionController@index' );
 Route::get( '/como-ayudar', function(){ return View::make('public.como_ayudar.index'); });
 Route::get( '/apoyamos-tu-causa', function(){ return View::make('public.apoyamos.index'); });
 Route::get( '/causas-vivas', function(){ return View::make('public.causas.index'); });
@@ -27,7 +27,7 @@ Route::get( '/muro-exito', function(){ return View::make('public.fundacion.index
 Route::get( '/voluntarios', function(){ return View::make('public.voluntarios.index'); });
 
 ## Vistas del interior de LA FUNDACIÓN
-Route::get( '/historia', function(){ return View::make('public.fundacion.historia'); });
+Route::get( '/historia', 'FundacionController@historia' );
 Route::get( '/aportaciones', function(){ return View::make('public.fundacion.aportaciones'); });
 Route::get( '/membresias', function(){ return View::make('public.fundacion.membresias'); });
 Route::get( '/consideraciones', function(){ return View::make('public.fundacion.consideraciones'); });

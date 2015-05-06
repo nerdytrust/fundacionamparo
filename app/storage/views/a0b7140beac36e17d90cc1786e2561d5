@@ -130,7 +130,7 @@
 											</select>
 										</div>
 									</span>
-									<h3>Comentanos el por que necesitas una beca</h3>
+									<h3>Coméntanos el por qué necesitas una beca</h3>
 									<textarea name="" id="" cols="30" rows="10" maxlenght="150"></textarea>
 									<div class="check-gris">
 										<input type="checkbox" value="None" id="check-verde" name="check">
