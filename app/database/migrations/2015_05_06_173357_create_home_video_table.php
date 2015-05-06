@@ -17,7 +17,7 @@ class CreateHomeVideoTable extends Migration {
 			$table->integer('id_home_video', true);
 			$table->text('cover');
 			$table->text('video');
-			$table->simple_array('activo');
+			$table->enum('activo', array('Active','Inactive'));
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
 			$table->timestamps();
