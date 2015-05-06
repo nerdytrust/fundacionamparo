@@ -1,0 +1,43 @@
+
+
+<br>
+<br>
+<br>
+
+
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <div class="scroller scroller-left"><i class="glyphicon glyphicon-chevron-left"></i></div>
+  <div class="scroller scroller-right"><i class="glyphicon glyphicon-chevron-right"></i></div>
+  <div class="wrapper">
+    <ul class="nav nav-tabs list" id="tabs" data-tabs="tabs">
+
+  	<?php $index = 0 ?>
+    <?php foreach($tabs as $table => $name): ?>
+      
+  		<li class="<?php if($index == 0): ?> active <?php endif; ?>"><a data-toggle="tabajax" href="<?php echo getenv('APP_ADMIN_PREFIX'); ?>/<?php echo $model; ?>/<?php echo $key_value; ?>/tab/<?php echo $table; ?>"  rel="tooltip" data-target="#<?php echo $table; ?>"><?php echo $name; ?></a></li>
+      <?php $index++ ?>
+
+      
+    <?php endforeach; ?>
+
+  </ul>
+</div>
+
+  <!-- Tab panes -->
+
+  <div class="tab-content">
+    <?php $index = 0 ?>
+  	<?php foreach($tabs as $table => $name): ?>
+    	<div role="tabpanel" class="tab-pane <?php if($index == 0): ?> active <?php endif; ?>" id="<?php echo $table; ?>">
+     
+        
+        
+      </div>
+    <?php $index++ ?>
+	 <?php endforeach; ?>
+
+  </div>
+
+</div>

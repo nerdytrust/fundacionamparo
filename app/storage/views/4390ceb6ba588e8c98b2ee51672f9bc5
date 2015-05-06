@@ -1,0 +1,62 @@
+<?php $__env->startSection("form"); ?>
+
+	
+    <?php foreach($columns as $column): ?>
+         
+				<div class="row">
+             <?php if($column->is_primary): ?>
+                <div class="col-xs-2 text-right bg-primary">
+									<h4><?php echo Form::label($column->input, $column->label); ?></h4>
+								</div>
+								<div class="col-xs-10 ">
+									<h4><?php echo $column->is_primary; ?></h4>
+                </div>
+
+                </div>
+                
+						<?php else: ?>
+					<div class="col-xs-2 text-right">
+						<?php echo Form::label($column->input, $column->label); ?>
+
+					</div>
+					<div class="col-xs-10">
+						<?php if($column->is_foreign_key): ?>
+							<?php if(count($fk_column) > 0): ?>
+								<td> <?php echo HTML::link(getenv('APP_ADMIN_PREFIX')."/".strtolower($columns->{$column->name}->model)."/".$record->{$column->name},getFKColumn($fk_column,$column,$record)); ?>  </td>
+							<?php else: ?>
+								<td> <?php echo HTML::link(getenv('APP_ADMIN_PREFIX')."/".strtolower($columns->{$column->name}->model)."/".$record->{$column->name},$record->{$column->name}); ?>  </td>
+							<?php endif; ?>
+						<?php else: ?>
+							<td> <?php echo Purifier::clean($record->{$column->name}); ?>  </td> 
+						<?php endif; ?>
+
+
+					</div>
+
+                </div>
+            <?php endif; ?> 
+             
+       
+
+
+    <?php endforeach; ?>
+
+
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection("form-tabs"); ?>
+
+	<?php if($tabs and count($tabs) > 0): ?>
+		<?php echo $__env->make("crud.tabs.tabs", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+
+
+
+
+
+<?php echo $__env->make("crud.layout-form", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
