@@ -3,6 +3,8 @@
 #/vendor
 .env.*.php
 .env.php
+# Storage
+/app/storage
 
 # Configuration
 /app/config/local
