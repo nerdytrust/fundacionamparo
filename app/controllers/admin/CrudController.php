@@ -260,7 +260,7 @@ class CrudController extends \BaseController {
                 foreach ($file_inputs as $file) {
                     if (\Input::file($file)->isValid()) {
 
-                      $fileName = \Crypt::encrypt($class->getTable()."|".$file."|".$params->key_value); // renameing image
+                      $fileName = md5($class->getTable()."|".$file."|".$params->key_value); // renameing image
                       \Input::file($file)->move($destinationPath, $fileName); // uploading file to given path
 
                       if($columns->{$file}->type == "text")
@@ -506,7 +506,7 @@ class CrudController extends \BaseController {
                     if (\Input::file($file)->isValid()) {
 
 
-                      $fileName = \Crypt::encrypt($class->getTable()."|".$file."|".$params->key_value); // renameing image
+                      $fileName = md5($class->getTable()."|".$file."|".$params->key_value); // renameing image
                       
                       \File::delete($destinationPath."/".$fileName);
                       \Input::file($file)->move($destinationPath, $fileName); // uploading file to given path

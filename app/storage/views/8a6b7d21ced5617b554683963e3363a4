@@ -28,7 +28,7 @@
               <input type="text" class="form-control <?php echo $column->input; ?>" value="<?php if(isset($record->{$column->name})): ?> <?php echo $record->{$column->name}; ?> <?php endif; ?>" placeholder="<?php echo $column->label; ?>" name="<?php echo $column->name; ?>"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
             </div>
 
-        <?php elseif($column->input == "image" or  $column->input == "file"): ?>
+        <?php elseif($column->input == "audio" or  $column->input == "image" or  $column->input == "video" or  $column->input == "document" or  $column->input == "zip" or  $column->input == "file"): ?>
 
             <div class="fileinput fileinput-new input-group" data-provides="fileinput">
               <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>

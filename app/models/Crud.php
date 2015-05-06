@@ -266,7 +266,7 @@ class Crud extends \BaseModel {
         "zip"       => ["zip"]
     ];
 
-    protected $inputTypes = ["text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency"];
+    protected $inputTypes = ["text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"];
 
     protected $inputColumTypes = [
         "boolean"       => "text",

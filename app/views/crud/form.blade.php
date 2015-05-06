@@ -24,7 +24,7 @@
               <input type="text" class="form-control {{ $column->input }}" value="@if(isset($record->{$column->name})) {{ $record->{$column->name} }} @endif" placeholder="{{ $column->label }}" name="{{ $column->name }}"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
             </div>
 
-        @elseif ($column->input == "image" or  $column->input == "file")
+        @elseif ($column->input == "audio" or  $column->input == "image" or  $column->input == "video" or  $column->input == "document" or  $column->input == "zip" or  $column->input == "file")
 
             <div class="fileinput fileinput-new input-group" data-provides="fileinput">
               <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
