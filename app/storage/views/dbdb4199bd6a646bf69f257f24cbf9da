@@ -1,0 +1,41 @@
+<?php $disable_header = 1; $disable_footer = 1; ?>
+
+	<?php $__env->startSection("class"); ?>voluntario
+	<?php $__env->stopSection(); ?>
+	<?php $__env->startSection("content"); ?>
+		<div class="lightbox-h" id="naranja1">
+			<div class="lightbox-h-cont vol">
+				<img src="<?php echo asset( 'images/icon_donadores-v.png' ); ?>" alt="">
+				<!--<button class="cerrar-h"></button>-->
+				<button onClick="history.back()" class="regresar"> Regresar</button>
+				<h1>Voluntario</h1>
+				<p>Vive directamente la experiencia y ayúdanos a seguir adelante.</p>
+				<div class="line"></div>
+				<div class="scN" id="style-3">
+					<form action="<?php echo URL::to( '/voluntario-2' ); ?>">
+						<p>¿En qué causa nos quieres ayudar?</p>
+						<label for="" class="vol">
+							<select name="" id="">
+								<option value="">Museo Amparo</option>
+								<option value=""></option>
+								<option value=""></option>
+							</select>
+							<p>¿Cómo puedes ayudar?</p>
+							<select name="" id="">
+								<option value="">Capacitación</option>
+								<option value=""></option>
+								<option value=""></option>
+							</select>
+							<input type="submit" value="Siguiente" onclick="location.href='<?php echo URL::to( '/voluntario-2' ); ?>';">
+						</label>
+					</form>
+					<a href="fundacion_faqs.html">
+						Si necesitas ayuda da click aquí 
+						<img src="<?php echo asset( 'images/i.png' ); ?>" alt="">
+					</a>
+				</div><!--termina scN-->
+			</div>
+		</div>
+	<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make( "public.covers.layout" , array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
