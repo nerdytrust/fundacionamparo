@@ -159,6 +159,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/models/HomeVideo.php",
+			"settings":
+			{
+				"buffer_size": 4414,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -260,6 +268,14 @@
 	},
 	"file_history":
 	[
+		"/Users/miguelmartinez/Sites/fundacion/app/models/Crud.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/models/Logfile.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/start/helpers.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/form.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/controllers/admin/CrudController.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/tabs/default-tab.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/tabs/notes.blade.php",
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Logfile.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/routes.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/routes.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/helpers.php",
@@ -281,8 +297,6 @@
 		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/layout-form.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/users/create.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/skeleton.blade.php",
-		"/Users/miguelmartinez/Sites/fundacion/app/models/Crud.php",
-		"/Users/miguelmartinez/Sites/fundacion/app/controllers/admin/CrudController.php",
 		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/vendor/bootstrap-modalajax.js",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/layout.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/stylus/bootstrap/navbar.styl",
@@ -381,13 +395,7 @@
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfShpinst.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfShpinstComments.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbPoints.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbPrizes.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmsImages.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmsPages.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmsVideos.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Customer.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CustomerNotes.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Delivery.php"
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbPrizes.php"
 	],
 	"find":
 	{
@@ -395,7 +403,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 99.0,
 		"where_history":
 		[
 			"/Users/miguelmartinez/Sites/fundacion/app/",
@@ -446,6 +454,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getCr",
+			"created_by",
+			"fk_column",
+			"logs",
+			"upload",
+			"file",
+			"upload",
+			"file",
+			"Auth::getUser()->first_name;",
 			"Modal header",
 			"admin",
 			"helpers",
@@ -564,16 +581,7 @@
 			"getOptions",
 			"Artisan::call",
 			"ClassName",
-			"className",
-			"snake_case",
-			"crud",
-			"Entrust",
-			"getCRUD",
-			"getColumns",
-			"listTableColumns",
-			"getRelationsByTables",
-			"listTables",
-			"guarded"
+			"className"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -617,8 +625,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/models/HomeVideo.php",
+					"settings":
+					{
+						"buffer_size": 4414,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2118,
+								2118
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1898.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1066,6 +1103,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 347.0,
+	"side_bar_width": 286.0,
 	"status_bar_visible": true
 }

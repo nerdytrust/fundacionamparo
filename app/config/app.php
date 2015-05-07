@@ -138,6 +138,7 @@ return array(
 		'Ollieread\Multiauth\MultiauthServiceProvider',
 		'Mews\Purifier\PurifierServiceProvider',
 		'Torann\Currency\CurrencyServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 	),
 
 	/*
@@ -214,6 +215,7 @@ return array(
 		'Purifier' 		  => 'Mews\Purifier\Facades\Purifier',
 		//https://github.com/Torann/laravel-currency
 		'Currency' 		  => 'Torann\Currency\Facades\Currency',
+		'Image' 		  => 'Intervention\Image\Facades\Image',
 	),
 
 );
