@@ -18,8 +18,11 @@
 			$("#ac2").click(function(){
 				window.location = 'verde3.html';
 			});
-			$("#impulsor_sec, #fca-i, #cauf-i").click(function(){
+			$("#impulsor_sec, #cauf-i").click(function(){
 				window.location = 'impulsar.html';
+			});
+			$("#fca-i").click(function(){
+				window.location = 'impulsarR.html';
 			});
 			$("#voluntario_sec, #fca-v, #cauf-v").click(function(){
 				window.location = 'voluntario.html';
