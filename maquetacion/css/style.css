@@ -1864,7 +1864,7 @@ b{color: #beda3e; font-weight: normal;}
 #cja_donativos, #cja_pasos{
 	text-align: center;
 	margin: 30px 0;
-	cursor: pointer;
+	/*cursor: pointer;*/
 }
 #donativo_btn{
 	display: inline-block;
