@@ -44,6 +44,7 @@ return array(
     'Jenssegers\\Date' => array($vendorDir . '/jenssegers/date/src'),
     'JShrink' => array($vendorDir . '/tedivm/jshrink/src'),
     'Illuminate' => array($vendorDir . '/laravel/framework/src'),
+    'Hybrid' => array($vendorDir . '/hybridauth/hybridauth/hybridauth'),
     'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
     'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
     'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
@@ -67,5 +68,6 @@ return array(
     'Boris' => array($vendorDir . '/d11wtq/boris/lib'),
     'Aws\\Laravel' => array($vendorDir . '/aws/aws-sdk-php-laravel/src'),
     'Aws' => array($vendorDir . '/aws/aws-sdk-php/src'),
+    'Atticmedia\\Anvard' => array($vendorDir . '/atticmedia/anvard/src'),
     'Anouar\\Paypalpayment' => array($vendorDir . '/anouar/paypalpayment/src'),
 );

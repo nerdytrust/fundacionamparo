@@ -57,10 +57,4 @@ Route::get( 'path_video/{id}', 'StoragePathController@videoStorage' );
 Route::get( 'path_image/{id}/{size}', 'StoragePathController@imgStorage' );
 
 ##Login con Facebook
-Route::get( 'login/fb', 'LoginFacebookController@login' );
-Route::get( 'login/fb/callback', 'LoginFacebookController@callback' );
-Route::get( 'logout', function(){
-	Auth::logout();
-	return Redirect::to('/');
-});
 

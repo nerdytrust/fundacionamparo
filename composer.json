@@ -22,7 +22,7 @@
 		"ollieread/multiauth": "dev-master",
 		"mews/purifier": "dev-master-l4",
 		"torann/currency": "dev-master",
-		"facebook/php-sdk-v4": "~4.0"
+		"atticmedia/anvard": "dev-master"
 	},
 	"require-dev": {
 	    "way/generators": "~2.0",

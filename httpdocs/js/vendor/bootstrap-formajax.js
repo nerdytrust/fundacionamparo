@@ -1,7 +1,19 @@
-jQuery(function($) {
+function FormAjax(callback)
+{
+    
+    var me = this;
+    me.callback = callback;
+
+    $("form[data-async] .cancel").click(function(event){
+        event.preventDefault();
+        var $me = $(this);
+
+        $('#modal').modal('hide');
+    });
+
     $('form[data-async]').on('submit', function(event) {
+        
         var $form = $(this);
-        var $target = $($form.attr('data-target'));
 
         $.ajax({
             type: $form.attr('method'),
@@ -9,10 +21,11 @@ jQuery(function($) {
             data: $form.serialize(),
 
             success: function(data, status) {
-                $target.modal('hide');
+                me.callback(data);
+                
             }
         });
 
-        event.preventDefault();
+        return false;
     });
-});
+}

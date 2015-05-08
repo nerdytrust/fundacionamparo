@@ -20,7 +20,6 @@ ClassLoader::addDirectories(array(
 	app_path().'/controllers/cmb', // additional folders
 	app_path().'/models',
 	app_path().'/database/seeds',
-	app_path().'/helper',
 
 ));
 
@@ -81,6 +80,7 @@ App::down(function()
 | definitions instead of putting them all in the main routes file.
 |
 */
+require app_path().'/misc/form_macros.php';
 
 require app_path().'/start/filters.php';
 require app_path().'/start/routes.php';

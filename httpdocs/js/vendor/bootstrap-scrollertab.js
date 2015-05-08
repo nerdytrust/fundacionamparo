@@ -76,6 +76,8 @@ $(function () {
           loadurl = $this.attr('href'),
           targ = $this.attr('data-target');
 
+      $(targ).html("<img src='./img/loading.gif'/>");    
+
       $.get(loadurl, function(data) {
           $(targ).html(data);
       });

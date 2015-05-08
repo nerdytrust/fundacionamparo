@@ -166,6 +166,14 @@
 				"buffer_size": 4414,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "app/config/app.php",
+			"settings":
+			{
+				"buffer_size": 8901,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -403,7 +411,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 99.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/miguelmartinez/Sites/fundacion/app/",
@@ -454,6 +462,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"'Intervention\\Image\\ImageServiceProvider'",
 			"getCr",
 			"created_by",
 			"fk_column",
@@ -580,8 +589,7 @@
 			"tables",
 			"getOptions",
 			"Artisan::call",
-			"ClassName",
-			"className"
+			"ClassName"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -625,7 +633,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -652,6 +660,33 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 1898.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/config/app.php",
+					"settings":
+					{
+						"buffer_size": 8901,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8008,
+								8008
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4058.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

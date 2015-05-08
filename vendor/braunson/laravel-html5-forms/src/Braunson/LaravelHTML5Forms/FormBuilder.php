@@ -2,6 +2,8 @@
 
 class FormBuilder extends \Illuminate\Html\FormBuilder {
     
+
+
     /**
      * Create a form color field.
      *
