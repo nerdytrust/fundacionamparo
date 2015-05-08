@@ -139,6 +139,8 @@ return array(
 		'Mews\Purifier\PurifierServiceProvider',
 		'Torann\Currency\CurrencyServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
+		//https://bitbucket.org/atticmedia/anvard
+		'Atticmedia\Anvard\AnvardServiceProvider',
 	),
 
 	/*

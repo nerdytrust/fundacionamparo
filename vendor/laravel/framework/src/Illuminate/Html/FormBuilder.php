@@ -528,7 +528,8 @@ class FormBuilder {
 			$html[] = $this->option($display, $value, $selected);
 		}
 
-		return '<optgroup label="'.e($label).'">'.implode('', $html).'</optgroup>';
+		//return '<optgroup label="'.e($label).'">'.implode('', $html).'</optgroup>';
+		return implode('', $html);
 	}
 
 	/**

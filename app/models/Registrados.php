@@ -124,5 +124,10 @@ class Registrados extends \Crud {
     ];
 
 
+
+    public function profiles() {
+        return $this->hasMany('Profile');
+    }
+
     
 }

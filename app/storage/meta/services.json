@@ -37,7 +37,8 @@
         "Ollieread\\Multiauth\\MultiauthServiceProvider",
         "Mews\\Purifier\\PurifierServiceProvider",
         "Torann\\Currency\\CurrencyServiceProvider",
-        "Intervention\\Image\\ImageServiceProvider"
+        "Intervention\\Image\\ImageServiceProvider",
+        "Atticmedia\\Anvard\\AnvardServiceProvider"
     ],
     "eager": [
         "Illuminate\\Cookie\\CookieServiceProvider",
@@ -58,7 +59,8 @@
         "Ollieread\\Multiauth\\MultiauthServiceProvider",
         "Mews\\Purifier\\PurifierServiceProvider",
         "Torann\\Currency\\CurrencyServiceProvider",
-        "Intervention\\Image\\ImageServiceProvider"
+        "Intervention\\Image\\ImageServiceProvider",
+        "Atticmedia\\Anvard\\AnvardServiceProvider"
     ],
     "deferred": {
         "artisan": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",
