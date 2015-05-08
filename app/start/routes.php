@@ -32,10 +32,18 @@ Route::post(getenv('APP_ADMIN_PREFIX').'/login/email', ['as' => 'admin/login/ema
 Route::get(getenv('APP_ADMIN_PREFIX').'/logout', ['as' => 'admin/logout', 'uses' => 'admin\UsersController@logout']);
 
 
+Route::get('/image/{id}', 'admin\StorageController@index');
+Route::get('/image/{id}/{size}', 'admin\StorageController@index');
+
+
+
+
 Route::group(array('before' => 'auth'), function()
 {
 	if (Request::is(getenv('APP_ADMIN_PREFIX').'/*') and Auth::admin()->check())
 	{
+
+		Route::post(getenv('APP_ADMIN_PREFIX').'/image/upload', 'admin\StorageController@upload');
 		// Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'DashBoardController@index']);
 		Route::get(getenv('APP_ADMIN_PREFIX').'/dashboard', function(){
 			return View::make('admin.dashboard.dashboard');

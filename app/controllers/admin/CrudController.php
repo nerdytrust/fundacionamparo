@@ -429,7 +429,8 @@ class CrudController extends \BaseController {
         $validations     = $class->getValidations($columns,$id);
         $_inputs   = $class->getInputs($columns);
         $inputs    = \Input::only($class->getInputs($columns));
-
+        dd($inputs);
+        die;
         $password = \Input::get("password");
 
         if(empty($password))

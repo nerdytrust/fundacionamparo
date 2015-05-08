@@ -4,7 +4,9 @@
 
          {{ Form::label($column->input, $column->label) }}
 
-         @if ($column->name == "password") 
+
+
+         @if($column->name == "password") 
             {{ Form::password($column->name,array('class' => 'form-control','placeholder'=>$column->label)); }}
          @elseif ($column->is_foreign_key)
          <?php
@@ -24,7 +26,7 @@
               <input type="text" class="form-control {{ $column->input }}" value="@if(isset($record->{$column->name})) {{ $record->{$column->name} }} @endif" placeholder="{{ $column->label }}" name="{{ $column->name }}"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
             </div>
 
-        @elseif ($column->input == "image" or  $column->input == "file")
+        @elseif ($column->input == "audio" or  $column->input == "image" or  $column->input == "video" or  $column->input == "document" or  $column->input == "zip" or  $column->input == "file")
 
             <div class="fileinput fileinput-new input-group" data-provides="fileinput">
               <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
@@ -48,7 +50,8 @@
   
             <input type="number" min="0" step="1" name="{{ $column->name }}" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency"  />
   
-
+         @elseif  ($column->input == "html") 
+            {{ Editor::view() }}   
          @elseif ($column->input != "number")
             {{ call_user_func("Form::".$column->input,$column->name,$record->{$column->name},array('class' => 'form-control','placeholder'=>$column->label)) }}
          @else
@@ -62,3 +65,6 @@
     @endif 
 
 @endforeach
+ 
+
+

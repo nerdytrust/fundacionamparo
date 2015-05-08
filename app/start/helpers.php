@@ -1,7 +1,12 @@
 <?php
 
 
-
+function getCurrentAction(){
+    
+    $action = Route::current()->getActionName();
+    $action = explode("@", $action);
+    return $action = $action[count($action)-1];
+}
 
 function getFKColumn($fk_column = [],$column = [],$default_record = [],$first = true)
 {

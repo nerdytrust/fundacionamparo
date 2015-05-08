@@ -133,7 +133,10 @@ class Crud extends \BaseModel {
 
 
 
-    // Events
+    // ===================================================================
+    // EVENTS
+    // ===================================================================
+    //
     //  $params return array object link this
     //
     // "me"             => Access to methods of the controller. return object 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy','printItem'
@@ -266,7 +269,7 @@ class Crud extends \BaseModel {
         "zip"       => ["zip"]
     ];
 
-    protected $inputTypes = ["text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"];
+    protected $inputTypes = ["editor","toggle","html","text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"];
 
     protected $inputColumTypes = [
         "boolean"       => "text",
@@ -306,7 +309,12 @@ class Crud extends \BaseModel {
 
     public function getEmailAttribute($value)
     {
-        return "<a href='mailto:".$value."'>".$value."</a>";
+        $action = getCurrentAction();
+            
+        if($action == "edit")
+            return $value;
+        else
+            return "<a href='mailto:".$value."'>".$value."</a>";
     }
 
     public function created_by_record()
@@ -700,7 +708,7 @@ class Crud extends \BaseModel {
 			if($type == "enum")
 			{
 				$enum_data = $this->getEnumValues($column->getName());
-				    $data[""] = "";
+				    //$data[""] = "";
                 foreach ($enum_data as $erecord) {
 					$data[$erecord] = $erecord;
 				}

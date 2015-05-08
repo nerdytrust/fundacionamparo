@@ -2051,24 +2051,24 @@
 }));
 
 
-$('.dateline').datetimepicker({
+$('[dateline]').datetimepicker({
     format: "YYYY-MM-DD",
     inline: true,
     sideBySide: true
 });
 
-$('.datetime').datetimepicker({
+$('[datetime]').datetimepicker({
     format: "YYYY-MM-DD HH:mm:ss",
     sideBySide:true,
     collapse:true
 });
 
-$('.date').datetimepicker({
+$('[date]').datetimepicker({
     format: "YYYY-MM-DD",
     collapse:true
 });
 
-$('.time').datetimepicker({
+$('[time]').datetimepicker({
     format: "HH:mm:ss",
     collapse:true
 });

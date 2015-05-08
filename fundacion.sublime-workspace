@@ -159,22 +159,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/models/HomeVideo.php",
-			"settings":
-			{
-				"buffer_size": 4414,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/config/app.php",
-			"settings":
-			{
-				"buffer_size": 8901,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -276,6 +260,20 @@
 	},
 	"file_history":
 	[
+		"/Users/miguelmartinez/Sites/fundacion/app/routes.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/config/packages/atticmedia/anvard/routes.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/config/facebook.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/config/packages/atticmedia/anvard/hybridauth.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/config/packages/atticmedia/anvard/db.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/models/Profile.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/models/Registrados.php",
+		"/Users/miguelmartinez/Sites/fundacion/.env",
+		"/Users/miguelmartinez/Sites/fundacion/.env.example",
+		"/Users/miguelmartinez/Sites/fundacion/app/config/app.php",
+		"/Users/miguelmartinez/Sites/fundacion/vendor/atticmedia/anvard/src/migrations/2013_05_11_205235_setup_anvard.php",
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/admin.jsl.sublime-workspace",
+		"/Users/miguelmartinez/Sites/fundacion/composer.json",
+		"/Users/miguelmartinez/Sites/fundacion/app/models/HomeVideo.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/models/Crud.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/models/Logfile.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/start/helpers.php",
@@ -285,7 +283,6 @@
 		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/tabs/notes.blade.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/Logfile.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/routes.php",
-		"/Users/miguelmartinez/Sites/fundacion/app/routes.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/helpers.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/helpers.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/filters.php",
@@ -325,18 +322,15 @@
 		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/vendor/jqBootstrapValidation.js",
 		"/Users/miguelmartinez/Sites/fundacion/vendor/ceesvanegmond/minify/src/CeesVanEgmond/Minify/Minify.php",
 		"/Users/miguelmartinez/Sites/fundacion/vendor/ceesvanegmond/minify/src/CeesVanEgmond/Minify/Providers/JavaScript.php",
-		"/Users/miguelmartinez/Sites/fundacion/app/config/app.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/config/app.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/index.blade.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/controllers/admin/CrudController.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/dashboard/toolbar.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/dashboard/leftbar.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/.env.local",
-		"/Users/miguelmartinez/Sites/fundacion/.env",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/home/home.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/layout.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/controllers/admin/UsersController.php",
-		"/Users/miguelmartinez/Sites/fundacion/.env.example",
 		"/Users/miguelmartinez/Sites/fundacion/app/controllers/admin/RolesController.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/toolbar.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/toolbar-form.blade.php",
@@ -393,17 +387,7 @@
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfLostComments.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfLostItems.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfPayments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfPickup.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfPickupComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfPrizes.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfProbshp.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfProbshpComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfShop.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfShopComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfShpinst.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfShpinstComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbPoints.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbPrizes.php"
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfPickup.php"
 	],
 	"find":
 	{
@@ -462,6 +446,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"profiletousermap",
+			"profilestableforeignkey",
+			"user",
+			"User",
+			"facebook",
 			"'Intervention\\Image\\ImageServiceProvider'",
 			"getCr",
 			"created_by",
@@ -584,12 +573,7 @@
 			"getExcludedTables",
 			"Tables",
 			"tables",
-			"getOptions",
-			"ignore",
-			"tables",
-			"getOptions",
-			"Artisan::call",
-			"ClassName"
+			"getOptions"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -633,64 +617,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/models/HomeVideo.php",
-					"settings":
-					{
-						"buffer_size": 4414,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2118,
-								2118
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1898.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/config/app.php",
-					"settings":
-					{
-						"buffer_size": 8901,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8008,
-								8008
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4058.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

@@ -376,12 +376,12 @@
         "version_normalized": "1.0.8.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/d11wtq/boris.git",
+            "url": "https://github.com/borisrepl/boris.git",
             "reference": "125dd4e5752639af7678a22ea597115646d89c6e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/d11wtq/boris/zipball/125dd4e5752639af7678a22ea597115646d89c6e",
+            "url": "https://api.github.com/repos/borisrepl/boris/zipball/125dd4e5752639af7678a22ea597115646d89c6e",
             "reference": "125dd4e5752639af7678a22ea597115646d89c6e",
             "shasum": ""
         },
@@ -412,12 +412,12 @@
         "version_normalized": "1.0.2.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/mtdowling/ClassPreloader.git",
+            "url": "https://github.com/ClassPreloader/ClassPreloader.git",
             "reference": "2c9f3bcbab329570c57339895bd11b5dd3b00877"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/mtdowling/ClassPreloader/zipball/2c9f3bcbab329570c57339895bd11b5dd3b00877",
+            "url": "https://api.github.com/repos/ClassPreloader/ClassPreloader/zipball/2c9f3bcbab329570c57339895bd11b5dd3b00877",
             "reference": "2c9f3bcbab329570c57339895bd11b5dd3b00877",
             "shasum": ""
         },
@@ -1242,7 +1242,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Braunson/laravel-html5-forms/zipball/4966a2b80b80774cb2f5ded536e209254978b49b",
+            "url": "https://api.github.com/repos/Braunson/laravel-html5-forms/zipball/4759115b44f81a07284ed66810c14c4e1bdefa86",
             "reference": "4966a2b80b80774cb2f5ded536e209254978b49b",
             "shasum": ""
         },
@@ -2601,7 +2601,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/dwightwatson/autologin/zipball/4aa68b88f1a45ab28470dec0685ccca7cd61dd3a",
+            "url": "https://api.github.com/repos/dwightwatson/autologin/zipball/93dcc59bc84a0c0ed67fb42902dad6824b3c4b4e",
             "reference": "4aa68b88f1a45ab28470dec0685ccca7cd61dd3a",
             "shasum": ""
         },
@@ -2700,7 +2700,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Xethron/migrations-generator/zipball/e382c0c0b8f5774432e95134dfd501b94fe09291",
+            "url": "https://api.github.com/repos/Xethron/migrations-generator/zipball/953d3db746e0f96ecfb73e87a9add37d1973f860",
             "reference": "e382c0c0b8f5774432e95134dfd501b94fe09291",
             "shasum": ""
         },
@@ -3319,7 +3319,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/xroot/laravel-paypalpayment/zipball/d3d0cffed750aad12773476e3028953100bec30b",
+            "url": "https://api.github.com/repos/xroot/laravel-paypalpayment/zipball/eb10dd7aacebe0943f5f887c69871baf14dc3978",
             "reference": "d3d0cffed750aad12773476e3028953100bec30b",
             "shasum": ""
         },

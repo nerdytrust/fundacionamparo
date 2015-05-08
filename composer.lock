@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "341deac1f32f6537bf939359054734e7",
+    "hash": "48b18efe5d2bb55b2e77be3addcf17d1",
     "packages": [
         {
             "name": "anouar/paypalpayment",
@@ -16,7 +16,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xroot/laravel-paypalpayment/zipball/d3d0cffed750aad12773476e3028953100bec30b",
+                "url": "https://api.github.com/repos/xroot/laravel-paypalpayment/zipball/eb10dd7aacebe0943f5f887c69871baf14dc3978",
                 "reference": "d3d0cffed750aad12773476e3028953100bec30b",
                 "shasum": ""
             },
@@ -48,64 +48,6 @@
             ],
             "description": "laravel-paypalpayment is simple package help you process direct credit card payments, stored credit card payments and PayPal account payments with your L4 projects using paypal REST API SDK.",
             "time": "2014-12-19 15:48:35"
-        },
-        {
-            "name": "atticmedia/anvard",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://bitbucket.org/atticmedia/anvard.git",
-                "reference": "c5e9d0c4f5656d8b91900589e9fd118a9d9d1531"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/atticmedia/anvard/get/c5e9d0c4f5656d8b91900589e9fd118a9d9d1531.zip",
-                "reference": "c5e9d0c4f5656d8b91900589e9fd118a9d9d1531",
-                "shasum": ""
-            },
-            "require": {
-                "hybridauth/hybridauth": "2.*@dev",
-                "illuminate/support": "4.*",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/migrations"
-                ],
-                "psr-0": {
-                    "Atticmedia\\Anvard": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Pete Otaqui",
-                    "email": "pete.otaqui@atticmedia.com"
-                },
-                {
-                    "name": "Alaa Badran",
-                    "email": "me@alaabadran.com"
-                }
-            ],
-            "description": "HybridAuth social sign in package for Laravel 4",
-            "homepage": "https://bitbucket.org/atticmedia/anvard",
-            "keywords": [
-                "OpenId",
-                "facebook",
-                "google",
-                "hybridauth",
-                "laravel",
-                "login",
-                "oauth",
-                "social",
-                "twitter",
-                "yahoo"
-            ],
-            "time": "2014-07-03 21:31:33"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -237,7 +179,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Braunson/laravel-html5-forms/zipball/4966a2b80b80774cb2f5ded536e209254978b49b",
+                "url": "https://api.github.com/repos/Braunson/laravel-html5-forms/zipball/4759115b44f81a07284ed66810c14c4e1bdefa86",
                 "reference": "4966a2b80b80774cb2f5ded536e209254978b49b",
                 "shasum": ""
             },
@@ -316,12 +258,12 @@
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mtdowling/ClassPreloader.git",
+                "url": "https://github.com/ClassPreloader/ClassPreloader.git",
                 "reference": "2c9f3bcbab329570c57339895bd11b5dd3b00877"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mtdowling/ClassPreloader/zipball/2c9f3bcbab329570c57339895bd11b5dd3b00877",
+                "url": "https://api.github.com/repos/ClassPreloader/ClassPreloader/zipball/2c9f3bcbab329570c57339895bd11b5dd3b00877",
                 "reference": "2c9f3bcbab329570c57339895bd11b5dd3b00877",
                 "shasum": ""
             },
@@ -363,12 +305,12 @@
             "version": "v1.0.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/d11wtq/boris.git",
+                "url": "https://github.com/borisrepl/boris.git",
                 "reference": "125dd4e5752639af7678a22ea597115646d89c6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/d11wtq/boris/zipball/125dd4e5752639af7678a22ea597115646d89c6e",
+                "url": "https://api.github.com/repos/borisrepl/boris/zipball/125dd4e5752639af7678a22ea597115646d89c6e",
                 "reference": "125dd4e5752639af7678a22ea597115646d89c6e",
                 "shasum": ""
             },
@@ -1049,58 +991,6 @@
             "time": "2014-08-11 04:32:36"
         },
         {
-            "name": "hybridauth/hybridauth",
-            "version": "v2.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hybridauth/hybridauth.git",
-                "reference": "89e4dc3da3a55cf3ffb00a428c247ff2166dc7ca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hybridauth/hybridauth/zipball/89e4dc3da3a55cf3ffb00a428c247ff2166dc7ca",
-                "reference": "89e4dc3da3a55cf3ffb00a428c247ff2166dc7ca",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Hybrid": "hybridauth/"
-                },
-                "classmap": [
-                    "hybridauth/Hybrid"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "(MIT or GPL-3.0+)"
-            ],
-            "authors": [
-                {
-                    "name": "Miled",
-                    "email": "hybridauth@gmail.com"
-                }
-            ],
-            "description": "Open source social sign on PHP library.",
-            "homepage": "http://hybridauth.sourceforge.net",
-            "keywords": [
-                "OpenId",
-                "facebook",
-                "google",
-                "hybridauth",
-                "login",
-                "oauth",
-                "social",
-                "twitter",
-                "yahoo"
-            ],
-            "time": "2015-04-12 01:39:53"
-        },
-        {
             "name": "intervention/image",
             "version": "2.0.14",
             "source": {
@@ -1556,6 +1446,57 @@
                 "laravel"
             ],
             "time": "2015-04-03 06:50:55"
+        },
+        {
+            "name": "michelf/php-markdown",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michelf/php-markdown.git",
+                "reference": "de9a19c7bf352d41cc99ed86c3c0ef17e87394b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/de9a19c7bf352d41cc99ed86c3c0ef17e87394b6",
+                "reference": "de9a19c7bf352d41cc99ed86c3c0ef17e87394b6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-lib": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Michelf": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Michel Fortin",
+                    "email": "michel.fortin@michelf.ca",
+                    "homepage": "http://michelf.ca/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "John Gruber",
+                    "homepage": "http://daringfireball.net/"
+                }
+            ],
+            "description": "PHP Markdown",
+            "homepage": "http://michelf.ca/projects/php-markdown/",
+            "keywords": [
+                "markdown"
+            ],
+            "time": "2014-05-05 02:43:50"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -3257,6 +3198,44 @@
             "time": "2015-01-06 22:21:32"
         },
         {
+            "name": "vinelab/laravel-editor",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Vinelab/laravel-editor.git",
+                "reference": "72aba31524ae6f3c40d442d40681271cde4fd9df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Vinelab/laravel-editor/zipball/72aba31524ae6f3c40d442d40681271cde4fd9df",
+                "reference": "72aba31524ae6f3c40d442d40681271cde4fd9df",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.2.*",
+                "michelf/php-markdown": "1.4.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Vinelab\\Editor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Abed Halawi",
+                    "email": "abed.halawi@vinelab.com"
+                }
+            ],
+            "description": "Markdown Text Editor (WYSIWYG) with social network embeds support and a nifty json output.",
+            "time": "2015-01-23 09:16:16"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v1.1.0",
             "source": {
@@ -3317,7 +3296,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dwightwatson/autologin/zipball/4aa68b88f1a45ab28470dec0685ccca7cd61dd3a",
+                "url": "https://api.github.com/repos/dwightwatson/autologin/zipball/93dcc59bc84a0c0ed67fb42902dad6824b3c4b4e",
                 "reference": "4aa68b88f1a45ab28470dec0685ccca7cd61dd3a",
                 "shasum": ""
             },
@@ -3413,7 +3392,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Xethron/migrations-generator/zipball/e382c0c0b8f5774432e95134dfd501b94fe09291",
+                "url": "https://api.github.com/repos/Xethron/migrations-generator/zipball/953d3db746e0f96ecfb73e87a9add37d1973f860",
                 "reference": "e382c0c0b8f5774432e95134dfd501b94fe09291",
                 "shasum": ""
             },
@@ -3687,8 +3666,7 @@
         "xethron/migrations-generator": 20,
         "ollieread/multiauth": 20,
         "mews/purifier": 20,
-        "torann/currency": 20,
-        "atticmedia/anvard": 20
+        "torann/currency": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
