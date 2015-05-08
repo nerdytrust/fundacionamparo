@@ -2341,6 +2341,12 @@ label.becas ul.pasos{
 	margin-left: 2%;
 	/*background:red;*/
 }
+.width60{
+	width: 60% !important;
+}
+.width30{
+	width: 30% !important;
+}
 .c2 label{
 	/*background: red;*/
 	vertical-align: inherit;
@@ -2477,7 +2483,8 @@ select#promedio{
 div.check, span.check{
 	/*max-width: 320px;*/
 	/*width: auto !important;*/
-	width: 250px !important;
+	width: 250px;
+
 }
 div.check input[type="radio"], span.check input[type="radio"]{
 	display: none;
