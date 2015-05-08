@@ -1319,6 +1319,10 @@ span#name span button:after{
 	color: #000;
 	font-weight: bold;
 }
+.txt_fundacion2 p span a{
+	color: #000;
+	font-weight: bold;
+}
 .txt_fundacion2 ul{
 	list-style: none;
     padding:0;
