@@ -36,7 +36,8 @@
         "Jenssegers\\Agent\\AgentServiceProvider",
         "Ollieread\\Multiauth\\MultiauthServiceProvider",
         "Mews\\Purifier\\PurifierServiceProvider",
-        "Torann\\Currency\\CurrencyServiceProvider"
+        "Torann\\Currency\\CurrencyServiceProvider",
+        "Intervention\\Image\\ImageServiceProvider"
     ],
     "eager": [
         "Illuminate\\Cookie\\CookieServiceProvider",
@@ -56,7 +57,8 @@
         "Jenssegers\\Agent\\AgentServiceProvider",
         "Ollieread\\Multiauth\\MultiauthServiceProvider",
         "Mews\\Purifier\\PurifierServiceProvider",
-        "Torann\\Currency\\CurrencyServiceProvider"
+        "Torann\\Currency\\CurrencyServiceProvider",
+        "Intervention\\Image\\ImageServiceProvider"
     ],
     "deferred": {
         "artisan": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

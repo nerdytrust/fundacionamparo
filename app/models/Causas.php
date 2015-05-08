@@ -70,7 +70,7 @@ class Causas extends \Crud {
         // ["first_name" => "text"] 
         // text,hidden,textarea,password,digit,file,email,title
         //
-        "inputs"    => ["meta" => "currency"],
+        "inputs"    => [ 'meta' => 'currency', 'imagen' => 'image', 'twitter' => 'text', 'facebook' => 'text' ],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
@@ -107,8 +107,8 @@ class Causas extends \Crud {
         "index"     => [],
         "show"      => [],
 
-        "not_in_create" => ["me_gustas_interno","twitter","facebook","recaudado","created_at","updated_at"],
-        "not_in_edit"   => ["me_gustas_interno","twitter","facebook","recaudado","created_at","updated_at"],
+        "not_in_create" => ["me_gustas_interno","recaudado","created_at","updated_at"],
+        "not_in_edit"   => ["me_gustas_interno","recaudado","created_at","updated_at"],
         // "not_in_index"  => ["created_at","updated_at"],
         // "not_in_show"   => ["created_at","updated_at"],
 
@@ -122,7 +122,5 @@ class Causas extends \Crud {
         // "btn_in_edit"   => ["edit","cancel"],
 
     ];
-
-
     
 }

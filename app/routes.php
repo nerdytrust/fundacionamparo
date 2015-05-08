@@ -12,41 +12,55 @@
 */
 
 Route::get( '/', 'HomeController@index' );
+Route::get( 'home', 'HomeController@home' );
+Route::get( 'registro', 'HomeController@registro' );
 
 ## Menú
-Route::get( '/becas', 'BecasController@index' );
-Route::get( '/fundacion', 'FundacionController@index' );
-Route::get( '/como-ayudar', function(){ return View::make('public.como_ayudar.index'); });
-Route::get( '/apoyamos-tu-causa', function(){ return View::make('public.apoyamos.index'); });
-Route::get( '/causas-vivas', function(){ return View::make('public.causas.index'); });
-Route::get( '/noticias', function(){ return View::make('public.noticias.index'); });
-Route::get( '/faqs', function(){ return View::make('public.faqs.index'); });
-Route::get( '/donadores', function(){ return View::make('public.donadores.index'); });
-Route::get( '/contacto', function(){ return View::make('public.contacto.index'); });
-Route::get( '/muro-exito', function(){ return View::make('public.fundacion.index'); });
-Route::get( '/voluntarios', function(){ return View::make('public.voluntarios.index'); });
+Route::get( 'becas', [ 'uses' => 'BecasController@index', 'as' => 'get.becas' ] );
+Route::get( 'fundacion', [ 'uses' => 'FundacionController@index', 'as' => 'get.fundacion' ] );
+Route::get( 'como-ayudar', [ 'uses' => 'AyudarController@index', 'as' => 'get.como-ayudar'] );
+Route::get( 'apoyamos-tu-causa', [ 'uses' => 'ApoyarCausaController@index', 'as' => 'get.apoyamos-tu-causa' ] );
+Route::get( 'causas-vivas', [ 'uses' => 'CausasVivasController@index', 'as' => 'get.causas-vivas' ] );
+Route::get( 'noticias', [ 'uses' => 'NoticiasController@index', 'as' => 'get.noticias' ] );
+Route::get( 'faqs', [ 'uses' => 'FaqsController@index', 'as' => 'get.faqs' ] );
+Route::get( 'donadores', [ 'uses' => 'DonadoresController@index', 'as' => 'get.donadores' ] );
+Route::get( 'contacto', [ 'uses' => 'ContactoController@index', 'as' => 'get.contacto' ] );
+Route::get( 'muro-exito', [ 'uses' => 'MuroExitoController@index', 'as' => 'get.muro-exito' ] );
+Route::get( 'voluntarios', [ 'uses' => 'VoluntariosController@index', 'as' => 'get.voluntarios' ] );
 
 ## Vistas del interior de LA FUNDACIÓN
-Route::get( '/historia', 'FundacionController@historia' );
-Route::get( '/aportaciones', function(){ return View::make('public.fundacion.aportaciones'); });
-Route::get( '/membresias', function(){ return View::make('public.fundacion.membresias'); });
-Route::get( '/consideraciones', function(){ return View::make('public.fundacion.consideraciones'); });
-Route::get( '/educacion', function(){ return View::make('public.fundacion.educacion'); });
-Route::get( '/salud', function(){ return View::make('public.fundacion.salud'); });
-Route::get( '/deporte', function(){ return View::make('public.fundacion.deporte'); });
-Route::get( '/cultura', function(){ return View::make('public.fundacion.cultura'); });
-Route::get( '/restauracion', function(){ return View::make('public.fundacion.restauracion'); });
-Route::get( '/asistenciales', function(){ return View::make('public.fundacion.asistenciales'); });
+Route::get( 'historia', [ 'uses' => 'FundacionController@historia', 'as' => 'get.historia' ] );
+Route::get( 'aportaciones', [ 'uses' => 'FundacionController@aportaciones', 'as' => 'get.aportaciones' ] );
+Route::get( 'membresias', [ 'uses' => 'FundacionController@membresias', 'as' => 'get.membresias' ] );
+Route::get( 'consideraciones', [ 'uses' => 'FundacionController@consideraciones', 'as' => 'get.consideraciones' ] );
+Route::get( 'educacion', [ 'uses' => 'FundacionController@educacion', 'as' => 'get.educacion' ] );
+Route::get( 'salud', [ 'uses' => 'FundacionController@salud', 'as' => 'get.salud' ] );
+Route::get( 'deporte', [ 'uses' => 'FundacionController@deporte', 'as' => 'get.deporte' ] );
+Route::get( 'cultura', [ 'uses' => 'FundacionController@cultura', 'as' => 'get.cultura' ] );
+Route::get( 'restauracion', [ 'uses' => 'FundacionController@restauracion', 'as' => 'get.restauracion' ] );
+Route::get( 'asistenciales', [ 'uses' => 'FundacionController@asistenciales', 'as' => 'get.asistenciales' ] );
 
 ## Vistas de los modales o flotantes
-Route::get( '/donar', function(){ return View::make('public.covers.donar'); });
-Route::get( '/donar-causas', function(){ return View::make('public.covers.causas'); });
-Route::get( '/impulsar', function(){ return View::make('public.covers.impulsar'); });
-Route::get( '/voluntario', function(){ return View::make('public.covers.voluntario'); });
-Route::get( '/voluntario-2', function(){ return View::make('public.covers.voluntario_2'); });
-Route::get( '/ficha-donador', function(){ return View::make('public.covers.ficha_donador'); });
-Route::get( '/ficha-impulsor', function(){ return View::make('public.covers.ficha_impulsor'); });
-Route::get( '/ficha-voluntario', function(){ return View::make('public.covers.ficha_voluntario'); });
-Route::get( '/ficha-causas', function(){ return View::make('public.covers.ficha_causas'); });
-Route::get( '/ficha-noticias', function(){ return View::make('public.covers.ficha_noticias'); });
+Route::get( 'donar', [ 'uses' => 'CoversController@donar', 'as' => 'get.donar' ] );
+Route::get( 'donar-causas', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causas' ] );
+Route::get( 'impulsar', [ 'uses' => 'CoversController@impulsar', 'as' => 'get.impulsar' ] );
+Route::get( 'voluntario', [ 'uses' => 'CoversController@voluntario', 'as' => 'get.voluntario' ] );
+Route::get( 'voluntario-2', [ 'uses' => 'CoversController@voluntarioNext', 'as' => 'get.voluntario-2' ] );
+Route::get( 'ficha-donador', [ 'uses' => 'CoversController@fichaDonador', 'as' => 'get.ficha-donador' ] );
+Route::get( 'ficha-impulsor', [ 'uses' => 'CoversController@fichaImpulsor', 'as' => 'get.ficha-impulsor' ] );
+Route::get( 'ficha-voluntario', [ 'uses' => 'CoversController@fichaVoluntario', 'as' => 'get.ficha-voluntario' ] );
+Route::get( 'ficha-causas', [ 'uses' => 'CoversController@fichaCausas', 'as' => 'get.ficha-causas' ] );
+Route::get( 'ficha-noticias', [ 'uses' => 'CoversController@fichaNoticias', 'as' => 'get.ficha-noticias' ] );
+
+
+Route::get( 'path_video/{id}', 'StoragePathController@videoStorage' );
+Route::get( 'path_image/{id}/{size}', 'StoragePathController@imgStorage' );
+
+##Login con Facebook
+Route::get( 'login/fb', 'LoginFacebookController@login' );
+Route::get( 'login/fb/callback', 'LoginFacebookController@callback' );
+Route::get( 'logout', function(){
+	Auth::logout();
+	return Redirect::to('/');
+});
 

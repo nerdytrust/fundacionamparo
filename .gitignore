@@ -6,6 +6,7 @@
 # Storage
 
 /app/storage/uploads/*
+storage/uploads/*
 
 # Configuration
 /app/config/local

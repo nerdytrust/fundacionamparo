@@ -26,6 +26,10 @@
         <link rel="stylesheet" href="{{ asset('css/public/tabs.css') }}">
         <link rel="stylesheet" href="{{ asset('css/public/animsition.min.css') }}">
         <link href="{{ asset( 'css/public/video-js.css' ) }}" rel="stylesheet" type="text/css">
+        @if ( isset( $timeline ) )
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+            <link rel="stylesheet" href="{{ asset( 'css/public/timeline.css' ) }}">
+        @endif
         <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
 
     </head>
@@ -76,9 +80,110 @@
             ];
         ?>
         {{ Minify::javascript($js,['js_build_path'=>'js/']) }}
+        @if ( isset( $timeline ) )
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.core.min.js"></script>
+            <script type="text/javascript">     
+                $(function(){
+                    //$(".animsition").animsition();
+
+                    citrussized();
+
+                    $('#main_time .carousel-inner .item a').click(function(e){
+                        e.preventDefault();
+                        $('#main_time').hide().fadeOut(200, "swing", function(){
+                            $('#moments_time').fadeIn(800);
+                        });
+                    });
+
+                    $('#moments_time .btn-cerrar').click(function(e){
+                        e.preventDefault();
+                        $('#moments_time').hide().fadeOut(200, "swing", function(){
+                            $('#main_time').fadeIn(800);    
+                        });
+                    })
+                });
+
+                $(window).bind("pageshow", function(event) {
+                    if (event.originalEvent.persisted) {
+                        location.reload();
+                    }
+                });
+
+                function citrussized(){
+                    var ratio = $(window).width() / $(window).height();
+                    /*var _ratio = ( Math.abs(ratio - 4 / 3 ) < Math.abs( ratio - 16 / 9 ) ) ? '4:3' : '16:9';*/
+                    var title = 48;
+                    var subtitle = 33;
+                    var description = 16.5;
+                    var left = 0;
+                    var height = $(window).height();
+                    var percent = height / 768;
+                    var newtitle = Math.floor( title * percent ) - 1;
+                    var newsubtitle = Math.floor( subtitle * percent ) - 1;
+                    var newdescription = Math.floor( description * percent ) - 1;
+                    if ( Math.abs( ratio - 4 / 3 ) < Math.abs( ratio - 16 / 9 ) ){
+                        left = ( Math.abs( ratio - 4 / 3 ) * 100 ) * 9;
+                    }
+
+                    if ( $('html').hasClass('w-320') || $('html').hasClass('w-360') || $('html').hasClass('w-412') || 
+                        $('html').hasClass('w-480') || $('html').hasClass('w-600') || $('html').hasClass('w-640') || 
+                        $('html').hasClass('w-690') || $('html').hasClass('w-768') || $('html').hasClass('w-800') ||
+                        $('html').hasClass('w-960') || $('html').hasClass('w-1024') || $('html').hasClass('w-1280') ||
+                        $('html').hasClass('w-1366') || $('html').hasClass('w-1440') ){
+                    } else {
+                        $('.slide_container .slide img').css({
+                            'height': ( parseInt( $(window).height() ) - $('#meenus').height() ) + 'px',
+                            'max-width': 'none',
+                            'width': $(window).width() + left + 'px'
+                        });
+
+                        $('.moment-description h1').css({'font-size': newtitle });
+                        $('.moment-description h2').css({'font-size': newsubtitle });
+                        $('.moment-description p').css({'font-size': newdescription });
+                        $('.moment-description a').css({'font-size': newdescription });
+                    }
+
+                    $(window).resize(function(){
+                        var ratio = $(window).width() / $(window).height();
+                        var title = 48;
+                        var subtitle = 33;
+                        var description = 16.5;
+                        var height = $(window).height();
+                        var percent = height / 768;
+                        var newtitle = Math.floor( title * percent ) - 1;
+                        var newsubtitle = Math.floor( subtitle * percent ) - 1;
+                        var newdescription = Math.floor( description * percent ) - 1;
+                        /*var _ratio = ( Math.abs(ratio - 4 / 3 ) < Math.abs( ratio - 16 / 9 ) ) ? '4:3' : '16:9';*/
+                        var left = 0;
+                        if ( Math.abs( ratio - 4 / 3 ) < Math.abs( ratio - 16 / 9 ) ){
+                            left = ( Math.abs( ratio - 4 / 3 ) * 100 ) * 9;
+                        }
+
+                        if ( $('html').hasClass('w-320') || $('html').hasClass('w-360') || $('html').hasClass('w-412') || 
+                            $('html').hasClass('w-480') || $('html').hasClass('w-600') || $('html').hasClass('w-640') || 
+                            $('html').hasClass('w-690') || $('html').hasClass('w-768') || $('html').hasClass('w-800') ||
+                            $('html').hasClass('w-960') || $('html').hasClass('w-1024') || $('html').hasClass('w-1280') ||
+                            $('html').hasClass('w-1366') || $('html').hasClass('w-1440') ){
+                        } else {
+                            $('.slide_container .slide img').css({
+                                'height': ( parseInt( $(window).height() ) - $('#meenus').height() ) + 'px',
+                                'max-width': 'none',
+                                'width': $(window).width() + left + 'px'
+                            });
+
+                            $('.moment-description h1').css({'font-size': newtitle });
+                            $('.moment-description h2').css({'font-size': newsubtitle });
+                            $('.moment-description p').css({'font-size': newdescription });
+                            $('.moment-description a').css({'font-size': newdescription });
+                        }
+                    });
+                }
+            </script>
+        @endif
         <script type="text/javascript">
             $(document).ready(function(){
-                if ( $('body').hasClass( 'donar' ) || $('body').hasClass( 'donar-causas' ) ){
+                if ( $('body').hasClass( 'donar' ) || $('body').hasClass( 'donar-causas' ) || $('body').hasClass( 'entrar' ) || $('body').hasClass( 'registro' ) ){
                     $('body').css({
                         'background': '#beda3e'
                     });

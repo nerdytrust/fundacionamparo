@@ -1,7 +1,7 @@
 <div id="meenus">
 	<header>
 		<div id="logo">
-			<a href="{{ URL::to('/') }}">
+			<a href="{{ URL::to('/home') }}">
 				<img src="{{ asset( 'images/amparo.png' ) }}" alt="">
 				<h1 id="fundacion-logo">FUNDACIÓN AMPARO</h1>
 			</a>
@@ -35,7 +35,12 @@
 	<div id="conteo_donadores" >
 		<div id="int_contado">
 			<img src="{{ asset( 'images/icon_donadores.png' ) }}" alt="">
-			<h2>249,863</h2>
+			<h2>
+				{{ $total_donadores = Session::get( 'total_donadores' ) }}
+				@if ( $total_donadores )
+					{{ $total_donadores }}
+				@endif
+			</h2>
 			<h3>Donadores <span>#TomandoAcciónFA</span></h3>
 			@if( isset( $heder_donadores ) )
 				<span class="donas">

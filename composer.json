@@ -21,7 +21,8 @@
 		"ceesvanegmond/minify": "2.0.*",
 		"ollieread/multiauth": "dev-master",
 		"mews/purifier": "dev-master-l4",
-		"torann/currency": "dev-master"
+		"torann/currency": "dev-master",
+		"facebook/php-sdk-v4": "~4.0"
 	},
 	"require-dev": {
 	    "way/generators": "~2.0",

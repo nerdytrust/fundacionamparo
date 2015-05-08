@@ -13,14 +13,14 @@
 						<img src="{{ asset( 'images/amparo.png' ) }}" alt="">
 					</div>
 				</article>
-				<div class="vi ">
-					<video controls loop preload="auto" poster="{{ asset( 'images/video_int_historia.png' ) }}" class="video-js vjs-default-skin" data-setup="{}">
-						<!--<source src="{{ asset( 'video/video.ogv' ) }}" type='video/ogg; codecs="theora, vorbis"'/>
-						<source src="{{ asset( 'video/video.webm' ) }}" type='video/webm' >-->
-						<source src="{{ asset( 'video/video.mp4' ) }}" type='video/mp4'>
-						<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
-					</video>
-				</div>
+				@if ( isset( $video ) )
+					<div class="vi ">
+						<video controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '839x521' ) }}" class="video-js vjs-default-skin" data-setup="{}">
+							<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
+							<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
+						</video>
+					</div>
+				@endif
 				<aside class="btns">
 					<article id="btn_twitter" class="">
 						<ul>
@@ -50,108 +50,44 @@
 					<h1>CAUSAS</h1>
 		 		</div>
 		 		<div class="re">
-			 		<article id="donacion_wrap" class="caja_2 ">
-			 			<img src="{{ asset( 'images/img_01.jpg' ) }}" alt="">
-			 			<section id="social_top">
-							<ul>
-								<a href="{{ URL::to( 'http://facebook.com' ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
-								<a href="{{ URL::to( 'http://twitter.com' ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
-								<a href="{{ URL::to( '/' ) }}"><li class="fa fa-heart"></li></a>
-								<p>96 likes</p>
-							</ul>
-							<div id="donativo">HAZ TU DONACIÓN</div>
-						</section>
-						<section class="txt_int">
-							<h1>CENTROS COMUNITARIOS</h1>
-							<h2>Roberto Alonso Espinosa</h2>
-							<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
-							<a href=""><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
-							<div id="meta">
-								<div id="barra">
-									<progress value="0" max="100">
-										<div class="progress-bar">
-									        <span style="width: 60%;">-</span>
-									    </div>
-									</progress>
-								</div>
-							<div id="cantidad">
-								<h1>META</h1>
-								<h2>$193,000<span>MXN</span></h2>
-							</div>
-								<p>102,548 MXN <span>RECAUDADOS</span></p>
-								<p>26 <span>DÍAS RESTANTES</span></p>
-							</div>
-						</section>
-						<span class="esquina"></span>
-			 		</article>
-			 		<article class="caja_2 ">
-			 			<img src="{{ asset( 'images/img_02.jpg' ) }}" alt="">
-			 			<section id="social_top">
-							<ul>
-								<a href="{{ URL::to( 'http://facebook.com' ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
-								<a href="{{ URL::to( 'http://twitter.com' ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
-								<a href="{{ URL::to( '/' ) }}"><li class="fa fa-heart"></li></a>
-								<p>96 likes</p>
-							</ul>
-							<div id="donativo">HAZ TU DONACIÓN</div>
-						</section>
-			 			<section class="txt_int">
-			 				<h1>CULTURA</h1>
-			 				<h2>MUSEO AMPARO</h2>
-			 				<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
-							<a href=""><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
-							<div id="meta">
-								<div id="barra">
-									<progress value="0" max="100">
-										<div class="progress-bar">
-									        <span style="width: 60%;">-</span>
-									    </div>
-									</progress>
-								</div>
-							<div id="cantidad">
-								<h1>META</h1>
-								<h2>$193,000<span>MXN</span></h2>
-							</div>
-								<p>102,548 MXN <span>RECAUDADOS</span></p>
-								<p>26 <span>DÍAS RESTANTES</span></p>
-							</div>
-			 			</section>
-			 			<span class="esquina"></span>
-			 		</article>
-			 		<article class="caja_2 " id="dre">
-			 			<img src="{{ asset( 'images/img_03.jpg' ) }}" alt="">
-			 			<section id="social_top">
-							<ul>
-								<a href="{{ URL::to( 'http://facebook.com' ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
-								<a href="{{ URL::to( 'http://twitter.com' ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
-								<a href="{{ URL::to( '/' ) }}"><li class="fa fa-heart"></li></a>
-								<p>96 likes</p>
-							</ul>
-							<div id="donativo">HAZ TU DONACIÓN</div>
-						</section>
-			 			<section class="txt_int">
-			 				<h1>RESTAURACIÓN</h1>
-			 				<h2>CENTRO COMERCIAL "LA VICTORIA"</h2>
-			 				<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
-							<a href=""><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
-							<div id="meta">
-								<div id="barra">
-									<progress value="0" max="100">
-										<div class="progress-bar">
-									        <span style="width: 60%;">-</span>
-									    </div>
-									</progress>
-								</div>
-								<div id="cantidad">
-									<h1>META</h1>
-									<h2>$193,000<span>MXN</span></h2>
-								</div>
-								<p>102,548 MXN <span>RECAUDADOS</span></p>
-								<p>26 <span>DÍAS RESTANTES</span></p>
-							</div>
-			 			</section>
-			 			<span class="esquina"></span>
-			 		</article>
+		 			@if ( isset( $causas ) )
+		 				@foreach ( $causas as $causa )
+		 					<article class="caja_2">
+					 			<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '559x548' ) }}" alt="">
+					 			<section id="social_top">
+									<ul>
+										<a href="{{ URL::to( $causa->facebook ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
+										<a href="{{ URL::to( $causa->twitter ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
+										<a href="{{ URL::to( '/' ) }}"><li class="fa fa-heart"></li></a>
+										<p>{{ $causa->me_gustas_interno }} likes</p>
+									</ul>
+									<div id="donativo">HAZ TU DONACIÓN</div>
+								</section>
+					 			<section class="txt_int">
+					 				<h1>{{ strtoupper( $causa->categoria ) }}</h1>
+					 				<h2>{{ $causa->titulo }}</h2>
+					 				<p>Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
+									<a href=""><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
+									<div id="meta">
+										<div id="barra">
+											<progress value="0" max="100">
+												<div class="progress-bar">
+											        <span style="width: 60%;">-</span>
+											    </div>
+											</progress>
+										</div>
+									<div id="cantidad">
+										<h1>META</h1>
+										<h2>{{ money_format( '%i', $causa->meta ) }}<span>MXN</span></h2>
+									</div>
+										<p>{{ money_format( '%i', $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
+										<p>{{ $helper->getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
+									</div>
+					 			</section>
+					 			<span class="esquina"></span>
+					 		</article>
+		 				@endforeach
+		 			@endif
 		 		</div>
 	 		<!-- /CAUSAS -->
 
@@ -160,12 +96,12 @@
 					<h1>FORMAS DE AYUDAR</h1>
 		 		</div>
 		 		<div class="dre">
-			 		<article id="donador_sec" class="for_ayuda ">
+			 		<article id="donador_sec" class="for_ayuda">
 			 			<h1>DONADOR</h1>
 			 			<p>Sé parte de nuestra comunidad, con tu aportación continuamos abriendo caminos.</p>
 			 			<h2>MÁS INFORMACIÓN +</h2>
 			 		</article>
-			 		<article id="impulsor_sec" class="for_ayuda ">
+			 		<article id="impulsor_sec" class="for_ayuda">
 			 			<h1>IMPULSOR</h1>
 			 			<p>Lleguemos a más oídos y toquemos más corazones en una sóla voz</p>
 			 			<h2>MÁS INFORMACIÓN +</h2>
@@ -173,7 +109,7 @@
 			 		<article id="voluntario_sec" class="for_ayuda">
 			 			<h1>VOLUNTARIO</h1>
 			 			<p>Vive directamente la experiencia y ayúdanos a seguir adelante.</p>
-			 			<h2 onclick="location.href='{{ URL::to( '/voluntarios' ) }}';">MÁS INFORMACIÓN +</h2>
+			 			<h2>MÁS INFORMACIÓN +</h2>
 			 		</article>
 		 		</div>
 	 		<!-- /FORMAS DE AYUDAR -->
@@ -185,42 +121,40 @@
 		 			</div>
 		 			<div>
 		 				<div class="titleM">ÚLTIMOS DONADORES</div>
-		 				<p>Donadores recientes que se unieron y juntos estamos <span>#TomandoAcciónFA</span></p>
-		 				<div class="donador_clas">
-		 					<div class="img_redonda">
-		 					<img src="{{ asset( 'images/persona_fa01.png' ) }}" alt="">
-		 					</div>
-		 					<h1>JORGE CAMACHO</h1>
-		 					<h2>DONADOR</h2>
-		 				</div>
-		 				<div class="donador_clas">
-		 					<div class="img_redonda">
-		 					<img src="{{ asset( 'images/persona_fa02.png' ) }}" alt="">
-		 					</div>
-		 					<h1>JAHIR PÉREZ</h1>
-		 					<h2>DONADOR</h2>
-		 				</div>
-		 				<div class="impulsor_clas">
-		 					<div class="img_redonda">
-		 					<img src="{{ asset( 'images/persona_fa03.png' ) }}" alt="">
-		 					</div>
-		 					<h1>DANIEL GONZÁLEZ</h1>
-		 					<h2>IMPULSOR</h2>
-		 				</div>
-		 				<div class="voluntario_clas">
-		 					<div class="img_redonda">
-		 					<img src="{{ asset( 'images/persona_fa04.png' ) }}" alt="">
-		 					</div>
-		 					<h1>SANDRA LUNA</h1>
-		 					<h2>VOLUNTARIO</h2>
-		 				</div>
-		 				<div class="voluntario_clas">
-		 					<div class="img_redonda">
-		 					<img src="{{ asset( 'images/persona_fa05.png' ) }}" alt="">
-		 					</div>
-		 					<h1>ADRINA MONTES</h1>
-		 					<h2>VOLUNTARIO</h2>
-		 				</div>
+						<p>Donadores recientes que se unieron y juntos estamos <span>#TomandoAcciónFA</span></p>
+						@if ( is_array(  $donadores ) )
+		 					@foreach( $donadores as $donador )
+				 				<div class="{{ strtolower( $donador->tipo) }}_clas">
+				 					<div class="img_redonda">
+				 					<img src="{{ asset( 'images/persona_fa01.png' ) }}" alt="">
+				 					</div>
+				 					<h1>{{ $helper->fullName( $donador->nombre, $donador->apellidos ) }}</h1>
+				 					<h2>{{ $donador->tipo }}</h2>
+				 				</div>
+				 			@endforeach
+				 		@else
+							<div class="donador_clas">
+			 					<div class="img_redonda">
+			 					<img src="images/persona_fa02.png" alt="">
+			 					</div>
+			 					<h1>JAHIR PÉREZ</h1>
+			 					<h2>DONADOR</h2>
+			 				</div>
+			 				<div class="impulsor_clas">
+			 					<div class="img_redonda">
+			 					<img src="images/persona_fa03.png" alt="">
+			 					</div>
+			 					<h1>DANIEL GONZÁLEZ</h1>
+			 					<h2>IMPULSOR</h2>
+			 				</div>
+			 				<div class="voluntario_clas">
+			 					<div class="img_redonda">
+			 					<img src="images/persona_fa04.png" alt="">
+			 					</div>
+			 					<h1>SANDRA LUNA</h1>
+			 					<h2>VOLUNTARIO</h2>
+			 				</div>
+		 				@endif
 		 			</div>
 		 			<div class="adorno_fa">
 		 				<img src="{{ asset( 'images/adorno_fa.png' ) }}" alt="">
