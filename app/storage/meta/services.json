@@ -27,7 +27,6 @@
         "Illuminate\\Workbench\\WorkbenchServiceProvider",
         "Way\\Generators\\GeneratorsServiceProvider",
         "Xethron\\MigrationsGenerator\\MigrationsGeneratorServiceProvider",
-        "Braunson\\LaravelHTML5Forms\\LaravelHTML5FormsServiceProvider",
         "Zizaco\\Entrust\\EntrustServiceProvider",
         "Jenssegers\\Date\\DateServiceProvider",
         "Schickling\\Backup\\BackupServiceProvider",
@@ -99,7 +98,7 @@
         "command.controller.make": "Illuminate\\Routing\\ControllerServiceProvider",
         "hash": "Illuminate\\Hashing\\HashServiceProvider",
         "html": "Illuminate\\Html\\HtmlServiceProvider",
-        "form": "Braunson\\LaravelHTML5Forms\\LaravelHTML5FormsServiceProvider",
+        "form": "Illuminate\\Html\\HtmlServiceProvider",
         "log": "Illuminate\\Log\\LogServiceProvider",
         "Psr\\Log\\LoggerInterface": "Illuminate\\Log\\LogServiceProvider",
         "mailer": "Illuminate\\Mail\\MailServiceProvider",
@@ -153,7 +152,6 @@
         "Illuminate\\Auth\\Reminders\\ReminderServiceProvider": [],
         "Illuminate\\Database\\SeedServiceProvider": [],
         "Illuminate\\Translation\\TranslationServiceProvider": [],
-        "Illuminate\\Validation\\ValidationServiceProvider": [],
-        "Braunson\\LaravelHTML5Forms\\LaravelHTML5FormsServiceProvider": []
+        "Illuminate\\Validation\\ValidationServiceProvider": []
     }
 }

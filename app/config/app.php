@@ -126,7 +126,7 @@ return array(
 
 		'Way\Generators\GeneratorsServiceProvider',
 		'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
-		'Braunson\LaravelHTML5Forms\LaravelHTML5FormsServiceProvider',
+
 		'Zizaco\Entrust\EntrustServiceProvider',
 		//'Zofe\Rapyd\RapydServiceProvider',
 		'Jenssegers\Date\DateServiceProvider',
