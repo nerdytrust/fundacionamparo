@@ -440,7 +440,7 @@ span.donas{
 .fi {
 	padding-left: 16px;
 	margin-left: 5px;
-	background: url("../images/sep.png") no-repeat left 50%;
+	background: url("../../images/sep.png") no-repeat left 50%;
 }
 .dona-a{
 		width: 21px;
@@ -480,7 +480,7 @@ span.donas{
 	    -moz-appearance:none;
 	    appearance:none;
 	    cursor: pointer;
-	    background: rgb(33, 33, 33) url("../images/select.png") no-repeat right 50%;
+	    background: rgb(33, 33, 33) url("../../images/select.png") no-repeat right 50%;
 	    font-weight: 400 !important;
 	}
 	#int_busc label{
@@ -492,7 +492,7 @@ span.donas{
 		font-size: 14px;
 		color: #fff;
 		font-weight: bolder;
-		/*background: url("../images/sep.png") no-repeat left;*/
+		/*background: url("../../images/sep.png") no-repeat left;*/
 		background: none;  vertical-align: baseline;
 	}
 	#int_busc button:hover{
@@ -515,7 +515,7 @@ span.donas{
 	}
 	/**/
 	.cau{
-		/*background: url("../images/light-cau.png") !important;*/
+		/*background: url("../../images/light-cau.png") !important;*/
 		/*display: none;*/
 		/*background-size: 100% 100%;		*/
 		overflow: hidden;
@@ -1319,6 +1319,10 @@ span#name span button:after{
 	color: #000;
 	font-weight: bold;
 }
+.txt_fundacion2 p span a{
+	color: #000;
+	font-weight: bold;
+}
 .txt_fundacion2 ul{
 	list-style: none;
     padding:0;
@@ -1864,7 +1868,7 @@ b{color: #beda3e; font-weight: normal;}
 #cja_donativos, #cja_pasos{
 	text-align: center;
 	margin: 30px 0;
-	cursor: pointer;
+	/*cursor: pointer;*/
 }
 #donativo_btn{
 	display: inline-block;
@@ -2013,7 +2017,7 @@ padding-top: 12px;
 	width: 40px;
 	height: 40px;
 	display: inline-block;
-	background: url("../images/more.png");
+	background: url("../../images/more.png");
 }
 */
 .more{
@@ -2119,7 +2123,7 @@ padding-top: 12px;
 .causas-social button.apor{
 	width: 101px;
 	height: 29px;
-	background: url("../images/aport.png");
+	background: url("../../images/aport.png");
 	border: none;
 	position: absolute;
 	bottom: 14%;
@@ -2341,6 +2345,12 @@ label.becas ul.pasos{
 	margin-left: 2%;
 	/*background:red;*/
 }
+.width60{
+	width: 60% !important;
+}
+.width30{
+	width: 30% !important;
+}
 .c2 label{
 	/*background: red;*/
 	vertical-align: inherit;
@@ -2477,7 +2487,8 @@ select#promedio{
 div.check, span.check{
 	/*max-width: 320px;*/
 	/*width: auto !important;*/
-	width: 250px !important;
+	width: 250px;
+
 }
 div.check input[type="radio"], span.check input[type="radio"]{
 	display: none;
@@ -3277,7 +3288,7 @@ label.contact textarea{
 	
 	/*.txt_int:hover{
 		bottom: 0 !important;
-		background: url("../images/back-t.png")repeat;
+		background: url("../../images/back-t.png")repeat;
 	}*/
 	
 	
@@ -3496,10 +3507,10 @@ label.becas ul.pasos li:first-child{
 			display: block;
 		}
 	label.becas ul.pasos div select{
-	background:  url("../images/flecha2.png") no-repeat 96% ; 
+	background:  url("../../images/flecha2.png") no-repeat 96% ; 
 	}
 	#vol select{
-	background:  url("../images/flecha2.png") no-repeat 93%;
+	background:  url("../../images/flecha2.png") no-repeat 93%;
 }
 		.contact-inf{
 	width: 84%;
@@ -3563,7 +3574,7 @@ label.becas ul.pasos li:first-child{
 			}
 			.txt_int:hover{
 				bottom: 0 !important;
-				background: url("../images/back-t.png")repeat;
+				background: url("../../images/back-t.png")repeat;
 			}*/
 
 		.txt_int p{
@@ -4331,7 +4342,7 @@ text-align: left;
 	}
 	/*.txt_int:hover{
 		bottom: 0 !important;
-		background: url("../images/back-t.png")repeat;
+		background: url("../../images/back-t.png")repeat;
 	}*/
 	#causa1, #causa2, #causa3, #causa4{
 		background-size: 100% !important;

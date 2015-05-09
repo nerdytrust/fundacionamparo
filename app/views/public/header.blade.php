@@ -54,9 +54,8 @@
 			@if( isset( $header_donadores ) )
 				<label for="">
 					<select name="" id="">
-						<option value="">Filtrar tipo de donador</option>
-						<option value="">donadores</option>
-						<option value="">voluntarios</option>
+						<option value="">Filtrar por donador</option>
+						<option value="">Filtrar por voluntarios</option>
 					</select>
 				</label>
 				<button>Todos</button>

@@ -5,6 +5,7 @@
 	@section( 'content' )
 		<div class="lightbox-h d" id="entrar">
 			<div class="lightbox-h-cont donar">
+				<button onClick="history.back()" class="regresar"> Regresar</button>
 				<img src="{{ asset( 'images/amparo2.png' ) }}" alt="" class="logo2">
 				<h1 class="bien">Bienvenido</h1>
 				<h2 class="entrar">Fundación Amparo</h2>

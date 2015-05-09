@@ -25,9 +25,13 @@
 							<h2>
 								Llena el siguiente formulario, una vez revisado nos pondremos en contacto para darte una respuesta
 							</h2>
-							<span><input type="text" name="nombre" maxlenght="10" placeholder="Nombre" required></span>
+							<span>
+								<input type="text" name="nombre" maxlenght="10" placeholder="Nombre" required>
+							</span>
 							<input type="text" name="telefono" maxlenght="10" placeholder="Teléfono" required>
-							<span><input type="email" name="mail" autocomplete="off" placeholder="Correo electrónico" required></span>						
+							<span>
+								<input type="email" name="mail" autocomplete="off" placeholder="Correo electrónico" required>
+							</span>
 							<span>
 								<h4 class="gt">Tipo de causa</h4>
 								<select name="" id="" required>
@@ -36,7 +40,9 @@
 									<option value="">Rehabilitación</option>
 								</select>
 						    </span>
-							<span><textarea rows="4" cols="50" placeholder="Describe tu causa"></textarea></span>
+							<span>
+								<textarea rows="4" cols="50" placeholder="Describe tu causa"></textarea>
+							</span>
 							<button>Enviar</button>
 							<p>Campos obligarotios para enviar formulario</p>
 						</form>

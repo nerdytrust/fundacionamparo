@@ -245,7 +245,7 @@ button.regresar{
 		.lightbox-h-cont span button.face{
 			width: 59px;
 			height: 59px;
-			background: url("../images/face.png");
+			background: url("../../images/face.png");
 			display: inline-block;
 			border: none;
 			margin-top: 15px;
@@ -254,7 +254,7 @@ button.regresar{
 		.lightbox-h-cont span button.twit{
 			width: 59px;
 			height: 59px;
-			background: url("../images/twit.png");
+			background: url("../../images/twit.png");
 			display: inline-block;
 			border: none;
 			margin-top: 15px;
@@ -542,10 +542,10 @@ button.regresar{
 	  margin-right: 10px;
 	  left: 0;
 	  bottom: 1px;
-	  background: url("../images/checkp2.png");
+	  background: url("../../images/checkp2.png");
 	}
 	div.check.p2 input[type="radio"]:checked + label:before {
-  		background: url("../images/checkedp2.png");
+  		background: url("../../images/checkedp2.png");
 	}
 	.imagen{
 		width: 282px;
@@ -1548,7 +1548,7 @@ justify-content: space-between;
 	height: 30px;
 	top: 0;
 	left: 0;
-	background: url("../images/input-g.png") no-repeat;
+	background: url("../../images/input-g.png") no-repeat;
 }
 .check-gris>input[type="checkbox"]{
 	width: 22px !important;

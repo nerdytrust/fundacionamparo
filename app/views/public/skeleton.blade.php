@@ -87,19 +87,26 @@
                 $(function(){
                     //$(".animsition").animsition();
 
-                    citrussized();
+                    // citrussized();
 
                     $('#main_time .carousel-inner .item a').click(function(e){
                         e.preventDefault();
-                        $('#main_time').hide().fadeOut(200, "swing", function(){
-                            $('#moments_time').fadeIn(800);
+                        var moment = $(this).attr('id');
+                        $.post( "{{ URL::to( 'ajax-moments' ) }}", { moment: moment }, function(data){
+                            if ( data != false ){
+                                $('#moments_time').html(data);
+                                $('#main_time').hide().fadeOut(200, "swing", function(){
+                                    $('#moments_time').fadeIn(800);
+                                });
+                            }
                         });
                     });
 
-                    $('#moments_time .btn-cerrar').click(function(e){
+                    $('#success_wall #moments_time button.btn.btn-cerrar').click(function(e){
                         e.preventDefault();
                         $('#moments_time').hide().fadeOut(200, "swing", function(){
-                            $('#main_time').fadeIn(800);    
+                            $('#main_time').fadeIn(800);
+                            $('#moments_time').html('');
                         });
                     })
                 });
@@ -183,15 +190,22 @@
         @endif
         <script type="text/javascript">
             $(document).ready(function(){
-                if ( $('body').hasClass( 'donar' ) || $('body').hasClass( 'donar-causas' ) || $('body').hasClass( 'entrar' ) || $('body').hasClass( 'registro' ) ){
+                if ( $('body').hasClass( 'donar' ) 
+                    || $('body').hasClass( 'donar-causas' ) 
+                    || $('body').hasClass( 'entrar' ) 
+                    || $('body').hasClass( 'registro' ) 
+                    || $('body').hasClass( 'donar-step-two' ) 
+                    || $('body').hasClass( 'donar-gracias' ) 
+                    || $('body').hasClass( 'donar-spei' ) 
+                    || $('body').hasClass( 'donar-oxxo' ) ){
                     $('body').css({
                         'background': '#beda3e'
                     });
-                } else if ( $('body').hasClass( 'impulsar' ) ){
+                } else if ( $('body').hasClass( 'impulsar' ) || $('body').hasClass( 'impulsar-causa' ) || $('body').hasClass( 'gracias-impulsar' )){
                     $('body').css({
                         'background': '#4f99d9'
                     });
-                } else if ( $('body').hasClass( 'voluntario' ) ){
+                } else if ( $('body').hasClass( 'voluntario' ) || $('body').hasClass( 'gracias-voluntario' ) ){
                     $('body').css({
                         'background': '#ffa93c'
                     });

@@ -13,7 +13,7 @@
 				  window.location = 'donar';
 			});
 			$("#ac").click(function(){
-				window.location = 'verdepago2.html';
+				window.location = 'donar-2';
 			});
 			$("#ac2").click(function(){
 				window.location = 'verde3.html';

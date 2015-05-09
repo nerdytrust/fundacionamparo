@@ -36,11 +36,13 @@
 						<h4>Contribuciones actuales de Fundación Amparo</h4>
 					</div>
 					<p>Actualmente, la Fundación aboca sus energías y recursos a lograr la excelencia en el desempeño y proyección del Museo Amparo, en la Ciudad de Puebla. Y es así como la Fundación Amparo siempre preocupada y ocupada en difundir la cultura en nuestra ciudad, se siente orgullosamente satisfecha en ver concluido este trabajo, ya que su compromiso no es sólo intervenir en la parte tangible de la cultura, el compromiso de la Fundación Amparo es lograr tocar las fibras más sensibles de la sociedad y poder participar en la difusión de nuestros valores, a través de obras que hagan de la ciudad de Puebla un tesoro invaluable de cultura.<br/>
-						<span onclick="location.href='{{ URL::to( 'http://www.museoamparo.com' ) }}';">www.museoamparo.com</span></p>
+						<span><a href="{{ URL::to( 'http://www.museoamparo.com' ) }}" target="_blank" class="">www.museoamparo.com</a></span>
+					</p>
 					<br/>
 					<h3>Centros Comunitarios Roberto Alonso Espinosa</h3>
 					<p>Otro de sus proyectos vivos ha sido el desarrollo y crecimiento del Centro de Desarrollo Comunitario Roberto Alonso Espinosa, ubicado en la colonia Lomas de Chamontoya en la Ciudad de México y otro en el municipio de Zacatlán, Puebla, los cuales brindan atención, bajo el Método Montessori, a la comunidad infantil de muy escasos recursos, ampliando el beneficio al ambiente familiar.<br/>
-						<span onclick="location.href='{{ URL::to( 'http://www.proyectoroberto.com.mx' ) }};">www.proyectoroberto.com.mx</span></p>
+						<span><a href="{{ URL::to ( 'http://www.proyectoroberto.org.mx' ) }}" target="_blank" class="">www.proyectoroberto.org.mx</a></span>
+					</p>
 				</div>
 				<div class="adorno_fa">
  					<img src="{{ asset( 'images/adorno_fa.png' ) }}" alt="">

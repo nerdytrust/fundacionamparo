@@ -14,7 +14,7 @@
 				</p>
 				<label for="" class="vol">
 					<p>Escoge la causa que quieras apoyar</p>
-					<form action="">
+					<form action="{{ URL::to( '/donar-2') }}">
 						<select name="" id="">
 							<option value="">Museo Amparo</option>
 							<option value=""></option>

@@ -12,15 +12,13 @@
 					<form>
 						<input type="text" name="Name" placeholder="Nombre" id="r" required>
 						<input type="password" placeholder="Contraseña" id="r" required>
-						<a href="{{ URL::to( '/faqs' ) }}" class="olvido">
-							¿Olvidaste tu contraseña?
-						</a>
-						<input type="submit" value="ENTRAR" id="ac">
+						<a href="{{ URL::to( '/' ) }}" class="olvido">¿Olvidaste tu contraseña?</a>
+						<input type="submit" value="ENTRAR">
 					</form>
 					<div class="line"></div>
 				</label>
 				<p>O entrar a tu cuenta de Facebook</p>
-				<a href="{{ URL::to( '/login/fb' ) }}"><button class="face-btn"></button></a>
+				<a href="{{ URL::to( '/login/facebook' ) }}"><button class="face-btn"></button></a>
 				<p><a href="{{ URL::to( '/registro' ) }}">¿Aun no estas registrado?</a></p>
 			</div>
 		</div>

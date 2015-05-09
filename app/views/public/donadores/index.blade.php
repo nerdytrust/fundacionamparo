@@ -1,5 +1,5 @@
 <?php $header_donadores = 1; ?>
-@extends('public.layout')
+@extends( 'public.layout' )
 	@section('class')donadores-section
 	@stop
 	@section("content")

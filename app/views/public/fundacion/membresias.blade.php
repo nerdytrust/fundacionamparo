@@ -43,7 +43,7 @@
 							<h3>FEMAM</h3>
 							<p>Federación Mexicana de Asociaciones de Amigos de los Museos (FEMAM) se constituyó el 21 de octubre de 1991. Es un organismo independiente sin fines de lucro que tiene como objetivo preservar el patrimonio cultural de México a través de Patronatos y Asociaciones de Amigos de los Museos de toda la República en beneficio de nuestra sociedad. 
 							<br/>
-							<a href="{{ URL::to( 'http://www.femam.org.mx' ) }}"><span>www.femam.org.mx</span></a>
+							<a href="{{ URL::to( 'http://www.femam.org.mx' ) }}" target="_blank"><span>www.femam.org.mx</span></a>
 							<div id="txt_evento" class="membresia-red">
 								<nav class="red-cont">
 									<ul>
@@ -65,7 +65,7 @@
 							<h3>CEMEFI</h3>
 							<p>El Centro Mexicano para la Filantropía (CEMEFI) es una asociación civil fundada en diciembre de 1988. Es una institución privada, no lucrativa, sin ninguna filiación a partido, raza o religión. Cuenta con permiso del Gobierno de México para recibir donativos deducibles de impuestos. Su sede se encuentra en la Ciudad de México y su ámbito de acción abarca todo el país.
 							<br/>
-							<a href="{{ URL::to( 'http://www.proyectoroberto.com.mx' ) }}"><span>www.proyectoroberto.com.mx</span></a>
+							<a href="{{ URL::to( 'http://www.proyectoroberto.com.mx' ) }}" target="_blank"><span>www.proyectoroberto.com.mx</span></a>
 							<div id="txt_evento" class="membresia-red">
 								<nav class="red-cont">
 									<ul>
@@ -86,7 +86,7 @@
 							<h3>JIB</h3>
 							<p>Es un organo administrativo desconcentrado por función que tiene por objetivo inspeccionar y vigilar la administración de las instituciones de beneficencia privada en el estado de Puebla, evitando así que se desvirtúe el objetivo original por el cual fueron constituidas y evitando la violación de la voluntad de los fundadores.
 							<br/>
-							<a href="http://www.jib.org"><span>www.jib.org</span></a>
+							<a href="{{ URL::to( 'http://www.jib.org' ) }}" target="_blank"><span>www.jib.org</span></a>
 							<div id="txt_evento" class="membresia-red">						
 								<nav class="red-cont">
 									<ul>

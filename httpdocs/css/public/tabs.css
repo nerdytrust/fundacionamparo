@@ -118,7 +118,7 @@ position: absolute;
 }
 .content-1>#meta #barra{
 	border: solid 1px #000;
-	background: url("../../images/back-barra2.png");
+	background: url("../images/back-barra2.png");
 }
 .content-1>#meta #cantidad h1{
 	top: 0;

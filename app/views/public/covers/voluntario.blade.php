@@ -29,10 +29,7 @@
 							<input type="submit" value="Siguiente" onclick="location.href='{{ URL::to( '/voluntario-2' ) }}';">
 						</label>
 					</form>
-					<a href="fundacion_faqs.html">
-						Si necesitas ayuda da click aquí 
-						<img src="{{ asset( 'images/i.png' ) }}" alt="">
-					</a>
+					<a href="{{ URL::to( '/faqs' ) }}">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></a>
 				</div><!--termina scN-->
 			</div>
 		</div>

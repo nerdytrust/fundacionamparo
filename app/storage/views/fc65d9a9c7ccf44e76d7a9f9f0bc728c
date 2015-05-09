@@ -6,30 +6,34 @@
 
     <!-- if there are creation errors, they will show here -->
     <?php if($errors->all()): ?>
-      <div class="alert alert-danger" role="alert">
+      <?php /* <div class="alert alert-danger" role="alert">
         <?php echo HTML::ul($errors->all()); ?>
 
-      </div>
+      </div> */ ?>
     <?php endif; ?>
 
     <!-- will be used to show any messages -->
     <?php if(Session::has('success')): ?>
-      <div class="alert alert-success" role="alert"><?php echo Session::get('success'); ?> :)</div>
+      <?php /* <div class="alert alert-success" role="alert"><?php echo Session::get('success'); ?> :)</div> */ ?>
     <?php endif; ?>
 
     <?php if(Session::has('error')): ?>
-      <div class="alert alert-danger" role="alert">
+      <?php /* <div class="alert alert-danger" role="alert">
         <?php echo Session::get('error'); ?> :(
-      </div>
+      </div> */ ?>
     <?php endif; ?>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <!--<div class="jumbotron <?php echo $__env->yieldContent('jumbotron'); ?>">-->
 
         <?php echo $__env->yieldContent("top-content"); ?>
-      <div class="container">
-        <?php echo $__env->yieldContent("content"); ?>
-      </div>
+      <?php if( ! isset( $timeline ) ): ?>
+        <div class="container">
+          <?php echo $__env->yieldContent("content"); ?>
+        </div>
+      <?php else: ?>
+        <?php echo $__env->yieldContent( "content" ); ?>
+      <?php endif; ?>
 
     <!--</div>-->
 

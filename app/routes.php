@@ -42,8 +42,15 @@ Route::get( 'asistenciales', [ 'uses' => 'FundacionController@asistenciales', 'a
 
 ## Vistas de los modales o flotantes
 Route::get( 'donar', [ 'uses' => 'CoversController@donar', 'as' => 'get.donar' ] );
+Route::get( 'donar-2', [ 'uses' => 'CoversController@donarStepTwo', 'as' => 'get.donar-2' ] );
+Route::get( 'donar-spei', [ 'uses' => 'CoversController@donarStepThree', 'as' => 'get.donar-spei' ] );
+Route::get( 'donar-oxxo', [ 'uses' => 'CoversController@donarStepFour', 'as' => 'get.donar-oxxo' ] );
+Route::get( 'gracias', [ 'uses' => 'CoversController@donarStepFive', 'as' => 'get.gracias' ] );
+Route::get( 'gracias-2', [ 'uses' => 'CoversController@voluntarioGracias', 'as' => 'get.gracias-2' ] );
+Route::get( 'gracias-3', [ 'uses' => 'CoversController@impulsarGracias', 'as' => 'get.gracias-3' ] );
 Route::get( 'donar-causas', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causas' ] );
 Route::get( 'impulsar', [ 'uses' => 'CoversController@impulsar', 'as' => 'get.impulsar' ] );
+Route::get( 'impulsar-causa', [ 'uses' => 'CoversController@impulsarCausa', 'as' => 'get.impulsar-causa' ] );
 Route::get( 'voluntario', [ 'uses' => 'CoversController@voluntario', 'as' => 'get.voluntario' ] );
 Route::get( 'voluntario-2', [ 'uses' => 'CoversController@voluntarioNext', 'as' => 'get.voluntario-2' ] );
 Route::get( 'ficha-donador', [ 'uses' => 'CoversController@fichaDonador', 'as' => 'get.ficha-donador' ] );
@@ -51,10 +58,13 @@ Route::get( 'ficha-impulsor', [ 'uses' => 'CoversController@fichaImpulsor', 'as'
 Route::get( 'ficha-voluntario', [ 'uses' => 'CoversController@fichaVoluntario', 'as' => 'get.ficha-voluntario' ] );
 Route::get( 'ficha-causas', [ 'uses' => 'CoversController@fichaCausas', 'as' => 'get.ficha-causas' ] );
 Route::get( 'ficha-noticias', [ 'uses' => 'CoversController@fichaNoticias', 'as' => 'get.ficha-noticias' ] );
+Route::post( 'validar-pago', [ 'uses' => 'CoversController@validarPago', 'as' => 'get.validar-pago' ] );
 
 
 Route::get( 'path_video/{id}', 'StoragePathController@videoStorage' );
 Route::get( 'path_image/{id}/{size}', 'StoragePathController@imgStorage' );
+
+Route::post( 'ajax-moments', 'MuroExitoController@getMoment' );
 
 ##Login con Facebook
 

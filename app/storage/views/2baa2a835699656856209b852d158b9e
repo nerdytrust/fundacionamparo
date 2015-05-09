@@ -1,0 +1,63 @@
+	<?php $__env->startSection("class"); ?>historia
+	<?php $__env->stopSection(); ?>
+	<?php $__env->startSection("content"); ?>
+		<section id="Contenedor">
+			<section class="mask_head back_img" >
+				<div class="txt_mask">
+					<img src="<?php echo asset( 'images/logo_mask_header.jpg' ); ?>" alt="">
+					<h1>FUNDACIÓN AMPARO</h1>
+					<h3>En apoyo a un México de corazones vivos</h3>
+					<nav class="social_mask">
+						<ul>
+							<a href=""><li class="fa fa-facebook"></li></a>
+							<a href=""><li class="fa fa-twitter"></li></a>
+							<a href=""><li class="fa fa-heart"></li></a>
+							<p>96 likes</p>
+						</ul>
+					</nav>
+				</div>
+			</section>
+			<section id="contenedor_int">
+				<div id="nav_int">
+					<nav >
+						<ul>
+							<li><?php echo HTML::link( '/fundacion', 'LA FUNDACIÓN', [ 'class' => 'animsition-link' ] ); ?></li>
+							<li class="activo"><?php echo HTML::link( '/historia', 'HISTORIA', [ 'class' => 'animsition-link' ] ); ?></li>
+							<li><?php echo HTML::link( '/aportaciones', 'APORTACIONES', [ 'class' => 'animsition-link' ] ); ?></li>
+							<li><?php echo HTML::link( '/membresias', 'MEMBRESÍAS U ORGANISMOS', [ 'class' => 'animsition-link' ] ); ?></li>
+							<li><?php echo HTML::link( '/consideraciones', 'CONSIDERACIONES FISCALES', [ 'class' => 'animsition-link' ]); ?></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="txt_fundacion2">
+					<div id="titulo_fca">
+						<h1>HISTORIA</h1>
+					</div>
+					<p>En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa, y con el pleno consentimiento de sus hijos, quienes con la nobleza de sentimientos que les caracteriza estuvieron totalmente de acuerdo con la misma.</p>
+				</div>
+				<img src="<?php echo asset( 'images/imagen_historia.jpg' ); ?>" alt="" class="fr">
+				<div class="txt_fundacion li">
+					<p>Conoce los hechos que forman parte de nuestra labor a través de los años así como los objetivos cumplidos a lo largo de nuestra historia.</p>
+				</div>
+				<div id="contenedor_btn" >
+					<button>Ver muro del éxito</button>
+					<!--<button onclick="location.href='fundacion_muro.html';">Ver muro del éxito</button>-->
+				</div>
+				<div class="adorno_fa">
+ 					<img src="images/adorno_fa.png" alt="">
+ 				</div>
+ 				<div class="txt_footer">
+ 					<h1>¡Tú puedes ayudar!</h1>
+ 					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
+ 					<div id="social_footer">
+ 						<ul>
+ 							<a href=""><li class="fa fa-facebook"></li></a>
+ 							<a href=""><li class="fa fa-twitter"></li></a>
+ 						</ul>
+ 					</div>
+ 				</div>
+			</section>
+		</section>
+	<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make( 'public.layout' , array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -14,7 +14,7 @@ return array(
         'Facebook' => array (
             'enabled' => true,
             'keys'    => array ( 'id' => '776167932490026', 'secret' => 'b92bb2c600e20ee61a65c9975bb46f7b' ),
-            "scope"   => "user_about_me, email, user_birthday",
+            "scope"   => "user_about_me, email, user_birthday, user_hometown",
             //"scope"   => "email, user_about_me, user_birthday, user_hometown, user_website, offline_access, read_stream, publish_stream, read_friendlists", // optional
         ),
 

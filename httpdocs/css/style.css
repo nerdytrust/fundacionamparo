@@ -237,7 +237,7 @@ article.animacion:hover img{
 .fi {
 	padding-left: 16px;
 	margin-left: 5px;
-	background: url("../images/sep.png") no-repeat left 50%;
+	background: url("../../images/sep.png") no-repeat left 50%;
 }
 .dona-a{
 		width: 21px;
@@ -278,7 +278,7 @@ article.animacion:hover img{
 	    -moz-appearance:none;
 	    appearance:none;
 	    cursor: pointer;
-	    background: url("../images/select.png") no-repeat right 50%;
+	    background: url("../../images/select.png") no-repeat right 50%;
 	}
 	#int_busc label{
 		position: relative;
@@ -289,11 +289,11 @@ article.animacion:hover img{
 		font-size: 14px;
 		color: #fff;
 		font-weight: bolder;
-		background: url("../images/sep.png") no-repeat left;
+		background: url("../../images/sep.png") no-repeat left;
 	}
 	/**/
 	.cau{
-		background: url("../images/light-cau.png") !important;
+		background: url("../../images/light-cau.png") !important;
 		/*display: none;*/
 		background-size: 100% 100%;		
 	}
@@ -328,7 +328,7 @@ article.animacion:hover img{
 	.lightbox{
 		width: 100%;
 		height: 1405px;
-		background: url("../images/back-li.png");
+		background: url("../../images/back-li.png");
 		position: absolute;
 		top: 0;
 		z-index: 100000;
@@ -400,7 +400,7 @@ article.animacion:hover img{
 	}
 	.lightbox .datos button{
 		border:none;
-		background: url("../images/x.png");
+		background: url("../../images/x.png");
 		width: 40px;
 		height: 40px;
 		padding: 0;
@@ -532,14 +532,14 @@ article.animacion:hover img{
 			color: #000 !important;
 		}
 		.datos figure:nth-child(1) span{
-			background: url("../images/c1.png") no-repeat center;
+			background: url("../../images/c1.png") no-repeat center;
 
 		}
 		.datos figure:nth-child(2) span{
-			background: url("../images/c2.png") no-repeat center;
+			background: url("../../images/c2.png") no-repeat center;
 		}
 		.datos figure:nth-child(3) span{
-			background: url("../images/c3.png") no-repeat center;
+			background: url("../../images/c3.png") no-repeat center;
 		}
 		.datos figure figcaption{
 			text-align: center;
@@ -562,7 +562,7 @@ article.animacion:hover img{
 		.lightbox-h{
 			width: 100%;
 			height: 100%;
-			background: url("../images/back-li2.png");
+			background: url("../../images/back-li2.png");
 			position: absolute;
 			top: 0;
 			z-index: 100000;
@@ -605,7 +605,7 @@ article.animacion:hover img{
 			position: absolute;
 			right: 5px;
 			top: 5px;
-			background: url("../images/x1.png");
+			background: url("../../images/x1.png");
 			border: none;
 		}
 		.lightbox-h-cont span{
@@ -618,7 +618,7 @@ article.animacion:hover img{
 		.lightbox-h-cont span button.face{
 			width: 59px;
 			height: 59px;
-			background: url("../images/face.png");
+			background: url("../../images/face.png");
 			display: inline-block;
 			border: none;
 			margin-top: 15px;
@@ -626,7 +626,7 @@ article.animacion:hover img{
 		.lightbox-h-cont span button.twit{
 			width: 59px;
 			height: 59px;
-			background: url("../images/twit.png");
+			background: url("../../images/twit.png");
 			display: inline-block;
 			border: none;
 			margin-top: 15px;
@@ -1063,12 +1063,12 @@ width: 100%;
 	display: inherit;
 	overflow: inherit;
 	position: absolute;
-	background: url("../images/gray.png");
+	background: url("../../images/gray.png");
 	-webkit-transition: background 1s; /* Safari 3.1 to 6.0 */
     transition: background 1s;
 }
 .caja_fca_usu span.mio:hover{
-	background: url("../images/blue.png");
+	background: url("../../images/blue.png");
 }
 
 .for_ayuda{
@@ -1250,50 +1250,50 @@ width: 100%;
 	padding: 49px 40px;
 }
 .back_img{
-	background-image: url("../images/fundacion01_a.jpg");
+	background-image: url("../../images/fundacion01_a.jpg");
 	
 }
 .back_img2{
-	background-image: url("../images/fundacion_noticias.png");
+	background-image: url("../../images/fundacion_noticias.png");
 }
 .back_img3{
-	background-image: url("../images/fundacion_eventos.png");
+	background-image: url("../../images/fundacion_eventos.png");
 }
 .back_img4{
-	background-image: url("../images/fundacion02.jpg");
+	background-image: url("../../images/fundacion02.jpg");
 }
 .back_img5{
-	background-image: url("../images/fundacion03.jpg");
+	background-image: url("../../images/fundacion03.jpg");
 }
 .back_img6{
-	background-image: url("../images/fundacion04.jpg");
+	background-image: url("../../images/fundacion04.jpg");
 }
 .back_img7{
-	background-image: url("../images/fundacion05.jpg");
+	background-image: url("../../images/fundacion05.jpg");
 }
 .back_img8{
-	background-image: url("../images/fundacion06.jpg");
+	background-image: url("../../images/fundacion06.jpg");
 }
 .back_img9{
-	background-image: url("../images/fundacion07.jpg");
+	background-image: url("../../images/fundacion07.jpg");
 }
 .back_img10{
-	background-image: url("../images/fundacion_como_ayudar.png");
+	background-image: url("../../images/fundacion_como_ayudar.png");
 }
 .back_img11{
-	background-image: url("../images/fundacion_faqs.png");
+	background-image: url("../../images/fundacion_faqs.png");
 }
 .back_img12{
-	background-image: url("../images/fundacion_contact.png");
+	background-image: url("../../images/fundacion_contact.png");
 }
 .back_img13{
-	background-image: url("../images/fundacion_apoyo.png");
+	background-image: url("../../images/fundacion_apoyo.png");
 }
 .back_img14{
-	background-image: url("../images/fundacion_becas.png");
+	background-image: url("../../images/fundacion_becas.png");
 }
 .back_img15{
-	background-image: url("../images/fundacion_voluntarios.png");
+	background-image: url("../../images/fundacion_voluntarios.png");
 }
 .mask_head img{
 	top: -95px;
@@ -1770,7 +1770,7 @@ padding-top: 12px;
 	width: 40px;
 	height: 40px;
 	display: inline-block;
-	background: url("../images/more.png");
+	background: url("../../images/more.png");
 }
 .deslizante,.deslizante2,.deslizante3,.deslizante4,.deslizante5 {
 		display: none;
@@ -1808,7 +1808,7 @@ padding-top: 12px;
 .causas-social button.apor{
 	width: 101px;
 	height: 29px;
-	background: url("../images/aport.png");
+	background: url("../../images/aport.png");
 	border: none;
 	position: absolute;
 	bottom: 14%;
@@ -1823,16 +1823,16 @@ padding-top: 12px;
 	bottom: 4%;
 }
 #causa1{
-	background: url("../images/causa1.png") !important;
+	background: url("../../images/causa1.png") !important;
 }
 #causa2{
-	background: url("../images/causa2.png") !important;
+	background: url("../../images/causa2.png") !important;
 }
 #causa3{
-	background: url("../images/causa3.png") !important;
+	background: url("../../images/causa3.png") !important;
 }
 #causa4{
-	background: #a44951 url("../images/causa4.png");
+	background: #a44951 url("../../images/causa4.png");
 }
 /*contact*/
 .text-contact{
@@ -1952,7 +1952,7 @@ label.contact select{
 	appearance:none;
 	-webkit-appearance:none;
 	-moz-appearance:none;
-	background: url("../images/flecha.png") no-repeat 92%;
+	background: url("../../images/flecha.png") no-repeat 92%;
 	cursor: pointer;
 }
 label.becas{
@@ -2072,7 +2072,7 @@ span.check label:before, div.check label:before{
 	margin-right: 10px;
 	left: 0;
 	bottom: 1px;
-	background: url("../images/check.png");
+	background: url("../../images/check.png");
 }
 span.check label:last-child:before,
 div.check label:last-child:before{
@@ -2080,7 +2080,7 @@ div.check label:last-child:before{
 }
 span.check input[type="radio"]:checked + label:before,
 div.check input[type="radio"]:checked + label:before{
-	background: url("../images/checked.png");
+	background: url("../../images/checked.png");
 }
 select.period{
 	width: 457px !important;
@@ -2125,7 +2125,7 @@ label[for="osssm"]{
 	color: #ffaa3b;
 }
 div.vol input[type="radio"]:checked +label:before{
-	background: url("../images/checked2.png")
+	background: url("../../images/checked2.png")
 }
 #vol button{
 	border: 2px solid #ffaa3b;
@@ -2134,7 +2134,7 @@ div.vol input[type="radio"]:checked +label:before{
 	background: #ffaa3b;
 }
 #vol select{
-	background: url("../images/flecha2.png") no-repeat 92%;
+	background: url("../../images/flecha2.png") no-repeat 92%;
 }
 /*timeline*/
 .cont-time{

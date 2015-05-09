@@ -1,6 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
 html { background-color: #000; }
 
-body { color: #ffffff; padding-top: 136px; }
+body { color: #ffffff; font-family: 'Open Sans', sans-serif; font-size: 16px; padding-top: 130px; }
 
 header { display: inline-block !important; }
 
@@ -12,9 +13,11 @@ header { display: inline-block !important; }
 #logo h1 { font-size: 1.3em; margin: 0; }
 
 #meenus { top: 0; }
-#meenus #menu_principal { display: inline-block; font-size: 0.9em; width: 437px; }
+#meenus #menu_principal { display: inline-block; font-size: 0.8em; }
 #meenus #menu_uno, #meenus #menu_dos { letter-spacing: -0.1px; margin: 0; }
 #meenus #menu_uno li a { color: #fff; text-decoration: none; }
+#meenus #menu_dos li a { text-decoration: none; }
+#meenus #btn_dona { padding: .6em 1em; border: 2px solid #beda3e; outline: none; font-weight: 600; }
 
 #moments_time { display: none; }
 #moments_time h1 { margin-top: 0; }
@@ -75,7 +78,7 @@ header { display: inline-block !important; }
 
 .slide_container { padding: 0; }
 .slide_container .slide { margin: 0; padding: 0; }
-.slide_container .slide img { display: inline; position: relative; }
+.slide_container .slide img { display: inline; position: relative; width: 100%; }
 
 .timeline-navigator { bottom: 70px; }
 

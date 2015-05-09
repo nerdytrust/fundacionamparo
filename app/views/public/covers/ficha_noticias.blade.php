@@ -1,6 +1,6 @@
 <?php $disable_header = 1; $disable_footer = 1; ?>
-@extends( 'public.covers.layout' )ficha-noticias
-	@section( 'class' )
+@extends( 'public.covers.layout' )
+	@section( 'class' )ficha-noticias
 	@stop
 	@section( 'content' )
 		<div class="lightbox" style="display:block;">
