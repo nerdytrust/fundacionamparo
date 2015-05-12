@@ -23,6 +23,9 @@ composer.lock
 .profile
 */.htaccess
 *.htaccess
+Fundacionweb.sublime-workspace
+fundacion.sublime-workspace
+fundacion.sublime-project
 
 # OS
 .DS_Store
