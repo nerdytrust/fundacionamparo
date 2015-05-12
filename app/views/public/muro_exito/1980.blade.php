@@ -1,4 +1,4 @@
-<button class="btn btn-cerrar"></button>
+<button class="btn btn-cerrar" onclick="cerrarMomento();"></button>
 <div id="carousel-timeline-moments" class="row carousel slide" data-ride="carousel" data-interval="false">
 	<a href="#carousel-timeline-moments" class="left carousel-control main-rol" role="button" data-slide="prev">
 		<span class="left-arrow" aria-hidden="true"></span>

@@ -1,6 +1,6 @@
 		$(function(){
 			$("#icon, .icon").click(function(){
-				window.location="fundacion_faqs.html"
+				window.location="faqs"
 			})
 			/*$("#donativo, #btn_dona, #btn_donar2, .circulo_btn, #cauf-d").click(function(){
 				  window.location = 'donar.html';
@@ -16,7 +16,7 @@
 				window.location = 'donar-2';
 			});
 			$("#ac2").click(function(){
-				window.location = 'verde3.html';
+				window.location = 'gracias';
 			});
 			$("#impulsor_sec, #fca-i, #cauf-i").click(function(){
 				window.location = 'impulsar';
@@ -24,10 +24,10 @@
 			$("#voluntario_sec, #fca-v, #cauf-v").click(function(){
 				window.location = 'voluntario';
 			});
-			$(".txt_int, #causa1, #causa2, #causa3, #causa4").click(function(){
-				window.location = 'ficha-causas';//este lleva a las fichas pero ya externas
-				return false;
-			});
+			// $(".txt_int, #causa1, #causa2, #causa3, #causa4").click(function(){
+			// 	window.location = 'ficha-causas';//este lleva a las fichas pero ya externas
+			// 	return false;
+			// });
 			$(".caja_fca_usu, #txt_evento, .donador_clas, .impulsor_clas, .voluntario_clas").click(function(){
 				window.location = 'ficha-donador';//este lleva a las fichas pero ya externas
 				return false;

@@ -6,28 +6,33 @@
 		<div class="lightbox" id="blanco1" style="display:block">
 			<div class="usuario-light">
 				<span class="usuario cau">
-					<img src="{{ asset( 'images/light-cau.png' ) }}" alt="">
+					<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '486x565' ) }}" alt="">
 					<div id="txt_evento">						
 						<nav>
 							<ul>
-								<a href=""><li class="fa fa-facebook"></li></a>
-								<a href=""><li class="fa fa-twitter"></li></a>
+								<a href="{{ URL::to( $causa->facebook ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
+								<a href="{{ URL::to( $causa->twitter ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
 								<a href=""><li class="fa fa-heart"></li></a>
-								<p>96 likes</p>
+								<p>{{ $causa->me_gustas_interno  }} likes</p>
 							</ul>
 						</nav>
 						<div class="cau-dat">
 							<img src="{{ asset( 'images/icon_donadores-c.png' ) }}" alt="">
-							<h1>249,863 <b>Donadores</b></h1>
+							<h1>
+								{{ $total_donadores = Session::get( 'total_donadores' ) }}
+								@if ( $total_donadores )
+									{{ $total_donadores }}
+								@endif <b>Donadores</b>
+							</h1>
 							<h2>Tu aportación es importante, cada granito cuenta, con tu ayuda no nos detendremos.</h2>
 						</div>
 					</div><!--termina txt_evento-->
 				</span><!--termina usuario-->
 				<span class="datos">
-					<button class="centros">centros comunitarios</button>
+					<button class="centros">{{ $causa->categoria }}</button>
 					<button value="" class="cerrar" onClick="history.back()" class="regresar"></button>
 					<!--<button onClick="history.back()" class="regresar"> Regresar</button>-->
-					<h1>roberto alonso espinosa</h1>
+					<h1>{{ $causa->titulo }}</h1>
 					<!--tabs-->
 					<section class="tabs">
 			            <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
@@ -39,7 +44,7 @@
 					        <div class="content-1">
 								<div class="datos-inf caudat">
 									<p>
-										Desarrollo y crecimiento del Centro de Desarrollo Comunitario Roberto Alonso Espinosa, ubicado en la colonia Lomas de Chamontoya en la Ciudad de México y otro en el municipio de Zacatlán, Puebla, los cuales brindan atención, bajo el Método Montessori,  a la comunidad infantil de muy escasos recursos, ampliando el beneficio al ambiente familiar. <br/>
+										{{ $causa->descripcion }} <br/>
 										<b>Selecciona la forma en que deseas ayudar
 										<img src="{{ asset( 'images/inter.png' ) }}" alt="" id="icon">
 										</b>
@@ -63,14 +68,14 @@
 									</div>
 									<div id="cantidad">
 										<h1>META</h1>
-										<h2>$193,000<span>MXN</span></h2>
+										<h2>${{ money_format( '%i', $causa->meta ) }}<span>MXN</span></h2>
 									</div>
-									<p>102,548 MXN <span>RECAUDADOS</span></p>
-									<p>26 <span>DÍAS RESTANTES</span></p>
+									<p>{{ money_format( '%i', $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
+									<p>{{ $helper->getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 								</div>					
 						    </div>
 					        <div class="content-2">
-								<div class="donadores-c">
+								<!--<div class="donadores-c">
 									<span id="fotos"><img src="{{ asset( 'images/foto.png' ) }}" alt=""></span>
 									<span id="fotos"><img src="{{ asset( 'images/foto2.png' ) }}" alt=""></span>
 									<span id="fotos"><img src="{{ asset( 'images/foto3.png' ) }}" alt=""></span>
@@ -106,7 +111,7 @@
 									<span id="fotos"><img src="{{ asset( 'images/foto.png' ) }}" alt=""></span>
 									<span id="fotos"><img src="{{ asset( 'images/foto2.png' ) }}" alt=""></span>
 									<span id="fotos"><img src="{{ asset( 'images/foto3.png' ) }}" alt=""></span>
-								</div>
+								</div>-->
 							</div>
 				        </div>
 					</section>

@@ -5,6 +5,6 @@ return array(
     'loginredirect' => 'home',   // set this if you want a default redirect after login, else it will use back()
     'logout' => 'login/logout',
     'logoutredirect' => '/',
-    'authfailed' => 'user/login',
+    'authfailed' => 'login/{provider}',
     'endpoint' => 'anvard/endpoint', // set this if you want a default redirect after logout, else it will use back()
 );

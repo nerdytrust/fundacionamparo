@@ -58,7 +58,7 @@
 									<ul>
 										<a href="{{ URL::to( $causa->facebook ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
 										<a href="{{ URL::to( $causa->twitter ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
-										<a href="{{ URL::to( '/' ) }}"><li class="fa fa-heart"></li></a>
+										<a id="{{ $causa->id_causas }}" class="like-process"><li class="fa fa-heart"></li></a>
 										<p>{{ $causa->me_gustas_interno }} likes</p>
 									</ul>
 									<div id="donativo">HAZ TU DONACIÓN</div>
@@ -67,7 +67,7 @@
 					 				<h1>{{ strtoupper( $causa->categoria ) }}</h1>
 					 				<h2>{{ $causa->titulo }}</h2>
 					 				<p>Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
-									<a href=""><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
+									<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas ) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
 									<div id="meta">
 										<div id="barra">
 											<progress value="0" max="100">

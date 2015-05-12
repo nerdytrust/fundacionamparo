@@ -37,10 +37,9 @@ h2.entrar{
 	display: block;
 	/*background: red;*/
 	text-align: center;
-	  font-size: 1.7em;
-  font-weight: bold;
-  letter-spacing: -2px;
-  width: 100% !important
+	font-size: 1.7em;
+	letter-spacing: -2px;
+	width: 100% !important;
 }
 label.intro input{
 	font-size: 1em !important;

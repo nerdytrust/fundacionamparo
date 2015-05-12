@@ -94,19 +94,19 @@ div.subtitleM{
 	}
 	*/
 	.txt_int{
-	bottom: -165px;/*bottom: 0;*/
-	/*height: 131%;*/
-	height: 680px;
-	position: absolute;
-	top: auto;
-	width: 100%;
-	padding: 440px 20px 20px 20px;
-	opacity: 1;
-	transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
-	-moz-transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
-	-webkit-transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
-	background: url("../../images/back-t1.png")repeat;
-	cursor: pointer;
+		bottom: -165px;/*bottom: 0;*/
+		/*height: 131%;*/
+		height: 680px;
+		position: absolute;
+		top: auto;
+		width: 100%;
+		padding: 440px 20px 20px 20px;
+		opacity: 1;
+		transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
+		-moz-transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
+		-webkit-transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
+		background: url("../../images/back-t1.png")repeat;
+		cursor: auto !important;
 
 	}
 	.txt_int:hover{

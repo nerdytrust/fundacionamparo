@@ -101,14 +101,6 @@
                             }
                         });
                     });
-
-                    $('#success_wall #moments_time button.btn.btn-cerrar').click(function(e){
-                        e.preventDefault();
-                        $('#moments_time').hide().fadeOut(200, "swing", function(){
-                            $('#main_time').fadeIn(800);
-                            $('#moments_time').html('');
-                        });
-                    })
                 });
 
                 $(window).bind("pageshow", function(event) {
@@ -116,6 +108,13 @@
                         location.reload();
                     }
                 });
+
+                function cerrarMomento(){
+                    $('#moments_time').hide().fadeOut(200, "swing", function(){
+                        $('#main_time').fadeIn(800);
+                        $('#moments_time').html('');
+                    });
+                }
 
                 function citrussized(){
                     var ratio = $(window).width() / $(window).height();

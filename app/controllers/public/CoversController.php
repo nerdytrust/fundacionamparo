@@ -10,8 +10,15 @@ class CoversController extends BaseController {
 		return View::make( 'public.covers.causas' );
 	}
 
-	public function fichaCausas(){
-		return View::make( 'public.covers.ficha_causas' );
+	public function fichaCausas( $id_causa ){
+		if ( ! isset( $id_causa ) || empty( $id_causa ) )
+			return Redirect::to( 'home' );
+
+		$causa = Causas::find($id_causa);
+		if ( !empty( $causa ) )
+			return View::make( 'public.covers.ficha_causas' )->with( [ 'causa' => $causa, 'helper' => new Helper ] );
+		else
+			return Redirect::to( 'home' );
 	}
 
 	public function fichaDonador(){
