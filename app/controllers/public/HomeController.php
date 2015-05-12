@@ -1,5 +1,6 @@
 <?php
 
+
 class HomeController extends BaseController {
 
 	/**
@@ -13,6 +14,8 @@ class HomeController extends BaseController {
 		$causas = Causas::orderByRaw( 'RAND()' )->take(3)->get();
 		$donadores = Donadores::orderBy( 'created_at', 'DESC' )->take(5)->get();
 		$total_donadores = Session::get( 'total_donadores' );
+		// $hybridauth = new Hybrid_Auth();
+		// print_r( $hybridauth );die;
 		if ( ! $total_donadores || empty( $total_donadores ) )
 			$total_donadores = DB::table( 'donadores' )->distinct( 'id_fb' )->count();
 		Session::put( 'total_donadores', $total_donadores );
@@ -25,10 +28,7 @@ class HomeController extends BaseController {
 	}
 
 	public function index(){
-		$data = [];
-		if ( Auth::check() )
-			$data = Auth::user();
-		return View::make( 'public.home.entrar' )->with( [ 'helper' => new Helper, 'data' => $data ] );
+		return View::make( 'public.home.entrar' )->with( [ 'helper' => new Helper ] );
 	}
 
 	public function registro(){

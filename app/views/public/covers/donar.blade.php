@@ -15,10 +15,12 @@
 				<label for="" class="vol">
 					<p>Escoge la causa que quieras apoyar</p>
 					<form action="{{ URL::to( '/donar-2') }}">
-						<select name="" id="">
-							<option value="">Museo Amparo</option>
-							<option value=""></option>
-							<option value=""></option>
+						<select name="causa_donar" id="">
+							@if ( isset( $causas ) )
+								@foreach ( $causas as $causa )
+									<option value="{{ $causa->id_causas }}">{{ $causa->titulo }}</option>
+								@endforeach
+							@endif
 						</select>
 						<p>Ingresa el monto que desaes donar</p>
 						<span class="op">

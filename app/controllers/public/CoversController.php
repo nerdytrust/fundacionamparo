@@ -3,19 +3,20 @@
 class CoversController extends BaseController {
 
 	public function donar(){
-		return View::make( 'public.covers.donar' );
+		$causas = Causas::all();
+		return View::make( 'public.covers.donar' )->with( [ 'causas' => $causas, 'helper' => new Helper ] );
 	}
 
 	public function donarCausas(){
 		return View::make( 'public.covers.causas' );
 	}
 
-	public function fichaCausas( $id_causa ){
+	public function fichaCausas( $id_causa = '' ){
 		if ( ! isset( $id_causa ) || empty( $id_causa ) )
 			return Redirect::to( 'home' );
 
-		$causa = Causas::find($id_causa);
-		if ( !empty( $causa ) )
+		$causa = Causas::find( $id_causa );
+		if ( ! empty( $causa ) )
 			return View::make( 'public.covers.ficha_causas' )->with( [ 'causa' => $causa, 'helper' => new Helper ] );
 		else
 			return Redirect::to( 'home' );
@@ -38,7 +39,8 @@ class CoversController extends BaseController {
 	}
 
 	public function impulsar(){
-		return View::make( 'public.covers.impulsar' );
+		$causas = Causas::all();
+		return View::make( 'public.covers.impulsar' )->with( [ 'causas' => $causas, 'helper' => new Helper ] );
 	}
 
 	public function impulsarCausa(){
@@ -50,7 +52,8 @@ class CoversController extends BaseController {
 	}
 
 	public function voluntario(){
-		return View::make( 'public.covers.voluntario' );
+		$causas = Causas::all();
+		return View::make( 'public.covers.voluntario' )->with( [ 'causas' => $causas, 'helper' => new Helper ] );
 	}
 
 	public function voluntarioNext(){

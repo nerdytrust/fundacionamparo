@@ -15,10 +15,12 @@
 					<form action="{{ URL::to( '/voluntario-2' ) }}">
 						<p>¿En qué causa nos quieres ayudar?</p>
 						<label for="" class="vol">
-							<select name="" id="">
-								<option value="">Museo Amparo</option>
-								<option value=""></option>
-								<option value=""></option>
+							<select name="causa_voluntario" id="">
+								@if ( isset( $causas ) )
+									@foreach ( $causas as $causa )
+										<option value="{{ $causa->id_causas }}">{{ $causa->titulo }}</option>
+									@endforeach
+								@endif
 							</select>
 							<p>¿Cómo puedes ayudar?</p>
 							<select name="" id="">

@@ -56,6 +56,7 @@ Route::get( 'voluntario-2', [ 'uses' => 'CoversController@voluntarioNext', 'as' 
 Route::get( 'ficha-donador', [ 'uses' => 'CoversController@fichaDonador', 'as' => 'get.ficha-donador' ] );
 Route::get( 'ficha-impulsor', [ 'uses' => 'CoversController@fichaImpulsor', 'as' => 'get.ficha-impulsor' ] );
 Route::get( 'ficha-voluntario', [ 'uses' => 'CoversController@fichaVoluntario', 'as' => 'get.ficha-voluntario' ] );
+Route::get( 'ficha-causas', 'CoversController@fichaCausas' );
 Route::get( 'ficha-causas/{id}', 'CoversController@fichaCausas' )->where( 'id', '[0-9]+' );
 Route::get( 'ficha-noticias', [ 'uses' => 'CoversController@fichaNoticias', 'as' => 'get.ficha-noticias' ] );
 Route::post( 'validar-pago', [ 'uses' => 'CoversController@validarPago', 'as' => 'get.validar-pago' ] );

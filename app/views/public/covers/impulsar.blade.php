@@ -12,10 +12,12 @@
 				<button onClick="history.back()" class="regresar"> Regresar</button>
 				<label for="" class="vol" id="imp-r">
 					<p>Escoge la causa que quieras impulsar</p>
-					<select name="" id="">
-						<option value="">Museo Amparo</option>
-						<option value=""></option>
-						<option value=""></option>
+					<select name="causa_impulsar" id="">
+						@if ( isset( $causas ) )
+							@foreach ( $causas as $causa )
+								<option value="{{ $causa->id_causas }}">{{ $causa->titulo }}</option>
+							@endforeach
+						@endif
 					</select>
 				</label>
 			
