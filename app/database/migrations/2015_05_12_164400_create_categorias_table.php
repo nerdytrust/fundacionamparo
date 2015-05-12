@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateDonadoresTable extends Migration {
+class CreateCategoriasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,11 @@ class CreateDonadoresTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('donadores', function(Blueprint $table)
+		Schema::create('categorias', function(Blueprint $table)
 		{
-			$table->integer('id_donadores', true);
-			$table->string('nombre', 100)->nullable();
-			$table->string('apellidos', 100)->nullable();
-			$table->string('username', 80)->nullable();
-			$table->text('avatar')->nullable();
+			$table->integer('id_categoria', true);
+			$table->string('nombre', 150);
+			$table->string('slug', 150);
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
 			$table->timestamps();
@@ -33,7 +31,7 @@ class CreateDonadoresTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('donadores');
+		Schema::drop('categorias');
 	}
 
 }

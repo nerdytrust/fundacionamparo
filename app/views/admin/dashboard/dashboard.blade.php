@@ -20,46 +20,43 @@ dashboard
 			<ul>
 				<li>General</li>
 					<ul>
-						<li>Users Administration</li>
+						<li>Administración de Usuarios</li>
 						<ul>
 							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/users','User manager') }}</li>
 							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/roles','Roles') }}</li>
-							<li>Logs</li>
-					</ul>
-					<li>Setup</li>
-						<ul>
-							<li>Task manager (Cron)</li>
-							<li>Setup</li>
+							{{-- <li>Logs</li> --}}
+						</ul>
+					<li>Configuración</li>
+					<ul>
+						<li>Task manager (Cron)</li>
+						<li>Setup</li>
 					</ul>
 					<li>Agency</li>
 						<ul>
 							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/agency','Agency manager') }}</li>
 							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/agency','Templates') }}</li>
-					</ul>
-
-
-					</ul>
-				
-				<li>Web Site</li>
+						</ul>
+					</ul>			
+				<li>Sitio</li>
 				<ul>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/cms_pages','Content Manager') }}</li>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/cms_images','Images Manager') }}</li>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/cms_videos','Video Manager') }}</li>
-						<li>Forms</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/home_video','Video Home') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/causas','Causas') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/muro','Muro') }}</li>
+					<!--<li>Forms</li>
 					<ul>
-							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_career','Career') }}</li>
-							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_contactus','Contact  Us') }}</li>
-							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_cmbaplication','CMB Application') }}</li>
-							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_shop','Shop America') }}</li>
-							
-					</ul>	
+						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_career','Career') }}</li>
+						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_contactus','Contact  Us') }}</li>
+						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_cmbaplication','CMB Application') }}</li>
+						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_shop','Shop America') }}</li>
+						
+					</ul>-->
 				</ul>	
-				<li>CMB Site</li>
+				<!--<li>CMB Site</li>
 				<ul>
 						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/cmb_cms','Content Manager') }}</li>
 						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/cms_images','Images Manager') }}</li>
 						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/cms_videos','Video Manager') }}</li>
-				</ul>
+				</ul>-->
 			</ul>
 	      </div>
 		</div>

@@ -68,9 +68,9 @@
 									</div>
 									<div id="cantidad">
 										<h1>META</h1>
-										<h2>${{ money_format( '%i', $causa->meta ) }}<span>MXN</span></h2>
+										<h2>${{ number_format( $causa->meta ) }}<span>MXN</span></h2>
 									</div>
-									<p>{{ money_format( '%i', $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
+									<p>{{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
 									<p>{{ $helper->getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 								</div>					
 						    </div>

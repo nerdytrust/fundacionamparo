@@ -59,7 +59,7 @@
 										<a href="{{ URL::to( $causa->facebook ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
 										<a href="{{ URL::to( $causa->twitter ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
 										<a id="{{ $causa->id_causas }}" class="like-process"><li class="fa fa-heart"></li></a>
-										<p>{{ $causa->me_gustas_interno }} likes</p>
+										<p>{{ $causa->me_gusta_interno }} likes</p>
 									</ul>
 									<div id="donativo">HAZ TU DONACIÓN</div>
 								</section>
@@ -78,9 +78,9 @@
 										</div>
 									<div id="cantidad">
 										<h1>META</h1>
-										<h2>{{ money_format( '%i', $causa->meta ) }}<span>MXN</span></h2>
+										<h2>{{ number_format( $causa->meta ) }}<span>MXN</span></h2>
 									</div>
-										<p>{{ money_format( '%i', $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
+										<p>{{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
 										<p>{{ $helper->getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 									</div>
 					 			</section>
