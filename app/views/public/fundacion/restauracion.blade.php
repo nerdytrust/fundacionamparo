@@ -38,8 +38,6 @@
 					<h3>Centro Comercial “La Victoria”</h3>
 					<p>Observando la misma temática de procurar obras para el beneficio común, la Fundación Amparo rescató con maestría, un ancestral centro de comercio ubicado en el Centro Histórico de la Ciudad de Puebla, convirtiendo el antiguo Mercado “La Victoria”, en un centro comercial digno, que representa un punto de fuentes de trabajo y recreación para la sociedad.</p>
 					<br/>
-					<p>Observando la misma temática de procurar obras para el beneficio común, la Fundación Amparo rescató con maestría, un ancestral centro de comercio ubicado en el Centro Histórico de la Ciudad de Puebla, convirtiendo el antiguo Mercado “La Victoria”, en un centro comercial digno, que representa un punto de fuentes de trabajo y recreación para la sociedad.</p>
-					<br/>
 					<h3>Iluminación exterior de la Catedral y el Palacio de Gobierno Municipal de la Ciudad de Puebla</h3>
 					<p>En marzo 2009, la Fundación Amparo celebró un convenio de colaboración y apoyo financiero con el H. Ayuntamiento del Municipio de Puebla, para participar en la recuperación y dignificación del Centro Histórico de la Ciudad de Puebla, a través de tres acciones:</p>
 					<br/>

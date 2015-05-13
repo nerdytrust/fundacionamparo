@@ -19,7 +19,7 @@
 				window.location = 'gracias';
 			});
 			$("#impulsor_sec, #fca-i, #cauf-i").click(function(){
-				window.location = 'impulsar';
+				window.location = 'impulsar-causa';
 			});
 			$("#voluntario_sec, #fca-v, #cauf-v").click(function(){
 				window.location = 'voluntario';

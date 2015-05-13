@@ -22,7 +22,7 @@
 					<input type="submit" value="REGRESAR" id="ac3" onClick="history.back()">	
 				</label>
 				</br>
-				<a href="{{ URL::to( '/faqs' ) }}">Si necesitas ayuda dar click aquí <img src="{{ asset( 'images/i.png' ) }}" alt="" ></br></a>
+				<a href="{{ URL::to( '/faqs' ) }}">Si necesitas ayuda da click aquí <img src="{{ asset( 'images/i.png' ) }}" alt="" ></br></a>
 			</div>
 		</div>
 	@stop

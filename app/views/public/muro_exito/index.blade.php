@@ -19,19 +19,19 @@
 						<!--</div>-->
 						<div class="slide_container col-sm-12 carousel-inner" role="listbox">
 							<div class="slide col-sm-12 active item">
-								<img src="{{ asset( 'images/tl_templo.jpg' ) }}" alt="">
+								<img src="{{ asset( 'images/tl_templo.jpg' ) }}" alt="" class="source-image">
 								<span class="moment-description col-xs-10 col-sm-6 col-md-5">
 									<h1>1979-1982</h1>
 									<h2>Excavaciones del Templo Mayor en el Centro Histórico de la Ciudad de México</h2>
-									<!--<p>
+									<p>
 										En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa.
-									</p>-->
+									</p>
 									<p></p>
 									<a href="#" data-timeline-content="1979-1982" id="tl_1979">MÁS INFORMACIÓN <b>+</b></a>
 								</span>
 							</div>
 							<div class="slide col-sm-12 item">
-								<img src="{{ asset( 'images/tl_montefenix.jpg' ) }}" alt="">
+								<img src="{{ asset( 'images/tl_montefenix.jpg' ) }}" alt="" class="source-image">
 								<span class="moment-description col-xs-10 col-sm-6 col-md-5">
 									<h1>1980-1982</h1>
 									<h2>Clínica Monte Fénix</h2>
@@ -43,7 +43,7 @@
 								</span>
 							</div>
 							<div class="slide col-sm-12 item">
-								<img src="{{ asset( 'images/tl_donativo_rockefeller.jpg' ) }}" alt="">
+								<img src="{{ asset( 'images/tl_donativo_rockefeller.jpg' ) }}" alt="" class="source-image">
 								<span class="moment-description col-xs-10 col-sm-6 col-md-5">
 									<h1>1981</h1>
 									<h2>Donativo a Rockefeller University en N.Y.</h2>
@@ -55,7 +55,7 @@
 								</span>
 							</div>
 							<div class="slide col-sm-12 item">
-								<img src="{{ asset( 'images/tl_deporte.jpg' ) }}" alt="">
+								<img src="{{ asset( 'images/tl_deporte.jpg' ) }}" alt="" class="source-image">
 								<span class="moment-description col-xs-10 col-sm-6 col-md-5">
 									<h1>1982</h1>
 									<h2>Fomento Deportivo del Estado de Puebla</h2>
@@ -67,7 +67,7 @@
 								</span>
 							</div>
 							<div class="slide col-sm-12 item">
-								<img src="{{ asset( 'images/tl_museo_amparo.jpg' ) }}" alt="">
+								<img src="{{ asset( 'images/tl_museo_amparo.jpg' ) }}" alt="" class="source-image">
 								<span class="moment-description col-xs-10 col-sm-6 col-md-5">
 									<h1>1983</h1>
 									<h2>Construcción, operación y administración del Museo Amparo</h2>
@@ -79,7 +79,7 @@
 								</span>
 							</div>
 							<div class="slide col-sm-12 item">
-								<img src="{{ asset( 'images/tl_becas_estudiantes.jpg' ) }}" alt="">
+								<img src="{{ asset( 'images/tl_becas_estudiantes.jpg' ) }}" alt="" class="source-image">
 								<span class="moment-description col-xs-10 col-sm-6 col-md-5">
 									<h1>1985</h1>
 									<h2>Becas a estudiantes destacados </h2>
@@ -91,7 +91,7 @@
 								</span>
 							</div>
 							<div class="slide col-sm-12 item">
-								<img src="{{ asset( 'images/tl_museo_amparo.jpg' ) }}" alt="">
+								<img src="{{ asset( 'images/tl_museo_amparo.jpg' ) }}" alt="" class="source-image">
 								<span class="moment-description col-xs-10 col-sm-6 col-md-5">
 									<h1>1986</h1>
 									<h2>Construcción, operación y administración del Museo Amparo</h2>
@@ -103,7 +103,7 @@
 								</span>
 							</div>
 							<div class="slide col-sm-12 item">
-								<img src="{{ asset( 'images/tl_montefenix.jpg' ) }}" alt="">
+								<img src="{{ asset( 'images/tl_montefenix.jpg' ) }}" alt="" class="source-image">
 								<span class="moment-description col-xs-10 col-sm-6 col-md-5">
 									<h1>1987-1993</h1>
 									<h2>Clínica Monte Fénix</h2>
