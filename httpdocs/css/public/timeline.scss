@@ -10,7 +10,8 @@ body {
 	color: #ffffff;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
-	padding-top: 130px;
+	padding-top: 142px;
+	overflow: hidden;
 }
 
 header {
@@ -132,6 +133,21 @@ header {
 			outline: none;
 		}
 	}
+
+	.slide_container {
+		padding: 0;
+		.slide {
+			margin: 0;
+			padding: 0;
+			img {
+				&.source-image{
+					position: relative;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+	}
 }
 
 .carousel-control {
@@ -141,7 +157,7 @@ header {
 	&.left, &.right {
 		background-image: none;
 		height: 65px;
-		margin-top: 145px;
+		margin-top: 105px;
 		&.secondary {
 			background-image: none;
 			height: 40px;
@@ -151,15 +167,17 @@ header {
 	}
 
 	&.left {
-		left: 65px;
+		left: 80px;
+		width: 35px;
 		&.secondary {
 			left: 0;
 		}
 	}
 
 	&.right {
-		left: 105px;
+		left: 120px;
 		right: auto;
+		width: 35px;
 		&.secondary {
 			left: auto;
 			right: 0;
@@ -235,7 +253,7 @@ header {
 .moment-description {
 	left: 65px;
 	position: absolute;
-	top: 25%;
+	top: 16%;
 	h1 {
 		color: $fundacion;
 		font-size: 49px;
@@ -299,7 +317,7 @@ header {
 }
 
 .navigator-buttons {
-	bottom: 45px;
+	bottom: 205px;
 	height: 40px;
 	position: absolute;
 	z-index: 16;
@@ -322,15 +340,20 @@ header {
 		margin: 0;
 		padding: 0;
 		img {
-			display: inline;
-			position: relative;
-			width: 100%;
+			// display: inline;
+			// position: relative;
+			// width: 100%;
+			&.source-image{
+				position: relative;
+				top: 0;
+				left: 0;
+			}
 		}
 	}
 }
 
 .timeline-navigator {
-	bottom: 70px;
+	bottom: 240px;
 }
 
 .w-320 {
