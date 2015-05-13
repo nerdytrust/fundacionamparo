@@ -10,17 +10,13 @@
          @if($column->name == "password") 
             {{ Form::password($column->name,array('class' => 'form-control','placeholder'=>$column->label)); }}
          @elseif ($column->is_foreign_key)
-         <?php
-            $fkmodel = new $column->model;
-            $rmodel = $fkmodel::all();
 
-            foreach ($rmodel as $rrecord) 
-                $column->data[$rrecord->{$fkmodel->getKeyName()}] = $rrecord->{$fkmodel->getName()};
-            
-        ?>
-            {{ Form::combo($column->name,$record->{$column->name},['class' => 'form-control','placeholder'=>$column->label],$column->data); }}
+            {{ Form::remotecombo($column->name,$record->{$column->name},['model'=>$model,'class' => 'form-control','placeholder'=>$column->label] ); }}
+
          @elseif ($column->input == "select")
+
             {{ Form::combo($column->name,$record->{$column->name},['class' => 'form-control','placeholder'=>$column->label],$column->data); }}
+
          @elseif ($column->input == "date" or $column->input == "datetime" or $column->input == "time"  )
 
             {{ Form::datepicker($column->name,$record->{$column->name},['class'=>'form-control','placeholder'=>$column->label],$column->input) }}
@@ -44,6 +40,10 @@
          @elseif  ($column->input == "html" || $column->input == "editor") 
 
             {{ Form::editor($column->name, $record->{$column->name},[]); }}
+
+         @elseif  ($column->input == "radios" || $column->input == "radiogroup") 
+
+            {{ Form::radiogroup($column->name,$record->{$column->name},[],$column->data); }}
 
          @elseif ($column->input != "number")
             {{ call_user_func("Form::".$column->input,$column->name,$record->{$column->name},array('class' => 'form-control','placeholder'=>$column->label)) }}

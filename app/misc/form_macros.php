@@ -72,7 +72,7 @@ Form::macro('editor', function($name, $default = NULL, $attrs = array())
     if($default)
         $item .= $default;
 
-    $item .= "</textarea>";
+    $item .= "></textarea>";
 
     return $item;
 });
@@ -284,3 +284,75 @@ Form::macro('combo', function($name, $default = NULL, $attrs = [], $data = [])
 
     return Form::select($name, [$data],$default,$attrs);
 });
+
+
+Form::macro('remotecombo', function($name, $default = NULL, $attrs = [], $url = NULL)
+{
+
+    if(!isset($attrs["model"]))
+        $attrs["model"] = "";
+    
+    $value = [$default => $default];
+
+    if(!$url)
+    {
+        $url = "./".getenv('APP_ADMIN_PREFIX')."/".$attrs["model"].'/remotecombo/'.$name;
+
+        if(is_numeric($default) and !empty($attrs["model"]))
+        {
+            $model      = new $attrs["model"];
+            $fk_column  = $model->getCrud("fk_column");
+            $record     = $model->find($default);
+
+            $value      = [$default=>getFKColumn($name,$record,$fk_column)];
+        }
+    }
+        
+
+    $attrs_default = ["combo"=>"combo","url"=>$url];
+
+    $attrs = array_merge($attrs_default,$attrs);
+
+    return Form::select($name, $value ,$default,$attrs);
+});
+
+
+Form::macro('radiogroup', function($name, $default = NULL, $attrs = array(), $data = [])
+{
+ 
+    $item = '<div class="btn-group" data-toggle="buttons">';
+
+        foreach ($data as $key => $value) {
+
+            if($default == $value)
+                $item.='<label class="btn btn-default active">';
+            else
+                $item.='<label class="btn btn-default">';
+
+                $item.='<input type="radio" name="'.$name.'" value="'.$value.'" ';
+
+                if($default == $value)
+                    $item.=' checked="checked" ';
+
+
+                if (is_array($attrs))
+                {
+                    foreach ($attrs as $a => $v)
+                    {
+                        $item .= ($a !== 0 ? $a . '="' : null) . $v .'" ';
+                    }
+                }
+
+                $item.=' /> '.$value;
+
+            $item.='</label>';
+        }
+
+
+    $item .= "</div>";
+
+    return $item;
+});
+
+
+

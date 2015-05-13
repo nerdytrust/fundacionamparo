@@ -1232,45 +1232,6 @@
         ]
     },
     {
-        "name": "braunson/laravel-html5-forms",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Braunson/laravel-html5-forms.git",
-            "reference": "4966a2b80b80774cb2f5ded536e209254978b49b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Braunson/laravel-html5-forms/zipball/4759115b44f81a07284ed66810c14c4e1bdefa86",
-            "reference": "4966a2b80b80774cb2f5ded536e209254978b49b",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/support": "4.2.*",
-            "php": ">=5.4.0"
-        },
-        "time": "2014-09-20 12:40:42",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Braunson\\LaravelHTML5Forms\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Braunson Yager",
-                "email": "braunson@geekybeaver.ca"
-            }
-        ],
-        "description": "This package extends Laravel's FormBuilder to include some (soon all) HTML5 elements"
-    },
-    {
         "name": "stack/builder",
         "version": "v1.0.3",
         "version_normalized": "1.0.3.0",
@@ -3212,53 +3173,6 @@
         ]
     },
     {
-        "name": "nicolaslopezj/searchable",
-        "version": "1.4.5",
-        "version_normalized": "1.4.5.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nicolaslopezj/searchable.git",
-            "reference": "8e043bea92addc0fe5f5980563bd07b88f25c72d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nicolaslopezj/searchable/zipball/8e043bea92addc0fe5f5980563bd07b88f25c72d",
-            "reference": "8e043bea92addc0fe5f5980563bd07b88f25c72d",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/database": "4.2.x|~5.0",
-            "php": ">=5.4.0"
-        },
-        "time": "2015-03-17 01:11:27",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Nicolaslopezj\\Searchable\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Nicolas Lopez",
-                "email": "nicolaslopezj@me.com"
-            }
-        ],
-        "description": "Eloquent model search trait.",
-        "keywords": [
-            "database",
-            "eloquent",
-            "laravel",
-            "model",
-            "search",
-            "searchable"
-        ]
-    },
-    {
         "name": "paypal/rest-api-sdk-php",
         "version": "v0.15.1",
         "version_normalized": "0.15.1.0",
@@ -3801,6 +3715,53 @@
             "social",
             "twitter",
             "yahoo"
+        ]
+    },
+    {
+        "name": "nicolaslopezj/searchable",
+        "version": "1.5.8",
+        "version_normalized": "1.5.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nicolaslopezj/searchable.git",
+            "reference": "edaae6225162bb194b1ead9fc93697a7dc0c9a3b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nicolaslopezj/searchable/zipball/edaae6225162bb194b1ead9fc93697a7dc0c9a3b",
+            "reference": "edaae6225162bb194b1ead9fc93697a7dc0c9a3b",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/database": "4.2.x|~5.0",
+            "php": ">=5.4.0"
+        },
+        "time": "2015-05-12 23:03:07",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Nicolaslopezj\\Searchable\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Lopez",
+                "email": "nicolaslopezj@me.com"
+            }
+        ],
+        "description": "Eloquent model search trait.",
+        "keywords": [
+            "database",
+            "eloquent",
+            "laravel",
+            "model",
+            "search",
+            "searchable"
         ]
     }
 ]

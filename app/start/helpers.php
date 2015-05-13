@@ -8,35 +8,43 @@ function getCurrentAction(){
     return $action = $action[count($action)-1];
 }
 
-function getFKColumn($fk_column = [],$column = [],$default_record = [],$first = true)
+function getFKColumn($column = NULL,$default_record = [],$fk_column = [],$first = true)
 {
     $fk_column_name = "";
 
-    if($first)
-        $record = $default_record->{$column->name."_record"}()->first();
-    else
-        $record = $default_record->{$column->name."_record"};
+    if(isset($default_record->{$column."_record"}))
+    {
+        if($first)
+            $record = $default_record->{$column."_record"}()->first();
+        else
+            $record = $default_record->{$column."_record"};
 
-    if(!$record)
-        $fk_column_name = "Does not exits ".$column->name." ".$default_record->{$column->name};
-    elseif(array_key_exists($column->name,$fk_column) and is_array($fk_column[$column->name]))
+        if(!$record)
+            return "---";
+    }else
+        $record = $default_record;
+
+
+    if(array_key_exists($column,$fk_column) and is_array($fk_column[$column]))
     {
 
-        foreach ($fk_column[$column->name] as $fk_column_record) 
+        foreach ($fk_column[$column] as $fk_column_record) 
         {
             if(isset($record->{$fk_column_record}))
                 $fk_column_name.= $record->{$fk_column_record}." ";
         }
 
-    }else if(array_key_exists($column->name,$fk_column))
-        $fk_column_name = $record->{$fk_column[$column->name]};
+    }else if(array_key_exists($column,$fk_column))
+        $fk_column_name = $record->{$fk_column[$column]};
     else
-        $fk_column_name = $default_record->{$column->name};
+        $fk_column_name = $default_record->{$column};
     
         
             
     return $fk_column_name;
 }
+
+
 
 function strip_out_subdomain($domain)  {     
     $only_my_domain = preg_replace("/^(.*?)\.(.*)$/","$2",$domain);      

@@ -15,7 +15,12 @@ class {{Model}} extends \Crud {
     protected $guarded = [];  // Important
 
 
-    // Events
+    // ===================================================================
+    // EVENTS
+    // ===================================================================
+    //
+    //  $params return array object link this
+    //
     //  $params return array object link this
     //
     // "me"             => Access to methods of the controller. return object 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy','printItem'
@@ -50,11 +55,26 @@ class {{Model}} extends \Crud {
 
     public function beforeShow(&$params){}
     
-    /* 
-        CRUD
-    */
+    // ===================================================================
+    // FORMAT COLUMNS
+    // ===================================================================
+    //
+    // Example : column first_name
+    // you will create a function like this: 
 
-    protected $crud = [
+    // public function getFirstNameAttribute($value)
+    // {
+    //      return $value;
+    // }
+
+
+
+    // ===================================================================
+    // CRUD
+    // ===================================================================
+    //
+
+   protected $crud = [
         //
         // Title
         //
@@ -68,7 +88,7 @@ class {{Model}} extends \Crud {
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
-        // text,hidden,textarea,password,digit,file,email,title
+        // "radiogroup","radios","editor","toggle","html","text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"
         //
         "inputs"    => [],
         // 
@@ -122,7 +142,6 @@ class {{Model}} extends \Crud {
         // "btn_in_edit"   => ["edit","cancel"],
 
     ];
-
 
     
 }

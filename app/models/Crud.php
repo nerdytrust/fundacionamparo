@@ -191,7 +191,7 @@ class Crud extends \BaseModel {
         "labels"    => [],
         //
         // Replace default inputs by column
-        // ["first_name" => "text"] //text,hidden,textarea,password,digit,file,email,title
+        // ["first_name" => "text"] //"radiogroup","radios","editor","toggle","html","text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"
         //
         "inputs"    => [],
 
@@ -269,7 +269,7 @@ class Crud extends \BaseModel {
         "zip"       => ["zip"]
     ];
 
-    protected $inputTypes = ["editor","toggle","html","text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"];
+    protected $inputTypes = ["radiogroup","radios","editor","toggle","html","text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"];
 
     protected $inputColumTypes = [
         "boolean"       => "text",
@@ -298,9 +298,10 @@ class Crud extends \BaseModel {
         $method = str_replace("_record", "", $method);
         $current_class_name = get_class($this);
 
+
         if (array_key_exists($method, $relations)) {
             return $this->createRelation($method);
-        }elseif(!method_exists($this->newBaseQueryBuilder(),$method) and !method_exists($this,$method)){
+        }elseif(!method_exists($this->newBaseQueryBuilder(),$method) and !method_exists($this,$method)  and $method !="search"){
             return "Please create a function $method in <strong>app/models/".get_class($this).".php</strong>";
         }
 
@@ -874,8 +875,8 @@ class Crud extends \BaseModel {
 		    		if($column->length > 0)
 		    			$rule[] = "max:".$column->length;
 
-		    		if($column->length > 3)
-		    			$rule[] = "min:3";
+		    		if($column->length >= 2)
+		    			$rule[] = "min:2";
 
 		    		if( $column->input == "email")
 		    		{
