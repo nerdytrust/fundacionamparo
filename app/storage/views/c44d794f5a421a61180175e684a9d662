@@ -28,52 +28,53 @@ crud form
 
 
 
+  <div class="pull-right">
 
-	<?php if($action == "create"): ?>
-    <?php if(in_array("create",$btn)): ?>
-		  <?php echo Form::submit(trans('crud.'.$action), array('class' => 'btn btn-success')); ?>
+  	<?php if($action == "create"): ?>
+      <?php if(in_array("create",$btn)): ?>
+  		  <?php echo Form::submit(trans('crud.'.$action), array('class' => 'btn btn-lg btn-success')); ?>
 
+      <?php endif; ?>
+      <?php if(in_array("cancel",$btn)): ?>
+        <a href="<?php echo call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value); ?>" class="btn btn-lg btn-default"><?php echo trans('crud.cancel'); ?></a>
+      <?php endif; ?>
+      <?php if(in_array("create",$btn)): ?>
+        <?php echo Form::close(); ?>
+
+      <?php endif; ?>  
+    <?php endif; ?>	
+
+    <?php if($action == "edit"): ?>
+      <?php if(in_array("edit",$btn)): ?>
+        <?php echo Form::submit(trans('crud.'.$action), array('class' => 'btn btn-success')); ?>
+
+      <?php endif; ?>
+      <?php if(in_array("cancel",$btn)): ?>
+        <a href="<?php echo call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value); ?>" class="btn btn-default"><?php echo trans('crud.cancel'); ?></a>
+      <?php endif; ?>
+      <?php if(in_array("edit",$btn)): ?>
+        <?php echo Form::close(); ?>
+
+      <?php endif; ?>  
     <?php endif; ?>
-    <?php if(in_array("cancel",$btn)): ?>
-      <a href="<?php echo call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value); ?>" class="btn btn-default"><?php echo trans('crud.cancel'); ?></a>
-    <?php endif; ?>
-    <?php if(in_array("create",$btn)): ?>
-      <?php echo Form::close(); ?>
+
+
+    <?php if($action == "show"): ?>
+
+      <?php if(in_array("edit",$btn)): ?>
+        <a href="<?php echo call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value."/edit"); ?>" class="btn btn-success"><?php echo trans('crud.edit'); ?></a>
+      <?php endif; ?>
+
+      <?php if(in_array("cancel",$btn)): ?>
+        <a href="<?php echo call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model); ?>" class="btn btn-default"><?php echo trans('crud.cancel'); ?></a>
+      <?php endif; ?>
+      
+      <?php if(in_array("print",$btn)): ?>
+        <a class="btn btn-small btn-default" target="_blank" href="<?php echo URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'. $key_value.'/print'); ?>" target="_blank"><?php echo trans('crud.print'); ?></a>
+      <?php endif; ?>
 
     <?php endif; ?>  
-  <?php endif; ?>	
-
-  <?php if($action == "edit"): ?>
-    <?php if(in_array("edit",$btn)): ?>
-      <?php echo Form::submit(trans('crud.'.$action), array('class' => 'btn btn-success')); ?>
-
-    <?php endif; ?>
-    <?php if(in_array("cancel",$btn)): ?>
-      <a href="<?php echo call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value); ?>" class="btn btn-default"><?php echo trans('crud.cancel'); ?></a>
-    <?php endif; ?>
-    <?php if(in_array("edit",$btn)): ?>
-      <?php echo Form::close(); ?>
-
-    <?php endif; ?>  
-  <?php endif; ?>
-
-
-  <?php if($action == "show"): ?>
-
-    <?php if(in_array("edit",$btn)): ?>
-      <a href="<?php echo call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value."/edit"); ?>" class="btn btn-success"><?php echo trans('crud.edit'); ?></a>
-    <?php endif; ?>
-
-    <?php if(in_array("cancel",$btn)): ?>
-      <a href="<?php echo call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model); ?>" class="btn btn-default"><?php echo trans('crud.cancel'); ?></a>
-    <?php endif; ?>
-    
-    <?php if(in_array("print",$btn)): ?>
-      <a class="btn btn-small btn-default" target="_blank" href="<?php echo URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'. $key_value.'/print'); ?>" target="_blank"><?php echo trans('crud.print'); ?></a>
-    <?php endif; ?>
-
-  <?php endif; ?>  
-
+  </div>
 
 
 </div>
