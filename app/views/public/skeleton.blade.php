@@ -88,6 +88,7 @@
                     //$(".animsition").animsition();
 
                     // citrussized();
+                    coverImg();
 
                     $('#main_time .carousel-inner .item a').click(function(e){
                         e.preventDefault();
@@ -95,6 +96,7 @@
                         $.post( "{{ URL::to( 'ajax-moments' ) }}", { moment: moment }, function(data){
                             if ( data != false ){
                                 $('#moments_time').html(data);
+                                coverImg();
                                 $('#main_time').hide().fadeOut(200, "swing", function(){
                                     $('#moments_time').fadeIn(800);
                                 });
@@ -183,6 +185,19 @@
                             $('.moment-description p').css({'font-size': newdescription });
                             $('.moment-description a').css({'font-size': newdescription });
                         }
+                    });
+                }
+
+                function coverImg(){
+                    var $winwidth = $(window).width();
+                    $("img.source-image").attr({
+                        width: $winwidth
+                    });
+                    $(window).bind("resize", function(){ 
+                        var $winwidth = $(window).width();
+                        $("img.source-image").attr({
+                            width: $winwidth
+                        });
                     });
                 }
             </script>

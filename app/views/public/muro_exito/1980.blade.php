@@ -10,7 +10,7 @@
 	</a>
 	<div class="slide_container col-sm-12 carousel-inner" role="listbox">
 		<div class="slide col-sm-12 active item">
-			<img src="{{ asset( 'images/tl_templo.jpg' ) }}" alt="">
+			<img src="{{ asset( 'images/tl_templo.jpg' ) }}" alt="" class="source-image">
 			<span class="moment-description col-sm-12 col-md-7 col-lg-7">
 				<h3><label class="label label-default label-white">CULTURA</label></h3>
 				<h1>1980</h1>

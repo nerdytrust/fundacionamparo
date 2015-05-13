@@ -1,11 +1,11 @@
 <?php
 
-class Causas extends \Crud {
+class Categorias extends \Crud {
 
 
-    protected $primaryKey = 'id_causas'; // !important
+    protected $primaryKey = 'id_categorias'; // !important
 
-    protected $table = 'causas';
+    protected $table = 'categorias';
 
     protected $fillable = [];
 
@@ -49,22 +49,6 @@ class Causas extends \Crud {
     public function beforePrint(&$params){}
 
     public function beforeShow(&$params){}
-
-    public function getDescripcionAttribute( $value ){
-        $action = getCurrentAction();
-            
-        if ( $action == "index" )
-            return Str::limit( $value, 140 );
-        else
-            return $value;
-    }
-
-    public function getMetaAttribute( $value ){
-        $action = getCurrentAction();
-
-        if ( $action == "index" )
-            return '$' . number_format( $value );
-    }
     
     /* 
         CRUD
@@ -80,24 +64,18 @@ class Causas extends \Crud {
         //  if not wrote label the column rename like this: 
         //  ["first_name" => "First Name"]
         // 
-        "labels"    => [ 
-                        'id_categoria'  => 'Categoría',
-                        'created_by'    => 'Creado por',
-                        'updated_by'    => 'Actualizado por',
-                        'created_at'    => 'Fecha de Creación',
-                        'updated_at'    => 'Fecha de Actualización'
-                    ],
+        "labels"    => [],
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
         // text,hidden,textarea,password,digit,file,email,title
         //
-        "inputs"    => [ 'meta' => 'currency', 'imagen' => 'image', 'twitter' => 'text', 'facebook' => 'text' ],
+        "inputs"    => [],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
-        "fk_column" => [ "created_by" => "first_name", "id_categoria" => "name" ],
+        "fk_column" => [],
         // 
         // Tabs
         // Allways create names of tabs with snake case for example
@@ -129,20 +107,22 @@ class Causas extends \Crud {
         "index"     => [],
         "show"      => [],
 
-        "not_in_create" => [ "me_gustas_interno", "recaudado", "created_at", "updated_at" ],
-        "not_in_edit"   => [ "me_gustas_interno", "recaudado", "created_at", "updated_at" ],
-        "not_in_index"  => [ "created_at", "updated_at", "facebook", "twitter", "imagen", "updated_by", "id_causas", "created_by" ],
+        // "not_in_create" => ["created_at","updated_at"],
+        // "not_in_edit"   => ["created_at","updated_at"],
+        // "not_in_index"  => ["created_at","updated_at"],
         // "not_in_show"   => ["created_at","updated_at"],
 
         //
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        "btn_in_index"  => [ "create","edit","show","delete","search","advance-search" ],
-        "btn_in_show"   => [ "edit","cancel" ],
+        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
+        // "btn_in_show"   => ["print","edit","cancel"],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],
 
     ];
+
+
     
 }

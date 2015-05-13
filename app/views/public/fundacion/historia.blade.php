@@ -40,9 +40,9 @@
 				<div class="txt_fundacion li">
 					<p>Conoce los hechos que forman parte de nuestra labor a través de los años así como los objetivos cumplidos a lo largo de nuestra historia.</p>
 				</div>
-				<div id="contenedor_btn" >
+				{{-- <div id="contenedor_btn" >
 					<button onclick="location.href='{{ URL::to( 'muro-exito') }}';">Ver muro del éxito</button>
-				</div>
+				</div> --}}
 				<div class="adorno_fa">
  					<img src="images/adorno_fa.png" alt="">
  				</div>

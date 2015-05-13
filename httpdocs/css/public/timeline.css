@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
 html { background-color: #000; }
 
-body { color: #ffffff; font-family: 'Open Sans', sans-serif; font-size: 16px; padding-top: 130px; }
+body { color: #ffffff; font-family: 'Open Sans', sans-serif; font-size: 16px; padding-top: 142px; overflow: hidden; }
 
 header { display: inline-block !important; }
 
@@ -30,13 +30,16 @@ header { display: inline-block !important; }
 #moments_time .btn-cerrar:active { outline: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 #moments_time .btn-cerrar:hover { background-color: inherit; border: none; }
 #moments_time .btn-cerrar:focus { outline: none; }
+#moments_time .slide_container { padding: 0; }
+#moments_time .slide_container .slide { margin: 0; padding: 0; }
+#moments_time .slide_container .slide img.source-image { position: relative; top: 0; left: 0; }
 
 .carousel-control { text-shadow: none; width: 4%; z-index: 15; }
-.carousel-control.left, .carousel-control.right { background-image: none; height: 65px; margin-top: 145px; }
+.carousel-control.left, .carousel-control.right { background-image: none; height: 65px; margin-top: 105px; }
 .carousel-control.left.secondary, .carousel-control.right.secondary { background-image: none; height: 40px; margin: 0; width: 30px; }
-.carousel-control.left { left: 65px; }
+.carousel-control.left { left: 80px; width: 35px; }
 .carousel-control.left.secondary { left: 0; }
-.carousel-control.right { left: 105px; right: auto; }
+.carousel-control.right { left: 120px; right: auto; width: 35px; }
 .carousel-control.right.secondary { left: auto; right: 0; }
 
 .carousel-indicators { border-bottom: 1px solid #BEDA3E; left: 0; margin: 0; padding-left: 65px; width: 100%; }
@@ -58,7 +61,7 @@ header { display: inline-block !important; }
 
 .right-arrow-secondary { background-image: url(../../images/fv-2.png); }
 
-.moment-description { left: 65px; position: absolute; top: 25%; }
+.moment-description { left: 65px; position: absolute; top: 16%; }
 .moment-description h1 { color: #BEDA3E; font-size: 49px; font-weight: 700; margin-bottom: 0; }
 .moment-description h2 { font-size: 33px; font-weight: 700; margin-top: 7px; text-transform: uppercase; }
 .moment-description p { font-size: 16.5px; margin-bottom: 15px; }
@@ -70,7 +73,7 @@ header { display: inline-block !important; }
 .moment-description .social_top ul li:hover a { color: #BEDA3E; }
 .moment-description .social_top ul p { display: inline-block; }
 
-.navigator-buttons { bottom: 45px; height: 40px; position: absolute; z-index: 16; }
+.navigator-buttons { bottom: 205px; height: 40px; position: absolute; z-index: 16; }
 
 .navigator-legend { display: inline-block; font-size: 15px; margin: 25px 0 25px 65px; vertical-align: top; }
 
@@ -78,9 +81,9 @@ header { display: inline-block !important; }
 
 .slide_container { padding: 0; }
 .slide_container .slide { margin: 0; padding: 0; }
-.slide_container .slide img { display: inline; position: relative; width: 100%; }
+.slide_container .slide img.source-image { position: relative; top: 0; left: 0; }
 
-.timeline-navigator { bottom: 70px; }
+.timeline-navigator { bottom: 240px; }
 
 .w-320.portrait body { padding-top: 107px; }
 .w-320.portrait #moments_time .moment-description label.label { font-size: 55%; }

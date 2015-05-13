@@ -35,10 +35,7 @@
 						 <input type="submit" value="ACEPTAR" id="ac">							
 					</form>	
 				</label>
-				<a href="{{ URL::to( '/faqs' ) }}">
-					Si necesitas ayuda da click aquí 
-					<img src="{{ asset( 'images/i.png' ) }}" alt="" class="icon">		
-				</a>
+				<a href="{{ URL::to( '/faqs' ) }}">Si necesitas ayuda da click aquí <img src="{{ asset( 'images/i.png' ) }}" alt="" class="icon"></a>
 			</div>
 		</div>
 	@stop

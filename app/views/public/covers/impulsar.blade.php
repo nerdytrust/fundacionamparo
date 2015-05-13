@@ -7,7 +7,7 @@
 			<div class="lightbox-h-cont imp">
 				<img src="{{ asset( 'images/icon_donadores-v.png' ) }}" alt="">
 				<h1>impulsar</h1>
-				<p>Lleguemos a más oídos y toquemos más corazones en una sóla voz</p>
+				<p>Lleguemos a más oídos y toquemos más corazones en una sola voz</p>
 				<!--<button class="cerrar-h"></button>-->
 				<button onClick="history.back()" class="regresar"> Regresar</button>
 				<label for="" class="vol" id="imp-r">
@@ -28,7 +28,7 @@
 				<button class="feis">
 					<div id="invitar" onclick="location.href='{{ URL::to( '/gracias-3' ) }}';">Invitar a 10 amigos</div>
 				</button>	
-				<a href="{{ URL::to( '/faqs' ) }}">Si necesitas ayuda dar click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></a>			
+				<a href="{{ URL::to( '/faqs' ) }}">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></a>			
 			</div>	
 		</div>
 	@stop

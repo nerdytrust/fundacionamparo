@@ -23,9 +23,9 @@ class CreateCausasTable extends Migration {
 			$table->integer('recaudado')->nullable();
 			$table->text('facebook')->nullable();
 			$table->text('twitter')->nullable();
-			$table->integer('me_gustas_interno')->nullable();
+			$table->integer('me_gusta_interno')->nullable();
 			$table->text('imagen');
-			$table->enum('categoria', array('Centros Comunitarios','Cultura','Educación','Salud','Restauración','Deporte','Cultura','Asistenciales'));
+			$table->integer('id_categoria')->unique('id_categoria');
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
 			$table->timestamps();

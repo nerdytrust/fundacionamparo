@@ -1884,11 +1884,16 @@ b{color: #beda3e; font-weight: normal;}
 	background: #beda3e;
 	border-radius: 200px;
 	color: #FFF;
+	cursor: pointer;
 	display: inline-block;
 	padding: 63px 0; 
 	height: 200px;
 	width: 200px;
 }
+#donativo_btn .txt_circ h2, #donativo_btn .txt_circ h2, #donativo_btn .txt_circ h2 {
+	cursor: pointer;
+}
+
 .circulo_btn:hover, .circulo_btn2:hover, .circulo_btn3:hover{
 	opacity: .8;
 }

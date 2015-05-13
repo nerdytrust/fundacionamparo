@@ -11,7 +11,7 @@ class HomeController extends BaseController {
 	 */
 	public function home(){
 		$video = HomeVideo::where( 'activo', 'Active' )->firstOrFail();
-		$causas = Causas::orderByRaw( 'RAND()' )->take(3)->get();
+		$causas = Causas::orderBy( 'orden' )->take(3)->get();
 		$donadores = Donadores::orderBy( 'created_at', 'DESC' )->take(5)->get();
 		$total_donadores = Session::get( 'total_donadores' );
 		// $hybridauth = new Hybrid_Auth();
