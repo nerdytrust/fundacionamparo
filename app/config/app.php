@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://amparo.design4causes.com',
 
 	/*
 	|--------------------------------------------------------------------------

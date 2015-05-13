@@ -64,7 +64,6 @@ return array(
     'ClassPreloader' => array($vendorDir . '/classpreloader/classpreloader/src'),
     'CeesVanEgmond\\Minify' => array($vendorDir . '/ceesvanegmond/minify/src'),
     'Carbon' => array($vendorDir . '/nesbot/carbon/src'),
-    'Braunson\\LaravelHTML5Forms\\' => array($vendorDir . '/braunson/laravel-html5-forms/src'),
     'Boris' => array($vendorDir . '/d11wtq/boris/lib'),
     'Aws\\Laravel' => array($vendorDir . '/aws/aws-sdk-php-laravel/src'),
     'Aws' => array($vendorDir . '/aws/aws-sdk-php/src'),

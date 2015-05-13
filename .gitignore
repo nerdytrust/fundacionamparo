@@ -3,8 +3,10 @@
 #/vendor
 .env.*.php
 .env.php
+.env
 # Storage
 
+app/storage
 /app/storage/uploads/*
 storage/uploads/*
 
