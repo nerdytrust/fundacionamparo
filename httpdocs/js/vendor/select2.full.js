@@ -773,7 +773,7 @@ S2.define('select2/results',[
     this.hideLoading();
 
     var $message = $(
-      '<li role="treeitem" class="select2-results__option"></li>'
+      '<li role="treeitem" class="select2-results__option" aria-selected="true"></li>'
     );
 
     var message = this.options.get('translations').get(params.message);
@@ -839,10 +839,10 @@ S2.define('select2/results',[
 
       $options.each(function () {
         var $option = $(this);
-
-        var item = $.data(this, 'data');
+        var item = $.data(this, 'data') || { id:null };
 
         // id needs to be converted to a string when comparing
+
         var id = '' + item.id;
 
         if ((item.element != null && item.element.selected) ||
@@ -1331,7 +1331,10 @@ S2.define('select2/selection/base',[
     });
 
     container.on('results:focus', function (params) {
-      self.$selection.attr('aria-activedescendant', params.data._resultId);
+
+        var data = params.data || { _resultId:'' }
+
+      self.$selection.attr('aria-activedescendant', data);
     });
 
     container.on('selection:update', function (params) {
@@ -3904,7 +3907,7 @@ S2.define('select2/dropdown/infiniteScroll',[
 
   InfiniteScroll.prototype.createLoadingMore = function () {
     var $option = $(
-      '<li class="option load-more" role="treeitem"></li>'
+      '<li class="option load-more" role="treeitem" aria-selected="true"></li>'
     );
 
     var message = this.options.get('translations').get('loadingMore');
@@ -4868,8 +4871,8 @@ S2.define('select2/core',[
 
     // Hide the original select
     $element.addClass('select2-hidden-accessible');
-	$element.attr('aria-hidden', 'true');
-	
+    $element.attr('aria-hidden', 'true');
+    
     // Synchronize any monitored attributes
     this._syncAttributes();
 
@@ -5281,7 +5284,7 @@ S2.define('select2/core',[
     this.$element.attr('tabindex', this.$element.data('old-tabindex'));
 
     this.$element.removeClass('select2-hidden-accessible');
-	this.$element.attr('aria-hidden', 'false');
+    this.$element.attr('aria-hidden', 'false');
     this.$element.removeData('select2');
 
     this.dataAdapter.destroy();
@@ -6118,7 +6121,7 @@ $(function() {
 
 
     var $combos = $("[combo]");
-
+    
     $.each($combos,function($index,$combo){
         $combo = $($combo);
         $url   = $combo.attr("url");
@@ -6128,13 +6131,14 @@ $(function() {
         else    
         {
             $combo.select2({
+
               ajax: {
                 url: $url,
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {
                   return {
-                    q: params.term, // search term
+                    search: params.term, // search term
                     page: params.page
                   };
                 },
@@ -6146,45 +6150,17 @@ $(function() {
                     results: data.items
                   };
                 },
-                cache: true
+                cache: false
               },
-              escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
-              minimumInputLength: 1,
-              templateResult: formatRepo, // omitted for brevity, see the source of this page
-              templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+              minimumInputLength: 0
             });
+
+            $combo.on("select2:open", function (e) { 
+                $combo.trigger('keypress', e);
+            });
+
+
         }
-
-
-  // function formatRepo (repo) {
-  //   if (repo.loading) return repo.text;
-
-  //   var markup = '<div class="clearfix">' +
-  //   '<div class="col-sm-1">' +
-  //   '<img src="' + repo.owner.avatar_url + '" style="max-width: 100%" />' +
-  //   '</div>' +
-  //   '<div clas="col-sm-10">' +
-  //   '<div class="clearfix">' +
-  //   '<div class="col-sm-6">' + repo.full_name + '</div>' +
-  //   '<div class="col-sm-3"><i class="fa fa-code-fork"></i> ' + repo.forks_count + '</div>' +
-  //   '<div class="col-sm-2"><i class="fa fa-star"></i> ' + repo.stargazers_count + '</div>' +
-  //   '</div>';
-
-  //   if (repo.description) {
-  //     markup += '<div>' + repo.description + '</div>';
-  //   }
-
-  //   markup += '</div></div>';
-
-  //   return markup;
-  // }
-
-  // function formatRepoSelection (repo) {
-  //   return repo.full_name || repo.text;
-  // }
-
-
-
 
     });
 
