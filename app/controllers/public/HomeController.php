@@ -31,6 +31,10 @@ class HomeController extends BaseController {
 		return View::make( 'public.home.entrar' )->with( [ 'helper' => new Helper ] );
 	}
 
+	public function privacidad(){
+		return View::make( 'public.home.privacy' );
+	}
+
 	public function registro(){
 		return View::make( 'public.home.registro' );
 	}

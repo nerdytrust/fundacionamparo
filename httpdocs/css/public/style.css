@@ -36,6 +36,11 @@ button, input{
 	margin: 0;
 }
 
+.black-link {
+	color: #000;
+	font-weight: bold;
+}
+
 .caja_fca2 img:hover{
 	opacity: .7;
 }
@@ -1685,6 +1690,12 @@ b{color: #beda3e; font-weight: normal;}
 	font-size: .7em;
 	font-weight: lighter;
 }
+
+#terminos_footer h1 a{
+	color: #beda3e;
+	font-weight: lighter;
+}
+
 #terminos_footer h1 span{
 	color: #FFF;
 	line-height: 2em;

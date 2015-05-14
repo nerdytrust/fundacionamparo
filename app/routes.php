@@ -27,6 +27,7 @@ Route::get( 'donadores', [ 'uses' => 'DonadoresController@index', 'as' => 'get.d
 Route::get( 'contacto', [ 'uses' => 'ContactoController@index', 'as' => 'get.contacto' ] );
 Route::get( 'muro-exito', [ 'uses' => 'MuroExitoController@index', 'as' => 'get.muro-exito' ] );
 Route::get( 'voluntarios', [ 'uses' => 'VoluntariosController@index', 'as' => 'get.voluntarios' ] );
+Route::get( 'politicas-de-privacidad', [ 'uses' => 'HomeController@privacidad', 'as' => 'get.aviso-privacidad' ] );
 
 ## Vistas del interior de LA FUNDACIÓN
 Route::get( 'historia', [ 'uses' => 'FundacionController@historia', 'as' => 'get.historia' ] );
