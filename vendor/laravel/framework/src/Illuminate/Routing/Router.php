@@ -116,7 +116,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 *
 	 * @var array
 	 */
-	protected $resourceDefaults = array('index', 'create', 'store', 'show', 'edit', 'update', 'destroy','print','tab');
+	protected $resourceDefaults = array('index', 'create', 'store', 'show', 'edit', 'update', 'destroy','print','tab','remotecombo');
 
 	/**
 	 * Create a new Router instance.
@@ -642,6 +642,25 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 		$uri = $this->getResourceUri($name).'/{'.$base.'}/print';
 
 		$action = $this->getResourceAction($name, $controller, 'printItem', $options);
+
+		return $this->get($uri, $action);
+	}
+
+	/**
+	 * Add the remotecombo method for a resourceful route.
+	 *
+	 * @param  string  $name
+	 * @param  string  $base
+	 * @param  string  $controller
+	 * @param  array   $options
+	 * @return \Illuminate\Routing\Route
+	 */
+	protected function addResourceRemoteCombo($name, $base, $controller, $options)
+	{
+		//$uri = $this->getResourceUri($name).'/{'.$base.'}/remotecombo/{column}';
+		$uri = $this->getResourceUri($name).'/remotecombo/{column}';
+
+		$action = $this->getResourceAction($name, $controller, 'remoteCombo', $options);
 
 		return $this->get($uri, $action);
 	}

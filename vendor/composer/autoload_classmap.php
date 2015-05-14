@@ -3316,6 +3316,7 @@ return array(
     'Registrados' => $baseDir . '/app/models/Registrados.php',
     'RegistradosTableSeeder' => $baseDir . '/app/database/seeds/RegistradosTableSeeder.php',
     'Roles' => $baseDir . '/app/models/Roles.php',
+    'RolesTableSeeder' => $baseDir . '/app/database/seeds/RolesTableSeeder.php',
     'Schickling\\Backup\\BackupServiceProvider' => $vendorDir . '/schickling/backup/src/Schickling/Backup/BackupServiceProvider.php',
     'Schickling\\Backup\\Commands\\BackupCommand' => $vendorDir . '/schickling/backup/src/Schickling/Backup/Commands/BackupCommand.php',
     'Schickling\\Backup\\Commands\\BaseCommand' => $vendorDir . '/schickling/backup/src/Schickling/Backup/Commands/BaseCommand.php',

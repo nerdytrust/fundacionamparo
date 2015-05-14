@@ -39,10 +39,13 @@ crud index
 
 					@foreach ($columns as $column)
 						@if($column->is_foreign_key)
-							@if(count($fk_column) > 0)
-								<td> {{ HTML::link(strtolower(getenv('APP_ADMIN_PREFIX').'/'.$columns->{$column->name}->model)."/".$record->{$column->name},getFKColumn($fk_column,$column,$record,false)) }}  </td>
+							<?php
+								$is_with_link = getFKColumn($column->name,$record,$fk_column);
+							?>
+							@if($is_with_link != "---")
+								<td> {{ HTML::link(getenv('APP_ADMIN_PREFIX')."/".strtolower($columns->{$column->name}->model)."/".$record->{$column->name},$is_with_link) }}  </td>
 							@else
-								<td> {{ HTML::link(strtolower(getenv('APP_ADMIN_PREFIX').'/'.$columns->{$column->name}->model)."/".$record->{$column->name},$record->{$column->name}) }}  </td>
+								<td> {{ $is_with_link }}  </td>
 							@endif
 						@else
 							<td> {{ $record->{$column->name} }}  </td> 

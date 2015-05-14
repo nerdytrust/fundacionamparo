@@ -84,11 +84,12 @@ class CrudController extends \BaseController {
         $btn       = $class->getCrud("btn_in_index");
         $fk_column = $class->getCrud("fk_column");
 
+        $records   = $class;
 
         if (\Input::has('search'))
-            $records->search(\Input::get('search'));
+            $records = $class->search(\Input::get('search'));
 
-        $records = $class->paginate();
+        $records = $records->paginate();
 
         $columns  = $class->getColumnsByView("index");
 
@@ -138,6 +139,7 @@ class CrudController extends \BaseController {
         $fk_column = $class->getCrud("fk_column");
 
         $key_value= "";
+        $record   = [];
         $key_name = $class->getKeyName();
         $model    = $this->modelName;
         $columns  = $class->getColumnsByView(__FUNCTION__);
@@ -429,16 +431,15 @@ class CrudController extends \BaseController {
         $validations     = $class->getValidations($columns,$id);
         $_inputs   = $class->getInputs($columns);
         $inputs    = \Input::only($class->getInputs($columns));
-        dd($inputs);
-        die;
+
         $password = \Input::get("password");
 
+        
         if(empty($password))
         {
             unset($inputs["password"]);
             unset($validations["password"]);
         }
-
 
         $key_value= $id;
         $key_name = $class->getKeyName();
@@ -483,14 +484,12 @@ class CrudController extends \BaseController {
 
         }
 
-        
-        
-
-        foreach ($columns as $column)
+        foreach ($inputs as $index => $name)
         {
-            if(!$column->is_primary)
-                $record->{$column->name} = \Input::get($column->name);
+            if($index != $class->getKeyName())
+                $record->{$index} = \Input::get($index);
         }
+            
 
 
         if($record->save())
@@ -693,7 +692,34 @@ class CrudController extends \BaseController {
 
     }
 
+    public function remoteCombo($column){
 
+        $class      = new $this->className(); 
+        $fk_column  = $class->getCrud("fk_column");
+
+        $columns    = $fk_column[$column];
+        $model      = $class->toModel($column);
+
+        $class_model= new $model();
+
+        $records    = $class_model;
+
+        if (\Input::has('search'))
+            $records = $records->search(\Input::get('search'));
+
+        $records    = $records->take(10)->get();
+
+
+        foreach ($records as $record) {
+            $items[] =["text" => getFKColumn($column,$record,$fk_column), "id" => $record->{$class_model->getKeyName()} ] ;
+        }
+
+        echo json_encode([
+                            "total_count"           =>  2,
+                            "incomplete_results"    =>  false,
+                            "items"                 =>  $items,
+                        ]);
+    }
 
 
 }

@@ -23,7 +23,14 @@
 					<div class="col-xs-10">
 						@if($column->is_foreign_key)
 							@if(count($fk_column) > 0)
-								<td> {{ HTML::link(getenv('APP_ADMIN_PREFIX')."/".strtolower($columns->{$column->name}->model)."/".$record->{$column->name},getFKColumn($fk_column,$column,$record)) }}  </td>
+								<?php
+									$is_with_link = getFKColumn($column->name,$record,$fk_column);
+								?>
+								@if($is_with_link != "---")
+									<td> {{ HTML::link(getenv('APP_ADMIN_PREFIX')."/".strtolower($columns->{$column->name}->model)."/".$record->{$column->name},$is_with_link) }}  </td>
+								@else
+									<td> {{ $is_with_link }}  </td>
+								@endif
 							@else
 								<td> {{ HTML::link(getenv('APP_ADMIN_PREFIX')."/".strtolower($columns->{$column->name}->model)."/".$record->{$column->name},$record->{$column->name}) }}  </td>
 							@endif

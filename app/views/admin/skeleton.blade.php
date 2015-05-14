@@ -14,13 +14,15 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
         <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 
         <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
 
     </head>
     <body class="@yield('class')">
+        <div class="APP_ADMIN_PREFIX hidden">{{ getenv('APP_ADMIN_PREFIX') }}</div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -46,6 +48,9 @@
                     '/js/vendor/jquery.plugin.min.js',
 
                     '/js/vendor/bootstrap.min.js',
+                    '/js/vendor/bootstrap-toggle.min.js',
+                    '/js/vendor/summernote.js',
+                    '/js/vendor/select2.full.js',
 
                     '/js/vendor/js-webshim/minified/polyfiller.js',
                     '/js/vendor/jasny-bootstrap.min.js',

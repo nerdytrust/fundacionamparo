@@ -72,7 +72,7 @@ Form::macro('editor', function($name, $default = NULL, $attrs = array())
     if($default)
         $item .= $default;
 
-    $item .= "</textarea>";
+    $item .= "></textarea>";
 
     return $item;
 });
@@ -144,30 +144,37 @@ Form::macro('filepicker', function($name, $default = NULL, $attrs = array())
 
 
     $item = '<div class="fileinput fileinput-new input-group" data-provides="fileinput">';
-    $item.= '<div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>';
-    $item.= '<span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">'.trans('crud.select_file') .'</span><span class="fileinput-exists">'.trans('crud.change').'</span>';
+        $item.= '<div class="form-control" data-trigger="fileinput">';
+            $item.= '<i class="glyphicon glyphicon-file fileinput-exists"></i>'; 
+            $item.= '<span class="fileinput-filename"></span>';
+        $item.= '</div>';
+
+    $item.= '<span class="input-group-addon btn btn-default btn-file">';
+        $item.= '<span class="fileinput-new">'.trans('crud.select_file') .'</span>';
+        $item.= '<span class="fileinput-exists">'.trans('crud.change').'</span>';
 
 
-    $item = '<input type="hidden" name="'. $name .'" ';
-        if($default)
-            $item .= 'value="'. $default .'" ';
-    $item .= '>';
+            $item .= '<input type="hidden" name="'. $name .'" ';
+                if($default)
+                    $item .= 'value="'. $default .'" ';
+            $item .= '>';
 
-        $item .= '<input type="file" name="'. $name .'" ';
+            $item .= '<input type="file" name="'. $name .'" ';
 
-        // If Id not explicitly set, use name (Id is needed to associate with labels)
-        if (! isset($attrs['id'])) $item .= 'id="' . $name .'" ';
+            // If Id not explicitly set, use name (Id is needed to associate with labels)
+            if (! isset($attrs['id'])) $item .= 'id="' . $name .'" ';
 
-        if (is_array($attrs))
-        {
-            foreach ($attrs as $a => $v)
+            if (is_array($attrs))
             {
-                $item .= ($a !== 0 ? $a . '="' : null) . $v .'" ';
+                foreach ($attrs as $a => $v)
+                {
+                    $item .= ($a !== 0 ? $a . '="' : null) . $v .'" ';
+                }
             }
-        }
-    $item .= '>';
+            $item .= '>';
 
     $item .='</span>';
+
     $item .='<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">'.trans('crud.remove').'</a>';
     $item .='</div>';
 
@@ -284,3 +291,75 @@ Form::macro('combo', function($name, $default = NULL, $attrs = [], $data = [])
 
     return Form::select($name, [$data],$default,$attrs);
 });
+
+
+Form::macro('remotecombo', function($name, $default = NULL, $attrs = [], $url = NULL)
+{
+
+    if(!isset($attrs["model"]))
+        $attrs["model"] = "";
+    
+    $value = [$default => $default];
+
+    if(!$url)
+    {
+        $url = "./".getenv('APP_ADMIN_PREFIX')."/".$attrs["model"].'/remotecombo/'.$name;
+
+        if(is_numeric($default) and !empty($attrs["model"]))
+        {
+            $model      = new $attrs["model"];
+            $fk_column  = $model->getCrud("fk_column");
+            $record     = $model->find($default);
+
+            $value      = [$default=>getFKColumn($name,$record,$fk_column)];
+        }
+    }
+        
+
+    $attrs_default = ["combo"=>"combo","url"=>$url];
+
+    $attrs = array_merge($attrs_default,$attrs);
+
+    return Form::select($name, $value ,$default,$attrs);
+});
+
+
+Form::macro('radiogroup', function($name, $default = NULL, $attrs = array(), $data = [])
+{
+ 
+    $item = '<div class="btn-group" data-toggle="buttons">';
+
+        foreach ($data as $key => $value) {
+
+            if($default == $value)
+                $item.='<label class="btn btn-default active">';
+            else
+                $item.='<label class="btn btn-default">';
+
+                $item.='<input type="radio" name="'.$name.'" value="'.$value.'" ';
+
+                if($default == $value)
+                    $item.=' checked="checked" ';
+
+
+                if (is_array($attrs))
+                {
+                    foreach ($attrs as $a => $v)
+                    {
+                        $item .= ($a !== 0 ? $a . '="' : null) . $v .'" ';
+                    }
+                }
+
+                $item.=' /> '.$value;
+
+            $item.='</label>';
+        }
+
+
+    $item .= "</div>";
+
+    return $item;
+});
+
+
+
