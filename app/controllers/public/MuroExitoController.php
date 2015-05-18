@@ -41,3 +41,6 @@ class MuroExitoController extends BaseController {
 		}
 	}
 }
+
+/* End of file MuroExitoController.php */
+/* Location: ./app/controllers/public/MuroExitoController.php */

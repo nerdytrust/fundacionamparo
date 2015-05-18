@@ -5,3 +5,6 @@ class NoticiasController extends BaseController {
 		return View::make( 'public.noticias.index' );
 	}
 }
+
+/* End of file NoticiasController.php */
+/* Location: ./app/controllers/public/NoticiasController.php */

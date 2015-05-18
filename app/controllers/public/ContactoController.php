@@ -5,3 +5,6 @@ class ContactoController extends BaseController {
 		return View::make( 'public.contacto.index' );
 	}
 }
+
+/* End of file ContactoController.php */
+/* Location: ./app/controllers/public/ContactoController.php */

@@ -6,7 +6,7 @@
 		<div class="lightbox" id="blanco1" style="display:block">
 			<div class="usuario-light">
 				<span class="usuario cau">
-					<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '486x565' ) }}" alt="">
+					<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '540x565' ) }}" alt="">
 					<div id="txt_evento">						
 						<nav>
 							<ul>
@@ -68,7 +68,7 @@
 									</div>
 									<div id="cantidad">
 										<h1>META</h1>
-										<h2>${{ number_format( $causa->meta ) }}<span>MXN</span></h2>
+										<h2>${{ $causa->meta }}<span>MXN</span></h2>
 									</div>
 									<p>{{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
 									<p>{{ $helper->getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>

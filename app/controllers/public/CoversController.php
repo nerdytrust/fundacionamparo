@@ -7,19 +7,37 @@ class CoversController extends BaseController {
 		return View::make( 'public.covers.donar' )->with( [ 'causas' => $causas, 'helper' => new Helper ] );
 	}
 
-	public function donarCausas(){
-		return View::make( 'public.covers.causas' );
-	}
-
-	public function fichaCausas( $id_causa = '' ){
+	/**
+	 * Método para mostrar la ficha de donación de causa
+	 * @param  integer $id_causa ID de la causa
+	 * @return Vista de la ficha de donación de causa
+	 */
+	public function donarCausas( $id_causa = null ){
 		if ( ! isset( $id_causa ) || empty( $id_causa ) )
 			return Redirect::to( 'home' );
 
 		$causa = Causas::find( $id_causa );
-		if ( ! empty( $causa ) )
-			return View::make( 'public.covers.ficha_causas' )->with( [ 'causa' => $causa, 'helper' => new Helper ] );
-		else
+		if ( empty( $causa ) )
 			return Redirect::to( 'home' );
+
+		return View::make( 'public.covers.causas' )->with( [ 'causa' => $causa, 'helper' => new Helper ] );
+	}
+
+	/**
+	 * Método para mostrar la ficha de la causa
+	 * @param  integer $id_causa ID Causa
+	 * @return Vista de la ficha de la causa
+	 */
+	public function fichaCausas( $id_causa = null ){
+		if ( ! isset( $id_causa ) || empty( $id_causa ) )
+			return Redirect::to( 'home' );
+
+		$causa = Causas::find( $id_causa );
+		if ( empty( $causa ) )
+			return Redirect::to( 'home' );
+		
+		return View::make( 'public.covers.ficha_causas' )->with( [ 'causa' => $causa, 'helper' => new Helper ] );
+			
 	}
 
 	public function fichaDonador(){
@@ -97,3 +115,6 @@ class CoversController extends BaseController {
 		}
 	}
 }
+
+/* End of file CoversController.php */
+/* Location: ./app/controllers/public/CoversController.php */

@@ -205,7 +205,7 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 if ( $('body').hasClass( 'donar' ) 
-                    || $('body').hasClass( 'donar-causas' ) 
+                    || $('body').hasClass( 'donar-causa' ) 
                     || $('body').hasClass( 'entrar' ) 
                     || $('body').hasClass( 'registro' ) 
                     || $('body').hasClass( 'donar-step-two' ) 

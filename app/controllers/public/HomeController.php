@@ -7,7 +7,7 @@ class HomeController extends BaseController {
 	 * Método para la sección de home, se envían a la vista los elementos de video, causas
 	 * últimos donadores
 	 * Se manda la librería Helper mediante el método with
-	 * @return [type] vista del home
+	 * @return Vista del Home
 	 */
 	public function home(){
 		$video = HomeVideo::where( 'activo', 'Active' )->firstOrFail();
@@ -31,6 +31,10 @@ class HomeController extends BaseController {
 		return View::make( 'public.home.entrar' )->with( [ 'helper' => new Helper ] );
 	}
 
+	/**
+	 * Método para mostrar la vista de las políticas de privacidad
+	 * @return Vista de políticas de privacidad
+	 */
 	public function privacidad(){
 		return View::make( 'public.home.privacy' );
 	}
@@ -38,4 +42,17 @@ class HomeController extends BaseController {
 	public function registro(){
 		return View::make( 'public.home.registro' );
 	}
+
+	public function search(){
+		$resultados = '';
+		$s = Input::get( 's' );
+		if ( ! isset( $s ) || empty ( $s ) )
+			$resultados = null;
+
+		$resultados = $s;
+		return View::make( 'public.home.resultados' )->with( [ 'resultados' => $resultados, 'helper' => new Helper ] );
+	}
 }
+
+/* End of file HomeController.php */
+/* Location: ./app/controllers/public/HomeController.php */

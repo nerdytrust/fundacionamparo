@@ -6,3 +6,6 @@ class BecasController extends BaseController {
 		return View::make( 'public.becas.index' );
 	}
 }
+
+/* End of file BecasController.php */
+/* Location: ./app/controllers/public/BecasController.php */

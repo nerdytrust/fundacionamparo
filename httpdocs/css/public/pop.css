@@ -164,6 +164,15 @@ button.regresar{
  			font-size: 14px;
  			font-weight: 600 !important;
 		}
+
+		#verdeimagen .vol p#nombre{
+			display: inline-block;
+ 			font-size: 14px !important;
+ 			font-weight: 600 !important;
+ 			text-align: left;
+ 			width: 100%;
+		}
+
 		#verdeimagen .check-verde{
 			font-size: 14px;
 			text-align: left;

@@ -17,96 +17,44 @@
 				<h1>CAUSAS FUNDACIÓN AMPARO</h1>
 			</div>
 			<div class="re">
-				<article id="donacion_wrap" class="caja_2 ">
-					<img src="{{ asset( 'images/img_01.jpg' ) }}" alt="">
-					<section id="social_top">
-						<ul>
-							<a href="{{ URL::to( 'http://www.facebook.com' ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
-							<a href="{{ URL::to( 'http://www.twitter.com' ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
-							<a href=""><li class="fa fa-heart"></li></a>
-							<p>96 likes</p>
-						</ul>
-						<div id="donativo">HAZ TU DONACIÓN</div>
-					</section>
-					<section class="txt_int">
-						<h1 onclick="location.href='{{ URL::to( '/asistenciales' ) }}';">CENTROS COMUNITARIOS</h1>
-						<h2>Roberto Alonso Espinosa</h2>
-						<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
-						<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
-						<div id="meta">
-							<div id="barra">
-								<progress value="0" max="100"></progress>
-							</div>
-							<div id="cantidad">
-								<h1>META</h1>
-								<h2>$193,000<span>MXN</span></h2>
-							</div>
-							<p>102,548 MXN <span>RECAUDADOS</span></p>
-							<p>26 <span>DÍAS RESTANTES</span></p>
-						</div>
-					</section>
-					<span class="esquina"></span>
-				</article>
-				<article class="caja_2 ">
-					<img src="{{ asset( 'images/img_02.jpg' ) }}" alt="">
-					<section id="social_top">
-						<ul>
-							<a href="{{ URL::to( 'http://www.facebook.com' ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
-							<a href="{{ URL::to ( 'http://www.twitter.com' ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
-							<a href=""><li class="fa fa-heart"></li></a>
-							<p>96 likes</p>
-						</ul>
-						<div id="donativo">HAZ TU DONACIÓN</div>
-					</section>
-					<section class="txt_int">
-						<h1 onclick="location.href='{{ URL::to ( '/cultura' ) }}';">CULTURA</h1>
-						<h2>MUSEO AMPARO</h2>
-						<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
-						<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
-						<div id="meta">
-							<div id="barra">
-								<progress value="0" max="100"></progress>
-							</div>
-							<div id="cantidad">
-								<h1>META</h1>
-								<h2>$193,000<span>MXN</span></h2>
-							</div>
-							<p>102,548 MXN <span>RECAUDADOS</span></p>
-							<p>26 <span>DÍAS RESTANTES</span></p>
-						</div>
-					</section>
-					<span class="esquina"></span>
-				</article>
-				<article class="caja_2 " id="dre">
-					<img src="{{ asset( 'images/img_03.jpg' ) }}" alt="">
-					<section id="social_top">
-						<ul>
-							<a href="{{ URL::to( 'http://www.facebook.com' ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
-							<a href="{{ URL::to( 'http://www.twitter.com' ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
-							<a href=""><li class="fa fa-heart"></li></a>
-							<p>96 likes</p>
-						</ul>
-						<div id="donativo">HAZ TU DONACIÓN</div>
-					</section>
-					<section class="txt_int">
-						<h1 onclick="location.href='{{ URL::to( '/cultura' ) }}';">CULTURA</h1>
-						<h2>CENTRO COMERCIAL "LA VICTORIA"</h2>
-						<p >Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
-						<a href=""><h3>MÁS INFORMACIÓN<span>+</span></h3></a>
-						<div id="meta">
-							<div id="barra">
-								<progress value="0" max="100"></progress>
-							</div>
-							<div id="cantidad">
-								<h1>META</h1>
-								<h2>$193,000<span>MXN</span></h2>
-							</div>
-							<p>102,548 MXN <span>RECAUDADOS</span></p>
-							<p>26 <span>DÍAS RESTANTES</span></p>
-						</div>
-					</section>
-					<span class="esquina"></span>
-				</article>
+				@if ( isset( $causas ) )
+	 				@foreach ( $causas as $causa )
+	 					<article class="caja_2">
+				 			<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '559x548' ) }}" alt="">
+				 			<section id="social_top">
+								<ul>
+									<a href="{{ URL::to( $causa->facebook ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
+									<a href="{{ URL::to( $causa->twitter ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
+									<a id="{{ $causa->id_causas }}" class="like-process"><li class="fa fa-heart"></li></a>
+									<p>{{ $causa->me_gusta_interno }} likes</p>
+								</ul>
+								<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
+							</section>
+				 			<section class="txt_int">
+				 				<h1>{{ strtoupper( $causa->categoria ) }}</h1>
+				 				<h2>{{ $causa->titulo }}</h2>
+				 				<p>Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
+								<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas ) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
+								<div id="meta">
+									<div id="barra">
+										<progress value="0" max="100">
+											<div class="progress-bar">
+										        <span style="width: 60%;">-</span>
+										    </div>
+										</progress>
+									</div>
+								<div id="cantidad">
+									<h1>META</h1>
+									<h2>{{ $causa->meta }}<span>MXN</span></h2>
+								</div>
+									<p>{{ number_format( floatval( $causa->recaudado ) ) }} MXN <span>RECAUDADOS</span></p>
+									<p>{{ $helper->getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
+								</div>
+				 			</section>
+				 			<span class="esquina"></span>
+				 		</article>
+	 				@endforeach
+	 			@endif
 			</div><!--termina re-->
 			<div id="pleca_causas" class="">
 				<h1>CAUSAS EXTERNAS</h1>
@@ -151,7 +99,7 @@
 				</div>
 				<div class="txt_fundacion">
 					<div id="titulo_fca">
-						<button class="causas animsition-link" onclick="location.href='{{ URL::to( '/apoyamos-tu-causa' ) }}';">Inscribir Causa</button>
+						<button class="causas animsition-link" onclick="location.href='{{ URL::to( 'apoyamos-tu-causa' ) }}';">Inscribir Causa</button>
 					</div>
 				</div>
 				<div class="txt_footer">

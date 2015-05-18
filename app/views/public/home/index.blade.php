@@ -61,7 +61,7 @@
 										<a id="{{ $causa->id_causas }}" class="like-process"><li class="fa fa-heart"></li></a>
 										<p>{{ $causa->me_gusta_interno }} likes</p>
 									</ul>
-									<div id="donativo">HAZ TU DONACIÓN</div>
+									<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
 								</section>
 					 			<section class="txt_int">
 					 				<h1>{{ strtoupper( $causa->categoria ) }}</h1>
@@ -78,7 +78,7 @@
 										</div>
 									<div id="cantidad">
 										<h1>META</h1>
-										<h2>{{ number_format( $causa->meta ) }}<span>MXN</span></h2>
+										<h2>{{ $causa->meta }}<span>MXN</span></h2>
 									</div>
 										<p>{{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
 										<p>{{ $helper->getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>

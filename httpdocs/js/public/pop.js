@@ -6,7 +6,7 @@
 				  window.location = 'donar.html';
 			});*/
 
-			$("#donativo, #cauf-d").click(function(){
+			$("#cauf-d").click(function(){
 				  window.location = 'donar-causas';
 			});
 			$("#donador_sec, #btn_dona, #btn_donar2, .circulo_btn").click(function(){
@@ -18,9 +18,22 @@
 			$("#ac2").click(function(){
 				window.location = 'gracias';
 			});
-			$("#impulsor_sec, #fca-i, #cauf-i").click(function(){
+			$("#fca-i").click(function(){
+				window.location = 'impulsar';
+			});
+
+			$('#impulsor_sec').click(function(){
+				window.location = 'impulsar';
+			});
+
+			$("#cauf-i").click(function(){
 				window.location = 'impulsar-causa';
 			});
+
+			// $("#impulsor_sec, #cauf-i").click(function(){
+			// 	window.location = 'impulsar-causa';
+			// });
+
 			$("#voluntario_sec, #fca-v, #cauf-v").click(function(){
 				window.location = 'voluntario';
 			});

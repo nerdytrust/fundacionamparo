@@ -42,7 +42,7 @@
 				@endif
 			</h2>
 			<h3>Donadores <span>#TomandoAcciónFA</span></h3>
-			@if( isset( $heder_donadores ) )
+			@if( isset( $header_donadores ) )
 				<span class="donas">
 					<div class="dona fi"><span class="dona-a"></span>Donadores</div> 
 					<div class="dona"><span class="dona-b"></span>Impulsores</div> 
@@ -60,8 +60,10 @@
 				</label>
 				<button>Todos</button>
 			@endif
-			<input type="text" placeholder="Buscar">
-			<button class="fa fa-search busc"></button>
+			{{ Form::open( [ 'url' => 'resultados', 'method' => 'get', 'id' => 'formulario_buscador' ] ) }}
+				<input name="s" type="text" placeholder="Buscar">
+				<button class="fa fa-search busc" type="submit"></button>
+			{{ Form::close() }}
 		</div>
 	</div>
 </div>

@@ -28,6 +28,7 @@ Route::get( 'contacto', [ 'uses' => 'ContactoController@index', 'as' => 'get.con
 Route::get( 'muro-exito', [ 'uses' => 'MuroExitoController@index', 'as' => 'get.muro-exito' ] );
 Route::get( 'voluntarios', [ 'uses' => 'VoluntariosController@index', 'as' => 'get.voluntarios' ] );
 Route::get( 'politicas-de-privacidad', [ 'uses' => 'HomeController@privacidad', 'as' => 'get.aviso-privacidad' ] );
+Route::get( 'resultados/', [ 'uses' => 'HomeController@search', 'as' => 'get.resultados' ] )->where( 's', '[a-zA-Z0-9]+');
 
 ## Vistas del interior de LA FUNDACIÓN
 Route::get( 'historia', [ 'uses' => 'FundacionController@historia', 'as' => 'get.historia' ] );
@@ -49,7 +50,8 @@ Route::get( 'donar-oxxo', [ 'uses' => 'CoversController@donarStepFour', 'as' => 
 Route::get( 'gracias', [ 'uses' => 'CoversController@donarStepFive', 'as' => 'get.gracias' ] );
 Route::get( 'gracias-2', [ 'uses' => 'CoversController@voluntarioGracias', 'as' => 'get.gracias-2' ] );
 Route::get( 'gracias-3', [ 'uses' => 'CoversController@impulsarGracias', 'as' => 'get.gracias-3' ] );
-Route::get( 'donar-causas', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causas' ] );
+Route::get( 'donar-causa', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causa' ] );
+Route::get( 'donar-causa/{id}', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causa' ] )->where( 'id', '[0-9]+' );
 Route::get( 'impulsar', [ 'uses' => 'CoversController@impulsar', 'as' => 'get.impulsar' ] );
 Route::get( 'impulsar-causa', [ 'uses' => 'CoversController@impulsarCausa', 'as' => 'get.impulsar-causa' ] );
 Route::get( 'voluntario', [ 'uses' => 'CoversController@voluntario', 'as' => 'get.voluntario' ] );
@@ -68,5 +70,6 @@ Route::get( 'path_image/{id}/{size}', 'StoragePathController@imgStorage' );
 
 Route::post( 'ajax-moments', 'MuroExitoController@getMoment' );
 
-##Login con Facebook
+##Actions de Formularios
+Route::post( 'registrar-tu-causa', [ 'uses' => 'ApoyarCausaController@registrar', 'as' => 'get.registrar-tu-causa' ] );
 

@@ -1,6 +1,6 @@
 <?php $disable_header = 1; $disable_footer = 1; ?>
 @extends( "public.covers.layout" )
-	@section("class")donar-causas
+	@section("class")donar-causa
 	@stop
 	@section("content")
 		<div class="lightbox-h d" id="verdeimagen">
@@ -15,9 +15,9 @@
 				<label for="" class="vol">
 					<form action="">
 						<div class="imagen">
-							<img src="{{ asset( 'images/image.png' ) }}" alt="">
-							<button>Centros comunitarios</button>
-							<p id="nombre">ROBERTO ALONSO ESPINOSA</p>
+							<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '282x280' ) }}" alt="">
+							<button>{{ $causa->categoria }}</button>
+							<p id="nombre">{{ $causa->titulo }}</p>
 						</div>
 						<p>Ingresa el monto que desaes donar</p>
 						<span class="op">
@@ -25,8 +25,7 @@
 						</span>
 						<div class="check-verde">
 							<input type="checkbox" value="None" id="check-verde" name="check" />
-							<label for="check-verde"></label>
-							No mostrar mi perfil en el sitio
+							<label for="check-verde"></label>No mostrar mi perfil en el sitio
 						</div>
 						</br>
 						<input type="submit" value="ACEPTAR" id="ac">							

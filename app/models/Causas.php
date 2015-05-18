@@ -62,7 +62,7 @@ class Causas extends \Crud {
     public function getMetaAttribute( $value ){
         $action = getCurrentAction();
 
-        if ( $action == "index" )
+        // if ( $action == "index" )
             return '$' . number_format( $value );
     }
     

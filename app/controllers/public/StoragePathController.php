@@ -41,3 +41,6 @@ class StoragePathController extends BaseController {
  		//return $content->header('Content-Type', 'video/mp4' );
  	}
 }
+
+/* End of file StoragePathController.php */
+/* Location: ./app/controllers/public/StoragePathController.php */

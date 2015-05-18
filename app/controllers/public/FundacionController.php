@@ -45,5 +45,7 @@ class FundacionController extends BaseController {
 	public function salud(){
 		return View::make( 'public.fundacion.salud' );
 	}
-
 }
+
+/* End of file FundacionController.php */
+/* Location: ./app/controllers/public/FundacionController.php */

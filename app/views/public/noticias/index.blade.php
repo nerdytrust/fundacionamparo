@@ -4,11 +4,11 @@
 	@section( 'content' )
 		<section id="Contenedor">
 			<section class="mask_head back_img2" >
-					<div class="txt_mask">
-						<img src="{{ asset( 'images/logo_mask_header.jpg' ) }}" alt="">
-						<h1>NOTICIAS</h1>
-						<h3>Hechos y acontecimientos relevantes</h3>
-						<nav class="social_mask">
+				<div class="txt_mask">
+					<img src="{{ asset( 'images/logo_mask_header.jpg' ) }}" alt="">
+					<h1>NOTICIAS</h1>
+					<h3>Hechos y acontecimientos relevantes</h3>
+					<nav class="social_mask">
 						<ul>
 							<a href=""><li class="fa fa-facebook"></li></a>
 							<a href=""><li class="fa fa-twitter"></li></a>
@@ -16,7 +16,7 @@
 							<p>96 likes</p>
 						</ul>
 					</nav>
-					</div>
+				</div>
 			</section>
 			<section id="contenedor_int">
 				<div class="txt_fundacion3">

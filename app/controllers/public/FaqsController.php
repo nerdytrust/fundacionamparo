@@ -5,3 +5,6 @@ class FaqsController extends BaseController {
 		return View::make( 'public.faqs.index' );
 	}
 }
+
+/* End of file FaqsController.php */
+/* Location: ./app/controllers/public/FaqsController.php */

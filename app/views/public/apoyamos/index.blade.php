@@ -21,32 +21,35 @@
 			<section id="contenedor_int">
 				<div class="text-contact">
 					<label class="contact" for="">
-						<form action="">
+						{{ Form::open( [ 'url' => 'registrar-tu-causa', 'method' => 'POST', 'autocomplete' => 'off' ] ) }}
 							<h1>Comunícate con nosotros</h1>
 							<h2>
 								Llena el siguiente formulario, una vez revisado nos pondremos en contacto para darte una respuesta
 							</h2>
 							<span>
-								<input type="text" name="nombre" maxlenght="10" placeholder="Nombre" required>
+								{{ Form::text( 'nombre', '', [ 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 25 ] )}}
 							</span>
-							<input type="text" name="telefono" maxlenght="10" placeholder="Teléfono" required>
 							<span>
-								<input type="email" name="mail" autocomplete="off" placeholder="Correo electrónico" required>
+								{{ Form::text( 'telefono', '', [ 'placeholder' => 'Teléfono', 'required' => true, 'maxlenght' => 10 ] ) }}
+							</span>
+							<span>
+								{{ Form::email( 'mail', '', [ 'placeholder' => 'Correo electrónico', 'required' => true ] ) }}
 							</span>
 							<span>
 								<h4 class="gt">Tipo de causa</h4>
-								<select name="" id="" required>
-									<option value="">Rehabilitación</option>
-									<option value="">Rehabilitación</option>
-									<option value="">Rehabilitación</option>
+								<select name="causa_tipo" id="" required>
+									<option value="0">Selecciona</option>
+									<option value="1">Rehabilitación</option>
+									<option value="2">Rehabilitación</option>
+									<option value="3">Rehabilitación</option>
 								</select>
 						    </span>
 							<span>
-								<textarea rows="4" cols="50" placeholder="Describe tu causa"></textarea>
+								{{ Form::textarea( 'descripcion', '', [ 'placeholder' => 'Describe tu causa', 'rows' => 4, 'cols' => 50 ] ) }}
 							</span>
-							<button>Enviar</button>
+							<button type="submit">Enviar</button>
 							<p>Campos obligarotios para enviar formulario</p>
-						</form>
+						{{ Form::close() }}
 					</label>
 					<div class="contact-inf rt">
 						<b>T. + (222) 229 38 50<br/>info@fundacionamparo.com</b>

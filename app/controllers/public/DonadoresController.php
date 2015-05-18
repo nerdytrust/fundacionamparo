@@ -5,3 +5,6 @@ class DonadoresController extends BaseController {
 		return View::make( 'public.donadores.index' );
 	}
 }
+
+/* End of file DonadoresController.php */
+/* Location: ./app/controllers/public/DonadoresController.php */

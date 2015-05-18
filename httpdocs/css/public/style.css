@@ -36,6 +36,10 @@ button, input{
 	margin: 0;
 }
 
+#formulario_buscador {
+	display: inline-block;
+}
+
 .black-link {
 	color: #000;
 	font-weight: bold;
@@ -527,10 +531,10 @@ span.donas{
 	}
 	.cau img{
 		position: absolute;
-		top: -5px;
+		/*top: -5px;*/
 		display: block;
 		width: auto;
-		height: 110%;
+		/*height: 110%;*/
 	}
 	div.cau-dat{
 	width: 100%;
@@ -3215,98 +3219,127 @@ label.contact textarea{
 		display: none;
 	}
 	#titulo_txt{
-		height: 400px;
+		/*height: 400px;*/
+		height: auto;
+		width: 100%;
+		padding: 45px 25px 25px 10px;
 	}
-		.vi {
-		  width: 46%;
-		  height: 400px;
-		}
-		aside.btns {
-		  width: 21%;
-		  height: 400px;
-		}
-		#btn_twitter, #btn_facebook{
-			height: 100px;
-			line-height: 2;
-		}
-		#btn_facebook ul{
-			line-height: 2;
-		}
-		#btn_donar2{
-			height: 100px;
-			padding: 1%;
-		}
-		.caja_1{
-			height: 198px
-		}
-		.txt {
-		  padding: 5px 10px;
-		}
-		.txt p{
-			line-height: 1;
-		}
+	.vi {
+		/*width: 46%;*/
+		width: 100%;
+		height: 500px;
+	}
+	aside.btns {
+		/*width: 21%;*/
+		width: 100%;
+		/*height: 400px;*/
+		height: auto;
+	}
+	#btn_twitter, #btn_facebook{
+		height: 100px;
+		line-height: 2;
+		width: 50%
+	}
+	#btn_facebook ul{
+		line-height: 2;
+	}
+	#btn_donar2{
+		height: 100px;
+		padding: 1%;
+		width: 100%;
+	}
+	.caja_1{
+		/*height: 198px*/
+		height: auto;
+		width: 100% !important;
+	}
+	.caja_1 img {
+		height: auto !important;
+		width: 100%;
+	}
+	.txt {
+		/*padding: 5px 10px;*/
+		padding: 10px;
+	}
+	.txt p{
+		line-height: 1;
+	}
+
+	#donador_sec, #impulsor_sec, #voluntario_sec {
+		padding: 6% !important;
+		width: 100% !important;
+	}
 
 	#perfil:after{
-			  padding: 1.5% 11px;;
-		}
+		padding: 1.5% 11px;;
+	}
+
 	#txt_evento{
 		position: absolute;
 		/*background: red;*/
 	}
+
 	.contact-inf {
-	 width: 95% ;
-	 /* background: red;*/
+		width: 95% ;
+		/* background: red;*/
 	}
 	
 	label.contact span:after{
 		display: none;
 	}
+
 	label.contact textarea{
 		width: 97%;
 	}
+
 	footer {
-	  padding: 20px 0 10px 0;
+		padding: 20px 0 10px 0;
 	}
+
 	#donativo {
-	  height: 125px !Important;
-	  padding-top: 38px !Important;
-	  width: 125px !Important;
-	  float: right;
-	  font-size: 1em !important;
-	  margin-right: 3%;
+		height: 125px !Important;
+		padding-top: 38px !Important;
+		width: 125px !Important;
+		float: right;
+		font-size: 1em !important;
+		margin-right: 3%;
 	}
 
 	#titulo_txt h1{
 		font-size: 3.2em;
 	}
+
 	#titulo_txt h2{
 		font-size: 1.5em;
 	}
+
 	#titulo_txt p{
 		padding: 0;
 	}
+
 	.caja_2{
 		/*height: auto;*/
 		width: 100% !important;
 	}
+
 	#btn_donar2 h1{
 		font-size: 1.8em;
 	}
+
 	#social_top ul{
 		margin-top: 0%;
 		float: left;
-  margin-left: 1.5%;
+		margin-left: 1.5%;
 	}
+
 	#social_top{
 		text-align: center;
-		 
 	}
 	
 	/*.txt_int:hover{
 		bottom: 0 !important;
 		background: url("../../images/back-t.png")repeat;
 	}*/
-	
 	
 	.txt_int p{
 		height: 21%;
@@ -3322,174 +3355,223 @@ label.contact textarea{
 	#cantidad h1{
 		top: -6px;
 	}
+
 	.for_ayuda{
 		padding: 1% 1% 0 1% !important;
 	}
-	#conteo_donadores h2, #conteo_donadores h3{
+
+	#conteo_donadores h2,
+	#conteo_donadores h3{
 		font-size: .8em;
 	}
+
 	#int_contado{
 		width: 49%;
 		text-align: left;
 		margin:0;
 	}
+
 	#int_busc{
 		width: 50%;
 		/*margin-bottom: 2%;*/
 	}
+
 	.txt_fundacion3{
   		width: 100%;
   	}
-  	.caja_fca_usu{
-	width: 50%;
+
+	.caja_fca_usu{
+		width: 50%;
 	}
 	
 	#txt_evento h1{
 		width: 100%;
 	}
+
 	#txt_evento nav{
 		text-align: left;
 		width: 100%;
 	}
+
 	#terminos_footer{
 		width: 100%;
-		  margin-bottom: 1%;
+		margin-bottom: 1%;
 	}
+
 	#footer_nav{
 		/*display: none;*/
-		  width: 100%;
-  text-align: center;
-  margin-bottom: 2%;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 2%;
 	}
+
 	#logo_3indesign{
 		 width: 100%;
 		text-align: center;
 	}
+
 	.social_mask{
 		text-align: center;
 		margin: 5px 0 0 0;
 	}
-	.fi{padding: 0; margin: 0; background: none;}
-	.dona{ margin-right: 15px;}
-	#conteo_donadores input{padding: 0.5em;}
-	.bull_color{top: 15px;}
+
+	.fi{
+		padding: 0;
+		margin: 0;
+		background: none;
+	}
+
+	.dona{
+		margin-right: 15px;
+	}
+
+	#conteo_donadores input{
+		padding: 0.5em;
+	}
+
+	.bull_color{
+		top: 15px;
+	}
+
 	label.contact select{
 		width: 97%;
 		background: url("../../images/flecha.png") no-repeat 96%;
 	}
+
 	label.becas{
 		width: 100%;
 	}
+
 	.info-v{
-	width: 100%;
-	left: 0;
-	top: 60%;
-	height: auto;
-	overflow: hidden;
-	padding: 0 1%;
+		width: 100%;
+		left: 0;
+		top: 60%;
+		height: auto;
+		overflow: hidden;
+		padding: 0 1%;
 	}
+
 	.info-v h2 {
-	font-size: 1em;
+		font-size: 1em;
 	}
-	ul.slides li iframe, .flexslider .slides > li {
-	height: 500px;
+
+	ul.slides li iframe,
+	.flexslider .slides > li {
+		height: 500px;
 	}
 	.flex-control-paging{
 		background: red !important;
 		display: none;
 	}
+
 	#cja_donativos{
 		height: auto;
 	}
+
 	.n-vol{
-			display: none !important;
+		display: none !important;
 	}
+
 	#terminos_footer img{
-			display: none;
-		}
-		.pasos_txt, .division{
+		display: none;
+	}
+
+	.pasos_txt, .division{
 		display: block;
 		margin: 50px auto;
 		width: 100%;
 	}
 	.flecha1 {
-  display: none;
-}
-.flecha2 {
-  display: block;
-  margin: 0 auto;
-}
-#plc_blck{
-	display: none;
-}
-.como{
-	display: none;
-}
-.causas-social{
-	width: 50%;
-}
-h2.text-causas{
-	  font-size: .8em;
-	  font-weight: 600;
-	  bottom: 11%;
-}
-label.becas ul.pasos li{
-	border: none;
-	height: auto !important;
-	min-height: 100px;
-}
-label.becas ul.pasos li:first-child{
-	margin-top: 7%;
-}
-	.neces{
-			width: 50% !important;
-			text-align: center;
-			  font-size: .8em !important;
-		}
-		.img_txt h3, .img_txt p {
-  text-align: center !important;
-}
-#txt_evento {
-	left: 0;
-	top: 0;
-  width: 90% !important;
-  text-align: left;
-  /*margin: 20px 0;*/
-  margin: 0 5% !important;
-}
-#txt_evento nav, .img_txt #txt_evento nav ul {
-  width: auto !important;
-}
+		display: none;
+	}
 
-.usuario p{
+	.flecha2 {
+		display: block;
+		margin: 0 auto;
+	}
+
+	#plc_blck{
+		display: none;
+	}
+
+	.como{
+		display: none;
+	}
+
+	.causas-social{
+		width: 50%;
+	}
+
+	h2.text-causas{
+		font-size: .8em;
+		font-weight: 600;
+		bottom: 11%;
+	}
+
+	label.becas ul.pasos li{
+		border: none;
+		height: auto !important;
+		min-height: 100px;
+	}
+
+	label.becas ul.pasos li:first-child{
+		margin-top: 7%;
+	}
+	.neces{
+		width: 50% !important;
+		text-align: center;
+		font-size: .8em !important;
+	}
+
+	.img_txt h3, .img_txt p {
+		text-align: center !important;
+	}
+
+	#txt_evento {
+		left: 0;
+		top: 0;
+		width: 90% !important;
+		text-align: left;
+		/*margin: 20px 0;*/
+		margin: 0 5% !important;
+	}
+
+	#txt_evento nav, .img_txt #txt_evento nav ul {
+		width: auto !important;
+	}
+
+	.usuario p{
 		display: none !important;		
 	}
 }	
 
-	@media screen and (max-width:640px) {
-		#txt_noticia{
-			margin: 5% 0 0 0 !important;
-		}
-		.rt #txt_evento, .rt2 #txt_evento{
+@media screen and (max-width:640px) {
+	#txt_noticia{
+		margin: 5% 0 0 0 !important;
+	}
+	.rt #txt_evento, .rt2 #txt_evento{
 		display: none !important;
 	}
 	.membresia-red{
 		display: none !important;
 	}
-		.usuario-light{
+
+	.usuario-light{
 		margin-top: 17% !important;
 	}
-		.txt {
-		  padding: 10px 10px;
-		}
-		.bull_color{
-			padding: 2px 8px;
-		}
-			#perfil::after {
-			    padding: 3% 15px;
-			}
+
+	.txt {
+	  padding: 10px 10px;
+	}
+
+	.bull_color{
+		padding: 2px 8px;
+	}
+	#perfil::after {
+	    padding: 3% 15px;
+	}
 		
-		#int_busc{
+	#int_busc{
 		width: 100%;
 		/*margin-bottom: 2%;*/
 	}
@@ -3497,146 +3579,215 @@ label.becas ul.pasos li:first-child{
 		display: none;
 	}
 
-		.fr{
+	.fr{
 		width: 84%;
 		display: block;
 		margin: 5% auto;
 	}
-		div.cau-dat{
-			bottom: 0%;
-		}
-		div.cau-dat img{
-			margin: 0px 0px 0px 10px !important;
-		}
-		div.cau-dat h1{
-			margin: -3px 0px 0px 8% !important;
-		}
-		article.animacion img{
-			height: 100%;
-		}
-		.c2{
-			margin-left: 0 !important;
-			padding-left: 0 !important;
-			/*background: red;*/
-		}
-		.c2 b{
-			display: block;
-		}
-	label.becas ul.pasos div select{
-	background:  url("../../images/flecha2.png") no-repeat 96% ; 
+
+	div.cau-dat{
+		bottom: 0%;
 	}
+
+	div.cau-dat img{
+		margin: 0px 0px 0px 10px !important;
+	}
+
+	div.cau-dat h1{
+		margin: -3px 0px 0px 8% !important;
+	}
+
+	article.animacion img{
+		height: 100%;
+	}
+
+	.c2{
+		margin-left: 0 !important;
+		padding-left: 0 !important;
+		/*background: red;*/
+	}
+
+	.c2 b{
+		display: block;
+	}
+
+	label.becas ul.pasos div select{
+		background:  url("../../images/flecha2.png") no-repeat 96% ; 
+	}
+
 	#vol select{
-	background:  url("../../images/flecha2.png") no-repeat 93%;
-}
-		.contact-inf{
-	width: 84%;
-}
+		background:  url("../../images/flecha2.png") no-repeat 93%;
+	}
 
-		.neces{
-			width: 100% !important;
-			text-align: center;
-		}
-		img.bg{
-			display: none;
-		}
-		div#verde1{
-			position: inherit;
-			height: 650px;
-		}
-		#Contenedor {
-			/*padding: 102px 25px 0 25px;*/
-		}
-		.re, .dre{
-			display: block !important;
-		}
-		
-		#titulo_txt h1{
-			font-size: 4em;
-		}
-		.cau{
-			display: block !important;
-			height: 40% !important;
+	.contact-inf{
+		width: 84%;
+	}
 
-		}
-		
-		
-		div.cau-dat>h2{
-			display: none !important;
-		}
-		aside.btns{
-			width: 100%;
-			height: auto;
-		}
-		#social_top ul{
-			width: auto;
-			padding: 0% 0;
-			float: left;
-			/*background: red;*/
-		}
-		#social_top ul li{
-			float: left;
-		}
-		/*.txt_int{
-			bottom: 0;
-			  height: auto;
-			  position: absolute;
-			  top: auto;
-			  width: 100%;
-			  padding: 20px 20px 20px 20px;
-			  opacity: 1;
-			  transition: bottom 2s, background 2s;
-			  background: none;
-			  cursor: pointer;
-			}
-			.txt_int:hover{
-				bottom: 0 !important;
-				background: url("../../images/back-t.png")repeat;
-			}*/
+	.neces{
+		width: 100% !important;
+		text-align: center;
+	}
 
-		.txt_int p{
-			display: none;
-		}
-		#meta{
-			/*display:  none;*/
-		}
-		.for_ayuda{
-			width: 100% !important;
-		}
-		.vi, .vi2, .vi3{
-			width: 100%;
-			height: 300px !important;
-		}
-		.vi video, .vi2 video, .vi3 video{
-			width: 100%;
-			height: 300px !important;
-		}
-		video{
-			width: 100% !important;
-			height: auto !important;
-		}
-	.txt_fundacion2{width: 100%;}
-	.txt_fundacion2 p, .txt_fundacion2 ul{width: 98%; margin: 0 auto;}
-	.txt_fundacion2 ul{ width: 84%; font-size: 0.8em; }
+	img.bg{
+		display: none;
+	}
+
+	div#verde1{
+		position: inherit;
+		height: 650px;
+	}
+
+	#Contenedor {
+		/*padding: 102px 25px 0 25px;*/
+	}
+
+	.re, .dre{
+		display: block !important;
+	}
+
+	#titulo_txt h1{
+		font-size: 4em;
+	}
+
+	.cau{
+		display: block !important;
+		height: 40% !important;
+	}
+		
+	div.cau-dat>h2{
+		display: none !important;
+	}
+
+	aside.btns{
+		width: 100%;
+		height: auto;
+	}
+
+	#social_top ul{
+		width: auto;
+		padding: 0% 0;
+		float: left;
+		/*background: red;*/
+	}
+
+	#social_top ul li{
+		float: left;
+	}
+
+	/*.txt_int{
+		bottom: 0;
+		height: auto;
+		position: absolute;
+		top: auto;
+		width: 100%;
+		padding: 20px 20px 20px 20px;
+		opacity: 1;
+		transition: bottom 2s, background 2s;
+		background: none;
+		cursor: pointer;
+	}
+	.txt_int:hover{
+		bottom: 0 !important;
+		background: url("../../images/back-t.png")repeat;
+	}*/
+
+	.txt_int p{
+		display: none;
+	}
+
+	#meta{
+		/*display:  none;*/
+	}
+
+	.for_ayuda{
+		width: 100% !important;
+	}
+
+	.vi, .vi2, .vi3{
+		width: 100%;
+		height: 300px !important;
+	}
+
+	.vi video, .vi2 video, .vi3 video{
+		width: 100%;
+		height: 300px !important;
+	}
+
+	video{
+		width: 100% !important;
+		height: auto !important;
+	}
+
+	.txt_fundacion2{
+		width: 100%;
+	}
+
+	.txt_fundacion2 p, 
+	.txt_fundacion2 ul{
+		width: 98%;
+		margin: 0 auto;
+	}
+
+	.txt_fundacion2 ul{
+		width: 84%;
+		font-size: 0.8em;
+	}
+
 	.txt_fundacion2 ul li{
 		line-height: 18pt;
 	}
-	.flecha1{display: none;}
-	.flecha2{display: block; margin: 0 auto;}
-	.mostrar-ocultar h1, .mostrar-ocultar2 h1, .mostrar-ocultar3 h1, .mostrar-ocultar4 h1, .mostrar-ocultar5 h1{
+
+	.flecha1{
+		display: none;
+	}
+
+	.flecha2{
+		display: block;
+		margin: 0 auto;
+	}
+
+	.mostrar-ocultar h1, 
+	.mostrar-ocultar2 h1, 
+	.mostrar-ocultar3 h1, 
+	.mostrar-ocultar4 h1, 
+	.mostrar-ocultar5 h1{
 		width: 80%; font-size: 14px !important;
 	}
-	.deslizante p, .deslizante2 p, .deslizante3 p, .deslizante4 p, .deslizante5 p{
+
+	.deslizante p, 
+	.deslizante2 p, 
+	.deslizante3 p, 
+	.deslizante4 p, 
+	.deslizante5 p{
 		margin: 0 auto !important;
 		width: 98%;
 	}
-	.fi{padding: 0; margin: 0; background: none;}
-	.dona{margin-right: 0;font-size: 11px;}
-	.dona-a, .dona-b, .dona-c{ width: 15px; height: 15px;}
-	.bull_color{top: 10px;}
+
+	.fi{
+		padding: 0;
+		margin: 0;
+		background: none;
+	}
+
+	.dona{
+		margin-right: 0;
+		font-size: 11px;
+	}
+
+	.dona-a, .dona-b, .dona-c{
+		width: 15px;
+		height: 15px;
+	}
+
+	.bull_color{
+		top: 10px;
+	}
+
 	.causas-social{
 		width: 100%;
 		background-size: 100% !important;
 	}
+
 	.como{
 		display: none;
 		width: 100%;
@@ -3644,19 +3795,39 @@ label.becas ul.pasos li:first-child{
 		height: auto;
 		background: #000;
 	}
+
 	.como h1{
 		font-size: 2em;
 		display: none;
 	}
+
 	.como h2{
 		font-size: 1em;
 	}
-	label.contact{width: 84%;}	
-	label.becas ul.pasos span, label.becas ul.pasos li input, label.becas ul.pasos div,ul.pasos li:nth-of-type(3)>span input[type="text"], label.contact select, label.contact textarea{width:100%;}
-	ul.pasos li:nth-of-type(3)>span:nth-of-type(2)
-	{width:100%; margin:10% 0 0 0;}
-	ul.pasos li:nth-of-type(3)>span:nth-of-type(3)
-	{width:auto; margin:10% 0 0 0;}
+
+	label.contact{
+		width: 84%;
+	}
+
+	label.becas ul.pasos span, 
+	label.becas ul.pasos li input, 
+	label.becas ul.pasos div, 
+	ul.pasos li:nth-of-type(3)>span input[type="text"], 
+	label.contact select, 
+	label.contact textarea {
+		width:100%;
+	}
+
+	ul.pasos li:nth-of-type(3)>span:nth-of-type(2){
+		width:100%;
+		margin:10% 0 0 0;
+	}
+
+	ul.pasos li:nth-of-type(3)>span:nth-of-type(3){
+		width:auto;
+		margin:10% 0 0 0;
+	}
+
 	.caja_fca2{
 		width: 100%;
 	}
@@ -3676,14 +3847,18 @@ label.becas ul.pasos li:first-child{
 	}
 
 	label.becas ul.pasos li input:nth-of-type(even){
-	margin-left:0}
+		margin-left:0;
+	}
+
 	#vol select{
 		width: 100% !important;
 		margin-right: 0 !important;
 	}
+
 	.flex-control-nav{
 		display: none;
 	}
+
 	.info-v{
 		width: 100%;
 		left: 0;
@@ -3691,31 +3866,39 @@ label.becas ul.pasos li:first-child{
 		height: auto;
 		overflow: hidden;
 	}
+
 	#controls2{
 		bottom: 0;
 	}
+
 	.info-v h2 {
-	font-size: 1em;
+		font-size: 1em;
 	}
 
 	ul.slides li iframe{
 		height: 382px;
 	}
+
 	.slides > li{
 		height: 382px;
 	}
+
 	.slides, .flex-control-nav, .flex-direction-nav{
 		background: none !important;
 	}
+
 	.flexslider{
 		height: 445px !important;
 	}
+
 	#controls2 span{
 		left: 9%;
 	}
+
 	.flex-prev{
 		left: 5% !important;
 	}
+
 	.cont-time{
 		height: 480px !important;
 	}
@@ -3723,6 +3906,7 @@ label.becas ul.pasos li:first-child{
 	#caja_aporta{
 		width: 70%;
 	}
+
 	#int_contado{
 		width: 100%;
 		text-align: left;
@@ -3732,57 +3916,71 @@ label.becas ul.pasos li:first-child{
 	#int_busc{
 		display: none;
 	}
+
 	#btn_dona{
 		width: 84%;
 		font-size: 0.9em;
 	}
+
 	#conteo_donadores input{
 		width: 89%;
 	}
+
 	.caja_fca_usu{
 		width: 50%;
 	}
+
 	.caja_fca_usu img{
 		/*width: 100%;*/
 		width: auto;
 	}
+
 	span.donas{
 		padding: 0% 6%;
-	display: flex;
-	justify-content:space-between;
-	/*background: red;
-	align-items:flex-start;*/
+		display: flex;
+		justify-content:space-between;
+		/*background: red;
+		align-items:flex-start;*/
 	}
+
 	#txt_evento{
 		margin: 40px 0 0 0;
 	}
+
 	#txt_evento h1,#txt_evento nav{
 		width: 100%;
 		text-align: left;
 	}
+
 	#fecha{
 		width: 75%;
 	}
+
 	.pasos_txt, .division{
 		display: block;
 		margin: 50px auto;
 		width: 100%;
 	}
+
 	.social_mask{
 		display: none;
 	}
+
 	#titulo_txt, #video, #btn_donar2{
 		width: 100%;
 		height: auto;
 	}
+
 	.caja_1{
 		width: 100% !important; 
 		height: auto;
 	}
+
 	.caja_1 img{
 		width: 100%;
 		height: auto;
 	}
+
 	.caja_2{
 		width: 100% !important; 
 		/*-height: auto;*/
@@ -3808,6 +4006,7 @@ label.becas ul.pasos li:first-child{
 	.txt_mask h2 {
 		font-size: .8em;
 	}
+
 	#donativo{
 		/*width: 80px;
 		height: 80px;
@@ -3815,34 +4014,39 @@ label.becas ul.pasos li:first-child{
 		font-size: 0.73em;*/
 		float: right;
 	}
+
 	#titulo_img{
 		display: none;
 	}
+
 	#social_top ul p{
 		/*display: none;*/
 		margin-top: 13px;
-  margin-left: 4px;
+		margin-left: 4px;
 	}
+
 	#donativo p{
 		font-size: 0.8em;
 	}
+
 	#social_top{
 		padding: 15px 10px 0 10px;
 		top: 5px;
 	}
+
 	#donador_sec, #impulsor_sec, #voluntario_sec{
 		padding: 8% !important;
 	}
 
 	progress[value]::-webkit-progress-bar {
-	  width: 100%;
+		width: 100%;
 	}
 	progress[value]::-moz-progress-bar {
-	  width: 100%;
+		width: 100%;
 	}
 	.muro2 .info-v {
-	width: 75% !important;
-	top: 25%;
+		width: 75% !important;
+		top: 25%;
 	}
 	.muro2 .info-v p{
 		display: none;
@@ -3852,225 +4056,262 @@ label.becas ul.pasos li:first-child{
 		text-align: left;
 		width: auto !important;
 	}
-.txt_int h2{
+	.txt_int h2{
 		font-size: 1em !important;
 	}
 	#int_contado img {
-	margin-top: 0px;
-	margin-left: 1px;
+		margin-top: 0px;
+		margin-left: 1px;
 	}
 	#titulo_txt {
- 	padding: 45px 25px 25px 10px;
+ 		padding: 45px 25px 25px 10px;
 	}
 	#btn_donar2 {
 		font-size: 48px;
 	}
 	#donativo {
-	 height: 90px !Important;
-	  padding-top: 29px !Important;
-	  width: 90px !Important;
-	  float: right;
-	  font-size: 0.75em !important;
-	  margin-right: 3%;
+		height: 90px !Important;
+		padding-top: 29px !Important;
+		width: 90px !Important;
+		float: right;
+		font-size: 0.75em !important;
+		margin-right: 3%;
 	}
 	#ultimos_dona p {
-	  width: 84%;
-	  font-size: .8em;
-	  margin: 0px auto 20px auto;
-	  line-height: 18pt;
+		width: 84%;
+		font-size: .8em;
+		margin: 0px auto 20px auto;
+		line-height: 18pt;
 	}
 	.donador_clas, .impulsor_clas, .voluntario_clas{
-		  margin: 15px 20px 0 20px;
+		margin: 15px 20px 0 20px;
 	}
 	div.titleM, #ultimos_dona h1, .txt_footer h1{
-			font-size: 1.3em !important;
-		}
-		#ultimos_dona h2{
-			font-size: .8em;
-		}
-		.txt_footer h2 {
-		  font-size: .8em !important;
-		  width: 94%;
-		  display: block;
-		  margin: 0 auto;
-		  line-height: 12pt;
-		}
-		#logo h1 {
-		  width: 75%;
-		  /*text-align: center;*/
-		}
-		#contenedor_int h1{
-			font-size: 1.2em;
-			/*background: red;*/
+		font-size: 1.3em !important;
+	}
+	#ultimos_dona h2{
+		font-size: .8em;
+	}
 
-		}
-		#contenedor_int h4{
-			font-size: .8em;
-			margin-top: 1.5%; 
-			font-weight: 600 !important;
-			width: 84%;
-			display: block;
-			margin: 0 auto;
-		}
-		#contenedor_int h4.gt{
-			width: 99%;
-		}
-		#contenedor_int p{
-			font-size: 0.8em;
-			text-align: left;
-			width: 84%;
-			line-height: 18pt;
-		}
-		.txt_fundacion2 h3{
-			width: 84%;
-			line-height: 22pt;
- 			margin-bottom: 10px;
- 			/*background: red;*/
- 			line-height: 1;
-		}
-		.img_txt h3{
-			margin-top: 11px;
-		}
-		.img_txt h3, .img_txt p{
-			text-align: center !important;
-		}
-		.img_redonda2{
-			margin:0 !important;
-		}
+	.txt_footer h2 {
+		font-size: .8em !important;
+		width: 94%;
+		display: block;
+		margin: 0 auto;
+		line-height: 12pt;
+	}
 
-		#plc_blck{
-			display: none;
-		}
-		.mask_head {
-  
-  height: 260px;
-  
-  padding: 25px 40px;
-}
-#titulo_fca h2{
+	#logo h1 {
+		width: 75%;
+		/*text-align: center;*/
+	}
+
+	#contenedor_int h1{
+		font-size: 1.2em;
+		/*background: red;*/
+	}
+
+	#contenedor_int h4{
+		font-size: .8em;
+		margin-top: 1.5%; 
+		font-weight: 600 !important;
+		width: 84%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	#contenedor_int h4.gt{
+		width: 99%;
+	}
+
+	#contenedor_int p{
+		font-size: 0.8em;
+		text-align: left;
+		width: 84%;
+		line-height: 18pt;
+	}
+
+	.txt_fundacion2 h3{
+		width: 84%;
+		line-height: 22pt;
+		margin-bottom: 10px;
+		/*background: red;*/
+		line-height: 1;
+	}
+
+	.img_txt h3{
+		margin-top: 11px;
+	}
+
+	.img_txt h3, .img_txt p{
+		text-align: center !important;
+	}
+
+	.img_redonda2{
+		margin:0 !important;
+	}
+
+	#plc_blck{
+		display: none;
+	}
+
+	.mask_head {
+		height: 260px;
+		padding: 25px 40px;
+	}
+
+	#titulo_fca h2{
 		font-size: 0.9em;
 		margin-top: 1.5%;
 		line-height: 12pt;
 	}
+
 	.img_txt{
 		width: 100%;
 	}
+
 	.img_txt #txt_evento{
 		/*background: red;*/
 		width: 100% !important;
 		text-align: center;
-		  margin: 20px 0;
+		margin: 20px 0;
 	}
+
 	.img_txt #txt_evento nav, .img_txt #txt_evento nav ul{
 		width: auto !important;
 	}
+
 	.img_txt #txt_evento p{
 		width: auto !important;
 		float: left;
 		margin-left: 5px;
 	}
+
 	#nav_int {
-  text-align: center;
-  padding: 40px 0 23px 0;
-}
-div.subtitleM{
-	font-size: 0.8em;
-	line-height: 12pt;
-	margin: 10px auto 0 auto;
-}
-.txt_circ p{
-	text-align: center !important;
-}
-.txt_fundacion2 .ayudar{
-	  margin: 10px 0 0 0 !important;
-}
-.pasos_txt p{
-	text-align: center !important;
-	line-height:12pt !important;
-}
-#pleca_causas h1{
-	font-size: 1.3em !important;
-}
-label.becas h1{
-	font-size: 1.3em !important;
-	text-align: left;
-}
-label.becas h2{
-	text-align: left !important;
-	font-size: 0.8em !important;
-}
-label.becas ul.pasos li h3{
-	font-size: .8em !important;
-	line-height: 12pt !important;
-	margin: 2px 0 15px 0 !important;
-}
-label.becas ul.pasos span{
-	font-size: .8em !important;
-}
-label.becas ul.pasos li{
-	border: none;
-	margin-bottom: 10%;
-}
-/*label.contact input, label.becas ul.pasos div, label.contact select{
-	font-size: 2em !important;
-	color: red !important;
-}
-label.becas ul.pasos div select{
-	font-size: .8em !important;
-}*/
-ul.pasos span ,label.becas input, label.becas ul.pasos div, label.becas select, label.becas ul.pasos div select{
-	/*color: red !important;*/
-	font-size: 13px !important;
-}
-label.contact textarea{
-	border: 1px solid #ebebeb;
-}
-#caja_aporta2{
-	/*background: red;*/
-	text-align: center;
-}
-#caja_aporta2 #txt_noticia{
-	/*background: red;-*/
-	text-align: center;
-	width: 82%;
-}
-#caja_aporta2 #txt_noticia p{
-	width: 100%;
-	text-align: center;
-	line-height: 15pt;
-}
-#titulo_fca .mil{
-	font-size: 1.3em !important;
-}
-#caja_aporta2 nav{
-	width: 90%;
-	margin-bottom: 5%;
-}
-#caja_aporta2 nav ul p{
-	width: auto !important;
-}
-#contenedor_int h1{
-	/*background: red;*/
-}
-#cja_faqs .mostrar-ocultar h1, #cja_faqs .mostrar-ocultar2 h1, #cja_faqs .mostrar-ocultar3 h1, #cja_faqs .mostrar-ocultar4 h1, #cja_faqs .mostrar-ocultar5 h1{
-	font-size: 0.9em !important;
-}
-#cja_faqs .mostrar-ocultar, #cja_faqs .mostrar-ocultar2, #cja_faqs .mostrar-ocultar3, #cja_faqs .mostrar-ocultar4, #cja_faqs .mostrar-ocultar5 {
-	width: 90%;
-	display: block;
-	margin: 0 auto;
-}
- .deslizante,  .deslizante2,  .deslizante3,  .deslizante4,  .deslizante5{
-	margin-top: 5% !important;
-	/*background: red;*/
-}
-.deslizante p, .deslizante2 p, .deslizante3 p, .deslizante4 p, .deslizante5 p{
-	line-height: 15pt !important;
-}
-.more{
-	margin-right: 2%;
-}
-.rt{
+		text-align: center;
+		padding: 40px 0 23px 0;
+	}
+
+	div.subtitleM{
+		font-size: 0.8em;
+		line-height: 12pt;
+		margin: 10px auto 0 auto;
+	}
+
+	.txt_circ p{
+		text-align: center !important;
+	}
+
+	.txt_fundacion2 .ayudar{
+		  margin: 10px 0 0 0 !important;
+	}
+
+	.pasos_txt p{
+		text-align: center !important;
+		line-height:12pt !important;
+	}
+
+	#pleca_causas h1{
+		font-size: 1.3em !important;
+	}
+
+	label.becas h1{
+		font-size: 1.3em !important;
+		text-align: left;
+	}
+
+	label.becas h2{
+		text-align: left !important;
+		font-size: 0.8em !important;
+	}
+
+	label.becas ul.pasos li h3{
+		font-size: .8em !important;
+		line-height: 12pt !important;
+		margin: 2px 0 15px 0 !important;
+	}
+
+	label.becas ul.pasos span{
+		font-size: .8em !important;
+	}
+
+	label.becas ul.pasos li{
+		border: none;
+		margin-bottom: 10%;
+	}
+	/*label.contact input, label.becas ul.pasos div, label.contact select{
+		font-size: 2em !important;
+		color: red !important;
+	}
+	label.becas ul.pasos div select{
+		font-size: .8em !important;
+	}*/
+	ul.pasos span ,label.becas input, label.becas ul.pasos div, label.becas select, label.becas ul.pasos div select{
+		/*color: red !important;*/
+		font-size: 13px !important;
+	}
+
+	label.contact textarea{
+		border: 1px solid #ebebeb;
+	}
+
+	#caja_aporta2{
+		/*background: red;*/
+		text-align: center;
+	}
+
+	#caja_aporta2 #txt_noticia{
+		/*background: red;-*/
+		text-align: center;
+		width: 82%;
+	}
+
+	#caja_aporta2 #txt_noticia p{
+		width: 100%;
+		text-align: center;
+		line-height: 15pt;
+	}
+
+	#titulo_fca .mil{
+		font-size: 1.3em !important;
+	}
+
+	#caja_aporta2 nav{
+		width: 90%;
+		margin-bottom: 5%;
+	}
+
+	#caja_aporta2 nav ul p{
+		width: auto !important;
+	}
+
+	#contenedor_int h1{
+		/*background: red;*/
+	}
+
+	#cja_faqs .mostrar-ocultar h1, #cja_faqs .mostrar-ocultar2 h1, #cja_faqs .mostrar-ocultar3 h1, #cja_faqs .mostrar-ocultar4 h1, #cja_faqs .mostrar-ocultar5 h1{
+		font-size: 0.9em !important;
+	}
+
+	#cja_faqs .mostrar-ocultar, #cja_faqs .mostrar-ocultar2, #cja_faqs .mostrar-ocultar3, #cja_faqs .mostrar-ocultar4, #cja_faqs .mostrar-ocultar5 {
+		width: 90%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.deslizante,  .deslizante2,  .deslizante3,  .deslizante4,  .deslizante5{
+		margin-top: 5% !important;
+		/*background: red;*/
+	}
+
+	.deslizante p, .deslizante2 p, .deslizante3 p, .deslizante4 p, .deslizante5 p{
+		line-height: 15pt !important;
+	}
+
+	.more{
+		margin-right: 2%;
+	}
+	.rt{
 		margin: 15% auto  auto !important;
 		height: auto;
 		/*background: red;*/
@@ -4079,18 +4320,13 @@ label.contact textarea{
 		margin: 10% auto  auto !important;
 		height: auto;	
 	}
-
-
-
-
-
 }
+
 /* */
 @media screen and (max-width:380px) {
-	
 	.content-2{
-	height: 425px !important;
-	background: #fff;
+		height: 425px !important;
+		background: #fff;
 	}
 	/*#perfil{
 		height: 37px !important;
@@ -4104,62 +4340,77 @@ label.contact textarea{
 	nav li {
 	  margin: 0px 8px;
 	}
+
 	#perfil::after {
-			    padding: 3% 14px;
-			}
+	    padding: 3% 14px;
+	}
+
 	#cja_noticia h3{
 		/*background: red;*/
 		margin-bottom: 6%;
 	}
+
 	.contact-inf p{
 		width: 100% !important;
 	}
+
 	.rt{
 		margin: 15% auto  auto !important;
 		height: auto;
 		/*background: red;*/
 	}
+
 	.rt2{
 		margin: 10% auto  auto !important;
 		height: auto;	
 	}
+
 	.txt_circ {
-  margin: 32px 0 32px 0;
-  text-align: center;
-}
+	  margin: 32px 0 32px 0;
+	  text-align: center;
+	}
+
 	.vi2{
 		width: 84%;
 		margin: 0;
 	}
+
 	.caum > #cantidad{
 		margin-top: -1px !important;
 	}
+
 	.datos-inf > p{
 		font-size: 13px !important;
 	}
+
 	.lightbox .usuario #txt_evento nav ul a li {
-    width: 30px !important;
-    height: 30px !important;
-    font-size: 1em !important;
-    line-height: 30px !important;
-}
+	    width: 30px !important;
+	    height: 30px !important;
+	    font-size: 1em !important;
+	    line-height: 30px !important;
+	}
+
 	.lightbox .usuario #txt_evento nav {
-    margin: 7px 0px 0px 7px !important;
-}
+	    margin: 7px 0px 0px 7px !important;
+	}
+
 	div.cau-dat img {
-    width: 14px;
-    height: 45px;
-}
+	    width: 14px;
+	    height: 45px;
+	}
+
 	div.cau-dat h1{
-			font-size: 2em !important;
-		}
+		font-size: 2em !important;
+	}
+
 	.lightbox .datos .datos-inf{
 		overflow-y: hidden !important;
 	}
+
 	.force-overflow{
 		width: 90%;
-margin: 0 auto;
-text-align: left;
+		margin: 0 auto;
+		text-align: left;
 	}
 	/*.usuario{
 	width: 90% !important;
@@ -4177,8 +4428,8 @@ text-align: left;
 		padding-bottom: 3%;
 	}
 	.ev h1 {
-    margin: 7% auto 0px !important;
-}
+	    margin: 7% auto 0px !important;
+	}
 	.foto{
 		height: 40% !important;
 		width: 90% !important;
@@ -4318,24 +4569,25 @@ text-align: left;
 		/*background: red;*/
 	}
 	.caja_fca_usu {
-  width: 100%;
-}
+	  width: 100%;
+	}
+
 	.txt_mask h3{
 		font-size: 0.7em !important;
 		width: 100%;
 	}
+
 	.txt_mask h1 {
 		font-size: 1.4em !important;
 	}
+
 	#titulo_fca {
 	  margin: 15px 0 20px 0;
 	  text-align: center;
-	  /*background: red;*/
 	}
 
 	.donador_clas, .impulsor_clas, .voluntario_clas{
-		  margin: 25px 20px 0 20px;
-
+		margin: 25px 20px 0 20px;
 	}
 	header{
 		z-index: 99999;
@@ -4343,18 +4595,20 @@ text-align: left;
 	#btn_dona{
 		width: 78%;
 	}
+
 	#conteo_donadores input{
-	width: 85%;
+		width: 85%;
 	}
+
 	.caja_fca_usu{
-	width: 100%;
+		width: 100%;
 	}
+
 	#nav_int{
-	padding: 35px;
+		padding: 35px;
 	}
 	.txt_int{
-	
-	padding: 10px;
+		padding: 10px;
 	}
 	/*.txt_int:hover{
 		bottom: 0 !important;
@@ -4363,6 +4617,7 @@ text-align: left;
 	#causa1, #causa2, #causa3, #causa4{
 		background-size: 100% !important;
 	}
+
 	#social_top li {
 	  color: #FFF;
 	  border: 2px solid #FFF;
@@ -4374,6 +4629,7 @@ text-align: left;
 	  width: 30px;
 	  text-align: center;
 	}
+
 	#social_top ul p{
 		margin-top: 7px;
 		margin-left: 2px;
@@ -4383,42 +4639,39 @@ text-align: left;
 	}
 	.txt_int h2 {
 		font-size: 0.9em !important;
-		}
-		.txt_int h3{
-			font-size: 1em !important;
-		}
-		.txt_int a{
-			line-height: 0;
-		}
+	}
+	.txt_int h3{
+		font-size: 1em !important;
+	}
+	.txt_int a{
+		line-height: 0;
+	}
 		
-		#social_footer li {  
-		  font-size: 1.2em;
-		  height: 40px;
-		  line-height: 42px;
-		  width: 40px;  
-		}
-		#social_footer {
-		  padding: 15px 0 25px 0;
-		}
-		#terminos_footer h1 {
-		  color: #beda3e;
-		  font-size: 8px;
-		  font-weight: lighter;
-		}
+	#social_footer li {  
+	  font-size: 1.2em;
+	  height: 40px;
+	  line-height: 42px;
+	  width: 40px;  
+	}
+	#social_footer {
+	  padding: 15px 0 25px 0;
+	}
+	#terminos_footer h1 {
+	  color: #beda3e;
+	  font-size: 8px;
+	  font-weight: lighter;
+	}
 		
-		#logo_3indesign img{
-			width: 26%;
-		}
-	
-
+	#logo_3indesign img{
+		width: 26%;
+	}
 }
-
 
 .vi video .safari-video{
 	display: none;
 }
 /*Safari Only*/
- @media screen and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (-webkit-min-device-pixel-ratio:0) {
  	::i-block-chrome, .vi video .video-js{
  		display: none;
  	}
@@ -4435,10 +4688,9 @@ text-align: left;
  	}
  	::i-block-chrome, .caja_2{
 		height: 519px;
-
 	}
- 	
  }
+
 .activo{
   margin: 3px !important;
   padding: 1em !important;
