@@ -1,5 +1,16 @@
 <?php
 
+function toModel($model)
+{
+    $model     = strtolower($model);
+    $model     = str_replace(["id_","_id"], "", $model);
+    $model     = ucfirst(camel_case($model));
+    //$model     = str_singular($model);
+    
+
+    return $model;
+}
+
 
 function getCurrentAction(){
     
@@ -23,7 +34,11 @@ function getFKColumn($column = NULL,$default_record = [],$fk_column = [],$first 
             return "---";
     }else
     {
-        return $default_record->{$column};
+        if(isset($default_record->{$column}))
+            return $default_record->{$column};
+        elseif(!is_array($default_record))
+            return "---";
+
     }
         
     return getColumnsFK($column,$record,$fk_column);
