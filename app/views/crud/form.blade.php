@@ -1,6 +1,6 @@
 @foreach ($columns as $column)
     @if (!$column->is_primary)
-     <div class="form-group @if ($errors->has($column->name]) has-error @endif">
+     <div class="form-group @if ($errors->has($column->name)) has-error @endif">
 
         @if($column->input !="hidden")
          {{ Form::label($column->input, $column->label) }}
