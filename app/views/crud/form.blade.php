@@ -27,11 +27,11 @@
 
          @elseif ( $column->input == "money" or $column->input =="currency")
          
-           {{ Form::currency($column->name,$record->{$column->name},['placeholder'=>$column->label]); }}
+           {{ Form::currency($column->name,$record->{$column->name},['placeholder'=>$column->label,'class' => 'form-control']); }}
 
          @elseif ($column->input == "number")
          
-            {{ Form::number($column->name,$record->{$column->name},['placeholder'=>$column->label]); }}
+            {{ Form::number($column->name,$record->{$column->name},['placeholder'=>$column->label,'class' => 'form-control']); }}
   
          @elseif  ($column->input == "toggle") 
 
