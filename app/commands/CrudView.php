@@ -36,15 +36,16 @@ class CrudView extends Command
     }
 
     protected $inputs = [
-        "email"       => '<input class="form-control" placeholder="$placeholder" required="$required" name="$name" type="email" value="$value" autocomplete="off">',
-        "text"        => '<input class="form-control" placeholder="$placeholder" required="$required" name="$name" type="text" value="$value" autocomplete="off">',
-        "number"      => '<input class="form-control" placeholder="$placeholder" required="$required" name="$name" type="number" value="$value" autocomplete="off">',
-        "textarea"    => '<textarea class="form-control" placeholder="$placeholder" required="$required" name="$name" cols="50" rows="10">$value</textarea>',
-        "select"      => '<select class="form-control" name="$name">$options</select>',
-        "option"      => '<option value="$value">$name</option>',
-        "date"        => '<input type="text" class="form-control date" value="$value" placeholder="$placeholder" required="$required" name="$name"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>',
-        "datetime"    => '<input type="text" class="form-control datetime" value="$value" placeholder="$placeholder" required="$required" name="$name"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>',
-        "time"        => '<input type="text" class="form-control time" value="$value" placeholder="$placeholder" required="$required" name="$name"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>',
+        'password'        => '{{ Form::password("$name",["class" => "form-control","placeholder"=>"$placeholder"]); }}',
+        'remotecombo'     => '{{ Form::remotecombo("$name",$record->$name,["model"=>"$model","class" => "form-control","placeholder"=>"$placeholder"] ); }}',
+        'text'            => '{{ Form::text("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
+        'email'           => '{{ Form::email("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
+        'number'          => '{{ Form::number("$name",$record->$name,["placeholder"=>"$placeholder"]); }}',
+        'textarea'        => '{{ Form::textarea("$name", $record->$name,["placeholder"=>"$placeholder"]) }}',
+        'select'          => '{{ Form::combo("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"],$column->$name); }}',
+        'date'            => '{{ Form::date("$name",$record->name,["class"=>"form-control","placeholder"=>$placeholder]) }}',
+        'datetime'        => '{{ Form::datetime("$name",$record->name,["class"=>"form-control","placeholder"=>"$placeholder"]) }}',
+        'time'            => '{{ Form::time("$name",$record->name,["class"=>"form-control","placeholder"=>"$placeholder"]) }}',
 
     ];
 
@@ -116,17 +117,15 @@ class CrudView extends Command
 
         $search  = array(
             '$placeholder',
-            '$required',
             '$name',
-            '$value',
-            '$options',
+            '$data',
+            '$model'
         );
         $replace = array(
           $column->label,
-          $column->required,
           $column->name,
-          '{{ $record->'.$column->name.' }}',
-          ""
+          "[]",
+          $column->model,
         );
 
 
@@ -150,14 +149,20 @@ class CrudView extends Command
                     '$kind',
                     '$label',
                     '$input',
+                    '$data',
+                    '$model'
                 );
 
-            
+                if($column->is_foreign_key)
+                  $column->input = "remotecombo";
+
                 $replace = array(
                   $column->name,
                   $column->input,
                   $column->label,
-                  $this->getInput($column)
+                  $this->getInput($column),
+                  "[]",
+                  $column->model,
                 );
 
                 $content.= str_replace($search, $replace, $input_template);

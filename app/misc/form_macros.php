@@ -12,8 +12,12 @@
 */
 //<input type="checkbox" checked data-toggle="toggle" data-on="Ready" data-off="Not Ready" data-onstyle="success" data-offstyle="danger"> 
 
-Form::macro('toggle', function($name, $default = "false", $attrs = array(),$data=array())
+Form::macro('toggle', function($name, $default = "false", $attrs = [],$data=[])
 {
+
+    if(isset($data->data))
+        $data = $data->data;
+        
 	$item = '<input type="hidden" name="'. $name .'" ';
 	$item .= 'value="'. $default .'" ';
 	$item .= '>';
@@ -52,7 +56,7 @@ Form::macro('toggle', function($name, $default = "false", $attrs = array(),$data
 // HTML
 //
 
-Form::macro('editor', function($name, $default = NULL, $attrs = array())
+Form::macro('editor', function($name, $default = NULL, $attrs = [])
 {
     //<textarea class="summernote"><p>Seasons <b>coming up</b></p></textarea>
 
@@ -85,7 +89,7 @@ Form::macro('html', function($name, $default = NULL, $attrs = array())
 });
 
 
-Form::macro('datepicker', function($name, $default = NULL, $attrs = array(),$type=null)
+Form::macro('datepicker', function($name, $default = NULL, $attrs = [],$type=null)
 {
     $item = '<div class="input-group">';
 
@@ -287,6 +291,9 @@ Form::macro('combo', function($name, $default = NULL, $attrs = [], $data = [])
 {
     $attrs_default = ["combo"=>"combo"];
 
+    if(isset($data->data))
+        $data = $data->data;
+
     $attrs = array_merge($attrs_default,$attrs);
 
     return Form::select($name, [$data],$default,$attrs);
@@ -327,6 +334,9 @@ Form::macro('remotecombo', function($name, $default = NULL, $attrs = [], $url = 
 Form::macro('radiogroup', function($name, $default = NULL, $attrs = array(), $data = [])
 {
  
+    if(isset($data->data))
+        $data = $data->data;
+
     $item = '<div class="btn-group" data-toggle="buttons">';
 
         foreach ($data as $key => $value) {

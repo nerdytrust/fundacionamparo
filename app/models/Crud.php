@@ -164,13 +164,7 @@ class Crud extends \BaseModel {
     public function beforeDestroy(&$params){}
     public function afterDestroy(&$params){}
 
-    public function beforeIndex(&$params){
-
-        foreach ($params->records as $record) {
-            //$record-
-        }
-        
-    }
+    public function beforeIndex(&$params){}
     public function beforeCreate(&$params){}
     public function beforeEdit(&$params){}
     public function beforePrint(&$params){}
@@ -203,6 +197,17 @@ class Crud extends \BaseModel {
                         "created_by" => ["first_name","last_name"],
                         "updated_by" => ["first_name","last_name"]
                     ],
+        //
+        // JOINS
+        // Remember by default the framework create autojoins when you define id_(table)   
+        // you can get the info like this : $records->id_(table)_record
+        // [ "column" => "table","table_column" ]            
+        // [ "id_roles"  => ["roles","id_roles"] 
+        // [ "id_parent" => ["current_table","id_primary_key"] 
+        //    
+        "joins"      => [
+
+        ],            
         // 
         // Tabs
         // Allways create names of tabs with snake case for example
@@ -298,7 +303,6 @@ class Crud extends \BaseModel {
         $method = str_replace("_record", "", $method);
         $current_class_name = get_class($this);
 
-
         if (array_key_exists($method, $relations)) {
             return $this->createRelation($method);
         }elseif(!method_exists($this->newBaseQueryBuilder(),$method) and !method_exists($this,$method)  and $method !="search"){
@@ -327,8 +331,7 @@ class Crud extends \BaseModel {
     {
         return $this->belongsTo('Users', 'updated_by', 'id_users');
     }
-
-
+    
 
     protected function getPathView($viewName,$name,$default=null)
     {
@@ -516,8 +519,9 @@ class Crud extends \BaseModel {
     protected function createRelation($method)
     {
         $relations = $this->getRelations();
+        $joins     = $this->getCRUD("joins");
         $function  = $relations->$method;
-
+        
         $method	   = strtolower($method);
         $model 	   = isset($function["model"]) ? $function["model"] : $method;
 
@@ -526,9 +530,18 @@ class Crud extends \BaseModel {
         $parent_key= isset($function["parent_key"]) ? $function["parent_key"] : $local_key;
 
         $model     = $this->toModel($model);
- 
-        //$class 	   = new $model();
+
+        if(array_key_exists($method, $joins))
+        {
+            $parent_key = isset($joins[$method][1]) ? $joins[$method][1] : $method;
+            $model      = $this->toModel($joins[$method][0]);
+        }
+
         $call      = isset($function["relation"]) ? $function["relation"] : $function;
+
+
+        //$class 	   = new $model();
+        
 
         return $this->$call($model,$local_key,$parent_key);
     }
@@ -746,6 +759,7 @@ class Crud extends \BaseModel {
 			$label  = $this->replaceUnderScore(ucwords($name));
 
 			$model  = false;
+            $parent_key = false;
 
 			if($is_primary)
 				$label = "ID";
@@ -753,10 +767,10 @@ class Crud extends \BaseModel {
 			if($is_foreign_key)
 			{
 
-				$model = (str_replace(["id_","_id"], "", $name));
-				$label = ucfirst(str_singular($model));
-				$model = ucfirst(camel_case($model));
-
+				$model      = (str_replace(["id_","_id"], "", $name));
+				$label      = ucfirst(str_singular($model));
+				$model      = ucfirst(camel_case($model));
+                $parent_key = $name;
 			}
 
 
@@ -766,13 +780,25 @@ class Crud extends \BaseModel {
 			if (array_key_exists($name, $crud_labels))
 				$label = $crud_labels[$name];
 
+            // JOINS
+            $joins = $this->getCrud("joins");
+
+            if (array_key_exists($name, $joins))
+            {
+                $table          = $joins[$name][0];
+                $model          = $this->toModel($table);
+                $is_foreign_key = 1;
+                $parent_key     = isset($joins[$name][1]) ? $joins[$name][1] : $joins[$name][1];
+            }
+
             if (!File::exists(app_path()."/models/".ucfirst($model).".php") and $is_foreign_key)
                 $is_foreign_key = false;
 
             if($name == "created_by" or $name == "updated_by")
             {
-                $model = "Users";
+                $model          = "Users";
                 $is_foreign_key = 1;
+                $parent_key     = $name;
             }
                 
 
@@ -781,6 +807,7 @@ class Crud extends \BaseModel {
 						"is_foreign_key" => $is_foreign_key,
 						"auto_increment" => $column->getAutoincrement() ? 1 : 0,
 						"model"			 => $model,
+                        "parent_key"     => $parent_key,
                         "default"        => $column->getDefault(),
 						"label"			 => $label,
 						"name" 		 	 => $name, 

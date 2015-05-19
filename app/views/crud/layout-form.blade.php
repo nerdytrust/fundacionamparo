@@ -44,10 +44,10 @@ crud form
 
     @if($action == "edit")
       @if(in_array("edit",$btn))
-        {{ Form::submit(trans('crud.'.$action), array('class' => 'btn btn-success')) }}
+        {{ Form::submit(trans('crud.'.$action), array('class' => 'btn btn-lg btn-success')) }}
       @endif
       @if(in_array("cancel",$btn))
-        <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value) }}" class="btn btn-default">{{ trans('crud.cancel') }}</a>
+        <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value) }}" class="btn btn-lg btn-default">{{ trans('crud.cancel') }}</a>
       @endif
       @if(in_array("edit",$btn))
         {{ Form::close() }}
@@ -58,15 +58,15 @@ crud form
     @if($action == "show")
 
       @if(in_array("edit",$btn))
-        <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value."/edit") }}" class="btn btn-success">{{ trans('crud.edit') }}</a>
+        <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value."/edit") }}" class="btn btn-lg btn-success">{{ trans('crud.edit') }}</a>
       @endif
 
       @if(in_array("cancel",$btn))
-        <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model) }}" class="btn btn-default">{{ trans('crud.cancel') }}</a>
+        <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model) }}" class="btn btn-lg btn-default">{{ trans('crud.cancel') }}</a>
       @endif
       
       @if(in_array("print",$btn))
-        <a class="btn btn-small btn-default" target="_blank" href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'. $key_value.'/print') }}" target="_blank">{{ trans('crud.print') }}</a>
+        <a class="btn btn-small btn-lg btn-default" target="_blank" href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'. $key_value.'/print') }}" target="_blank">{{ trans('crud.print') }}</a>
       @endif
 
     @endif  

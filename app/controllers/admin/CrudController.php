@@ -694,11 +694,18 @@ class CrudController extends \BaseController {
 
     public function remoteCombo($column){
 
+
         $class      = new $this->className(); 
         $fk_column  = $class->getCrud("fk_column");
 
         $columns    = $fk_column[$column];
         $model      = $class->toModel($column);
+
+        if($column == "created_by" or $column == "updated_by")
+        {
+            $model          = "Users";
+        }
+
 
         $class_model= new $model();
 
@@ -711,7 +718,7 @@ class CrudController extends \BaseController {
 
 
         foreach ($records as $record) {
-            $items[] =["text" => getFKColumn($column,$record,$fk_column), "id" => $record->{$class_model->getKeyName()} ] ;
+            $items[] =["text" => getColumnsFK($column,$record,$fk_column), "id" => $record->{$class_model->getKeyName()} ] ;
         }
 
         echo json_encode([

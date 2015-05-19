@@ -10,10 +10,10 @@ function getCurrentAction(){
 
 function getFKColumn($column = NULL,$default_record = [],$fk_column = [],$first = true)
 {
-    $fk_column_name = "";
 
     if(isset($default_record->{$column."_record"}))
     {
+
         if($first)
             $record = $default_record->{$column."_record"}()->first();
         else
@@ -22,8 +22,19 @@ function getFKColumn($column = NULL,$default_record = [],$fk_column = [],$first 
         if(!$record)
             return "---";
     }else
-        $record = $default_record;
+    {
+        return $default_record->{$column};
+    }
+        
+    return getColumnsFK($column,$record,$fk_column);
 
+}
+
+
+function getColumnsFK($column,$record,$fk_column)
+{
+
+    $fk_column_name = "";
 
     if(array_key_exists($column,$fk_column) and is_array($fk_column[$column]))
     {
@@ -43,7 +54,6 @@ function getFKColumn($column = NULL,$default_record = [],$fk_column = [],$first 
             
     return $fk_column_name;
 }
-
 
 
 function strip_out_subdomain($domain)  {     
