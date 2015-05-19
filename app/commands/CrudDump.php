@@ -10,7 +10,7 @@ use Symfony\Component\Console\Input\InputArgument;
  * @author Vahid Mahdiun
 */
 
-class CrudMigration extends Command
+class CrudDump extends Command
 {
 
     /**
