@@ -29,7 +29,7 @@
 					</div><!--termina txt_evento-->
 				</span><!--termina usuario-->
 				<span class="datos">
-					<button class="centros">{{ $causa->categoria }}</button>
+					<button class="centros">{{ $causa->id_categorias_record->nombre }}</button>
 					<button value="" class="cerrar" onClick="history.back()" class="regresar"></button>
 					<!--<button onClick="history.back()" class="regresar"> Regresar</button>-->
 					<h1>{{ $causa->titulo }}</h1>

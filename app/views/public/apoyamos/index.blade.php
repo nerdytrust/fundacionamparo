@@ -12,8 +12,8 @@
 						<ul>
 							<a href=""><li class="fa fa-facebook"></li></a>
 							<a href=""><li class="fa fa-twitter"></li></a>
-							<a href=""><li class="fa fa-heart"></li></a>
-							<p>96 likes</p>
+							{{-- <a href=""><li class="fa fa-heart"></li></a>
+							<p>96 likes</p> --}}
 						</ul>
 					</nav>
 				</div>
@@ -39,9 +39,11 @@
 								<h4 class="gt">Tipo de causa</h4>
 								<select name="causa_tipo" id="" required>
 									<option value="0">Selecciona</option>
-									<option value="1">Rehabilitación</option>
-									<option value="2">Rehabilitación</option>
-									<option value="3">Rehabilitación</option>
+									@if ( isset( $categorias ) )
+										@foreach ( $categorias as $categoria )
+											<option value="{{ $categoria->id_categorias }}">{{ $categoria->nombre }}</option>
+										@endforeach
+									@endif
 								</select>
 						    </span>
 							<span>
@@ -66,8 +68,8 @@
 									<ul>
 										<a href=""><li class="fa fa-facebook"></li></a>
 										<a href=""><li class="fa fa-twitter"></li></a>
-										<a href=""><li class="fa fa-heart"></li></a>
-										<p>96 likes</p>
+										{{-- <a href=""><li class="fa fa-heart"></li></a>
+										<p>96 likes</p> --}}
 									</ul>
 								</nav>
 							</div>

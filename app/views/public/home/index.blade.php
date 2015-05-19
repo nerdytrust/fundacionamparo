@@ -64,7 +64,7 @@
 									<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
 								</section>
 					 			<section class="txt_int">
-					 				<h1>{{ strtoupper( $causa->categoria ) }}</h1>
+					 				<h1>{{ $causa->id_categorias_record->nombre }}</h1>
 					 				<h2>{{ $causa->titulo }}</h2>
 					 				<p>Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
 									<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas ) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>

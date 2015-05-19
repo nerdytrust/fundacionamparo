@@ -97,7 +97,9 @@ class Causas extends \Crud {
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
-        "fk_column" => [ "created_by" => "first_name", "id_categoria" => "name" ],
+        "fk_column" => [ "created_by" => "first_name", "id_categorias" => "nombre" ],
+
+        // "joins" => [ 'id_categoria' => [ 'categorias' ] ],
         // 
         // Tabs
         // Allways create names of tabs with snake case for example

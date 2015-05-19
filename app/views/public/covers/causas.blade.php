@@ -16,7 +16,7 @@
 					<form action="">
 						<div class="imagen">
 							<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '282x280' ) }}" alt="">
-							<button>{{ $causa->categoria }}</button>
+							<button>{{ $causa->id_categorias_record->nombre }}</button>
 							<p id="nombre">{{ $causa->titulo }}</p>
 						</div>
 						<p>Ingresa el monto que desaes donar</p>

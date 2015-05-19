@@ -3,7 +3,11 @@
 class ApoyarCausaController extends BaseController {
 
 	public function index(){
-		return View::make( 'public.apoyamos.index' );
+		$categorias = Categorias::get();
+		return View::make( 'public.apoyamos.index' )->with( [
+			'categorias' 	=> $categorias,
+			'helper'		=> new Helper
+		] );
 	}
 
 	public function registrar(){
