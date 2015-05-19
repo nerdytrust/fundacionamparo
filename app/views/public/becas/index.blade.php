@@ -13,8 +13,8 @@
 						<ul>
 							<a href=""><li class="fa fa-facebook"></li></a>
 							<a href=""><li class="fa fa-twitter"></li></a>
-							<a href=""><li class="fa fa-heart"></li></a>
-							<p>96 likes</p>
+							{{-- <a href=""><li class="fa fa-heart"></li></a>
+							<p>96 likes</p> --}}
 						</ul>
 					</nav>
 				</div>
