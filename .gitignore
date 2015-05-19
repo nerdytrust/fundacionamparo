@@ -6,9 +6,12 @@
 .env
 # Storage
 
-app/storage
-/app/storage/uploads/*
-storage/uploads/*
+app/storage/logs
+app/storage/views
+app/storage/cache
+app/storage/sessions
+#/app/storage/uploads/*
+#storage/uploads/*
 
 # Configuration
 /app/config/local
@@ -42,4 +45,4 @@ Thumbs.db
 *.dll
 *.so
 *.exe
-*.sql
+#*.sql
