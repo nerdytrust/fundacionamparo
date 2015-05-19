@@ -20,9 +20,9 @@ class CreateApoyamosCausaTable extends Migration {
 			$table->string('correo', 100)->nullable();
 			$table->enum('tipo_causa', array('Nueva'))->nullable();
 			$table->text('mensaje')->nullable();
+			$table->timestamps();
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
-			$table->timestamps();
 		});
 	}
 
