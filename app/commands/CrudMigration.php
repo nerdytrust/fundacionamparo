@@ -45,6 +45,8 @@ class CrudMigration extends Command
     public function fire()
     {
 
+        $this->removeModels();
+
         $this->addDefaultColumns();
 
         File::deleteDirectory(app_path("database/migrations"),true);
@@ -59,8 +61,40 @@ class CrudMigration extends Command
         Artisan::call('crud:create',["--tables"=>"--tables"]);
         
 
-        File::deleteDirectory(app_path("storage/dump"),true);
-        Artisan::call('db:backup');
+
+        // File::deleteDirectory(app_path("storage/dumps"),true);
+        // Artisan::call('db:backup');
+    }
+
+
+    protected function removeModels()
+    {
+
+        $directory = app_path("models");
+        $files = File::allFiles($directory);
+
+        $tables   = $this->getTables();
+        $tables[] = "crud";
+        $tables[] = "base_model";
+        $tables[] = "currency";
+        $tables[] = "profiles";
+
+        $to_delete = [];
+        foreach ($files as $file) {
+            $pathinfo = pathinfo($file);
+            $model    = $pathinfo['filename'];
+            $table    = strtolower(snake_case($model));
+
+            if(!in_array($table, $tables))
+            {
+                //echo $model."\n";
+                // $to_delete[] = $file;
+            }
+                
+        }
+        File::delete($to_delete);
+
+
     }
 
     protected function addDefaultColumns()

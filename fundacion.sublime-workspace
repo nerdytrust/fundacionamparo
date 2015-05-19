@@ -159,6 +159,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/views/crud/layout-form.blade.php",
+			"settings":
+			{
+				"buffer_size": 2447,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -260,6 +268,12 @@
 	},
 	"file_history":
 	[
+		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/skeleton.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/models/HomeVideo.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/misc/form_macros.php",
+		"/Users/miguelmartinez/Sites/fundacion/stylus/admin/plugins/select2.min.css",
+		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/layout-form.blade.php",
+		"/Users/miguelmartinez/Sites/fundacion/app/database/seeds/DatabaseSeeder.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/routes.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/config/packages/atticmedia/anvard/routes.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/config/facebook.php",
@@ -273,7 +287,6 @@
 		"/Users/miguelmartinez/Sites/fundacion/vendor/atticmedia/anvard/src/migrations/2013_05_11_205235_setup_anvard.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/admin.jsl.sublime-workspace",
 		"/Users/miguelmartinez/Sites/fundacion/composer.json",
-		"/Users/miguelmartinez/Sites/fundacion/app/models/HomeVideo.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/models/Crud.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/models/Logfile.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/start/helpers.php",
@@ -299,9 +312,7 @@
 		"/Users/miguelmartinez/Sites/fundacion/app/start/routes.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/modal.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/dashboard/dashboard.blade.php",
-		"/Users/miguelmartinez/Sites/fundacion/app/views/crud/layout-form.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/users/create.blade.php",
-		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/skeleton.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/httpdocs/js/vendor/bootstrap-modalajax.js",
 		"/Users/miguelmartinez/Sites/fundacion/app/views/admin/layout.blade.php",
 		"/Users/miguelmartinez/Sites/fundacion/stylus/bootstrap/navbar.styl",
@@ -384,10 +395,7 @@
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfEbayComments.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfEbayItems.php",
 		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfLost.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfLostComments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfLostItems.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfPayments.php",
-		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfPickup.php"
+		"/Users/miguelmartinez/Sites/jsl/dev2.adm.jslspeedpak.com/app/models/CmbNfLostComments.php"
 	],
 	"find":
 	{
@@ -446,6 +454,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".select2-container .select2-selection--single",
+			".select2-container--default .select2-selection--single .select2-selection__arrow",
+			" .select2-selection__rendered",
+			"line-height",
+			".select2-container",
 			"profiletousermap",
 			"profilestableforeignkey",
 			"user",
@@ -568,12 +581,7 @@
 			"Schema",
 			"schema",
 			"Generate",
-			"generate",
-			"removeExcludedTables",
-			"getExcludedTables",
-			"Tables",
-			"tables",
-			"getOptions"
+			"generate"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -617,8 +625,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/views/crud/layout-form.blade.php",
+					"settings":
+					{
+						"buffer_size": 2447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2035,
+								2035
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1254.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1066,6 +1103,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 286.0,
+	"side_bar_width": 265.0,
 	"status_bar_visible": true
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Console\Command;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
 /**
@@ -9,7 +10,7 @@ use Symfony\Component\Console\Input\InputArgument;
  * @author Vahid Mahdiun
 */
 
-class CrudData extends Command
+class CrudMigration extends Command
 {
 
     /**
@@ -17,7 +18,7 @@ class CrudData extends Command
      *
      * @var string
      */
-    protected $name = 'crud:data';
+    protected $name = 'crud:dump';
     /**
      * The console command description.
      *
@@ -32,6 +33,7 @@ class CrudData extends Command
      */
     public function __construct()
     {
+        $this->schema = \DB::getDoctrineSchemaManager();
         parent::__construct();
     }
 
@@ -43,23 +45,17 @@ class CrudData extends Command
     public function fire()
     {
 
-        Artisan::call('dump-autoload'); // refresh config
-        //https://github.com/schickling/laravel-backup
-
-        $files = File::allFiles(app_path("storage/dumps"));
-        $dump = "";
-        foreach ($files as $file)
-        {
-            $pathinfo = pathinfo($file);
-            $dump  = $pathinfo['basename'];
-        }
-        if($dump)
-            Artisan::call('db:restore',["dump" => $dump]); // call seeders
-        else
-            return "doesnt exits dumps :(";
-
+        File::deleteDirectory(app_path("storage/dumps"),true);
+        Artisan::call('db:backup');
     }
 
+ 
 
+    protected function getOptions()
+    {
+        return [
+            ['ignore', 'i', InputOption::VALUE_OPTIONAL, 'A list of Tables you wish to ignore, separated by a comma: users,posts,comments' ]
+        ];
+    }
 
 }

@@ -1,6 +1,6 @@
 @foreach ($columns as $column)
     @if (!$column->is_primary)
-     <div class="form-group @if ($errors->has($column->name)) has-error @endif">
+     <div class="form-group @if ($errors->has($column->name]) has-error @endif">
 
         @if($column->input !="hidden")
          {{ Form::label($column->input, $column->label) }}
@@ -8,7 +8,7 @@
 
 
          @if($column->name == "password") 
-            {{ Form::password($column->name,array('class' => 'form-control','placeholder'=>$column->label)); }}
+            {{ Form::password($column->name,['class' => 'form-control','placeholder'=>$column->label]); }}
          @elseif ($column->is_foreign_key)
 
             {{ Form::remotecombo($column->name,$record->{$column->name},['model'=>$model,'class' => 'form-control','placeholder'=>$column->label] ); }}
@@ -27,11 +27,11 @@
 
          @elseif ( $column->input == "money" or $column->input =="currency")
          
-           {{ Form::currency($column->name,$record->{$column->name},array('placeholder'=>$column->label)); }}
+           {{ Form::currency($column->name,$record->{$column->name},['placeholder'=>$column->label]); }}
 
          @elseif ($column->input == "number")
          
-            {{ Form::number($column->name,$record->{$column->name},array('placeholder'=>$column->label)); }}
+            {{ Form::number($column->name,$record->{$column->name},['placeholder'=>$column->label]); }}
   
          @elseif  ($column->input == "toggle") 
 
@@ -46,9 +46,9 @@
             {{ Form::radiogroup($column->name,$record->{$column->name},[],$column->data); }}
 
          @elseif ($column->input != "number")
-            {{ call_user_func("Form::".$column->input,$column->name,$record->{$column->name},array('class' => 'form-control','placeholder'=>$column->label)) }}
+            {{ call_user_func("Form::".$column->input,$column->name,$record->{$column->name},['class' => 'form-control','placeholder'=>$column->label]) }}
          @else
-            {{ call_user_func("Form::".$column->input,$column->name,"",$record->{$column->name},array('class' => 'form-control')) }}
+            {{ call_user_func("Form::".$column->input,$column->name,"",$record->{$column->name},['class' => 'form-control']) }}
          @endif
 
 
