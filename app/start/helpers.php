@@ -63,7 +63,7 @@ function getColumnsFK($column,$record,$fk_column)
     }else if(array_key_exists($column,$fk_column))
         $fk_column_name = $record->{$fk_column[$column]};
     else
-        $fk_column_name = $default_record->{$column};
+        $fk_column_name = $record->{$column};
     
         
             

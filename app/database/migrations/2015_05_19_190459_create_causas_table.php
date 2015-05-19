@@ -25,7 +25,7 @@ class CreateCausasTable extends Migration {
 			$table->text('twitter')->nullable();
 			$table->integer('me_gusta_interno')->nullable();
 			$table->text('imagen');
-			$table->integer('id_categoria')->unique('id_categoria');
+			$table->integer('id_categorias');
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
 			$table->timestamps();

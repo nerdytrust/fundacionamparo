@@ -698,7 +698,7 @@ class CrudController extends \BaseController {
         $class      = new $this->className(); 
         $fk_column  = $class->getCrud("fk_column");
 
-        $columns    = $fk_column[$column];
+        $columns    = isset($fk_column[$column]) ? $fk_column[$column] : [];
         $model      = $class->toModel($column);
 
         if($column == "created_by" or $column == "updated_by")
