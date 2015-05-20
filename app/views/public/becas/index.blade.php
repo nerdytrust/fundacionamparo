@@ -123,11 +123,13 @@
 									<span>
 										Promedio<br/>
 										<div>
-											<select name="" id="promedio" required>
+											<select name="promedio" id="promedio" required>
 												<option value="">Promedio</option>
-												<option value="">10</option>
-												<option value="">9.8</option>
-												<option value="">9.6</option>
+												@if ( isset( $promedios ) )
+													@foreach ( $promedios as $promedio )
+														<option value="{{ $promedio->id_promedios }}">{{ $promedio->promedio }}</option>
+													@endforeach
+												@endif
 											</select>
 										</div>
 									</span>

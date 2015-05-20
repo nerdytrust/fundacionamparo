@@ -3,8 +3,10 @@
 class BecasController extends BaseController {
 
 	public function index(){
+		$promedios = Promedios::get();
 		return View::make( 'public.becas.index' )->with( [
-			'helper' => new Helper
+			'helper' 	=> new Helper,
+			'promedios'	=> $promedios
 		] );
 	}
 }

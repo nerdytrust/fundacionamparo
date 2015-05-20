@@ -18,9 +18,9 @@ class CreateMembresiasTable extends Migration {
 			$table->string('nombre', 150);
 			$table->text('resena');
 			$table->text('url');
-			$table->bigInteger('me_gusta');
-			$table->text('logo');
-			$table->boolean('orden');
+			$table->bigInteger('me_gusta')->nullable();
+			$table->text('logo')->nullable();
+			$table->boolean('orden')->nullable();
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
 			$table->timestamps();
