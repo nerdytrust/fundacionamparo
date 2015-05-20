@@ -1,5 +1,5 @@
 @extends( 'public.layout' )
-	@section('class')
+	@section('class')como-ayudar
 	@stop
 	@section('content')
 		<section id="Contenedor">
@@ -10,8 +10,8 @@
 					<h3>Es muy fácil tomar acción, sólo necesitas dar un poco más</h3>
 					<nav class="social_mask">
 						<ul>
-							<a href=""><li class="fa fa-facebook"></li></a>
-							<a href=""><li class="fa fa-twitter"></li></a>
+							{{ $helper->facebookShare( '', Request::url(), '' ) }}
+							{{ $helper->twitterShare( 'Como Ayudar', Request::url(), '' ) }}
 							{{-- <a href=""><li class="fa fa-heart"></li></a>
 							<p>96 likes</p> --}}
 						</ul>
@@ -109,8 +109,8 @@
  					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
  					<div id="social_footer">
  						<ul>
- 							<a href=""><li class="fa fa-facebook"></li></a>
- 							<a href=""><li class="fa fa-twitter"></li></a>
+ 							{{ $helper->facebookShare( '', Request::url(), '' ) }}
+							{{ $helper->twitterShare( 'Como Ayudar', Request::url(), 'TomandoAcciónFA' ) }}
  						</ul>
  					</div>
  				</div>

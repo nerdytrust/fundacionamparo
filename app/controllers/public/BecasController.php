@@ -3,7 +3,9 @@
 class BecasController extends BaseController {
 
 	public function index(){
-		return View::make( 'public.becas.index' );
+		return View::make( 'public.becas.index' )->with( [
+			'helper' => new Helper
+		] );
 	}
 }
 

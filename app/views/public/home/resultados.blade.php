@@ -127,8 +127,8 @@
  					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
  					<div id="social_footer">
  						<ul>
- 							<a href=""><li class="fa fa-facebook"></li></a>
- 							<a href=""><li class="fa fa-twitter"></li></a>
+ 							{{ $helper->facebookShare( '', Request::url(), '' ) }}
+							{{ $helper->twitterShare( 'Fundación Amparo', Request::url(), 'TomandoAcciónFA' ) }}
  						</ul>
  					</div>
  				</div>

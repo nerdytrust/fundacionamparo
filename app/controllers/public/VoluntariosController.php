@@ -3,7 +3,9 @@
 class VoluntariosController extends BaseController {
 	
 	public function index(){
-		return View::make( 'public.voluntarios.index' );
+		return View::make( 'public.voluntarios.index' )->with( [
+			'helper' => new Helper
+		] );
 	}
 }
 

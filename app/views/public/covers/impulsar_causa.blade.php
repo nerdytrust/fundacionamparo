@@ -11,9 +11,9 @@
 				<!--<button class="cerrar-h"></button>-->
 				<button onClick="history.back()" class="regresar"> Regresar</button>
 				<div class="imagen">
-					<img src="{{ asset( 'images/image.png' ) }}" alt="">
-						<button>centros comunitarios</button>
-						<p>Roberto Alonso Espinoza</p>
+					<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '282x280' ) }}" alt="">
+						<button>{{ $causa->id_categorias_record->nombre }}</button>
+						<p>{{ $causa->titulo }}</p>
 				</div>
 				</br>
 				<div class="check-azul">

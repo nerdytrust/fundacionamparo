@@ -10,8 +10,8 @@
 					<div id="txt_evento">						
 						<nav>
 							<ul>
-								<a href="{{ URL::to( $causa->facebook ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
-								<a href="{{ URL::to( $causa->twitter ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
+								{{ $helper->facebookShare( '', Request::url(), '' ) }}
+								{{ $helper->twitterShare( $causa->titulo, Request::url(), '' ) }}
 								<a href=""><li class="fa fa-heart"></li></a>
 								<p>{{ $causa->me_gustas_interno  }} likes</p>
 							</ul>
@@ -51,10 +51,10 @@
 									</p>	
 								</div><!--termina datos-inf-->
 								<div class="fig">
-									<figure class="cauf" id="cauf-d">
+									<figure class="cauf" id="cauf-d" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';">
 									  <span>Haz tu donación</span>
 									</figure >
-									<figure class="cauf" id="cauf-i">
+									<figure class="cauf" onclick="location.href='{{ URL::to( 'impulsar-causa/' . $causa->id_causas ) }}';">
 										<span>Ser</br>impulsor</span>
 									</figure>
 									<figure class="cauf" id="cauf-v">

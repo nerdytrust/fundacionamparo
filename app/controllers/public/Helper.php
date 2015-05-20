@@ -28,4 +28,28 @@ class Helper {
 		print_r( $this->fullname );die;
 		return $fullname;
 	}
+
+	/**
+	 * Método para agregar un botón share twitter
+	 * @param  string $text Título del contenido
+	 * @param  string $url  Url de la sección o contenido
+	 * @param  string $hashtags  Hashtag con el que se hace el share
+	 * @return Html del botón de share twitter
+	 */
+	public static function twitterShare( $text, $url, $hashtags ){
+		$share_twitter = '<a href="https://twitter.com/intent/tweet?via=' . getenv( 'APP_USER_TWITTER' ) . '&text=' . $text . '&url=' . $url . '&hashtags=' . $hashtags .'"><li class="fa fa-twitter"></li></a>';
+		return $share_twitter;
+	}
+
+	/**
+	 * Método para agregar un botón share facebook
+	 * @param  string $after  Etiqueta HTML de apertura
+	 * @param  string $url    URL de la sección o contenido
+	 * @param  string $before Etiqueta HTML de cierre
+	 * @return Html del botón de share de facebook
+	 */
+	public static function facebookShare( $after = '', $url, $before = '' ){
+		$fb_share = '<a href="https://www.facebook.com/dialog/share?app_id=776167932490026&href=' . Request::url() . '&display=popup&redirect_uri=' . URL::to( 'http://www.facebook.com' ) . '" onclick="return !window.open(this.href, \'Share on Facebook\', \'width=640, height=536\')">' .$after . '<li class="fa fa-facebook"></li>' . $before . '</a>';
+		return $fb_share;
+	}
 }

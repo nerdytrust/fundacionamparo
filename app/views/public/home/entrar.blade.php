@@ -5,6 +5,7 @@
 	@section( 'content' )
 		<div class="lightbox-h d" id="entrar">
 			<div class="lightbox-h-cont donar">
+				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/' ) }}';"></button>
 				<img src="{{ asset( 'images/amparo2.png' ) }}" alt="" class="logo2">
 				<h1 class="bien">Bienvenido</h1>
 				<h2 class="entrar">Fundación Amparo</h2>

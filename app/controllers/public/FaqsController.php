@@ -2,7 +2,9 @@
 
 class FaqsController extends BaseController {
 	public function index(){
-		return View::make( 'public.faqs.index' );
+		return View::make( 'public.faqs.index' )->with( [
+			'helper' => new Helper
+		] );
 	}
 }
 

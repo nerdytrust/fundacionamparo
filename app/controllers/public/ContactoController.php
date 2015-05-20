@@ -2,7 +2,9 @@
 
 class ContactoController extends BaseController {
 	public function index(){
-		return View::make( 'public.contacto.index' );
+		return View::make( 'public.contacto.index' )->with( [
+			'helper' => new Helper
+		] );
 	}
 }
 

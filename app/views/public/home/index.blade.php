@@ -24,13 +24,11 @@
 				<aside class="btns">
 					<article id="btn_twitter" class="">
 						<ul>
-							<li class="fa fa-twitter"></li>
+							{{ $helper->twitterShare( getenv( 'APP_TITLE' ), Request::url(), '' ) }}
 						</ul>
 					</article>
 					<article id="btn_facebook" class="">
-						<ul>
-							<li class="fa fa-facebook"></li>
-						</ul>
+						{{ $helper->facebookShare( '<ul>', Request::url(), '</ul>' ) }}
 					</article>
 					<article id="btn_donar2" class="">
 						DONAR
@@ -56,8 +54,8 @@
 					 			<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '559x548' ) }}" alt="">
 					 			<section id="social_top">
 									<ul>
-										<a href="{{ URL::to( $causa->facebook ) }}" target="_blank"><li class="fa fa-facebook"></li></a>
-										<a href="{{ URL::to( $causa->twitter ) }}" target="_blank"><li class="fa fa-twitter"></li></a>
+										{{ $helper->facebookShare( '', URL::to( 'ficha-causa' ) . '/' . $causa->id_causas, '' ) }}
+										{{ $helper->twitterShare( $causa->titulo, URL::to( 'ficha-causa' ) . '/' . $causa->id_causas, '' ) }}
 										<a id="{{ $causa->id_causas }}" class="like-process"><li class="fa fa-heart"></li></a>
 										<p>{{ $causa->me_gusta_interno }} likes</p>
 									</ul>
@@ -187,8 +185,8 @@
 		 					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
 		 					<div id="social_footer">
 		 						<ul>
-		 							<a href=""><li class="fa fa-facebook"></li></a>
-		 							<a href=""><li class="fa fa-twitter"></li></a>
+		 							{{ $helper->facebookShare( '', Request::url(), '' ) }}
+		 							{{ $helper->twitterShare( getenv( 'APP_TITLE' ), Request::url(), 'TomandoAcciónFA' ) }}
 		 						</ul>
 		 					</div>
 		 				</div>

@@ -11,8 +11,10 @@
 |
 */
 
-Route::get( '/', 'HomeController@index' );
-Route::get( 'home', 'HomeController@home' );
+Route::get( '/', 'HomeController@home' );
+// Route::get( '/', 'HomeController@index' );
+// Route::get( 'home', 'HomeController@home' );
+Route::get( 'login', 'HomeController@index' );
 Route::get( 'registro', 'HomeController@registro' );
 
 ## Menú
@@ -54,6 +56,7 @@ Route::get( 'donar-causa', [ 'uses' => 'CoversController@donarCausas', 'as' => '
 Route::get( 'donar-causa/{id}', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causa' ] )->where( 'id', '[0-9]+' );
 Route::get( 'impulsar', [ 'uses' => 'CoversController@impulsar', 'as' => 'get.impulsar' ] );
 Route::get( 'impulsar-causa', [ 'uses' => 'CoversController@impulsarCausa', 'as' => 'get.impulsar-causa' ] );
+Route::get( 'impulsar-causa/{id}', [ 'uses' => 'CoversController@impulsarCausa', 'as' => 'get.impulsar-causa' ] )->where( 'id', '[0-9]+');
 Route::get( 'voluntario', [ 'uses' => 'CoversController@voluntario', 'as' => 'get.voluntario' ] );
 Route::get( 'voluntario-2', [ 'uses' => 'CoversController@voluntarioNext', 'as' => 'get.voluntario-2' ] );
 Route::get( 'ficha-donador', [ 'uses' => 'CoversController@fichaDonador', 'as' => 'get.ficha-donador' ] );

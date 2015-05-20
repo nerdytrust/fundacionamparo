@@ -85,7 +85,8 @@ class Causas extends \Crud {
                         'created_by'    => 'Creado por',
                         'updated_by'    => 'Actualizado por',
                         'created_at'    => 'Fecha de Creación',
-                        'updated_at'    => 'Fecha de Actualización'
+                        'updated_at'    => 'Fecha de Actualización',
+                        'fecha'         => 'Fecha de Cierre'
                     ],
         //
         // Replace default inputs by column
@@ -131,8 +132,8 @@ class Causas extends \Crud {
         "index"     => [],
         "show"      => [],
 
-        "not_in_create" => [ "me_gustas_interno", "recaudado", "created_at", "updated_at" ],
-        "not_in_edit"   => [ "me_gustas_interno", "recaudado", "created_at", "updated_at" ],
+        "not_in_create" => [ "me_gusta_interno", 'facebook', 'twitter', "recaudado", "created_at", "updated_at", 'created_by', 'updated_by' ],
+        "not_in_edit"   => [ "me_gusta_interno", 'facebook', 'twitter', "recaudado", "created_at", "updated_at", 'created_by', 'updated_by' ],
         "not_in_index"  => [ "created_at", "updated_at", "facebook", "twitter", "imagen", "updated_by", "id_causas", "created_by" ],
         // "not_in_show"   => ["created_at","updated_at"],
 

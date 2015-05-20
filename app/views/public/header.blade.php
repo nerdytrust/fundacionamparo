@@ -1,7 +1,7 @@
 <div id="meenus">
 	<header>
 		<div id="logo">
-			<a href="{{ URL::to('/home') }}">
+			<a href="{{ URL::to('/') }}">
 				<img src="{{ asset( 'images/amparo.png' ) }}" alt="">
 				<h1 id="fundacion-logo">FUNDACIÓN AMPARO</h1>
 			</a>
@@ -28,7 +28,9 @@
 			</nav>
 			<button id="btn_dona">DONAR</button>
 			<div id="perfil">
-				<img src="{{ asset( 'images/monito.jpg' ) }}" alt=""/>
+				<a href="{{ URL::to( 'login' ) }}">
+					<img src="{{ asset( 'images/monito.jpg' ) }}" alt=""/>
+				</a>
 			</div>
 		</div>
 	</header>

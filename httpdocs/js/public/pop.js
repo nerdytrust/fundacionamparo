@@ -6,9 +6,10 @@
 				  window.location = 'donar.html';
 			});*/
 
-			$("#cauf-d").click(function(){
-				  window.location = 'donar-causas';
-			});
+			// $("#cauf-d").click(function(){
+			// 	window.location = 'donar-causa';
+			// });
+
 			$("#donador_sec, #btn_dona, #btn_donar2, .circulo_btn").click(function(){
 				  window.location = 'donar';
 			});
@@ -41,7 +42,7 @@
 			// 	window.location = 'ficha-causas';//este lleva a las fichas pero ya externas
 			// 	return false;
 			// });
-			$(".caja_fca_usu, #txt_evento, .donador_clas, .impulsor_clas, .voluntario_clas").click(function(){
+			$(".caja_fca_usu, .donador_clas, .impulsor_clas, .voluntario_clas").click(function(){
 				window.location = 'ficha-donador';//este lleva a las fichas pero ya externas
 				return false;
 			}); 

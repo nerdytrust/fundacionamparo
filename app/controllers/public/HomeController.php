@@ -50,7 +50,10 @@ class HomeController extends BaseController {
 			$resultados = null;
 
 		$resultados = $s;
-		return View::make( 'public.home.resultados' )->with( [ 'resultados' => $resultados, 'helper' => new Helper ] );
+		return View::make( 'public.home.resultados' )->with( [
+			'resultados' => $resultados,
+			'helper' => new Helper
+		] );
 	}
 }
 

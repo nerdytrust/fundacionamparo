@@ -61,8 +61,15 @@ class CoversController extends BaseController {
 		return View::make( 'public.covers.impulsar' )->with( [ 'causas' => $causas, 'helper' => new Helper ] );
 	}
 
-	public function impulsarCausa(){
-		return View::make( 'public.covers.impulsar_causa' );
+	public function impulsarCausa( $id_causa = null ){
+		if ( ! isset( $id_causa ) || empty( $id_causa ) )
+			return Redirect::to( 'home' );
+
+		$causa = Causas::find( $id_causa );
+		if ( empty( $causa ) )
+			return Redirect::to( 'home' );
+		
+		return View::make( 'public.covers.impulsar_causa' )->with( [ 'causa' => $causa, 'helper' => new Helper ] );
 	}
 
 	public function impulsarGracias(){
