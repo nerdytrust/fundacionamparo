@@ -113,13 +113,13 @@ class Muro extends \Crud {
         "show"      => [],
 
         "not_in_create" => [
-                                "created_at",
-                                "updated_at",
-                                "created_by",
-                                "updated_by",
-                                "me_gusta_interno",
-                                "id_momento"
-                        ],
+                "created_at",
+                "updated_at",
+                "created_by",
+                "updated_by",
+                "me_gusta_interno",
+                "id_momento"
+        ],
         // "not_in_edit"   => ["created_at","updated_at"],
         // "not_in_index"  => ["created_at","updated_at"],
         // "not_in_show"   => ["created_at","updated_at"],

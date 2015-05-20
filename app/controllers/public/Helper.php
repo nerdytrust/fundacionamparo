@@ -52,4 +52,9 @@ class Helper {
 		$fb_share = '<a href="https://www.facebook.com/dialog/share?app_id=776167932490026&href=' . Request::url() . '&display=popup&redirect_uri=' . URL::to( 'http://www.facebook.com' ) . '" onclick="return !window.open(this.href, \'Share on Facebook\', \'width=640, height=536\')">' .$after . '<li class="fa fa-facebook"></li>' . $before . '</a>';
 		return $fb_share;
 	}
+
+	public static function nameUrl( $url = '' ){
+		$name_url = preg_replace( '#^https?://#', '', $url );
+		return $name_url;
+	}
 }

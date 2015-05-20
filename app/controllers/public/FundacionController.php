@@ -51,8 +51,10 @@ class FundacionController extends BaseController {
 	}
 
 	public function membresias(){
+		$membresias = Membresias::orderBy( 'orden' )->get();
 		return View::make( 'public.fundacion.membresias' )->with( [
-			'helper' => new Helper
+			'membresias'	=> $membresias,
+			'helper' 		=> new Helper
 		] );
 	}
 
