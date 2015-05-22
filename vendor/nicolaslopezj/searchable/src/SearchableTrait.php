@@ -81,19 +81,44 @@ trait SearchableTrait
      */
     protected function __getColumns()
     {
+
         if (array_key_exists('columns', $this->searchable)) {
             return $this->searchable['columns'];
         } else {
 
             $columns = [];
 
-            foreach ($this->getColumnsByView("index") as $column) {
-                if(!$column->is_foreign_key and !$column->is_primary and ( $column->type=="string" or $column->type=="text" ))
-                    $columns[$column->name] = 10;
+            if(getCurrentAction() == "remoteCombo")
+            {
+                
+                $model      = getCurrentModel();
+                $model      = new $model;
+                $fk_column  = $model->getCrud("fk_column");
+
+                $column     = getLastAction();
+
+                if(isset($fk_column[$column]))
+                {
+                    foreach ($fk_column[$column] as $fk)
+                        $columns[$fk] = 10;
+                }
+                else
+                    $columns[$column] = 10;
+
+
+
+            }else
+            {
+                foreach ($this->getColumnsByView("index") as $column) {
+                    if(!$column->is_foreign_key and !$column->is_primary and ( $column->type=="string" or $column->type=="text" ))
+                        $columns[$column->name] = 10;
+                }
             }
 
 
+
             return array_diff($columns, ["status","created_by","updated_by","created_at","updated_at"]);
+
         }
     }
 
