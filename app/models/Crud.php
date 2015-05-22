@@ -205,7 +205,9 @@ class Crud extends \BaseModel {
         // [ "id_roles"  => ["roles","id_roles"] 
         // [ "id_parent" => ["current_table","id_primary_key"] 
         //    
-        "joins"      => [],            
+        "joins"      => [
+
+        ],            
         // 
         // Tabs
         // Allways create names of tabs with snake case for example
@@ -514,15 +516,6 @@ class Crud extends \BaseModel {
         return $model;
     }
 
-    function toTable($model)
-    {
-        $model     = strtolower($model);
-        $model     = str_replace(["id_","_id"], "", $model);
-        $model     = snake_case($model);
-
-        return $model;
-    }
-
     protected function createRelation($method)
     {
         $relations = $this->getRelations();
@@ -647,6 +640,7 @@ class Crud extends \BaseModel {
         $tabs         = $this->getCRUD("tabs");
         $default_tabs = $this->getCRUD("default_tabs");
 
+
         if(array_key_exists(0,$tabs)) // without title
         {
             foreach ($tabs as $tab)
@@ -669,12 +663,8 @@ class Crud extends \BaseModel {
 
     public function getCRUD($view = "")
     {
-
         if(isset($this->crud[$view]) and !empty($this->crud[$view]))
     	{
-
-
-
     		if(isset($this->default_crud[$view]))
             {
                 if(is_array($this->default_crud[$view]) and !starts_with($view,"btn_in_") and !starts_with($view,"not_in_") /*and $view != "fk_column"*/)
@@ -684,11 +674,8 @@ class Crud extends \BaseModel {
             }else{
                 return $this->crud[$view];
             }
-
     			
-    	}elseif (isset($this->crud[$view])) {
-            return $this->crud[$view];
-        }
+    	}
 		elseif(isset($this->default_crud[$view]))
         {
             return $this->default_crud[$view];
@@ -752,6 +739,15 @@ class Crud extends \BaseModel {
 			if(str_contains($name, 'mail'))
 				$input = "email";
 
+			//replace default input
+			if (array_key_exists($name, $crud_inputs))
+			{
+				if(in_array($crud_inputs[$name], $this->inputTypes))
+					$input = $crud_inputs[$name];
+			}
+
+
+
 
 
 			$is_primary = $column->getName() == $this->getKeyName() ? 1 : 0;
@@ -763,7 +759,6 @@ class Crud extends \BaseModel {
 			$label  = $this->replaceUnderScore(ucwords($name));
 
 			$model  = false;
-            $table  = false;
             $parent_key = false;
 
 			if($is_primary)
@@ -771,15 +766,11 @@ class Crud extends \BaseModel {
 
 			if($is_foreign_key)
 			{
-                $model      = strtolower($name);
-				$model      = (str_replace(["id_","_id"], "", $name));
-                $table      = snake_case($model);
 
+				$model      = (str_replace(["id_","_id"], "", $name));
 				$label      = ucfirst(str_singular($model));
 				$model      = ucfirst(camel_case($model));
-
                 $parent_key = $name;
-                $input      = "remotecombo";
 			}
 
 
@@ -808,24 +799,14 @@ class Crud extends \BaseModel {
                 $model          = "Users";
                 $is_foreign_key = 1;
                 $parent_key     = $name;
-                $table          = $this->toTable($model);
             }
                 
-
-            //replace default input
-            if (array_key_exists($name, $crud_inputs))
-            {
-                if(in_array($crud_inputs[$name], $this->inputTypes))
-                    $input = $crud_inputs[$name];
-            }
-
 
 			$return->{$name}= (object)[
 						"is_primary" 	 => $is_primary,
 						"is_foreign_key" => $is_foreign_key,
 						"auto_increment" => $column->getAutoincrement() ? 1 : 0,
 						"model"			 => $model,
-                        "table"          => $table,
                         "parent_key"     => $parent_key,
                         "default"        => $column->getDefault(),
 						"label"			 => $label,
