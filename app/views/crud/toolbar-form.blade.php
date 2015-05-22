@@ -29,7 +29,6 @@
 
         @if(!Entrust::can($model."/edit") and in_array("edit",$btn))
           @if ($action != "create")
-              <li class="@if ($action == 'create') active @endif"><a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/create") }}">{{ trans('crud.create') }}</a></li>
               <li class="@if ($action == 'edit') active @endif"><a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value."/edit") }}">{{ trans('crud.edit') }}</a></li>
           @endif
         @endif

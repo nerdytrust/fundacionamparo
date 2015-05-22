@@ -36,29 +36,13 @@ class CrudView extends Command
     }
 
     protected $inputs = [
-        'hidden'          => '{{ Form::hidden("$name",$record->$name); }}',
         'password'        => '{{ Form::password("$name",["class" => "form-control","placeholder"=>"$placeholder"]); }}',
-        
-        'remotecombo'     => '{{ Form::remotecombo("$name",$record->$name,["table"=>$columns->$name->table,"class" => "form-control","placeholder"=>"$placeholder"] ); }}',
-        'combo'           => '{{ Form::combo("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"],$columns->$name->data ); }}',
-        'select'          => '{{ Form::combo("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"],$columns->$name->data ); }}',
-        
+        'remotecombo'     => '{{ Form::remotecombo("$name",$record->$name,["model"=>"$model","class" => "form-control","placeholder"=>"$placeholder"] ); }}',
         'text'            => '{{ Form::text("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
-        'textarea'        => '{{ Form::textarea("$name", $record->$name,["placeholder"=>"$placeholder"]) }}',
-        'html'            => '{{ Form::editor("$name",$record->$name,[]); }}',
-        'editor'          => '{{ Form::editor("$name",$record->$name,[]); }}',
-
-        'radios'          => '{{ Form::radiogroup("$name",$record->$name,[],$columns->$name->data); }}',
-        'radiogroup'      => '{{ Form::radiogroup("$name",$record->$name,[],$columns->$name->data); }}',
-
         'email'           => '{{ Form::email("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
-
-        'number'          => '{{ Form::number("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
-        'money'           => '{{ Form::currency("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
-        'currency'        => '{{ Form::currency("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
-
-        'toggle'          => '{{ Form::toggle("$name",$record->$name,[],$columns->$name->data); }}',
-        
+        'number'          => '{{ Form::number("$name",$record->$name,["placeholder"=>"$placeholder"]); }}',
+        'textarea'        => '{{ Form::textarea("$name", $record->$name,["placeholder"=>"$placeholder"]) }}',
+        'select'          => '{{ Form::combo("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"],$column->$name); }}',
         'date'            => '{{ Form::date("$name",$record->name,["class"=>"form-control","placeholder"=>$placeholder]) }}',
         'datetime'        => '{{ Form::datetime("$name",$record->name,["class"=>"form-control","placeholder"=>"$placeholder"]) }}',
         'time'            => '{{ Form::time("$name",$record->name,["class"=>"form-control","placeholder"=>"$placeholder"]) }}',
@@ -107,7 +91,7 @@ class CrudView extends Command
             File::makeDirectory($this->getPath("views/admin/".$name."/tabs"), $mode = 0777, true, true);
         }
 
-        $views = ["create","edit",/*"index","show"*/];
+        $views = ["create"/*,"edit","index","show"*/];
         $camel   = ucwords(camel_case(($name)));
         $class = new  $camel;
 
@@ -133,11 +117,15 @@ class CrudView extends Command
 
         $search  = array(
             '$placeholder',
-            '$name'
+            '$name',
+            '$data',
+            '$model'
         );
         $replace = array(
           $column->label,
-          $column->name
+          $column->name,
+          "[]",
+          $column->model,
         );
 
 
@@ -160,17 +148,21 @@ class CrudView extends Command
                     '$name',
                     '$kind',
                     '$label',
-                    '$input'
+                    '$input',
+                    '$data',
+                    '$model'
                 );
 
-                // if($column->is_foreign_key)
-                //   $column->input = "remotecombo";
+                if($column->is_foreign_key)
+                  $column->input = "remotecombo";
 
                 $replace = array(
                   $column->name,
                   $column->input,
                   $column->label,
-                  $this->getInput($column)
+                  $this->getInput($column),
+                  "[]",
+                  $column->model,
                 );
 
                 $content.= str_replace($search, $replace, $input_template);

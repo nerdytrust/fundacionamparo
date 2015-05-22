@@ -17,12 +17,10 @@ Form::macro('toggle', function($name, $default = "false", $attrs = [],$data=[])
 
     if(isset($data->data))
         $data = $data->data;
-
-    $default = (Input::old($name)) ? Input::old($name) : $default;
         
-    $item = '<input type="hidden" name="'. $name .'" ';
-    $item .= 'value="'. $default .'" ';
-    $item .= '>';
+	$item = '<input type="hidden" name="'. $name .'" ';
+	$item .= 'value="'. $default .'" ';
+	$item .= '>';
 
     $item .= '<input type="checkbox" data-toggle="toggle" name="'. $name .'" data-onstyle="success" data-offstyle="danger"';
 
@@ -41,10 +39,10 @@ Form::macro('toggle', function($name, $default = "false", $attrs = [],$data=[])
 
     if (is_array($data) and count($data) > 0)
     {
-        list($on,$off) = array_keys($data);
+    	list($on,$off) = array_keys($data);
 
-        $item .= 'data-on="'.$on.'" ';
-        $item .= 'data-off="'.$off.'" ';
+    	$item .= 'data-on="'.$on.'" ';
+    	$item .= 'data-off="'.$off.'" ';
 
     }
 
@@ -62,9 +60,6 @@ Form::macro('editor', function($name, $default = NULL, $attrs = [])
 {
     //<textarea class="summernote"><p>Seasons <b>coming up</b></p></textarea>
 
-    $default = (Input::old($name)) ? Input::old($name) : $default;
-
-
     $item= '<textarea sumernote name="'. $name .'" ';
 
     // If Id not explicitly set, use name (Id is needed to associate with labels)
@@ -78,11 +73,10 @@ Form::macro('editor', function($name, $default = NULL, $attrs = [])
         }
     }
 
-    $item .= ">";
     if($default)
         $item .= $default;
 
-    $item .= "</textarea>";
+    $item .= "></textarea>";
 
     return $item;
 });
@@ -97,9 +91,6 @@ Form::macro('html', function($name, $default = NULL, $attrs = array())
 
 Form::macro('datepicker', function($name, $default = NULL, $attrs = [],$type=null)
 {
-
-    $default = (Input::old($name)) ? Input::old($name) : $default;
-
     $item = '<div class="input-group">';
 
         $item .= '<input type="text" name="'. $name .'" ';
@@ -155,7 +146,6 @@ Form::macro('time', function($name, $default = NULL, $attrs = array())
 Form::macro('filepicker', function($name, $default = NULL, $attrs = array())
 {
 
-    $default = (Input::old($name)) ? Input::old($name) : $default;
 
     $item = '<div class="fileinput fileinput-new input-group" data-provides="fileinput">';
         $item.= '<div class="form-control" data-trigger="fileinput">';
@@ -230,7 +220,6 @@ Form::macro('file', function($name, $default = NULL, $attrs = array())
 Form::macro('currency', function($name, $default = null, $attrs = array())
 {
 
-    $default = (Input::old($name)) ? Input::old($name) : $default;
     $attrs_default = ["class"=>"form-control currency","min"=>0,"step"=>"0.01","data-number-to-fixed"=>"2","data-number-stepfactor"=>"100"];
 
     $attrs = array_merge($attrs_default,$attrs);
@@ -270,8 +259,6 @@ Form::macro('money', function($name, $default = NULL, $attrs = array())
 Form::macro('number', function($name, $default = NULL, $attrs = array())
 {
  
-    $default = (Input::old($name)) ? Input::old($name) : $default;
-
     $attrs_default = ["class"=>"form-control currency","min"=>0,"step"=>"1","data-number-to-fixed"=>"2","data-number-stepfactor"=>"100"];
 
     $attrs = array_merge($attrs_default,$attrs);
@@ -302,7 +289,6 @@ Form::macro('number', function($name, $default = NULL, $attrs = array())
 
 Form::macro('combo', function($name, $default = NULL, $attrs = [], $data = [])
 {
-    $default = (Input::old($name)) ? Input::old($name) : $default;
     $attrs_default = ["combo"=>"combo"];
 
     if(isset($data->data))
@@ -317,28 +303,22 @@ Form::macro('combo', function($name, $default = NULL, $attrs = [], $data = [])
 Form::macro('remotecombo', function($name, $default = NULL, $attrs = [], $url = NULL)
 {
 
-    $default = (Input::old($name)) ? Input::old($name) : $default;
-
-    if(!isset($attrs["table"]))
-        $attrs["table"] = "";
+    if(!isset($attrs["model"]))
+        $attrs["model"] = "";
     
-    $attrs["table"] = toTable($attrs["table"]);
     $value = [$default => $default];
-
 
     if(!$url)
     {
-        $url = "./".getenv('APP_ADMIN_PREFIX')."/".$attrs["table"].'/remotecombo/'.$name;
+        $url = "./".getenv('APP_ADMIN_PREFIX')."/".$attrs["model"].'/remotecombo/'.$name;
 
-        if(is_numeric($default) and !empty($attrs["table"]))
+        if(is_numeric($default) and !empty($attrs["model"]))
         {
-            $model      = toModel($attrs["table"]);
-            $model      = new $model();
+            $model      = new $attrs["model"];
             $fk_column  = $model->getCrud("fk_column");
             $record     = $model->find($default);
 
-            if($record)
-                $value      = [$default=>getColumnsFK($name,$record,$fk_column)];
+            $value      = [$default=>getFKColumn($name,$record,$fk_column)];
         }
     }
         
@@ -354,8 +334,6 @@ Form::macro('remotecombo', function($name, $default = NULL, $attrs = [], $url = 
 Form::macro('radiogroup', function($name, $default = NULL, $attrs = array(), $data = [])
 {
  
-    $default = (Input::old($name)) ? Input::old($name) : $default;
-    
     if(isset($data->data))
         $data = $data->data;
 
