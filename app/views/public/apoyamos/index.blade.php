@@ -26,19 +26,23 @@
 							<h2>
 								Llena el siguiente formulario, una vez revisado nos pondremos en contacto para darte una respuesta
 							</h2>
+							{{ $errors->first( 'nombre', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::text( 'nombre', '', [ 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 25 ] )}}
+								{{ Form::text( 'nombre', '', [ 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 25 ], Input::old( 'nombre' ) )}}
 							</span>
+							{{ $errors->first( 'telefono', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::text( 'telefono', '', [ 'placeholder' => 'Teléfono', 'required' => true, 'maxlenght' => 10 ] ) }}
+								{{ Form::text( 'telefono', '', [ 'placeholder' => 'Teléfono', 'required' => true, 'maxlenght' => 10 ], Input::old( 'telefono' ) ) }}
 							</span>
+							{{ $errors->first( 'email', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::email( 'mail', '', [ 'placeholder' => 'Correo electrónico', 'required' => true ] ) }}
+								{{ Form::email( 'email', '', [ 'placeholder' => 'Correo electrónico', 'required' => true ], Input::old( 'mail' ) ) }}
 							</span>
+							{{ $errors->first( 'causa_tipo', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
 								<h4 class="gt">Tipo de causa</h4>
 								<select name="causa_tipo" id="" required>
-									<option value="0">Selecciona</option>
+									<option value="">Selecciona</option>
 									@if ( isset( $categorias ) )
 										@foreach ( $categorias as $categoria )
 											<option value="{{ $categoria->id_categorias }}">{{ $categoria->nombre }}</option>
@@ -46,8 +50,9 @@
 									@endif
 								</select>
 						    </span>
+						    {{ $errors->first( 'descripcion', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::textarea( 'descripcion', '', [ 'placeholder' => 'Describe tu causa', 'rows' => 4, 'cols' => 50 ] ) }}
+								{{ Form::textarea( 'descripcion', '', [ 'placeholder' => 'Describe tu causa', 'rows' => 4, 'cols' => 50 ], Input::old( 'descripcion' ) ) }}
 							</span>
 							<button type="submit">Enviar</button>
 							<p>Campos obligarotios para enviar formulario</p>
@@ -63,16 +68,16 @@
 							2 Sur 708, Centro Histórico, <br/>
 							Puebla, Pue. México. <br/>
 							C. P. 72000 <br/>
-							<div id="txt_evento">
+							{{-- <div id="txt_evento">
 								<nav class="red-cont">
 									<ul>
 										<a href=""><li class="fa fa-facebook"></li></a>
 										<a href=""><li class="fa fa-twitter"></li></a>
-										{{-- <a href=""><li class="fa fa-heart"></li></a>
-										<p>96 likes</p> --}}
+										<a href=""><li class="fa fa-heart"></li></a>
+										<p>96 likes</p>
 									</ul>
 								</nav>
-							</div>
+							</div> --}}
 						</p>
 					</div>
 				</div><!--termina txt_fundacion2-->
