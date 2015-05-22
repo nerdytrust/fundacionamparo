@@ -81,7 +81,7 @@ class Causas extends \Crud {
         //  ["first_name" => "First Name"]
         // 
         "labels"    => [ 
-                        'id_categoria'      => 'Categoría',
+                        'id_categorias'      => 'Categoría',
                         'created_by'        => 'Creado por',
                         'updated_by'        => 'Actualizado por',
                         'created_at'        => 'Fecha de Creación',
@@ -99,7 +99,7 @@ class Causas extends \Crud {
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
-        "fk_column" => [ "created_by" => "first_name", "id_categorias" => "nombre", 'id_tipo_causas' => 'nombre' ],
+        "fk_column" => [ 'created_by' => 'first_name', 'id_categorias' => 'nombre', 'id_tipo_causas' => 'nombre' ],
 
         // "joins" => [ 'id_categoria' => [ 'categorias' ] ],
         // 

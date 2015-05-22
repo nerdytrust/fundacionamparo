@@ -99,7 +99,7 @@
 				</div>
 				<div class="txt_fundacion">
 					<div id="titulo_fca">
-						<button class="causas animsition-link" onclick="location.href='{{ URL::to( 'apoyamos-tu-causa' ) }}';">Inscribir Causa</button>
+						<a class="btn btn-default causas animsition-link" href="{{ URL::to( 'apoyamos-tu-causa' ) }}">Inscribir Causa</a>
 					</div>
 				</div>
 				<div class="txt_footer">
