@@ -12,12 +12,41 @@ function toModel($model)
 }
 
 
+function toTable($model)
+{
+    $model     = strtolower($model);
+    $model     = str_replace(["id_","_id"], "", $model);
+    $model     = snake_case($model);
+
+    return $model;
+}
+
+
+
 function getCurrentAction(){
     
+    //Route::currentRouteName()
     $action = Route::current()->getActionName();
     $action = explode("@", $action);
     return $action = $action[count($action)-1];
 }
+
+function getCurrentModel(){
+    
+    //Route::currentRouteName()
+    $route  = Route::currentRouteName();
+    $route  = explode(".", $route);
+    return $action = toModel($route[count($route)-2]);
+}
+
+
+function getLastAction()
+{
+    $column     = \Request::path();
+    $column     = explode("/", $column);
+    return $column     = $column[count($column)-1];
+}
+
 
 function getFKColumn($column = NULL,$default_record = [],$fk_column = [],$first = true)
 {
@@ -37,7 +66,7 @@ function getFKColumn($column = NULL,$default_record = [],$fk_column = [],$first 
         if(isset($default_record->{$column}))
             return $default_record->{$column};
         elseif(!is_array($default_record))
-            return "---";
+            return ;
 
     }
         
@@ -46,7 +75,7 @@ function getFKColumn($column = NULL,$default_record = [],$fk_column = [],$first 
 }
 
 
-function getColumnsFK($column,$record,$fk_column)
+function getColumnsFK($column,$record,$fk_column,$primary_key = null)
 {
 
     $fk_column_name = "";
@@ -63,7 +92,16 @@ function getColumnsFK($column,$record,$fk_column)
     }else if(array_key_exists($column,$fk_column))
         $fk_column_name = $record->{$fk_column[$column]};
     else
-        $fk_column_name = $record->{$column};
+    {
+
+        if($primary_key)
+            $fk_column_name = $record->{$primary_key};
+        elseif(isset($record->{$column}))
+            $fk_column_name = $record->{$column};
+        
+            
+    }
+        
     
         
             
