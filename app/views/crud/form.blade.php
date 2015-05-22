@@ -9,11 +9,11 @@
 
          @if($column->name == "password") 
             {{ Form::password($column->name,['class' => 'form-control','placeholder'=>$column->label]); }}
-         @elseif ($column->is_foreign_key)
+         @elseif ($column->input == "remotecombo")
 
-            {{ Form::remotecombo($column->name,$record->{$column->name},['model'=>$model,'class' => 'form-control','placeholder'=>$column->label] ); }}
+            {{ Form::remotecombo($column->name,$record->{$column->name},['table'=>$column->table,'class' => 'form-control','placeholder'=>$column->label] ); }}
 
-         @elseif ($column->input == "select")
+         @elseif ($column->input == "select" or $column->input == "combo")
 
             {{ Form::combo($column->name,$record->{$column->name},['class' => 'form-control','placeholder'=>$column->label],$column->data); }}
 
