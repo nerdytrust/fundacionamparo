@@ -28,7 +28,7 @@
 							</h2>
 							{{ $errors->first( 'nombre', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::text( 'nombre', '', [ 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 25 ], Input::old( 'nombre' ) )}}
+								{{ Form::text( 'nombre', '', [ 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 120 ], Input::old( 'nombre' ) )}}
 							</span>
 							{{ $errors->first( 'telefono', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>

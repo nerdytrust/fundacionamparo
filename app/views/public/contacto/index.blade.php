@@ -21,15 +21,27 @@
 			<section id="contenedor_int">
 				<div class="text-contact">
 					<label class="contact" for="" id="fre">
-						<form action="">
+						{{ Form::open( [ 'url' => 'formulario-contacto', 'method' => 'POST', 'autocomplete' => 'off' ] ) }}
 							<h1>Comunícate con nosotros</h1>
 							<h2>Escríbenos si tienes alguna duda, en breve un asesor se pondrá en contacto contigo.</h2>
-							<span><input type="text" name="nombre" maxlenght="10" placeholder="Nombre" required></span>
-							<input type="text" name="telefono" maxlenght="10" placeholder="Teléfono" required>
-							<span><input type="email" name="mail" autocomplete="off" placeholder="Correo electrónico" required></span>
-							<span><textarea rows="4" cols="50" placeholder="Mensaje"></textarea></span>
-							<button>Enviar</button> <p>Campos obligarotios para enviar formulario</p>
-						</form>
+							{{ $errors->first( 'nombre', '<div class="alert alert-danger" role="alert">:message</div>') }}
+							<span>
+								{{ Form::text( 'nombre', '', [ 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 120 ], Input::old( 'nombre' ) ) }}
+							</span>
+							{{ $errors->first( 'telefono', '<div class="alert alert-danger" role="alert">:message</div>') }}
+							<span>
+								{{ Form::text( 'telefono', '', [ 'placeholder' => 'Teléfono', 'required' => true, 'maxlenght' => 10 ], Input::old( 'telefono' ) ) }}
+							</span>
+							{{ $errors->first( 'email', '<div class="alert alert-danger" role="alert">:message</div>') }}
+							<span>
+								{{ Form::text( 'email', '', [ 'placeholder' => 'Correo electrónico', 'required' => true, 'maxlength' => 140 ], Input::old( 'email' ) ) }}
+							</span>
+							{{ $errors->first( 'mensaje', '<div class="alert alert-danger" role="alert">:message</div>') }}
+							<span>
+								{{ Form::textarea( 'mensaje', '', [ 'placeholder' => 'Mensaje', 'rows' => 4, 'cols' => 50 ], Input::old( 'mensaje' ) ) }}
+							</span>
+							<button type="submit">Enviar</button> <p>Campos obligarotios para enviar formulario</p>
+						{{ Form::close() }}
 					</label>
 					<div class="contact-inf rt2">
 						<b>T. + (222) 229 38 50<br/>info@fundacionamparo.com</b>
@@ -41,16 +53,16 @@
 							2 Sur 708, Centro Histórico, <br/>
 							Puebla, Pue. México. <br/>
 							C. P. 72000 <br/>
-							<div id="txt_evento">						
+							{{-- <div id="txt_evento">						
 								<nav class="red-cont">
 									<ul>
 										<a href=""><li class="fa fa-facebook"></li></a>
 										<a href=""><li class="fa fa-twitter"></li></a>
-										{{-- <a href=""><li class="fa fa-heart"></li></a>
-										<p>96 likes</p> --}}
+										<a href=""><li class="fa fa-heart"></li></a>
+										<p>96 likes</p>
 									</ul>
 								</nav>
-							</div>
+							</div> --}}
 						</p>
 					</div>
 				</div>

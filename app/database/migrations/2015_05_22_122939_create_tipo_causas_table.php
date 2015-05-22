@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateContactoTable extends Migration {
+class CreateTipoCausasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,11 @@ class CreateContactoTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('contacto', function(Blueprint $table)
+		Schema::create('tipo_causas', function(Blueprint $table)
 		{
-			$table->integer('id_contacto', true);
-			$table->string('nombre', 100)->nullable();
-			$table->string('telefono', 30)->nullable();
-			$table->string('correo', 80)->nullable();
-			$table->text('mensaje')->nullable();
+			$table->integer('id_tipo_causas', true);
+			$table->string('nombre', 150);
+			$table->string('slug', 200);
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
 			$table->timestamps();
@@ -33,7 +31,7 @@ class CreateContactoTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('contacto');
+		Schema::drop('tipo_causas');
 	}
 
 }

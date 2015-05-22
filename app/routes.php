@@ -75,4 +75,5 @@ Route::post( 'ajax-moments', 'MuroExitoController@getMoment' );
 
 ##Actions de Formularios
 Route::post( 'registrar-tu-causa', [ 'uses' => 'ApoyarCausaController@registrar', 'as' => 'get.registrar-tu-causa' ] );
+Route::post( 'formulario-contacto', [ 'uses' => 'ContactoController@enviarContacto', 'as' => 'get.formulario-contacto' ] );
 

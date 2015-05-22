@@ -26,6 +26,7 @@ class CreateCausasTable extends Migration {
 			$table->integer('me_gusta_interno')->nullable();
 			$table->text('imagen');
 			$table->integer('id_categorias');
+			$table->integer('id_tipo_causas');
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
 			$table->timestamps();

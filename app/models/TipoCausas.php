@@ -1,11 +1,11 @@
 <?php
 
-class Causas extends \Crud {
+class TipoCausas extends \Crud {
 
 
-    protected $primaryKey = 'id_causas'; // !important
+    protected $primaryKey = 'id_tipo_causas'; // !important
 
-    protected $table = 'causas';
+    protected $table = 'tipo_causas';
 
     protected $fillable = [];
 
@@ -15,7 +15,12 @@ class Causas extends \Crud {
     protected $guarded = [];  // Important
 
 
-    // Events
+    // ===================================================================
+    // EVENTS
+    // ===================================================================
+    //
+    //  $params return array object link this
+    //
     //  $params return array object link this
     //
     // "me"             => Access to methods of the controller. return object 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy','printItem'
@@ -49,28 +54,27 @@ class Causas extends \Crud {
     public function beforePrint(&$params){}
 
     public function beforeShow(&$params){}
-
-    public function getDescripcionAttribute( $value ){
-        $action = getCurrentAction();
-            
-        if ( $action == "index" )
-            return Str::limit( $value, 140 );
-        else
-            return $value;
-    }
-
-    public function getMetaAttribute( $value ){
-        $action = getCurrentAction();
-
-        // if ( $action == "index" )
-            return '$' . number_format( $value );
-    }
     
-    /* 
-        CRUD
-    */
+    // ===================================================================
+    // FORMAT COLUMNS
+    // ===================================================================
+    //
+    // Example : column first_name
+    // you will create a function like this: 
 
-    protected $crud = [
+    // public function getFirstNameAttribute($value)
+    // {
+    //      return $value;
+    // }
+
+
+
+    // ===================================================================
+    // CRUD
+    // ===================================================================
+    //
+
+   protected $crud = [
         //
         // Title
         //
@@ -80,28 +84,27 @@ class Causas extends \Crud {
         //  if not wrote label the column rename like this: 
         //  ["first_name" => "First Name"]
         // 
-        "labels"    => [ 
-                        'id_categoria'      => 'Categoría',
-                        'created_by'        => 'Creado por',
-                        'updated_by'        => 'Actualizado por',
-                        'created_at'        => 'Fecha de Creación',
-                        'updated_at'        => 'Fecha de Actualización',
-                        'fecha'             => 'Fecha de Cierre',
-                        'id_tipo_causas'    => 'Tipo de Causa'
-                    ],
+        "labels"    => [],
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
-        // text,hidden,textarea,password,digit,file,email,title
+        // "radiogroup","radios","editor","toggle","html","text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"
         //
-        "inputs"    => [ 'meta' => 'currency', 'imagen' => 'image', 'twitter' => 'text', 'facebook' => 'text' ],
+        "inputs"    => [],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
-        "fk_column" => [ "created_by" => "first_name", "id_categorias" => "nombre", 'id_tipo_causas' => 'nombre' ],
-
-        // "joins" => [ 'id_categoria' => [ 'categorias' ] ],
+        "fk_column" => [],
+        //
+        // JOINS
+        // Remember by default the framework create autojoins when you define id_(table)   
+        // you can get the info like this : $records->id_(table)_record
+        // [ "column" => "table","table_column" ]            
+        // [ "id_roles"  => ["roles","id_roles"] 
+        // [ "id_parent" => ["current_table","id_primary_key"] 
+        //    
+        "joins"      => [], 
         // 
         // Tabs
         // Allways create names of tabs with snake case for example
@@ -133,20 +136,21 @@ class Causas extends \Crud {
         "index"     => [],
         "show"      => [],
 
-        "not_in_create" => [ "me_gusta_interno", 'facebook', 'twitter', "recaudado", "created_at", "updated_at", 'created_by', 'updated_by' ],
-        "not_in_edit"   => [ "me_gusta_interno", 'facebook', 'twitter', "recaudado", "created_at", "updated_at", 'created_by', 'updated_by' ],
-        "not_in_index"  => [ "created_at", "updated_at", "facebook", "twitter", "imagen", "updated_by", "id_causas", "created_by" ],
+        // "not_in_create" => ["created_at","updated_at"],
+        // "not_in_edit"   => ["created_at","updated_at"],
+        // "not_in_index"  => ["created_at","updated_at"],
         // "not_in_show"   => ["created_at","updated_at"],
 
         //
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        "btn_in_index"  => [ "create","edit","show","delete","search","advance-search" ],
-        "btn_in_show"   => [ "edit","cancel" ],
+        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
+        // "btn_in_show"   => ["print","edit","cancel"],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],
 
     ];
+
     
 }

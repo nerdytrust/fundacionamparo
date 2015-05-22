@@ -2,6 +2,10 @@
 
 class ApoyarCausaController extends BaseController {
 
+	/**
+	 * Reglas de validación del formulario
+	 * @var array
+	 */
 	private $rules = [
         'nombre'        => 'required|min:3' ,
         'telefono'      => 'required|digits:10' ,
@@ -10,6 +14,10 @@ class ApoyarCausaController extends BaseController {
         'descripcion'   => 'required'
     ];
 
+    /**
+     * Método para mostrar la vista de la sección Apoyamos tu Causa
+     * @return
+     */
 	public function index(){
 		$categorias = Categorias::get();
 		return View::make( 'public.apoyamos.index' )->with( [
@@ -18,6 +26,10 @@ class ApoyarCausaController extends BaseController {
 		] );
 	}
 
+	/**
+	 * Método para procesar la información del formulario de registro de Causa
+	 * @return
+	 */
 	public function registrar(){
 		$inputs = Input::all();
 		$validation = Validator::make( $inputs, $this->rules );
