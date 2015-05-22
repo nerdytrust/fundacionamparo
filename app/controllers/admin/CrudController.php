@@ -697,25 +697,9 @@ class CrudController extends \BaseController {
 
         $class      = new $this->className(); 
         $fk_column  = $class->getCrud("fk_column");
-        $joins      = $class->getCRUD("joins");
 
         $columns    = isset($fk_column[$column]) ? $fk_column[$column] : [];
-
-        $table      = $column;
-        $primay_key = null;
-
-        if(array_key_exists($column, $joins))
-        {
-            $table      = $joins[$column][0];
-            $primay_key = isset($joins[$column][1]) ? $joins[$column][1] : "";
-        }
-            
-
-        $model      = $class->toModel($table);
-
-        if(array_key_exists($column, $joins) and $column == ""){
-            $primay_key  = $model->getKeyName();
-        }
+        $model      = $class->toModel($column);
 
         if($column == "created_by" or $column == "updated_by")
         {
@@ -731,14 +715,14 @@ class CrudController extends \BaseController {
             $records = $records->search(\Input::get('search'));
 
         $records    = $records->take(10)->get();
-        $items = [];
+
 
         foreach ($records as $record) {
-            $items[] =["text" => getColumnsFK($column,$record,$fk_column,$primay_key), "id" => $record->{$class_model->getKeyName()} ] ;
+            $items[] =["text" => getColumnsFK($column,$record,$fk_column), "id" => $record->{$class_model->getKeyName()} ] ;
         }
 
         echo json_encode([
-                            "total_count"           =>  10,
+                            "total_count"           =>  2,
                             "incomplete_results"    =>  false,
                             "items"                 =>  $items,
                         ]);
