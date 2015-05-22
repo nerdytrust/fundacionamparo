@@ -109,18 +109,17 @@ class Categorias extends \Crud {
 
         // "not_in_create" => ["created_at","updated_at"],
         // "not_in_edit"   => ["created_at","updated_at"],
-        // "not_in_index"  => ["created_at","updated_at"],
+        "not_in_index"  => [ 'created_at', 'updated_at', 'slug', 'created_by', 'updated_by' ],
         // "not_in_show"   => ["created_at","updated_at"],
 
         //
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
-        // "btn_in_show"   => ["print","edit","cancel"],
-        // "btn_in_create" => ["create","cancel"],
-        // "btn_in_edit"   => ["edit","cancel"],
-
+        "btn_in_index"  => ["print","show"],
+        "btn_in_show"   => ["print","cancel"],
+        "btn_in_create" => ["cancel"],
+        "btn_in_edit"   => ["cancel"],
     ];
 
 

@@ -49,6 +49,15 @@ class ApoyamosCausa extends \Crud {
     public function beforePrint(&$params){}
 
     public function beforeShow(&$params){}
+
+    public function getDescripcionAttribute( $value ){
+        $action = getCurrentAction();
+            
+        if ( $action == "index" )
+            return Str::limit( $value, 140 );
+        else
+            return $value;
+    }
     
     /* 
         CRUD
@@ -64,7 +73,9 @@ class ApoyamosCausa extends \Crud {
         //  if not wrote label the column rename like this: 
         //  ["first_name" => "First Name"]
         // 
-        "labels"    => [],
+        "labels"    => [
+            'telefono'  => 'Teléfono'
+        ],
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
@@ -75,7 +86,7 @@ class ApoyamosCausa extends \Crud {
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
-        "fk_column" => [],
+        "fk_column" => [ "id_categorias" => "nombre" ],
         // 
         // Tabs
         // Allways create names of tabs with snake case for example
@@ -83,6 +94,8 @@ class ApoyamosCausa extends \Crud {
         // ["chart_report","permissions","settings"]
         //
         "tabs"      => [],
+        
+        "default_tabs" => [],
         // 
         // Default Tabs
         // if you can change the columns and inputs you will go to model
@@ -110,19 +123,16 @@ class ApoyamosCausa extends \Crud {
         // "not_in_create" => ["created_at","updated_at"],
         // "not_in_edit"   => ["created_at","updated_at"],
         // "not_in_index"  => ["created_at","updated_at"],
-        // "not_in_show"   => ["created_at","updated_at"],
+        "not_in_show"   => [ "created_at","updated_at", "created_by", "updated_by", "ip" ],
 
         //
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        "btn_in_index"  => ["show","delete","search","advance-search"],
-        "btn_in_show"   => ["print","cancel"],
+        "btn_in_index"  => [ "show", "delete", "search", "advance-search" ],
+        "btn_in_show"   => [ "print", "cancel" ],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],
-
     ];
-
-
-    
+   
 }
