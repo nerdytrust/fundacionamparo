@@ -1,0 +1,674 @@
+From 08c53488835e8eefdb94bd83a99385a8b8d9a5ba Mon Sep 17 00:00:00 2001
+From: Eric Bravo <eric.bravo.rod@gmail.com>
+Date: Thu, 21 May 2015 19:04:07 -0500
+Subject: [PATCH] Revert "fixed tabs, remote input and before edit"
+
+This reverts commit 4604ffc8dc5690b29a0a0d68becd5a0470509727.
+---
+ app/commands/CrudView.php                | 46 +++++++++------------
+ app/commands/crud/template/edit.crud     | 11 ------
+ app/commands/crud/template/index.crud    |  1 -
+ app/commands/crud/template/model.crud    |  9 -----
+ app/commands/crud/template/show.crud     | 68 --------------------------------
+ app/controllers/admin/CrudController.php | 24 ++---------
+ app/misc/form_macros.php                 | 48 ++++++----------------
+ app/models/Crud.php                      | 49 +++++++----------------
+ app/start/helpers.php                    | 44 ++-------------------
+ app/views/crud/form.blade.php            |  6 +--
+ app/views/crud/toolbar-form.blade.php    |  1 -
+ 11 files changed, 57 insertions(+), 250 deletions(-)
+ delete mode 100644 app/commands/crud/template/edit.crud
+ delete mode 100644 app/commands/crud/template/index.crud
+ delete mode 100644 app/commands/crud/template/show.crud
+
+diff --git a/app/commands/CrudView.php b/app/commands/CrudView.php
+index e905602..8716c5b 100755
+--- a/app/commands/CrudView.php
++++ b/app/commands/CrudView.php
+@@ -36,29 +36,13 @@ class CrudView extends Command
+     }
+ 
+     protected $inputs = [
+-        'hidden'          => '{{ Form::hidden("$name",$record->$name); }}',
+         'password'        => '{{ Form::password("$name",["class" => "form-control","placeholder"=>"$placeholder"]); }}',
+-        
+-        'remotecombo'     => '{{ Form::remotecombo("$name",$record->$name,["table"=>$columns->$name->table,"class" => "form-control","placeholder"=>"$placeholder"] ); }}',
+-        'combo'           => '{{ Form::combo("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"],$columns->$name->data ); }}',
+-        'select'          => '{{ Form::combo("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"],$columns->$name->data ); }}',
+-        
++        'remotecombo'     => '{{ Form::remotecombo("$name",$record->$name,["model"=>"$model","class" => "form-control","placeholder"=>"$placeholder"] ); }}',
+         'text'            => '{{ Form::text("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
+-        'textarea'        => '{{ Form::textarea("$name", $record->$name,["placeholder"=>"$placeholder"]) }}',
+-        'html'            => '{{ Form::editor("$name",$record->$name,[]); }}',
+-        'editor'          => '{{ Form::editor("$name",$record->$name,[]); }}',
+-
+-        'radios'          => '{{ Form::radiogroup("$name",$record->$name,[],$columns->$name->data); }}',
+-        'radiogroup'      => '{{ Form::radiogroup("$name",$record->$name,[],$columns->$name->data); }}',
+-
+         'email'           => '{{ Form::email("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
+-
+-        'number'          => '{{ Form::number("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
+-        'money'           => '{{ Form::currency("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
+-        'currency'        => '{{ Form::currency("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"]); }}',
+-
+-        'toggle'          => '{{ Form::toggle("$name",$record->$name,[],$columns->$name->data); }}',
+-        
++        'number'          => '{{ Form::number("$name",$record->$name,["placeholder"=>"$placeholder"]); }}',
++        'textarea'        => '{{ Form::textarea("$name", $record->$name,["placeholder"=>"$placeholder"]) }}',
++        'select'          => '{{ Form::combo("$name",$record->$name,["class" => "form-control","placeholder"=>"$placeholder"],$column->$name); }}',
+         'date'            => '{{ Form::date("$name",$record->name,["class"=>"form-control","placeholder"=>$placeholder]) }}',
+         'datetime'        => '{{ Form::datetime("$name",$record->name,["class"=>"form-control","placeholder"=>"$placeholder"]) }}',
+         'time'            => '{{ Form::time("$name",$record->name,["class"=>"form-control","placeholder"=>"$placeholder"]) }}',
+@@ -107,7 +91,7 @@ class CrudView extends Command
+             File::makeDirectory($this->getPath("views/admin/".$name."/tabs"), $mode = 0777, true, true);
+         }
+ 
+-        $views = ["create","edit",/*"index","show"*/];
++        $views = ["create"/*,"edit","index","show"*/];
+         $camel   = ucwords(camel_case(($name)));
+         $class = new  $camel;
+ 
+@@ -133,11 +117,15 @@ class CrudView extends Command
+ 
+         $search  = array(
+             '$placeholder',
+-            '$name'
++            '$name',
++            '$data',
++            '$model'
+         );
+         $replace = array(
+           $column->label,
+-          $column->name
++          $column->name,
++          "[]",
++          $column->model,
+         );
+ 
+ 
+@@ -160,17 +148,21 @@ class CrudView extends Command
+                     '$name',
+                     '$kind',
+                     '$label',
+-                    '$input'
++                    '$input',
++                    '$data',
++                    '$model'
+                 );
+ 
+-                // if($column->is_foreign_key)
+-                //   $column->input = "remotecombo";
++                if($column->is_foreign_key)
++                  $column->input = "remotecombo";
+ 
+                 $replace = array(
+                   $column->name,
+                   $column->input,
+                   $column->label,
+-                  $this->getInput($column)
++                  $this->getInput($column),
++                  "[]",
++                  $column->model,
+                 );
+ 
+                 $content.= str_replace($search, $replace, $input_template);
+diff --git a/app/commands/crud/template/edit.crud b/app/commands/crud/template/edit.crud
+deleted file mode 100644
+index 4989e6f..0000000
+--- a/app/commands/crud/template/edit.crud
++++ /dev/null
+@@ -1,11 +0,0 @@
+-@extends("crud.layout-form")
+-
+-@section("form")
+-
+-
+-$inputs
+-     
+-
+-@stop
+-
+-
+diff --git a/app/commands/crud/template/index.crud b/app/commands/crud/template/index.crud
+deleted file mode 100644
+index f7c54a6..0000000
+--- a/app/commands/crud/template/index.crud
++++ /dev/null
+@@ -1 +0,0 @@
+-index.crud
+\ No newline at end of file
+diff --git a/app/commands/crud/template/model.crud b/app/commands/crud/template/model.crud
+index 077c92a..15f5ac1 100755
+--- a/app/commands/crud/template/model.crud
++++ b/app/commands/crud/template/model.crud
+@@ -96,15 +96,6 @@ class {{Model}} extends \Crud {
+         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
+         //
+         "fk_column" => [],
+-        //
+-        // JOINS
+-        // Remember by default the framework create autojoins when you define id_(table)   
+-        // you can get the info like this : $records->id_(table)_record
+-        // [ "column" => "table","table_column" ]            
+-        // [ "id_roles"  => ["roles","id_roles"] 
+-        // [ "id_parent" => ["current_table","id_primary_key"] 
+-        //    
+-        "joins"      => [], 
+         // 
+         // Tabs
+         // Allways create names of tabs with snake case for example
+diff --git a/app/commands/crud/template/show.crud b/app/commands/crud/template/show.crud
+deleted file mode 100644
+index 923ce6f..0000000
+--- a/app/commands/crud/template/show.crud
++++ /dev/null
+@@ -1,68 +0,0 @@
+-@extends("crud.layout-form")
+-
+-@section("form")
+-
+-	
+-    @foreach ($columns as $column)
+-         
+-				<div class="row">
+-             @if ($column->is_primary)
+-                <div class="col-xs-2 text-right bg-primary">
+-									<h4>{{ Form::label($column->input, $column->label) }}</h4>
+-								</div>
+-								<div class="col-xs-10 ">
+-									<h4>{{$column->is_primary}}</h4>
+-                </div>
+-
+-                </div>
+-                
+-						@else
+-					<div class="col-xs-2 text-right">
+-						{{ Form::label($column->input, $column->label) }}
+-					</div>
+-					<div class="col-xs-10">
+-						@if($column->is_foreign_key)
+-							@if(count($fk_column) > 0)
+-								<?php
+-									$is_with_link = getFKColumn($column->name,$record,$fk_column);
+-								?>
+-								@if($is_with_link != "---")
+-									<td> {{ HTML::link(getenv('APP_ADMIN_PREFIX')."/".strtolower($columns->{$column->name}->model)."/".$record->{$column->name},$is_with_link) }}  </td>
+-								@else
+-									<td> {{ $is_with_link }}  </td>
+-								@endif
+-							@else
+-								<td> {{ HTML::link(getenv('APP_ADMIN_PREFIX')."/".strtolower($columns->{$column->name}->model)."/".$record->{$column->name},$record->{$column->name}) }}  </td>
+-							@endif
+-						@else
+-							<td> {{ Purifier::clean($record->{$column->name}) }}  </td> 
+-						@endif
+-
+-
+-					</div>
+-
+-                </div>
+-            @endif 
+-             
+-       
+-
+-
+-    @endforeach
+-
+-
+-
+-@stop
+-
+-
+-
+-@section("form-tabs")
+-
+-	@if($tabs and count($tabs) > 0)
+-		@include("crud.tabs.tabs")
+-	@endif
+-@stop
+-
+-
+-
+-
+-
+diff --git a/app/controllers/admin/CrudController.php b/app/controllers/admin/CrudController.php
+index c08ec19..02b87d0 100755
+--- a/app/controllers/admin/CrudController.php
++++ b/app/controllers/admin/CrudController.php
+@@ -697,25 +697,9 @@ class CrudController extends \BaseController {
+ 
+         $class      = new $this->className(); 
+         $fk_column  = $class->getCrud("fk_column");
+-        $joins      = $class->getCRUD("joins");
+ 
+         $columns    = isset($fk_column[$column]) ? $fk_column[$column] : [];
+-
+-        $table      = $column;
+-        $primay_key = null;
+-
+-        if(array_key_exists($column, $joins))
+-        {
+-            $table      = $joins[$column][0];
+-            $primay_key = isset($joins[$column][1]) ? $joins[$column][1] : "";
+-        }
+-            
+-
+-        $model      = $class->toModel($table);
+-
+-        if(array_key_exists($column, $joins) and $column == ""){
+-            $primay_key  = $model->getKeyName();
+-        }
++        $model      = $class->toModel($column);
+ 
+         if($column == "created_by" or $column == "updated_by")
+         {
+@@ -731,14 +715,14 @@ class CrudController extends \BaseController {
+             $records = $records->search(\Input::get('search'));
+ 
+         $records    = $records->take(10)->get();
+-        $items = [];
++
+ 
+         foreach ($records as $record) {
+-            $items[] =["text" => getColumnsFK($column,$record,$fk_column,$primay_key), "id" => $record->{$class_model->getKeyName()} ] ;
++            $items[] =["text" => getColumnsFK($column,$record,$fk_column), "id" => $record->{$class_model->getKeyName()} ] ;
+         }
+ 
+         echo json_encode([
+-                            "total_count"           =>  10,
++                            "total_count"           =>  2,
+                             "incomplete_results"    =>  false,
+                             "items"                 =>  $items,
+                         ]);
+diff --git a/app/misc/form_macros.php b/app/misc/form_macros.php
+index d277b2d..44d9b2f 100755
+--- a/app/misc/form_macros.php
++++ b/app/misc/form_macros.php
+@@ -17,12 +17,10 @@ Form::macro('toggle', function($name, $default = "false", $attrs = [],$data=[])
+ 
+     if(isset($data->data))
+         $data = $data->data;
+-
+-    $default = (Input::old($name)) ? Input::old($name) : $default;
+         
+-    $item = '<input type="hidden" name="'. $name .'" ';
+-    $item .= 'value="'. $default .'" ';
+-    $item .= '>';
++	$item = '<input type="hidden" name="'. $name .'" ';
++	$item .= 'value="'. $default .'" ';
++	$item .= '>';
+ 
+     $item .= '<input type="checkbox" data-toggle="toggle" name="'. $name .'" data-onstyle="success" data-offstyle="danger"';
+ 
+@@ -41,10 +39,10 @@ Form::macro('toggle', function($name, $default = "false", $attrs = [],$data=[])
+ 
+     if (is_array($data) and count($data) > 0)
+     {
+-        list($on,$off) = array_keys($data);
++    	list($on,$off) = array_keys($data);
+ 
+-        $item .= 'data-on="'.$on.'" ';
+-        $item .= 'data-off="'.$off.'" ';
++    	$item .= 'data-on="'.$on.'" ';
++    	$item .= 'data-off="'.$off.'" ';
+ 
+     }
+ 
+@@ -62,9 +60,6 @@ Form::macro('editor', function($name, $default = NULL, $attrs = [])
+ {
+     //<textarea class="summernote"><p>Seasons <b>coming up</b></p></textarea>
+ 
+-    $default = (Input::old($name)) ? Input::old($name) : $default;
+-
+-
+     $item= '<textarea sumernote name="'. $name .'" ';
+ 
+     // If Id not explicitly set, use name (Id is needed to associate with labels)
+@@ -78,11 +73,10 @@ Form::macro('editor', function($name, $default = NULL, $attrs = [])
+         }
+     }
+ 
+-    $item .= ">";
+     if($default)
+         $item .= $default;
+ 
+-    $item .= "</textarea>";
++    $item .= "></textarea>";
+ 
+     return $item;
+ });
+@@ -97,9 +91,6 @@ Form::macro('html', function($name, $default = NULL, $attrs = array())
+ 
+ Form::macro('datepicker', function($name, $default = NULL, $attrs = [],$type=null)
+ {
+-
+-    $default = (Input::old($name)) ? Input::old($name) : $default;
+-
+     $item = '<div class="input-group">';
+ 
+         $item .= '<input type="text" name="'. $name .'" ';
+@@ -155,7 +146,6 @@ Form::macro('time', function($name, $default = NULL, $attrs = array())
+ Form::macro('filepicker', function($name, $default = NULL, $attrs = array())
+ {
+ 
+-    $default = (Input::old($name)) ? Input::old($name) : $default;
+ 
+     $item = '<div class="fileinput fileinput-new input-group" data-provides="fileinput">';
+         $item.= '<div class="form-control" data-trigger="fileinput">';
+@@ -230,7 +220,6 @@ Form::macro('file', function($name, $default = NULL, $attrs = array())
+ Form::macro('currency', function($name, $default = null, $attrs = array())
+ {
+ 
+-    $default = (Input::old($name)) ? Input::old($name) : $default;
+     $attrs_default = ["class"=>"form-control currency","min"=>0,"step"=>"0.01","data-number-to-fixed"=>"2","data-number-stepfactor"=>"100"];
+ 
+     $attrs = array_merge($attrs_default,$attrs);
+@@ -270,8 +259,6 @@ Form::macro('money', function($name, $default = NULL, $attrs = array())
+ Form::macro('number', function($name, $default = NULL, $attrs = array())
+ {
+  
+-    $default = (Input::old($name)) ? Input::old($name) : $default;
+-
+     $attrs_default = ["class"=>"form-control currency","min"=>0,"step"=>"1","data-number-to-fixed"=>"2","data-number-stepfactor"=>"100"];
+ 
+     $attrs = array_merge($attrs_default,$attrs);
+@@ -302,7 +289,6 @@ Form::macro('number', function($name, $default = NULL, $attrs = array())
+ 
+ Form::macro('combo', function($name, $default = NULL, $attrs = [], $data = [])
+ {
+-    $default = (Input::old($name)) ? Input::old($name) : $default;
+     $attrs_default = ["combo"=>"combo"];
+ 
+     if(isset($data->data))
+@@ -317,28 +303,22 @@ Form::macro('combo', function($name, $default = NULL, $attrs = [], $data = [])
+ Form::macro('remotecombo', function($name, $default = NULL, $attrs = [], $url = NULL)
+ {
+ 
+-    $default = (Input::old($name)) ? Input::old($name) : $default;
+-
+-    if(!isset($attrs["table"]))
+-        $attrs["table"] = "";
++    if(!isset($attrs["model"]))
++        $attrs["model"] = "";
+     
+-    $attrs["table"] = toTable($attrs["table"]);
+     $value = [$default => $default];
+ 
+-
+     if(!$url)
+     {
+-        $url = "./".getenv('APP_ADMIN_PREFIX')."/".$attrs["table"].'/remotecombo/'.$name;
++        $url = "./".getenv('APP_ADMIN_PREFIX')."/".$attrs["model"].'/remotecombo/'.$name;
+ 
+-        if(is_numeric($default) and !empty($attrs["table"]))
++        if(is_numeric($default) and !empty($attrs["model"]))
+         {
+-            $model      = toModel($attrs["table"]);
+-            $model      = new $model();
++            $model      = new $attrs["model"];
+             $fk_column  = $model->getCrud("fk_column");
+             $record     = $model->find($default);
+ 
+-            if($record)
+-                $value      = [$default=>getColumnsFK($name,$record,$fk_column)];
++            $value      = [$default=>getFKColumn($name,$record,$fk_column)];
+         }
+     }
+         
+@@ -354,8 +334,6 @@ Form::macro('remotecombo', function($name, $default = NULL, $attrs = [], $url =
+ Form::macro('radiogroup', function($name, $default = NULL, $attrs = array(), $data = [])
+ {
+  
+-    $default = (Input::old($name)) ? Input::old($name) : $default;
+-    
+     if(isset($data->data))
+         $data = $data->data;
+ 
+diff --git a/app/models/Crud.php b/app/models/Crud.php
+index 7402b7c..a4fef56 100755
+--- a/app/models/Crud.php
++++ b/app/models/Crud.php
+@@ -205,7 +205,9 @@ class Crud extends \BaseModel {
+         // [ "id_roles"  => ["roles","id_roles"] 
+         // [ "id_parent" => ["current_table","id_primary_key"] 
+         //    
+-        "joins"      => [],            
++        "joins"      => [
++
++        ],            
+         // 
+         // Tabs
+         // Allways create names of tabs with snake case for example
+@@ -514,15 +516,6 @@ class Crud extends \BaseModel {
+         return $model;
+     }
+ 
+-    function toTable($model)
+-    {
+-        $model     = strtolower($model);
+-        $model     = str_replace(["id_","_id"], "", $model);
+-        $model     = snake_case($model);
+-
+-        return $model;
+-    }
+-
+     protected function createRelation($method)
+     {
+         $relations = $this->getRelations();
+@@ -647,6 +640,7 @@ class Crud extends \BaseModel {
+         $tabs         = $this->getCRUD("tabs");
+         $default_tabs = $this->getCRUD("default_tabs");
+ 
++
+         if(array_key_exists(0,$tabs)) // without title
+         {
+             foreach ($tabs as $tab)
+@@ -669,12 +663,8 @@ class Crud extends \BaseModel {
+ 
+     public function getCRUD($view = "")
+     {
+-
+         if(isset($this->crud[$view]) and !empty($this->crud[$view]))
+     	{
+-
+-
+-
+     		if(isset($this->default_crud[$view]))
+             {
+                 if(is_array($this->default_crud[$view]) and !starts_with($view,"btn_in_") and !starts_with($view,"not_in_") /*and $view != "fk_column"*/)
+@@ -684,11 +674,8 @@ class Crud extends \BaseModel {
+             }else{
+                 return $this->crud[$view];
+             }
+-
+     			
+-    	}elseif (isset($this->crud[$view])) {
+-            return $this->crud[$view];
+-        }
++    	}
+ 		elseif(isset($this->default_crud[$view]))
+         {
+             return $this->default_crud[$view];
+@@ -752,6 +739,15 @@ class Crud extends \BaseModel {
+ 			if(str_contains($name, 'mail'))
+ 				$input = "email";
+ 
++			//replace default input
++			if (array_key_exists($name, $crud_inputs))
++			{
++				if(in_array($crud_inputs[$name], $this->inputTypes))
++					$input = $crud_inputs[$name];
++			}
++
++
++
+ 
+ 
+ 			$is_primary = $column->getName() == $this->getKeyName() ? 1 : 0;
+@@ -763,7 +759,6 @@ class Crud extends \BaseModel {
+ 			$label  = $this->replaceUnderScore(ucwords($name));
+ 
+ 			$model  = false;
+-            $table  = false;
+             $parent_key = false;
+ 
+ 			if($is_primary)
+@@ -771,15 +766,11 @@ class Crud extends \BaseModel {
+ 
+ 			if($is_foreign_key)
+ 			{
+-                $model      = strtolower($name);
+-				$model      = (str_replace(["id_","_id"], "", $name));
+-                $table      = snake_case($model);
+ 
++				$model      = (str_replace(["id_","_id"], "", $name));
+ 				$label      = ucfirst(str_singular($model));
+ 				$model      = ucfirst(camel_case($model));
+-
+                 $parent_key = $name;
+-                $input      = "remotecombo";
+ 			}
+ 
+ 
+@@ -808,24 +799,14 @@ class Crud extends \BaseModel {
+                 $model          = "Users";
+                 $is_foreign_key = 1;
+                 $parent_key     = $name;
+-                $table          = $this->toTable($model);
+             }
+                 
+ 
+-            //replace default input
+-            if (array_key_exists($name, $crud_inputs))
+-            {
+-                if(in_array($crud_inputs[$name], $this->inputTypes))
+-                    $input = $crud_inputs[$name];
+-            }
+-
+-
+ 			$return->{$name}= (object)[
+ 						"is_primary" 	 => $is_primary,
+ 						"is_foreign_key" => $is_foreign_key,
+ 						"auto_increment" => $column->getAutoincrement() ? 1 : 0,
+ 						"model"			 => $model,
+-                        "table"          => $table,
+                         "parent_key"     => $parent_key,
+                         "default"        => $column->getDefault(),
+ 						"label"			 => $label,
+diff --git a/app/start/helpers.php b/app/start/helpers.php
+index 471428a..b3e8b99 100755
+--- a/app/start/helpers.php
++++ b/app/start/helpers.php
+@@ -12,42 +12,13 @@ function toModel($model)
+ }
+ 
+ 
+-function toTable($model)
+-{
+-    $model     = strtolower($model);
+-    $model     = str_replace(["id_","_id"], "", $model);
+-    $model     = snake_case($model);
+-
+-    return $model;
+-}
+-
+-
+-
+ function getCurrentAction(){
+     
+-    //Route::currentRouteName()
+     $action = Route::current()->getActionName();
+     $action = explode("@", $action);
+     return $action = $action[count($action)-1];
+ }
+ 
+-function getCurrentModel(){
+-    
+-    //Route::currentRouteName()
+-    $route  = Route::currentRouteName();
+-    $route  = explode(".", $route);
+-    return $action = toModel($route[count($route)-2]);
+-}
+-
+-
+-function getLastAction()
+-{
+-    $column     = \Request::path();
+-    $column     = explode("/", $column);
+-    return $column     = $column[count($column)-1];
+-}
+-
+-
+ function getFKColumn($column = NULL,$default_record = [],$fk_column = [],$first = true)
+ {
+ 
+@@ -66,7 +37,7 @@ function getFKColumn($column = NULL,$default_record = [],$fk_column = [],$first
+         if(isset($default_record->{$column}))
+             return $default_record->{$column};
+         elseif(!is_array($default_record))
+-            return ;
++            return "---";
+ 
+     }
+         
+@@ -75,7 +46,7 @@ function getFKColumn($column = NULL,$default_record = [],$fk_column = [],$first
+ }
+ 
+ 
+-function getColumnsFK($column,$record,$fk_column,$primary_key = null)
++function getColumnsFK($column,$record,$fk_column)
+ {
+ 
+     $fk_column_name = "";
+@@ -92,16 +63,7 @@ function getColumnsFK($column,$record,$fk_column,$primary_key = null)
+     }else if(array_key_exists($column,$fk_column))
+         $fk_column_name = $record->{$fk_column[$column]};
+     else
+-    {
+-
+-        if($primary_key)
+-            $fk_column_name = $record->{$primary_key};
+-        elseif(isset($record->{$column}))
+-            $fk_column_name = $record->{$column};
+-        
+-            
+-    }
+-        
++        $fk_column_name = $record->{$column};
+     
+         
+             
+diff --git a/app/views/crud/form.blade.php b/app/views/crud/form.blade.php
+index 11cb177..e09dbdc 100755
+--- a/app/views/crud/form.blade.php
++++ b/app/views/crud/form.blade.php
+@@ -9,11 +9,11 @@
+ 
+          @if($column->name == "password") 
+             {{ Form::password($column->name,['class' => 'form-control','placeholder'=>$column->label]); }}
+-         @elseif ($column->input == "remotecombo")
++         @elseif ($column->is_foreign_key)
+ 
+-            {{ Form::remotecombo($column->name,$record->{$column->name},['table'=>$column->table,'class' => 'form-control','placeholder'=>$column->label] ); }}
++            {{ Form::remotecombo($column->name,$record->{$column->name},['model'=>$model,'class' => 'form-control','placeholder'=>$column->label] ); }}
+ 
+-         @elseif ($column->input == "select" or $column->input == "combo")
++         @elseif ($column->input == "select")
+ 
+             {{ Form::combo($column->name,$record->{$column->name},['class' => 'form-control','placeholder'=>$column->label],$column->data); }}
+ 
+diff --git a/app/views/crud/toolbar-form.blade.php b/app/views/crud/toolbar-form.blade.php
+index 2cc12ee..0233159 100755
+--- a/app/views/crud/toolbar-form.blade.php
++++ b/app/views/crud/toolbar-form.blade.php
+@@ -29,7 +29,6 @@
+ 
+         @if(!Entrust::can($model."/edit") and in_array("edit",$btn))
+           @if ($action != "create")
+-              <li class="@if ($action == 'create') active @endif"><a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/create") }}">{{ trans('crud.create') }}</a></li>
+               <li class="@if ($action == 'edit') active @endif"><a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value."/edit") }}">{{ trans('crud.edit') }}</a></li>
+           @endif
+         @endif
+-- 
+2.2.1
+
