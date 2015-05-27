@@ -46,9 +46,9 @@ Route::get( 'asistenciales', [ 'uses' => 'FundacionController@asistenciales', 'a
 
 ## Vistas de los modales o flotantes
 Route::get( 'donar', [ 'uses' => 'CoversController@donar', 'as' => 'get.donar' ] );
-Route::get( 'donar-2', [ 'uses' => 'CoversController@donarStepTwo', 'as' => 'get.donar-2' ] );
-Route::get( 'donar-spei', [ 'uses' => 'CoversController@donarStepThree', 'as' => 'get.donar-spei' ] );
-Route::get( 'donar-oxxo', [ 'uses' => 'CoversController@donarStepFour', 'as' => 'get.donar-oxxo' ] );
+// Route::get( 'donar/paso/2', [ 'uses' => 'CoversController@donarStepTwo', 'as' => 'get.donar/paso/2' ] );
+// Route::get( 'donar-spei', [ 'uses' => 'CoversController@donarStepThree', 'as' => 'get.donar-spei' ] );
+// Route::get( 'donar-oxxo', [ 'uses' => 'CoversController@donarStepFour', 'as' => 'get.donar-oxxo' ] );
 Route::get( 'gracias', [ 'uses' => 'CoversController@donarStepFive', 'as' => 'get.gracias' ] );
 Route::get( 'gracias-2', [ 'uses' => 'CoversController@voluntarioGracias', 'as' => 'get.gracias-2' ] );
 Route::get( 'gracias-3', [ 'uses' => 'CoversController@impulsarGracias', 'as' => 'get.gracias-3' ] );
@@ -74,6 +74,7 @@ Route::get( 'path_image/{id}/{size}', 'StoragePathController@imgStorage' );
 Route::post( 'ajax-moments', 'MuroExitoController@getMoment' );
 
 ##Actions de Formularios
-Route::post( 'registrar-tu-causa', [ 'uses' => 'ApoyarCausaController@registrar', 'as' => 'get.registrar-tu-causa' ] );
-Route::post( 'formulario-contacto', [ 'uses' => 'ContactoController@enviarContacto', 'as' => 'get.formulario-contacto' ] );
+Route::post( 'registrar-tu-causa', 'ApoyarCausaController@registrar' );
+Route::post( 'formulario-contacto', 'ContactoController@enviarContacto' );
+Route::post( 'donar', 'CoversController@donar' );
 

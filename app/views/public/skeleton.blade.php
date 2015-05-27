@@ -77,7 +77,9 @@
                 '/js/public/pop.js',
                 '/js/public/script.js',
                 '/js/public/complements.js',
-                '/js/public/video.js'
+                '/js/public/video.js',
+                // '/js/public/jquery.form.min.js',
+                // '/js/public/nice.scripts.js'
             ];
         ?>
         {{ Minify::javascript($js,['js_build_path'=>'js/']) }}

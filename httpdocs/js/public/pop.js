@@ -13,12 +13,12 @@
 			$("#donador_sec, #btn_dona, #btn_donar2, .circulo_btn").click(function(){
 				  window.location = 'donar';
 			});
-			$("#ac").click(function(){
-				window.location = 'donar-2';
-			});
-			$("#ac2").click(function(){
-				window.location = 'gracias';
-			});
+			// $("#ac").click(function(){
+			// 	window.location = 'donar-2';
+			// });
+			// $("#ac2").click(function(){
+			// 	window.location = 'gracias';
+			// });
 			$("#fca-i").click(function(){
 				window.location = 'impulsar';
 			});

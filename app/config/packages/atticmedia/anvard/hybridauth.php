@@ -15,7 +15,7 @@ return array(
             'enabled' => true,
             'keys'    => array ( 'id' => '776167932490026', 'secret' => 'b92bb2c600e20ee61a65c9975bb46f7b' ),
             "scope"   => "user_about_me, email, user_birthday, user_hometown",
-            //"display" => "popup"
+            "display" => "popup"
         ),
 
         'Twitter' => array (

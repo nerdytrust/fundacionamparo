@@ -14,7 +14,9 @@
 				</p>
 				<label for="" class="vol">
 					<p>Escoge la causa que quieras apoyar</p>
-					<form action="{{ URL::to( '/donar-2') }}">
+					{{ Form::open( [ 'url' => 'donar', 'method' => 'POST', 'autocomplete' => 'off' ] ) }}
+						{{ Form::hidden( 'no_mostrar_perfil', '0' ) }}
+						{{ $errors->first( 'causa_donar', '<div class="alert alert-danger" role="alert">:message</div>') }}
 						<select name="causa_donar" id="">
 							@if ( isset( $causas ) )
 								@foreach ( $causas as $causa )
@@ -23,19 +25,19 @@
 							@endif
 						</select>
 						<p>Ingresa el monto que desaes donar</p>
+						{{ $errors->first( 'monto', '<div class="alert alert-danger" role="alert">:message</div>') }}
 						<span class="op">
-							<input type="text" name="monto" placeholder="10.00" maxlength="8" required id="r">
+							{{ Form::text( 'monto', '', [ 'placeholder' => '10.00', 'maxlength' => 8, 'required' => true, 'id' => 'r' ] ) }}
 						</span>
-						
 						<div class="check-verde">
-							<input type="checkbox" value="None" id="check-verde" name="check" />
+							{{ Form::checkbox( 'no_mostrar_perfil', '1', false, [ 'id' => 'check-verde' ] ) }}
 							<label for="check-verde"></label>No mostrar mi perfil en el sitio
 						</div>
 						</br></br>
-						 <input type="submit" value="ACEPTAR" id="ac">							
-					</form>	
+						<input type="submit" value="ACEPTAR">
+					{{ Form::close() }}
 				</label>
-				<a href="{{ URL::to( '/faqs' ) }}">Si necesitas ayuda da click aquí <img src="{{ asset( 'images/i.png' ) }}" alt="" class="icon"></a>
+				<a href="{{ URL::to( 'faqs' ) }}">Si necesitas ayuda da click aquí <img src="{{ asset( 'images/i.png' ) }}" alt="" class="icon"></a>
 			</div>
 		</div>
 	@stop

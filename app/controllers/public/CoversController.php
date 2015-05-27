@@ -2,9 +2,41 @@
 
 class CoversController extends BaseController {
 
+	/**
+	 * Reglas de validación para el formulario
+	 * @var array
+	 */
+	private $rules_donacion_step_one = [
+        'causa_donar'		=> [ 'required' ],
+        'monto'				=> [ 'required', 'numeric', 'between:10,99999999' ],
+        // 'no_mostrar_perfil'	=> [ 'accepted' ]
+    ];
+
 	public function donar(){
-		$causas = Causas::all();
-		return View::make( 'public.covers.donar' )->with( [ 'causas' => $causas, 'helper' => new Helper ] );
+		if ( ! Request::isMethod( 'post' ) ){
+			$causas = Causas::all();
+			return View::make( 'public.covers.donar' )->with( [
+				'causas' => $causas,
+				'helper' => new Helper
+			] );
+		} elseif ( empty( Input::get( 'causa_hash' ) ) ) {
+			$inputs = Input::all();
+			$validation = Validator::make( $inputs, $this->rules_donacion_step_one );
+
+			if ( $validation->fails() )
+				return Redirect::back()->withInput()->withErrors( $validation );
+
+			Session::put( 'donacion', $inputs );
+			$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
+			$monto = Session::get( 'donacion.monto' );
+			return View::make( 'public.covers.donar_step_2' )->with( [
+					'helper'  	=> new Helper,
+					'causa'		=> $causa,
+					'monto'		=> $monto
+				] );
+		} else {
+			dd( Input::all() );die;
+		}
 	}
 
 	/**
@@ -89,38 +121,38 @@ class CoversController extends BaseController {
 		return View::make( 'public.covers.voluntario_gracias' );	
 	}
 
-	public function donarStepTwo(){
-		return View::make( 'public.covers.donar_step_2' );
-	}
+	// public function donarStepTwo(){
+	// 	return View::make( 'public.covers.donar_step_2' );
+	// }
 
-	public function donarStepThree(){
-		return View::make( 'public.covers.donar_step_3' );
-	}
+	// public function donarStepThree(){
+	// 	return View::make( 'public.covers.donar_step_3' );
+	// }
 
-	public function donarStepFour(){
-		return View::make( 'public.covers.donar_step_4' );
-	}
+	// public function donarStepFour(){
+	// 	return View::make( 'public.covers.donar_step_4' );
+	// }
 
-	public function donarStepFive(){
-		return View::make( 'public.covers.donar_step_5' );
-	}
+	// public function donarStepFive(){
+	// 	return View::make( 'public.covers.donar_step_5' );
+	// }
 
-	public function validarPago(){
-		switch ( Input::get( 'pago' ) ) {
-			case 'tarjeta':
-				return Redirect::to( 'gracias' );
-				break;
-			case 'pay':
-				return Redirect::to( 'gracias' );
-				break;
-			case 'oxxo':
-				return Redirect::to( 'donar-oxxo' );
-				break;
-			case 'spei':
-				return Redirect::to( 'donar-spei' );
-				break;
-		}
-	}
+	// public function validarPago(){
+	// 	switch ( Input::get( 'pago' ) ) {
+	// 		case 'tarjeta':
+	// 			return Redirect::to( 'gracias' );
+	// 			break;
+	// 		case 'pay':
+	// 			return Redirect::to( 'gracias' );
+	// 			break;
+	// 		case 'oxxo':
+	// 			return Redirect::to( 'donar-oxxo' );
+	// 			break;
+	// 		case 'spei':
+	// 			return Redirect::to( 'donar-spei' );
+	// 			break;
+	// 	}
+	// }
 }
 
 /* End of file CoversController.php */
