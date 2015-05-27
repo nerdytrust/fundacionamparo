@@ -21,7 +21,8 @@
 		"ollieread/multiauth": "dev-master",
 		"mews/purifier": "dev-master-l4",
 		"torann/currency": "dev-master",
-		"atticmedia/anvard": "dev-master"
+		"atticmedia/anvard": "dev-master",
+		"conekta/conekta-php": "^2.0"
 	},
 	"require-dev": {
 	    "way/generators": "~2.0",
