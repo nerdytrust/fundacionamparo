@@ -7,6 +7,7 @@ Artisan::add(new CrudTab);
 Artisan::add(new CrudDelete);
 Artisan::add(new CrudMigration);
 Artisan::add(new CrudView);
+Artisan::add(new CrudViews);
 Artisan::add(new CrudData);
 Artisan::add(new CrudDump);
 /*

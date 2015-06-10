@@ -1,0 +1,43 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+
+class Update{{Controller}}Table extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		// http://laravel.com/docs/4.2/schema
+		//DB::statement("ALTER TABLE `table` MODIFY `column` INTEGER UNSIGNED NULL;");
+
+
+		Schema::table('{{table}}', function(Blueprint $table)
+		{
+			//$table->renameColumn('from', 'to');
+			//$table->dropColumn('column');
+
+			// add column http://laravel.com/docs/4.2/schema
+			// $table->string('column');
+		});
+	}
+
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::table('{{table}}', function(Blueprint $table)
+		{
+
+		});
+	}
+
+}

@@ -1,0 +1,52 @@
+@extends("crud.layout-index")
+
+	@section("table")
+
+		<table class="table table-striped table-bordered ">
+			<thead>
+				<tr>
+
+					<td> {{ $columns->id_momento->label }} </td>
+					<td> {{ $columns->anio->label }} </td>
+					<td> {{ $columns->titulo->label }} </td>
+					<td> {{ $columns->descripcion->label }} </td>
+					<td> {{ $columns->id_categoria->label }} </td>
+					<td> {{ $columns->parent->label }} </td>
+					<td> {{ $columns->imagen->label }} </td>
+					<td> {{ $columns->orden->label }} </td>
+					<td> {{ $columns->me_gusta_interno->label }} </td>
+
+
+					@include("crud.index-column-buttons")
+
+				</tr>
+			</thead>
+			<tbody>
+
+			
+			@foreach($records as $record)
+				<tr>
+
+
+					<td>{{ parseToHTML($columns->id_momento,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->anio,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->titulo,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->descripcion,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->id_categoria,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->parent,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->imagen,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->orden,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->me_gusta_interno,$record,$fk_column) }}</td>
+
+
+					@include("crud.index-buttons")
+
+				</tr>
+			@endforeach
+
+
+
+			</tbody>
+		</table>
+
+	@stop

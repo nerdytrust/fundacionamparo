@@ -1,0 +1,29 @@
+@extends("crud.layout-form")
+
+@section("form")
+
+
+
+<div class="form-group @if ($errors->has('id_resgistrados')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Resgistrado") }}
+   
+      {{ Form::remotecombo("id_resgistrados",$record->id_resgistrados,["table"=>$model,"class" => "form-control","placeholder"=>"Resgistrado"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_resgistrados') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('id_fb')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Fb") }}
+   
+      {{ Form::remotecombo("id_fb",$record->id_fb,["table"=>$model,"class" => "form-control","placeholder"=>"Fb"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_fb') }}</span>
+</div>
+
+     
+
+@stop
+
+

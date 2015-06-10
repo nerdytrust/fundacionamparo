@@ -110,12 +110,14 @@ trait SearchableTrait
             }else
             {
                 foreach ($this->getColumnsByView("index") as $column) {
+
                     if(!$column->is_foreign_key and !$column->is_primary and ( $column->type=="string" or $column->type=="text" ))
                         $columns[$column->name] = 10;
+                   
                 }
             }
 
-
+           
 
             return array_diff($columns, ["status","created_by","updated_by","created_at","updated_at"]);
 

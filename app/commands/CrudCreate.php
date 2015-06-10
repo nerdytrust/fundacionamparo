@@ -95,7 +95,7 @@ class CrudCreate extends Command
             return false;
         }
 
-        $controller = File::get($this->getPath("commands/crud/template/migration.crud"));
+        $controller = File::get($this->getPath("commands/templates/migration.crud"));
 
         $search  = array(
             '{{Controller}}',
@@ -120,7 +120,7 @@ class CrudCreate extends Command
         $name     = strtolower($name);
         //$plural   = str_plural($name);
 
-        $controller = File::get($this->getPath("commands/crud/template/seed.crud"));
+        $controller = File::get($this->getPath("commands/templates/seed.crud"));
         $search  = array(
             '{{Controller}}',
             '{{Model}}',
@@ -168,7 +168,7 @@ class CrudCreate extends Command
         //$plural   = str_plural($name);
 
 
-        $controller = File::get($this->getPath("commands/crud/template/model.crud"));
+        $controller = File::get($this->getPath("commands/templates/model.crud"));
         $search  = array(
             '{{Model}}',
             '{{primaryKey}}',
@@ -190,7 +190,7 @@ class CrudCreate extends Command
         $name     = strtolower($name);
         //$plural   = str_plural($name);
 
-        $controller = File::get($this->getPath("commands/crud/template/controller.crud"));
+        $controller = File::get($this->getPath("commands/templates/controller.crud"));
         $search  = array(
             '{{Controller}}'
         );

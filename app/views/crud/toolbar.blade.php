@@ -1,5 +1,7 @@
+<div class="index-toolbar">
+
 		<nav class="navbar navbar-default" role="navigation">
-		  <div class="container-fluid">
+		  <div class="">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
 		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -18,7 +20,7 @@
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
-		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <div class="collapse navbar-collapse no-padding" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
 		        <li class="active"><a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX')."/".$model."/") }}">{{ trans('crud.view_all') }}</a></li>
 		        
@@ -29,7 +31,7 @@
 
 		        @if(!Entrust::can($model."/search") and in_array("search",$btn))
 		        	<li>
-		        		{{ Form::open( array('url' => array(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'), 'method' => 'GET','class'  => 'navbar-form form-search-toolbar','role' =>'search')) }}
+		        		{{ Form::open( array('url' => array(getenv('APP_ADMIN_PREFIX').'/'.$model.'/'), 'method' => 'GET','class'  => 'navbar-form form-search-toolbar  no-padding','role' =>'search')) }}
 			                <div class="input-group">
 
 			                    {{ Form::text("search",Input::get('search'),array('class' => 'form-control','placeholder'=> trans('crud.search')) ); }}
@@ -54,12 +56,21 @@
 		        @endif
 
 		        @if(!Entrust::can($model."/advance-search") and in_array("advance-search",$btn))
-		        	<li><a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/create") }}">{{ trans('crud.advance_search') }}</a></li>
+
+		        	<li class="@if(Input::has('is-advance-search')) active @endif"><a href="#" class="btn-advance-search">{{ trans('crud.advance_search') }}</a></li>
+
 		        @endif
 		      </ul>
+
+
 			  
 			  <div class="pull-right"> {{ $records->links() }} </div>
 
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
+
+		@if(!Entrust::can($model."/advance-search") and in_array("advance-search",$btn))
+			@include("crud.advance-search")
+		@endif
+</div>

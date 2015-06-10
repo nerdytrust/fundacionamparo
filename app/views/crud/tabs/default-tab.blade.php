@@ -40,13 +40,18 @@
 		</tbody>
 	</table>
 
-		@if(count($records) == 0)
-			<div class="padding-lg">
-				<p class="text-center">{{ trans('crud.not_records_found') }}</p>
-			</div>
-			
-		@endif
+		<div class="text-center"> {{ $records->links() }} </div>
+
+
 </div>
+
+<script type="text/javascript">
+  $(".show-tabs.active .pagination a").click(function(){
+      var id = $(".show-tabs.active").attr("id");
+      tabajax("#"+id,$(this).attr("href"));
+      return false;
+  });
+</script>
 
 
 

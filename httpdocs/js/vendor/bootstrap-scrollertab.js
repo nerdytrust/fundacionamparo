@@ -1,3 +1,13 @@
+function tabajax(id,loadurl)
+{
+    $(id).html("<img src='./img/loading.gif'/>");    
+
+    $.get(loadurl, function(data) {
+        $(id).html(data);
+    });
+}
+
+
 $(function () { 
 
   if($('.list').length)
@@ -76,15 +86,14 @@ $(function () {
           loadurl = $this.attr('href'),
           targ = $this.attr('data-target');
 
-      $(targ).html("<img src='./img/loading.gif'/>");    
-
-      $.get(loadurl, function(data) {
-          $(targ).html(data);
-      });
+      tabajax(targ,loadurl);
 
       $this.tab('show');
+
       return false;
   });
+
+
 
   // load first tab content
   $('.nav-tabs .active a').trigger("click")

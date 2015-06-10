@@ -80,35 +80,118 @@ class CrudController extends \BaseController {
     {
 
         $class     = new $this->className();
+
         $title     = $class->getCrud("title");
         $btn       = $class->getCrud("btn_in_index");
         $fk_column = $class->getCrud("fk_column");
+        $sort_order= $class->getCrud("sort_order");
+
+        $advance_search = $class->getColumnsByView("advance_search");
+        $columns  = $class->getColumnsByView("index");
+
+        $advance_search = (count($advance_search) == 0) ? $columns : $advance_search;
 
         $records   = $class;
 
+
+        if(count($sort_order) > 0)
+        {
+            foreach ($sort_order as $column => $order)
+            {
+                if(is_numeric($column))
+                {
+                    $column = $order;
+                    $order  = "ASC";
+                }
+
+                $order = strtoupper($order);
+
+                if($order!="DESC" and $order!="ASC")
+                    $order  = "ASC";
+
+                $records = $records->orderBy($column, $order);
+                    
+            }
+            
+        }
+
         if (\Input::has('search'))
-            $records = $class->search(\Input::get('search'));
+        {
+
+            $search = $class->getColumnsByView("standar_search");
+            $search = (count($search) == 0) ? $columns : $search;
+
+            $value = \Input::get('search');
+
+            $where = "where";
+            foreach ($search as $column)
+            {
+                if(!empty($value) and !$column->is_foreign_key)
+                {
+                    
+                    if($column->type=="integer")
+                        $records = $records->{$where}($column->name, '=', $value);
+                    else
+                        $records = $records->{$where}($column->name, 'LIKE', '%'.$value.'%');
+
+                    $where = "orWhere";
+                }
+                    
+            }
+
+
+
+        }elseif(\Input::has('is-advance-search')){
+
+            $inputs = \Input::all();
+
+            unset($inputs["is-advance-search"]);
+
+            foreach ($inputs as $input => $value)
+            {
+                if(!empty($value))
+                {
+                    if(is_numeric($value))
+                        $records = $records->where($input, '=', $value);
+                    else
+                        $records = $records->where($input, 'LIKE', '%'.$value.'%');
+                }
+                    
+            }
+                
+            
+        }
 
         $records = $records->paginate();
 
-        $columns  = $class->getColumnsByView("index");
+        if(count($records) == 0)
+        {
+            if(is_numeric(\Input::get('search')))
+            {
+                $records = $class->where($class->getKeyName(), '=', \Input::get('search'));
+                $records = $records->paginate();
+            }
+                
+        }
+        
 
         $path     = $this->getPathView(__FUNCTION__);
         $key_name = $class->getKeyName();
         $model    = $this->modelName;
 
         $params =(object)[
-                    "me"        => &$this,
-                    "btn"       => &$btn,
-                    "fk_column" => &$fk_column,
-                    "title"     => &$title,
-                    "class"     => &$class,
-                    "model"     => &$model,
-                    "key_name"  => &$key_name,
-                    "action"    => __FUNCTION__,
-                    "records"   => &$records,
-                    "columns"   => &$columns,
-                    "path"      => &$path
+                    "me"            => &$this,
+                    "btn"           => &$btn,
+                    "fk_column"     => &$fk_column,
+                    "title"         => &$title,
+                    "class"         => &$class,
+                    "model"         => &$model,
+                    "key_name"      => &$key_name,
+                    "action"        => __FUNCTION__,
+                    "records"       => &$records,
+                    "advance_search"=> &$advance_search,
+                    "columns"       => &$columns,
+                    "path"          => &$path
                   ];
 
         $class->beforeIndex($params);          
@@ -122,6 +205,7 @@ class CrudController extends \BaseController {
             ->with('action',__FUNCTION__)
             ->with('model',$model)
             ->with('records',$records)
+            ->with('advance_search',$advance_search)
             ->with('columns',$columns);
     }
 
@@ -133,6 +217,7 @@ class CrudController extends \BaseController {
     public function create()
     {
 
+
         $class     = new $this->className();
         $title     = $class->getCrud("title");
         $btn       = $class->getCrud("btn_in_create");
@@ -143,11 +228,26 @@ class CrudController extends \BaseController {
         $key_name = $class->getKeyName();
         $model    = $this->modelName;
         $columns  = $class->getColumnsByView(__FUNCTION__);
+        $records  = [];
 
-        $path     = $this->getPathView(__FUNCTION__);
 
         foreach ($columns as $column) 
             $record[$column->name] = "";
+
+
+        if(\Input::get("id"))
+        {
+
+
+            $_key_name = str_replace("_notes", "", $key_name);
+
+            $columns->{$_key_name}->input = "hidden";
+            $record[$_key_name] = \Input::get("id");
+        }
+
+        $path     = $this->getPathView(__FUNCTION__);
+
+
         
         
 
@@ -161,7 +261,7 @@ class CrudController extends \BaseController {
                     "key_value" => &$key_value,
                     "key_name"  => &$key_name,
                     "action"    => __FUNCTION__,
-                    //"records"   => &$records,
+                    "record"    => &$record,
                     "columns"   => &$columns,
                     "path"      => &$path
                   ];
@@ -697,9 +797,25 @@ class CrudController extends \BaseController {
 
         $class      = new $this->className(); 
         $fk_column  = $class->getCrud("fk_column");
+        $joins      = $class->getCRUD("joins");
 
         $columns    = isset($fk_column[$column]) ? $fk_column[$column] : [];
-        $model      = $class->toModel($column);
+
+        $table      = $column;
+        $primay_key = null;
+
+        if(array_key_exists($column, $joins))
+        {
+            $table      = $joins[$column][0];
+            $primay_key = isset($joins[$column][1]) ? $joins[$column][1] : "";
+        }
+            
+
+        $model      = $class->toModel($table);
+
+        if(array_key_exists($column, $joins) and $column == ""){
+            $primay_key  = $model->getKeyName();
+        }
 
         if($column == "created_by" or $column == "updated_by")
         {
@@ -715,14 +831,14 @@ class CrudController extends \BaseController {
             $records = $records->search(\Input::get('search'));
 
         $records    = $records->take(10)->get();
-
+        $items = [];
 
         foreach ($records as $record) {
-            $items[] =["text" => getColumnsFK($column,$record,$fk_column), "id" => $record->{$class_model->getKeyName()} ] ;
+            $items[] =["text" => getColumnsFK($column,$record,$fk_column,$primay_key), "id" => $record->{$class_model->getKeyName()} ] ;
         }
 
         echo json_encode([
-                            "total_count"           =>  2,
+                            "total_count"           =>  10,
                             "incomplete_results"    =>  false,
                             "items"                 =>  $items,
                         ]);

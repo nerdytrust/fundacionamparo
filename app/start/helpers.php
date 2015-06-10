@@ -1,5 +1,30 @@
 <?php
 
+function parseToHTML($column,$record,$fk_column)
+{
+    if($column->is_foreign_key)
+    {
+        if(count($fk_column) > 0)
+        {
+            $is_with_link = getFKColumn($column->name,$record,$fk_column);
+            if($is_with_link != "---" and $is_with_link!="")
+                return HTML::link(getenv('APP_ADMIN_PREFIX')."/".strtolower($column->model)."/".$record->{$column->name},$is_with_link) ;
+            else
+                return $is_with_link ;
+            
+        }
+        else if($record->{$column->name} == 0)
+            return $record->{$column->name};
+        else
+            return HTML::link(getenv('APP_ADMIN_PREFIX')."/".strtolower($column->model)."/".$record->{$column->name},$record->{$column->name});
+       
+    }
+    else
+        return Purifier::clean($record->{$column->name});
+
+}
+
+
 function toModel($model)
 {
     $model     = strtolower($model);
@@ -82,7 +107,6 @@ function getColumnsFK($column,$record,$fk_column,$primary_key = null)
 
     if(array_key_exists($column,$fk_column) and is_array($fk_column[$column]))
     {
-
         foreach ($fk_column[$column] as $fk_column_record) 
         {
             if(isset($record->{$fk_column_record}))
@@ -93,6 +117,7 @@ function getColumnsFK($column,$record,$fk_column,$primary_key = null)
         $fk_column_name = $record->{$fk_column[$column]};
     else
     {
+
 
         if($primary_key)
             $fk_column_name = $record->{$primary_key};

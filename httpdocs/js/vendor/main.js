@@ -16,6 +16,19 @@ function ModalAjax($click,callback)
 }
 
 $( document ).ready(function() {
+
+
+	var id_agency = $('#id_agency[name=id_agency]').val();
+	$.cookie('id_agency', id_agency, { path: '/' });
+	 
+
+	$('#id_agency[name=id_agency]').on('change', function(){
+	  var selected = $(this).find("option:selected").val();
+	  selected = !selected ? "" : selected;
+
+	  $.cookie('id_agency', selected, { path: '/' });
+	  document.location.reload();
+	});
 	
 	$("input").bind('keyup change',function() {
 		var $t = $(this);
@@ -47,5 +60,29 @@ $( document ).ready(function() {
 	  	}
 	  
 	});
+
+
+	if($(".advance-search").length > 0)
+	{
+		$(".btn-advance-search").click(function(){
+
+			var me = $(this);
+			var search = me.closest(".index-toolbar").find(".advance-search");
+
+			if(search.hasClass("hidden"))
+			{
+				me.closest("li").addClass("active")
+				search.removeClass("hidden");
+			}
+			else
+			{
+				me.closest("li").removeClass("active")
+				search.addClass("hidden");
+			}
+				
+
+			return false;
+		});
+	}
 
 });

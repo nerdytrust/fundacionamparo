@@ -1,0 +1,42 @@
+@extends("crud.layout-index")
+
+	@section("table")
+
+		<table class="table table-striped table-bordered ">
+			<thead>
+				<tr>
+
+					<td> {{ $columns->id_permissions_users->label }} </td>
+					<td> {{ $columns->id_permissions->label }} </td>
+					<td> {{ $columns->id_users->label }} </td>
+					<td> {{ $columns->deny->label }} </td>
+
+
+					@include("crud.index-column-buttons")
+
+				</tr>
+			</thead>
+			<tbody>
+
+			
+			@foreach($records as $record)
+				<tr>
+
+
+					<td>{{ parseToHTML($columns->id_permissions_users,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->id_permissions,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->id_users,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->deny,$record,$fk_column) }}</td>
+
+
+					@include("crud.index-buttons")
+
+				</tr>
+			@endforeach
+
+
+
+			</tbody>
+		</table>
+
+	@stop

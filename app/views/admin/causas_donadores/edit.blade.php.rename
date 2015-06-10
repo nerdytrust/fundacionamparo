@@ -1,0 +1,65 @@
+@extends("crud.layout-form")
+
+@section("form")
+
+
+
+<div class="form-group @if ($errors->has('id_donadores')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Donadore") }}
+   
+      {{ Form::remotecombo("id_donadores",$record->id_donadores,["table"=>$model,"class" => "form-control","placeholder"=>"Donadore"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_donadores') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('id_causas')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Causa") }}
+   
+      {{ Form::remotecombo("id_causas",$record->id_causas,["table"=>$model,"class" => "form-control","placeholder"=>"Causa"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_causas') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('donacion')) has-error @endif">
+
+ {{ Form::label("number", "Donacion") }}
+   
+      {{ Form::number("donacion",$record->donacion,["class" => "form-control","placeholder"=>"Donacion"]); }}
+    
+ <span class="help-block">{{ $errors->first('donacion') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('impulsor')) has-error @endif">
+
+ {{ Form::label("select", "Impulsor") }}
+   
+      {{ Form::combo("impulsor",$record->impulsor,["class" => "form-control","placeholder"=>"Impulsor"],$columns->impulsor->data ); }}
+    
+ <span class="help-block">{{ $errors->first('impulsor') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('voluntario')) has-error @endif">
+
+ {{ Form::label("select", "Voluntario") }}
+   
+      {{ Form::combo("voluntario",$record->voluntario,["class" => "form-control","placeholder"=>"Voluntario"],$columns->voluntario->data ); }}
+    
+ <span class="help-block">{{ $errors->first('voluntario') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('donador')) has-error @endif">
+
+ {{ Form::label("select", "Donador") }}
+   
+      {{ Form::combo("donador",$record->donador,["class" => "form-control","placeholder"=>"Donador"],$columns->donador->data ); }}
+    
+ <span class="help-block">{{ $errors->first('donador') }}</span>
+</div>
+
+     
+
+@stop
+
+

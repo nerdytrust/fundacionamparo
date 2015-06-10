@@ -1,0 +1,1 @@
+					<td>{{ parseToHTML($columns->$name,$record,$fk_column) }}</td>

@@ -1,0 +1,46 @@
+@extends("crud.layout-index")
+
+	@section("table")
+
+		<table class="table table-striped table-bordered ">
+			<thead>
+				<tr>
+
+					<td> {{ $columns->id_donadores->label }} </td>
+					<td> {{ $columns->id_causas->label }} </td>
+					<td> {{ $columns->donacion->label }} </td>
+					<td> {{ $columns->impulsor->label }} </td>
+					<td> {{ $columns->voluntario->label }} </td>
+					<td> {{ $columns->donador->label }} </td>
+
+
+					@include("crud.index-column-buttons")
+
+				</tr>
+			</thead>
+			<tbody>
+
+			
+			@foreach($records as $record)
+				<tr>
+
+
+					<td>{{ parseToHTML($columns->id_donadores,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->id_causas,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->donacion,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->impulsor,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->voluntario,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->donador,$record,$fk_column) }}</td>
+
+
+					@include("crud.index-buttons")
+
+				</tr>
+			@endforeach
+
+
+
+			</tbody>
+		</table>
+
+	@stop

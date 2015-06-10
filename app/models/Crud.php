@@ -5,8 +5,8 @@ class Crud extends \BaseModel {
 
     use SearchableTrait;
     
-	private $schema = null;
-	protected $perPage = 25;
+    private $schema = null;
+    protected $perPage = 25;
 
     protected $fillable = [];
 
@@ -18,6 +18,7 @@ class Crud extends \BaseModel {
 
     protected $searchable = [
     ];
+
 
     // Project::creating(function($project) { }); // *
     // Project::created(function($project) { });
@@ -66,13 +67,79 @@ class Crud extends \BaseModel {
     public function newQuery()
     {
 
+
         // do relations automatic
         $relations = $this->getFKRelations();
 
+
+
         if(count($relations) > 0)
-            return call_user_func_array([parent::newQuery(),"with"],$relations);
+            $query =  call_user_func_array([parent::newQuery(),"with"],$relations);
         else
-            return parent::newQuery();
+            $query =  parent::newQuery();
+
+
+
+        if($this->table != "users")
+        {
+            $users          = new Users;
+
+            $filter_queries = $users->getCrud("filter_queries");
+
+            if($filter_queries and (Request::is(getenv('APP_ADMIN_PREFIX').'/*'))  or Request::is(getenv('APP_CUSTOMER_PREFIX').'/*'))
+            {
+
+                foreach ($filter_queries as $column => $table) {
+                    if(is_numeric($column))
+                    {
+
+                        $user = DB::table($users->table)->where($users->getKeyName(),Auth::admin()->id())->first();
+
+
+                        if(Schema::hasColumn($this->table, $table) and isset($user->$table) )
+                        {
+                            if(!empty($user->$table) and $user->$table!= 0)
+                            {
+                                $value = isset($_COOKIE[$table]) ? $_COOKIE[$table] : "";
+                                
+                                $whereIn = explode(",", $user->$table);
+                                $value = $value ? [$value] : $whereIn;
+                                
+
+                                $query = $query->whereIn($table,$value);
+                            }
+                                
+                        }
+  
+
+                    }else
+                    {
+
+                        if (Schema::hasColumn($table, $users->getKeyName()) and Schema::hasColumn($table, $column) )
+                        {
+                            $table_filter = DB::table($table)->where($users->getKeyName(),Auth::admin()->id())->get();
+                            $pk = [];
+                            
+                            foreach ($table_filter as $record)
+                                $pk[] = $record->$column;
+
+                            
+                            if(Schema::hasColumn($this->table, $column) and count($pk) > 0 )
+                                $query = $query->whereIn($column,$pk);
+                        }
+                        
+                    }
+
+
+                   
+                }
+                
+                
+            }
+
+        }
+
+        return $query;   
 
     }
 
@@ -179,7 +246,6 @@ class Crud extends \BaseModel {
         "title"     => "",
         //
         //  Rename the columns names.
-        //  if not wrote label the column rename like this: 
         //  ["first_name" => "First Name"]
         // 
         "labels"    => [],
@@ -201,11 +267,21 @@ class Crud extends \BaseModel {
         // JOINS
         // Remember by default the framework create autojoins when you define id_(table)   
         // you can get the info like this : $records->id_(table)_record
-        // [ "column" => "table","table_column" ]            
+        // [ "column" => [ "table","table_column" ]            
         // [ "id_roles"  => ["roles","id_roles"] 
         // [ "id_parent" => ["current_table","id_primary_key"] 
         //    
-        "joins"      => [],            
+        "joins"      => [],     
+        //
+        // Sort Order
+        // ["first_name" => "DESC","id_agency"=>"ASC"] 
+        //
+        "sort_order" => [],      
+        //
+        // Sort Order
+        // ["first_name" => "DESC","id_agency"=>"ASC"] 
+        //
+        "sort_order" => [],       
         // 
         // Tabs
         // Allways create names of tabs with snake case for example
@@ -235,6 +311,15 @@ class Crud extends \BaseModel {
         // http://laravel.com/docs/4.2/validation#available-validation-validations
 
         "validations"       => [],
+        // 
+        // Standar Search and Advance Search
+        // Write columns that you want to search.
+        // By default search in columns that you see in index view
+        // ["first_name","status"]
+        //
+        "standar_search"    => [],
+        "advance_search"    => [],
+
         //
         // Columns enable by view
         // Default enable all columns
@@ -417,17 +502,7 @@ class Crud extends \BaseModel {
         $btn       = $class->getCrud("btn_in_index");
         $fk_column = $class->getCrud("fk_column");
 
-
-        $tables = $class->getRelationsByTables();
-
-        $relations = $class->getFKRelations();
         $records = $class;
-
-
-        if(count($relations) > 0)
-            $records = call_user_func_array([$records,"with"],$relations);
-
-        
 
         if(is_numeric($where))
         {
@@ -445,9 +520,10 @@ class Crud extends \BaseModel {
         }
             
 
-        $records = $records->paginate();
+        $records = $records->paginate(10);
 
         $columns  = $class->getColumnsByView("index");
+
 
         $default_view = "tabs.default-tab";
 
@@ -468,6 +544,7 @@ class Crud extends \BaseModel {
                     "class"     => &$class,
                     "model"     => &$model,
                     "key_name"  => &$key_name,
+                    "key_value" => &$where,
                     "action"    => "index",
                     "records"   => &$records,
                     "columns"   => &$columns,
@@ -480,6 +557,7 @@ class Crud extends \BaseModel {
             ->with('btn',$btn)
             ->with('fk_column',$fk_column)
             ->with('key_name',$key_name)
+            ->with('key_value',$where)
             ->with('action',"index")
             ->with('model',$model)
             ->with('records',$records)
@@ -490,38 +568,20 @@ class Crud extends \BaseModel {
 
     public function getName()
     {
-    	$columns = $this->getColumns();
-    	$this->name = "";
+        $columns = $this->getColumns();
+        $this->name = "";
 
-    	foreach ($columns as $column) {
-    		if($column->type == "string")
-    		{
-    			$this->name = $column->name;
-    			break;
-    		}
-    	}
-    	return $this->name;
+        foreach ($columns as $column) {
+            if($column->type == "string")
+            {
+                $this->name = $column->name;
+                break;
+            }
+        }
+        return $this->name;
     }
 
-    public function toModel($model)
-    {
-    	$model 	   = strtolower($model);
-        $model 	   = str_replace(["id_","_id"], "", $model);
-        $model     = ucfirst(camel_case($model));
-        //$model     = str_singular($model);
-        
 
-        return $model;
-    }
-
-    function toTable($model)
-    {
-        $model     = strtolower($model);
-        $model     = str_replace(["id_","_id"], "", $model);
-        $model     = snake_case($model);
-
-        return $model;
-    }
 
     protected function createRelation($method)
     {
@@ -529,8 +589,8 @@ class Crud extends \BaseModel {
         $joins     = $this->getCRUD("joins");
         $function  = $relations->$method;
         
-        $method	   = strtolower($method);
-        $model 	   = isset($function["model"]) ? $function["model"] : $method;
+        $method    = strtolower($method);
+        $model     = isset($function["model"]) ? $function["model"] : $method;
 
         $local_key = (starts_with($method,"id_") or ends_with($method,"_id")) ? $method : $this->getKeyName();
         $local_key = isset($function["local_key"]) ? $function["local_key"] : $local_key;
@@ -547,7 +607,7 @@ class Crud extends \BaseModel {
         $call      = isset($function["relation"]) ? $function["relation"] : $function;
 
 
-        //$class 	   = new $model();
+        //$class       = new $model();
         
 
         return $this->$call($model,$local_key,$parent_key);
@@ -555,69 +615,69 @@ class Crud extends \BaseModel {
 
     public function getFKRelations()
     {
-    	$relations = $this->getRelations("belongsTo");
-    	$return  = [];
+        $relations = $this->getRelations("belongsTo");
+        $return  = [];
 
-    	foreach ($relations as $key => $relation) 
-    		$return[] = $key."_record";
-    	
-    	return $return;
+        foreach ($relations as $key => $relation) 
+            $return[] = $key."_record";
+        
+        return $return;
     }
 
     public function getRelations($kind = "")
     {
         $relations  = $this->getCRUD("relations");
 
-        $return 	= [];
+        $return     = [];
 
 
         if($kind == "belongsTo" or $kind == "")
         {
 
-        	$columns = $this->getColumns();
+            $columns = $this->getColumns();
 
-        	foreach ($columns as $local_key => $column) {
+            foreach ($columns as $local_key => $column) {
 
-        		if($column->is_foreign_key)
-        		{
-        			$relation_data = array_get($relations, $column->model);
-        			$relation = $relation_data ? $relation_data : $kind;
-        			$relation = $relation ? $relation : self::BELONGS_TO;
+                if($column->is_foreign_key)
+                {
+                    $relation_data = array_get($relations, $column->model);
+                    $relation = $relation_data ? $relation_data : $kind;
+                    $relation = $relation ? $relation : self::BELONGS_TO;
 
-        			if (File::exists(app_path()."/models/".ucfirst($column->model).".php"))
-        				$return[$local_key] = $relation;
-        		}
+                    if (File::exists(app_path()."/models/".ucfirst($column->model).".php"))
+                        $return[$local_key] = $relation;
+                }
 
-        	}
+            }
 
         }
 
 
         // if($kind == self::HAS_MANY or $kind == "")
         // {
-        // 	$tables = $this->getRelationsByTables();
+        //  $tables = $this->getRelationsByTables();
 
-        // 	foreach ($tables as $table) {
+        //  foreach ($tables as $table) {
 
-        // 		$model = $this->toModel($table);
+        //      $model = $this->toModel($table);
 
-		      //   if (File::exists(app_path()."/models/".$model.".php"))
-		      //   {
-		      //   	$class 	   = new $model();
-	       //  		$return[$table] = [
-		      //           "relation"      => self::HAS_MANY,
-		      //           "local_key"     => $class->getKeyName(),
-		      //           "parent_key"    => $this->getKeyName()
-	       //  		];
-		      //   }
+              //   if (File::exists(app_path()."/models/".$model.".php"))
+              //   {
+              //    $class     = new $model();
+           //       $return[$table] = [
+              //           "relation"      => self::HAS_MANY,
+              //           "local_key"     => $class->getKeyName(),
+              //           "parent_key"    => $this->getKeyName()
+           //       ];
+              //   }
 
-        // 	}
+        //  }
         // }
 
 
         foreach ($relations as $local_key => $relation) {
-        	if($relation == $kind or $kind == "")
-            	$return[$local_key] = $relation;
+            if($relation == $kind or $kind == "")
+                $return[$local_key] = $relation;
         }
 
 
@@ -627,18 +687,18 @@ class Crud extends \BaseModel {
 
     public function getRelationsByTables()
     {
-    	
-    	$tables = $this->schema->listTables();
+        
+        $tables = $this->schema->listTables();
 
-    	$return = [];
+        $return = [];
 
-		foreach ($tables as $table) 
-		{
-			if(str_contains($table->getName(),$this->getTable()) and $table->getName() != $this->getTable() )
-		    	$return[] = $table->getName(); 
-		}
+        foreach ($tables as $table) 
+        {
+            if(str_contains($table->getName(),$this->getTable()) and $table->getName() != $this->getTable() )
+                $return[] = $table->getName(); 
+        }
 
-		return $return;
+        return $return;
     }
 
 
@@ -671,11 +731,11 @@ class Crud extends \BaseModel {
     {
 
         if(isset($this->crud[$view]) and !empty($this->crud[$view]))
-    	{
+        {
 
 
 
-    		if(isset($this->default_crud[$view]))
+            if(isset($this->default_crud[$view]))
             {
                 if(is_array($this->default_crud[$view]) and !starts_with($view,"btn_in_") and !starts_with($view,"not_in_") /*and $view != "fk_column"*/)
                     return array_merge($this->default_crud[$view],$this->crud[$view]);
@@ -685,16 +745,16 @@ class Crud extends \BaseModel {
                 return $this->crud[$view];
             }
 
-    			
-    	}elseif (isset($this->crud[$view])) {
+                
+        }elseif (isset($this->crud[$view])) {
             return $this->crud[$view];
         }
-		elseif(isset($this->default_crud[$view]))
+        elseif(isset($this->default_crud[$view]))
         {
             return $this->default_crud[$view];
         }
-    	else
-    		return [];
+        else
+            return [];
 
 
     }
@@ -712,82 +772,82 @@ class Crud extends \BaseModel {
     public function getColumns($id = "")
     {
 
-    	$return  = new StdClass;
+        $return  = new StdClass;
 
-		$columns = $this->schema->listTableColumns($this->getTable());
-		$record  = [];
+        $columns = $this->schema->listTableColumns($this->getTable());
+        $record  = [];
 
 
-		foreach ($columns as $column) {
+        foreach ($columns as $column) {
 
-			$crud_inputs = $this->getCRUD("inputs");
+            $crud_inputs = $this->getCRUD("inputs");
 
-			$name   = $column->getName();
+            $name   = $column->getName();
 
-			$length = $column->getLength();
-			$length = empty($length) ? 0 : $length;
+            $length = $column->getLength();
+            $length = empty($length) ? 0 : $length;
 
-			$type 	= strtolower((string)$column->getType());
-			$type   = ($type == "string" and $length == 0) ? "enum" : $type;
+            $type   = strtolower((string)$column->getType());
+            $type   = ($type == "string" and $length == 0) ? "enum" : $type;
 
-			$data   = [];
+            $data   = [];
 
-			if($type == "enum")
-			{
-				$enum_data = $this->getEnumValues($column->getName());
-				    //$data[""] = "";
+            if($type == "enum")
+            {
+                $enum_data = $this->getEnumValues($column->getName());
+                    //$data[""] = "";
                 foreach ($enum_data as $erecord) {
-					$data[$erecord] = $erecord;
-				}
-			}
+                    $data[$erecord] = $erecord;
+                }
+            }
 
 
-			// default input
-			$input = "text";
+            // default input
+            $input = "text";
 
-			// input type
-			if (array_key_exists($type, $this->inputColumTypes))
-				$input = $this->inputColumTypes[$type];
-			
-			if(str_contains($name, 'mail'))
-				$input = "email";
-
-
-
-			$is_primary = $column->getName() == $this->getKeyName() ? 1 : 0;
-			$is_foreign_key = ((starts_with($name, 'id_') or ends_with($name, '_id') )  and !$is_primary) ? 1 : 0;
-			
+            // input type
+            if (array_key_exists($type, $this->inputColumTypes))
+                $input = $this->inputColumTypes[$type];
+            
+            if(str_contains($name, 'mail'))
+                $input = "email";
 
 
-			// default label
-			$label  = $this->replaceUnderScore(ucwords($name));
 
-			$model  = false;
+            $is_primary = $column->getName() == $this->getKeyName() ? 1 : 0;
+            $is_foreign_key = ((starts_with($name, 'id_') or ends_with($name, '_id') )  and !$is_primary) ? 1 : 0;
+            
+
+
+            // default label
+            $label  = $this->replaceUnderScore(ucwords($name));
+
+            $model  = false;
             $table  = false;
             $parent_key = false;
 
-			if($is_primary)
-				$label = "ID";
+            if($is_primary)
+                $label = "ID";
 
-			if($is_foreign_key)
-			{
+            if($is_foreign_key)
+            {
                 $model      = strtolower($name);
-				$model      = (str_replace(["id_","_id"], "", $name));
+                $model      = (str_replace(["id_","_id"], "", $name));
                 $table      = snake_case($model);
 
-				$label      = ucfirst(str_singular($model));
-				$model      = ucfirst(camel_case($model));
+                $label      = ucfirst(str_singular($model));
+                $model      = ucfirst(camel_case($model));
 
                 $parent_key = $name;
                 $input      = "remotecombo";
-			}
+            }
 
 
-			$crud_labels = $this->getCrud("labels");
+            $crud_labels = $this->getCrud("labels");
 
-			// replace default label
-			if (array_key_exists($name, $crud_labels))
-				$label = $crud_labels[$name];
+            // replace default label
+            if (array_key_exists($name, $crud_labels))
+                $label = $crud_labels[$name];
 
             // JOINS
             $joins = $this->getCrud("joins");
@@ -797,6 +857,7 @@ class Crud extends \BaseModel {
                 $table          = $joins[$name][0];
                 $model          = $this->toModel($table);
                 $is_foreign_key = 1;
+                $input          = "remotecombo";
                 $parent_key     = isset($joins[$name][1]) ? $joins[$name][1] : $joins[$name][1];
             }
 
@@ -809,6 +870,7 @@ class Crud extends \BaseModel {
                 $is_foreign_key = 1;
                 $parent_key     = $name;
                 $table          = $this->toTable($model);
+                $input          = "remotecombo";
             }
                 
 
@@ -820,65 +882,71 @@ class Crud extends \BaseModel {
             }
 
 
-			$return->{$name}= (object)[
-						"is_primary" 	 => $is_primary,
-						"is_foreign_key" => $is_foreign_key,
-						"auto_increment" => $column->getAutoincrement() ? 1 : 0,
-						"model"			 => $model,
+            $return->{$name}= (object)[
+                        "is_primary"     => $is_primary,
+                        "is_foreign_key" => $is_foreign_key,
+                        "auto_increment" => $column->getAutoincrement() ? 1 : 0,
+                        "model"          => $model,
                         "table"          => $table,
                         "parent_key"     => $parent_key,
                         "default"        => $column->getDefault(),
-						"label"			 => $label,
-						"name" 		 	 => $name, 
-						"type"		 	 => $type,
-						"input"			 => $input,
-						"length"		 => $length,
-						"data"			 => $data,
+                        "label"          => $label,
+                        "name"           => $name, 
+                        "type"           => $type,
+                        "input"          => $input,
+                        "length"         => $length,
+                        "data"           => $data,
                         "required"       => $column->getNotNull()
-						//"value"			 => $value
-						];
-		}
+                        //"value"            => $value
+                        ];
+        }
 
 
-		return (object)$return;
+        return (object)$return;
     }
 
     public function getColumnsByView($view = "",$id="")
     {
 
+        $viewColumns  = $this->getCrud($view);
 
-    	$viewColumns  = $this->getCrud($view);
-    	$notInColumns = $this->getCrud("not_in_".$view);
+        $return      = new StdClass; 
 
-    	$columns 	 = $this->getColumns($id);
-    	$return  	 = new StdClass;	
+        if(($view == "advance_search" or $view == "search") and count($viewColumns) == 0) 
+            return [];
+        
+        $notInColumns = $this->getCrud("not_in_".$view);
+
+        $columns     = $this->getColumns($id);
+
+           
 
 
-    	if(count($viewColumns) == 0)
-    	{
-	    	foreach ($columns as $column) 
-	    	{
-	    		if(!in_array($column->name, $notInColumns))
-	    			$return->{$column->name} = $column;
-	    	}
-	    	
-    	}
+        if(count($viewColumns) == 0)
+        {
+            foreach ($columns as $column) 
+            {
+                if(!in_array($column->name, $notInColumns))
+                    $return->{$column->name} = $column;
+            }
+            
+        }
 
-    	foreach ($columns as $column) {
-    		if(in_array($column->name, $viewColumns) and !in_array($column, $notInColumns))
-    			$return->{$column->name} = $column;
-    	}
+        foreach ($columns as $column) {
+            if(in_array($column->name, $viewColumns) and !in_array($column, $notInColumns))
+                $return->{$column->name} = $column;
+        }
 
-    	return $return;
+        return $return;
     }
 
     public function getInputs($columns = [])
     {
-    	$inputs = [];
-    	foreach ($columns as $column)
-    		$inputs[] = $column->name;
+        $inputs = [];
+        foreach ($columns as $column)
+            $inputs[] = $column->name;
 
-    	return $inputs;
+        return $inputs;
     }
 
     public function getFileNameInputs($inputs = [])
@@ -897,63 +965,63 @@ class Crud extends \BaseModel {
 
     public function getValidations($columns = [],$id = "")
     {
-    	$validations = [];
-    	$numeric = ["smallint","integer","bigint","float","decimal","blob"];
+        $validations = [];
+        $numeric = ["smallint","integer","bigint","float","decimal","blob"];
 
-    	$crud_validations = $this->getCrud("validations");
+        $crud_validations = $this->getCrud("validations");
         $inputs           = $this->getCrud("inputs");
 
 
-    	foreach ($columns as $column) {
-    		$rule = [];
+        foreach ($columns as $column) {
+            $rule = [];
 
-			if (array_key_exists($column->name, $crud_validations))
-				$validations[$column->name] = $crud_validations[$column->name];
-			else
-			{
-				// without primary key
+            if (array_key_exists($column->name, $crud_validations))
+                $validations[$column->name] = $crud_validations[$column->name];
+            else
+            {
+                // without primary key
 
-				if($column->name != $this->getKeyName())
-				{
+                if($column->name != $this->getKeyName())
+                {
                     if($column->required)
-		    		    $rule[] = "required";
+                        $rule[] = "required";
 
-		    		if($column->length > 0)
-		    			$rule[] = "max:".$column->length;
+                    if($column->length > 0)
+                        $rule[] = "max:".$column->length;
 
-		    		if($column->length >= 2)
-		    			$rule[] = "min:2";
+                    if($column->length >= 2)
+                        $rule[] = "min:2";
 
-		    		if( $column->input == "email")
-		    		{
-		    			$rule[] = "email";
+                    if( $column->input == "email")
+                    {
+                        $rule[] = "email";
 
-		    			if($id)
-		    			 	$rule[] = "unique:".$this->getTable().",".$column->name.",".$id.",".$this->getKeyName();
-		    			else
-		    				$rule[] = "unique:".$this->getTable().",".$column->name;
-		    		}
+                        if($id)
+                            $rule[] = "unique:".$this->getTable().",".$column->name.",".$id.",".$this->getKeyName();
+                        else
+                            $rule[] = "unique:".$this->getTable().",".$column->name;
+                    }
 
-		    		if( in_array($column->input, $numeric))
-		    			$rule[] = "numeric";
-		    		
+                    if( in_array($column->input, $numeric))
+                        $rule[] = "numeric";
+                    
 
                     $allowed = array_get($this->inputFiles, $column->input);
                     
                     
                     if($allowed)
                         $rule[] = "mimes:".implode(",", $this->allowed[$allowed]);
-		    		/*
-		    		if( $column->type == "enum" and count($column->data) > 0)
-		    			$rule[] = "in:".implode(",",$column->data);
-		    		*/
+                    /*
+                    if( $column->type == "enum" and count($column->data) > 0)
+                        $rule[] = "in:".implode(",",$column->data);
+                    */
 
-		    		$validations[$column->name] = implode("|",$rule);
-				}
+                    $validations[$column->name] = implode("|",$rule);
+                }
 
-			}
+            }
 
-    	}
+        }
 
         return $validations;
     }
@@ -967,6 +1035,25 @@ class Crud extends \BaseModel {
 
 
 
+    function toModel($model)
+    {
+        $model     = strtolower($model);
+        $model     = str_replace(["id_","_id"], "", $model);
+        $model     = ucfirst(camel_case($model));
+        //$model     = str_singular($model);
+        
 
+        return $model;
+    }
+
+
+    function toTable($model)
+    {
+        $model     = strtolower($model);
+        $model     = str_replace(["id_","_id"], "", $model);
+        $model     = snake_case($model);
+
+        return $model;
+    }
     
 }

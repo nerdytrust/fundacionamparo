@@ -1,0 +1,46 @@
+@extends("crud.layout-index")
+
+	@section("table")
+
+		<table class="table table-striped table-bordered ">
+			<thead>
+				<tr>
+
+					<td> {{ $columns->id_contacto->label }} </td>
+					<td> {{ $columns->nombre->label }} </td>
+					<td> {{ $columns->telefono->label }} </td>
+					<td> {{ $columns->correo->label }} </td>
+					<td> {{ $columns->mensaje->label }} </td>
+					<td> {{ $columns->ip->label }} </td>
+
+
+					@include("crud.index-column-buttons")
+
+				</tr>
+			</thead>
+			<tbody>
+
+			
+			@foreach($records as $record)
+				<tr>
+
+
+					<td>{{ parseToHTML($columns->id_contacto,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->nombre,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->telefono,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->correo,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->mensaje,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->ip,$record,$fk_column) }}</td>
+
+
+					@include("crud.index-buttons")
+
+				</tr>
+			@endforeach
+
+
+
+			</tbody>
+		</table>
+
+	@stop

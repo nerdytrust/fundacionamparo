@@ -307,6 +307,10 @@ Form::macro('combo', function($name, $default = NULL, $attrs = [], $data = [])
 
     if(isset($data->data))
         $data = $data->data;
+    
+    if(!isset($data[0]) and !isset($attrs["disbale-choose"]))
+        array_unshift($data, trans('crud.choose'));
+        
 
     $attrs = array_merge($attrs_default,$attrs);
 
@@ -332,13 +336,27 @@ Form::macro('remotecombo', function($name, $default = NULL, $attrs = [], $url = 
 
         if(is_numeric($default) and !empty($attrs["table"]))
         {
-            $model      = toModel($attrs["table"]);
-            $model      = new $model();
-            $fk_column  = $model->getCrud("fk_column");
-            $record     = $model->find($default);
+
+            $current_model  = toModel($attrs["table"]);
+            $current_model  = new $current_model;
+            $fk_column      = $current_model->getCrud("fk_column");
+            $joins          = $current_model->getCrud("joins");
+            $columns        = $current_model->getColumns();
+    
+            $model          = isset($columns->$name) ? $columns->$name->model : $name;
+            $model          = isset($joins[$name]) ? $joins[$name][0]: $model;
+            $model          = toModel($model);
+            $model          = new $model();
+            $record         = $model->find($default);
+
 
             if($record)
-                $value      = [$default=>getColumnsFK($name,$record,$fk_column)];
+            {
+                $new_value      = getColumnsFK($name,$record,$fk_column);
+                if(!empty($new_value))
+                    $value      = [$default=>$new_value];
+            }
+                
         }
     }
         

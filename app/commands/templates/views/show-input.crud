@@ -1,0 +1,9 @@
+
+<div class="row">
+	<div class="col-xs-2 text-right $is_label_primary_key">
+		{{ Form::label($columns->$name->input, $columns->$name->label) }}
+	</div>
+	<div class="col-xs-10 $is_record_primary_key">
+		{{ parseToHTML($columns->$name,$record,$fk_column) }}
+	</div>
+</div>

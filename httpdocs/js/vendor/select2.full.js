@@ -4926,8 +4926,8 @@ S2.define('select2/core',[
       if (elementWidth <= 0) {
         return 'auto';
       }
-
-      return elementWidth + 'px';
+      //return elementWidth + 'px';
+      return '100%';
     }
 
     if (method == 'style') {

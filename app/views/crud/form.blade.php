@@ -11,7 +11,7 @@
             {{ Form::password($column->name,['class' => 'form-control','placeholder'=>$column->label]); }}
          @elseif ($column->input == "remotecombo")
 
-            {{ Form::remotecombo($column->name,$record->{$column->name},['table'=>$column->table,'class' => 'form-control','placeholder'=>$column->label] ); }}
+            {{ Form::remotecombo($column->name,$record->{$column->name},['table'=>$model,'class' => 'form-control','placeholder'=>$column->label] ); }}
 
          @elseif ($column->input == "select" or $column->input == "combo")
 

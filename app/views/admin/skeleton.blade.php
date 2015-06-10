@@ -62,6 +62,8 @@
                     '/js/vendor/bootstrap-scrollertab.js',
                     '/js/vendor/bootstrap-formajax.js',
 
+                    '/js/vendor/jquery.cookie.js',
+
                     '/js/vendor/plugins.js',
                     '/js/vendor/main.js',
 

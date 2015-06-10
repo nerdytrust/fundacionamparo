@@ -59,7 +59,7 @@ class CrudMigration extends Command
 
 
         Artisan::call('crud:create',["--tables"=>"--tables"]);
-        
+        Artisan::call('crud:view',["--tables"=>"--tables"]);
 
 
         // File::deleteDirectory(app_path("storage/dumps"),true);

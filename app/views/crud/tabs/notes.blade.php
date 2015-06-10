@@ -49,8 +49,8 @@
 			@endif
 	</div>
 
-	
-	<a data-toggle="modal" class="notes-modal" href="./admin/{{$table}}/create" data-target="#modal">
+
+	<a data-toggle="modal" class="notes-modal" href="./admin/{{$table}}/create/?id={{$key_value}}" data-target="#modal">
 		<span class="glyphicon glyphicon-plus"></span>
 	</a>
 

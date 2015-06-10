@@ -10,6 +10,7 @@ return array(
 	'cancel' 			=> 'Cancelar',
 	'delete' 			=> 'Eliminar',
 
+	'choose'			=> 'Elige una opción',
 	'action'			=> 'Acciones',
 
 	'search' 			=> 'Buscar',

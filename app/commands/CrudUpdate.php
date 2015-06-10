@@ -77,7 +77,7 @@ class CrudUpdate extends Command
         $file = $date.$hora."_update_".$name."_".$hora."_table.php";
 
 
-        $controller = File::get($this->getPath("commands/crud/template/update.crud"));
+        $controller = File::get($this->getPath("commands/templates/update.crud"));
 
         $search  = array(
             '{{Controller}}',

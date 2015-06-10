@@ -30,7 +30,7 @@
   <div class="tab-content">
     <?php $index = 0 ?>
   	@foreach ($tabs as $table => $name)
-    	<div role="tabpanel" class="tab-pane @if($index == 0) active @endif" id="{{$table}}">
+    	<div role="tabpanel" class="show-tabs tab-pane @if($index == 0) active @endif" id="{{$table}}">
      
         
         

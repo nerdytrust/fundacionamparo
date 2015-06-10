@@ -1,0 +1,11 @@
+@extends("crud.layout-show")
+
+@section("form")
+
+	
+	$inputs
+
+@stop
+
+
+

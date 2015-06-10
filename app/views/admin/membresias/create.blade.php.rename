@@ -1,0 +1,56 @@
+@extends("crud.layout-form")
+
+@section("form")
+
+
+
+<div class="form-group @if ($errors->has('nombre')) has-error @endif">
+
+ {{ Form::label("text", "Nombre") }}
+   
+      {{ Form::text("nombre",$record->nombre,["class" => "form-control","placeholder"=>"Nombre"]); }}
+    
+ <span class="help-block">{{ $errors->first('nombre') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('resena')) has-error @endif">
+
+ {{ Form::label("textarea", "Reseña") }}
+   
+      {{ Form::textarea("resena", $record->resena,["class" => "form-control","placeholder"=>"Reseña"]) }}
+    
+ <span class="help-block">{{ $errors->first('resena') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('url')) has-error @endif">
+
+ {{ Form::label("text", "Url") }}
+   
+      {{ Form::text("url",$record->url,["class" => "form-control","placeholder"=>"Url"]); }}
+    
+ <span class="help-block">{{ $errors->first('url') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('logo')) has-error @endif">
+
+ {{ Form::label("image", "Logo") }}
+   
+      {{ Form::filepicker("logo",$record->logo) }}
+    
+ <span class="help-block">{{ $errors->first('logo') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('orden')) has-error @endif">
+
+ {{ Form::label("text", "Orden") }}
+   
+      {{ Form::text("orden",$record->orden,["class" => "form-control","placeholder"=>"Orden"]); }}
+    
+ <span class="help-block">{{ $errors->first('orden') }}</span>
+</div>
+
+     
+
+@stop
+
+

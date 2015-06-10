@@ -1,0 +1,1 @@
+					<td> {{ $columns->$name->label }} </td>
