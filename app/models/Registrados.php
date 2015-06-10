@@ -1,6 +1,8 @@
 <?php
 
-class Registrados extends \Crud {
+use Illuminate\Auth\UserInterface;
+
+class Registrados extends Eloquent implements UserInterface {
 
 
     protected $primaryKey = 'id_registrados'; // !important
@@ -50,84 +52,82 @@ class Registrados extends \Crud {
 
     public function beforeShow(&$params){}
     
-    /* 
-        CRUD
-    */
-
-    protected $crud = [
-        //
-        // Title
-        //
-        "title"     => "",
-        //
-        //  Rename the columns names.
-        //  if not wrote label the column rename like this: 
-        //  ["first_name" => "First Name"]
-        // 
-        "labels"    => [],
-        //
-        // Replace default inputs by column
-        // ["first_name" => "text"] 
-        // text,hidden,textarea,password,digit,file,email,title
-        //
-        "inputs"    => [],
-        // 
-        // Choose column or columns for the FK to show
-        // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
-        //
-        "fk_column" => [],
-        // 
-        // Tabs
-        // Allways create names of tabs with snake case for example
-        // if you want Chart Report tab you will write chart_report
-        // ["chart_report","permissions","settings"]
-        //
-        "tabs"      => [],
-        // 
-        // Default Tabs
-        // if you can change the columns and inputs you will go to model
-        // for example users_notes go to app/models/UsersNotes.php
-        //
-        //"default_tabs" => ["notes","logs"],
-        //
-        // Validate inputs
-        // Rules by column
-        // "email" => "required|min:10|email"
-        //
-        // http://laravel.com/docs/4.2/validation#available-validation-rules
-        // 
-        //
-        "validations"     => [],
-        //
-        // Columns enable by view
-        // Default enable all columns
-        //
-        "create"    => [],
-        "edit"      => [],
-        "index"     => [],
-        "show"      => [],
-
-        // "not_in_create" => ["created_at","updated_at"],
-        // "not_in_edit"   => ["created_at","updated_at"],
-        // "not_in_index"  => ["created_at","updated_at"],
-        // "not_in_show"   => ["created_at","updated_at"],
-
-        //
-        // Buttons
-        // ["print","create","edit","show","delete","search","advance-search"]
-
-        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
-        // "btn_in_show"   => ["print","edit","cancel"],
-        // "btn_in_create" => ["create","cancel"],
-        // "btn_in_edit"   => ["edit","cancel"],
-
-    ];
-
-
 
     public function profiles() {
-        return $this->hasMany('Profile');
+        return $this->hasMany( 'Profiles' );
     }
 
-    
+    /**
+     * Log a user into the application.
+     *
+     * @param  \Illuminate\Auth\UserInterface  $user
+     * @param  bool  $remember
+     * @return void
+     */
+    public function login( UserInterface $user, $remember = false ){
+        $this->updateSession( $user->getAuthIdentifier() );
+
+        // If the user should be permanently "remembered" by the application we will
+        // queue a permanent cookie that contains the encrypted copy of the user
+        // identifier. We will then decrypt this later to retrieve the users.
+        if ( $remember ){
+            $this->createRememberTokenIfDoesntExist( $user );
+            $this->queueRecallerCookie( $user );
+        }
+
+        // If we have an event dispatcher instance set we will fire an event so that
+        // any listeners will hook into the authentication events and run actions
+        // based on the login and logout events fired from the guard instances.
+        if ( isset( $this->events ) ){
+            $this->events->fire( 'auth.login', array( $user, $remember ) );
+        }
+
+        $this->setUser( $user );
+    }
+
+    /**
+     * Get the unique identifier for the user.
+     *
+     * @return mixed
+     */
+    public function getAuthIdentifier() {
+        return $this->getKey();
+    }
+
+    /**
+     * Get the password for the user.
+     *
+     * @return string
+     */
+    public function getAuthPassword() {
+        return $this->password;
+    }
+
+    /**
+     * Get the token value for the "remember me" session.
+     *
+     * @return string
+     */
+    public function getRememberToken() {
+        return $this->remember_token;
+    }
+
+    /**
+     * Set the token value for the "remember me" session.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setRememberToken( $value ) {
+        $this->remember_token = $value;
+    }
+
+    /**
+     * Get the column name for the "remember me" token.
+     *
+     * @return string
+     */
+    public function getRememberTokenName() {
+        return 'remember_token';
+    }
 }

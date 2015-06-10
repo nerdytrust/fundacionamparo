@@ -10,8 +10,8 @@
 					<h3>Contáctanos para cualquier duda o sugerencia</h3>
 					<nav class="social_mask">
 						<ul>
-							{{ $helper->facebookShare( '', Request::url(), '' ) }}
-							{{ $helper->twitterShare( 'Contacto', Request::url(), '' ) }}
+							{{ Helper::facebookShare( '', Request::url(), '' ) }}
+							{{ Helper::twitterShare( 'Contacto', Request::url(), '' ) }}
 							{{-- <a href=""><li class="fa fa-heart"></li></a>
 							<p>96 likes</p> --}}
 						</ul>
@@ -26,19 +26,23 @@
 							<h2>Escríbenos si tienes alguna duda, en breve un asesor se pondrá en contacto contigo.</h2>
 							{{ $errors->first( 'nombre', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::text( 'nombre', '', [ 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 120 ], Input::old( 'nombre' ) ) }}
+								{{ Form::text( 'nombre', Input::old( 'nombre' ), [ 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 120 ] ) }}
 							</span>
 							{{ $errors->first( 'telefono', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::text( 'telefono', '', [ 'placeholder' => 'Teléfono', 'required' => true, 'maxlenght' => 10 ], Input::old( 'telefono' ) ) }}
+								{{ Form::text( 'telefono', Input::old( 'telefono' ), [ 'placeholder' => 'Teléfono', 'required' => true, 'maxlenght' => 10 ] ) }}
 							</span>
 							{{ $errors->first( 'email', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::text( 'email', '', [ 'placeholder' => 'Correo electrónico', 'required' => true, 'maxlength' => 140 ], Input::old( 'email' ) ) }}
+								@if ( Auth::customer()->check() )
+									{{ Form::text( 'email', Helper::getEmail(), [ 'required' => true, 'maxlength' => 140 ] ) }}
+								@else
+									{{ Form::text( 'email', Input::old( 'email' ), [ 'placeholder' => 'Correo electrónico', 'required' => true, 'maxlength' => 140 ] ) }}
+								@endif
 							</span>
 							{{ $errors->first( 'mensaje', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::textarea( 'mensaje', '', [ 'placeholder' => 'Mensaje', 'rows' => 4, 'cols' => 50 ], Input::old( 'mensaje' ) ) }}
+								{{ Form::textarea( 'mensaje', Input::old( 'mensaje' ), [ 'placeholder' => 'Mensaje', 'rows' => 4, 'cols' => 50 ] ) }}
 							</span>
 							<button type="submit">Enviar</button> <p>Campos obligarotios para enviar formulario</p>
 						{{ Form::close() }}
@@ -74,8 +78,8 @@
  					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
  					<div id="social_footer">
  						<ul>
- 							{{ $helper->facebookShare( '', Request::url(), '' ) }}
-							{{ $helper->twitterShare( 'Contacto', Request::url(), 'TomandoAcciónFA' ) }}
+ 							{{ Helper::facebookShare( '', Request::url(), '' ) }}
+							{{ Helper::twitterShare( 'Contacto', Request::url(), 'TomandoAcciónFA' ) }}
  						</ul>
  					</div>
  				</div>

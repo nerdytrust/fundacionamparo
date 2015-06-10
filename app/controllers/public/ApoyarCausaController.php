@@ -21,8 +21,7 @@ class ApoyarCausaController extends BaseController {
 	public function index(){
 		$categorias = Categorias::get();
 		return View::make( 'public.apoyamos.index' )->with( [
-			'categorias' 	=> $categorias,
-			'helper'		=> new Helper
+			'categorias' 	=> $categorias
 		] );
 	}
 

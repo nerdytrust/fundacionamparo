@@ -1,4 +1,5 @@
 <div id="meenus">
+	{{ Session::forget('donacion'); }}
 	<header>
 		<div id="logo">
 			<a href="{{ URL::to('/') }}">
@@ -28,9 +29,15 @@
 			</nav>
 			<button id="btn_dona">DONAR</button>
 			<div id="perfil">
-				<a href="{{ URL::to( 'login' ) }}">
-					<img src="{{ asset( 'images/monito.jpg' ) }}" alt=""/>
-				</a>
+				@if ( ! Auth::customer()->check() )
+					<a href="{{ URL::to( 'login' ) }}">
+						<img src="{{ asset( 'images/default-profile.jpg' ) }}" alt="" class="avatar-session" />
+					</a>
+				@else
+					<a href="{{ URL::to( 'salir' ) }}">
+						<img src="{{ Helper::getAvatar() }}" alt="" class="avatar-session" />
+					</a>
+				@endif
 			</div>
 		</div>
 	</header>

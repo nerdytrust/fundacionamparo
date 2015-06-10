@@ -10,8 +10,8 @@
 					<div id="txt_evento">						
 						<nav>
 							<ul>
-								{{ $helper->facebookShare( '', Request::url(), '' ) }}
-								{{ $helper->twitterShare( $causa->titulo, Request::url(), '' ) }}
+								{{ Helper::facebookShare( '', Request::url(), '' ) }}
+								{{ Helper::twitterShare( $causa->titulo, Request::url(), '' ) }}
 								<a href=""><li class="fa fa-heart"></li></a>
 								<p>{{ $causa->me_gustas_interno  }} likes</p>
 							</ul>
@@ -68,10 +68,10 @@
 									</div>
 									<div id="cantidad">
 										<h1>META</h1>
-										<h2>${{ $causa->meta }}<span>MXN</span></h2>
+										<h2>{{ $causa->meta }}<span>MXN</span></h2>
 									</div>
 									<p>{{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
-									<p>{{ $helper->getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
+									<p>{{ Helper::getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 								</div>					
 						    </div>
 					        <div class="content-2">

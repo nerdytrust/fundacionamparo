@@ -458,8 +458,7 @@ class Guard {
 	public function loginUsingId($id, $remember = false)
 	{
 		$this->session->put($this->getName(), $id);
-
-		$this->login($user = $this->provider->retrieveById($id), $remember);
+		$this->login( $user = $this->provider->retrieveById( $id ), $remember );
 
 		return $user;
 	}

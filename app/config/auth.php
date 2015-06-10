@@ -6,8 +6,8 @@ return array(
     'multi' => array(
         'customer' => array(
             'driver' => 'eloquent',
-            'model' => 'Pcustomer',
-            'table' => 'pcustomer'
+            'model' => 'Registrados',
+            'table' => 'registrados'
         ),
         'admin' => array(
             'driver' => 'eloquent',
@@ -75,9 +75,7 @@ return array(
 	'reminder' => array(
 
 		'email' => 'emails.auth.reminder',
-
 		'table' => 'password_reminders',
-
 		'expire' => 60,
 
 	),

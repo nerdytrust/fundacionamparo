@@ -23,8 +23,8 @@
 				 			<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '559x548' ) }}" alt="">
 				 			<section id="social_top">
 								<ul>
-									{{ $helper->facebookShare( '', URL::to( 'ficha-causa' ) . '/' . $causa->id_causas, '' ) }}
-									{{ $helper->twitterShare( $causa->titulo, URL::to( 'ficha-causa' ) . '/' . $causa->id_causas, '' ) }}
+									{{ Helper::facebookShare( '', URL::to( 'ficha-causa' ) . '/' . $causa->id_causas, '' ) }}
+									{{ Helper::twitterShare( $causa->titulo, URL::to( 'ficha-causa' ) . '/' . $causa->id_causas, '' ) }}
 									<a id="{{ $causa->id_causas }}" class="like-process"><li class="fa fa-heart"></li></a>
 									<p>{{ $causa->me_gusta_interno }} likes</p>
 								</ul>
@@ -48,7 +48,7 @@
 									<h2>{{ $causa->meta }}<span>MXN</span></h2>
 								</div>
 									<p>{{ number_format( floatval( $causa->recaudado ) ) }} MXN <span>RECAUDADOS</span></p>
-									<p>{{ $helper->getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
+									<p>{{ Helper::getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 								</div>
 				 			</section>
 				 			<span class="esquina"></span>
@@ -107,8 +107,8 @@
 					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
 					<div id="social_footer">
 						<ul>
-							{{ $helper->facebookShare( '', Request::url(), '' ) }}
-		 					{{ $helper->twitterShare( 'Cuasas Vivas', Request::url(), 'TomandoAcciónFA' ) }}
+							{{ Helper::facebookShare( '', Request::url(), '' ) }}
+		 					{{ Helper::twitterShare( 'Cuasas Vivas', Request::url(), 'TomandoAcciónFA' ) }}
 						</ul>
 					</div>
 				</div>

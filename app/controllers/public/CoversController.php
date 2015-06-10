@@ -3,40 +3,20 @@
 class CoversController extends BaseController {
 
 	/**
-	 * Reglas de validación para el formulario
-	 * @var array
+	 * Método para mostrar la vista del formulario de donación
+	 * @return
 	 */
-	private $rules_donacion_step_one = [
-        'causa_donar'		=> [ 'required' ],
-        'monto'				=> [ 'required', 'numeric', 'between:10,99999999' ],
-        // 'no_mostrar_perfil'	=> [ 'accepted' ]
-    ];
-
 	public function donar(){
-		if ( ! Request::isMethod( 'post' ) ){
-			$causas = Causas::all();
-			return View::make( 'public.covers.donar' )->with( [
-				'causas' => $causas,
-				'helper' => new Helper
-			] );
-		} elseif ( empty( Input::get( 'causa_hash' ) ) ) {
-			$inputs = Input::all();
-			$validation = Validator::make( $inputs, $this->rules_donacion_step_one );
+		if ( Session::has( 'donacion.oxxo_barcode' ) )
+			return Redirect::to( 'donar/pago-oxxo' );
 
-			if ( $validation->fails() )
-				return Redirect::back()->withInput()->withErrors( $validation );
+		if ( Session::has( 'donacion.spei_clabe' ) )
+			return Redirect::to( 'donar/pago-spei' );
 
-			Session::put( 'donacion', $inputs );
-			$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
-			$monto = Session::get( 'donacion.monto' );
-			return View::make( 'public.covers.donar_step_2' )->with( [
-					'helper'  	=> new Helper,
-					'causa'		=> $causa,
-					'monto'		=> $monto
-				] );
-		} else {
-			dd( Input::all() );die;
-		}
+		$causas = Causas::all();
+		return View::make( 'public.covers.donar' )->with( [
+			'causas' => $causas
+		] );
 	}
 
 	/**
@@ -52,7 +32,9 @@ class CoversController extends BaseController {
 		if ( empty( $causa ) )
 			return Redirect::to( 'home' );
 
-		return View::make( 'public.covers.causas' )->with( [ 'causa' => $causa, 'helper' => new Helper ] );
+		return View::make( 'public.covers.causas' )->with( [ 
+			'causa' => $causa 
+		] );
 	}
 
 	/**
@@ -68,7 +50,9 @@ class CoversController extends BaseController {
 		if ( empty( $causa ) )
 			return Redirect::to( 'home' );
 		
-		return View::make( 'public.covers.ficha_causas' )->with( [ 'causa' => $causa, 'helper' => new Helper ] );
+		return View::make( 'public.covers.ficha_causas' )->with( [ 
+			'causa' => $causa
+		] );
 			
 	}
 
@@ -90,7 +74,9 @@ class CoversController extends BaseController {
 
 	public function impulsar(){
 		$causas = Causas::all();
-		return View::make( 'public.covers.impulsar' )->with( [ 'causas' => $causas, 'helper' => new Helper ] );
+		return View::make( 'public.covers.impulsar' )->with( [ 
+			'causas' => $causas
+		] );
 	}
 
 	public function impulsarCausa( $id_causa = null ){
@@ -101,7 +87,9 @@ class CoversController extends BaseController {
 		if ( empty( $causa ) )
 			return Redirect::to( 'home' );
 		
-		return View::make( 'public.covers.impulsar_causa' )->with( [ 'causa' => $causa, 'helper' => new Helper ] );
+		return View::make( 'public.covers.impulsar_causa' )->with( [ 
+			'causa' => $causa
+		 ] );
 	}
 
 	public function impulsarGracias(){
@@ -110,7 +98,9 @@ class CoversController extends BaseController {
 
 	public function voluntario(){
 		$causas = Causas::all();
-		return View::make( 'public.covers.voluntario' )->with( [ 'causas' => $causas, 'helper' => new Helper ] );
+		return View::make( 'public.covers.voluntario' )->with( [ 
+			'causas' => $causas
+		] );
 	}
 
 	public function voluntarioNext(){
@@ -121,38 +111,110 @@ class CoversController extends BaseController {
 		return View::make( 'public.covers.voluntario_gracias' );	
 	}
 
-	// public function donarStepTwo(){
-	// 	return View::make( 'public.covers.donar_step_2' );
-	// }
+	/**
+	 * Método para mostrar la vista del formulario paso dos, para seleccionar el método de pago de la donación
+	 * @return
+	 */
+	public function donarStepTwo(){
+		$donacion = Session::get( 'donacion' );
+		if ( ! isset( $donacion ) )
+			return Redirect::to( 'donar' );
 
-	// public function donarStepThree(){
-	// 	return View::make( 'public.covers.donar_step_3' );
-	// }
+		if ( Session::has( 'donacion.oxxo_barcode' ) )
+			return Redirect::to( 'donar/pago-oxxo' );
 
-	// public function donarStepFour(){
-	// 	return View::make( 'public.covers.donar_step_4' );
-	// }
+		if ( Session::has( 'donacion.spei_clabe' ) )
+			return Redirect::to( 'donar/pago-spei' );
 
-	// public function donarStepFive(){
-	// 	return View::make( 'public.covers.donar_step_5' );
-	// }
+		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
+		$monto = Session::get( 'donacion.monto' );
+		return View::make( 'public.covers.donar_step_2' )->with( [ 
+			'monto' => $monto,
+			'causa' => $causa
+		] );
+	}
 
-	// public function validarPago(){
-	// 	switch ( Input::get( 'pago' ) ) {
-	// 		case 'tarjeta':
-	// 			return Redirect::to( 'gracias' );
-	// 			break;
-	// 		case 'pay':
-	// 			return Redirect::to( 'gracias' );
-	// 			break;
-	// 		case 'oxxo':
-	// 			return Redirect::to( 'donar-oxxo' );
-	// 			break;
-	// 		case 'spei':
-	// 			return Redirect::to( 'donar-spei' );
-	// 			break;
-	// 	}
-	// }
+	/**
+	 * Método para mostrar la vista del formulario complementacio de donación con Tarjeta Débito/Crédito
+	 * @return
+	 */
+	public function donarTarjeta(){
+		$donacion = Session::get( 'donacion' );
+		if ( ! isset( $donacion ) )
+			return Redirect::to( 'donar' );
+
+		if ( Session::has( 'donacion.oxxo_barcode' ) )
+			return Redirect::to( 'donar/pago-oxxo' );
+
+		if ( Session::has( 'donacion.spei_clabe' ) )
+			return Redirect::to( 'donar/pago-spei' );
+
+		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
+		$monto = Session::get( 'donacion.monto' );
+		return View::make( 'public.covers.donar_paycard' )->with( [ 
+			'monto' => $monto,
+			'causa' => $causa
+		] );
+	}
+
+	/**
+	 * Método para mostrar el resultante del API Conekta, Código de barras, Línea de Captura, Vigencia
+	 * @return
+	 */
+	public function donarOxxo(){
+		$donacion = Session::get( 'donacion' );
+		if ( ! isset( $donacion ) )
+			return Redirect::to( 'donar' );
+
+		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
+		$monto = Session::get( 'donacion.monto' );
+		$charge = Session::get( 'donacion.oxxo' );
+		$barcode = Session::get( 'donacion.oxxo_barcode' );
+		$expires = Session::get( 'donacion.oxxo_expires' );
+		return View::make( 'public.covers.donar_payoxxo' )->with( [ 
+			'monto' 		=> $monto, 
+			'causa' 		=> $causa, 
+			'captura' 		=> $charge,
+			'codigo_barras'	=> $barcode,
+			'expira'		=> date( 'Y-m-d', $expires )
+		] );
+	}
+
+	/**
+	 * Método para mostrar el resultante del API Conekta, Cuenta CLABE para transferencia electrónica,
+	 * Vigencia
+	 * @return
+	 */
+	public function donarSpei(){
+		$donacion = Session::get( 'donacion' );
+		if ( ! isset( $donacion ) )
+			return Redirect::to( 'donar' );
+
+		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
+		$monto = Session::get( 'donacion.monto' );
+		$clabe = Session::get( 'donacion.spei_clabe' );
+		$bank = Session::get( 'donacion.spei_bank' );
+		$expires = Session::get( 'donacion.spei_expires' );
+		return View::make( 'public.covers.donar_payspei' )->with( [ 
+			'monto' 		=> $monto, 
+			'causa' 		=> $causa, 
+			'clabe' 		=> $clabe,
+			'banco'			=> $bank,
+			'expira'		=> date( 'Y-m-d', $expires )
+		] );
+	}
+
+	/**
+	 * Método para mostrar la página de gracias al terminar el pago de donación por Tarjeta de Crédito
+	 * @return
+	 */
+	public function donarThanks(){
+		return View::make( 'public.covers.donar_gracias' );
+	}
+
+	public function thanksRegistro(){
+		return View::make( 'public.covers.gracias_registro' );
+	}
 }
 
 /* End of file CoversController.php */

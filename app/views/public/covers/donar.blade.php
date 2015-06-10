@@ -4,7 +4,7 @@
 	@stop
 	@section("content")
 		<div class="lightbox-h d" id="verde1">
-			<div class="lightbox-h-cont donar">
+			<div class="lightbox-h-cont donar" id="form_proccess_donation">
 				<img src="{{ asset( 'images/icon_donadores-v.png' ) }}" alt="">
 				<button class="cerrar-h"></button>
 				<button onClick="history.back()" class="regresar">Regresar</button>
@@ -14,9 +14,9 @@
 				</p>
 				<label for="" class="vol">
 					<p>Escoge la causa que quieras apoyar</p>
-					{{ Form::open( [ 'url' => 'donar', 'method' => 'POST', 'autocomplete' => 'off' ] ) }}
-						{{ Form::hidden( 'no_mostrar_perfil', '0' ) }}
-						{{ $errors->first( 'causa_donar', '<div class="alert alert-danger" role="alert">:message</div>') }}
+					{{ Form::open( [ 'url' => 'nueva-donacion', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form', 'id' => 'form_nueva_donacion' ] ) }}
+						{{ Form::hidden( 'mostrar_perfil', '0' ) }}
+						<div class="alert alert-danger" role="alert" id="messages"></div>
 						<select name="causa_donar" id="">
 							@if ( isset( $causas ) )
 								@foreach ( $causas as $causa )
@@ -25,12 +25,18 @@
 							@endif
 						</select>
 						<p>Ingresa el monto que desaes donar</p>
-						{{ $errors->first( 'monto', '<div class="alert alert-danger" role="alert">:message</div>') }}
 						<span class="op">
-							{{ Form::text( 'monto', '', [ 'placeholder' => '10.00', 'maxlength' => 8, 'required' => true, 'id' => 'r' ] ) }}
+							{{ Form::text( 'monto', Input::old( 'monto'), [ 'placeholder' => '10.00', 'maxlength' => 8, 'required' => true, 'id' => 'r' ] ) }}
 						</span>
+						@if ( Auth::customer()->check() )
+							{{ Form::hidden( 'email', Helper::getEmail() ) }}
+						@else
+							<span class="form-group">
+								{{ Form::email( 'email', Input::old( 'email' ), [ 'id' => 'email', 'placeholder' => 'Correo electrónico', 'required' => true, 'class' => 'form-control' ] ) }}
+							</span>
+						@endif
 						<div class="check-verde">
-							{{ Form::checkbox( 'no_mostrar_perfil', '1', false, [ 'id' => 'check-verde' ] ) }}
+							{{ Form::checkbox( 'mostrar_perfil', '1', false, [ 'id' => 'check-verde' ] ) }}
 							<label for="check-verde"></label>No mostrar mi perfil en el sitio
 						</div>
 						</br></br>

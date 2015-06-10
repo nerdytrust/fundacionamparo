@@ -26,6 +26,28 @@ button, input{
 	font-family: 'Open Sans', sans-serif;
 }
 
+.donadores-section #Contenedor {
+	padding-top: 147px;
+}
+
+.avatar-session {
+	display: inline-block;
+	height: 48px;
+	width: 48px;
+}
+
+#foo{
+    background-color: #ffffff;
+    display: none;
+    height: 100%;
+    left: 0;
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
 .btn .btn-default {
 	padding: .6em 1em;
 	border: 2px solid #beda3e;
@@ -49,6 +71,7 @@ button, input{
 .alert {
 	border: 1px solid transparent;
 	border-radius: 4px;
+	display: none;
 	padding: 10px;
 	font-size: 12px;
 	margin-bottom: 15px;
@@ -1041,21 +1064,26 @@ span.esquina{
 	background: #212121;	
 	margin: 2px;
 }
+
 .caja_fca_usu{
-		width: 16.8%;
-		height: auto;
-		overflow: hidden;
-		display: inline-block;
-		margin-right: -4px;
-		position: relative;
-		vertical-align: top;
-	}
-	.caja_fca_usu img{
-		width: 156%;
-		display: block;
-	}
+	width: 16.86%;
+	/*width: 312px;*/
+	height: 312px;
+	overflow: hidden;
+	display: inline-block;
+	margin-right: -4px;
+	position: relative;
+	vertical-align: top;
+}
+
+.caja_fca_usu img{
+	/*width: 156%;*/
+	width: 100%;
+	height: auto;
+	display: block;
+}
 .caja_fca_usu span.mio{
-width: 100%;
+	width: 100%;
 	height: 100%;
 	display: inherit;
 	overflow: inherit;
@@ -1063,7 +1091,7 @@ width: 100%;
 	background: url("../../images/gray.png");
 	background-size: cover;
 	-webkit-transition: background 1s; /* Safari 3.1 to 6.0 */
-    transition: background 1s;
+	transition: background 1s;
 }
 .caja_fca_usu span.mio:hover{
 	background: url("../../images/blue.png");
@@ -1072,10 +1100,12 @@ width: 100%;
 .caja_fca_usu span.mio span#name:hover{
 	opacity: 1;
 }
+
 #ultimos_dona h2{
 	font-weight: 600;
-  font-size: 20px
+	font-size: 20px
 }
+
 .caja_fca_usu span.mio span#name{
 	color: #fff;
 	font-size: 1.5em;
@@ -1094,7 +1124,7 @@ width: 100%;
 }
 /**/
 .caja_fca_usu span.mio2{
-width: 100%;
+	width: 100%;
 	height: 100%;
 	display: inherit;
 	overflow: inherit;
@@ -1102,15 +1132,17 @@ width: 100%;
 	background: url("../../images/gray.png");
 	background-size: cover;
 	-webkit-transition: background 1s; /* Safari 3.1 to 6.0 */
-    transition: background 1s;
+	transition: background 1s;
 }
 .caja_fca_usu span.mio2:hover{
 	background: url("../../images/orange.png");
 	background-size: cover;
 }
+
 .caja_fca_usu span.mio2 span#name:hover{
 	opacity: 1;
 }
+
 .caja_fca_usu span.mio2 span#name{
 	color: #fff;
 	font-size: 1.5em;
@@ -1129,7 +1161,7 @@ width: 100%;
 }
 /**/
 .caja_fca_usu span.mio3{
-width: 100%;
+	width: 100%;
 	height: 100%;
 	display: inherit;
 	overflow: inherit;
@@ -1137,15 +1169,18 @@ width: 100%;
 	background: url("../../images/gray.png");
 	background-size: cover;
 	-webkit-transition: background 1s; /* Safari 3.1 to 6.0 */
-    transition: background 1s;
+	transition: background 1s;
 }
+
 .caja_fca_usu span.mio3:hover{
 	background: url("../../images/green.png");
 	background-size: cover;
 }
+
 .caja_fca_usu span.mio3 span#name:hover{
 	opacity: 1;
 }
+
 .caja_fca_usu span.mio3 span#name{
 	color: #fff;
 	font-size: 1.5em;

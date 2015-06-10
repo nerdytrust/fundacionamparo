@@ -10,8 +10,8 @@
 					<h3>En apoyo a un México de corazones vivos</h3>
 					<nav class="social_mask">
 						<ul>
-							{{ $helper->facebookShare( '', Request::url(), '' ) }}
-							{{ $helper->twitterShare( 'La Fundación - Membresías', Request::url(), '' ) }}
+							{{ Helper::facebookShare( '', Request::url(), '' ) }}
+							{{ Helper::twitterShare( 'La Fundación - Membresías', Request::url(), '' ) }}
 							{{-- <a href=""><li class="fa fa-heart"></li></a>
 							<p>96 likes</p> --}}
 						</ul>
@@ -45,13 +45,13 @@
 									<h3>{{ $membresia->nombre }}</h3>
 									<p>
 										{{ $membresia->resena }}
-										<a href="{{ URL::to( $membresia->url ) }}" target="_blank"><span>{{ $helper->nameUrl( $membresia->url ) }}</span></a>
+										<a href="{{ URL::to( $membresia->url ) }}" target="_blank"><span>{{ Helper::nameUrl( $membresia->url ) }}</span></a>
 									</p>
 									<div id="txt_evento" class="membresia-red">
 										<nav class="red-cont">
 											<ul>
-												{{ $helper->facebookShare( '', Request::url(), '' ) }}
-												{{ $helper->twitterShare( $membresia->nombre, Request::url(), '' ) }}
+												{{ Helper::facebookShare( '', Request::url(), '' ) }}
+												{{ Helper::twitterShare( $membresia->nombre, Request::url(), '' ) }}
 												<a href=""><li class="fa fa-heart"></li></a>
 												<p>{{ $membresia->me_gusta }} likes</p>
 											</ul>
@@ -71,8 +71,8 @@
  					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
  					<div id="social_footer">
  						<ul>
- 							{{ $helper->facebookShare( '', Request::url(), '' ) }}
-							{{ $helper->twitterShare( 'La Fundación - Membresías', Request::url(), 'TomandoAcciónFA' ) }}
+ 							{{ Helper::facebookShare( '', Request::url(), '' ) }}
+							{{ Helper::twitterShare( 'La Fundación - Membresías', Request::url(), 'TomandoAcciónFA' ) }}
  						</ul>
  					</div>
  				</div>

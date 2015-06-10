@@ -10,8 +10,8 @@
 					<h3>Círculo de voluntarios tomando acción</h3>
 					<nav class="social_mask">
 						<ul>
-							{{ $helper->facebookShare( '', Request::url(), '' ) }}
-							{{ $helper->twitterShare( 'Voluntarios', Request::url(), '' ) }}
+							{{ Helper::facebookShare( '', Request::url(), '' ) }}
+							{{ Helper::twitterShare( 'Voluntarios', Request::url(), '' ) }}
 							{{-- <a href=""><li class="fa fa-heart"></li></a>
 							<p>96 likes</p> --}}
 						</ul>
@@ -138,8 +138,8 @@
  					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
  					<div id="social_footer">
  						<ul>
- 							{{ $helper->facebookShare( '', Request::url(), '' ) }}
-							{{ $helper->twitterShare( 'Voluntarios', Request::url(), 'TomandoAcciónFA' ) }}
+ 							{{ Helper::facebookShare( '', Request::url(), '' ) }}
+							{{ Helper::twitterShare( 'Voluntarios', Request::url(), 'TomandoAcciónFA' ) }}
  						</ul>
  					</div>
  				</div>

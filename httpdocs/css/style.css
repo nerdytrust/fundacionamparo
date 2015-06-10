@@ -239,6 +239,7 @@ article.animacion:hover img{
 	margin-left: 5px;
 	background: url("../../images/sep.png") no-repeat left 50%;
 }
+
 .dona-a{
 		width: 21px;
 		height: 21px;
@@ -247,56 +248,56 @@ article.animacion:hover img{
 		background: #beda3e;
 		vertical-align: inherit;
 		margin-right: 9px;
-	}
-	.dona-b{
-		width: 21px;
-		height: 21px;
-		display: inline-block;
-		border-radius: 50%;
-		background: #63aded;
-		vertical-align: inherit;
-		margin-right: 9px;
-	}
-	.dona-c{
-		width: 21px;
-		height: 21px;
-		display: inline-block;
-		border-radius: 50%;
-		background: #fd9f20;
-		vertical-align: inherit;
-		margin-right: 9px;
-	}
-	#int_busc select {
-		width: 167px;
-		height: auto;
-		font-size: 14px;
-		background: rgb(33, 33, 33);
-		margin-right: 5px;
-		color: #a3a3a3;
-		border:none;
-		-webkit-appearance:none;
-	    -moz-appearance:none;
-	    appearance:none;
-	    cursor: pointer;
-	    background: url("../../images/select.png") no-repeat right 50%;
-	}
-	#int_busc label{
-		position: relative;
-	}
-	#int_busc button{
-		border:none;
-		background: rgb(33, 33, 33);
-		font-size: 14px;
-		color: #fff;
-		font-weight: bolder;
-		background: url("../../images/sep.png") no-repeat left;
-	}
-	/**/
-	.cau{
-		background: url("../../images/light-cau.png") !important;
-		/*display: none;*/
-		background-size: 100% 100%;		
-	}
+}
+.dona-b{
+	width: 21px;
+	height: 21px;
+	display: inline-block;
+	border-radius: 50%;
+	background: #63aded;
+	vertical-align: inherit;
+	margin-right: 9px;
+}
+.dona-c{
+	width: 21px;
+	height: 21px;
+	display: inline-block;
+	border-radius: 50%;
+	background: #fd9f20;
+	vertical-align: inherit;
+	margin-right: 9px;
+}
+#int_busc select {
+	width: 167px;
+	height: auto;
+	font-size: 14px;
+	background: rgb(33, 33, 33);
+	margin-right: 5px;
+	color: #a3a3a3;
+	border:none;
+	-webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor: pointer;
+    background: url("../../images/select.png") no-repeat right 50%;
+}
+#int_busc label{
+	position: relative;
+}
+#int_busc button{
+	border:none;
+	background: rgb(33, 33, 33);
+	font-size: 14px;
+	color: #fff;
+	font-weight: bolder;
+	background: url("../../images/sep.png") no-repeat left;
+}
+/**/
+.cau{
+	background: url("../../images/light-cau.png") !important;
+	/*display: none;*/
+	background-size: 100% 100%;		
+}
 	div.cau-dat{
 	width: 50%;
 	height: auto;

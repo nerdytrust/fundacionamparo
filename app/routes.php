@@ -15,7 +15,10 @@ Route::get( '/', 'HomeController@home' );
 // Route::get( '/', 'HomeController@index' );
 // Route::get( 'home', 'HomeController@home' );
 Route::get( 'login', 'HomeController@index' );
+Route::get( 'salir', 'HomeController@salir' );
+Route::get( 'logout', 'HomeController@logout' );
 Route::get( 'registro', 'HomeController@registro' );
+Route::get( 'recuperar-password', 'HomeController@forgotPassword' );
 
 ## Menú
 Route::get( 'becas', [ 'uses' => 'BecasController@index', 'as' => 'get.becas' ] );
@@ -26,6 +29,7 @@ Route::get( 'causas-vivas', [ 'uses' => 'CausasVivasController@index', 'as' => '
 Route::get( 'noticias', [ 'uses' => 'NoticiasController@index', 'as' => 'get.noticias' ] );
 Route::get( 'faqs', [ 'uses' => 'FaqsController@index', 'as' => 'get.faqs' ] );
 Route::get( 'donadores', [ 'uses' => 'DonadoresController@index', 'as' => 'get.donadores' ] );
+Route::get( 'donadores/{filtro}', [ 'uses' => 'DonadoresController@index', 'as' => 'get.donadores' ] )->where( 'filtro', '[a-zA-Z]+' );
 Route::get( 'contacto', [ 'uses' => 'ContactoController@index', 'as' => 'get.contacto' ] );
 Route::get( 'muro-exito', [ 'uses' => 'MuroExitoController@index', 'as' => 'get.muro-exito' ] );
 Route::get( 'voluntarios', [ 'uses' => 'VoluntariosController@index', 'as' => 'get.voluntarios' ] );
@@ -46,10 +50,11 @@ Route::get( 'asistenciales', [ 'uses' => 'FundacionController@asistenciales', 'a
 
 ## Vistas de los modales o flotantes
 Route::get( 'donar', [ 'uses' => 'CoversController@donar', 'as' => 'get.donar' ] );
-// Route::get( 'donar/paso/2', [ 'uses' => 'CoversController@donarStepTwo', 'as' => 'get.donar/paso/2' ] );
-// Route::get( 'donar-spei', [ 'uses' => 'CoversController@donarStepThree', 'as' => 'get.donar-spei' ] );
-// Route::get( 'donar-oxxo', [ 'uses' => 'CoversController@donarStepFour', 'as' => 'get.donar-oxxo' ] );
-Route::get( 'gracias', [ 'uses' => 'CoversController@donarStepFive', 'as' => 'get.gracias' ] );
+Route::get( 'donar/paso-2', [ 'uses' => 'CoversController@donarStepTwo', 'as' => 'get.donar/paso-2' ] );
+Route::get( 'donar/pago-tarjeta', [ 'uses' => 'CoversController@donarTarjeta', 'as' => 'get.donar/pago-tarjeta' ] );
+Route::get( 'donar/pago-oxxo', [ 'uses' => 'CoversController@donarOxxo', 'as' => 'get.donar/pago-oxxo' ] );
+Route::get( 'donar/pago-spei', [ 'uses' => 'CoversController@donarSpei', 'as' => 'get.donar/pago-spei' ] );
+Route::get( 'gracias', [ 'uses' => 'CoversController@donarThanks', 'as' => 'get.gracias' ] );
 Route::get( 'gracias-2', [ 'uses' => 'CoversController@voluntarioGracias', 'as' => 'get.gracias-2' ] );
 Route::get( 'gracias-3', [ 'uses' => 'CoversController@impulsarGracias', 'as' => 'get.gracias-3' ] );
 Route::get( 'donar-causa', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causa' ] );
@@ -66,6 +71,7 @@ Route::get( 'ficha-causas', 'CoversController@fichaCausas' );
 Route::get( 'ficha-causas/{id}', 'CoversController@fichaCausas' )->where( 'id', '[0-9]+' );
 Route::get( 'ficha-noticias', [ 'uses' => 'CoversController@fichaNoticias', 'as' => 'get.ficha-noticias' ] );
 Route::post( 'validar-pago', [ 'uses' => 'CoversController@validarPago', 'as' => 'get.validar-pago' ] );
+Route::get( 'gracias-registro', [ 'uses' => 'CoversController@thanksRegistro', 'as' => 'get.gracias-registro' ] );
 
 
 Route::get( 'path_video/{id}', 'StoragePathController@videoStorage' );
@@ -76,5 +82,10 @@ Route::post( 'ajax-moments', 'MuroExitoController@getMoment' );
 ##Actions de Formularios
 Route::post( 'registrar-tu-causa', 'ApoyarCausaController@registrar' );
 Route::post( 'formulario-contacto', 'ContactoController@enviarContacto' );
-Route::post( 'donar', 'CoversController@donar' );
+Route::post( 'nueva-donacion', 'DonacionesController@nuevaDonacion' );
+Route::post( 'donacion-pago-tarjeta', 'DonacionesController@payCard' );
+Route::post( 'paso-dos-donacion', 'DonacionesController@metodoPago' );
+Route::post( 'enviar-password', 'HomeController@sendPassword' );
+Route::post( 'registrar-usuario', 'HomeController@newMember' );
+//Route::post( 'donar', 'CoversController@donar' );
 

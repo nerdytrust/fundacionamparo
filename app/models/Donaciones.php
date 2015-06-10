@@ -1,11 +1,13 @@
 <?php
 
-class Profile extends \Crud {
+class Donaciones extends \Crud {
 
 
-    protected $primaryKey = 'id_profile'; // !important
+    protected $primaryKey = 'id_donaciones'; // !important
 
-    protected $table = 'profile';
+    protected $table = 'donaciones';
+
+    protected $fillable = [];
 
     protected $attributes = [
     ];
@@ -13,11 +15,12 @@ class Profile extends \Crud {
     protected $guarded = [];  // Important
 
 
-    protected $fillable = array('provider', 'id_registrados');
-
-
-
-    // Events
+    // ===================================================================
+    // EVENTS
+    // ===================================================================
+    //
+    //  $params return array object link this
+    //
     //  $params return array object link this
     //
     // "me"             => Access to methods of the controller. return object 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy','printItem'
@@ -52,9 +55,24 @@ class Profile extends \Crud {
 
     public function beforeShow(&$params){}
     
-    /* 
-        CRUD
-    */
+    // ===================================================================
+    // FORMAT COLUMNS
+    // ===================================================================
+    //
+    // Example : column first_name
+    // you will create a function like this: 
+
+    // public function getFirstNameAttribute($value)
+    // {
+    //      return $value;
+    // }
+
+
+
+    // ===================================================================
+    // CRUD
+    // ===================================================================
+    //
 
     protected $crud = [
         //
@@ -70,14 +88,23 @@ class Profile extends \Crud {
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
-        // text,hidden,textarea,password,digit,file,email,title
+        // "radiogroup","radios","editor","toggle","html","text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"
         //
-        "inputs"    => [ ],
+        "inputs"    => [],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
         "fk_column" => [],
+        //
+        // JOINS
+        // Remember by default the framework create autojoins when you define id_(table)   
+        // you can get the info like this : $records->id_(table)_record
+        // [ "column" => "table","table_column" ]            
+        // [ "id_roles"  => ["roles","id_roles"] 
+        // [ "id_parent" => ["current_table","id_primary_key"] 
+        //    
+        "joins"      => [], 
         // 
         // Tabs
         // Allways create names of tabs with snake case for example
@@ -109,8 +136,8 @@ class Profile extends \Crud {
         "index"     => [],
         "show"      => [],
 
-        //"not_in_create" => ["created_at","updated_at"],
-        //"not_in_edit"   => ["created_at","updated_at"],
+        // "not_in_create" => ["created_at","updated_at"],
+        // "not_in_edit"   => ["created_at","updated_at"],
         // "not_in_index"  => ["created_at","updated_at"],
         // "not_in_show"   => ["created_at","updated_at"],
 
@@ -118,15 +145,9 @@ class Profile extends \Crud {
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        "btn_in_index"  => ["create","edit","show","delete","search","advance-search"],
-        "btn_in_show"   => ["edit","cancel"],
+        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
+        // "btn_in_show"   => ["print","edit","cancel"],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],
-
     ];
-
-    public function registrados() {
-        return $this->belongsTo('Registrados','id_registrados','id_registrados');
-    }
-    
 }

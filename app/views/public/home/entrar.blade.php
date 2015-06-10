@@ -10,17 +10,17 @@
 				<h1 class="bien">Bienvenido</h1>
 				<h2 class="entrar">Fundación Amparo</h2>
 				<label for="" class="vol intro">
-					<form>
-						<input type="text" name="Name" placeholder="Nombre" id="r" required>
-						<input type="password" placeholder="Contraseña" id="r" required>
-						<a href="{{ URL::to( '/' ) }}" class="olvido">¿Olvidaste tu contraseña?</a>
+					{{ Form::open() }}
+						{{ Form::email( 'username', Input::old( 'username' ), [ 'class' => 'r', 'id' => 'username', 'placeholder' => 'Correo Electrónico', 'required' => true ] ) }}
+						{{ Form::password( 'password', [ 'class' => 'r', 'id' => 'password', 'placeholder' => 'Contraseña', 'required' => true ] ) }}
+						<a href="{{ URL::to( 'recuperar-password' ) }}" class="olvido">¿Olvidaste tu contraseña?</a>
 						<input type="submit" value="ENTRAR">
-					</form>
+					{{ Form::close() }}
 					<div class="line"></div>
 				</label>
 				<p>O entrar a tu cuenta de Facebook</p>
-				<a href="{{ URL::to( '/login/facebook' ) }}"><button class="face-btn"></button></a>
-				<p><a href="{{ URL::to( '/registro' ) }}">¿Aun no estas registrado?</a></p>
+				<a href="{{ URL::to( 'login/facebook' ) }}"><button class="face-btn"></button></a>
+				<p><a href="{{ URL::to( 'registro' ) }}">¿Aun no estas registrado?</a></p>
 			</div>
 		</div>
 	@stop

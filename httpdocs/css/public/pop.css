@@ -6,6 +6,17 @@ html, body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.alert-danger span.error {
+	display: inline-block !important;
+	width: 100% !important;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
 img.bg {
 	min-height: 100%;
 	min-width: 1024px;
@@ -110,14 +121,10 @@ button.regresar{
 .lightbox-h{
 	width: 100%;
 	min-height:100%;
-	/*background: url("../images/back-li2.png");*/
 	background: #ffa93c;
-	/*position: fixed;*/
 	position: absolute;
 	top: 0;
-	z-index: 100000;
 	display: block;
-	/*display: none;*/
 	padding-top: 3%;
 	padding-bottom: 5%;
 }
@@ -272,6 +279,11 @@ label.vol .line{
 	margin: 4% auto;
 }
 
+.donar-spei button.cerrar-h, .donar-oxxo button.cerrar-h {
+	display: block !important;
+	top: -55px !important;
+}
+
 .lightbox-h-cont button.cerrar-h{
 	width: 40px;
 	height: 40px;
@@ -330,6 +342,82 @@ label.vol .line{
 label.donar-l{
 	/*background: red;*/
 	position: relative;
+}
+
+.form-group {
+	display: inline-block;
+	width: 100% !important;
+}
+
+.form-group .form-control {
+	font-size: 1.2em;
+	padding-left: 15px;
+}
+
+.form-group .form-control::-webkit-input-placeholder {
+	color: #fff;
+}
+
+.form-group .form-control:-moz-input-placeholder {
+	color: #fff;
+}
+
+.form-group .form-control::-moz-input-placeholder {
+	color: #fff;
+}
+
+.form-group .form-control::-ms-input-placeholder {
+	color: #fff;
+}
+
+.form-paymethod {
+
+}
+
+.form-paymethod span {
+	text-align: left;
+	width: 100%;
+}
+
+.form-paymethod label.form-control {
+	display: block;
+	width: 100%;
+}
+
+.form-paymethod span.pay-legend {
+	display: inline-block;
+	width: 2%;
+}
+
+.form-paymethod input[type="text"].col-sm-4 {
+	display: inline-block;
+	width: 20%;
+}
+
+.form-paymethod input[type="text"], .form-paymethod input[type="password"], .form-paymethod input[type="email"] {
+	font-size: 1em;
+	padding-left: 15px;
+}
+
+.form-paymethod input[type="text"]::-webkit-input-placeholder,
+.form-paymethod input[type="password"]::-webkit-input-placeholder,
+.form-paymethod input[type="email"]::-webkit-input-placeholder{
+	color: #fff;
+}
+.form-paymethod input[type="text"]:-moz-placeholder,
+.form-paymethod input[type="password"]:-moz-placeholder,
+.form-paymethod input[type="email"]:-moz-placeholder{
+	color: #fff;
+}
+.form-paymethod input[type="text"]::-moz-placeholder,
+.form-paymethod input[type="password"]::-moz-placeholder,
+.form-paymethod input[type="email"]::-moz-placeholder{
+	color: #fff;
+}
+.form-paymethod input[type="text"]::-ms-input-placeholder,
+.form-paymethod input[type="password"]::-ms-input-placeholder,
+.form-paymethod input[type="email"]::-ms-input-placeholder {
+	color: #fff;
 }
 
 /*label.donar-l input[type="checkbox"]{
@@ -460,11 +548,11 @@ label.vol input[type="submit"]{
 	color: #fff;
 	/*font-size: 2em;*/
 }
-/*label.vol input[type="checkbox"]{
-width: 21px;
-height: 21px;
-box-shadow: none;	
-}*/
+
+.r::-webkit-input-placeholder {
+	color: #fff;
+	/*font-size: 2em;*/
+}
 
 div.d label.vol input[type="submit"]{
 	color: #beda3e;
