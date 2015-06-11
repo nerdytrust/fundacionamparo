@@ -5,7 +5,7 @@ return array(
     //'usermodel' => 'User',
 
     /* The name of the Profile model */
-    'profilemodel' => 'Profile',
+    'profilemodel' => 'Profiles',
 
     /* The hasMany name for the profiles of a given user */
     'userprofiles' => 'profiles',
