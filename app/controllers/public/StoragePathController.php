@@ -34,11 +34,21 @@ class StoragePathController extends BaseController {
  		return $img->response('jpg', 70 );
  	}
 
+ 	/**
+ 	 * Método para devolver el video tipo stream a la vista
+ 	 * @param  string $hash Nombre del video hasheado
+ 	 * @return string       Respuesta stream mp4
+ 	 */
  	public function videoStorage( $hash ){
  		$this->storage_path = storage_path();
  		$content = $this->storage_path . '/uploads/' . $hash;
- 		return Response::make( $content, 200 )->header('Content-Type', 'video/mp4' );
- 		//return $content->header('Content-Type', 'video/mp4' );
+ 		$headers = [
+ 			'Content-Type'	=> 'video/mp4'
+ 		];
+ 		return Response::stream( function() use ($content ) {
+ 			$stream = fopen( $content, 'r' );
+ 			fpassthru( $stream );
+ 		}, 200, $headers );
  	}
 }
 
