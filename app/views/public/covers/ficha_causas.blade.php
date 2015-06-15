@@ -12,8 +12,8 @@
 							<ul>
 								{{ Helper::facebookShare( '', Request::url(), '' ) }}
 								{{ Helper::twitterShare( $causa->titulo, Request::url(), '' ) }}
-								<a href=""><li class="fa fa-heart"></li></a>
-								<p>{{ $causa->me_gustas_interno  }} likes</p>
+								{{ Helper::like( $causa->id_causas, 'causas' ) }}
+								<p>{{ $causa->me_gusta_interno }} likes</p>
 							</ul>
 						</nav>
 						<div class="cau-dat">

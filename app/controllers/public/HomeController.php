@@ -95,7 +95,7 @@ class HomeController extends BaseController {
 		
 		$recovery = Mail::send( 'public.mail.recovery', [ 'username' => $user->email, 'password' => Crypt::decrypt( $user->password )  ], function( $message ) use ( $user ){
 			$message
-				->from( 'noreply@nerdytrust.com', 'no-reply' )
+				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
 				->to( $user->email, $user->nombre_completo )
 				->subject( 'Solicitud de Contraseña' );
 		});

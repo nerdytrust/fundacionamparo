@@ -21,28 +21,25 @@
 			<section id="contenedor_int">
 				<div class="text-contact">
 					<label class="contact" for="" id="fre">
-						{{ Form::open( [ 'url' => 'formulario-contacto', 'method' => 'POST', 'autocomplete' => 'off' ] ) }}
+						{{ Form::open( [ 'url' => 'formulario-contacto', 'id' => 'formulario_contacto', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form' ] ) }}
+							<div class="alert alert-danger" role="alert" id="messages"></div>
 							<h1>Comunícate con nosotros</h1>
 							<h2>Escríbenos si tienes alguna duda, en breve un asesor se pondrá en contacto contigo.</h2>
-							{{ $errors->first( 'nombre', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::text( 'nombre', Input::old( 'nombre' ), [ 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 120 ] ) }}
+								{{ Form::text( 'nombre', Input::old( 'nombre' ), [ 'id' => 'inpt_nombre', 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 120 ] ) }}
 							</span>
-							{{ $errors->first( 'telefono', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::text( 'telefono', Input::old( 'telefono' ), [ 'placeholder' => 'Teléfono', 'required' => true, 'maxlenght' => 10 ] ) }}
+								{{ Form::text( 'telefono', Input::old( 'telefono' ), [ 'id' => 'inpt_telefono', 'placeholder' => 'Teléfono', 'required' => true, 'maxlenght' => 10 ] ) }}
 							</span>
-							{{ $errors->first( 'email', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
 								@if ( Auth::customer()->check() )
 									{{ Form::text( 'email', Helper::getEmail(), [ 'required' => true, 'maxlength' => 140 ] ) }}
 								@else
-									{{ Form::text( 'email', Input::old( 'email' ), [ 'placeholder' => 'Correo electrónico', 'required' => true, 'maxlength' => 140 ] ) }}
+									{{ Form::text( 'email', Input::old( 'email' ), [ 'id' => 'inpt_email', 'placeholder' => 'Correo electrónico', 'required' => true, 'maxlength' => 140 ] ) }}
 								@endif
 							</span>
-							{{ $errors->first( 'mensaje', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
-								{{ Form::textarea( 'mensaje', Input::old( 'mensaje' ), [ 'placeholder' => 'Mensaje', 'rows' => 4, 'cols' => 50 ] ) }}
+								{{ Form::textarea( 'mensaje', Input::old( 'mensaje' ), [ 'id' => 'inpt_mensaje', 'placeholder' => 'Mensaje', 'rows' => 4, 'cols' => 50 ] ) }}
 							</span>
 							<button type="submit">Enviar</button> <p>Campos obligarotios para enviar formulario</p>
 						{{ Form::close() }}

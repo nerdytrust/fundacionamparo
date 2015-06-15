@@ -56,8 +56,8 @@
 									<ul>
 										{{ Helper::facebookShare( '', URL::to( 'ficha-causa' ) . '/' . $causa->id_causas, '' ) }}
 										{{ Helper::twitterShare( $causa->titulo, URL::to( 'ficha-causa' ) . '/' . $causa->id_causas, '' ) }}
-										<a id="{{ $causa->id_causas }}" class="like-process"><li class="fa fa-heart"></li></a>
-										<p>{{ $causa->me_gusta_interno }} likes</p>
+										{{ Helper::like( $causa->id_causas, 'causas' ) }}
+										<p>{{ $causa->me_gusta_interno }} likes</p>
 									</ul>
 									<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
 								</section>

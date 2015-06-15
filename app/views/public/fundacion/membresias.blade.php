@@ -52,7 +52,7 @@
 											<ul>
 												{{ Helper::facebookShare( '', Request::url(), '' ) }}
 												{{ Helper::twitterShare( $membresia->nombre, Request::url(), '' ) }}
-												<a href=""><li class="fa fa-heart"></li></a>
+												{{ Helper::like( $membresia->id_membresias, 'membresias' ) }}
 												<p>{{ $membresia->me_gusta }} likes</p>
 											</ul>
 										</nav>

@@ -54,6 +54,14 @@
 </div>
 <div class="row">
 	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->browser->input, $columns->browser->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->browser,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
 		{{ Form::label($columns->created_by->input, $columns->created_by->label) }}
 	</div>
 	<div class="col-xs-10 ">

@@ -87,5 +87,6 @@ Route::post( 'donacion-pago-tarjeta', 'DonacionesController@payCard' );
 Route::post( 'paso-dos-donacion', 'DonacionesController@metodoPago' );
 Route::post( 'enviar-password', 'HomeController@sendPassword' );
 Route::post( 'registrar-usuario', 'HomeController@newMember' );
+Route::post( 'like', 'CoreController@likeProcess' );
 //Route::post( 'donar', 'CoversController@donar' );
 

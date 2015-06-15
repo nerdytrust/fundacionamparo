@@ -45,7 +45,7 @@ button, input{
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 999999;
 }
 
 .btn .btn-default {
@@ -1016,12 +1016,20 @@ span.esquina{
 #pull{
 	display: inline-block;
 }
+
 #social_top a li:hover{
 	color: #beda3e;
 	border: 2px solid #beda3e;
 	-webkit-transition:.5s;
 	transition:.5s;
 }
+
+.like-content-active {
+	color: #beda3e !important;
+	border: 2px solid #beda3e !important;
+	-webkit-transition: .5s;
+}
+
 #social_top ul{
 	display: inline-block;
 	width: 69%;

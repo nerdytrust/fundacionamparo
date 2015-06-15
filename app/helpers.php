@@ -96,4 +96,23 @@ class Helper {
 	public function setHybridAuth( $hybridauth ) {
 		$this->hybridauth = $hybridauth;
 	}
+
+	/**
+	 * Método para mostrar el botón de like dependiendo el tipo de contenido
+	 * @param  string $id_contenido   ID del contenido
+	 * @param  string $tipo_contenido Tipo de contenido
+	 * @return string                 HTML del botón del like
+	 */
+	public static function like( $id_contenido = '', $tipo_contenido = '' ){
+		$like_button = '<a data-contenido="' . $id_contenido . '" data-tipo="' . $tipo_contenido . '" class="like-process"><li class="fa fa-heart"></li></a>';
+		if ( Session::has( 'likes' ) ){
+			$likes = Session::get( 'likes' );
+			foreach( $likes as $like ){
+				if ( $like['content_id'] == $id_contenido && $like['content_type'] == $tipo_contenido )
+					$like_button = '<a data-contenido="' . $id_contenido . '" data-tipo="' . $tipo_contenido . '" class="like-process"><li class="fa fa-heart like-content-active"></li></a>';
+			}
+		}
+
+		return $like_button;
+	}
 }

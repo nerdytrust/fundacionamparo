@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateMembresiasTable extends Migration {
+class CreateContactoTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,15 @@ class CreateMembresiasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('membresias', function(Blueprint $table)
+		Schema::create('contacto', function(Blueprint $table)
 		{
-			$table->integer('id_membresias', true);
-			$table->string('nombre', 150);
-			$table->text('resena');
-			$table->text('url');
-			$table->bigInteger('me_gusta')->nullable();
-			$table->text('logo')->nullable();
-			$table->boolean('orden')->nullable();
+			$table->integer('id_contacto', true);
+			$table->string('nombre', 100);
+			$table->string('telefono', 30);
+			$table->string('correo', 80);
+			$table->text('mensaje');
+			$table->string('ip', 140)->nullable();
+			$table->text('browser');
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
 			$table->timestamps();
@@ -35,7 +35,7 @@ class CreateMembresiasTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('membresias');
+		Schema::drop('contacto');
 	}
 
 }

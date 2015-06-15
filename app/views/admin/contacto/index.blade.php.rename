@@ -12,6 +12,7 @@
 					<td> {{ $columns->correo->label }} </td>
 					<td> {{ $columns->mensaje->label }} </td>
 					<td> {{ $columns->ip->label }} </td>
+					<td> {{ $columns->browser->label }} </td>
 
 
 					@include("crud.index-column-buttons")
@@ -31,6 +32,7 @@
 					<td>{{ parseToHTML($columns->correo,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->mensaje,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->ip,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->browser,$record,$fk_column) }}</td>
 
 
 					@include("crud.index-buttons")

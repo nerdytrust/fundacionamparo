@@ -163,4 +163,63 @@ $(function(){
 		});
 		return false;
 	});
+
+	$('#formulario_contacto').submit(function(){
+		var spinner = new Spinner(opts).spin(target);
+		$(this).ajaxSubmit({
+			beforeSubmit: function(){
+				$('#foo').css( 'display', 'block' );
+			},
+			success: function(data){
+				if ( data.success != true ){
+					spinner.stop();
+					$('#foo').css('display','none');
+					$('#messages').html(data.errors);
+					$('#messages').css('display', 'block');
+				} else {
+					spinner.stop();
+					$('#foo').css('display','none');
+					$('#messages').addClass('alert-success');
+					$('#messages').html(data.message);
+					$('#messages').css('display', 'block');
+					$('#inpt_nombre').val('');
+					$('#inpt_telefono').val('');
+					$('#inpt_email').val('');
+					$('#inpt_mensaje').val('');
+				}
+			},
+			error: function(data){
+				spinner.stop();
+				$('#foo').css('display','none');
+				$('#messages').html(data.errors);
+				$('#messages').css('display', 'block');
+			}
+		});
+		return false;
+	});
+
+	$('.like-process').click(function(){
+		var spinner = new Spinner(opts).spin(target);
+		var content_id 		= $(this).attr( 'data-contenido' );
+		var content_type 	= $(this).attr( 'data-tipo' );
+		$.ajax({
+			url: 'like',
+			method: 'POST',
+			dataType: 'json',
+			data: { content_id: content_id, content_type: content_type },
+			beforeSend: function(){
+				$('#foo').css( 'display', 'block' );
+			},
+			success: function(data){
+				if ( data.success )
+					window.location.reload();
+			},
+			error: function(data){
+				spinner.stop();
+				$('#foo').css('display','none');
+				console.log( data.errors );
+			}
+		});
+		return false;
+	});
 });
