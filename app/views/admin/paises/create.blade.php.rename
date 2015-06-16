@@ -1,0 +1,29 @@
+@extends("crud.layout-form")
+
+@section("form")
+
+
+
+<div class="form-group @if ($errors->has('sortname')) has-error @endif">
+
+ {{ Form::label("text", "Sortname") }}
+   
+      {{ Form::text("sortname",$record->sortname,["class" => "form-control","placeholder"=>"Sortname"]); }}
+    
+ <span class="help-block">{{ $errors->first('sortname') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('name')) has-error @endif">
+
+ {{ Form::label("text", "Name") }}
+   
+      {{ Form::text("name",$record->name,["class" => "form-control","placeholder"=>"Name"]); }}
+    
+ <span class="help-block">{{ $errors->first('name') }}</span>
+</div>
+
+     
+
+@stop
+
+

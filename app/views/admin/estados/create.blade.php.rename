@@ -1,0 +1,29 @@
+@extends("crud.layout-form")
+
+@section("form")
+
+
+
+<div class="form-group @if ($errors->has('name')) has-error @endif">
+
+ {{ Form::label("text", "Name") }}
+   
+      {{ Form::text("name",$record->name,["class" => "form-control","placeholder"=>"Name"]); }}
+    
+ <span class="help-block">{{ $errors->first('name') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('id_paises')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Paise") }}
+   
+      {{ Form::remotecombo("id_paises",$record->id_paises,["table"=>$model,"class" => "form-control","placeholder"=>"Paise"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_paises') }}</span>
+</div>
+
+     
+
+@stop
+
+
