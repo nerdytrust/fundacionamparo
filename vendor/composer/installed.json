@@ -3763,5 +3763,55 @@
             "search",
             "searchable"
         ]
+    },
+        {
+        "name": "conekta/conekta-php",
+        "version": "v2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/conekta/conekta-php.git",
+            "reference": "f44a72a98136473bcecd2059959d28b6e840e947"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/conekta/conekta-php/zipball/f44a72a98136473bcecd2059959d28b6e840e947",
+            "reference": "f44a72a98136473bcecd2059959d28b6e840e947",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "ext-mbstring": "*",
+            "php": ">=5.2"
+        },
+        "require-dev": {
+            "simpletest/simpletest": "*"
+        },
+        "time": "2014-11-07 17:14:35",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "lib/Conekta/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Conekta  and contributors",
+                "homepage": "https://github.com/conekta/conekta-php/contributors"
+            }
+        ],
+        "description": "PHP  Library",
+        "homepage": "https://www.conekta.io/",
+        "keywords": [
+            "api",
+            "conekta",
+            "payment processing"
+        ]
     }
 ]
