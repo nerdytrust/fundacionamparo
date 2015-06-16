@@ -118,6 +118,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `faq` WRITE;
 /*!40000 ALTER TABLE `faq` DISABLE KEYS */;
+INSERT INTO `faq` VALUES (1,'¿Cuáles son las formas de ayudar?','Es muy fácil entra al muro de causas vivas, selecciona la causa a la que quieras ayudar, y haz clic en el botón de donar. Selecciona la cantidad que quieres que se te cargue, si es un cobro único o recurrente y dale aceptar. Llena tus datos y los de tu tarjeta de crédito o débito y realiza el cargo via Paypal.',4,0,'2015-05-22 04:49:55','2015-05-22 04:49:55'),(2,'¿Cómo puedo ser donador?','Es muy fácil entra al muro de causas vivas, selecciona la causa a la que quieras ayudar, y haz clic en el botón de donar. Selecciona la cantidad que quieres que se te cargue, si es un cobro único o recurrente y dale aceptar. Llena tus datos y los de tu tarjeta de crédito o débito y realiza el cargo via Paypal.',4,0,'2015-05-22 04:50:22','2015-05-22 04:50:22'),(3,'¿Cómo puedo ser impulsor?','Es muy fácil entra al muro de causas vivas, selecciona la causa a la que quieras ayudar, y haz clic en el botón de donar. Selecciona la cantidad que quieres que se te cargue, si es un cobro único o recurrente y dale aceptar. Llena tus datos y los de tu tarjeta de crédito o débito y realiza el cargo via Paypal.',4,0,'2015-05-22 04:50:49','2015-05-22 04:50:49'),(4,'¿Cómo puedo ser voluntario?','Es muy fácil entra al muro de causas vivas, selecciona la causa a la que quieras ayudar, y haz clic en el botón de donar. Selecciona la cantidad que quieres que se te cargue, si es un cobro único o recurrente y dale aceptar. Llena tus datos y los de tu tarjeta de crédito o débito y realiza el cargo via Paypal.',4,0,'2015-05-22 04:51:07','2015-05-22 04:51:07'),(5,'¿Las donaciones con mi tarjeta de crédito o débito son seguras?','Es muy fácil entra al muro de causas vivas, selecciona la causa a la que quieras ayudar, y haz clic en el botón de donar. Selecciona la cantidad que quieres que se te cargue, si es un cobro único o recurrente y dale aceptar. Llena tus datos y los de tu tarjeta de crédito o débito y realiza el cargo via Paypal.',4,0,'2015-05-22 04:51:23','2015-05-22 04:51:23');
 /*!40000 ALTER TABLE `faq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,6 +147,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `membresias` WRITE;
 /*!40000 ALTER TABLE `membresias` DISABLE KEYS */;
+INSERT INTO `membresias` VALUES (1,'FEMAM','Federación Mexicana de Asociaciones de Amigos de los Museos (FEMAM) se constituyó el 21 de octubre de 1991. Es un organismo independiente sin fines de lucro que tiene como objetivo preservar el patrimonio cultural de México a través de Patronatos y Asociaciones de Amigos de los Museos de toda la República en beneficio de nuestra sociedad. ','http://www.femam.org.mx',0,'8418b9141825296eae85a683f0c49abc',0,4,4,'2015-05-20 18:38:21','2015-05-20 18:38:35'),(2,'CEMEFI','El Centro Mexicano para la Filantropía (CEMEFI) es una asociación civil fundada en diciembre de 1988. Es una institución privada, no lucrativa, sin ninguna filiación a partido, raza o religión. Cuenta con permiso del Gobierno de México para recibir donativos deducibles de impuestos. Su sede se encuentra en la Ciudad de México y su ámbito de acción abarca todo el país.','http://www.proyectoroberto.com.mx',0,'482e1ac7e6a4513696b772713a115ab8',0,4,4,'2015-05-20 19:00:57','2015-05-20 19:00:57'),(3,'JIB','Es un organo administrativo desconcentrado por función que tiene por objetivo inspeccionar y vigilar la administración de las instituciones de beneficencia privada en el estado de Puebla, evitando así que se desvirtúe el objetivo original por el cual fueron constituidas y evitando la violación de la voluntad de los fundadores.','http://www.jib.org',0,'898cfa8a1ebaff5be9210190174beea3',0,4,4,'2015-05-20 19:02:13','2015-05-20 19:02:13');
 /*!40000 ALTER TABLE `membresias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -228,6 +230,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `profiles` WRITE;
 /*!40000 ALTER TABLE `profiles` DISABLE KEYS */;
+INSERT INTO `profiles` VALUES (1,1,'facebook','10205936548635828','','https://www.facebook.com/app_scoped_user_id/10205936548635828/','https://graph.facebook.com/10205936548635828/picture?width=150&height=150','Eric Bravo','','Eric','Bravo','male','es_LA',NULL,'30','9','1983','eric.bravo.rod@gmail.com','eric.bravo.rod@gmail.com',NULL,NULL,'Mexico','Mexico City, Mexico','Mexico City',NULL,'','https://graph.facebook.com/10205936548635828?fields=cover&access_token=CAALB663m8SoBABECl1ANPq3ZCf9iOYkSiRs06xZB4VdaGsqtYhiW04kMrYSGqvXXZBQKq9S7QfQOMRjqcwqZAwn998JFzXqU1WZCRuFtXp7hboDr61GZAYilSCTEERAbvVCTpieYBZAIxo7krQlGoZCPC29TQNOe45BSZCeQI4TwwLrbozbm7XI','2015-06-16 01:34:15','2015-06-16 01:34:15',NULL,NULL);
 /*!40000 ALTER TABLE `profiles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -246,6 +249,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `registrados` WRITE;
 /*!40000 ALTER TABLE `registrados` DISABLE KEYS */;
+INSERT INTO `registrados` VALUES (1,'eric.bravo.rod@gmail.com','557f7d17dc46f',NULL,1,'2015-06-16 01:34:15','2015-06-16 01:34:15',NULL,NULL);
 /*!40000 ALTER TABLE `registrados` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -312,4 +316,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-15 20:22:18
+-- Dump completed on 2015-06-15 20:55:42
