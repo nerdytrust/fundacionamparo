@@ -15,7 +15,7 @@
 				<label for="" class="vol">
 					<p>Escoge la causa que quieras apoyar</p>
 					{{ Form::open( [ 'url' => 'nueva-donacion', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form', 'id' => 'form_nueva_donacion' ] ) }}
-						{{ Form::hidden( 'mostrar_perfil', '0' ) }}
+						{{ Form::hidden( 'mostrar_perfil', '1' ) }}
 						<div class="alert alert-danger" role="alert" id="messages"></div>
 						<select name="causa_donar" id="">
 							@if ( isset( $causas ) )
@@ -36,7 +36,7 @@
 							</span>
 						@endif
 						<div class="check-verde">
-							{{ Form::checkbox( 'mostrar_perfil', '1', false, [ 'id' => 'check-verde' ] ) }}
+							{{ Form::checkbox( 'mostrar_perfil', '0', false, [ 'id' => 'check-verde' ] ) }}
 							<label for="check-verde"></label>No mostrar mi perfil en el sitio
 						</div>
 						</br></br>
