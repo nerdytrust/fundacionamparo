@@ -22,6 +22,9 @@ class CoreController extends BaseController {
 				case 'membresias':
 					$this->likeMembresias( $inputs );
 					break;
+				case 'noticias':
+					$this->likeNoticias( $inputs );
+					break;
 			}
 		}
 
@@ -36,6 +39,9 @@ class CoreController extends BaseController {
 					break;
 				case 'membresias':
 					$this->likeMembresias( $inputs );
+					break;
+				case 'noticias':
+					$this->likeNoticias( $inputs );
 					break;
 			}
 		}
@@ -59,6 +65,15 @@ class CoreController extends BaseController {
 	 */
 	private function likeMembresias( $inputs = [] ){
 		Membresias::where( 'id_membresias', $inputs['content_id'] )->increment( 'me_gusta' );
+	}
+
+	/**
+	 * Método para guardar el like del tipo de contenido Noticias
+	 * @param  array  $inputs Datos del Contenido
+	 * @return
+	 */
+	private function likeNoticias( $inputs = [] ){
+		Noticias::where( 'id_noticias', $inputs['content_id'] )->increment( 'me_gusta' );
 	}
 }
 

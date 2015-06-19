@@ -1,0 +1,29 @@
+@extends("crud.layout-form")
+
+@section("form")
+
+
+
+<div class="form-group @if ($errors->has('name')) has-error @endif">
+
+ {{ Form::label("text", "Name") }}
+   
+      {{ Form::text("name",$record->name,["class" => "form-control","placeholder"=>"Name"]); }}
+    
+ <span class="help-block">{{ $errors->first('name') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('slug')) has-error @endif">
+
+ {{ Form::label("textarea", "Slug") }}
+   
+      {{ Form::textarea("slug", $record->slug,["class" => "form-control","placeholder"=>"Slug"]) }}
+    
+ <span class="help-block">{{ $errors->first('slug') }}</span>
+</div>
+
+     
+
+@stop
+
+

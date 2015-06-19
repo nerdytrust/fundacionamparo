@@ -89,6 +89,16 @@ class Helper {
 		return $email;
 	}
 
+	/**
+	 * Método para obtener el id de registro del usuario logueado
+	 * @return integer ID de registro del usuario logueado
+	 */
+	public static function getRegisterId(){
+		$user = new Helper;
+		$id_register = $user->getHybridAuth()->id_registrados;
+		return $id_register;
+	}
+
 	public function getHybridAuth() {
 		return $this->hybridauth;
 	}
@@ -114,5 +124,45 @@ class Helper {
 		}
 
 		return $like_button;
+	}
+
+	/**
+	 * Método para obtener el año con el que comienzan los combobox de fecha AÑO
+	 * Tomando en cuenta la fecha actual, menos 18 años que vendria siendo la mayoría de edad
+	 * @return string Año válido en fechas de nacimiento
+	 */
+	public static function getValidYear( $diferencia = 18 ){
+		$today = strtotime('-' . $diferencia . ' year', time() );
+		return date( 'Y', $today );
+	}
+
+	/**
+	 * Método para obtener el mes que aparece por defecto seleccionado en el combobox de fecha MES
+	 * @return string MES válido en fechas de nacimiento
+	 */
+	public static function getValidMonth(){
+		$today = time();
+		return date( 'm', $today );
+	}
+
+	/**
+	 * Método para obtener el día que aparece por defecto seleccionado en el combobox de fecha DIA
+	 * @return string Día válido en fechas de nacimiento
+	 */
+	public static function getValidDay(){
+		$today = time();
+		return date( 'd', $today );
+	}
+
+	/**
+	 * Método para convertir la fecha de nacimiento a unixtime
+	 * @param  string $day   Día
+	 * @param  string $month Mes
+	 * @param  string $year  Año
+	 * @return integer        Fecha de nacimiento en formato UNIX
+	 */
+	public static function convertDate( $day = '', $month = '', $year = '' ){
+		$date = strtotime( $day . '-' . $month . '-' . $year );
+		return $date;
 	}
 }

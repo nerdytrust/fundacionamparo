@@ -1,0 +1,164 @@
+@extends("crud.layout-form")
+
+@section("form")
+
+
+
+<div class="form-group @if ($errors->has('id_estados')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Estado") }}
+   
+      {{ Form::remotecombo("id_estados",$record->id_estados,["table"=>$model,"class" => "form-control","placeholder"=>"Estado"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_estados') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('id_ciudades')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Ciudade") }}
+   
+      {{ Form::remotecombo("id_ciudades",$record->id_ciudades,["table"=>$model,"class" => "form-control","placeholder"=>"Ciudade"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_ciudades') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('id_causas')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Causa") }}
+   
+      {{ Form::remotecombo("id_causas",$record->id_causas,["table"=>$model,"class" => "form-control","placeholder"=>"Causa"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_causas') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('nombre')) has-error @endif">
+
+ {{ Form::label("text", "Nombre") }}
+   
+      {{ Form::text("nombre",$record->nombre,["class" => "form-control","placeholder"=>"Nombre"]); }}
+    
+ <span class="help-block">{{ $errors->first('nombre') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('apellidos')) has-error @endif">
+
+ {{ Form::label("text", "Apellidos") }}
+   
+      {{ Form::text("apellidos",$record->apellidos,["class" => "form-control","placeholder"=>"Apellidos"]); }}
+    
+ <span class="help-block">{{ $errors->first('apellidos') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('email')) has-error @endif">
+
+ {{ Form::label("email", "Email") }}
+   
+      {{ Form::email("email",$record->email,["class" => "form-control","placeholder"=>"Email"]); }}
+    
+ <span class="help-block">{{ $errors->first('email') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('telefono')) has-error @endif">
+
+ {{ Form::label("text", "Telefono") }}
+   
+      {{ Form::text("telefono",$record->telefono,["class" => "form-control","placeholder"=>"Telefono"]); }}
+    
+ <span class="help-block">{{ $errors->first('telefono') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('nacimiento')) has-error @endif">
+
+ {{ Form::label("number", "Nacimiento") }}
+   
+      {{ Form::number("nacimiento",$record->nacimiento,["class" => "form-control","placeholder"=>"Nacimiento"]); }}
+    
+ <span class="help-block">{{ $errors->first('nacimiento') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('id_sexos')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Sexo") }}
+   
+      {{ Form::remotecombo("id_sexos",$record->id_sexos,["table"=>$model,"class" => "form-control","placeholder"=>"Sexo"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_sexos') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('id_disponibilidades')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Disponibilidade") }}
+   
+      {{ Form::remotecombo("id_disponibilidades",$record->id_disponibilidades,["table"=>$model,"class" => "form-control","placeholder"=>"Disponibilidade"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_disponibilidades') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('id_horarios')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Horario") }}
+   
+      {{ Form::remotecombo("id_horarios",$record->id_horarios,["table"=>$model,"class" => "form-control","placeholder"=>"Horario"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_horarios') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('id_estudiantes')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Estudiante") }}
+   
+      {{ Form::remotecombo("id_estudiantes",$record->id_estudiantes,["table"=>$model,"class" => "form-control","placeholder"=>"Estudiante"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_estudiantes') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('id_tipo_ayudas')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Tipo_ayuda") }}
+   
+      {{ Form::remotecombo("id_tipo_ayudas",$record->id_tipo_ayudas,["table"=>$model,"class" => "form-control","placeholder"=>"Tipo_ayuda"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_tipo_ayudas') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('terminos')) has-error @endif">
+
+ {{ Form::label("text", "Terminos") }}
+   
+      {{ Form::text("terminos",$record->terminos,["class" => "form-control","placeholder"=>"Terminos"]); }}
+    
+ <span class="help-block">{{ $errors->first('terminos') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('ip')) has-error @endif">
+
+ {{ Form::label("text", "Ip") }}
+   
+      {{ Form::text("ip",$record->ip,["class" => "form-control","placeholder"=>"Ip"]); }}
+    
+ <span class="help-block">{{ $errors->first('ip') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('browser')) has-error @endif">
+
+ {{ Form::label("textarea", "Browser") }}
+   
+      {{ Form::textarea("browser", $record->browser,["class" => "form-control","placeholder"=>"Browser"]) }}
+    
+ <span class="help-block">{{ $errors->first('browser') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('aprobacion')) has-error @endif">
+
+ {{ Form::label("text", "Aprobacion") }}
+   
+      {{ Form::text("aprobacion",$record->aprobacion,["class" => "form-control","placeholder"=>"Aprobacion"]); }}
+    
+ <span class="help-block">{{ $errors->first('aprobacion') }}</span>
+</div>
+
+     
+
+@stop
+
+

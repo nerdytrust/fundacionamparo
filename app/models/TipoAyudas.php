@@ -1,11 +1,11 @@
 <?php
 
-class Promedios extends \Crud {
+class TipoAyudas extends \Crud {
 
 
-    protected $primaryKey = 'id_promedios'; // !important
+    protected $primaryKey = 'id_tipo_ayudas'; // !important
 
-    protected $table = 'promedios';
+    protected $table = 'tipo_ayudas';
 
     protected $fillable = [];
 
@@ -96,6 +96,15 @@ class Promedios extends \Crud {
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
         "fk_column" => [],
+        //
+        // JOINS
+        // Remember by default the framework create autojoins when you define id_(table)   
+        // you can get the info like this : $records->id_(table)_record
+        // [ "column" => [ "table","table_column" ]            
+        // [ "id_roles"  => ["roles","id_roles"] 
+        // [ "id_parent" => ["current_table","id_primary_key"] 
+        //    
+        "joins"      => [], 
         // 
         // Tabs
         // Allways create names of tabs with snake case for example

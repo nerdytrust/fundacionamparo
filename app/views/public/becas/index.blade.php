@@ -22,17 +22,18 @@
 			<section id="contenedor_int">
 				<div class="text-contact">
 					<label class="contact becas" for="">
-						<form action="">
+						{{ Form::open( [ 'url' => 'solicitar-beca', 'id' => 'form_solicitud_beca', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form' ] ) }}
+							<div class="alert alert-danger" role="alert" id="messages"></div>
 							<h1>SOLICITUD DE BECAS</h1>
 							<h2>
 								La Fundación Amparo puede ayudarte a obtener una beca para que estudies en México o en el Extranjero<br/>
 								<b>El único requisito es que vivas en el estado de Puebla</b>
 							</h2>
 							<ul class="pasos">
-								<li>
+								<li class="donde-quieres">
 									<div class="n-vol bec">
 										<img src="{{ asset( 'images/icon_donadores-bec.png' ) }}" alt="">
-										<span>49,863</span>
+										<span>{{ $becas_totales }}</span>
 										<span>BECAS OTORGADAS</span>
 									</div>
 									<h1>Paso 1</h1>
@@ -40,112 +41,80 @@
 									<h3>Selecciona el lugar en donde deseas estudiar</h3>
 									<span>
 										Dónde quieres estudiar
-										<select name="" id="">
-											<option value="">Extranjero</option>
-											<option value=""></option>
-											<option value=""></option>
-										</select>
-									</span>
-									<span>
-										País<br/>
-										<select name="" id="">
-											<option value="">Canadá</option>
-											<option value=""></option>
-											<option value=""></option>
-										</select>
-									</span>
-									<span>
-										Ciudad<br/>
-										<select name="" id="">
-											<option value="">Toront, Ontario</option>
-											<option value=""></option>
-											<option value=""></option>
+										<select name="lugar_estudios" id="beca_lugar_estudiar">
+											<option value="0">Selecciona una opción</option>
+											<option value="1">Extranjero</option>
+											<option value="2">México</option>
 										</select>
 									</span>
 								</li>
-								<li>
+								<li class="dropdown-dinamico" id="beca_lugar"></li>
+								<li class="beca-steps">
 									<h1>Paso 2</h1>
 									<h2>datos generales</h2>
 									<h3>Ingresa tus datos completos para validar el registro</h3>
-									<input type="text" name="nombre" maxlenght="10" placeholder="Nombre(s)" required>
-									<input type="text" name="apellido" maxlenght="10" placeholder="Apellidos" required>
-									<input type="email" name="mail" autocomplete="off" placeholder="Correo electrónico" required>
-									<input type="text" name="telefono" maxlenght="10" placeholder="Teléfono" required>
+									{{ Form::text( 'nombre', Input::old( 'nombre' ), [ 'id' => 'inpt_nombre', 'placeholder' => 'Nombre(s)', 'required' => true, 'maxlenght' => '150' ] ) }}
+									{{ Form::text( 'apellido', Input::old( 'apellido' ), [ 'id' => 'inpt_apellido', 'placeholder' => 'Apellidos', 'required' => true, 'maxlength' => '150' ] ) }}
+									{{ Form::email( 'email', Input::old( 'email'), [ 'id' => 'inpt_email', 'placeholder' => 'Correo electrónico', 'required' => true ] ) }}
+									{{ Form::text( 'telefono', Input::old( 'telefono' ), [ 'id' => 'inpt_telefono', 'placeholder' => 'Teléfono', 'required' => true, 'maxlength' => '10' ] ) }}
 									<div class="f3">
 										Fecha de Nacimiento<br/>
-										<select name="" id="" required>
-											<option value="">Día</option>
-											<option value="">1</option>
-											<option value="">2</option>
-											<option value="">3</option>
-											<option value="">4</option>
-										</select>
-										<select name="" id="" required>
-											<option value="">Mes</option>
-											<option value="">Enero</option>
-											<option value="">Febrero</option>
-											<option value="">Marzo</option>
-										</select>
-										<select name="" id="" required>
-											<option value="">Año</option>
-											<option value="">1997</option>
-											<option value="">1996</option>
-											<option value="">1995</option>
-										</select>
+										{{ Form::selectRange( 'birth_day', 1, 31, Helper::getValidDay() ) }}
+										{{ Form::selectMonth( 'birth_month', Helper::getValidMonth() ) }}
+										{{ Form::selectYear( 'birth_year', Helper::getValidYear(), 1940 ) }}
 									</div>
 									<div class="check">
-										Sexo <br/>								
-										<input type="radio" name="sexo" value="fem" id="fem" required checked>
+										Sexo <br/>
+										{{ Form::radio( 'sexo', 1, true, [ 'id' => 'fem' ] ) }}
 										<label for="fem"></label>
 										<span class="label-fake">Femenino</span>
-										<input type="radio" name="sexo" value="mas" id="mas" required>
+										{{ Form::radio( 'sexo', 2, false, [ 'id' => 'mas' ] ) }}
 										<label for="mas"></label>
 										<span class="label-fake">Masculino</span>
 									</div>
 								</li>
-								<li>
+								<li class="beca-steps">
 									<h1>Paso 3</h1>
 									<h2>¿Por Qué necesitas beca?</h2>
 									<h3>Ingresa tus datos escolares</h3>
-									<span>
+									<span class="form-control-container">
 										Escuela en la que deseas estudiar<br/>
-										<input type="text" name="escuela" placeholder="Escuela, Universidad, Instituto" required>
+										{{ Form::text( 'escuela', Input::old( 'escuela' ), [ 'placeholder' => 'Escuela, Universidad, Instituto', 'id' => 'inpt_escuela', 'required' => true, 'maxlenght' => '200' ] ) }}
 									</span>
 									<div class="check schedule-form">
-										Horario<br/>									
-										<input type="radio" name="horario" id="mat" value="mat" required checked>
+										Horario<br/>
+										{{ Form::radio( 'turno', 1, true, [ 'id' => 'mat' ] ) }}
 										<label for="mat"></label>
 										<span class="label-fake">Matutino</span>
-										<input type="radio" name="horario" value="ves" required id="ves">
+										{{ Form::radio( 'turno', 2, false, [ 'id' => 'ves' ] ) }}
 										<label for="ves"></label>
 										<span class="label-fake">Vespertino</span>
 									</div>
 									<span>
 										Promedio<br/>
 										<div>
-											<select name="promedio" id="promedio" required>
-												<option value="">Promedio</option>
-												@if ( isset( $promedios ) )
-													@foreach ( $promedios as $promedio )
-														<option value="{{ $promedio->id_promedios }}">{{ $promedio->promedio }}</option>
-													@endforeach
-												@endif
-											</select>
+											{{ Form::select( 'promedio', [ 
+												'10.0' => '10.0', '9.9' => '9.9', '9.8' => '9.8', '9.7' => '9.7',
+												'9.6' => '9.6', '9.5' => '9.5', '9.4' => '9.4', '9.3' => '9.3',
+												'9.2' => '9.2', '9.1' => '9.1', '9.0' => '9.0', '8.9' => '8.9',
+												'8.8' => '8.8', '8.7' => '8.7', '8.6' => '8.6', '8.5' => '8.5',
+												'Menor a 8.5' => 'Menor a 8.5'
+											], 'Menor a 8.5', [ 'id' => 'promedio' ] ) }}
 										</div>
 									</span>
 									<h3>Coméntanos el por qué necesitas una beca</h3>
-									<textarea name="" id="" cols="30" rows="10" maxlenght="150"></textarea>
+									{{ Form::textarea( 'motivo', Input::old( 'motivo' ), [ 'cols' => '30', 'rows' => '10', 'maxlength' => '400' ] ) }}
 									<div class="check-gris">
-										<input type="checkbox" value="None" id="check-verde" name="check">
+										{{ Form::checkbox( 'terminos', 1, false, [ 'id' => 'check-verde' ] ) }}
 										<label for="check-verde"></label>
 										Acepto términos y condiciones
 									</div>
 								</li>
-								<button class="str">Aceptar</button>
-								<button class="str">Cancelar</button>
+								<button class="str" type="submit">Aceptar</button>
+								<button class="str" type="reset">Cancelar</button>
 								<span class="neces">Es necesario completar el formulario para hacerlo válido</span>
 							</ul>
-						</form>
+						{{ Form::close() }}
 					</label>
 				</div>
 				<div class="adorno_fa">

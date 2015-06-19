@@ -13,9 +13,8 @@
 
             {{ Form::remotecombo($column->name,$record->{$column->name},['table'=>$model,'class' => 'form-control','placeholder'=>$column->label] ); }}
 
-         @elseif ($column->input == "select" or $column->input == "combo")
-
-            {{ Form::combo($column->name,$record->{$column->name},['class' => 'form-control','placeholder'=>$column->label],$column->data); }}
+         @elseif ( $column->input == "select" or $column->input == "combo" )
+            {{ Form::select( $column->name, [$record] , $record->{$column->name}, [ 'class' => 'form-control', 'placeholder' => $column->label ], $column->data ); }}
 
          @elseif ($column->input == "date" or $column->input == "datetime" or $column->input == "time"  )
 

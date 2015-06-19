@@ -1,6 +1,10 @@
 Conekta.setPublishableKey( 'key_Cxkxn8imrq4nosMpnnr3nVA' );
 
 $(function(){
+	/**
+	 * Objeto con las opciones del spinner
+	 * @type {Object}
+	 */
 	var opts = {
 		lines: 17,
 		length: 15,
@@ -40,6 +44,9 @@ $(function(){
 		$form.find("button").prop("disabled", true);
 	};
 
+	/**
+	 * Método para realizar el proceso de pago con tarjeta de crédito en Donaciones
+	 */
 	$("#form_paycard").submit(function(event) {
 		event.preventDefault();
 		var spinner = new Spinner(opts).spin(target);
@@ -53,6 +60,9 @@ $(function(){
 		return false;
 	});
 
+	/**
+	 * Método para procesar el paso uno del formulario de donación
+	 */
 	$('#form_nueva_donacion').submit(function(){
 		var spinner = new Spinner(opts).spin(target);
 		$(this).ajaxSubmit({
@@ -68,7 +78,7 @@ $(function(){
 				}else{
 					spinner.stop();
 					$('#foo').css('display','none');
-					window.location.href = 'donar/paso-2';
+					window.location.href = data.redirect;
 				}
 			},
 			error: function(data){
@@ -81,6 +91,9 @@ $(function(){
 		return false;
 	});
 
+	/**
+	 * Método para procesar el paso dos del formulario de donación
+	 */
 	$('#form_step_two_donacion').submit(function(){
 		var spinner = new Spinner(opts).spin(target);
 		$(this).ajaxSubmit({
@@ -107,6 +120,9 @@ $(function(){
 		return false;
 	});
 
+	/**
+	 * Método para procesar el formulario para recordar el password
+	 */
 	$('#form_forgot_password').submit(function(){
 		var spinner = new Spinner(opts).spin(target);
 		$(this).ajaxSubmit({
@@ -125,7 +141,7 @@ $(function(){
 					$('#messages').addClass('alert-success');
 					$('#messages').html(data.message);
 					$('#messages').css('display', 'block');
-					$('#username').val('');
+					$('#form_forgot_password')[0].reset();
 				}
 			},
 			error: function(data){
@@ -138,6 +154,9 @@ $(function(){
 		return false;
 	});
 
+	/**
+	 * Método para procesar el formulario de registro
+	 */
 	$('#form_new_member').submit(function(){
 		var spinner = new Spinner(opts).spin(target);
 		$(this).ajaxSubmit({
@@ -164,6 +183,9 @@ $(function(){
 		return false;
 	});
 
+	/**
+	 * Método para procesar el formulario de contacto
+	 */
 	$('#formulario_contacto').submit(function(){
 		var spinner = new Spinner(opts).spin(target);
 		$(this).ajaxSubmit({
@@ -176,16 +198,84 @@ $(function(){
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
+					$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
 				} else {
 					spinner.stop();
 					$('#foo').css('display','none');
 					$('#messages').addClass('alert-success');
 					$('#messages').html(data.message);
 					$('#messages').css('display', 'block');
-					$('#inpt_nombre').val('');
-					$('#inpt_telefono').val('');
-					$('#inpt_email').val('');
-					$('#inpt_mensaje').val('');
+					$('#formulario_contacto')[0].reset();
+					$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
+				}
+			},
+			error: function(data){
+				spinner.stop();
+				$('#foo').css('display','none');
+				$('#messages').html(data.errors);
+				$('#messages').css('display', 'block');
+				$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
+			}
+		});
+		return false;
+	});
+
+	/**
+	 * Método para procesar el formulario de becas
+	 */
+	$('#form_solicitud_beca').submit(function(){
+		var spinner = new Spinner(opts).spin(target);
+		$(this).ajaxSubmit({
+			beforeSend: function(){
+				$('#foo').css( 'display', 'block' );
+			},
+			success: function(data){
+				if ( data.success != true ){
+					spinner.stop();
+					$('#foo').css('display','none');
+					$('#messages').html(data.errors);
+					$('#messages').css('display', 'block');
+					$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
+				} else {
+					spinner.stop();
+					$('#foo').css('display','none');
+					$('#messages').addClass('alert-success');
+					$('#messages').html(data.message);
+					$('#messages').css('display', 'block');
+					$('#form_solicitud_beca')[0].reset();
+					$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
+				}
+			},
+			error: function(data){
+				spinner.stop();
+				$('#foo').css( 'display', 'none' );
+				$('#messages').html( data.errors );
+				$('#messages').css( 'display', 'block' );
+				$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
+			}
+		});
+		return false;
+	});
+
+	/**
+	 * Método para procesar el primer paso del formulario corto de voluntarios
+	 */
+	$('#form_nuevo_voluntario').submit(function(){
+		var spinner = new Spinner(opts).spin(target);
+		$(this).ajaxSubmit({
+			beforeSubmit: function(){
+				$('#foo').css('display','block');
+			},
+			success: function(data){
+				if(data.success != true){
+					spinner.stop();
+					$('#foo').css('display','none');
+					$('#messages').html(data.errors);
+					$('#messages').css('display', 'block');
+				}else{
+					spinner.stop();
+					$('#foo').css('display','none');
+					window.location.href = data.redirect;
 				}
 			},
 			error: function(data){
@@ -198,6 +288,75 @@ $(function(){
 		return false;
 	});
 
+	/**
+	 * Método para procesar el segundo paso del formulario corto de voluntarios
+	 */
+	$('#form_continuacion_voluntario').submit(function(){
+		var spinner = new Spinner(opts).spin(target);
+		$(this).ajaxSubmit({
+			beforeSubmit: function(){
+				$('#foo').css( 'display', 'block' );
+			},
+			success: function(data){
+				if(data.success != true ){
+					spinner.stop();
+					$('#foo').css('display','none');
+					$('#messages').html(data.errors);
+					$('#messages').css('display', 'block');
+				}else{
+					window.location.href = data.redirect;
+				}
+			},
+			error: function(data){
+				spinner.stop();
+				$('#foo').css('display','none');
+				$('#messages').html(data.errors);
+				$('#messages').css('display', 'block');
+			}
+		});
+		return false;
+	});
+
+	/**
+	 * Método para procesar el formulario largo de Voluntarios
+	 */
+	$('#form_voluntario_full').submit(function(){
+		var spinner = new Spinner(opts).spin(target);
+		$(this).ajaxSubmit({
+			beforeSend: function(){
+				$('#foo').css( 'display', 'block' );
+			},
+			success: function(data){
+				if ( data.success != true ){
+					spinner.stop();
+					$('#foo').css('display','none');
+					$('#messages').html(data.errors);
+					$('#messages').css('display', 'block');
+					$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
+				} else {
+					spinner.stop();
+					$('#foo').css('display','none');
+					$('#messages').addClass('alert-success');
+					$('#messages').html(data.message);
+					$('#messages').css('display', 'block');
+					$('#form_voluntario_full')[0].reset();
+					$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
+				}
+			},
+			error: function(data){
+				spinner.stop();
+				$('#foo').css( 'display', 'none' );
+				$('#messages').html( data.errors );
+				$('#messages').css( 'display', 'block' );
+				$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
+			}
+		});
+		return false;
+	});
+
+	/**
+	 * Método para procesar un "ME GUSTA" de algún contenido
+	 */
 	$('.like-process').click(function(){
 		var spinner = new Spinner(opts).spin(target);
 		var content_id 		= $(this).attr( 'data-contenido' );
@@ -219,6 +378,60 @@ $(function(){
 				$('#foo').css('display','none');
 				console.log( data.errors );
 			}
+		});
+		return false;
+	});
+
+	/**
+	 * Método para mostrar los combos de ciudades o paises dependiendo el lugar de estudio
+	 */
+	$('#beca_lugar_estudiar').on('change', function(e){
+		var place_id = e.target.value;
+		switch( place_id ){
+			case '1':
+				$.get( 'ajax-beca-dropdown?place_id=' + place_id, function(data){
+					$('#beca_lugar').empty();
+					$('#beca_lugar').css( 'display', 'block' );
+					$('#beca_lugar').append(data);
+				});
+				break;
+			case '2':
+				$.get( 'ajax-beca-dropdown?place_id=' + place_id, function(data){
+					$('#beca_lugar').empty();
+					$('#beca_lugar').css( 'display', 'block' );
+					$('#beca_lugar').append(data);
+				});
+				break;
+		}
+		return false;
+	});
+
+	/**
+	 * Método para obtener las opciones de estados en un combobox dependiendo el id del país
+	 */
+	$('#beca_pais').on('change', function(e){
+		var country_id = e.target.value;
+		$.get('ajax-state?country_id=' + country_id, function(data){
+			$('#beca_estado').empty();
+			$.each(data, function(index, statesObj){
+				$('#beca_estado').append( '<option value="' + statesObj.id_estados + '">' + statesObj.name + '</option>');
+			});
+		});
+		return false;
+	});
+
+	/**
+	 * Método para obtener las ciudades en un combobox dependiendo el id del estado
+	 * @param  {[type]} e){		var state_id      ID del estado
+	 * @return {string}           HTML de las opciones de las ciudades
+	 */
+	$('#beca_estado').on('change', function(e){
+		var state_id = e.target.value;
+		$.get('ajax-city?state_id=' + state_id, function(data){
+			$('#beca_ciudad').empty();
+			$.each(data, function(index, statesObj){
+				$('#beca_ciudad').append( '<option value="' + statesObj.id_ciudades + '">' + statesObj.name + '</option>');
+			});
 		});
 		return false;
 	});

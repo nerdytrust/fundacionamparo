@@ -12,8 +12,6 @@
 */
 
 Route::get( '/', 'HomeController@home' );
-// Route::get( '/', 'HomeController@index' );
-// Route::get( 'home', 'HomeController@home' );
 Route::get( 'login', 'HomeController@index' );
 Route::get( 'salir', 'HomeController@salir' );
 Route::get( 'logout', 'HomeController@logout' );
@@ -55,7 +53,6 @@ Route::get( 'donar/pago-tarjeta', [ 'uses' => 'CoversController@donarTarjeta', '
 Route::get( 'donar/pago-oxxo', [ 'uses' => 'CoversController@donarOxxo', 'as' => 'get.donar/pago-oxxo' ] );
 Route::get( 'donar/pago-spei', [ 'uses' => 'CoversController@donarSpei', 'as' => 'get.donar/pago-spei' ] );
 Route::get( 'gracias', [ 'uses' => 'CoversController@donarThanks', 'as' => 'get.gracias' ] );
-Route::get( 'gracias-2', [ 'uses' => 'CoversController@voluntarioGracias', 'as' => 'get.gracias-2' ] );
 Route::get( 'gracias-3', [ 'uses' => 'CoversController@impulsarGracias', 'as' => 'get.gracias-3' ] );
 Route::get( 'donar-causa', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causa' ] );
 Route::get( 'donar-causa/{id}', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causa' ] )->where( 'id', '[0-9]+' );
@@ -63,23 +60,28 @@ Route::get( 'impulsar', [ 'uses' => 'CoversController@impulsar', 'as' => 'get.im
 Route::get( 'impulsar-causa', [ 'uses' => 'CoversController@impulsarCausa', 'as' => 'get.impulsar-causa' ] );
 Route::get( 'impulsar-causa/{id}', [ 'uses' => 'CoversController@impulsarCausa', 'as' => 'get.impulsar-causa' ] )->where( 'id', '[0-9]+');
 Route::get( 'voluntario', [ 'uses' => 'CoversController@voluntario', 'as' => 'get.voluntario' ] );
-Route::get( 'voluntario-2', [ 'uses' => 'CoversController@voluntarioNext', 'as' => 'get.voluntario-2' ] );
+Route::get( 'voluntario/paso-2', [ 'uses' => 'CoversController@voluntarioNext', 'as' => 'get.voluntario/paso-2' ] );
+Route::get( 'voluntario/gracias', [ 'uses' => 'CoversController@voluntarioGracias', 'as' => 'get.voluntario/gracias' ] );
 Route::get( 'ficha-donador', [ 'uses' => 'CoversController@fichaDonador', 'as' => 'get.ficha-donador' ] );
 Route::get( 'ficha-impulsor', [ 'uses' => 'CoversController@fichaImpulsor', 'as' => 'get.ficha-impulsor' ] );
 Route::get( 'ficha-voluntario', [ 'uses' => 'CoversController@fichaVoluntario', 'as' => 'get.ficha-voluntario' ] );
 Route::get( 'ficha-causas', 'CoversController@fichaCausas' );
 Route::get( 'ficha-causas/{id}', 'CoversController@fichaCausas' )->where( 'id', '[0-9]+' );
 Route::get( 'ficha-noticias', [ 'uses' => 'CoversController@fichaNoticias', 'as' => 'get.ficha-noticias' ] );
-Route::post( 'validar-pago', [ 'uses' => 'CoversController@validarPago', 'as' => 'get.validar-pago' ] );
+Route::get( 'ficha-noticias/{id}', 'CoversController@fichaNoticias' )->where( 'id', '[0-9]+' );
 Route::get( 'gracias-registro', [ 'uses' => 'CoversController@thanksRegistro', 'as' => 'get.gracias-registro' ] );
 
 
 Route::get( 'path_video/{id}', 'StoragePathController@videoStorage' );
 Route::get( 'path_image/{id}/{size}', 'StoragePathController@imgStorage' );
+Route::get( 'ajax-state', 'BecasController@getState' );
+Route::get( 'ajax-city', 'BecasController@getCity' );
+Route::get( 'ajax-beca-dropdown', 'BecasController@getCombos' );
 
 Route::post( 'ajax-moments', 'MuroExitoController@getMoment' );
 
 ##Actions de Formularios
+Route::post( 'validar-pago', 'CoversController@validarPago' );
 Route::post( 'registrar-tu-causa', 'ApoyarCausaController@registrar' );
 Route::post( 'formulario-contacto', 'ContactoController@enviarContacto' );
 Route::post( 'nueva-donacion', 'DonacionesController@nuevaDonacion' );
@@ -88,5 +90,8 @@ Route::post( 'paso-dos-donacion', 'DonacionesController@metodoPago' );
 Route::post( 'enviar-password', 'HomeController@sendPassword' );
 Route::post( 'registrar-usuario', 'HomeController@newMember' );
 Route::post( 'like', 'CoreController@likeProcess' );
-//Route::post( 'donar', 'CoversController@donar' );
+Route::post( 'solicitar-beca', 'BecasController@processGrant' );
+Route::post( 'nuevo-voluntario', 'VoluntariosController@shortVoluntary' );
+Route::post( 'continuar-voluntario', 'VoluntariosController@complementaryVoluntary' );
+Route::post( 'nuevo-voluntario-completo', 'VoluntariosController@longVoluntary' );
 

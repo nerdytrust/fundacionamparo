@@ -21,113 +21,115 @@
 			<section id="contenedor_int">
 				<div class="text-contact">
 					<label class="contact becas" id="vol" for="">
-						<form action="">
-						<h1>ÚNETE A NOSOTROS</h1>
-						<h2>Tu apoyo hace posible continuar con nuestra causa, pasa la voz</h2>
-						<ul class="pasos">
-							<li>
-								<div class="n-vol">
-									<img src="{{ asset( 'images/icon_donadores-vol.png' ) }}" alt="">
-									<span>49,863</span>
-									<span>VOLUNTARIOS</span>
-								</div>
-								<h1>Paso 1</h1>
-								<h2>apoyo</h2>
-								<h3>Selecciona la ciudad y el proyecto que deseas apoyar</h3>
-								<span>
-									Ciudad en la que vives
-									<select name="" id="">
-										<option value="">Distrito Federal</option>
-										<option value=""></option>
-										<option value=""></option>
-									</select>
-								</span>
-								<div class="check c2">
-									<br/>
-									<input type="radio" name="proyect" value="museo" id="museo" required checked>
-									<label for="museo">Museo Amparo</label>			
-									<input type="radio" name="proyect" value="pro" id="pro" required>
-									<label for="pro">Proyecto Roberto Alonso Espinosa</label>
-									<input type="radio" name="proyect" value="amb" id="amb" required>
-									<label for="amb">Ambas</label>
-								</div>
-							</li>
-							<li>
-								<h1>Paso 2</h1>
-								<h2>datos generales</h2>
-								<h3>Ingresa tus datos completos para validar el registro</h3>
-								<input type="text" name="nombre" maxlenght="10" placeholder="Nombre(s)" required>
-								<input type="text" name="apellido" maxlenght="10" placeholder="Apellidos" required>
-								<input type="email" name="mail" autocomplete="off" placeholder="Correo electrónico" required>
-								<input type="number" name="telefono" maxlenght="10" placeholder="Teléfono" required>
-								<div>Fecha de Nacimiento<br/>
-									<select name="" id="" required>
-										<option value="">Día</option>
-										<option value="">1</option>
-										<option value="">2</option>
-										<option value="">3</option>
-										<option value="">4</option>
-									</select>
-									<select name="" id="" required>
-										<option value="">Mes</option>
-										<option value="">Enero</option>
-										<option value="">Febrero</option>
-										<option value="">Marzo</option>
-									</select>
-									<select name="" id="" required>
-										<option value="">Año</option>
-										<option value="">1997</option>
-										<option value="">1996</option>
-										<option value="">1995</option>
-									</select>
-								</div>
-								<div class="check c2">
-									Sexo <br/>								
-									<input type="radio" name="sexo" value="fem" id="fem" required checked>
-									<label for="fem"></label>
-									Femenino
-									<input type="radio" name="sexo" value="mas" id="mas" required>
-									<label for="mas"></label>
-									Masculino
-								</div>
-							</li>
-							<li>
-								<h1>Paso 3</h1>
-								<h2>disponibilidad</h2>
-								<h3>Haznos saber tus tiempos</h3>
-								<span>
-									Periodo en el que puedes ayudar<br/>
-									<select name="" id="" class="period">
-										<option value="">Semanalmente</option>
-										<option value="">Mensualmente</option>
-										<option value="">Bimestral</option>
-									</select>
-								</span>
-								<div class="check c2">
-									Horario<br/>									
-									<input type="radio" name="horario" id="mat" value="mat" required checked>
-									<label for="mat"></label>
-									Matutino
-									<input type="radio" name="horario" value="ves" required id="ves">
-									<label for="ves"></label>
-									Vespertino
-								</div>	
-								<select name="" id="" class="period od">
-									<option value="">Estudiante universitario</option>
-									<option value="">Estudiante universitario</option>
-									<option value="">Estudiante universitario</option>
-								</select>
-								<div class="check-gris">
-									<input type="checkbox" value="None" id="check-verde" name="check">
-									<label for="check-verde"></label>
-									Acepto términos y condiciones
-								</div>
-							</li>
-							<button>Aceptar</button>
-							<button>Cancelar</button>
-							<span class="neces">Es necesario completar el formulario para hacerlo válido</span>
-						</ul>							
-						</form>
+						{{ Form::open( [ 'url' => 'nuevo-voluntario-completo', 'id' => 'form_voluntario_full', 'method' => 'POST', 'role' => 'form', 'autocomplete' => 'off' ] ) }}
+							<div class="alert alert-danger" role="alert" id="messages"></div>
+							<h1>ÚNETE A NOSOTROS</h1>
+							<h2>Tu apoyo hace posible continuar con nuestra causa, pasa la voz</h2>
+							<ul class="pasos">
+								<li>
+									<div class="n-vol">
+										<img src="{{ asset( 'images/icon_donadores-vol.png' ) }}" alt="">
+										<span>{{ $voluntarios }}</span>
+										<span>VOLUNTARIOS</span>
+									</div>
+									<h1>Paso 1</h1>
+									<h2>apoyo</h2>
+									<h3>Selecciona la ciudad y el proyecto que deseas apoyar</h3>
+									<span>
+										Estado en el que vives
+										<select name="estado" id="beca_estado">
+											<option value="">Selecciona un Estado</option>
+											@foreach ( $estados as $estado )
+												<option value="{{ $estado->id_estados }}">{{ $estado->name }}</option>
+											@endforeach
+										</select>
+									</span>
+									<span>
+										Ciudad en la que vives
+										<select name="ciudad" id="beca_ciudad">
+											<option value="">Selecciona una Ciudad</option>
+										</select>
+									</span>
+									<span>
+										Causa que deseas apoyar
+										<select name="causa" id="voluntario_causa">
+											<option value="">Selecciona una Causa</option>
+											@foreach ( $causas as $causa )
+												<option value="{{ $causa->id_causas }}">{{ $causa->titulo }}</option>
+											@endforeach
+										</select>
+									</span>
+								</li>
+								<li class="beca-steps">
+									<h1>Paso 2</h1>
+									<h2>datos generales</h2>
+									<h3>Ingresa tus datos completos para validar el registro</h3>
+									{{ Form::text( 'nombre', Input::old( 'nombre' ), [ 'required' => true, 'maxlenght' => '180', 'placeholder' => 'Nombre(s)' ] ) }}
+									{{ Form::text( 'apellidos', Input::old( 'apellidos' ), [ 'required' => true, 'placeholder' => 'Apellidos', 'maxlength' => '180' ] ) }}
+									{{ Form::email( 'email', Input::old( 'email' ), [ 'placeholder' => 'Correo electrónico', 'required' => true ] ) }}
+									{{ Form::text( 'telefono', Input::old( 'telefono' ), [ 'placeholder' => 'Teléfono', 'required' => true, 'maxlength' => '10' ] ) }}
+									<div class="f3">
+										Fecha de Nacimiento<br/>
+										{{ Form::selectRange( 'birth_day', 1, 31, Helper::getValidDay() ) }}
+										{{ Form::selectMonth( 'birth_month', Helper::getValidMonth() ) }}
+										{{ Form::selectYear( 'birth_year', Helper::getValidYear(15), 1940 ) }}
+									</div>
+									<div class="check c2">
+										Sexo <br/>
+										{{ Form::radio( 'sexo', 1, true, [ 'id' => 'fem' ] ) }}
+										<label for="fem"></label>
+										<span class="label-fake">Femenino</span>
+										{{ Form::radio( 'sexo', 2, false, [ 'id' => 'mas' ] ) }}
+										<label for="mas"></label>
+										<span class="label-fake">Masculino</span>
+									</div>
+								</li>
+								<li class="beca-steps">
+									<h1>Paso 3</h1>
+									<h2>disponibilidad</h2>
+									<h3>Haznos saber tus tiempos</h3>
+									<span>
+										Periodo en el que puedes ayudar<br/>
+										<select name="periodo" id="" class="period">
+											<option value="">Selecciona un periodo</option>
+											@foreach ( $periodos as $periodo )
+												<option value="{{ $periodo->id_periodos }}">{{ $periodo->name }}</option>
+											@endforeach
+										</select>
+									</span>
+									<div class="check c2 schedule-form">
+										Horario<br/>
+										{{ Form::radio( 'turno', 1, true, [ 'id' => 'mat' ] ) }}
+										<label for="mat"></label>
+										<span class="label-fake">
+											Matutino
+										</span>
+										{{ Form::radio( 'turno', 2, false, [ 'id' => 'ves' ] ) }}
+										<label for="ves"></label>
+										<span class="label-fake">
+											Vespertino
+										</span>
+									</div>
+									<span>
+										<br>
+										<select name="tipo_estudiante" id="" class="period od">
+											<option value="">Selecciona una opción</option>
+											@foreach ( $estudiantes as $estudiante )
+												<option value="{{ $estudiante->id_tipo_estudiantes}}">{{ $estudiante->name }}</option>
+											@endforeach
+										</select>
+									</span>
+									<div class="check-gris terms-condions">
+										{{ Form::checkbox( 'terminos', 1, false, [ 'id' => 'check-verde' ] ) }}
+										<label for="check-verde"></label>
+										Acepto términos y condiciones
+									</div>
+								</li>
+								<button>Aceptar</button>
+								<button>Cancelar</button>
+								<span class="neces">Es necesario completar el formulario para hacerlo válido</span>
+							</ul>							
+						{{ Form::close() }}
 					</label>
 				</div><!--termina text-contact-->
 				<div class="adorno_fa">

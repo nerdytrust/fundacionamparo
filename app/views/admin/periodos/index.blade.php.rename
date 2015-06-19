@@ -6,8 +6,9 @@
 			<thead>
 				<tr>
 
-					<td> {{ $columns->id_promedios->label }} </td>
-					<td> {{ $columns->promedio->label }} </td>
+					<td> {{ $columns->id_periodos->label }} </td>
+					<td> {{ $columns->name->label }} </td>
+					<td> {{ $columns->slug->label }} </td>
 
 
 					@include("crud.index-column-buttons")
@@ -21,8 +22,9 @@
 				<tr>
 
 
-					<td>{{ parseToHTML($columns->id_promedios,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->promedio,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->id_periodos,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->name,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->slug,$record,$fk_column) }}</td>
 
 
 					@include("crud.index-buttons")

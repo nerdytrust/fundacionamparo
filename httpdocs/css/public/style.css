@@ -99,7 +99,7 @@ button, input{
 #plc_blck{
 	display: none;
 }
-label.becas ul.pasos li{
+label.becas ul.pasos li {
 	border-bottom: none !important;
 }
 div.titleM{
@@ -552,6 +552,10 @@ span.donas{
 		/*background: url("../../images/sep.png") no-repeat left;*/
 		background: none;  vertical-align: baseline;
 	}
+	#int_busc form {
+		display: inline-block;
+	}
+
 	#int_busc button:hover{
 		color: #beda3e;
 	}
@@ -2404,7 +2408,7 @@ label.contact p:before{
 }
 label.contact select{
 	border: 1px solid #ebebeb;
-	width: 246px;
+	width: 300px;
 	height: 47px;
 	margin-bottom: 20px;
 	color: #7f7f7f;
@@ -2502,21 +2506,36 @@ ul.pasos li:nth-child(3) .c2{
 .n-vol.bec span:nth-child(3){
 	color:#beda3e;
 }
-label.becas ul.pasos li{
+label.becas ul.pasos li {
 	width: 100%;
-	min-height: 257px;
+	min-height: 200px;
 	height: auto;
-	display: block;
 	border-bottom: 1px solid #ebebeb;
 	list-style: none;
-	margin-bottom: 4%;
+	/*margin-bottom: 4%;*/
 	position: relative;
-	/*background: red;*/
-	/*overflow: hidden;*/
 }
+label.becas ul.pasos li.donde-quieres {
+	margin-bottom: 0 !important;
+}
+
+.beca-steps {
+	margin-top: 45px;
+}
+
+.dropdown-dinamico {
+	display: none;
+	min-height: inherit !important;
+}
+
+.form-control-container input[type="text"]{
+	width: 100% !important;
+}
+
 select{
 	border-radius: 0;
 }
+
 label.becas ul.pasos li:nth-child(3){
 	margin-bottom: 0%;
 	/*background: red;*/
@@ -2574,8 +2593,14 @@ ul.pasos div select:last-child{margin-right: 0 !important;}
 
 
 label.becas ul.pasos div:last-child{
+	/*padding-left: 1.5%;*/
+	width: 45%;
+}
+
+label.becas ul.pasos div.terms-condions:last-child{
 	padding-left: 1.5%;
 }
+
 ul.pasos li:nth-of-type(3)>span{
 	width: auto;
 }
@@ -2634,11 +2659,13 @@ span.check input[type="radio"]:checked + label:before,
 div.check input[type="radio"]:checked + label:before{
 	background: url("../../images/checked.png");
 }
+
 div.check.c2 input[type="radio"]:checked + label:before{
 	background: url("../../images/checked2.png");
 }
+
 select.period{
-	width: 457px !important;
+	width: 300px !important;
 }
 .od{
 	display: block;
@@ -4916,6 +4943,7 @@ label.contact textarea{
 .schedule-form {
 	margin-top: 20px;
 	padding-left: 1.5%;
+	width: 310px !important;
 }
 
 

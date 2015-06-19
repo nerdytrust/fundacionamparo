@@ -6,18 +6,34 @@
 	
 <div class="row">
 	<div class="col-xs-2 text-right bg-primary h4">
-		{{ Form::label($columns->id_promedios->input, $columns->id_promedios->label) }}
+		{{ Form::label($columns->id_impulsadas->input, $columns->id_impulsadas->label) }}
 	</div>
 	<div class="col-xs-10 h4">
-		{{ parseToHTML($columns->id_promedios,$record,$fk_column) }}
+		{{ parseToHTML($columns->id_impulsadas,$record,$fk_column) }}
 	</div>
 </div>
 <div class="row">
 	<div class="col-xs-2 text-right ">
-		{{ Form::label($columns->promedio->input, $columns->promedio->label) }}
+		{{ Form::label($columns->id_causas->input, $columns->id_causas->label) }}
 	</div>
 	<div class="col-xs-10 ">
-		{{ parseToHTML($columns->promedio,$record,$fk_column) }}
+		{{ parseToHTML($columns->id_causas,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->email->input, $columns->email->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->email,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->mostrar_perfil->input, $columns->mostrar_perfil->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->mostrar_perfil,$record,$fk_column) }}
 	</div>
 </div>
 <div class="row">

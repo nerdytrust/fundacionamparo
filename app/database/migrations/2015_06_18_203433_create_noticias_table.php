@@ -15,9 +15,12 @@ class CreateNoticiasTable extends Migration {
 		Schema::create('noticias', function(Blueprint $table)
 		{
 			$table->integer('id_noticias', true);
-			$table->string('titulo', 100)->nullable();
-			$table->text('descripcion')->nullable();
+			$table->string('titulo', 180);
+			$table->text('contenido');
+			$table->string('extracto', 180)->nullable();
 			$table->text('imagen')->nullable();
+			$table->date('fecha_publicacion');
+			$table->bigInteger('me_gusta')->default(0);
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
 			$table->timestamps();

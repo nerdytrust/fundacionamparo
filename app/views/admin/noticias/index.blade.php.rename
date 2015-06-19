@@ -6,10 +6,10 @@
 			<thead>
 				<tr>
 
-					<td> {{ $columns->id_noticias->label }} </td>
 					<td> {{ $columns->titulo->label }} </td>
-					<td> {{ $columns->descripcion->label }} </td>
-					<td> {{ $columns->imagen->label }} </td>
+					<td> {{ $columns->extracto->label }} </td>
+					<td> {{ $columns->fecha_publicacion->label }} </td>
+					<td> {{ $columns->me_gusta->label }} </td>
 
 
 					@include("crud.index-column-buttons")
@@ -23,10 +23,10 @@
 				<tr>
 
 
-					<td>{{ parseToHTML($columns->id_noticias,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->titulo,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->descripcion,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->imagen,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->extracto,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->fecha_publicacion,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->me_gusta,$record,$fk_column) }}</td>
 
 
 					@include("crud.index-buttons")

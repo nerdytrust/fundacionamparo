@@ -1,0 +1,147 @@
+@extends("crud.layout-show")
+
+@section("form")
+
+	
+	
+<div class="row">
+	<div class="col-xs-2 text-right bg-primary h4">
+		{{ Form::label($columns->id_becas->input, $columns->id_becas->label) }}
+	</div>
+	<div class="col-xs-10 h4">
+		{{ parseToHTML($columns->id_becas,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->lugar_estudio->input, $columns->lugar_estudio->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->lugar_estudio,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->id_paises->input, $columns->id_paises->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->id_paises,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->id_estados->input, $columns->id_estados->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->id_estados,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->id_ciudades->input, $columns->id_ciudades->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->id_ciudades,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->nombre->input, $columns->nombre->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->nombre,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->apellidos->input, $columns->apellidos->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->apellidos,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->email->input, $columns->email->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->email,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->telefono->input, $columns->telefono->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->telefono,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->nacimiento->input, $columns->nacimiento->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->nacimiento,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->sexo->input, $columns->sexo->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->sexo,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->escuela->input, $columns->escuela->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->escuela,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->turno->input, $columns->turno->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->turno,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->promedio->input, $columns->promedio->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->promedio,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->motivo->input, $columns->motivo->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->motivo,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->otorgada->input, $columns->otorgada->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->otorgada,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->rechazada->input, $columns->rechazada->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->rechazada,$record,$fk_column) }}
+	</div>
+</div>
+
+@stop
+
+
+

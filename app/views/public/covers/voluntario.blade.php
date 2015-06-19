@@ -12,7 +12,8 @@
 				<p>Vive directamente la experiencia y ayúdanos a seguir adelante.</p>
 				<div class="line"></div>
 				<div class="scN" id="style-3">
-					<form action="{{ URL::to( '/voluntario-2' ) }}">
+					{{ Form::open( [ 'url' => 'nuevo-voluntario', 'method' => 'POST', 'id' => 'form_nuevo_voluntario', 'autocomplete' => 'off', 'role' => 'form' ] ) }}
+						<div class="alert alert-danger" role="alert" id="messages"></div>
 						<p>¿En qué causa nos quieres ayudar?</p>
 						<label for="" class="vol">
 							<select name="causa_voluntario" id="">
@@ -22,16 +23,16 @@
 									@endforeach
 								@endif
 							</select>
-							<p>¿Cómo puedes ayudar?</p>
-							<select name="" id="">
-								<option value="">Capacitación</option>
-								<option value=""></option>
-								<option value=""></option>
+							<p>¿Cómo puedes ayudar?</p>							
+							<select name="tipo_ayuda" id="tipo_ayuda">
+								@foreach ( $ayudas as $ayuda )
+									<option value="{{ $ayuda->id_tipo_ayudas }}">{{ $ayuda->name }}</option>
+								@endforeach
 							</select>
-							<input type="submit" value="Siguiente" onclick="location.href='{{ URL::to( '/voluntario-2' ) }}';">
+							<input type="submit" value="Siguiente">
 						</label>
-					</form>
-					<a href="{{ URL::to( '/faqs' ) }}">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></a>
+					{{ Form::close() }}
+					<a href="{{ URL::to( 'faqs' ) }}">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></a>
 				</div><!--termina scN-->
 			</div>
 		</div>

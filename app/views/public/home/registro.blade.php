@@ -16,15 +16,14 @@
 						{{ Form::email( 'email', Input::old( 'email' ), [ 'id' => 'email_input', 'class' => 'r', 'placeholder' => 'Correo electrónico', 'required' => true ] ) }}
 						{{ Form::password( 'password', [ 'id' => 'password_input', 'class' => 'r', 'required' => true, 'placeholder' => 'Contraseña' ] ) }}
 						{{ Form::password( 'password_confirmation', [ 'id' => 'repassword_input', 'class' => 'r', 'required' => true, 'placeholder' => 'Repetir contraseña' ] ) }}
-						<select name="" id="">
-							<option value="">Estado</option>
-							<option value=""></option>
-							<option value=""></option>
+						<select name="registro_estado" id="beca_estado">
+							<option value="0">Estado</option>
+							@foreach ( $estados as $estado )
+								<option value="{{ $estado->id_estados }}">{{ $estado->name }}</option>
+							@endforeach
 						</select>
-						<select name="" id="">
-							<option value="">Ciudad</option>
-							<option value=""></option>
-							<option value=""></option>
+						<select name="registro_ciudad" id="beca_ciudad">
+							<option value="0">Ciudad</option>
 						</select>
 						<div class="check-verde">
 							{{ Form::checkbox( 'terminos', 1, false, [ 'id' => 'check-verde' ] ) }}

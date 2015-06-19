@@ -14,7 +14,7 @@
 		 							<div class="azul_bull"></div>
 		 							<div class="nar_bull"></div>
 		 						</section>
-								<span class="mio">
+								<span class="{{ $class }}">
 									<span id="name">{{ $donador->displayName }}<b>{{ $donador->city }}</b>
 										<span><button></button></span>
 									</span>							

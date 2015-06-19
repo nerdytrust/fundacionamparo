@@ -64,8 +64,22 @@ class CoversController extends BaseController {
 		return View::make( 'public.covers.ficha_impulsor' );
 	}
 
-	public function fichaNoticias(){
-		return View::make( 'public.covers.ficha_noticias' );
+	/**
+	 * Método para mostrar el contenido de la noticia en una ficha
+	 * @param  integer $id_noticia ID Noticia
+	 * @return Vista de la ficha de la noticia
+	 */
+	public function fichaNoticias( $id_noticia = null ){
+		if ( ! isset( $id_noticia ) || empty( $id_noticia ) )
+			return Redirect::to( 'home' );
+
+		$noticia = Noticias::find( $id_noticia );
+		if ( empty( $noticia ) )
+			return Redirect::to( 'home' );
+
+		return View::make( 'public.covers.ficha_noticias' )->with( [
+			'noticia'	=> $noticia
+		] );
 	}
 
 	public function fichaVoluntario(){
@@ -96,18 +110,31 @@ class CoversController extends BaseController {
 		return View::make( 'public.covers.impulsar_gracias' );
 	}
 
+	/**
+	 * Método para mostrar la vista del formulario corto de Voluntarios
+	 * @return
+	 */
 	public function voluntario(){
 		$causas = Causas::all();
 		return View::make( 'public.covers.voluntario' )->with( [ 
-			'causas' => $causas
+			'causas' => $causas,
+			'ayudas' => TipoAyudas::select( 'id_tipo_ayudas', 'name' )->get()
 		] );
 	}
 
 	public function voluntarioNext(){
+		$voluntario = Session::get( 'voluntario' );
+		if ( ! isset( $voluntario ) )
+			return Redirect::to( 'voluntario' );
+
 		return View::make( 'public.covers.voluntario_2' );
 	}
 
 	public function voluntarioGracias(){
+		$voluntario = Session::get( 'voluntario' );
+		if ( ! isset( $voluntario ) )
+			return Redirect::to( 'voluntario' );
+		
 		return View::make( 'public.covers.voluntario_gracias' );	
 	}
 
@@ -212,6 +239,10 @@ class CoversController extends BaseController {
 		return View::make( 'public.covers.donar_gracias' );
 	}
 
+	/**
+	 * Método para mostrar la pantalla de gracias al terminar el registro manual
+	 * @return
+	 */
 	public function thanksRegistro(){
 		return View::make( 'public.covers.gracias_registro' );
 	}

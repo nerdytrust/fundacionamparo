@@ -70,7 +70,7 @@ class Noticias extends \Crud {
         // ["first_name" => "text"] 
         // text,hidden,textarea,password,digit,file,email,title
         //
-        "inputs"    => ["imagen" => "image"],
+        "inputs"    => [ "imagen" => "image" ],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
@@ -88,7 +88,7 @@ class Noticias extends \Crud {
         // if you can change the columns and inputs you will go to model
         // for example users_notes go to app/models/UsersNotes.php
         //
-        //"default_tabs" => ["notes","logs"],
+        "default_tabs" => [],
         //
         // Validate inputs
         // Rules by column
@@ -107,16 +107,16 @@ class Noticias extends \Crud {
         "index"     => [],
         "show"      => [],
 
-        // "not_in_create" => ["created_at","updated_at"],
-        // "not_in_edit"   => ["created_at","updated_at"],
-        // "not_in_index"  => ["created_at","updated_at"],
-        // "not_in_show"   => ["created_at","updated_at"],
+        "not_in_create" => [ 'me_gusta', 'created_by', 'updated_by', 'created_at', 'updated_at' ],
+        "not_in_edit"   => [ 'me_gusta', 'created_by', 'updated_by', 'created_at', 'updated_at' ],
+        "not_in_index"  => [ 'id_noticias', 'contenido', 'imagen', 'created_by', 'updated_by', 'created_at', 'updated_at' ],
+        "not_in_show"   => [ 'created_by', 'updated_by', 'created_at', 'updated_at' ],
 
         //
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
+        "btn_in_index"  => [ "create", "edit", "show", "delete", "search", "advance-search" ],
         // "btn_in_show"   => ["print","edit","cancel"],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],

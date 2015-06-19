@@ -1,5 +1,6 @@
 <div id="meenus">
 	{{ Session::forget('donacion'); }}
+	{{ Session::forget('voluntario'); }}
 	<header>
 		<div id="logo">
 			<a href="{{ URL::to('/') }}">
@@ -62,10 +63,12 @@
 		<div id="int_busc">
 			@if( isset( $header_donadores ) )
 				<label for="">
-					<select name="" id="">
-						<option value="">Filtrar por donador</option>
-						<option value="">Filtrar por voluntarios</option>
-					</select>
+					{{ Form::open( [ 'url' => 'donadores', 'method' => 'GET', 'autocomplete' => 'off', 'role' => 'form' ] ) }}
+						<select name="filtro" id="" onchange='this.form.submit()'>
+							<option value="donador">Filtrar por donador</option>
+							<option value="voluntario">Filtrar por voluntarios</option>
+						</select>
+					{{ Form::close() }}
 				</label>
 				<button>Todos</button>
 			@endif

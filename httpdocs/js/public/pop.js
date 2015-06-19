@@ -45,11 +45,7 @@
 			$(".caja_fca_usu, .donador_clas, .impulsor_clas, .voluntario_clas").click(function(){
 				window.location = 'ficha-donador';//este lleva a las fichas pero ya externas
 				return false;
-			}); 
-			$(".caja_fca2, #txt_noticia h1, #txt_noticia h3").click(function(){
-				window.location = 'ficha-noticias';//este lleva a las fichas pero ya externas
-				return false;
-			}); 
+			});
 			
 		    /*$(".txt_int, #causa1, #causa2, #causa3, #causa4").click(function(){
 		        $("#blanco1").slideToggle("slow");

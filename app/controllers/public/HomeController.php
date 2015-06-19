@@ -116,7 +116,9 @@ class HomeController extends BaseController {
 	 * @return
 	 */
 	public function registro() {
-		return View::make( 'public.home.registro' );
+		return View::make( 'public.home.registro' )->with( [
+			'estados' => Estados::where( 'id_paises', 142 )->get()
+		] );
 	}
 
 	/**
