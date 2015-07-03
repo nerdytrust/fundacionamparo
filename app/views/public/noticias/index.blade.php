@@ -37,7 +37,7 @@
 										<a href="{{ URL::to( 'ficha-noticias/' . $noticia->id_noticias ) }}" class="black-link"><h1>{{ $noticia->titulo }}</h1></a>
 										<h2>{{ $noticia->fecha_publicacion }}</h2>
 										@if ( $noticia->extracto )
-											<p>Del 24 al 26 de junio se llevó a cabo el evento” “Dientes limpios, Dientes Sanos”; que tiene como principal objetivo la  aplicación de flúor a todos los niños, niñas y adolescentes.</p>
+											<p>{{ Str::limit( $noticia->extracto, 180 ) }}</p>
 										@else
 											<p>{{ Str::limit( $noticia->contenido, 180 ) }}</p>
 										@endif

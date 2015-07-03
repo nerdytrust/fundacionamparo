@@ -131,7 +131,13 @@ class HomeController extends BaseController {
 		if ( ! isset( $s ) || empty ( $s ) )
 			$resultados = null;
 
-		$resultados = $s;
+		$resultados = DB::table( 'noticias' )
+				->where( 'titulo',    'LIKE', "%$s%" )
+				->orWhere( 'contenido', 'LIKE', "%$s%" )
+				->orWhere( 'extracto',  'LIKE', "%$s%" )
+				->select( '*' )
+				->get();
+		
 		return View::make( 'public.home.resultados' )->with( [
 			'resultados' => $resultados
 		] );
