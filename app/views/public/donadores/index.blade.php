@@ -7,12 +7,30 @@
 			<section id="contenedor_int_usuarios">
 				<div id="caja_aporta_usuarios" style="display:inline-block">
 					@if ( $resultado )
-						@foreach ( $resultado as $donador )
+						@foreach ( $resultado as $key => $donador )
 							<article class="caja_fca_usu">
 								<section class="bull_color">
-		 							<div class="ver_bull"></div>
-		 							<div class="azul_bull"></div>
-		 							<div class="nar_bull"></div>
+
+									@if (isset( $type[$key]['donador']) )
+										<div class="ver_bull" title="Donador"></div>
+									@endif
+									@if ( isset($type[$key]['voluntario']) )
+										<div class="nar_bull" title="Voluntario"></div>
+									@endif
+									@if ( isset($type[$key]['impulsor']) )
+										<div class="nar_bull" title="Impulsor"></div>
+									@endif
+
+									@if (isset( $type['all']['donador']) )
+										<div class="ver_bull" title="Donador"></div>
+									@endif
+									@if ( isset($type['all']['voluntario']) )
+										<div class="nar_bull" title="Voluntario"></div>
+									@endif
+									@if ( isset($type['all']['impulsor']) )
+										<div class="nar_bull" title="Impulsor"></div>
+									@endif
+									
 		 						</section>
 								<span class="{{ $class }}">
 									<span id="name">{{ $donador->displayName }}<b>{{ $donador->city }}</b>

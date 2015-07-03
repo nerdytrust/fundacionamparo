@@ -65,12 +65,15 @@
 				<label for="">
 					{{ Form::open( [ 'url' => 'donadores', 'method' => 'GET', 'autocomplete' => 'off', 'role' => 'form' ] ) }}
 						<select name="filtro" id="" onchange='this.form.submit()'>
-							<option value="donador">Filtrar por donador</option>
-							<option value="voluntario">Filtrar por voluntarios</option>
+							<option value="">Filtrar</option>
+							<option value="donador" {{ (isset($_GET['filtro']) && $_GET['filtro'] == 'donador') ? 'selected' : '' }}>Filtrar por donador</option>
+							<option value="voluntario" {{ (isset($_GET['filtro']) && $_GET['filtro'] == 'voluntario') ? 'selected' : '' }}>Filtrar por voluntarios</option>
+							<option value="impulsadas" {{ (isset($_GET['filtro']) && $_GET['filtro'] == 'impulsadas') ? 'selected' : '' }}>Filtrar por impulusor</option>
 						</select>
+						
 					{{ Form::close() }}
 				</label>
-				<button>Todos</button>
+				<a href="donadores"><button>Todos</button></a>
 			@endif
 			{{ Form::open( [ 'url' => 'resultados', 'method' => 'get', 'id' => 'formulario_buscador' ] ) }}
 				<input name="s" type="text" placeholder="Buscar">
