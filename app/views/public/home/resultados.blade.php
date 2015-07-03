@@ -37,7 +37,7 @@
 				 					</article>
 				 					<div id="txt_noticia">
 										<a href="{{ URL::to( 'ficha-noticias/' . $noticia->id_noticias ) }}" class="black-link"><h1>{{ $noticia->titulo }}</h1></a>
-										<h2>{{ $noticia->fecha_publicacion }}</h2>
+										<h2>{{ date("d M Y",strtotime($noticia->fecha_publicacion)) }}</h2>
 										@if ( $noticia->extracto )
 											<p>{{ Str::limit( $noticia->extracto, 180 ) }}</p>
 										@else
