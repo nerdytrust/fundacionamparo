@@ -1391,6 +1391,7 @@ figure.cauf>span{
 }
 		
 @media screen and (max-width: 640px) {
+	.check-gris{width: 90% !important;}
 	#style-4{
 		/*background: orange;*/
 		height: auto !important;
