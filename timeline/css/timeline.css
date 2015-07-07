@@ -1,0 +1,383 @@
+body, html{
+  width: 100%;
+  height: 100%;
+}
+
+.container-fluid{
+  height: 100% !important;
+}
+.slider, .row{
+  height: 100% !important;
+}
+.flexslider{
+  height: 100% !important;
+}
+.flex-viewport{
+  height: 100% !important;
+}
+.flexslider .slides > li{
+  height: 100% !important;
+}
+.flexslider .slides{
+  height: 100% !important;
+}
+.flexslider .slides img{
+  width: auto !important;
+  min-width: 100% !important;
+   height: 100% !important;
+}
+@font-face {
+  font-family: 'flexslider-icon';
+  src: url('fonts/flexslider-icon.eot');
+  src: url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('fonts/flexslider-icon.woff') format('woff'), url('fonts/flexslider-icon.ttf') format('truetype'), url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* ====================================================================================================================
+ * RESETS
+ * ====================================================================================================================*/
+.flex-container a:hover,
+.flex-slider a:hover,
+.flex-container a:focus,
+.flex-slider a:focus {
+  outline: none;
+}
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+/* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+.flexslider {
+  margin: 0;
+  padding: 0;
+}
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+}
+.flexslider .slides:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+html[xmlns] .flexslider .slides {
+  display: block;
+}
+* html .flexslider .slides {
+  height: 1%;
+}
+.no-js .flexslider .slides > li:first-child {
+  display: block;
+}
+/* ====================================================================================================================
+ * DEFAULT THEME
+ * ====================================================================================================================*/
+.flexslider {
+  margin: 0 0 0px;
+  background: #ffffff;
+  border: 0px solid #ffffff;
+  position: relative;
+  zoom: 1;
+}
+.flexslider .slides {
+  zoom: 1;
+}
+.flexslider .slides img {
+  height: auto;
+}
+.flex-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.loading .flex-viewport {
+  max-height: 300px;
+}
+.carousel li {
+  margin-right: 5px;
+}
+.flex-direction-nav {
+  *height: 0;
+}
+.flex-direction-nav a {
+  text-decoration: none;
+  display: block;
+  width: 34px;
+  height: 60px;
+  margin: -20px 0 0;
+  position: absolute;
+  top: 10%;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 1;
+  cursor: pointer;
+}
+.flex-direction-nav a:before {
+  font-family: "flexslider-icon";
+  font-size: 40px;
+  display: inline-block;
+  /*content: '<';*/
+  content: "";
+  color: red;
+  background: url("../images/flechas.png")no-repeat left center;
+  height: 60px;
+  width: 35px;
+}
+.flex-direction-nav a.flex-next:before {
+  /*content: '>';*/
+  content: "";
+  background: url("../images/flechas.png")no-repeat right center;
+  height: 60px;
+  width: 35px;
+}
+.flex-direction-nav .flex-prev {
+  left: 8%;
+  opacity: 0.7;
+}
+.flex-direction-nav .flex-next {
+  left: 11%;
+}
+
+.flexslider:hover .flex-direction-nav .flex-prev:hover {
+  opacity: 1;
+}
+.flexslider:hover .flex-direction-nav .flex-next {
+  opacity: 0.7;
+  right: 10px;
+}
+.flexslider:hover .flex-direction-nav .flex-next:hover {
+  opacity: 1;
+}
+.flex-direction-nav .flex-disabled {
+  opacity: 0!important;
+  filter: alpha(opacity=0);
+  cursor: default;
+}
+.controls-ol{
+ 
+  position: absolute;
+  top: 85%;
+  z-index: 1;
+}
+.controls-ol .ct{
+  background: url("../images/flechas2.png")no-repeat left center;
+  width: 20px;
+  height: 38px;
+}
+.controls-ol .ct2{
+  background: url("../images/flechas2.png")no-repeat right center;
+  width: 20px;
+  height: 38px;
+}
+.controls-ol p{
+  color: #fff;
+  margin-top: 0.5%;
+}
+.flex-control-nav {
+  width: 100%;
+  position: absolute;
+  top: 75%;
+  text-align: left;
+  background: transparent;
+  height: auto;
+}
+.flex-control-nav::before{
+  content: "";
+  position: absolute;
+  top: 37%;
+  width: 99.9%;
+  left: 0;
+  background-color: #bfda3f;
+  height: 2px;
+  color: #fff;
+}
+.flex-control-nav li {
+  margin: 0 6px;
+  display: inline-block;
+  zoom: 1;
+  display: inline-table;
+}
+.flex-control-paging li a {
+  width: 30px;
+  height: 0px;
+  display: table;
+  /*background: #bfda3f;*/
+  cursor: pointer;
+  /*text-indent: -9999px;*/
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+transform: rotate(-90deg);
+color: #fff;
+text-align: right;
+vertical-align: middle;
+}
+.flex-control-nav li::after{
+  position: relative;
+  top: -22px;
+  left: 15px;
+  content: "|";
+  color: #bfda3f;
+  font-size: 10px;
+  font-weight: bolder;
+}
+
+.flex-control-paging li a:hover {
+  text-decoration: none;
+  }
+.flex-control-paging li a.flex-active {
+  background: url("../images/circle.png")no-repeat 30%;
+  cursor: default;
+  width: 45px;
+  height: 28px;
+  font-size: 18px;
+  font-weight: bolder;
+  text-align: right;
+  line-height: 28px;
+  /*background-position-x: 30%;*/
+}
+.flex-control-thumbs {
+  margin: 5px 0 0;
+  position: static;
+  overflow: hidden;
+}
+.flex-control-thumbs li {
+  width: 25%;
+  float: left;
+  margin: 0;
+}
+.flex-control-thumbs img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: .7;
+  cursor: pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.flex-control-thumbs img:hover {
+  opacity: 1;
+}
+.flex-control-thumbs .flex-active {
+  opacity: 1;
+  cursor: default;
+}
+/* ====================================================================================================================
+ * mios
+ * ====================================================================================================================*/
+ .cuadro{
+      position: absolute;
+      top: 18%;
+    }
+    iframe{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: red;
+    }
+    h1{
+      font-size: 2.8vw;
+      color: #fff;
+    }
+    h2{
+      font-size: 1.5vw;
+      color: #fff;
+    }
+    b{
+      display: block;
+      color: #bfda3f;
+    }
+/* ====================================================================================================================
+ * RESPONSIVE
+ * ====================================================================================================================*/
+ @media screen and (min-width: 2000px){
+  .flex-control-paging li a.flex-active{
+    background-size: contain;
+    width: 55px;
+  height: 46px;
+  }
+ }
+
+ @media screen and (min-width: 1024px){
+  .flex-direction-nav .flex-next {
+    left: 13%;
+  }
+ }
+
+ @media screen and (max-width: 768px){
+   iframe{
+    height: 100%;
+  }
+  .controls-ol, .flex-control-nav{
+    display: none;
+  }
+  
+  .cuadro {    
+    top: 61% !important;
+    z-index: 1000 !important;
+  background: #000 !important;
+     /* opacity: .8;*/
+  }
+  .flexslider .slides > li{
+    background: #000;
+    overflow: hidden;
+  }
+  .flexslider .slides img{
+     /*width: 100% !important;
+     height: auto !important;*/
+       width: 195% !important;
+      height: auto !important;
+      left: -50%;
+      position: relative;
+  }
+  h1 {
+    font-size: 6.8vw;
+  }
+  h2 {
+    font-size: 4.5vw;
+  }
+ }
+ @media screen and (max-width: 640px){
+  .flex-direction-nav a{
+    width: 20px;
+    height: 15px;
+    top: 21%;
+  }
+  .flex-direction-nav a:before, .flex-direction-nav a.flex-next:before {
+    width: 20px;
+    height: 15px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .flex-direction-nav .flex-prev {
+    opacity: 1;
+    left: 10px;
+  }
+  .flex-direction-nav .flex-next {
+    opacity: 1;
+    right: 10px;
+  }
+}
+

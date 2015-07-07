@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <link href="video-js.css" rel="stylesheet" type="text/css">
+  <!-- video.js must be in the <head> for older IEs to work. -->
+  <script src="video.js"></script>
+	<style>
+	body, html{
+	  width: 100%;
+	  height: 100%;
+	  margin: 0;
+	  padding: 0;
+	}
+	#cont-vid{
+		width: 100%;
+		height: 100%;
+		display: block;
+		background: #000;
+		overflow: hidden;
+	}
+		#cont-vid video{
+			width: 100%;
+			height: 100%;
+			display: inline-block;
+			position: relative;		
+		}
+		.video-js{
+			width: 100% !important;
+			height: 100% !important;
+		}
+		.vjs-poster{
+			width: 100%;
+			height: 100%;
+			background-size: inherit;
+		}
+		@media screen and (min-width: 2000px){
+  .vjs-poster{
+    background-size: cover !important;
+  }
+ }
+
+	</style>
+</head>
+<body>
+	<div id="cont-vid">
+	<video loop preload="auto" poster="poster.png" controls  class="video-js vjs-default-skin" data-setup="{}">
+			<source src="../../httpdocs/video/video.mp4">
+		</video>
+	</div> 
+
+</body>
+</html>
