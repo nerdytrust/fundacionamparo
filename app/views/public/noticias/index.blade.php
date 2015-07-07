@@ -55,9 +55,10 @@
 							</div>
 						@endforeach
 					@endif
+					<ul id="fnews"></ul>
 				</div>
 				<div id="contenedor_btn" >
-					<button>Cargar más noticias</button>
+					<button id="load-news">Cargar más noticias</button>
 				</div>
 				<div class="adorno_fa">
  					<img src="{{ asset( 'images/adorno_fa.png' ) }}" alt="">

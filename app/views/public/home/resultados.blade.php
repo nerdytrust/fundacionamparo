@@ -57,6 +57,7 @@
 							</div>
 
 					@endforeach
+					<ul id="fnews"></ul>
 					<!--
 						<div id="cja_noticia">
 							<div id="caja_aporta2">
@@ -144,8 +145,13 @@
 			 				</div>
 						</div>
 					</div>-->
+				
+    					<script >
+    							var s = '{{ Input::get( 's' ); }}';
+    					</script>
+				
 					<div id="contenedor_btn" >
-						<button>Cargar más noticias</button>
+						<button id="load-news-search">Cargar más noticias</button>
 					</div>
 				@else
 					<div class="txt_fundacion3">

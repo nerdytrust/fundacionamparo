@@ -25,6 +25,8 @@ Route::get( 'como-ayudar', [ 'uses' => 'AyudarController@index', 'as' => 'get.co
 Route::get( 'apoyamos-tu-causa', [ 'uses' => 'ApoyarCausaController@index', 'as' => 'get.apoyamos-tu-causa' ] );
 Route::get( 'causas-vivas', [ 'uses' => 'CausasVivasController@index', 'as' => 'get.causas-vivas' ] );
 Route::get( 'noticias', [ 'uses' => 'NoticiasController@index', 'as' => 'get.noticias' ] );
+Route::get( 'carga-noticias/{limit}/{offset}/', [ 'uses' => 'NoticiasController@carga_noticias', 'as' => 'get.noticias' ] )->where( array('limit' => '[0-9]+', 'offset' => '[0-9]+'));
+Route::get( 'carga-noticias-resultado/{limit}/{offset}/{s}', [ 'uses' => 'NoticiasController@carga_noticias_resultado', 'as' => 'get.noticias' ] )->where( array('limit' => '[0-9]+', 'offset' => '[0-9]+', 's' => '[a-zA-Z0-9]+'));
 Route::get( 'faqs', [ 'uses' => 'FaqsController@index', 'as' => 'get.faqs' ] );
 Route::get( 'donadores', [ 'uses' => 'DonadoresController@index', 'as' => 'get.donadores' ] );
 Route::get( 'donadores/{filtro}', [ 'uses' => 'DonadoresController@index', 'as' => 'get.donadores' ] )->where( 'filtro', '[a-zA-Z]+' );

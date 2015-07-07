@@ -132,9 +132,11 @@ class HomeController extends BaseController {
 			$resultados = null;
 
 		$resultados = DB::table( 'noticias' )
+		        ->limit(6)->offset(0)
 				->where( 'titulo',    'LIKE', "%$s%" )
 				->orWhere( 'contenido', 'LIKE', "%$s%" )
 				->orWhere( 'extracto',  'LIKE', "%$s%" )
+				->orderBy( 'fecha_publicacion','desc' )
 				->select( '*' )
 				->get();
 		

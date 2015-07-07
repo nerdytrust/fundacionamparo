@@ -435,4 +435,62 @@ $(function(){
 		});
 		return false;
 	});
+
+	/**
+	 * Método para cargar mas noticias
+	 */
+	 var offset = 6;
+	$('#load-news').click(function(){
+		var spinner;
+
+		$.ajax({
+			url: 'carga-noticias/6/'+offset,
+			dataType: 'json',
+			beforeSend: function(){
+				 spinner = new Spinner(opts).spin(target);
+				$('#foo').css( 'display', 'block' );
+				offset = offset + 6;
+			},
+			success: function(data){
+				if ( data.success ){
+					spinner.stop();
+					$('#foo').css('display','none');
+					$( "#fnews" ).before( data.noticias );
+				}
+			},
+			error: function(data){
+				spinner.stop();
+				$('#foo').css('display','none');
+				console.log( data.errors );
+			}
+		});
+		return false;
+	});
+
+	$('#load-news-search').click(function(){
+		var spinner;
+
+		$.ajax({
+			url: 'carga-noticias-resultado/6/'+offset+'/'+s,
+			dataType: 'json',
+			beforeSend: function(){
+				 spinner = new Spinner(opts).spin(target);
+				$('#foo').css( 'display', 'block' );
+				offset = offset + 6;
+			},
+			success: function(data){
+				if ( data.success ){
+					spinner.stop();
+					$('#foo').css('display','none');
+					$( "#fnews" ).before( data.noticias );
+				}
+			},
+			error: function(data){
+				spinner.stop();
+				$('#foo').css('display','none');
+				console.log( data.errors );
+			}
+		});
+		return false;
+	});
 });
