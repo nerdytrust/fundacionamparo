@@ -232,6 +232,95 @@ class CoversController extends BaseController {
 	}
 
 	/**
+	 * Método para mostrar el resultante del API Paypal
+	 * @return
+	 */
+
+	private $_apiContext;
+
+	private $_ClientId     = 'Ab_PyKePqSHu26uPKjtbhBVYq4iB5bx0dZAX_N9D0dYB_1Qzh3kB8O97oOWE54CqTNGmd6kcV8l4Rha2';
+    private $_ClientSecret = 'EDAp5eZ9kqpYl9R7KuBPhxfY7yOCmJv00oJ5VHM4ufKgPmiEKF_Uf0Lfm57p2kbITmG65B0LnSZ_JtLj';
+
+	public function donarPaypal(){
+		$donacion = Session::get( 'donacion' );
+
+		if ( ! isset( $donacion ) )
+			return Redirect::to( 'donar' );
+
+		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
+		$monto = Session::get( 'donacion.monto' );
+
+			$api = new \PayPal\Rest\ApiContext(
+			  new \PayPal\Auth\OAuthTokenCredential(
+			    $this->_ClientId,
+			    $this->_ClientSecret
+			  )
+			);
+
+			 $api->setConfig(array(
+	            'mode' => 'sandbox',
+	            'http.ConnectionTimeOut' => 30,
+	            'log.LogEnabled' => true,
+	            'log.FileName' => __DIR__.'/../../storage/logs/PayPal.log',
+	            'log.LogLevel' => 'FINE'
+        	));
+
+			$payer        = new \PayPal\Api\Payer;
+			$details      = new \PayPal\Api\Details;
+			$amount       = new \PayPal\Api\Amount;
+			$transaction  = new \PayPal\Api\Transaction;
+			$payment      = new \PayPal\Api\Payment;
+			$redirectUrls = new \PayPal\Api\RedirectUrls;
+
+			//Payer
+			$payer->setPayment_method('paypal');
+
+			//Details
+			$details->setShipping('0.00')
+					->setTax('0.00')
+					->setSubtotal($monto);
+
+			//Amount
+			$amount->setCurrency('MXN') 
+				   ->setTotal($monto)
+				   ->setDetails($details);
+
+			//Transaction
+			$transaction->setAmount($amount)
+						->setDescription('Fundación amparo');
+
+			//Payment
+			$payment->setIntent('sale')
+					->setPayer($payer)
+					->setTransactions([$transaction]);
+
+			//Redirect Urls
+			$redirectUrls->setReturnUrl('http://amparo.design4causes.dev')
+						 ->setCancelUrl('http://amparo.design4causes.dev');
+
+			$payment->setRedirectUrls($redirectUrls);
+
+			try{
+
+			  $payment->create($api);
+
+			}catch(PPConnetionException $e){
+				print_r($e);
+				header('Location:http://amparo.design4causes.dev/');
+			}
+
+			foreach ($payment->getLinks() as $link) {
+				if($link->getRel() == 'approval_url'){
+					$redirectUrl = $link->getHref();
+
+				}
+			}
+
+			header('Location: '.$redirectUrl);
+			exit;
+	}
+
+	/**
 	 * Método para mostrar la página de gracias al terminar el pago de donación por Tarjeta de Crédito
 	 * @return
 	 */
