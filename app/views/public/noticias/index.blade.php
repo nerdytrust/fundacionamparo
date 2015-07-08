@@ -57,9 +57,11 @@
 					@endif
 					<ul id="fnews"></ul>
 				</div>
+				@if ( $nNoticias > 6 )
 				<div id="contenedor_btn" >
 					<button id="load-news">Cargar más noticias</button>
 				</div>
+				@endif
 				<div class="adorno_fa">
  					<img src="{{ asset( 'images/adorno_fa.png' ) }}" alt="">
  				</div>

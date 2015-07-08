@@ -9,7 +9,8 @@ class NoticiasController extends BaseController {
 	public function index(){
 		return View::make( 'public.noticias.index' )->with( [
 			'noticias'	=> Noticias::limit(6)->offset(0)->
-							orderBy( 'fecha_publicacion', 'desc' )->get()
+							orderBy( 'fecha_publicacion', 'desc' )->get(),
+			'nNoticias' => Noticias::count()
 		] );
 	}
 
@@ -24,6 +25,7 @@ class NoticiasController extends BaseController {
 		$noticias = Noticias::limit($limit)->offset($offset)
 							  ->orderBy( 'fecha_publicacion','desc'  )
 							  ->get();
+
 		$string   = "";
 		foreach ( $noticias as $noticia ){
 			$string .=	'<div id="cja_noticia">';
