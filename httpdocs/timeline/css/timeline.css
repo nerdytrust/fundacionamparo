@@ -345,8 +345,6 @@ vertical-align: middle;
     overflow: hidden;
   }
   .flexslider .slides img{
-     /*width: 100% !important;
-     height: auto !important;*/
        width: 195% !important;
       height: auto !important;
       left: -50%;
@@ -378,6 +376,61 @@ vertical-align: middle;
   .flex-direction-nav .flex-next {
     opacity: 1;
     right: 10px;
+  }
+}
+/*iphone 3 y 4 porytrait*/
+@media screen and (min-width: 320px) and (max-height: 480px){
+.cuadro {    
+    top: 51% !important;  
+}
+.flexslider .slides img {
+  width: 150% !important;
+  }
+  h1 {
+      font-size: 1.4em;
+    }
+    h2 {
+      font-size: 1em;
+    }
+}
+/*iphone 3 y 4 y 5 landscape*/
+@media screen and (min-width: 480px) and (max-width: 568px) and (max-height: 320px) and (orientation: landscape){
+  .flexslider .slides img {
+  width: 100% !important;
+  left: 0;
+  }
+   .cuadro {
+    top: 60% !important;
+   }
+
+
+}
+/*iphone 6 y plus landscape*/
+@media screen and (min-width: 640px) and (max-width: 736px) and (min-height: 320px) and (max-height: 414px) and (orientation: landscape){
+  .flexslider .slides img {
+    width: 100% !important;
+    left: 0;
+    top: -50px;
+    }
+    .cuadro {
+    top: 61%;
+  }
+}
+
+@media screen and (orientation : landscape){
+  .flexslider .slides img {
+    width: 100% !important;
+    left: 0;
+    top: -50px;
+    }
+       h1 {
+      font-size: 1em;   
+    }
+    h2 {
+      font-size: 2.2vw;
+    }
+    .cuadro {
+    bottom: 0%;
   }
 }
 

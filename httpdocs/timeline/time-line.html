@@ -5,7 +5,7 @@
 	<title>Document</title>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Bootstrap 101 Template</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -35,8 +35,8 @@
 	  	    	    </div>
 	  	    		</li>
 
-	  	    		<li class="col-md-12">	            	 
-	             	 <iframe id="player_1" src="video/video.html" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+	  	    		<!-- <li class="col-md-12">	            	 
+	             	 <iframe id="player_1" src="../video/video.html" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 	             	  <div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 cuadro">
 	  	    	    	<h1><b>1999-2014</b>
 							Contrucción, operación
@@ -48,7 +48,7 @@
 							Alonso Espinosa, Ubicados en Zacatlan Puebla.
 	  	    	    	</h2>
 	  	    	    </div>
-	  	    		</li>
+	  	    		</li> -->
 
 	            	
 
@@ -326,7 +326,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 	<!-- FlexSlider -->
-  <script defer src="../timeline/js/jquery.timeline.js"></script>
+  <script defer src="./js/jquery.timeline.js"></script>
 
   <script type="text/javascript">
     $(function(){
@@ -335,24 +335,24 @@
     $(window).load(function(){
 
       // Vimeo API nonsense
-      var player = document.getElementById('player_1');
-      $f(player).addEvent('ready', ready);
+      // var player = document.getElementById('player_1');
+      // $f(player).addEvent('ready', ready);
 
-      function addEvent(element, eventName, callback) {
-        (element.addEventListener) ? element.addEventListener(eventName, callback, false) : element.attachEvent(eventName, callback, false);
-      }
+      // function addEvent(element, eventName, callback) {
+      //   (element.addEventListener) ? element.addEventListener(eventName, callback, false) : element.attachEvent(eventName, callback, false);
+      // }
 
-      function ready(player_id) {
-        var froogaloop = $f(player_id);
+      // function ready(player_id) {
+      //   var froogaloop = $f(player_id);
 
-        froogaloop.addEvent('play', function(data) {
-          $('.flexslider').flexslider("pause");
-        });
+      //   froogaloop.addEvent('play', function(data) {
+      //     $('.flexslider').flexslider("pause");
+      //   });
 
-        froogaloop.addEvent('pause', function(data) {
-          $('.flexslider').flexslider("play");
-        });
-      }
+      //   froogaloop.addEvent('pause', function(data) {
+      //     $('.flexslider').flexslider("play");
+      //   });
+      // }
 
 
       // Call fitVid before FlexSlider initializes, so the proper initial height can be retrieved.
@@ -367,13 +367,13 @@
             $('body').removeClass('loading');
           },
           before: function(slider){
-            $f(player).api('pause');
+            //$f(player).api('pause');
           }
       });
     });
   </script>
-   <script src="../timeline/js/froogaloop.js"></script>
-	<script src="../timeline/js/jquery.fitvid.js"></script>
+   <script src="./js/froogaloop.js"></script>
+	<script src="./js/jquery.fitvid.js"></script>
 
 	 
 </body>
