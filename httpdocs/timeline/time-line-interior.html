@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/timeline.css" type="text/css" media="screen" />
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+		 <section class="slider">
+	        <div class="flexslider interior">
+	          <ul class="slides">
+
+
+	  	    		<li class="col-md-12">
+	  	    	    <img src="../images/tl_becas_estudiantes.jpg" />
+	  	    	    <div class="col-xs-12 col-sm-12 col-md-5 cuadro">
+	  	    	    	<span class="adorno">educación</span>
+	  	    	    	<h1><b>1981</b>
+							Contrucción, operación
+							y administración del CDC,
+							Zacatlan, Puebla.
+						</h1>
+	  	    	    	<h2>
+	  	    	    		Creacion de cntro de desarrollo comunitario Roberto
+							Alonso Espinosa, Ubicados en Zacatlan Puebla.
+	  	    	    	</h2>
+	  	    	    </div>
+	  	    		</li>
+	            	
+
+	  	    		<li class="col-md-12">
+	  	    	    <img src="../images/tl_cartonera.jpg" />
+	  	    	    <div class="col-xs-12 col-sm-12 col-md-5 cuadro">
+	  	    	    	<span class="adorno">educación</span>
+	  	    	    	<h1><b>1998</b>
+							Contrucción, operación
+							y administración del CDC,
+							Zacatlan, Puebla.
+						</h1>
+	  	    	    	<h2>
+	  	    	    		Creacion de cntro de desarrollo comunitario Roberto
+							Alonso Espinosa, Ubicados en Zacatlan Puebla.
+	  	    	    	</h2>
+	  	    	    </div>
+	  	    		</li>
+
+	  	    		<li class="col-md-12">
+	  	    	    <img src="../images/tl_cdcchamontoya.jpg" />
+	  	    	      <div class="col-xs-12 col-sm-12 col-md-5 cuadro">
+	  	    	      	<span class="adorno">educación</span>
+	  	    	    	<h1><b>1997</b>
+							Contrucción, operación
+							y administración del CDC,
+							Zacatlan, Puebla.
+						</h1>
+	  	    	    	<h2>
+	  	    	    		Creacion de cntro de desarrollo comunitario Roberto
+							Alonso Espinosa, Ubicados en Zacatlan Puebla.
+	  	    	    	</h2>
+	  	    	    </div>
+	  	    		</li>
+
+	  	    		
+
+	          </ul>
+
+	          <div class="col-xs-12 col-md-12 controls-ol">
+	          	<button type="button" class="btn ct pull-left"></button>
+	          	<button type="button" class="btn ct2 pull-right"></button>
+	          	<p class="col-md-3">1980</p>
+	          	<p class="col-md-3 pull-right text-right">1980</p>
+	          </div>
+	         
+	        </div>
+	      </section>
+	      </div>
+	</div><!--termina container fluid-->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	<!-- FlexSlider -->
+  <script defer src="./js/jquery.timeline.js"></script>
+
+  <script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+
+      // Vimeo API nonsense
+      // var player = document.getElementById('player_1');
+      // $f(player).addEvent('ready', ready);
+
+      // function addEvent(element, eventName, callback) {
+      //   (element.addEventListener) ? element.addEventListener(eventName, callback, false) : element.attachEvent(eventName, callback, false);
+      // }
+
+      // function ready(player_id) {
+      //   var froogaloop = $f(player_id);
+
+      //   froogaloop.addEvent('play', function(data) {
+      //     $('.flexslider').flexslider("pause");
+      //   });
+
+      //   froogaloop.addEvent('pause', function(data) {
+      //     $('.flexslider').flexslider("play");
+      //   });
+      // }
+
+
+      // Call fitVid before FlexSlider initializes, so the proper initial height can be retrieved.
+      $(".flexslider")
+        .fitVids()
+        .flexslider({
+          animation: "slide",
+          useCSS: false,
+          animationLoop: false,
+          smoothHeight: true,
+          start: function(slider){
+            $('body').removeClass('loading');
+          },
+          before: function(slider){
+            //$f(player).api('pause');
+          }
+      });
+    });
+  </script>
+   <script src="./js/froogaloop.js"></script>
+	<script src="./js/jquery.fitvid.js"></script>
+
+	 
+</body>
+</html>
