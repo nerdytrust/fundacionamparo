@@ -1,6 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 body, html{
   width: 100%;
   height: 100%;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container-fluid{
@@ -26,13 +28,7 @@ body, html{
   min-width: 100% !important;
    height: 125% !important;
 }
-@font-face {
-  font-family: 'flexslider-icon';
-  src: url('fonts/flexslider-icon.eot');
-  src: url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('fonts/flexslider-icon.woff') format('woff'), url('fonts/flexslider-icon.ttf') format('truetype'), url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+
 /* ====================================================================================================================
  * RESETS
  * ====================================================================================================================*/
@@ -115,6 +111,9 @@ html[xmlns] .flexslider .slides {
 .carousel li {
   margin-right: 5px;
 }
+.interior>.flex-direction-nav{
+  display: none;
+}
 .flex-direction-nav {
   *height: 0;
 }
@@ -192,11 +191,51 @@ html[xmlns] .flexslider .slides {
   color: #fff;
   margin-top: 0.5%;
 }
+.interior .flex-control-nav{
+    top: 87.5%;
+}
+.interior .flex-control-nav::before{
+    top: 19%;
+}
+.interior .flex-control-nav li {
+  margin: 0 3.5%;
+}
+.interior .flex-control-paging li a{
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  color: #000;
+  font-size: 47px;
+  background: url("../images/circle-i.png")no-repeat center top;
+  width: 25px;
+  height: 58px;
+  color: transparent;
+  /*border: solid 2px #b4d23e;*/
+}
+.interior .flex-control-nav li::after{
+  display: none;
+}
+.interior .flex-control-paging li a.flex-active{
+  height: 58px;
+  width: 30px;
+  background: url("../images/circle.png") no-repeat center top;
+  text-align: center;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-size: 25px;
+  border:none;
+  padding-top: 28px;
+  background-size: contain;
+}
+
 .flex-control-nav {
   width: 100%;
   position: absolute;
   top: 86.5%;
-  text-align: left;
+  /*text-align: left;*/
+  text-align: center;
   background: transparent;
   height: auto;
   padding: 0 3%;
@@ -218,7 +257,7 @@ html[xmlns] .flexslider .slides {
   display: inline-table;
 }
 .flex-control-paging li a {
-  width: 30px;
+  width: 45px;
   height: 0px;
   display: table;
   /*background: #bfda3f;*/
@@ -235,11 +274,13 @@ vertical-align: middle;
 .flex-control-nav li::after{
   position: relative;
   top: -22px;
-  left: 15px;
+  /*left: 15px;*/
+   left: 2px;
   content: "|";
   color: #bfda3f;
   font-size: 10px;
   font-weight: bolder;
+  pointer-events:none;
 }
 
 .flex-control-paging li a:hover {
@@ -248,8 +289,8 @@ vertical-align: middle;
 .flex-control-paging li a.flex-active {
   background: url("../images/circle.png")no-repeat 30%;
   cursor: default;
-  width: 45px;
-  height: 28px;
+  width: 61px;
+  height: 31px;
   font-size: 18px;
   font-weight: bolder;
   text-align: right;
@@ -313,6 +354,21 @@ vertical-align: middle;
       color: #bfda3f;
       font-size: 49px;
     }
+    span.adorno{
+    background: #FFF;
+    border-radius: .5em;
+    color: #000;
+    display: inline-block;
+    font-size: .9em;
+    padding: 2px 8px;
+    line-height: 2em;
+    letter-spacing: -.8px;
+    text-transform: uppercase;
+    position: absolute;
+    top: -14%;
+    left: 0%;
+    /*font-weight: bolder;*/
+  }
 /* ====================================================================================================================
  * RESPONSIVE
  * ====================================================================================================================*/
@@ -398,7 +454,11 @@ vertical-align: middle;
     }
     .cuadro {    
     top: 60% !important; 
-}
+  }
+  span.adorno{
+    left: 4%;
+      top: -16%; 
+  }
     
 }
 
@@ -409,13 +469,10 @@ vertical-align: middle;
 }
 .flexslider .slides img {
   width: 150% !important;
-  }
+  }    
  
 }
-/*iphone 3 y 4 y 5 landscape*/
-@media screen and (min-width: 480px) and (max-width: 568px) and (max-height: 320px) and (orientation: landscape){
 
-}
 /*iphone 6 y plus landscape*/
 @media screen and (min-width: 640px) and (max-width: 736px) and (min-height: 320px) and (max-height: 414px) and (orientation: landscape){
   .flexslider .slides img {
@@ -469,6 +526,9 @@ vertical-align: middle;
    .cuadro {
     top: 60% !important;
    }
+    span.adorno{
+    font-size: 6px;
+  }
 }
 
 
