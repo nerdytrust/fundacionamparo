@@ -100,19 +100,19 @@
 							<div id="cja_noticia">
 								<div id="caja_aporta2">
 									<article class="caja_fca2">
-										<a href="{{ URL::to( 'ficha-donador/' . $perfil->id_profiles ) }}">
+										<a href="{{ URL::to( 'ficha-donador/' . $perfil->id_registrados ) }}">
 											<img src="{{ $perfil->photoURL }}" alt="">
 										</a>
 				 					</article>
 				 					<div id="txt_noticia">
-										<a href="{{ URL::to( 'ficha-donador/' . $perfil->id_profiles ) }}" class="black-link"><h1>{{ $perfil->displayName }}</h1></a>
+										<a href="{{ URL::to( 'ficha-donador/' . $perfil->id_registrados ) }}" class="black-link"><h1>{{ $perfil->displayName }}</h1></a>
 										<p>{{ Str::limit( $perfil->city, 180 ) }}</p>
-										<a href="{{ URL::to( 'ficha-donador/' . $perfil->id_profiles )  }}"><h3>MÁS INFORMACIÓN <span>+</span></h3></a>
+										<a href="{{ URL::to( 'ficha-donador/' . $perfil->id_registrados )  }}"><h3>MÁS INFORMACIÓN <span>+</span></h3></a>
 										<nav>
 											<ul>
-												{{ Helper::facebookShare( '', URL::to( 'ficha-donador/' . $perfil->id_profiles ) , '' ) }}
-												{{ Helper::twitterShare( $perfil->displayName, URL::to( 'ficha-donador/' . $perfil->id_profiles ) , '' ) }}
-												{{ Helper::like( $perfil->id_profiles, 'profile' ) }}
+												{{ Helper::facebookShare( '', URL::to( 'ficha-donador/' . $perfil->id_registrados ) , '' ) }}
+												{{ Helper::twitterShare( $perfil->displayName, URL::to( 'ficha-donador/' . $perfil->id_registrados ) , '' ) }}
+												{{ Helper::like( $perfil->id_registrados, 'profile' ) }}
 												<p>{{$perfil->me_gusta}} likes</p>
 											</ul>
 										</nav>

@@ -92,7 +92,7 @@ class NoticiasController extends BaseController {
 				->where( 'donaciones.status', 1 )
 				->where( 'donaciones.mostrar_perfil', 1 )
 				->where( 'profiles.displayName','LIKE', "%$s%" )
-				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.me_gusta' )
+				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados','registrados.me_gusta' )
 				->get();
 
 		$voluntarios = DB::table( 'voluntarios' )->limit($limit)->offset($offset)
@@ -102,7 +102,7 @@ class NoticiasController extends BaseController {
 				->where( 'voluntarios.aprobacion', 1 )
 				->where( 'voluntarios.terminos', 1 )
 				->where( 'profiles.displayName','LIKE', "%$s%" )
-				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.me_gusta' )
+				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados','registrados.me_gusta' )
 				->get();
 
 		$impulsadas = DB::table( 'impulsadas' )->limit($limit)->offset($offset)
@@ -112,7 +112,7 @@ class NoticiasController extends BaseController {
 				//->where( 'impulsadas.status', 1 )
 				->where( 'impulsadas.mostrar_perfil', 1 )
 				->where( 'profiles.displayName','LIKE', "%$s%" )
-				->select( 'profiles.id_profiles', 'profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.me_gusta' )
+				->select( 'profiles.id_profiles', 'profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados','registrados.me_gusta' )
 				->get();
 
 				foreach ($donaciones as $key => $value) {
@@ -194,19 +194,19 @@ class NoticiasController extends BaseController {
 			$string .=	'<div id="cja_noticia">';
 			$string .=	'	<div id="caja_aporta2">';
 			$string .=	'		<article class="caja_fca2">';
-			$string .=	'			<a href="'.URL::to( 'ficha-donador/' . $perfil->id_profiles ).'">';
+			$string .=	'			<a href="'.URL::to( 'ficha-donador/' . $perfil->id_registrados ).'">';
 			$string .=	'				<img src="'. $perfil->photoURL .'" alt="">';
 			$string .=	'			</a>';
 			$string .=	'			</article>';
 			$string .=	'			<div id="txt_noticia">';
-			$string .=	'			<a href="'.URL::to( 'ficha-donador/' . $perfil->id_profiles ).'" class="black-link"><h1>'.$perfil->displayName.'</h1></a>';
+			$string .=	'			<a href="'.URL::to( 'ficha-donador/' . $perfil->id_registrados ).'" class="black-link"><h1>'.$perfil->displayName.'</h1></a>';
 			$string .=	'				<p>'.Str::limit( $perfil->city, 180 ) .'</p>';
-			$string .=	'			<a href="'. URL::to( 'ficha-donador/' . $perfil->id_profiles ) .'"><h3>MÁS INFORMACIÓN <span>+</span></h3></a>';
+			$string .=	'			<a href="'. URL::to( 'ficha-donador/' . $perfil->id_registrados ) .'"><h3>MÁS INFORMACIÓN <span>+</span></h3></a>';
 			$string .=	'			<nav>';
 			$string .=	'				<ul>';
-			$string .=						Helper::facebookShare( '', URL::to( 'ficha-donador' ) . '/' . $perfil->id_profiles, '' );
-			$string .=						Helper::twitterShare( $perfil->displayName, URL::to( 'ficha-donador' ) . '/' . $perfil->id_profiles, '' );
-			$string .=						Helper::like( $perfil->id_profiles, 'causas' );
+			$string .=						Helper::facebookShare( '', URL::to( 'ficha-donador' ) . '/' . $perfil->id_registrados, '' );
+			$string .=						Helper::twitterShare( $perfil->displayName, URL::to( 'ficha-donador' ) . '/' . $perfil->id_registrados, '' );
+			$string .=						Helper::like( $perfil->id_registrados, 'causas' );
 			$string .=	'					<p>'.$perfil->me_gusta.' likes</p>';
 			$string .=	'				</ul>';
 			$string .=	'			</nav>';
