@@ -16,17 +16,17 @@ class DonadoresController extends BaseController {
 				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 				->where( 'donaciones.status', 1 )
 				->where( 'donaciones.mostrar_perfil', 1 )
-				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados')
+				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados' )
 				->get();
 
 			$voluntarios = DB::table( 'voluntarios' )
-			->distinct()
-			->join( 'registrados', 'voluntarios.email', '=', 'registrados.email' )
-			->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
-			->where( 'voluntarios.aprobacion', 1 )
-			->where( 'voluntarios.terminos', 1 )
-			->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados' )
-			->get();
+				->distinct()
+				->join( 'registrados', 'voluntarios.email', '=', 'registrados.email' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->where( 'voluntarios.aprobacion', 1 )
+				->where( 'voluntarios.terminos', 1 )
+				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados' )
+				->get();
 
 			$impulsadas = DB::table( 'impulsadas' )
 				->distinct()
@@ -58,7 +58,7 @@ class DonadoresController extends BaseController {
 				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 				->where( 'donaciones.status', 1 )
 				->where( 'donaciones.mostrar_perfil', 1 )
-				->select( 'profiles.photoURL', 'profiles.displayName', 'profiles.city' )
+				->select( 'profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados' )
 				->get();
 			$type['all']['donador'] = true;	
 			$class = 'mio3';
@@ -69,7 +69,7 @@ class DonadoresController extends BaseController {
 				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 				->where( 'voluntarios.aprobacion', 1 )
 				->where( 'voluntarios.terminos', 1 )
-				->select( 'profiles.photoURL', 'profiles.displayName', 'profiles.city' )
+				->select( 'profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados' )
 				->get();
 			$type['all']['voluntario'] = true;	
 			$class = 'mio2';
@@ -80,7 +80,7 @@ class DonadoresController extends BaseController {
 				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 				//->where( 'impulsadas.status', 1 )
 				->where( 'impulsadas.mostrar_perfil', 1 )
-				->select( 'profiles.photoURL', 'profiles.displayName', 'profiles.city' )
+				->select( 'profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados' )
 				->get();
 			$type['all']['impulsor'] = true;
 			$class = 'mio';

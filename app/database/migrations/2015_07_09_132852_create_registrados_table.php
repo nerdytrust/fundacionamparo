@@ -19,6 +19,7 @@ class CreateRegistradosTable extends Migration {
 			$table->string('password', 150);
 			$table->text('remember_token')->nullable();
 			$table->boolean('terminos')->nullable()->default(0);
+			$table->bigInteger('me_gusta')->default(0);
 			$table->timestamps();
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();

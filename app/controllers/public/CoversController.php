@@ -60,8 +60,25 @@ class CoversController extends BaseController {
 			
 	}
 
-	public function fichaDonador(){
-		return View::make( 'public.covers.ficha_donador' );
+	public function fichaDonador( $id_donador = null ){
+		if ( ! isset( $id_donador ) || empty( $id_donador ) )
+			return Redirect::to( 'home' );
+
+		$donador = $this->getDataProfile( $id_donador );
+		if ( empty( $donador ) )
+			return Redirect::to( 'home' );
+
+		$causas 		= $this->getCausasProfile( $id_donador );
+		$donaciones 	= $this->getCountDonaciones( $id_donador );
+		$impulsos 		= $this->getCountImpulsos( $id_donador );
+		$voluntariados 	= $this->getCountVoluntariado( $id_donador );
+		return View::make( 'public.covers.ficha_donador' )->with( [ 
+			'donador' 		=> $donador,
+			'causas'  		=> $causas,
+			'donaciones'	=> $donaciones,
+			'impulsos'		=> $impulsos,
+			'voluntariados'	=> $voluntariados
+		] );
 	}
 
 	public function fichaImpulsor(){
@@ -330,6 +347,109 @@ class CoversController extends BaseController {
 	 */
 	public function thanksRegistro(){
 		return View::make( 'public.covers.gracias_registro' );
+	}
+
+	/**
+	 * Método para obtener los detalles del Donador/Voluntario/Impulsor
+	 * @param  integer $id_profile ID Registrado del Donador/Voluntario/Impulsor
+	 * @return array             Detalles del Donador/Voluntario/Impulsor
+	 */
+	private function getDataProfile( $id_profile = null ){
+		if ( ! isset( $id_profile ) || empty( $id_profile ) )
+			return FALSE;
+
+		$profile = DB::table( 'registrados' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->where( 'registrados.id_registrados', $id_profile )
+				->select( 'profiles.id_registrados','profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.me_gusta' )
+				->first();
+
+		return $profile;
+	}
+
+	/**
+	 * Método para obtener las causas en las que ha participado el Donador/Voluntario/Impulsor
+	 * @param  integer $id_profile ID Registrado del Donador/Voluntario/Impulsor
+	 * @return array             Listado de las causas
+	 */
+	private function getCausasProfile( $id_profile = null ){
+		if ( ! isset( $id_profile ) || empty( $id_profile ) )
+			return FALSE;
+
+		$causas = DB::table( 'registrados' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->leftJoin( 'donaciones', 'donaciones.email', '=', 'registrados.email' )
+				->leftJoin( 'voluntarios', 'voluntarios.email', '=', 'registrados.email' )
+				->leftJoin( 'impulsadas', 'impulsadas.email', '=', 'registrados.email' )
+				->join( 'causas', function($join){
+					$join->on( 'causas.id_causas', '=', 'donaciones.id_causas' )
+						->orOn( 'causas.id_causas', '=', 'voluntarios.id_causas' )
+						->orOn( 'causas.id_causas', '=', 'impulsadas.id_causas' );
+				})
+				->distinct()
+				->where( 'registrados.id_registrados', $id_profile )
+				->where( 'donaciones.status', 1 )
+				->where( 'voluntarios.aprobacion', 1 )
+				->select( 'causas.titulo' )
+				->get();
+
+		return $causas;
+	}
+
+	/**
+	 * Método para obtener el total de donaciones en las que ha participado el Donador/Voluntario/Impulsor
+	 * @param  integer $id_profile ID Registrado del Donador/Voluntario/Impulsor
+	 * @return integer             Total de donaciones
+	 */
+	private function getCountDonaciones( $id_profile = null ){
+		if ( ! isset( $id_profile ) || empty( $id_profile ) )
+			return FALSE;
+
+		$donaciones = DB::table( 'registrados' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->join( 'donaciones', 'donaciones.email', '=', 'registrados.email' )
+				->where( 'registrados.id_registrados', $id_profile )
+				->where( 'donaciones.status', 1 )
+				->count();
+
+		return $donaciones;
+	}
+
+	/**
+	 * Método para obtener el total de impulsos en los que ha participado el Donador/Voluntario/Impulsor
+	 * @param  integer $id_profile ID Registrado del Donador/Voluntario/Impulsor
+	 * @return integer             Total de Impulsos
+	 */
+	private function getCountImpulsos( $id_profile = null ){
+		if ( ! isset( $id_profile ) || empty( $id_profile ) )
+			return FALSE;
+
+		$impulsos = DB::table( 'registrados' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->join( 'impulsadas', 'impulsadas.email', '=', 'registrados.email' )
+				->where( 'registrados.id_registrados', $id_profile )
+				->count();
+
+		return $impulsos;
+	}
+
+	/**
+	 * Método para obtener el total de voluntariados en los que ha participado el Donador/Voluntario/Impulsor
+	 * @param  integer $id_profile ID Registrado del Donador/Voluntario/Impulsor
+	 * @return integer             Total de Voluntariados
+	 */
+	private function getCountVoluntariado( $id_profile = null ){
+		if ( ! isset( $id_profile ) || empty( $id_profile ) )
+			return FALSE;
+
+		$voluntariado = DB::table( 'registrados' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->join( 'voluntarios', 'voluntarios.email', '=', 'registrados.email' )
+				->where( 'registrados.id_registrados', $id_profile )
+				->where( 'voluntarios.aprobacion', 1 )
+				->count();
+
+		return $voluntariado;
 	}
 }
 

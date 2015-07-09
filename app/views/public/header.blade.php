@@ -68,7 +68,7 @@
 							<option value="">Filtrar</option>
 							<option value="donador" {{ (isset($_GET['filtro']) && $_GET['filtro'] == 'donador') ? 'selected' : '' }}>Filtrar por donador</option>
 							<option value="voluntario" {{ (isset($_GET['filtro']) && $_GET['filtro'] == 'voluntario') ? 'selected' : '' }}>Filtrar por voluntarios</option>
-							<option value="impulsadas" {{ (isset($_GET['filtro']) && $_GET['filtro'] == 'impulsadas') ? 'selected' : '' }}>Filtrar por impulusor</option>
+							<option value="impulsadas" {{ (isset($_GET['filtro']) && $_GET['filtro'] == 'impulsadas') ? 'selected' : '' }}>Filtrar por impulsor</option>
 						</select>
 						
 					{{ Form::close() }}

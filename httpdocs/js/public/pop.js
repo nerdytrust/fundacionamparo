@@ -42,7 +42,7 @@
 			// 	window.location = 'ficha-causas';//este lleva a las fichas pero ya externas
 			// 	return false;
 			// });
-			$(".caja_fca_usu, .donador_clas, .impulsor_clas, .voluntario_clas").click(function(){
+			$(".donador_clas, .impulsor_clas, .voluntario_clas").click(function(){
 				window.location = 'ficha-donador';//este lleva a las fichas pero ya externas
 				return false;
 			});
