@@ -147,12 +147,22 @@ class HomeController extends BaseController {
 				->select( '*' )
 				->get();
 
+		$coutn_noticias = Noticias::where( 'titulo',    'LIKE', "%$s%" )
+				->orWhere( 'contenido', 'LIKE', "%$s%" )
+				->orWhere( 'extracto',  'LIKE', "%$s%" )
+			    ->count();
+
 		$causas = DB::table( 'causas' )->limit(3)->offset(0)
 				->where( 'titulo',    'LIKE', "%$s%" )
 				->orWhere( 'descripcion', 'LIKE', "%$s%" )
 				->orderBy( 'created_at','desc' )
 				->select( '*' )
 				->get();
+
+		$count_causas = DB::table( 'causas' )
+				->where( 'titulo',    'LIKE', "%$s%" )
+				->orWhere( 'descripcion', 'LIKE', "%$s%" )
+				->count();
 
 		$donaciones = DB::table( 'donaciones' )->limit(3)->offset(0)
 				->distinct()
@@ -164,6 +174,15 @@ class HomeController extends BaseController {
 				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados','registrados.me_gusta' )
 				->get();
 
+		$count_donaciones= DB::table( 'donaciones' )
+				->distinct()
+				->join( 'registrados', 'donaciones.email', '=', 'registrados.email' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->where( 'donaciones.status', 1 )
+				->where( 'donaciones.mostrar_perfil', 1 )
+				->where( 'profiles.displayName','LIKE', "%$s%" )
+				->count();
+
 		$voluntarios = DB::table( 'voluntarios' )->limit(3)->offset(0)
 				->distinct()
 				->join( 'registrados', 'voluntarios.email', '=', 'registrados.email' )
@@ -174,6 +193,15 @@ class HomeController extends BaseController {
 				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados','registrados.me_gusta' )
 				->get();
 
+		$count_voluntarios = DB::table( 'voluntarios' )
+				->distinct()
+				->join( 'registrados', 'voluntarios.email', '=', 'registrados.email' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->where( 'voluntarios.aprobacion', 1 )
+				->where( 'voluntarios.terminos', 1 )
+				->where( 'profiles.displayName','LIKE', "%$s%" )
+				->count();
+
 		$impulsadas = DB::table( 'impulsadas' )->limit(3)->offset(0)
 				->distinct()
 				->join( 'registrados', 'impulsadas.email', '=', 'registrados.email' )
@@ -183,6 +211,15 @@ class HomeController extends BaseController {
 				->where( 'profiles.displayName','LIKE', "%$s%" )
 				->select( 'profiles.id_profiles', 'profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados','registrados.me_gusta' )
 				->get();
+
+		$count_impulsadas = DB::table( 'impulsadas' )
+				->distinct()
+				->join( 'registrados', 'impulsadas.email', '=', 'registrados.email' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				//->where( 'impulsadas.status', 1 )
+				->where( 'impulsadas.mostrar_perfil', 1 )
+				->where( 'profiles.displayName','LIKE', "%$s%" )
+				->count();
 
 				foreach ($donaciones as $key => $value) {
 					$perfiles[$value->id_profiles] = $value;
@@ -203,6 +240,7 @@ class HomeController extends BaseController {
 			'noticias' => $noticias,
 			'causas'   => $causas,
 			'perfiles' => $perfiles,
+			'count'    => $coutn_noticias + $count_causas + $count_impulsadas + $count_voluntarios + $count_donaciones
 
 		] );
 	}
