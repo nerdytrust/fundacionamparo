@@ -16,7 +16,7 @@ class DonadoresController extends BaseController {
 				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 				->where( 'donaciones.status', 1 )
 				->where( 'donaciones.mostrar_perfil', 1 )
-				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city' )
+				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados','registrados.me_gusta' )
 				->get();
 
 			$voluntarios = DB::table( 'voluntarios' )
@@ -25,7 +25,7 @@ class DonadoresController extends BaseController {
 			->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 			->where( 'voluntarios.aprobacion', 1 )
 			->where( 'voluntarios.terminos', 1 )
-			->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city' )
+			->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados','registrados.me_gusta' )
 			->get();
 
 			$impulsadas = DB::table( 'impulsadas' )
@@ -34,7 +34,7 @@ class DonadoresController extends BaseController {
 				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 				//->where( 'impulsadas.status', 1 )
 				->where( 'impulsadas.mostrar_perfil', 1 )
-				->select( 'profiles.id_profiles', 'profiles.photoURL', 'profiles.displayName', 'profiles.city' )
+				->select( 'profiles.id_profiles', 'profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados','registrados.me_gusta' )
 				->get();
 
 				foreach ($donaciones as $key => $value) {
