@@ -126,22 +126,84 @@ class HomeController extends BaseController {
 	 * @return
 	 */
 	public function search() {
-		$resultados = '';
-		$s = Input::get( 's' );
-		if ( ! isset( $s ) || empty ( $s ) )
-			$resultados = null;
 
-		$resultados = DB::table( 'noticias' )
-		        ->limit(6)->offset(0)
+		$resultados  = '';
+		$perfiles    = '';
+		$noticias    = '';
+		$causas      = '';
+		$donaciones  = '';
+		$voluntarios = '';
+		$impulsadas  = '';
+
+		$s = Input::get( 's' );
+		if (  isset( $s ) || ! empty ( $s )  || $s != '' ){
+			
+
+		$noticias = DB::table( 'noticias' )->limit(3)->offset(0)
 				->where( 'titulo',    'LIKE', "%$s%" )
 				->orWhere( 'contenido', 'LIKE', "%$s%" )
 				->orWhere( 'extracto',  'LIKE', "%$s%" )
 				->orderBy( 'fecha_publicacion','desc' )
 				->select( '*' )
 				->get();
-		
+
+		$causas = DB::table( 'causas' )->limit(3)->offset(0)
+				->where( 'titulo',    'LIKE', "%$s%" )
+				->orWhere( 'descripcion', 'LIKE', "%$s%" )
+				->orderBy( 'created_at','desc' )
+				->select( '*' )
+				->get();
+
+		$donaciones = DB::table( 'donaciones' )->limit(3)->offset(0)
+				->distinct()
+				->join( 'registrados', 'donaciones.email', '=', 'registrados.email' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->where( 'donaciones.status', 1 )
+				->where( 'donaciones.mostrar_perfil', 1 )
+				->where( 'profiles.displayName','LIKE', "%$s%" )
+				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.me_gusta' )
+				->get();
+
+		$voluntarios = DB::table( 'voluntarios' )->limit(3)->offset(0)
+				->distinct()
+				->join( 'registrados', 'voluntarios.email', '=', 'registrados.email' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->where( 'voluntarios.aprobacion', 1 )
+				->where( 'voluntarios.terminos', 1 )
+				->where( 'profiles.displayName','LIKE', "%$s%" )
+				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.me_gusta' )
+				->get();
+
+		$impulsadas = DB::table( 'impulsadas' )->limit(3)->offset(0)
+				->distinct()
+				->join( 'registrados', 'impulsadas.email', '=', 'registrados.email' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				//->where( 'impulsadas.status', 1 )
+				->where( 'impulsadas.mostrar_perfil', 1 )
+				->where( 'profiles.displayName','LIKE', "%$s%" )
+				->select( 'profiles.id_profiles', 'profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.me_gusta' )
+				->get();
+
+				foreach ($donaciones as $key => $value) {
+					$perfiles[$value->id_profiles] = $value;
+					$type[$value->id_profiles]['donador'] = true;
+				}
+				foreach ($voluntarios as $key => $value) {
+					$perfiles[$value->id_profiles] = $value;
+					$type[$value->id_profiles]['voluntario'] = true;
+				}
+
+				foreach ($impulsadas as $key => $value) {
+					$perfiles[$value->id_profiles] = $value;
+					$type[$value->id_profiles]['impulsor'] = true;
+				}
+		}
+
 		return View::make( 'public.home.resultados' )->with( [
-			'resultados' => $resultados
+			'noticias' => $noticias,
+			'causas'   => $causas,
+			'perfiles' => $perfiles,
+
 		] );
 	}
 

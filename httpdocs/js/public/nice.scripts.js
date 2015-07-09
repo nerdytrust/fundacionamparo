@@ -467,16 +467,17 @@ $(function(){
 		return false;
 	});
 
+	var offset_resultado = 3;
 	$('#load-news-search').click(function(){
 		var spinner;
 
 		$.ajax({
-			url: 'carga-noticias-resultado/6/'+offset+'/'+s,
+			url: 'carga-noticias-resultado/3/'+offset_resultado+'/'+s,
 			dataType: 'json',
 			beforeSend: function(){
 				 spinner = new Spinner(opts).spin(target);
 				$('#foo').css( 'display', 'block' );
-				offset = offset + 6;
+				offset_resultado = offset_resultado + 3;
 			},
 			success: function(data){
 				if ( data.success ){

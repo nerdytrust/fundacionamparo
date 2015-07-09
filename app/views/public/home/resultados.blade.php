@@ -20,13 +20,14 @@
 			</section>
 			<section id="contenedor_int">
 			<div class="txt_fundacion3">
-						<div id="titulo_fca" >
+						<!--<div id="titulo_fca" >
 							<h2 class="mil">2014</h2>
 							<h1 class="colorin"><span><hr></span> Julio <span><hr></span></h1>
-						</div>
-				@if ( ! empty ( $resultados ) )
+						</div>-->
 
-					@foreach ( $resultados as $key => $noticia )
+				@if ( ! empty ( $noticias )  )
+
+					@foreach ( $noticias as $key => $noticia )
 
 					<div id="cja_noticia">
 								<div id="caja_aporta2">
@@ -57,7 +58,70 @@
 							</div>
 
 					@endforeach
-					<ul id="fnews"></ul>
+
+				@endif	
+				@if ( ! empty ( $causas )  )
+
+					@foreach ( $causas as $key => $causa )
+
+					<div id="cja_noticia">
+								<div id="caja_aporta2">
+									<article class="caja_fca2">
+										<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas ) }}">
+											<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '245x245' ) }}" alt="">
+										</a>
+				 					</article>
+				 					<div id="txt_noticia">
+										<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas ) }}" class="black-link"><h1>{{ $causa->titulo }}</h1></a>
+										<h2>{{ date("d M Y",strtotime($causa->created_at)) }}</h2>
+										
+											<p>{{ Str::limit( $causa->descripcion, 180 ) }}</p>
+										
+										<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas ) }}"><h3>MÁS INFORMACIÓN <span>+</span></h3></a>
+										<nav>
+											<ul>
+												{{ Helper::facebookShare( '', URL::to( 'ficha-causas' ) . '/' . $causa->id_causas, '' ) }}
+												{{ Helper::twitterShare( $causa->titulo, URL::to( 'ficha-causas' ) . '/' . $causa->id_causas, '' ) }}
+												{{ Helper::like( $causa->id_causas, 'causas' ) }}
+												<p>{{ $causa->me_gusta_interno }} likes</p>
+											</ul>
+										</nav>
+									</div>
+				 				</div>
+							</div>
+
+					@endforeach
+
+				@endif
+				@if ( ! empty ( $perfiles )  )
+
+					@foreach ( $perfiles as $key => $perfil )
+
+							<div id="cja_noticia">
+								<div id="caja_aporta2">
+									<article class="caja_fca2">
+										<a href="{{ URL::to( 'ficha-donador/' . $perfil->id_profiles ) }}">
+											<img src="{{ $perfil->photoURL }}" alt="">
+										</a>
+				 					</article>
+				 					<div id="txt_noticia">
+										<a href="{{ URL::to( 'ficha-donador/' . $perfil->id_profiles ) }}" class="black-link"><h1>{{ $perfil->displayName }}</h1></a>
+										<p>{{ Str::limit( $perfil->city, 180 ) }}</p>
+										<a href="{{ URL::to( 'ficha-donador/' . $perfil->id_profiles )  }}"><h3>MÁS INFORMACIÓN <span>+</span></h3></a>
+										<nav>
+											<ul>
+												{{ Helper::facebookShare( '', URL::to( 'ficha-donador/' . $perfil->id_profiles ) , '' ) }}
+												{{ Helper::twitterShare( $perfil->displayName, URL::to( 'ficha-donador/' . $perfil->id_profiles ) , '' ) }}
+												{{ Helper::like( $perfil->id_profiles, 'profile' ) }}
+												<p>{{$perfil->me_gusta}} likes</p>
+											</ul>
+										</nav>
+									</div>
+				 				</div>
+							</div>
+
+
+					@endforeach
 					<!--
 						<div id="cja_noticia">
 							<div id="caja_aporta2">
@@ -146,18 +210,24 @@
 						</div>
 					</div>-->
 				
-    					<script >
-    							var s = '{{ Input::get( 's' ); }}';
-    					</script>
+    					
 				
-					<div id="contenedor_btn" >
-						<button id="load-news-search">Cargar más noticias</button>
-					</div>
-				@else
+					
+				@endif
+				@if ( empty ( $perfiles ) &&  empty ( $noticias ) && empty ( $causas ))
 					<div class="txt_fundacion3">
 						<h2>No se encontraron resultados</h2>
 					</div>
+				@else
+					<ul id="fnews"></ul>
+						<script >
+    							var s = '{{ Input::get( 's' ); }}';
+    					</script>
+					<div id="contenedor_btn" >
+						<button id="load-news-search">Cargar más</button>
+					</div>
 				@endif
+
 				<div class="adorno_fa">
  					<img src="{{ asset( 'images/adorno_fa.png' ) }}" alt="">
  				</div>
