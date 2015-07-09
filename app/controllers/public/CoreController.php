@@ -25,6 +25,9 @@ class CoreController extends BaseController {
 				case 'noticias':
 					$this->likeNoticias( $inputs );
 					break;
+				case 'donadores':
+					$this->likeDonadores( $inputs );
+					break;
 			}
 		}
 
@@ -42,6 +45,9 @@ class CoreController extends BaseController {
 					break;
 				case 'noticias':
 					$this->likeNoticias( $inputs );
+					break;
+				case 'donadores':
+					$this->likeDonadores( $inputs );
 					break;
 			}
 		}
@@ -74,6 +80,15 @@ class CoreController extends BaseController {
 	 */
 	private function likeNoticias( $inputs = [] ){
 		Noticias::where( 'id_noticias', $inputs['content_id'] )->increment( 'me_gusta' );
+	}
+
+	/**
+	 * Método para guardar el like del tipo de contenido Donador/Voluntario/Impulsor
+	 * @param  array  $inputs Datos del Contenido
+	 * @return
+	 */
+	private function likeDonadores( $inputs = [] ){
+		Registrados::where( 'id_registrados', $inputs['content_id'] )->increment( 'me_gusta' );
 	}
 }
 
