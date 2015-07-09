@@ -161,7 +161,7 @@ class HomeController extends BaseController {
 				->where( 'donaciones.status', 1 )
 				->where( 'donaciones.mostrar_perfil', 1 )
 				->where( 'profiles.displayName','LIKE', "%$s%" )
-				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.me_gusta' )
+				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados','registrados.me_gusta' )
 				->get();
 
 		$voluntarios = DB::table( 'voluntarios' )->limit(3)->offset(0)
@@ -171,7 +171,7 @@ class HomeController extends BaseController {
 				->where( 'voluntarios.aprobacion', 1 )
 				->where( 'voluntarios.terminos', 1 )
 				->where( 'profiles.displayName','LIKE', "%$s%" )
-				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.me_gusta' )
+				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados','registrados.me_gusta' )
 				->get();
 
 		$impulsadas = DB::table( 'impulsadas' )->limit(3)->offset(0)
@@ -181,7 +181,7 @@ class HomeController extends BaseController {
 				//->where( 'impulsadas.status', 1 )
 				->where( 'impulsadas.mostrar_perfil', 1 )
 				->where( 'profiles.displayName','LIKE', "%$s%" )
-				->select( 'profiles.id_profiles', 'profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.me_gusta' )
+				->select( 'profiles.id_profiles', 'profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados','registrados.me_gusta' )
 				->get();
 
 				foreach ($donaciones as $key => $value) {
