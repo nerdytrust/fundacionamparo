@@ -2,10 +2,30 @@
 
 class CoversController extends BaseController {
 
-	private $_apiContext;
+	private $_api;
 	private $_ClientId     = 'Ab_PyKePqSHu26uPKjtbhBVYq4iB5bx0dZAX_N9D0dYB_1Qzh3kB8O97oOWE54CqTNGmd6kcV8l4Rha2';
     private $_ClientSecret = 'EDAp5eZ9kqpYl9R7KuBPhxfY7yOCmJv00oJ5VHM4ufKgPmiEKF_Uf0Lfm57p2kbITmG65B0LnSZ_JtLj';
 
+
+    public function __construct()
+    {
+
+    	$this->_api = new \PayPal\Rest\ApiContext(
+		  new \PayPal\Auth\OAuthTokenCredential(
+		    $this->_ClientId,
+		    $this->_ClientSecret
+		  )
+		);
+
+		 $this->_api->setConfig(array(
+            'mode' => 'sandbox',
+            'http.ConnectionTimeOut' => 30,
+            'log.LogEnabled' => true,
+            'log.FileName' => __DIR__.'/../../storage/logs/PayPal.log',
+            'log.LogLevel' => 'FINE'
+    	));
+
+    }
 	/**
 	 * Método para mostrar la vista del formulario de donación
 	 * @return
@@ -265,20 +285,7 @@ class CoversController extends BaseController {
 		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
 		$monto = Session::get( 'donacion.monto' );
 
-		$api = new \PayPal\Rest\ApiContext(
-		  new \PayPal\Auth\OAuthTokenCredential(
-		    $this->_ClientId,
-		    $this->_ClientSecret
-		  )
-		);
-
-		 $api->setConfig(array(
-            'mode' => 'sandbox',
-            'http.ConnectionTimeOut' => 30,
-            'log.LogEnabled' => true,
-            'log.FileName' => __DIR__.'/../../storage/logs/PayPal.log',
-            'log.LogLevel' => 'FINE'
-    	));
+		
 
 		$payer        = new \PayPal\Api\Payer;
 		$details      = new \PayPal\Api\Details;
@@ -310,19 +317,34 @@ class CoversController extends BaseController {
 				->setTransactions([$transaction]);
 
 		//Redirect Urls
-		$redirectUrls->setReturnUrl('http://amparo.design4causes.dev')
-					 ->setCancelUrl('http://amparo.design4causes.dev');
+		$redirectUrls->setReturnUrl('http://amparo.design4causes.dev/donar/save-paypal')
+					 ->setCancelUrl('http://amparo.design4causes.dev/donar/pago-error');
 
 		$payment->setRedirectUrls($redirectUrls);
 
 		try{
-		  $payment->create( $api );
+
+		  $payment->create( $this->_api );
+
+		  $hash = md5($payment->getId());
+ 		  Session::put( 'paypalhas_hash', $hash );
+
+ 		  $session = Session::get( 'donacion' );
+ 		  $donacion = new Donaciones;
+ 		  $donacion->email 				= $session['email'];
+		  $donacion->id_causas 			= $session['causa_donar'];
+		  $donacion->monto_donacion 	= $session['monto'];
+		  $donacion->reference_id 		= $payment->getId();
+		  $donacion->transaction_id		= Session::get( 'paypalhas_hash' );
+		  $donacion->transaction_type	= 'paypal';
+		  $donacion->mostrar_perfil 	= $session['mostrar_perfil'];
+
+		  $donacion->save();
+
 		}catch(PPConnetionException $e){
 			return View::make( 'public.covers.donar_error' )->with( [
 				'status'	=> $e->getMessage()
 			] );
-			// print_r($e);
-			// header('Location:http://amparo.design4causes.dev/');
 		}
 
 		foreach ($payment->getLinks() as $link){
@@ -331,6 +353,51 @@ class CoversController extends BaseController {
 		}
 
 		return Redirect::to( $redirect );
+	}
+
+	/**
+	 * Método para guardar en BD en la tabla donaciones el registro de donación
+	 * @return
+	 */
+	public function saveDonacionPaypal(){
+
+		$oPayment = new \PayPal\Api\Payment;
+
+		$payerId = $_GET['PayerID'];
+
+		$paymentId = DB::table( 'donaciones' )
+					 ->where('transaction_id',Session::get( 'paypalhas_hash' ))
+					 ->select('reference_id')
+					 ->get();
+
+		$paymentId = $paymentId[0]->reference_id;
+
+		$payment = $oPayment::get($paymentId,$this->_api); 
+
+		$execution = new \PayPal\Api\PaymentExecution;
+		$execution->setPayerId($payerId);	
+
+
+		$payment->execute($execution,$this->_api);
+	
+		DB::table('donaciones')
+            ->where('reference_id', $paymentId)
+            ->update(array('status' => 1));
+
+        Session::forget( 'paypalhas_hash' );
+
+        return Redirect::to( 'gracias' );
+
+	}
+
+	/**
+	 * Método para mostrar error al pagar con paypal
+	 * @return
+	 */
+	public function donarPaypalerror(){
+		return View::make( 'public.covers.donar_error' )->with( [
+						'status'	=> 'No se pudo registrar en nuestro sistema tu donación, favor de contactarnos'
+				] );	
 	}
 
 	/**
@@ -451,6 +518,7 @@ class CoversController extends BaseController {
 
 		return $voluntariado;
 	}
+
 }
 
 /* End of file CoversController.php */
