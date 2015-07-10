@@ -219,13 +219,15 @@
 						<h2>No se encontraron resultados</h2>
 					</div>
 				@else
-					<ul id="fnews"></ul>
-						<script >
-    							var s = '{{ Input::get( 's' ); }}';
-    					</script>
-					<div id="contenedor_btn" >
-						<button id="load-news-search">Cargar más</button>
-					</div>
+					@if ( $count > 6 )
+						<ul id="fnews"></ul>
+							<script >
+	    							var s = '{{ Input::get( 's' ); }}';
+	    					</script>
+						<div id="contenedor_btn" >
+							<button id="load-news-search">Cargar más</button>
+						</div>
+					@endif	
 				@endif
 
 				<div class="adorno_fa">

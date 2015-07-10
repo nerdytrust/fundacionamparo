@@ -54,7 +54,9 @@ Route::get( 'donar/paso-2', [ 'uses' => 'CoversController@donarStepTwo', 'as' =>
 Route::get( 'donar/pago-tarjeta', [ 'uses' => 'CoversController@donarTarjeta', 'as' => 'get.donar/pago-tarjeta' ] );
 Route::get( 'donar/pago-oxxo', [ 'uses' => 'CoversController@donarOxxo', 'as' => 'get.donar/pago-oxxo' ] );
 Route::get( 'donar/pago-spei', [ 'uses' => 'CoversController@donarSpei', 'as' => 'get.donar/pago-spei' ] );
-Route::get( 'donar/pago-paypal', [ 'uses' => 'CoversController@donarPaypal', 'as' => 'get.donar/pago-spei' ] );
+Route::get( 'donar/pago-paypal', [ 'uses' => 'CoversController@donarPaypal', 'as' => 'get.donar/pago-paypal' ] );
+Route::get( 'donar/save-paypal', [ 'uses' => 'CoversController@saveDonacionPaypal', 'as' => 'get.donar/save-paypal' ] );
+Route::get( 'donar/pago-error', [ 'uses' => 'CoversController@donarPaypalerror', 'as' => 'get.donar/pago-error' ] );
 Route::get( 'gracias', [ 'uses' => 'CoversController@donarThanks', 'as' => 'get.gracias' ] );
 Route::get( 'gracias-3', [ 'uses' => 'CoversController@impulsarGracias', 'as' => 'get.gracias-3' ] );
 Route::get( 'donar-causa', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causa' ] );

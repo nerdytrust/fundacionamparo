@@ -10,7 +10,7 @@ class UsersTableSeeder extends Seeder {
 		$faker = Faker::create();
 
 		$admons =[
-			[
+		    [
 				"first_name" => "Carlos",
 				"last_name"	=> "Cuellar",
 				"email"		=> "ccuellarlira@gmail.com"
@@ -30,7 +30,11 @@ class UsersTableSeeder extends Seeder {
 				"last_name"	=> "Bravo",
 				"email"		=> "eric.bravo.rod@gmail.com"
 			],
-
+			[
+				"first_name" => "Francisco",
+				"last_name"  => "Sanchez",
+				"email"		 => "aslanlion56@gmail.com"
+			],
 		];
 
 		foreach ($admons as $user) {
