@@ -66,9 +66,9 @@
 					{{ Form::open( [ 'url' => 'donadores', 'method' => 'GET', 'autocomplete' => 'off', 'role' => 'form' ] ) }}
 						<select name="filtro" id="" onchange='this.form.submit()'>
 							<option value="">Filtrar</option>
-							<option value="donador" {{ (isset($_GET['filtro']) && $_GET['filtro'] == 'donador') ? 'selected' : '' }}>Filtrar por donador</option>
-							<option value="voluntario" {{ (isset($_GET['filtro']) && $_GET['filtro'] == 'voluntario') ? 'selected' : '' }}>Filtrar por voluntarios</option>
-							<option value="impulsadas" {{ (isset($_GET['filtro']) && $_GET['filtro'] == 'impulsadas') ? 'selected' : '' }}>Filtrar por impulsor</option>
+							<option value="donador" {{ ( Input::get( 'filtro' ) && Input::get( 'filtro' ) == 'donador' ) ? 'selected' : '' }}>Filtrar por donador</option>
+							<option value="voluntario" {{ ( Input::get( 'filtro' ) && Input::get( 'filtro' ) == 'voluntario') ? 'selected' : '' }}>Filtrar por voluntarios</option>
+							<option value="impulsadas" {{ ( Input::get( 'filtro' ) && Input::get( 'filtro' ) == 'impulsadas' ) ? 'selected' : '' }}>Filtrar por impulsor</option>
 						</select>
 						
 					{{ Form::close() }}
