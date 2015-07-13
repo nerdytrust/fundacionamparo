@@ -21,8 +21,6 @@ class CreateCausasTable extends Migration {
 			$table->integer('meta');
 			$table->boolean('orden')->nullable()->default(0);
 			$table->integer('recaudado')->nullable();
-			$table->text('facebook')->nullable();
-			$table->text('twitter')->nullable();
 			$table->bigInteger('me_gusta_interno')->default(0);
 			$table->text('imagen');
 			$table->integer('id_categorias');

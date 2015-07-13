@@ -20,7 +20,7 @@
 				@if ( isset( $causas ) )
 	 				@foreach ( $causas as $causa )
 	 					<article class="caja_2">
-				 			<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '559x548' ) }}" alt="">
+				 			<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '559x548' ) }}" alt="{{ $causa->titulo }}">
 				 			<section id="social_top">
 								<ul>
 									{{ Helper::facebookShare( '', URL::to( 'ficha-causa' ) . '/' . $causa->id_causas, '' ) }}
@@ -56,35 +56,23 @@
 	 				@endforeach
 	 			@endif
 			</div><!--termina re-->
-			<div id="pleca_causas" class="">
-				<h1>CAUSAS EXTERNAS</h1>
-			</div>
-			<div class="re csa">
-				<section id="causa1" class="causas-social ">
-					<img src="{{ asset( 'images/causa1.png' ) }}" alt="">
-					<div id="donativo">HAZ TU DONACIÓN</div>
-					<h2 class="text-causas">aportaciones</h2>
-					<h3>A la Educación</h3>
-				</section>
-				<section id="causa2" class="causas-social ">
-					<img src="{{ asset( 'images/causa2.png' ) }}" alt="">
-					<div id="donativo">HAZ TU DONACIÓN</div>
-					<h2 class="text-causas">aportaciones</h2>
-					<h3>Al deporte</h3>
-				</section>
-				<section id="causa3" class="causas-social ">
-					<img src="{{ asset( 'images/causa3.png' ) }}" alt="">
-					<div id="donativo">HAZ TU DONACIÓN</div>
-					<h2 class="text-causas">aportaciones</h2>
-					<h3>Asistenciales</h3>
-				</section>
-				<section id="causa4" class="causas-social ">
-					<img src="{{ asset( 'images/causa4.png' ) }}" alt="">
-					<div id="donativo">HAZ TU DONACIÓN</div>
-					<h2 class="text-causas">aportaciones</h2>
-					<h3>fundhepa</h3>
-				</section>
-			</div><!--termina dre-->
+			@if ( ! empty( $externas ) )
+				<div id="pleca_causas" class="">
+					<h1>CAUSAS EXTERNAS</h1>
+				</div>
+				<div class="re csa">
+					@foreach ( $externas as $externa )
+						<section id="causa1" class="causas-social ">
+							<a href="{{ URL::to( 'ficha-causas/' . $externa->id_causas ) }}">
+								<img src="{{ asset( 'path_image/' . $externa->imagen . '/' . '480x481' ) }}" alt="{{ $causa->titulo }}">
+							</a>
+							<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $externa->id_causas ) }}';">HAZ TU DONACIÓN</div>
+							<h2 class="text-causas">aportaciones</h2>
+							<h3>{{ strtoupper( $externa->id_categorias_record->nombre ) }}</h3>
+						</section>
+					@endforeach
+				</div><!--termina dre-->
+			@endif
 			<section id="ultimos_dona"class="">
 				<div class="adorno_fa">
 					<img src="{{ asset( 'images/adorno_fa.png' ) }}" alt="">

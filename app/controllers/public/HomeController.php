@@ -25,7 +25,7 @@ class HomeController extends BaseController {
 	 */
 	public function home() {
 		$video = HomeVideo::where( 'activo', 'Active' )->firstOrFail();
-		$causas = Causas::orderBy( 'orden' )->take(3)->get();
+		$causas = Causas::orderBy( 'orden' )->take(3)->where( 'id_tipo_causas', 1 )->get();
 		$donadores = Donadores::orderBy( 'created_at', 'DESC' )->take(5)->get();
 		$total_donadores = Session::get( 'total_donadores' );
 		if ( ! $total_donadores || empty( $total_donadores ) )

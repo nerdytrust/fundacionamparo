@@ -229,7 +229,8 @@
                     || $('body').hasClass( 'donar-gracias' )
                     || $('body').hasClass( 'donar-error' )  
                     || $('body').hasClass( 'donar-spei' ) 
-                    || $('body').hasClass( 'donar-oxxo' ) ){
+                    || $('body').hasClass( 'donar-oxxo' ) 
+                    || $('body').hasClass( 'donar-paypal' ) ){
                     $('body').css({
                         'background': '#beda3e'
                     });

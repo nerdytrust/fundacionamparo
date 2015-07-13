@@ -94,7 +94,7 @@ class Causas extends \Crud {
         // ["first_name" => "text"] 
         // text,hidden,textarea,password,digit,file,email,title
         //
-        "inputs"    => [ 'meta' => 'currency', 'imagen' => 'image', 'twitter' => 'text', 'facebook' => 'text' ],
+        "inputs"    => [ 'meta' => 'currency', 'imagen' => 'image' ],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
@@ -133,10 +133,10 @@ class Causas extends \Crud {
         "index"     => [],
         "show"      => [],
 
-        "not_in_create" => [ "me_gusta_interno", 'facebook', 'twitter', "recaudado", "created_at", "updated_at", 'created_by', 'updated_by' ],
-        "not_in_edit"   => [ "me_gusta_interno", 'facebook', 'twitter', "recaudado", "created_at", "updated_at", 'created_by', 'updated_by' ],
-        "not_in_index"  => [ "created_at", "updated_at", "facebook", "twitter", "imagen", "updated_by", "id_causas", "created_by" ],
-        // "not_in_show"   => ["created_at","updated_at"],
+        "not_in_create" => [ "me_gusta_interno", "recaudado", "created_at", "updated_at", 'created_by', 'updated_by' ],
+        "not_in_edit"   => [ "me_gusta_interno", "recaudado", "created_at", "updated_at", 'created_by', 'updated_by' ],
+        "not_in_index"  => [ "created_at", "updated_at", "imagen", "updated_by", "id_causas", "created_by" ],
+        "not_in_show"   => [ 'orden', 'created_at', 'updated_at', 'created_by', 'updated_by' ],
 
         //
         // Buttons
