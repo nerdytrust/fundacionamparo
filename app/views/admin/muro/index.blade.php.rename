@@ -6,15 +6,15 @@
 			<thead>
 				<tr>
 
-					<td> {{ $columns->id_momento->label }} </td>
-					<td> {{ $columns->anio->label }} </td>
+					<td> {{ $columns->id_muros->label }} </td>
+					<td> {{ $columns->year->label }} </td>
 					<td> {{ $columns->titulo->label }} </td>
 					<td> {{ $columns->descripcion->label }} </td>
-					<td> {{ $columns->id_categoria->label }} </td>
+					<td> {{ $columns->id_categorias->label }} </td>
 					<td> {{ $columns->parent->label }} </td>
 					<td> {{ $columns->imagen->label }} </td>
 					<td> {{ $columns->orden->label }} </td>
-					<td> {{ $columns->me_gusta_interno->label }} </td>
+					<td> {{ $columns->me_gusta->label }} </td>
 
 
 					@include("crud.index-column-buttons")
@@ -28,15 +28,15 @@
 				<tr>
 
 
-					<td>{{ parseToHTML($columns->id_momento,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->anio,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->id_muros,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->year,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->titulo,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->descripcion,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->id_categoria,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->id_categorias,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->parent,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->imagen,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->orden,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->me_gusta_interno,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->me_gusta,$record,$fk_column) }}</td>
 
 
 					@include("crud.index-buttons")

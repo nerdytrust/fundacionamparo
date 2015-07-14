@@ -4,13 +4,13 @@
 
 
 
-<div class="form-group @if ($errors->has('anio')) has-error @endif">
+<div class="form-group @if ($errors->has('year')) has-error @endif">
 
- {{ Form::label("date", "Año") }}
+ {{ Form::label("text", "Año") }}
    
-      {{ Form::datepicker("anio",$record->anio,["class"=>"form-control","placeholder"=>"Año"],"date") }}
+      {{ Form::text("year",$record->year,["class" => "form-control","placeholder"=>"Año"]); }}
     
- <span class="help-block">{{ $errors->first('anio') }}</span>
+ <span class="help-block">{{ $errors->first('year') }}</span>
 </div>
 
 <div class="form-group @if ($errors->has('titulo')) has-error @endif">
@@ -31,20 +31,20 @@
  <span class="help-block">{{ $errors->first('descripcion') }}</span>
 </div>
 
-<div class="form-group @if ($errors->has('id_categoria')) has-error @endif">
+<div class="form-group @if ($errors->has('id_categorias')) has-error @endif">
 
- {{ Form::label("select", "Categoria") }}
+ {{ Form::label("remotecombo", "Categoría") }}
    
-      {{ Form::combo("id_categoria",$record->id_categoria,["class" => "form-control","placeholder"=>"Categoria"],$columns->id_categoria->data ); }}
+      {{ Form::remotecombo("id_categorias",$record->id_categorias,["table"=>$model,"class" => "form-control","placeholder"=>"Categoría"] ); }}
     
- <span class="help-block">{{ $errors->first('id_categoria') }}</span>
+ <span class="help-block">{{ $errors->first('id_categorias') }}</span>
 </div>
 
 <div class="form-group @if ($errors->has('parent')) has-error @endif">
 
- {{ Form::label("select", "Parent") }}
+ {{ Form::label("number", "Padre") }}
    
-      {{ Form::combo("parent",$record->parent,["class" => "form-control","placeholder"=>"Parent"],$columns->parent->data ); }}
+      {{ Form::number("parent",$record->parent,["class" => "form-control","placeholder"=>"Padre"]); }}
     
  <span class="help-block">{{ $errors->first('parent') }}</span>
 </div>

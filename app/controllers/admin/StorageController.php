@@ -34,21 +34,18 @@ class StorageController extends \BaseController {
  	}
 
 
-	public function upload()
-	{
+	public function upload(){
 
         $file = "file";
-
         $destinationPath = app_path().'/storage/uploads/'; // upload path
         
-        if (\Input::file($file)->isValid()) {
+		if ( \Input::file($file)->isValid() ) {
+			$fileName = md5(str_random(40)); // renameing image
+			\Input::file($file)->move($destinationPath, $fileName); // uploading file to given path
 
-          $fileName = md5(str_random(40)); // renameing image
-          \Input::file($file)->move($destinationPath, $fileName); // uploading file to given path
-
-        	return './image/' . $fileName;//change this URL
-        }else
-        	return 'Ooops!! try later :(';
+			return './image/' . $fileName;//change this URL
+		}else
+			return 'Ooops!! try later :(';
 
 	}
 
