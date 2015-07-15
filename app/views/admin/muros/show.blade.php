@@ -5,10 +5,10 @@
 	
 	
 <div class="row">
-	<div class="col-xs-2 text-right ">
+	<div class="col-xs-2 text-right bg-primary h4">
 		{{ Form::label($columns->id_muros->input, $columns->id_muros->label) }}
 	</div>
-	<div class="col-xs-10 ">
+	<div class="col-xs-10 h4">
 		{{ parseToHTML($columns->id_muros,$record,$fk_column) }}
 	</div>
 </div>
@@ -46,26 +46,10 @@
 </div>
 <div class="row">
 	<div class="col-xs-2 text-right ">
-		{{ Form::label($columns->parent->input, $columns->parent->label) }}
-	</div>
-	<div class="col-xs-10 ">
-		{{ parseToHTML($columns->parent,$record,$fk_column) }}
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-2 text-right ">
 		{{ Form::label($columns->imagen->input, $columns->imagen->label) }}
 	</div>
 	<div class="col-xs-10 ">
-		{{ parseToHTML($columns->imagen,$record,$fk_column) }}
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-2 text-right ">
-		{{ Form::label($columns->orden->input, $columns->orden->label) }}
-	</div>
-	<div class="col-xs-10 ">
-		{{ parseToHTML($columns->orden,$record,$fk_column) }}
+		<img src="{{ asset( 'path_image/'  . $record->imagen . '/' . '450x200' ) }}" alt="">
 	</div>
 </div>
 <div class="row">
@@ -74,38 +58,6 @@
 	</div>
 	<div class="col-xs-10 ">
 		{{ parseToHTML($columns->me_gusta,$record,$fk_column) }}
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-2 text-right ">
-		{{ Form::label($columns->created_by->input, $columns->created_by->label) }}
-	</div>
-	<div class="col-xs-10 ">
-		{{ parseToHTML($columns->created_by,$record,$fk_column) }}
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-2 text-right ">
-		{{ Form::label($columns->updated_by->input, $columns->updated_by->label) }}
-	</div>
-	<div class="col-xs-10 ">
-		{{ parseToHTML($columns->updated_by,$record,$fk_column) }}
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-2 text-right ">
-		{{ Form::label($columns->created_at->input, $columns->created_at->label) }}
-	</div>
-	<div class="col-xs-10 ">
-		{{ parseToHTML($columns->created_at,$record,$fk_column) }}
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-2 text-right ">
-		{{ Form::label($columns->updated_at->input, $columns->updated_at->label) }}
-	</div>
-	<div class="col-xs-10 ">
-		{{ parseToHTML($columns->updated_at,$record,$fk_column) }}
 	</div>
 </div>
 

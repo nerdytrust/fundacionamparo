@@ -33,7 +33,7 @@
 						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/membresias','Membresías') }}</li>
 						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/faq','FAQs') }}</li>
 						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/home_video','Video Home') }}</li>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/muro','Muro') }}</li>
+						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/muros','Muro') }}</li>
 						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/noticias','Noticias') }}</li>
 					</ul>
 				</li>

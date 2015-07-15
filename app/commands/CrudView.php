@@ -191,8 +191,7 @@ class CrudView extends Command
 
 
 
-    protected function getInput($column)
-    {
+    protected function getInput( $column ){
         $input = $this->inputs[$column->input];
 
         $search  = array(
@@ -206,16 +205,12 @@ class CrudView extends Command
           $column->input,
         );
 
-
         return str_replace($search, $replace, $input);
-
     }
 
 
 
-    protected function makeInputs($columns,$view)
-    {
-
+    protected function makeInputs($columns,$view){
         $content = "";
 
         foreach ($columns as $column) {

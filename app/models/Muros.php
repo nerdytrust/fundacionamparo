@@ -1,11 +1,11 @@
 <?php
 
-class Muro extends \Crud {
+class Muros extends \Crud {
 
 
-    protected $primaryKey = 'id_muro'; // !important
+    protected $primaryKey = 'id_muros'; // !important
 
-    protected $table = 'muro';
+    protected $table = 'muros';
 
     protected $fillable = [];
 
@@ -66,7 +66,8 @@ class Muro extends \Crud {
     // {
     //      return $value;
     // }
-
+    //
+    
 
 
     // ===================================================================
@@ -88,14 +89,16 @@ class Muro extends \Crud {
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
-        // "radiogroup","radios","editor","toggle","html","text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"
+        // "radiogroup","radios","editor","toggle","html","text", "hidden", "digit", "textarea", 
+        // "password", "email","datetime","date","time","select","autocomplete","money","currency", 
+        // "file","document","audio","video","zip", "category"
         //
         "inputs"    => [ 'imagen' => 'image' ],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
-        "fk_column" => [ 'id_categorias' => 'nombre' ],
+        "fk_column" => [ 'id_categorias' => 'nombre', 'parent' => 'select' ],
         //
         // JOINS
         // Remember by default the framework create autojoins when you define id_(table)   
@@ -117,7 +120,7 @@ class Muro extends \Crud {
         // if you can change the columns and inputs you will go to model
         // for example users_notes go to app/models/UsersNotes.php
         //
-        //"default_tabs" => ["notes","logs"],
+        "default_tabs" => [],
         //
         // Validate inputs
         // Rules by column
@@ -137,16 +140,16 @@ class Muro extends \Crud {
         "show"      => [],
 
         "not_in_create" => [ 'id_muros', 'me_gusta', 'created_by', 'updated_by', 'created_at', 'updated_at' ],
-        // "not_in_edit"   => ["created_at","updated_at"],
-        // "not_in_index"  => ["created_at","updated_at"],
-        // "not_in_show"   => ["created_at","updated_at"],
+        "not_in_edit"   => [ 'id_muros', 'me_gusta', 'created_by', 'updated_by', 'created_at', 'updated_at' ],
+        "not_in_index"  => [ 'id_muros', 'me_gusta', 'descripcion', 'parent', 'orden', 'imagen', 'created_by', 'updated_by', 'created_at', 'updated_at' ],
+        "not_in_show"   => [ 'parent', 'orden', 'created_by', 'updated_by', 'created_at', 'updated_at' ],
 
         //
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
-        // "btn_in_show"   => ["print","edit","cancel"],
+        "btn_in_index"  => [ "create","edit","show","delete","search","advance-search"],
+        "btn_in_show"   => [ "edit","cancel" ],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],
 

@@ -4,15 +4,6 @@
 
 
 
-<div class="form-group @if ($errors->has('id_muros')) has-error @endif">
-
- {{ Form::label("remotecombo", "Muro") }}
-   
-      {{ Form::remotecombo("id_muros",$record->id_muros,["table"=>$model,"class" => "form-control","placeholder"=>"Muro"] ); }}
-    
- <span class="help-block">{{ $errors->first('id_muros') }}</span>
-</div>
-
 <div class="form-group @if ($errors->has('year')) has-error @endif">
 
  {{ Form::label("text", "Año") }}
@@ -74,15 +65,6 @@
       {{ Form::text("orden",$record->orden,["class" => "form-control","placeholder"=>"Orden"]); }}
     
  <span class="help-block">{{ $errors->first('orden') }}</span>
-</div>
-
-<div class="form-group @if ($errors->has('me_gusta')) has-error @endif">
-
- {{ Form::label("number", "Me gusta") }}
-   
-      {{ Form::number("me_gusta",$record->me_gusta,["class" => "form-control","placeholder"=>"Me gusta"]); }}
-    
- <span class="help-block">{{ $errors->first('me_gusta') }}</span>
 </div>
 
      

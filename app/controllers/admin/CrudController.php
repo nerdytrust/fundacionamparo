@@ -286,8 +286,7 @@ class CrudController extends \BaseController {
      *
      * @return Response
      */
-    public function store()
-    {
+    public function store(){
         $class     = new $this->className();
         $columns   = $class->getColumnsByView("create");
 
@@ -318,13 +317,12 @@ class CrudController extends \BaseController {
                     "path"      => &$path
                   ];
 
-        $class->beforeStore($params);
-        \Event::fire($this->viewName.'.beforeStore',[$params]);
+        $class->beforeStore( $params );
+        \Event::fire( $this->viewName . '.beforeStore', [ $params ] );
 
-
-        if ($validator->fails()) {
-
-            \Event::fire($this->viewName.'.failValidatorStore',[$params]);
+        if ( $validator->fails() ) {
+            
+            \Event::fire( $this->viewName . '.failValidatorStore', [ $params ] );
 
             if(\Request::ajax())
             {
@@ -337,7 +335,6 @@ class CrudController extends \BaseController {
                     ->withErrors($validator)
                     ->withInput(\Input::except("password")); 
             }
-
         }
 
         $record = $class;

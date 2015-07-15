@@ -1,5 +1,8 @@
 <?php
 
+use Paypal\Rest\ApiContext,
+	Paypal\Auth\OAuthTokenCredential;
+
 class DonacionesController extends BaseController {
 
 	private $rules_step_one = [
@@ -16,6 +19,10 @@ class DonacionesController extends BaseController {
 
 	private $expires = null;
 
+	private $_api;
+	private $_ClientId     = 'Ab_PyKePqSHu26uPKjtbhBVYq4iB5bx0dZAX_N9D0dYB_1Qzh3kB8O97oOWE54CqTNGmd6kcV8l4Rha2';
+    private $_ClientSecret = 'EDAp5eZ9kqpYl9R7KuBPhxfY7yOCmJv00oJ5VHM4ufKgPmiEKF_Uf0Lfm57p2kbITmG65B0LnSZ_JtLj';
+
 	/**
 	 * Método constructor para inicializar variables
 	 */
@@ -23,6 +30,21 @@ class DonacionesController extends BaseController {
 		Conekta::setApiKey( 'key_Cxkxn8imrq4nosMpnnr3nVA' );
 		Conekta::setLocale( 'es' );
 		$this->expires = strtotime('+2 day', time() );
+
+		$this->_api = new ApiContext(
+		  new OAuthTokenCredential(
+		    $this->_ClientId,
+		    $this->_ClientSecret
+		  )
+		);
+
+		 $this->_api->setConfig(array(
+            'mode' => 'sandbox',
+            'http.ConnectionTimeOut' => 30,
+            'log.LogEnabled' => true,
+            'log.FileName' => __DIR__.'/../../storage/logs/PayPal.log',
+            'log.LogLevel' => 'FINE'
+    	));
 	}
 
 	/**
@@ -96,13 +118,27 @@ class DonacionesController extends BaseController {
 	}
 
 	/**
+	 * Método para procesar el formulario de pago mediante PayPal
+	 * @return 
+	 */
+	public function payPal(){
+		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
+		$monto = Session::get( 'donacion.monto' ) * 100;
+		if ( empty( $monto ) )
+			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
+
+		if ( $this->methodPaypal( $causa, $monto ) )
+			return Redirect::to( 'gracias' );
+	}
+
+	/**
 	 * Método para procesar la información de pago de una donación mediante Tarjetas Débito/Crédito
 	 * @param  array $causa Objeto de la Causa
 	 * @param  string $monto Monto de la Donación
 	 * @return string Retorna en formato JSON un objeto con los campos "errors", "success", "redirect"
 	 */
 	private function methodCard( $causa = [], $monto = '', $conektaTokenId = '' ){
-		if ( empty( $causa ) || empty( $causa ) )
+		if ( empty( $causa ) || empty( $monto ) )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
 
 		try {
@@ -138,6 +174,18 @@ class DonacionesController extends BaseController {
 		return TRUE;
 	}
 
+	
+	private function methodPaypal( $causa = [], $monto = '' ){
+		if ( empty( $causa ) || empty( $monto ) )
+			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
+
+		try {
+			
+		} catch (PPConnetionException $e) {
+			
+		}
+	}
+
 	/**
 	 * Método para procesar la información de pago de una donación mediante Oxxo
 	 * @param  array $causa Objeto de la Causa
@@ -145,7 +193,7 @@ class DonacionesController extends BaseController {
 	 * @return string        Retorna en formato JSON un objeto con los campos "errors", "success", "redirect"
 	 */
 	private function methodOxxo( $causa = [], $monto = '' ){
-		if ( empty( $causa ) || empty( $causa ) )
+		if ( empty( $causa ) || empty( $monto ) )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
 
 		try {
@@ -185,7 +233,7 @@ class DonacionesController extends BaseController {
 	 * @return string        Retorna en formato JSON un objeto con los campos "errors", "success", "redirect"
 	 */
 	private function methodSpei( $causa = [], $monto = '' ){
-		if ( empty( $causa ) || empty( $causa ) )
+		if ( empty( $causa ) || empty( $monto ) )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
 	
 		try {

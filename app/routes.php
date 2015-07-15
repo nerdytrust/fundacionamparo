@@ -55,7 +55,7 @@ Route::get( 'donar/pago-tarjeta', [ 'uses' => 'CoversController@donarTarjeta', '
 Route::get( 'donar/pago-oxxo', [ 'uses' => 'CoversController@donarOxxo', 'as' => 'get.donar/pago-oxxo' ] );
 Route::get( 'donar/pago-spei', [ 'uses' => 'CoversController@donarSpei', 'as' => 'get.donar/pago-spei' ] );
 Route::get( 'donar/pago-paypal', [ 'uses' => 'CoversController@donarPaypal', 'as' => 'get.donar/pago-paypal' ] );
-Route::get( 'donar/save-paypal', [ 'uses' => 'CoversController@saveDonacionPaypal', 'as' => 'get.donar/save-paypal' ] );
+//Route::get( 'donar/save-paypal', [ 'uses' => 'CoversController@saveDonacionPaypal', 'as' => 'get.donar/save-paypal' ] );
 Route::get( 'donar/pago-error', [ 'uses' => 'CoversController@donarPaypalerror', 'as' => 'get.donar/pago-error' ] );
 Route::get( 'gracias', [ 'uses' => 'CoversController@donarThanks', 'as' => 'get.gracias' ] );
 Route::get( 'gracias-3', [ 'uses' => 'CoversController@impulsarGracias', 'as' => 'get.gracias-3' ] );
@@ -93,6 +93,7 @@ Route::post( 'formulario-contacto', 'ContactoController@enviarContacto' );
 Route::post( 'nueva-donacion', 'DonacionesController@nuevaDonacion' );
 Route::post( 'donacion-pago-tarjeta', 'DonacionesController@payCard' );
 Route::post( 'paso-dos-donacion', 'DonacionesController@metodoPago' );
+Route::post( 'pasarela-paypal', 'DonacionesController@payPal' );
 Route::post( 'enviar-password', 'HomeController@sendPassword' );
 Route::post( 'registrar-usuario', 'HomeController@newMember' );
 Route::post( 'like', 'CoreController@likeProcess' );

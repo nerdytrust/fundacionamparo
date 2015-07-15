@@ -120,16 +120,40 @@
 		 			<div>
 		 				<div class="titleM">ÚLTIMOS DONADORES</div>
 						<p>Donadores recientes que se unieron y juntos estamos <span>#TomandoAcciónFA</span></p>
-						@if ( is_array(  $donadores ) )
-		 					@foreach( $donadores as $donador )
-				 				<div class="{{ strtolower( $donador->tipo) }}_clas">
-				 					<div class="img_redonda">
-				 					<img src="{{ asset( 'images/persona_fa01.png' ) }}" alt="">
-				 					</div>
-				 					<h1>{{ Helper::fullName( $donador->nombre, $donador->apellidos ) }}</h1>
-				 					<h2>{{ $donador->tipo }}</h2>
-				 				</div>
-				 			@endforeach
+						@if ( is_array(  $ultimos ) )
+							@if ( isset( $ultimos['donadores'] ) )
+		 						@foreach ( $ultimos['donadores'] as $donador )
+					 				<div class="donador_clas">
+					 					<div class="img_redonda">
+					 					<img src="{{ $donador->photoURL }}" alt="">
+					 					</div>
+					 					<h1>{{ $donador->displayName }}</h1>
+					 					<h2>DONADOR</h2>
+					 				</div>
+					 			@endforeach
+					 		@endif
+							@if ( isset( $ultimos['impulsores'] ) )
+					 			@foreach ( $ultimos['impulsores'] as $impulsor )
+					 				<div class="impulsor_clas">
+					 					<div class="img_redonda">
+					 					<img src="{{ $impulsor->photoURL }}" alt="">
+					 					</div>
+					 					<h1>{{ $impulsor->displayName }}</h1>
+					 					<h2>IMPULSOR</h2>
+					 				</div>
+					 			@endforeach
+					 		@endif
+							@if ( isset( $ultimos['voluntarios'] ) )
+					 			@foreach ( $ultimos['voluntarios'] as $voluntario )
+					 				<div class="voluntario_clas">
+					 					<div class="img_redonda">
+					 					<img src="{{ $voluntario->photoURL }}" alt="">
+					 					</div>
+					 					<h1>{{ $voluntario->displayName }}</h1>
+					 					<h2>VOLUNTARIO</h2>
+					 				</div>
+					 			@endforeach
+					 		@endif
 				 		@else
 				 			<div class="donador_clas">
 			 					<div class="img_redonda">
