@@ -12,7 +12,7 @@
 				<label for="" class="vol">
 					{{ Form::open( [ 'url' => 'donacion-pago-tarjeta', 'method' => 'POST', 'autocomplete' => 'off', 'id' => 'form_paycard', 'class' => 'form-paymethod', 'role' => 'form' ] )}}
 						<div class="line"></div>
-						<div class="alert alert-danger" role="alert"></div>
+						<div class="alert alert-danger" role="alert" id="messages"></div>
 						<span>
 							<label for="" class="form-control">Monto a donar</label>
 							{{ Form::text( 'monto', $monto, [ 'id' => 'montodonar', 'readonly' => true ] ) }}

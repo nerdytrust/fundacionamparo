@@ -14,7 +14,7 @@ dashboard
 	<div class="col-sm-6 col-md-6 col-lg-4">
 		<div class="panel panel-primary">
 	      <div class="panel-heading">
-	        <h3 class="panel-title">Administration</h3>
+	        <h3 class="panel-title">Administración</h3>
 	      </div>
 	      <div class="panel-body">
 			<ul>
@@ -22,41 +22,25 @@ dashboard
 					<ul>
 						<li>Administración de Usuarios</li>
 						<ul>
-							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/users','User manager') }}</li>
+							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/users','Usuarios') }}</li>
 							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/roles','Roles') }}</li>
-							{{-- <li>Logs</li> --}}
-						</ul>
-					<li>Configuración</li>
-					<ul>
-						<li>Task manager (Cron)</li>
-						<li>Setup</li>
-					</ul>
-					<li>Agency</li>
-						<ul>
-							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/agency','Agency manager') }}</li>
-							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/agency','Templates') }}</li>
 						</ul>
 					</ul>			
 				<li>Sitio</li>
 				<ul>
-					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/home_video','Video Home') }}</li>
 					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/causas','Causas') }}</li>
-					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/muro','Muro') }}</li>
-					<!--<li>Forms</li>
-					<ul>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_career','Career') }}</li>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_contactus','Contact  Us') }}</li>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_cmbaplication','CMB Application') }}</li>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/web_shop','Shop America') }}</li>
-						
-					</ul>-->
-				</ul>	
-				<!--<li>CMB Site</li>
-				<ul>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/cmb_cms','Content Manager') }}</li>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/cms_images','Images Manager') }}</li>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/cms_videos','Video Manager') }}</li>
-				</ul>-->
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/apoyamos_causa','Solicitudes de Causas') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/donaciones','Donaciones') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/voluntarios','Voluntarios') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/impulsadas','Impulsores') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/becas','Becas') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/membresias','Membresías') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/faq','FAQs') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/home_video','Video Home') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/muros','Muro') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/noticias','Noticias') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/contacto','Contacto') }}</li>
+				</ul>
 			</ul>
 	      </div>
 		</div>

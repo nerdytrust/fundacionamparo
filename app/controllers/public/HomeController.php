@@ -26,15 +26,46 @@ class HomeController extends BaseController {
 	public function home() {
 		$video = HomeVideo::where( 'activo', 'Active' )->firstOrFail();
 		$causas = Causas::orderBy( 'orden' )->take(3)->where( 'id_tipo_causas', 1 )->get();
-		$donadores = Donadores::orderBy( 'created_at', 'DESC' )->take(5)->get();
+		$ultimos = [];
+		$ultimos['donadores'] = DB::table( 'donaciones' )
+				->distinct()
+				->join( 'registrados', 'donaciones.email', '=', 'registrados.email' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->where( 'donaciones.status', 1 )
+				->where( 'donaciones.mostrar_perfil', 1 )
+				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados' )
+				->orderBy( 'donaciones.created_at', 'DESC' )
+				->take(2)
+				->get();
+		$ultimos['impulsores'] = DB::table( 'impulsadas' )
+				->distinct()
+				->join( 'registrados', 'impulsadas.email', '=', 'registrados.email' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				//->where( 'impulsadas.status', 1 )
+				->where( 'impulsadas.mostrar_perfil', 1 )
+				->select( 'profiles.id_profiles', 'profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados' )
+				->orderBy( 'impulsadas.created_at', 'DESC' )
+				->take(1)
+				->get();
+		$ultimos['voluntarios'] = DB::table( 'voluntarios' )
+				->distinct()
+				->join( 'registrados', 'voluntarios.email', '=', 'registrados.email' )
+				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+				->where( 'voluntarios.aprobacion', 1 )
+				->where( 'voluntarios.terminos', 1 )
+				->select( 'profiles.id_profiles','profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados' )
+				->orderBy( 'voluntarios.created_at', 'DESC' )
+				->take(2)
+				->get();
+		$ultimos = array_unique( $ultimos, SORT_REGULAR );
 		$total_donadores = Session::get( 'total_donadores' );
 		if ( ! $total_donadores || empty( $total_donadores ) )
-			$total_donadores = DB::table( 'donadores' )->distinct( 'id_fb' )->count();
+			$total_donadores = Donaciones::distinct( 'email' )->where( 'status', 1)->count();
 		Session::put( 'total_donadores', $total_donadores );
 	    return View::make( 'public.home.index' )->with( [ 
 	    	'video' 			=> $video,
 	    	'causas' 			=> $causas,
-	    	'donadores'			=> $donadores
+	    	'ultimos'			=> $ultimos
 	    ] );
 	}
 

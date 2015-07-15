@@ -347,17 +347,45 @@ class Crud extends \BaseModel {
     ];
 
 
-    protected $inputFiles   = ["file"=>"","image"=>"image","gallery"=>"image","images"=>"image","files"=>"","video"=>"video","audio"=>"audio","zip"=>"zip","document"=>"document"];
-
-    protected $allowed    = [
-        "audio"     => ["mp3","wav","ogg"],
-        "image"     => ["jpe","jpeg","jpg","gif","png"],
-        "video"     => ["mp4"],
-        "document"  => ["doc","docx","pot","pps","ppt","pptx","xlsx","xls","pdf","html","htm"],
-        "zip"       => ["zip"]
+    protected $inputFiles   = [ 
+        "file" => "", "image" => "image", "gallery" => "image",
+        "images" => "image", "files" => "", "video" => "video",
+        "audio" => "audio", "zip" => "zip", "document" => "document"
     ];
 
-    protected $inputTypes = ["radiogroup","radios","editor","toggle","html","text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"];
+    protected $allowed    = [
+        "audio"     => [ "mp3","wav","ogg" ],
+        "image"     => [ "jpe","jpeg","jpg","gif","png" ],
+        "video"     => [ "mp4" ],
+        "document"  => [ "doc","docx","pot","pps","ppt","pptx","xlsx","xls","pdf","html","htm" ],
+        "zip"       => [ "zip" ]
+    ];
+
+    protected $inputTypes = [ 
+        "radiogroup",
+        "radios",
+        "editor",
+        "toggle",
+        "html",
+        "text",
+        "hidden",
+        "digit",
+        "textarea",
+        "password",
+        "email",
+        "datetime",
+        "date",
+        "time",
+        "select",
+        "autocomplete",
+        "money",
+        "currency",
+        "file",
+        "document",
+        "audio",
+        "video",
+        "zip"
+    ];
 
     protected $inputColumTypes = [
         "boolean"       => "text",
@@ -875,9 +903,8 @@ class Crud extends \BaseModel {
                 
 
             //replace default input
-            if (array_key_exists($name, $crud_inputs))
-            {
-                if(in_array($crud_inputs[$name], $this->inputTypes))
+            if ( array_key_exists( $name, $crud_inputs ) ){
+                if ( in_array( $crud_inputs[$name], $this->inputTypes ) )
                     $input = $crud_inputs[$name];
             }
 
@@ -940,8 +967,7 @@ class Crud extends \BaseModel {
         return $return;
     }
 
-    public function getInputs($columns = [])
-    {
+    public function getInputs($columns = []){
         $inputs = [];
         foreach ($columns as $column)
             $inputs[] = $column->name;
