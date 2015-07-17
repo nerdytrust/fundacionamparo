@@ -3,7 +3,9 @@
 class MuroExitoController extends BaseController {
 
 	public function index(){
-		return View::make( 'public.muro_exito.index' );
+		return View::make( 'public.muro_exito.index' )->with( [
+			'momentos'	=> Muros::get()
+		] );
 	}
 
 	public function getMoment(){
