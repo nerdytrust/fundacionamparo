@@ -89,6 +89,9 @@
                 '/js/public/complements.js',
                 '/js/public/video.js',
                 '/js/public/spin.min.js',
+                '/js/public/jquery.timeline.js',
+                '/js/public/froogaloop.js',
+                '/js/public/jquery.fitvid.js',
                 '/js/public/jquery.form.min.js'
             ];
         ?>
@@ -99,6 +102,22 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
             <script src="http://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.core.min.js"></script>
             <script type="text/javascript">
+                $(window).load(function(){
+                    $(".flexslider").fitVids().flexslider({
+                        animation: "slide",
+                        useCSS: false,
+                        animationLoop: false,
+                        smoothHeight: true,
+                        start: function(slider){
+                            $('body').removeClass('loading');
+                        },
+                        before: function(slider){
+                            //$f(player).api('pause');
+                        }
+                    });
+                });
+            </script>
+            <!--<script type="text/javascript">
                 $(function(){
                     //$(".animsition").animsition();
 
@@ -215,7 +234,7 @@
                         });
                     });
                 }
-            </script>
+            </script>-->
         @endif
         <script type="text/javascript">
             $(document).ready(function(){
