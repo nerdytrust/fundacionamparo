@@ -48,6 +48,9 @@ header { display: inline-block !important; }
    position: relative;
    top: -15%;
 }
+button:hover{
+  border: none;
+}
 
 /* ====================================================================================================================
  * RESETS
@@ -396,17 +399,22 @@ vertical-align: middle;
  @media only screen and (min-width: 1900px){
     .flexslider .slides img{
       width: 115%;
-      height: 115% !important;
+      height: 145% !important;
     }
   .flex-control-paging li a.flex-active{
     background-size: contain;
     width: 55px;
-    height: 46px;
+    height: auto;
     }
  }
 @media only screen and (min-width: 1280px) and (max-width: 1365px){
     .flexslider .slides img{
-      height: 125% !important;
+      height: 145% !important;
+    }
+     .flex-control-paging li a.flex-active{
+    background-size: contain;
+    width: 55px;
+    height: auto;
     }
 }
 /* iPads (landscape) ----------- */
