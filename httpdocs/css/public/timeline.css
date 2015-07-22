@@ -23,6 +23,31 @@ header { display: inline-block !important; }
 #meenus #menu_dos li a { text-decoration: none; }
 #meenus #btn_dona { padding: .6em 1em; border: 2px solid #beda3e; outline: none; font-weight: 600; }
 
+.btn-cerrar {
+    background: transparent;
+    background-image: url(../../images/x1.png);
+    height: 40px;
+    margin-top: 15px;
+    position: absolute;
+    outline: none;
+    right: 15px;
+    width: 40px;
+    z-index: 17;
+    &:active {
+      outline: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+    &:hover {
+      background-color: inherit;
+      border: none;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  
 .container-fluid{
   height: 100% !important;
 }

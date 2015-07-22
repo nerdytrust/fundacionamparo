@@ -81,6 +81,7 @@ Route::get( 'gracias-registro', [ 'uses' => 'CoversController@thanksRegistro', '
 
 Route::get( 'path_video/{id}', 'StoragePathController@videoStorage' );
 Route::get( 'path_image/{id}/{size}', 'StoragePathController@imgStorage' );
+Route::get( 'path_image/{id}', 'StoragePathController@imgStorage' );
 Route::get( 'ajax-state', 'BecasController@getState' );
 Route::get( 'ajax-city', 'BecasController@getCity' );
 Route::get( 'ajax-beca-dropdown', 'BecasController@getCombos' );

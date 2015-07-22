@@ -107,6 +107,7 @@
                         animation: "slide",
                         useCSS: false,
                         animationLoop: false,
+                        //manualControls: ".flex-control-nav li",
                         smoothHeight: true,
                         start: function(slider){
                             $('body').removeClass('loading');
@@ -115,6 +116,36 @@
                             //$f(player).api('pause');
                         }
                     });
+
+                    $('#momento a').click(function(e){
+                        e.preventDefault();
+                        
+                        var moment = $(this).attr('id');
+                        
+                        $.post( "{{ URL::to( 'ajax-moments' ) }}", { moment: moment }, function(data){
+                            if ( data != false ){
+                                $('#moments_time').html(data);
+                                //coverImg();
+                                $('#main_time').hide().fadeOut(200, "swing", function(){
+                                   $(".flexslider").fitVids().flexslider({
+                                        animation: "slide",
+                                        useCSS: false,
+                                        animationLoop: false,
+                                        //manualControls: ".flex-control-nav",
+                                        smoothHeight: true,
+                                        start: function(slider){
+                                            $('body').removeClass('loading');
+                                        },
+                                        before: function(slider){
+                                            //$f(player).api('pause');
+                                        }
+                                    });
+                                    $('#moments_time').fadeIn(800);
+                                });
+                            }
+                        });
+                    });
+
                 });
             </script>
             <!--<script type="text/javascript">
