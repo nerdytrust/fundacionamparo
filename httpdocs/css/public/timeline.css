@@ -73,6 +73,9 @@ header { display: inline-block !important; }
    position: relative;
    top: -15%;
 }
+button:hover{
+  border: none;
+}
 
 /* ====================================================================================================================
  * RESETS
@@ -421,17 +424,22 @@ vertical-align: middle;
  @media only screen and (min-width: 1900px){
     .flexslider .slides img{
       width: 115%;
-      height: 115% !important;
+      height: 145% !important;
     }
   .flex-control-paging li a.flex-active{
     background-size: contain;
     width: 55px;
-    height: 46px;
+    height: auto;
     }
  }
 @media only screen and (min-width: 1280px) and (max-width: 1365px){
     .flexslider .slides img{
-      height: 125% !important;
+      height: 145% !important;
+    }
+     .flex-control-paging li a.flex-active{
+    background-size: contain;
+    width: 55px;
+    height: auto;
     }
 }
 /* iPads (landscape) ----------- */
@@ -455,7 +463,11 @@ vertical-align: middle;
     left: 0%;
   }
  }
-
+@media screen and (min-width: 860px) and (max-width: 1203px){
+  body{
+    padding-top: 100px;
+  }
+}
  @media screen and (max-width: 860px) {
   body{
     padding-top: 100px;
@@ -467,6 +479,11 @@ vertical-align: middle;
   .flex-direction-nav .flex-next {
     opacity: 1;
     right: 10px;
+  }
+  
+  .flexslider .slides img{
+    width: 110% !important; 
+    height: 120% !important;  
   }
 }
 
@@ -480,8 +497,7 @@ vertical-align: middle;
   .cuadro {    
     top: 70% !important;
     z-index: 1000 !important;
-  background: #000 !important;
-     
+  background: #000 !important;    
      left: 0;
   padding: 0 4%;
   }
@@ -503,9 +519,18 @@ vertical-align: middle;
     }
   
  }
- @media screen and (max-width: 640px){
+@media screen and (max-width: 640px){
+  .cuadro {    
+    top: 60% !important;
+   /* background: pink !important;*/
+  }
+  .flex-direction-nav .flex-next {
+  left: 12.4%;
+}
+}
+ @media screen and (max-width: 480px){
   body{
-    padding-top: 120px;
+    padding-top: 100px;
   }
   .flex-direction-nav a{
     width: 20px;
@@ -528,7 +553,8 @@ vertical-align: middle;
       margin: 2% 0;
     }
     .cuadro {    
-    top: 60% !important; 
+    top: 50% !important;
+    /*background: green !important;*/
   }
   span.adorno{
     left: 4%;
@@ -541,6 +567,7 @@ vertical-align: middle;
 @media screen and (min-width: 320px) and (max-height: 480px){
 .cuadro {    
     top: 38% !important; 
+    /*background: red !important;*/
 }
 .flexslider .slides img {
   width: 100% !important;
