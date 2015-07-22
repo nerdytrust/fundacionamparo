@@ -2,11 +2,11 @@
 		<div class="container-fluid">
 		<div class="row">
 		 <section class="slider">
-	        <div class="flexslider interior">
+	        <div class="flexslider">
 	          <ul class="slides">
 		        @if ( isset( $momentos ) )
 					@foreach ( $momentos as $momento )
-						<li class="col-md-12">
+						<li data-year="{{ $momento->year }}" data-target="#carousel-timeline-moments" data-slide-to="0" class="col-md-12">
 		  	    	    <img src="{{ asset( 'path_image/' . $momento->imagen) }}" />
 		  	    	    <div class="col-xs-12 col-sm-12 col-md-5 cuadro">
 		  	    	    	<span class="adorno">{{ $momento->nombre }}</span>
@@ -28,9 +28,7 @@
 
 	          	<!--<p class="col-md-3">1980</p>
 	          	<p class="col-md-3 pull-right text-right">1980</p>-->
-	          </div>
 
-	         
 	        </div>
 	      </section>
 	      </div>
