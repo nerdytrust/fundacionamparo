@@ -2,11 +2,11 @@
 		<div class="container-fluid">
 		<div class="row">
 		 <section class="slider">
-	        <div class="flexslider">
+	        <div class="flexslider interior">
 	          <ul class="slides">
 		        @if ( isset( $momentos ) )
 					@foreach ( $momentos as $momento )
-						<li data-year="{{ $momento->year }}" data-target="#carousel-timeline-moments" data-slide-to="0" class="col-md-12">
+						<li data-year="{{ $momento->titulo }}" data-target="#carousel-timeline-moments" data-slide-to="0" class="col-md-12">
 		  	    	    <img src="{{ asset( 'path_image/' . $momento->imagen) }}" />
 		  	    	    <div class="col-xs-12 col-sm-12 col-md-5 cuadro">
 		  	    	    	<span class="adorno">{{ $momento->nombre }}</span>
@@ -36,9 +36,9 @@
 	<script type="text/javascript">
 			$('#close-momento').click(function(e){
 	            e.preventDefault();
-	            $('#moments_time').hide().fadeOut(200, "swing", function(){
-	            $('#main_time').fadeIn(800);
-	            $('#moments_time').html('');
+	            $('#moments_time').fadeOut(500, "swing", function(){
+	            $('#main_time').fadeIn(1000);
+	            $('#moments_time').html(' ');
 	            });
 
 	        });

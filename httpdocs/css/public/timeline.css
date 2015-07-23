@@ -40,12 +40,24 @@ header { display: inline-block !important; }
       box-shadow: none;
     }
     &:hover {
-      background-color: inherit;
+      background-color: transparent;
       border: none;
     }
     &:focus {
       outline: none;
     }
+  }
+
+  .btn-cerrar:hover{
+    background-color: transparent;
+    border: none;
+    background-image: url(../../images/x1.png);
+  }
+  .btn-cerrar:active{
+     outline: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
   }
   
 .container-fluid{
@@ -246,9 +258,10 @@ html[xmlns] .flexslider .slides {
     top: 19%;
 }
 .interior .flex-control-nav li {
-  margin: 0 3.5%;
+  margin: 0 -3.5%;
 }
 .interior .flex-control-paging li a{
+  display: block;
   transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -257,9 +270,12 @@ html[xmlns] .flexslider .slides {
   color: #000;
   font-size: 47px;
   background: url("../../images/circle-i.png")no-repeat center top;
-  width: 85px;
+  width: 225px;
   height: 58px;
   color: transparent;
+   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   /*border: solid 2px #b4d23e;*/
 }
 .interior .flex-control-nav li::after{
@@ -267,15 +283,19 @@ html[xmlns] .flexslider .slides {
 }
 .interior .flex-control-paging li a.flex-active{
   height: 58px;
-  width: 30px;
+  width: 225px;
+  display: block;
   background: url("../../images/circle.png") no-repeat center top;
   text-align: center;
   color: #fff !important;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 15px;
   border:none;
   padding-top: 28px;
-  background-size: contain;
+  background-size: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .flex-control-nav {
@@ -311,9 +331,9 @@ html[xmlns] .flexslider .slides {
   /*background: #bfda3f;*/
   cursor: pointer;
   /*text-indent: -9999px;*/
-  -webkit-border-radius: 20px;
+ /* -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
-  border-radius: 20px;
+  border-radius: 20px;*/
 transform: rotate(-90deg);
 color: #fff;
 text-align: right;
@@ -336,13 +356,14 @@ vertical-align: middle;
   }
 .flex-control-paging li a.flex-active {
   background: url("../../images/circle.png")no-repeat 42%;
-  cursor: default;
+  cursor: pointer;
   width: 100px;
   height: 31px;
   font-size: 18px;
   font-weight: bolder;
   text-align: right;
-  line-height: 28px;
+  line-height: 35px;
+  background-size: 25px;
   /*background-position-x: 30%;*/
 }
 .flex-control-thumbs {
@@ -427,8 +448,8 @@ vertical-align: middle;
       height: 145% !important;
     }
   .flex-control-paging li a.flex-active{
-    background-size: contain;
-    width: 55px;
+    background-size: 25px;
+    width: 100px;
     height: auto;
     }
  }
@@ -437,8 +458,8 @@ vertical-align: middle;
       height: 145% !important;
     }
      .flex-control-paging li a.flex-active{
-    background-size: contain;
-    width: 55px;
+    background-size: 25px;
+    width: 100px;
     height: auto;
     }
 }
