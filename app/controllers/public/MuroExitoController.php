@@ -3,9 +3,18 @@
 class MuroExitoController extends BaseController {
 	
 	public function index(){
-		
+		$padres = Muros::where('parent',0)
+			->orderby('orden')
+			->get();
+
+		foreach ($padres as $key => $padre) {
+			$hijos = Muros::where('muros.parent',$padre->id_muros)
+			->count();
+			$padres[$key]['hijos'] = $hijos;
+		}
+
 		return View::make( 'public.muro_exito.index' )->with( [
-			'momentos'	=> Muros::where('parent',0)->orderby('orden')->get()
+			'momentos'	=> $padres
 		] );
 	}
 

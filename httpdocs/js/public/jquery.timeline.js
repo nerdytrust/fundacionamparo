@@ -223,7 +223,7 @@
                 if ( '' !== captn && undefined !== captn ) { item += '<span class="' + namespace + 'caption">' + captn + '</span>'; }
               }
 
-              slider.controlNavScaffold.append('<li id="momento">' + item + '</li>');
+              slider.controlNavScaffold.append('<li id="'+slide.attr( 'data-momento' )+'">' + item + '</li>');
               j++;
             }
           }

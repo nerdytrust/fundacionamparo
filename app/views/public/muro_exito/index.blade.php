@@ -10,7 +10,13 @@
 						<ul class="slides">
 						@if ( isset( $momentos ) )
 							@foreach ( $momentos as $momento )
-							<li data-year="{{ $momento->year }}" data-id="{{ $momento->id_muros }}" data-target="#carousel-timeline-moments" data-slide-to="0" class="col-md-12">
+							<li data-year="{{ $momento->year }}" data-target="#carousel-timeline-moments" data-slide-to="0" class="col-md-12"
+								@if ( $momento->hijos > 0 )
+									{{ "data-id =".$momento->id_muros }}
+									{{ "data-momento ='momento'"}}
+								@endif
+
+							>
 								<img src="{{ asset( 'path_image/' . $momento->imagen) }}" />
 								<div class="col-xs-12 col-sm-12 col-md-5 cuadro">
 									<h1><b>{{ $momento->year }}</b>

@@ -131,6 +131,7 @@
                                         animation: "slide",
                                         useCSS: false,
                                         animationLoop: false,
+                                        directionNav: false,
                                         //manualControls: ".flex-control-nav",
                                         smoothHeight: true,
                                         start: function(slider){
