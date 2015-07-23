@@ -257,7 +257,7 @@ html[xmlns] .flexslider .slides {
   color: #000;
   font-size: 47px;
   background: url("../../images/circle-i.png")no-repeat center top;
-  width: 25px;
+  width: 85px;
   height: 58px;
   color: transparent;
   /*border: solid 2px #b4d23e;*/
@@ -299,13 +299,13 @@ html[xmlns] .flexslider .slides {
   color: #fff;
 }
 .flex-control-nav li {
-  margin: 0 6px;
+  margin: 0 -10px;
   display: inline-block;
   zoom: 1;
   display: inline-table;
 }
 .flex-control-paging li a {
-  width: 45px;
+  width: 85px;
   height: 0px;
   display: table;
   /*background: #bfda3f;*/
@@ -335,9 +335,9 @@ vertical-align: middle;
   text-decoration: none;
   }
 .flex-control-paging li a.flex-active {
-  background: url("../../images/circle.png")no-repeat 30%;
+  background: url("../../images/circle.png")no-repeat 42%;
   cursor: default;
-  width: 61px;
+  width: 100px;
   height: 31px;
   font-size: 18px;
   font-weight: bolder;
