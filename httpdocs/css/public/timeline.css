@@ -289,7 +289,6 @@ html[xmlns] .flexslider .slides {
   font-size: 15px;
   border:none;
   padding-top: 35px;
-  background-size: 25px;
   overflow: hidden;
   white-space: nowrap;
   color: transparent;
@@ -300,6 +299,13 @@ html[xmlns] .flexslider .slides {
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
 }
+
+@-moz-document url-prefix() {
+    .interior .flex-control-paging li a {
+         padding-top: 26px;
+    }
+}
+
 .interior .flex-control-nav li::after{
   display: none;
 }
@@ -318,6 +324,13 @@ html[xmlns] .flexslider .slides {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+
+@-moz-document url-prefix() {
+    .interior .flex-control-paging li a.flex-active {
+         padding-top: 24px;
+    }
 }
 
 .flex-control-nav {
