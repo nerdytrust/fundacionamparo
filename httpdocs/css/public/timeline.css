@@ -23,13 +23,13 @@ header { display: inline-block !important; }
 #meenus #menu_dos li a { text-decoration: none; }
 #meenus #btn_dona { padding: .6em 1em; border: 2px solid #beda3e; outline: none; font-weight: 600; }
 
-
-.tooltip.top .tooltip-inner {
+.tooltip.bottom .tooltip-inner {
+    margin-top: -40px;
     background-color: transparent;
-    padding-top: 30px;
     padding-left: 0;
     font-size: 15px;
     max-width: 230px;
+    max-height: 58px;
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
@@ -38,8 +38,9 @@ header { display: inline-block !important; }
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.tooltip.top .tooltip-arrow {
-    border-top-color: transparent;
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: transparent;
 }
 
 .btn-cerrar {
@@ -280,7 +281,7 @@ html[xmlns] .flexslider .slides {
   margin: 0 -3.5%;
 }
 .interior .flex-control-paging li a{
-   height: 58px;
+  height: 58px;
   width: 225px;
   display: block;
   background: url("../../images/circle-i.png")no-repeat center top;
@@ -302,7 +303,7 @@ html[xmlns] .flexslider .slides {
 
 @-moz-document url-prefix() {
     .interior .flex-control-paging li a {
-         padding-top: 26px;
+         padding-top: 24px;
     }
 }
 
@@ -315,7 +316,6 @@ html[xmlns] .flexslider .slides {
   display: block;
   background: url("../../images/circle.png") no-repeat center top;
   text-align: center;
-  color: #fff !important;
   text-transform: uppercase;
   font-size: 15px;
   border:none;
@@ -329,7 +329,7 @@ html[xmlns] .flexslider .slides {
 
 @-moz-document url-prefix() {
     .interior .flex-control-paging li a.flex-active {
-         padding-top: 24px;
+         padding-top: 21px;
     }
 }
 
