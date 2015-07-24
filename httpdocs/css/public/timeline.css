@@ -23,6 +23,25 @@ header { display: inline-block !important; }
 #meenus #menu_dos li a { text-decoration: none; }
 #meenus #btn_dona { padding: .6em 1em; border: 2px solid #beda3e; outline: none; font-weight: 600; }
 
+
+.tooltip.top .tooltip-inner {
+    background-color: transparent;
+    padding-top: 30px;
+    padding-left: 0;
+    font-size: 15px;
+    max-width: 230px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.tooltip.top .tooltip-arrow {
+    border-top-color: transparent;
+}
+
 .btn-cerrar {
     background: transparent;
     background-image: url(../../images/x1.png);
@@ -452,6 +471,11 @@ vertical-align: middle;
     width: 100px;
     height: auto;
     }
+
+    .interior .flex-control-nav li{
+          margin: 0 -1.5%;
+    }
+
  }
 @media only screen and (min-width: 1280px) and (max-width: 1365px){
     .flexslider .slides img{

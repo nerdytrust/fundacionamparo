@@ -142,6 +142,7 @@
                                         }
                                     });
                                     $('#moments_time').fadeIn(1000);
+                                     $('[data-toggle="tooltip"]').tooltip();   
                                 });
                             }
                         });
