@@ -376,7 +376,7 @@ vertical-align: middle;
 }
 .flex-control-nav li::after{
   position: relative;
-  top: -25px;
+  top: -27px;
   /*left: 15px;*/
    left: 2px;
   content: "|";
