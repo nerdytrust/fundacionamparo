@@ -280,22 +280,25 @@ html[xmlns] .flexslider .slides {
   margin: 0 -3.5%;
 }
 .interior .flex-control-paging li a{
+   height: 58px;
+  width: 225px;
   display: block;
+  background: url("../../images/circle-i.png")no-repeat center top;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  border:none;
+  padding-top: 35px;
+  background-size: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: transparent;
+  text-overflow: ellipsis;
   transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
-  color: #000;
-  font-size: 47px;
-  background: url("../../images/circle-i.png")no-repeat center top;
-  width: 225px;
-  height: 58px;
-  color: transparent;
-   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  /*border: solid 2px #b4d23e;*/
 }
 .interior .flex-control-nav li::after{
   display: none;
