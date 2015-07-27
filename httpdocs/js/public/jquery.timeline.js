@@ -223,7 +223,7 @@
                 if ( '' !== captn && undefined !== captn ) { item += '<span class="' + namespace + 'caption">' + captn + '</span>'; }
               }
 
-              slider.controlNavScaffold.append('<li data-toggle="'+slide.attr( 'data-toggle' )+'" title="'+slide.attr( 'data-title' )+'" id="'+slide.attr( 'data-momento' )+'">' + item + '</li>');
+              slider.controlNavScaffold.append('<li data-toggle="'+slide.attr( 'data-toggle' )+'" data-placement="bottom" title="'+slide.attr( 'data-title' )+'" id="'+slide.attr( 'data-momento' )+'">' + item + '</li>');
               j++;
             }
           }

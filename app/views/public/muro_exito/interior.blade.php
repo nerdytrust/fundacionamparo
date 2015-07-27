@@ -6,7 +6,7 @@
 	          <ul class="slides">
 		        @if ( isset( $momentos ) )
 					@foreach ( $momentos as $momento )
-						<li  data-title="{{ $momento->titulo }}" data-toggle="tooltip" data-year="{{ $momento->titulo }}" data-target="#carousel-timeline-moments" data-slide-to="0" class="col-md-12">
+						<li data-toggle="tooltip" data-title="{{ $momento->titulo }}" data-year=" " data-target="#carousel-timeline-moments" data-slide-to="0" class="col-md-12">
 		  	    	    <img src="{{ asset( 'path_image/' . $momento->imagen) }}" />
 		  	    	    <div class="col-xs-12 col-sm-12 col-md-5 cuadro">
 		  	    	    	<span class="adorno">{{ $momento->nombre }}</span>
