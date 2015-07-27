@@ -1,7 +1,7 @@
 <?php
 
-use Paypal\Rest\ApiContext,
-	Paypal\Auth\OAuthTokenCredential;
+/*use Paypal\Rest\ApiContext,
+	Paypal\Auth\OAuthTokenCredential;*/
 
 class DonacionesController extends BaseController {
 
@@ -31,20 +31,20 @@ class DonacionesController extends BaseController {
 		Conekta::setLocale( 'es' );
 		$this->expires = strtotime('+2 day', time() );
 
-		$this->_api = new ApiContext(
+		/*$this->_api = new ApiContext(
 		  new OAuthTokenCredential(
 		    $this->_ClientId,
 		    $this->_ClientSecret
 		  )
-		);
+		);*/
 
-		 $this->_api->setConfig(array(
-            'mode' => 'sandbox',
-            'http.ConnectionTimeOut' => 30,
-            'log.LogEnabled' => true,
-            'log.FileName' => __DIR__.'/../../storage/logs/PayPal.log',
-            'log.LogLevel' => 'FINE'
-    	));
+		// $this->_api->setConfig(array(
+		// 	'mode' => 'sandbox',
+		// 	'http.ConnectionTimeOut' => 30,
+		// 	'log.LogEnabled' => true,
+		// 	'log.FileName' => __DIR__.'/../../storage/logs/PayPal.log',
+		// 	'log.LogLevel' => 'FINE'
+		// ));
 	}
 
 	/**
@@ -89,7 +89,7 @@ class DonacionesController extends BaseController {
 				return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-tarjeta' ] );
 				break;
 			case 'paypal':
-				return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-paypal' ] );
+				//return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-paypal' ] );
 				break;
 			case 'oxxo':
 				$response = $this->methodOxxo( $causa, $monto );
@@ -121,7 +121,7 @@ class DonacionesController extends BaseController {
 	 * Método para procesar el formulario de pago mediante PayPal
 	 * @return 
 	 */
-	public function payPal(){
+	/*public function payPal(){
 		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
 		$monto = Session::get( 'donacion.monto' ) * 100;
 		if ( empty( $monto ) )
@@ -129,7 +129,7 @@ class DonacionesController extends BaseController {
 
 		if ( $this->methodPaypal( $causa, $monto ) )
 			return Redirect::to( 'gracias' );
-	}
+	}*/
 
 	/**
 	 * Método para procesar la información de pago de una donación mediante Tarjetas Débito/Crédito
@@ -175,7 +175,7 @@ class DonacionesController extends BaseController {
 	}
 
 	
-	private function methodPaypal( $causa = [], $monto = '' ){
+	/*private function methodPaypal( $causa = [], $monto = '' ){
 		if ( empty( $causa ) || empty( $monto ) )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
 
@@ -184,7 +184,7 @@ class DonacionesController extends BaseController {
 		} catch (PPConnetionException $e) {
 			
 		}
-	}
+	}*/
 
 	/**
 	 * Método para procesar la información de pago de una donación mediante Oxxo
