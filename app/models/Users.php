@@ -80,7 +80,7 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         // ["first_name" => "text"] 
         // text,hidden,textarea,password,digit,file,email,title
         //
-        "inputs"    => [],
+        "inputs"    => [ 'last_ip' => 'hidden', 'sex' => 'select' ],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
@@ -117,7 +117,7 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         "index"     => [],
         "show"      => [],
 
-        "not_in_create"   => [ 'status', 'sex', 'last_ip', 'ip_mask', "remember_token" ],
+        "not_in_create"   => [ 'status', 'ip_mask', "remember_token" ],
         "not_in_edit"     => [ "remember_token" ],
         "not_in_show"     => [ "password","remember_token" ],
         "not_in_index"    => [ "ip_mask","last_ip","password","remember_token","created_at","updated_at" ],
