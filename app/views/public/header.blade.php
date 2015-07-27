@@ -51,9 +51,9 @@
 			<h3>Donadores <span>#TomandoAcciónFA</span></h3>
 			@if( isset( $header_donadores ) )
 				<span class="donas">
-					<div class="dona fi"><span class="dona-a"></span>Donadores</div> 
-					<div class="dona"><span class="dona-b"></span>Impulsores</div> 
-					<div class="dona"><span class="dona-c"></span>Voluntarios</div> 
+					<div class="dona fi cpointer" onclick="$('#selectDonador').val('donador').change();"><span class="dona-a"></span>Donadores</div> 
+					<div class="dona cpointer" onclick="$('#selectDonador').val('impulsadas').change();"><span class="dona-b"></span>Impulsores</div> 
+					<div class="dona cpointer" onclick="$('#selectDonador').val('voluntario').change();"><span class="dona-c"></span>Voluntarios</div> 
 				</span>
 			@endif
 		</div>
@@ -61,7 +61,7 @@
 			@if( isset( $header_donadores ) )
 				<label for="">
 					{{ Form::open( [ 'url' => 'donadores', 'method' => 'GET', 'autocomplete' => 'off', 'role' => 'form' ] ) }}
-						<select name="filtro" id="" onchange='this.form.submit()'>
+						<select name="filtro" id="selectDonador" onchange='this.form.submit()'>
 							<option value="">Filtrar</option>
 							<option value="donador" {{ ( Input::get( 'filtro' ) && Input::get( 'filtro' ) == 'donador' ) ? 'selected' : '' }}>Filtrar por donador</option>
 							<option value="voluntario" {{ ( Input::get( 'filtro' ) && Input::get( 'filtro' ) == 'voluntario') ? 'selected' : '' }}>Filtrar por voluntarios</option>

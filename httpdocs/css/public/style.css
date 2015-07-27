@@ -26,6 +26,10 @@ button, input{
 	font-family: 'Open Sans', sans-serif;
 }
 
+.cpointer{
+cursor: pointer;
+}
+
 .donadores-section #Contenedor {
 	padding-top: 147px;
 }
