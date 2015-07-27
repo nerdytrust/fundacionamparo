@@ -74,18 +74,18 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         //  if not wrote label the column rename like this: 
         //  ["first_name" => "First Name"]
         // 
-        "labels"    => [],
+        "labels"    => [ 'first_name' => 'Nombre', 'last_name' => 'Apellidos', 'sex' => 'Sexo' ],
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
         // text,hidden,textarea,password,digit,file,email,title
         //
-        "inputs"    => [ 'last_ip' => 'hidden', 'sex' => 'select', 'ip_mask' => 'hidden' ],
+        "inputs"    => [ 'sex' => 'select', 'role' => 'select' ],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
-        "fk_column" => ["id_roles" => "name"],
+        "fk_column" => [ "id_roles" => "name" ],
         // 
         // Tabs
         // Allways create names of tabs with snake case for example
@@ -117,7 +117,7 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         "index"     => [],
         "show"      => [],
 
-        "not_in_create"   => [ 'status', "remember_token" ],
+        "not_in_create"   => [ 'last_ip', 'ip_mask', "remember_token", 'created_at', 'created_by', 'updated_at', 'updated_by' ],
         "not_in_edit"     => [ "remember_token" ],
         "not_in_show"     => [ "password","remember_token" ],
         "not_in_index"    => [ "ip_mask","last_ip","password","remember_token","created_at","updated_at" ],

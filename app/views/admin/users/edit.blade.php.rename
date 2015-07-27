@@ -6,27 +6,27 @@
 
 <div class="form-group @if ($errors->has('first_name')) has-error @endif">
 
- {{ Form::label("text", "First name") }}
+ {{ Form::label("text", "Nombre") }}
    
-      {{ Form::text("first_name",$record->first_name,["class" => "form-control","placeholder"=>"First name"]); }}
+      {{ Form::text("first_name",$record->first_name,["class" => "form-control","placeholder"=>"Nombre"]); }}
     
  <span class="help-block">{{ $errors->first('first_name') }}</span>
 </div>
 
 <div class="form-group @if ($errors->has('last_name')) has-error @endif">
 
- {{ Form::label("text", "Last name") }}
+ {{ Form::label("text", "Apellidos") }}
    
-      {{ Form::text("last_name",$record->last_name,["class" => "form-control","placeholder"=>"Last name"]); }}
+      {{ Form::text("last_name",$record->last_name,["class" => "form-control","placeholder"=>"Apellidos"]); }}
     
  <span class="help-block">{{ $errors->first('last_name') }}</span>
 </div>
 
 <div class="form-group @if ($errors->has('sex')) has-error @endif">
 
- {{ Form::label("select", "Sex") }}
+ {{ Form::label("select", "Sexo") }}
    
-      {{ Form::combo("sex",$record->sex,["class" => "form-control","placeholder"=>"Sex"],$columns->sex->data ); }}
+      {{ Form::combo("sex",$record->sex,["class" => "form-control","placeholder"=>"Sexo"],$columns->sex->data ); }}
     
  <span class="help-block">{{ $errors->first('sex') }}</span>
 </div>
