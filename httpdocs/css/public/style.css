@@ -350,7 +350,7 @@ hr{
 footer{
 	background: #212121;
 	position: relative;
-	bottom: 0px;
+	/*bottom: 0px;*/bottom: -22px;
 	text-align: center;
 	width: 100%;
 	padding: 40px 0;
