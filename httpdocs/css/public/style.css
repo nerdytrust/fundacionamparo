@@ -1095,8 +1095,8 @@ span.esquina{
 
 .caja_fca_usu{
 	width: 16.86%;
-	/*width: 312px;*/
-	height: 312px;
+	/*width: 312px;
+	height: 312px;*/height: auto;
 	overflow: hidden;
 	display: inline-block;
 	margin-right: -4px;
@@ -1304,7 +1304,7 @@ span#name span button:after{
 	overflow: hidden;
 }
 .img_redonda img{
-	width: 100%;
+	width: 100%; border-radius: 120px;
 }
 .img_redonda img:hover{
 	opacity: .5;
@@ -4058,8 +4058,8 @@ label.contact textarea{
 	}
 
 	.caja_fca_usu img{
-		/*width: 100%;*/
-		width: auto;
+		/*width: 100%;
+		width: auto;*/
 	}
 
 	span.donas{

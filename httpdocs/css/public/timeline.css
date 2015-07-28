@@ -519,7 +519,7 @@ vertical-align: middle;
     padding-top: 100px;
   }
   .flexslider .slides img{
-    height: 135%;
+    height: 135% !important;
     width: 135%;
     left: 0%;
   }
