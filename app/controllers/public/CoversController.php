@@ -2,6 +2,30 @@
 
 class CoversController extends BaseController {
 	
+	private $_api;
+	private $_ClientId     = 'Ab_PyKePqSHu26uPKjtbhBVYq4iB5bx0dZAX_N9D0dYB_1Qzh3kB8O97oOWE54CqTNGmd6kcV8l4Rha2';
+    private $_ClientSecret = 'EDAp5eZ9kqpYl9R7KuBPhxfY7yOCmJv00oJ5VHM4ufKgPmiEKF_Uf0Lfm57p2kbITmG65B0LnSZ_JtLj';
+
+    /**
+	 * Método constructor para inicializar variables
+	 */
+	public function __construct(){
+		$this->_api = new \PayPal\Rest\ApiContext(
+		  new \PayPal\Auth\OAuthTokenCredential(
+		    $this->_ClientId,
+		    $this->_ClientSecret
+		  )
+		);
+
+		 $this->_api->setConfig(array(
+		 	'mode' => 'sandbox',
+			'http.ConnectionTimeOut' => 30,
+		 	'log.LogEnabled' => true,
+		 	'log.FileName' => __DIR__.'/../../storage/logs/PayPal.log',
+		 	'log.LogLevel' => 'FINE'
+		 ));
+	}
+
 	/**
 	 * Método para mostrar la vista del formulario de donación
 	 * @return
@@ -265,7 +289,7 @@ class CoversController extends BaseController {
 	 * Método para mostrar el previo al pago mediante Paypal
 	 * @return
 	 */
-	public function donarPaypal(){
+	/*public function donarPaypal(){
 		$donacion = Session::get( 'donacion' );
 		if ( ! isset( $donacion ) )
 			return Redirect::to( 'donar' );
@@ -276,114 +300,114 @@ class CoversController extends BaseController {
 			'monto'			=> $monto,
 			'causa'			=> $causa
 		] );
-	}
+	}*/
 
 	/**
 	 * Método para mostrar el resultante del API Paypal
 	 * @return
 	 */
-	// public function donarPaypal(){
-	// 	$donacion = Session::get( 'donacion' );
+	 public function donarPaypal(){
+	 	$donacion = Session::get( 'donacion' );
 
-	// 	if ( ! isset( $donacion ) )
-	// 		return Redirect::to( 'donar' );
+	 	if ( ! isset( $donacion ) )
+	 		return Redirect::to( 'donar' );
 
-	// 	$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
-	// 	$monto = Session::get( 'donacion.monto' );
+	 	$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
+	 	$monto = Session::get( 'donacion.monto' );
 
 		
 
-	// 	$payer        = new \PayPal\Api\Payer;
-	// 	$details      = new \PayPal\Api\Details;
-	// 	$amount       = new \PayPal\Api\Amount;
-	// 	$transaction  = new \PayPal\Api\Transaction;
-	// 	$payment      = new \PayPal\Api\Payment;
-	// 	$redirectUrls = new \PayPal\Api\RedirectUrls;
+	 	$payer        = new \PayPal\Api\Payer;
+	 	$details      = new \PayPal\Api\Details;
+	 	$amount       = new \PayPal\Api\Amount;
+	 	$transaction  = new \PayPal\Api\Transaction;
+	 	$payment      = new \PayPal\Api\Payment;
+	 	$redirectUrls = new \PayPal\Api\RedirectUrls;
 
-	// 	//Payer
-	// 	$payer->setPayment_method('paypal');
+	 	//Payer
+	 	$payer->setPayment_method('paypal');
 
-	// 	//Details
-	// 	$details->setShipping('0.00')
-	// 			->setTax('0.00')
-	// 			->setSubtotal($monto);
+	 	//Details
+	 	$details->setShipping('0.00')
+	 			->setTax('0.00')
+	 			->setSubtotal($monto);
 
-	// 	//Amount
-	// 	$amount->setCurrency('MXN') 
-	// 		   ->setTotal($monto)
-	// 		   ->setDetails($details);
+	 	//Amount
+	 	$amount->setCurrency('MXN') 
+	 		   ->setTotal($monto)
+	 		   ->setDetails($details);
 
-	// 	//Transaction
-	// 	$transaction->setAmount($amount)
-	// 				->setDescription('Fundación Amparo - ' . $causa->titulo );
+	 	//Transaction
+	 	$transaction->setAmount($amount)
+	 				->setDescription('Fundación Amparo - ' . $causa->titulo );
 
-	// 	//Payment
-	// 	$payment->setIntent('sale')
-	// 			->setPayer($payer)
-	// 			->setTransactions([$transaction]);
+	 	//Payment
+	 	$payment->setIntent('sale')
+	 			->setPayer($payer)
+	 			->setTransactions([$transaction]);
 
-	// 	//Redirect Urls
-	// 	$redirectUrls->setReturnUrl('http://amparo.design4causes.dev/donar/save-paypal')
-	// 				 ->setCancelUrl('http://amparo.design4causes.dev/donar/pago-error');
+	 	//Redirect Urls
+	 	$redirectUrls->setReturnUrl('http://amparo.design4causes.dev/donar/save-paypal')
+					 ->setCancelUrl('http://amparo.design4causes.dev/donar/pago-error');
 
-	// 	$payment->setRedirectUrls($redirectUrls);
+	 	$payment->setRedirectUrls($redirectUrls);
 
-	// 	try{
+	 	try{
 
-	// 	  $payment->create( $this->_api );
+	 	  $payment->create( $this->_api );
 
-	// 	  $hash = md5($payment->getId());
- // 		  Session::put( 'paypalhas_hash', $hash );
+	 	  $hash = md5($payment->getId());
+  		  Session::put( 'paypalhas_hash', $hash );
 
- // 		  $session = Session::get( 'donacion' );
- // 		  $donacion = new Donaciones;
- // 		  $donacion->email 				= $session['email'];
-	// 	  $donacion->id_causas 			= $session['causa_donar'];
-	// 	  $donacion->monto_donacion 	= $session['monto'];
-	// 	  $donacion->reference_id 		= $payment->getId();
-	// 	  $donacion->transaction_id		= Session::get( 'paypalhas_hash' );
-	// 	  $donacion->transaction_type	= 'paypal';
-	// 	  $donacion->mostrar_perfil 	= $session['mostrar_perfil'];
+  		  $session = Session::get( 'donacion' );
+  		  $donacion = new Donaciones;
+  		  $donacion->email 				= $session['email'];
+	 	  $donacion->id_causas 			= $session['causa_donar'];
+	 	  $donacion->monto_donacion 	= $session['monto'];
+	 	  $donacion->reference_id 		= $payment->getId();
+	 	  $donacion->transaction_id		= Session::get( 'paypalhas_hash' );
+	 	  $donacion->transaction_type	= 'paypal';
+	 	  $donacion->mostrar_perfil 	= $session['mostrar_perfil'];
 
-	// 	  $donacion->save();
+	 	  $donacion->save();
 
-	// 	}catch(PPConnetionException $e){
-	// 		return View::make( 'public.covers.donar_error' )->with( [
-	// 			'status'	=> $e->getMessage()
-	// 		] );
-	// 	}
+	 	}catch(PPConnetionException $e){
+	 		return View::make( 'public.covers.donar_error' )->with( [
+	 			'status'	=> $e->getMessage()
+	 		] );
+	 	}
 
-	// 	foreach ($payment->getLinks() as $link){
-	// 		if ( $link->getRel() == 'approval_url' )
-	// 			$redirect = $link->getHref();
-	// 	}
+	 	foreach ($payment->getLinks() as $link){
+	 		if ( $link->getRel() == 'approval_url' )
+	 			$redirect = $link->getHref();
+	 	}
 
-	// 	return Redirect::to( $redirect );
-	// }
+	 	return Redirect::to( $redirect );
+	 }
 
 	/**
 	 * Método para guardar en BD en la tabla donaciones el registro de donación
 	 * @return
 	 */
-	// public function saveDonacionPaypal(){
-	// 	$oPayment = new \PayPal\Api\Payment;
-	// 	$payerId = $_GET['PayerID'];
-	// 	$paymentId = DB::table( 'donaciones' )
-	// 				 ->where('transaction_id',Session::get( 'paypalhas_hash' ))
-	// 				 ->select('reference_id')
-	// 				 ->get();
-	// 	$paymentId = $paymentId[0]->reference_id;
-	// 	$payment = $oPayment::get($paymentId,$this->_api); 
-	// 	$execution = new \PayPal\Api\PaymentExecution;
-	// 	$execution->setPayerId($payerId);	
-	// 	$payment->execute($execution,$this->_api);
-	// 	DB::table('donaciones')
- //            ->where('reference_id', $paymentId)
- //            ->update(array('status' => 1));
+	 public function saveDonacionPaypal(){
+	 	$oPayment = new \PayPal\Api\Payment;
+	 	$payerId = $_GET['PayerID'];
+	 	$paymentId = DB::table( 'donaciones' )
+	 				 ->where('transaction_id',Session::get( 'paypalhas_hash' ))
+	 				 ->select('reference_id')
+	 				 ->get();
+	 	$paymentId = $paymentId[0]->reference_id;
+	 	$payment = $oPayment::get($paymentId,$this->_api); 
+	 	$execution = new \PayPal\Api\PaymentExecution;
+	 	$execution->setPayerId($payerId);	
+	 	$payment->execute($execution,$this->_api);
+	 	DB::table('donaciones')
+             ->where('reference_id', $paymentId)
+             ->update(array('status' => 1));
 
- //        Session::forget( 'paypalhas_hash' );
- //        return Redirect::to( 'gracias' );
-	// }
+         Session::forget( 'paypalhas_hash' );
+         return Redirect::to( 'gracias' );
+	 }
 
 	/**
 	 * Método para mostrar error al pagar con paypal
