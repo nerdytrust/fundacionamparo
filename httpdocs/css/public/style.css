@@ -157,8 +157,8 @@ div.subtitleM{
 		height: auto;
 	}
 	.caja_2{
-		/*height: 519px;
-		width: 33.33% !important;*/
+		/*height: 519px;*/
+		width: 33.33% !important;
 		display: inline-block;
 		height: auto;
 	}
