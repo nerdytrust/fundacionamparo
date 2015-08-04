@@ -97,7 +97,6 @@
 									<p>{{ Helper::getRemaining( $externa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 								</div>
 				 			</section>
-				 			<span class="esquina"></span>
 				 		</article>
 					@endforeach
 	 			@endif
