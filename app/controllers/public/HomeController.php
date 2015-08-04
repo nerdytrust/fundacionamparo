@@ -25,7 +25,7 @@ class HomeController extends BaseController {
 	 */
 	public function home() {
 		$video = HomeVideo::where( 'activo', 'Active' )->firstOrFail();
-		$causas = Causas::orderBy( 'orden' )->take(3)->where( 'id_tipo_causas', 1 )->get();
+	    $causas = Causas::orderBy( 'orden' )->orderBy( 'created_at','desc' )->take(3)->where( 'id_tipo_causas', 1 )->get();
 		$ultimos = [];
 		$ultimos['donadores'] = DB::table( 'donaciones' )
 				->distinct()
