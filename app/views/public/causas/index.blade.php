@@ -17,9 +17,11 @@
 				<h1>CAUSAS FUNDACIÓN AMPARO</h1>
 			</div>
 			<div class="re">
-				@if ( isset( $causas ) )
+	 			
+	 			@if ( isset( $causas ) )
 	 				@foreach ( $causas as $causa )
-	 					<article class="caja_2">
+
+	 					<article class="caja_2 {{{ isset($causa['class']) ?  'caja'.$causa['class'] : 'caja'.'33' }}}">
 				 			<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '559x548' ) }}" alt="{{ $causa->titulo }}">
 				 			<section id="social_top">
 								<ul>
@@ -53,22 +55,32 @@
 				 			</section>
 				 			<span class="esquina"></span>
 				 		</article>
-	 				@endforeach
+					@endforeach
 	 			@endif
-	 			<!--Codigo sin funciones-->
-	 			<article class="caja_2 caja100">
-				 			<img src="{{ asset( 'images/light-cau.png' ) }}" alt="">
+
+			</div><!--termina re-->
+
+				@if ( isset( $externas ) )
+	 				@foreach ( $externas as $externa )
+	 					<div id="pleca_causas" class="">
+							<h1>CAUSAS EXTERNAS</h1>
+						</div>
+	 					<article class="caja_2 {{{ isset($externa['class']) ?  'caja'.$externa['class'] : 'caja'.'33' }}}">
+				 			<img src="{{ asset( 'path_image/' . $externa->imagen . '/' . '559x548' ) }}" alt="{{ $externa->titulo }}">
 				 			<section id="social_top">
 								<ul>
-									
+									{{ Helper::facebookShare( '', URL::to( 'ficha-causa' ) . '/' . $externa->id_causas, '' ) }}
+									{{ Helper::twitterShare( $externa->titulo, URL::to( 'ficha-causa' ) . '/' . $externa->id_causas, '' ) }}
+									{{ Helper::like( $externa->id_causas, 'causas' ) }}
+									<p>{{ $externa->me_gusta_interno }} likes</p>
 								</ul>
-								<div id="donativo" >HAZ TU DONACIÓN</div>
+								<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $externa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
 							</section>
 				 			<section class="txt_int">
-				 				<h1>reder</h1>
-				 				<h2>reder</h2>
+				 				<h1>{{ strtoupper( $externa->id_categorias_record->nombre ) }}</h1>
+				 				<h2>{{ $externa->titulo }}</h2>
 				 				<p>Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
-								<a href="#"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
+								<a href="{{ URL::to( 'ficha-causas/' . $externa->id_causas ) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
 								<div id="meta">
 									<div id="barra">
 										<progress value="0" max="100">
@@ -79,89 +91,16 @@
 									</div>
 								<div id="cantidad">
 									<h1>META</h1>
-									<h2>12344<span>MXN</span></h2>
+									<h2>{{ $externa->meta }}<span>MXN</span></h2>
 								</div>
-									<p>123445 MXN <span>RECAUDADOS</span></p>
-									<p>123455 <span>DÍAS RESTANTES</span></p>
+									<p>{{ number_format( floatval( $externa->recaudado ) ) }} MXN <span>RECAUDADOS</span></p>
+									<p>{{ Helper::getRemaining( $externa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 								</div>
 				 			</section>
 				 			<span class="esquina"></span>
 				 		</article>
-
-	 			<!--Termina Codigo sin funciones-->
-
-
-			</div><!--termina re-->
-			@if ( ! empty( $externas ) )
-				<div id="pleca_causas" class="">
-					<h1>CAUSAS EXTERNAS</h1>
-				</div>
-				<div class="re csa">
-					@foreach ( $externas as $externa )
-						<section id="causa1" class="causas-social ">
-							<a href="{{ URL::to( 'ficha-causas/' . $externa->id_causas ) }}">
-								<img src="{{ asset( 'path_image/' . $externa->imagen . '/' . '480x481' ) }}" alt="{{ $causa->titulo }}">
-							</a>
-							<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $externa->id_causas ) }}';">HAZ TU DONACIÓN</div>
-							<h2 class="text-causas">aportaciones</h2>
-							<h3>{{ strtoupper( $externa->id_categorias_record->nombre ) }}</h3>
-						</section>
 					@endforeach
-				</div><!--termina dre-->
-			@endif
-
-			<!--Codigo sin funciones-->
-			<div id="pleca_causas" class="">
-					<h1>CAUSAS EXTERNAS2</h1>
-				</div>
-				<div class="re csa">
-
-						<section id="causa1" class="causas-social caja25">
-							<a href="#">
-								<img src="{{ asset( 'images/causa1.png' ) }}" alt="">
-							</a>
-							<div id="donativo" >HAZ TU DONACIÓN</div>
-							<h2 class="text-causas">aportaciones</h2>
-							<h3>refre</h3>
-						</section>
-
-						<section id="causa1" class="causas-social caja25">
-							<a href="#">
-								<img src="{{ asset( 'images/causa1.png' ) }}" alt="">
-							</a>
-							<div id="donativo" >HAZ TU DONACIÓN</div>
-							<h2 class="text-causas">aportaciones</h2>
-							<h3>refre</h3>
-						</section>
-
-						<section id="causa1" class="causas-social caja25">
-							<a href="#">
-								<img src="{{ asset( 'images/causa1.png' ) }}" alt="">
-							</a>
-							<div id="donativo" >HAZ TU DONACIÓN</div>
-							<h2 class="text-causas">aportaciones</h2>
-							<h3>refre</h3>
-						</section>
-
-						<section id="causa1" class="causas-social caja25">
-							<a href="#">
-								<img src="{{ asset( 'images/causa1.png' ) }}" alt="">
-							</a>
-							<div id="donativo" >HAZ TU DONACIÓN</div>
-							<h2 class="text-causas">aportaciones</h2>
-							<h3>refre</h3>
-						</section>
-						<section id="causa1" class="causas-social caja-e100">
-							<a href="#">
-								<img src="{{ asset( 'images/causa1.png' ) }}" alt="">
-							</a>
-							<div id="donativo" >HAZ TU DONACIÓN</div>
-							<h2 class="text-causas">aportaciones</h2>
-							<h3>refre</h3>
-						</section>					
-
-				</div><!--Termina Codigo sin funciones-->
-
+	 			@endif
 
 			<section id="ultimos_dona"class="">
 				<div class="adorno_fa">
