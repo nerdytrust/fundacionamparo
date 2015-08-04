@@ -2942,6 +2942,7 @@ span.esquina-pop{
 	}
 }
 @media screen and (min-width: 768px) and (max-width:1024px ){
+
 	.txt_int{
   padding: 453px 7px 5px 7px;
 	}
@@ -3093,7 +3094,9 @@ span.esquina-pop{
   letter-spacing: 0px;
 }
 #titulo_txt{
-	 padding: 45px 25px 30px 1%
+	 padding: 45px 25px 30px 1%;
+	 width: 100%;
+	 height: auto;
 }
 #titulo_txt h1{
 	letter-spacing: -3px;
@@ -3351,7 +3354,49 @@ label.contact textarea{
 		#perfil img{
 			visibility: hidden;
 		}
-	
+		.vi{
+			width: 100%;
+		}
+		#titulo_img {
+	    display: none;
+		}
+		aside.btns{
+			width: 100%;
+			height: auto;
+		}
+		#btn_donar2 {
+	    padding: 2%;
+		}
+		.caja_1{
+			width: 100%;
+			height: auto;
+		}
+		.caja_1 img {
+		    height: auto !important;
+		    width: 100%;
+		}
+		.caja_2 {
+		    /* height: auto; */
+		    width: 100% !important;
+		}
+		#donador_sec, #impulsor_sec, #voluntario_sec {
+		    padding: 6% !important;
+		    width: 100% !important;
+		}
+		#donativo {
+		    height: 125px !Important;
+		    padding-top: 38px !Important;
+		    width: 125px !Important;
+		    float: right;
+		    font-size: 1em !important;
+		    margin-right: 3%;
+		}
+		#cantidad{
+			width: 50%;
+		}
+		.n-vol{
+			right: 8%;
+		}
 
 
 }
