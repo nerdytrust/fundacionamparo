@@ -1,8 +1,4 @@
-$(document).ready(function(){
-	$(".txt_int").hover(function(){
-		$("#barra progress").toggleClass("barramover");
-	});
-	
+$(document).ready(function(){	
 	$('.animsition').animsition();
 });
 

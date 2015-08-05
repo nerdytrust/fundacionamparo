@@ -32,18 +32,14 @@
 								</ul>
 								<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
 							</section>
-				 			<section class="txt_int">
+				 			<section class="txt_int" id="{{$causa->id_causas}}">
 				 				<h1>{{ strtoupper( $causa->id_categorias_record->nombre ) }}</h1>
 				 				<h2>{{ $causa->titulo }}</h2>
-				 				<p>Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
+				 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
 								<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas ) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
 								<div id="meta">
 									<div id="barra">
-										<progress value="0" max="100">
-											<div class="progress-bar">
-										        <span style="width: 60%;">-</span>
-										    </div>
-										</progress>
+											<span id="b{{$causa->id_causas}}" style="width: {{ ($causa->recaudado * 100) / $causa->metaTotal; }}%"></span>
 									</div>
 								<div id="cantidad">
 									<h1>META</h1>
@@ -76,18 +72,14 @@
 								</ul>
 								<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $externa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
 							</section>
-				 			<section class="txt_int">
+				 			<section class="txt_int" id="{{$externa->id_causas}}">
 				 				<h1>{{ strtoupper( $externa->id_categorias_record->nombre ) }}</h1>
 				 				<h2>{{ $externa->titulo }}</h2>
-				 				<p>Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
+				 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
 								<a href="{{ URL::to( 'ficha-causas/' . $externa->id_causas ) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
 								<div id="meta">
 									<div id="barra">
-										<progress value="0" max="100">
-											<div class="progress-bar">
-										        <span style="width: 60%;">-</span>
-										    </div>
-										</progress>
+											<span id="b{{$externa->id_causas}}" style="width: {{ ($externa->recaudado * 100) / $externa->metaTotal; }}%"></span>
 									</div>
 								<div id="cantidad">
 									<h1>META</h1>

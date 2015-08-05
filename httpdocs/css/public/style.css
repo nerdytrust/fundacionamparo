@@ -848,6 +848,14 @@ font-size: 15px !important;
 	background: url("../../images/back-barra.png")repeat-x;
 	background-position-y: 50%;
 }
+#barra > span {
+			display: block;
+			height: 100%;
+			background-color: #beda3e;
+			position: relative;
+			overflow: hidden;
+			opacity: 0.8;
+		}
 #barra p{
 	color:#FFF;
 }

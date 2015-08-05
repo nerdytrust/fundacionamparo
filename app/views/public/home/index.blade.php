@@ -50,7 +50,7 @@
 		 		<div class="re">
 		 			@if ( isset( $causas ) )
 		 				@foreach ( $causas as $causa )
-		 					<article class="caja_2">
+		 					<article class="caja_2 {{{ isset($causa['class']) ?  'caja'.$causa['class'] : 'caja'.'33' }}}">
 					 			<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '559x548' ) }}" alt="">
 					 			<section id="social_top">
 									<ul>
@@ -61,18 +61,14 @@
 									</ul>
 									<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
 								</section>
-					 			<section class="txt_int">
+					 			<section class="txt_int" id="{{$causa->id_causas}}">
 					 				<h1>{{ $causa->id_categorias_record->nombre }}</h1>
 					 				<h2>{{ $causa->titulo }}</h2>
-					 				<p>Apoya para generar oportunidades de educación para niños de escasos recursos, involucrando a su familia y comunidad</p>
+					 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
 									<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas ) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
 									<div id="meta">
 										<div id="barra">
-											<progress value="0" max="100">
-												<div class="progress-bar">
-											        <span style="width: 60%;">-</span>
-											    </div>
-											</progress>
+											<span id="b{{$causa->id_causas}}" style="width: {{ ($causa->recaudado * 100) / $causa->metaTotal; }}%"></span>
 										</div>
 									<div id="cantidad">
 										<h1>META</h1>
