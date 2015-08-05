@@ -37,7 +37,7 @@ class CoversController extends BaseController {
 		if ( Session::has( 'donacion.spei_clabe' ) )
 			return Redirect::to( 'donar/pago-spei' );
 
-		$causas = Causas::all();
+		$causas = Causas::orderBy( 'created_at','desc' )->where( 'fecha', '>', date('Y-m-d') )->get();
 		return View::make( 'public.covers.donar' )->with( [
 			'causas' => $causas
 		] );
@@ -52,12 +52,12 @@ class CoversController extends BaseController {
 		if ( ! isset( $id_causa ) || empty( $id_causa ) )
 			return Redirect::to( 'home' );
 
-		$causa = Causas::find( $id_causa );
-		if ( empty( $causa ) )
+		$causa = Causas::where('id_causas',$id_causa)->where( 'fecha', '>', date('Y-m-d') )->get();
+		if ( count($causa) == 0)
 			return Redirect::to( 'home' );
 
 		return View::make( 'public.covers.causas' )->with( [ 
-			'causa' => $causa 
+			'causa' => $causa[0] 
 		] );
 	}
 
@@ -70,12 +70,12 @@ class CoversController extends BaseController {
 		if ( ! isset( $id_causa ) || empty( $id_causa ) )
 			return Redirect::to( 'home' );
 
-		$causa = Causas::find( $id_causa );
-		if ( empty( $causa ) )
+		$causa = Causas::where('id_causas',$id_causa)->where( 'fecha', '>', date('Y-m-d') )->get();
+		if ( count( $causa ) == 0 )
 			return Redirect::to( 'home' );
 		
 		return View::make( 'public.covers.ficha_causas' )->with( [ 
-			'causa' => $causa
+			'causa' => $causa[0]
 		] );
 			
 	}
@@ -133,7 +133,7 @@ class CoversController extends BaseController {
 	}
 
 	public function impulsar(){
-		$causas = Causas::all();
+		$causas = Causas::orderBy( 'created_at','desc' )->where( 'fecha', '>', date('Y-m-d') )->get();
 		return View::make( 'public.covers.impulsar' )->with( [ 
 			'causas' => $causas
 		] );
@@ -143,12 +143,12 @@ class CoversController extends BaseController {
 		if ( ! isset( $id_causa ) || empty( $id_causa ) )
 			return Redirect::to( 'home' );
 
-		$causa = Causas::find( $id_causa );
-		if ( empty( $causa ) )
+		$causa = Causas::where('id_causas',$id_causa)->where( 'fecha', '>', date('Y-m-d') )->get();
+		if ( count( $causa ) == 0)
 			return Redirect::to( 'home' );
 		
 		return View::make( 'public.covers.impulsar_causa' )->with( [ 
-			'causa' => $causa
+			'causa' => $causa[0]
 		 ] );
 	}
 
@@ -161,7 +161,7 @@ class CoversController extends BaseController {
 	 * @return
 	 */
 	public function voluntario(){
-		$causas = Causas::all();
+		$causas = Causas::orderBy( 'created_at','desc' )->where( 'fecha', '>', date('Y-m-d') )->get();
 		return View::make( 'public.covers.voluntario' )->with( [ 
 			'causas' => $causas,
 			'ayudas' => TipoAyudas::select( 'id_tipo_ayudas', 'name' )->get()
