@@ -4,7 +4,7 @@
 	@stop
 	@section("content")
 		<div class="lightbox" id="blanco1" style="display:block">
-			<div class="usuario-light">
+			<div class="usuario-light" id="{{$causa->id_causas}}" >
 				<span class="usuario cau">
 					<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '540x565' ) }}" alt="">
 					<div id="txt_evento">						
@@ -63,8 +63,7 @@
 								</div>
 								<div id="meta" class="caum">
 									<div id="barra">
-										<progress value="0" max="100"></progress>
-										<!--<span id="relleno"></span>-->
+											<span id="b{{$causa->id_causas}}" style="width: {{ ($causa->recaudado * 100) / $causa->metaTotal; }}%"></span>
 									</div>
 									<div id="cantidad">
 										<h1>META</h1>

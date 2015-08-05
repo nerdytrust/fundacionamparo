@@ -70,10 +70,11 @@ class CoversController extends BaseController {
 		if ( ! isset( $id_causa ) || empty( $id_causa ) )
 			return Redirect::to( 'home' );
 
-		$causa = Causas::where('id_causas',$id_causa)->where( 'fecha', '>', date('Y-m-d') )->get();
+		$causa = Causas::select(DB::raw('*,meta as metaTotal'))->where('id_causas',$id_causa)->where( 'fecha', '>', date('Y-m-d') )->get();
 		if ( count( $causa ) == 0 )
 			return Redirect::to( 'home' );
-		
+
+		$causa = $this->getRecaudado($causa);
 		return View::make( 'public.covers.ficha_causas' )->with( [ 
 			'causa' => $causa[0]
 		] );
@@ -536,6 +537,21 @@ class CoversController extends BaseController {
 				->count();
 
 		return $voluntariado;
+	}
+
+	/**
+	 * Método para obtener lo recaudado de cada causa
+	 * @param  array $causas  Información introducida por el usuario en el formulario de registro
+	 * @return array          Devuelve el arreglo del registro guardado exitosamente o NULL en caso de que no
+	 */
+	private function getRecaudado($causas){
+		
+		foreach ($causas as $key => $causa) {
+			 $recaudado = Donaciones::where( 'id_causas', $causa->id_causas)->sum( 'monto_donacion' );
+			 $causas[$key]['recaudado'] = $recaudado;
+		}
+		
+		return  $causas;
 	}
 
 }

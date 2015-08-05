@@ -353,7 +353,7 @@ class HomeController extends BaseController {
 	}
 
 	/**
-	 * Método para determinar la clase de las causas 100%, 50%, 33%
+	 * Método para determinar la clase de las causas 100%, 50%, 33% y obtener lo recaudado de cada causa
 	 * @param  array $causas  Información introducida por el usuario en el formulario de registro
 	 * @return array          Devuelve el arreglo del registro guardado exitosamente o NULL en caso de que no
 	 */

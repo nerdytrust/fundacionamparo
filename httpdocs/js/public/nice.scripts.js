@@ -523,8 +523,23 @@ $(function(){
 
 	var ids = [];
 	$(".txt_int").hover(function(){
-		//$("#barra progress").toggleClass("barramover");
-		console.log('causas');
+		id_causa = $(this).attr('id');
+		$("#barra > span").each(function() {
+			if(ids.indexOf('b'+id_causa) == -1){
+			if($(this).attr('id') == 'b'+id_causa){
+				 ids.push('b'+id_causa);
+				$(this)
+					.data("origWidth", $(this).width())
+					.width(0)
+					.animate({
+						width: $(this).data("origWidth")
+					}, 1200);
+			}
+		}
+		});
+	});
+
+	$(".usuario-light").hover(function(){
 		id_causa = $(this).attr('id');
 		$("#barra > span").each(function() {
 			if(ids.indexOf('b'+id_causa) == -1){
