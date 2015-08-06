@@ -348,8 +348,8 @@ class CoversController extends BaseController {
 	 			->setTransactions([$transaction]);
 
 	 	//Redirect Urls
-	 	$redirectUrls->setReturnUrl('http://amparo.design4causes.dev/donar/save-paypal')
-					 ->setCancelUrl('http://amparo.design4causes.dev/donar/pago-error');
+	 	$redirectUrls->setReturnUrl('http://amparo.design4causes.com/donar/save-paypal')
+					 ->setCancelUrl('http://amparo.design4causes.com/donar/pago-error');
 
 	 	$payment->setRedirectUrls($redirectUrls);
 
