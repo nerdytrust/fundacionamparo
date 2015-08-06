@@ -68,7 +68,7 @@
 									<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas ) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
 									<div id="meta">
 										<div id="barra">
-											<span id="b{{$causa->id_causas}}" style="width: {{ ($causa->recaudado * 100) / $causa->metaTotal; }}%"></span>
+											<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
 										</div>
 									<div id="cantidad">
 										<h1>META</h1>
