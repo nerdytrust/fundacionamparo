@@ -32,10 +32,20 @@ class CausasVivasController extends BaseController {
 		}
 
 		foreach ($causas as $key => $causa) {
-			 $recaudado = Donaciones::where( 'id_causas', $causa->id_causas)->sum( 'monto_donacion' );
+			 $recaudado = Donaciones::where( 'id_causas', $causa->id_causas)->where( 'status', 1)->sum( 'monto_donacion' );
 			 $causas[$key]['recaudado'] = $recaudado;
+			 if($causa->metaTotal > 0){
+			 	$porcentaje = ($recaudado * 100)/$causa->metaTotal;
+			 	if ($porcentaje > 100){ $porcentaje = 100;}
+			 	$causas[$key]['porcentaje'] = $porcentaje;
+			} else {
+				$causas[$key]['porcentaje'] = 0;
+			}
+
+			//echo $causas[$key]['porcentaje'].'<br />';
 		}
-		
+		//die;
+
 		return  $causas;
 	}
 

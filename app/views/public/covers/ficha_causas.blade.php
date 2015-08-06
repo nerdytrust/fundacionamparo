@@ -61,7 +61,7 @@
 								</div>
 								<div id="meta" class="caum">
 									<div id="barra">
-											<span id="b{{$causa->id_causas}}" style="width: {{ ($causa->recaudado * 100) / $causa->metaTotal; }}%"></span>
+											<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
 									</div>
 									<div id="cantidad">
 										<h1>META</h1>
