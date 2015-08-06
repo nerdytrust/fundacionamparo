@@ -1,0 +1,3 @@
+[submodule "vendor/atticmedia/anvard"]
+	path = vendor/atticmedia/anvard
+	url = https://bitbucket.org/atticmedia/anvard
