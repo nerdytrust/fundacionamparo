@@ -175,6 +175,6 @@ class Helper {
 		if ( is_null( $id_causa ) || empty( $id_causa ) )
 			return 0;
 
-		return $donaciones = Donaciones::where( 'id_causas', $id_causa )->count();
+		return $donaciones = Donaciones::where( 'id_causas', $id_causa )->where('status', 1 )->count();
 	}
 }
