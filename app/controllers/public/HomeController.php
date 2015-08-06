@@ -66,8 +66,11 @@ class HomeController extends BaseController {
 				->get();
 		$ultimos = array_unique( $ultimos, SORT_REGULAR );
 		$total_donadores = Session::get( 'total_donadores' );
-		if ( ! $total_donadores || empty( $total_donadores ) )
-			$total_donadores = Donaciones::distinct( 'email' )->where( 'status', 1)->count();
+		if ( ! $total_donadores || empty( $total_donadores ) ){
+			$total_donadores = DB::table('donaciones')->distinct()->where('status', 1)->groupBy( 'email' )->get();
+			$total_donadores = count( $total_donadores );
+		}
+
 		Session::put( 'total_donadores', $total_donadores );
 	    return View::make( 'public.home.index' )->with( [ 
 	    	'video' 			=> $video,

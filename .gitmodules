@@ -1,0 +1,7 @@
+[submodule "vendor/atticmedia/anvard"]
+	path = vendor/atticmedia/anvard
+	url = https://bitbucket.org/atticmedia/anvard
+
+[submodule "vendor/intervention/imagecache"]
+	path = vendor/intervention/imagecache
+	url = https://github.com/Intervention/image/
