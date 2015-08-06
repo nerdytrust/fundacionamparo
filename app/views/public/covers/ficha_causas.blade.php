@@ -19,10 +19,8 @@
 						<div class="cau-dat">
 							<img src="{{ asset( 'images/icon_donadores-c.png' ) }}" alt="">
 							<h1>
-								{{ $total_donadores = Session::get( 'total_donadores' ) }}
-								@if ( $total_donadores )
-									{{ $total_donadores }}
-								@endif <b>Donadores</b>
+								{{ Helper::totalDonaciones( $causa->id_causas ) }}
+								<b>Donadores</b>
 							</h1>
 							<h2>Tu aportación es importante, cada granito cuenta, con tu ayuda no nos detendremos.</h2>
 						</div>
