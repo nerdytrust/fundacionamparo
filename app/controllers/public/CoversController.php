@@ -561,6 +561,23 @@ class CoversController extends BaseController {
 		return  $causas;
 	}
 
+	/**
+	 * Método para procesar webhook de conekta el relizar un pago con SPEI
+	 */
+	public function validarPago(){
+		// Analizar la información del evento en forma de json
+		$body = @file_get_contents('php://input');
+		$event_json = json_decode($body);
+
+		if ($event_json->type == 'charge.paid'){
+		 
+		    DB::table('donaciones')
+             ->where('reference_id', $event_json->object->id)
+             ->update(array('status' => 1));
+		}
+
+	}
+
 }
 
 /* End of file CoversController.php */
