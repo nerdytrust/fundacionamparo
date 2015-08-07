@@ -38,14 +38,6 @@
 			$("#voluntario_sec, #fca-v, #cauf-v").click(function(){
 				window.location = 'voluntario';
 			});
-			// $(".txt_int, #causa1, #causa2, #causa3, #causa4").click(function(){
-			// 	window.location = 'ficha-causas';//este lleva a las fichas pero ya externas
-			// 	return false;
-			// });
-			$(".donador_clas, .impulsor_clas, .voluntario_clas").click(function(){
-				window.location = 'ficha-donador';//este lleva a las fichas pero ya externas
-				return false;
-			});
 			
 		    /*$(".txt_int, #causa1, #causa2, #causa3, #causa4").click(function(){
 		        $("#blanco1").slideToggle("slow");
@@ -55,15 +47,6 @@
 		        // $(".lightbox").slideToggle("slow");
 		        $(".lightbox").fadeIn(800, 'swing', function(){});
 		    });*/
-		    $("#ultimos_dona .donador_clas").click(function(){
-		        $("#ficha-d").slideToggle("slow");
-		    });
-		     $(" #ultimos_dona .impulsor_clas").click(function(){
-		        $("#ficha-d").slideToggle("slow");
-		    });
-		      $(" #ultimos_dona .voluntario_clas").click(function(){
-		        $("#ficha-d").slideToggle("slow");
-		    });
 		    
 			$("#tab-2").click(function(){
 				$("#ski").addClass("mover-ski");

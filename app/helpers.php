@@ -165,4 +165,16 @@ class Helper {
 		$date = strtotime( $day . '-' . $month . '-' . $year );
 		return $date;
 	}
+
+	/**
+	 * Método para regresar el total de donaciones por causa
+	 * @param  integer $id_causa ID Causa
+	 * @return integer Total de donaciones
+	 */
+	public static function totalDonaciones( $id_causa = null ){
+		if ( is_null( $id_causa ) || empty( $id_causa ) )
+			return 0;
+
+		return $donaciones = Donaciones::where( 'id_causas', $id_causa )->where('status', 1 )->count();
+	}
 }

@@ -475,8 +475,8 @@ class CoversController extends BaseController {
 				})
 				->distinct()
 				->where( 'registrados.id_registrados', $id_profile )
-				->where( 'donaciones.status', 1 )
-				->where( 'voluntarios.aprobacion', 1 )
+				// ->where( 'donaciones.status', 1 )
+				// ->where( 'voluntarios.aprobacion', 1 )
 				->select( 'causas.titulo' )
 				->get();
 
