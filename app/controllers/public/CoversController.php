@@ -572,7 +572,7 @@ class CoversController extends BaseController {
 		if ($event_json->type == 'charge.paid'){
 		 
 		    DB::table('donaciones')
-             ->where('reference_id', $event_json->object->id)
+             ->where('transaction_id', $event_json->object->id)
              ->update(array('status' => 1));
 		}
 
