@@ -566,6 +566,7 @@ class CoversController extends BaseController {
 	 */
 	public function validarPago(){
 		// Analizar la información del evento en forma de json
+		header('HTTP/1.1 200 OK');
 		$body = @file_get_contents('php://input');
 		$event_json = json_decode($body);
 
