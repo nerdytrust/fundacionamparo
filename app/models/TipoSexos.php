@@ -1,11 +1,11 @@
 <?php
 
-class HomeVideo extends \Crud {
+class TipoSexos extends \Crud {
 
 
-    protected $primaryKey = 'id_home_video'; // !important
+    protected $primaryKey = 'id_tipo_sexos'; // !important
 
-    protected $table = 'home_video';
+    protected $table = 'tipo_sexos';
 
     protected $fillable = [];
 
@@ -15,7 +15,12 @@ class HomeVideo extends \Crud {
     protected $guarded = [];  // Important
 
 
-    // Events
+    // ===================================================================
+    // EVENTS
+    // ===================================================================
+    //
+    //  $params return array object link this
+    //
     //  $params return array object link this
     //
     // "me"             => Access to methods of the controller. return object 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy','printItem'
@@ -50,11 +55,26 @@ class HomeVideo extends \Crud {
 
     public function beforeShow(&$params){}
     
-    /* 
-        CRUD
-    */
+    // ===================================================================
+    // FORMAT COLUMNS
+    // ===================================================================
+    //
+    // Example : column first_name
+    // you will create a function like this: 
 
-    protected $crud = [
+    // public function getFirstNameAttribute($value)
+    // {
+    //      return $value;
+    // }
+
+
+
+    // ===================================================================
+    // CRUD
+    // ===================================================================
+    //
+
+   protected $crud = [
         //
         // Title
         //
@@ -68,14 +88,23 @@ class HomeVideo extends \Crud {
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
-        // text,hidden,textarea,password,digit,file,email,title
+        // "radiogroup","radios","editor","toggle","html","text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"
         //
-        "inputs"    => [ 'cover' => 'image', 'video' => 'video','activo'=>'toggle' ],
+        "inputs"    => [],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
         "fk_column" => [],
+        //
+        // JOINS
+        // Remember by default the framework create autojoins when you define id_(table)   
+        // you can get the info like this : $records->id_(table)_record
+        // [ "column" => [ "table","table_column" ]            
+        // [ "id_roles"  => ["roles","id_roles"] 
+        // [ "id_parent" => ["current_table","id_primary_key"] 
+        //    
+        "joins"      => [], 
         // 
         // Tabs
         // Allways create names of tabs with snake case for example
@@ -122,5 +151,6 @@ class HomeVideo extends \Crud {
         // "btn_in_edit"   => ["edit","cancel"],
 
     ];
+
     
 }

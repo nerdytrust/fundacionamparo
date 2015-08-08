@@ -6,9 +6,7 @@
 			<thead>
 				<tr>
 
-					<td> {{ $columns->id_faq->label }} </td>
 					<td> {{ $columns->pregunta->label }} </td>
-					<td> {{ $columns->respuesta->label }} </td>
 
 
 					@include("crud.index-column-buttons")
@@ -22,9 +20,7 @@
 				<tr>
 
 
-					<td>{{ parseToHTML($columns->id_faq,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->pregunta,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->respuesta,$record,$fk_column) }}</td>
 
 
 					@include("crud.index-buttons")

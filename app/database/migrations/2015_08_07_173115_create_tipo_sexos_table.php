@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateHomeVideoTable extends Migration {
+class CreateTipoSexosTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,14 @@ class CreateHomeVideoTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('home_video', function(Blueprint $table)
+		Schema::create('tipo_sexos', function(Blueprint $table)
 		{
-			$table->integer('id_home_video', true);
-			$table->text('cover');
-			$table->text('video');
-			$table->enum('activo', array('Active','Inactive'));
-			$table->timestamps();
+			$table->integer('id_tipo_sexos', true);
+			$table->string('name', 140);
+			$table->string('slug', 180)->nullable();
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
+			$table->timestamps();
 		});
 	}
 
@@ -32,7 +31,7 @@ class CreateHomeVideoTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('home_video');
+		Schema::drop('tipo_sexos');
 	}
 
 }

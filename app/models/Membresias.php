@@ -122,7 +122,7 @@ class Membresias extends \Crud {
         // if you can change the columns and inputs you will go to model
         // for example users_notes go to app/models/UsersNotes.php
         //
-        //"default_tabs" => ["notes","logs"],
+        "default_tabs" => [],
         //
         // Validate inputs
         // Rules by column
@@ -143,8 +143,8 @@ class Membresias extends \Crud {
 
         "not_in_create" => [ 'me_gusta','created_at', 'updated_at', 'created_by', 'updated_by' ],
         "not_in_edit"   => [ 'me_gusta', 'created_at', 'updated_at', 'created_by', 'updated_by' ],
-        "not_in_index"  => [ 'id_membresias', 'url', 'logo', 'orden', 'created_at', 'updated_at', 'created_by', 'updated_by' ],
-        //"not_in_show"   => [ 'created_at', 'updated_at' ],
+        "not_in_index"  => [ 'id_membresias', 'me_gusta', 'url', 'logo', 'orden', 'created_at', 'updated_at', 'created_by', 'updated_by' ],
+        "not_in_show"   => [ 'created_by', 'updated_by', 'created_at', 'updated_at' ],
 
         //
         // Buttons

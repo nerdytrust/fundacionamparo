@@ -6,16 +6,12 @@
 			<thead>
 				<tr>
 
-					<td> {{ $columns->id_donaciones->label }} </td>
 					<td> {{ $columns->email->label }} </td>
 					<td> {{ $columns->id_causas->label }} </td>
 					<td> {{ $columns->monto_donacion->label }} </td>
 					<td> {{ $columns->reference_id->label }} </td>
-					<td> {{ $columns->transaction_id->label }} </td>
-					<td> {{ $columns->transaction_brand->label }} </td>
 					<td> {{ $columns->transaction_type->label }} </td>
-					<td> {{ $columns->status->label }} </td>
-					<td> {{ $columns->mostrar_perfil->label }} </td>
+					<td> {{ $columns->created_at->label }} </td>
 
 
 					@include("crud.index-column-buttons")
@@ -29,16 +25,12 @@
 				<tr>
 
 
-					<td>{{ parseToHTML($columns->id_donaciones,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->email,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->id_causas,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->monto_donacion,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->reference_id,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->transaction_id,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->transaction_brand,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->transaction_type,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->status,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->mostrar_perfil,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->created_at,$record,$fk_column) }}</td>
 
 
 					@include("crud.index-buttons")

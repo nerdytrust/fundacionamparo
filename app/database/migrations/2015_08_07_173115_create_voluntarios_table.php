@@ -28,10 +28,10 @@ class CreateVoluntariosTable extends Migration {
 			$table->boolean('id_horarios')->nullable();
 			$table->boolean('id_estudiantes')->nullable();
 			$table->boolean('id_tipo_ayudas')->nullable();
-			$table->boolean('terminos')->default(1);
+			$table->boolean('terminos')->nullable()->default(1);
 			$table->string('ip', 140);
 			$table->text('browser');
-			$table->boolean('aprobacion')->default(0);
+			$table->boolean('aprobacion')->nullable()->default(0);
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();
 			$table->timestamps();

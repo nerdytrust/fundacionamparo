@@ -989,14 +989,13 @@ class Crud extends \BaseModel {
 
     
 
-    public function getValidations($columns = [],$id = "")
+    public function getValidations($columns = [], $id = "")
     {
         $validations = [];
         $numeric = ["smallint","integer","bigint","float","decimal","blob"];
 
         $crud_validations = $this->getCrud("validations");
         $inputs           = $this->getCrud("inputs");
-
 
         foreach ($columns as $column) {
             $rule = [];

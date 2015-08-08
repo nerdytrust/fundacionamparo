@@ -6,10 +6,8 @@
 			<thead>
 				<tr>
 
-					<td> {{ $columns->id_home_video->label }} </td>
 					<td> {{ $columns->cover->label }} </td>
-					<td> {{ $columns->video->label }} </td>
-					<td> {{ $columns->activo->label }} </td>
+					<td> {{ $columns->id_secciones->label }} </td>
 
 
 					@include("crud.index-column-buttons")
@@ -23,10 +21,8 @@
 				<tr>
 
 
-					<td>{{ parseToHTML($columns->id_home_video,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->cover,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->video,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->activo,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->id_secciones,$record,$fk_column) }}</td>
 
 
 					@include("crud.index-buttons")

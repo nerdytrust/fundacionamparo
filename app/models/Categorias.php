@@ -88,7 +88,7 @@ class Categorias extends \Crud {
         // if you can change the columns and inputs you will go to model
         // for example users_notes go to app/models/UsersNotes.php
         //
-        //"default_tabs" => ["notes","logs"],
+        "default_tabs" => [],
         //
         // Validate inputs
         // Rules by column
@@ -116,8 +116,8 @@ class Categorias extends \Crud {
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        "btn_in_index"  => ["print","show"],
-        "btn_in_show"   => ["print","cancel"],
+        "btn_in_index"  => ["show"],
+        "btn_in_show"   => ["cancel"],
         "btn_in_create" => ["cancel"],
         "btn_in_edit"   => ["cancel"],
     ];

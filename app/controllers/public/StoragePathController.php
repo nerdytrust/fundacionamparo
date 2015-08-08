@@ -21,8 +21,8 @@ class StoragePathController extends BaseController {
  				return $image->make( $this->storage_path )->resize( $array_size[0], $array_size[1] );
  			} else {
  				list( $width, $height ) = getimagesize( $this->storage_path );
- 				if ( $width > 1000 ){
- 					return $image->make( $this->storage_path )->resize(1000, null, function( $constraint ){
+ 				if ( $width > 1600 ){
+ 					return $image->make( $this->storage_path )->resize(1600, null, function( $constraint ){
  						$constraint->aspectRatio();
  						$constraint->upsize();
  					});
@@ -31,7 +31,7 @@ class StoragePathController extends BaseController {
  			}
  		}, 10000, true );
 
- 		return $img->response('jpg', 70 );
+ 		return $img->response('jpg', 95 );
  	}
 
  	/**

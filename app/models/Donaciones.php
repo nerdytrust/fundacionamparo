@@ -84,7 +84,15 @@ class Donaciones extends \Crud {
         //  if not wrote label the column rename like this: 
         //  ["first_name" => "First Name"]
         // 
-        "labels"    => [],
+        "labels"    => [
+            'monto_donacion'    => 'Donación',
+            'reference'         => 'Referencia',
+            'transaction_type'  => 'Forma de Pago',
+            'created_at'        => 'Fecha',
+            'transaction_brand' => 'Tipo de Tarjeta',
+            'transaction_id'    => 'Número de transacción',
+            'status'            => 'Estatus de Donación'
+        ],
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
@@ -95,7 +103,7 @@ class Donaciones extends \Crud {
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
-        "fk_column" => [],
+        "fk_column" => [ 'id_causas' => 'titulo' ],
         //
         // JOINS
         // Remember by default the framework create autojoins when you define id_(table)   
@@ -117,7 +125,7 @@ class Donaciones extends \Crud {
         // if you can change the columns and inputs you will go to model
         // for example users_notes go to app/models/UsersNotes.php
         //
-        //"default_tabs" => ["notes","logs"],
+        "default_tabs" => [],
         //
         // Validate inputs
         // Rules by column
@@ -138,15 +146,15 @@ class Donaciones extends \Crud {
 
         // "not_in_create" => ["created_at","updated_at"],
         // "not_in_edit"   => ["created_at","updated_at"],
-        // "not_in_index"  => ["created_at","updated_at"],
-        // "not_in_show"   => ["created_at","updated_at"],
+        "not_in_index"  => [ 'id_donaciones', 'transaction_id', 'transaction_brand', 'status', 'mostrar_perfil', 'created_by', 'updated_by', 'updated_at' ],
+        "not_in_show"   => [ 'created_by', 'updated_by', 'updated_at' ],
 
         //
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
-        // "btn_in_show"   => ["print","edit","cancel"],
+        "btn_in_index"  => ["print", "show", "search", "advance-search" ],
+        "btn_in_show"   => ["print", "cancel"],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],
     ];

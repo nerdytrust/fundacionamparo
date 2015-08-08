@@ -87,7 +87,8 @@ class Causas extends \Crud {
                         'created_at'        => 'Fecha de Creación',
                         'updated_at'        => 'Fecha de Actualización',
                         'fecha'             => 'Fecha de Cierre',
-                        'id_tipo_causas'    => 'Tipo de Causa'
+                        'id_tipo_causas'    => 'Tipo de Causa',
+                        'me_gusta_interno'  => 'Me gusta'
                     ],
         //
         // Replace default inputs by column
@@ -114,7 +115,7 @@ class Causas extends \Crud {
         // if you can change the columns and inputs you will go to model
         // for example users_notes go to app/models/UsersNotes.php
         //
-        //"default_tabs" => ["notes","logs"],
+        "default_tabs" => [],
         //
         // Validate inputs
         // Rules by column
@@ -133,9 +134,9 @@ class Causas extends \Crud {
         "index"     => [],
         "show"      => [],
 
-        "not_in_create" => [ "me_gusta_interno", "recaudado", "created_at", "updated_at", 'created_by', 'updated_by' ],
-        "not_in_edit"   => [ "me_gusta_interno", "recaudado", "created_at", "updated_at", 'created_by', 'updated_by' ],
-        "not_in_index"  => [ "created_at", "updated_at", "imagen", "updated_by", "id_causas", "created_by" ],
+        "not_in_create" => [ "me_gusta_interno", "created_at", "updated_at", 'created_by', 'updated_by' ],
+        "not_in_edit"   => [ "me_gusta_interno", "created_at", "updated_at", 'created_by', 'updated_by' ],
+        "not_in_index"  => [ 'descripcion', "created_at", "updated_at", "imagen", "updated_by", "id_causas", "created_by" ],
         "not_in_show"   => [ 'orden', 'created_at', 'updated_at', 'created_by', 'updated_by' ],
 
         //

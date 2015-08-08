@@ -24,9 +24,9 @@
 
 <div class="form-group @if ($errors->has('monto_donacion')) has-error @endif">
 
- {{ Form::label("number", "Monto donacion") }}
+ {{ Form::label("number", "Donación") }}
    
-      {{ Form::number("monto_donacion",$record->monto_donacion,["class" => "form-control","placeholder"=>"Monto donacion"]); }}
+      {{ Form::number("monto_donacion",$record->monto_donacion,["class" => "form-control","placeholder"=>"Donación"]); }}
     
  <span class="help-block">{{ $errors->first('monto_donacion') }}</span>
 </div>
@@ -42,36 +42,36 @@
 
 <div class="form-group @if ($errors->has('transaction_id')) has-error @endif">
 
- {{ Form::label("remotecombo", "Transaction") }}
+ {{ Form::label("remotecombo", "Número de transacción") }}
    
-      {{ Form::remotecombo("transaction_id",$record->transaction_id,["table"=>$model,"class" => "form-control","placeholder"=>"Transaction"] ); }}
+      {{ Form::remotecombo("transaction_id",$record->transaction_id,["table"=>$model,"class" => "form-control","placeholder"=>"Número de transacción"] ); }}
     
  <span class="help-block">{{ $errors->first('transaction_id') }}</span>
 </div>
 
 <div class="form-group @if ($errors->has('transaction_brand')) has-error @endif">
 
- {{ Form::label("text", "Transaction brand") }}
+ {{ Form::label("text", "Tipo de Tarjeta") }}
    
-      {{ Form::text("transaction_brand",$record->transaction_brand,["class" => "form-control","placeholder"=>"Transaction brand"]); }}
+      {{ Form::text("transaction_brand",$record->transaction_brand,["class" => "form-control","placeholder"=>"Tipo de Tarjeta"]); }}
     
  <span class="help-block">{{ $errors->first('transaction_brand') }}</span>
 </div>
 
 <div class="form-group @if ($errors->has('transaction_type')) has-error @endif">
 
- {{ Form::label("text", "Transaction type") }}
+ {{ Form::label("text", "Forma de Pago") }}
    
-      {{ Form::text("transaction_type",$record->transaction_type,["class" => "form-control","placeholder"=>"Transaction type"]); }}
+      {{ Form::text("transaction_type",$record->transaction_type,["class" => "form-control","placeholder"=>"Forma de Pago"]); }}
     
  <span class="help-block">{{ $errors->first('transaction_type') }}</span>
 </div>
 
 <div class="form-group @if ($errors->has('status')) has-error @endif">
 
- {{ Form::label("text", "Status") }}
+ {{ Form::label("text", "Estatus de Donación") }}
    
-      {{ Form::text("status",$record->status,["class" => "form-control","placeholder"=>"Status"]); }}
+      {{ Form::text("status",$record->status,["class" => "form-control","placeholder"=>"Estatus de Donación"]); }}
     
  <span class="help-block">{{ $errors->first('status') }}</span>
 </div>
