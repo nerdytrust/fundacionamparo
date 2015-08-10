@@ -12,7 +12,7 @@
 */
 //<input type="checkbox" checked data-toggle="toggle" data-on="Ready" data-off="Not Ready" data-onstyle="success" data-offstyle="danger"> 
 
-Form::macro('toggle', function($name, $default = "false", $attrs = [],$data=[])
+Form::macro('toggle', function($name, $default = 'false', $attrs = [],$data=[])
 {
 
     if(isset($data->data))

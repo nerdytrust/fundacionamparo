@@ -17,7 +17,7 @@
 								@endif
 
 							>
-								<img src="{{ asset( 'path_image/' . $momento->imagen) }}" />
+								<img src="{{ asset( 'path_image/' . $momento->imagen ) }}" />
 								<div class="col-xs-12 col-sm-12 col-md-5 cuadro">
 									<h1><b>{{ $momento->year }}</b>
 										{{ $momento->titulo }}

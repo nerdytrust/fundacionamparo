@@ -46,14 +46,6 @@
 </div>
 <div class="row">
 	<div class="col-xs-2 text-right ">
-		{{ Form::label($columns->recaudado->input, $columns->recaudado->label) }}
-	</div>
-	<div class="col-xs-10 ">
-		{{ parseToHTML($columns->recaudado,$record,$fk_column) }}
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-2 text-right ">
 		{{ Form::label($columns->me_gusta_interno->input, $columns->me_gusta_interno->label) }}
 	</div>
 	<div class="col-xs-10 ">

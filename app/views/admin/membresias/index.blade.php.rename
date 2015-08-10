@@ -8,7 +8,6 @@
 
 					<td> {{ $columns->nombre->label }} </td>
 					<td> {{ $columns->resena->label }} </td>
-					<td> {{ $columns->me_gusta->label }} </td>
 
 
 					@include("crud.index-column-buttons")
@@ -24,7 +23,6 @@
 
 					<td>{{ parseToHTML($columns->nombre,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->resena,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->me_gusta,$record,$fk_column) }}</td>
 
 
 					@include("crud.index-buttons")

@@ -6,23 +6,11 @@
 			<thead>
 				<tr>
 
-					<td> {{ $columns->id_voluntarios->label }} </td>
-					<td> {{ $columns->id_estados->label }} </td>
-					<td> {{ $columns->id_ciudades->label }} </td>
 					<td> {{ $columns->id_causas->label }} </td>
 					<td> {{ $columns->nombre->label }} </td>
 					<td> {{ $columns->apellidos->label }} </td>
 					<td> {{ $columns->email->label }} </td>
 					<td> {{ $columns->telefono->label }} </td>
-					<td> {{ $columns->nacimiento->label }} </td>
-					<td> {{ $columns->id_sexos->label }} </td>
-					<td> {{ $columns->id_disponibilidades->label }} </td>
-					<td> {{ $columns->id_horarios->label }} </td>
-					<td> {{ $columns->id_estudiantes->label }} </td>
-					<td> {{ $columns->id_tipo_ayudas->label }} </td>
-					<td> {{ $columns->terminos->label }} </td>
-					<td> {{ $columns->ip->label }} </td>
-					<td> {{ $columns->browser->label }} </td>
 					<td> {{ $columns->aprobacion->label }} </td>
 
 
@@ -37,23 +25,11 @@
 				<tr>
 
 
-					<td>{{ parseToHTML($columns->id_voluntarios,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->id_estados,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->id_ciudades,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->id_causas,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->nombre,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->apellidos,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->email,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->telefono,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->nacimiento,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->id_sexos,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->id_disponibilidades,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->id_horarios,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->id_estudiantes,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->id_tipo_ayudas,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->terminos,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->ip,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->browser,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->aprobacion,$record,$fk_column) }}</td>
 
 

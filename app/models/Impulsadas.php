@@ -84,7 +84,9 @@ class Impulsadas extends \Crud {
         //  if not wrote label the column rename like this: 
         //  ["first_name" => "First Name"]
         // 
-        "labels"    => [],
+        "labels"    => [
+            'created_at' => 'Fecha'
+        ],
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
@@ -138,15 +140,15 @@ class Impulsadas extends \Crud {
 
         // "not_in_create" => ["created_at","updated_at"],
         // "not_in_edit"   => ["created_at","updated_at"],
-        // "not_in_index"  => ["created_at","updated_at"],
-        // "not_in_show"   => ["created_at","updated_at"],
+        "not_in_index"  => [ 'id_impulsadas', 'mostrar_perfil', 'created_at', 'created_by', 'updated_at', 'updated_by' ],
+        "not_in_show"   => [ 'created_by', 'updated_at', 'updated_by' ],
 
         //
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
-        // "btn_in_show"   => ["print","edit","cancel"],
+        "btn_in_index"  => [  "show", "search", "advance-search" ],
+        "btn_in_show"   => [ "cancel" ],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],
 

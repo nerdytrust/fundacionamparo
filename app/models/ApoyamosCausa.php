@@ -130,7 +130,7 @@ class ApoyamosCausa extends \Crud {
         // ["print","create","edit","show","delete","search","advance-search"]
 
         "btn_in_index"  => [ "show", "delete", "search", "advance-search" ],
-        "btn_in_show"   => [ "print", "cancel" ],
+        "btn_in_show"   => [ "cancel" ],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],
     ];

@@ -88,7 +88,7 @@ class Faq extends \Crud {
         // if you can change the columns and inputs you will go to model
         // for example users_notes go to app/models/UsersNotes.php
         //
-        //"default_tabs" => ["notes","logs"],
+        "default_tabs" => [],
         //
         // Validate inputs
         // Rules by column
@@ -109,15 +109,15 @@ class Faq extends \Crud {
 
         // "not_in_create" => ["created_at","updated_at"],
         // "not_in_edit"   => ["created_at","updated_at"],
-        // "not_in_index"  => ["created_at","updated_at"],
-        // "not_in_show"   => ["created_at","updated_at"],
+        "not_in_index"  => [ 'id_faq', 'created_at', 'created_by', 'updated_at', 'updated_by', 'respuesta' ],
+        "not_in_show"   => [ 'created_at', 'created_by', 'updated_at', 'updated_by' ],
 
         //
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
-        // "btn_in_show"   => ["print","edit","cancel"],
+        "btn_in_index"  => [ "create","edit","show","delete","search","advance-search"],
+        "btn_in_show"   => [ "edit","cancel"],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],
 

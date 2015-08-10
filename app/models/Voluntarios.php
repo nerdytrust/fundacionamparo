@@ -84,18 +84,29 @@ class Voluntarios extends \Crud {
         //  if not wrote label the column rename like this: 
         //  ["first_name" => "First Name"]
         // 
-        "labels"    => [],
+        "labels"    => [
+            'id_estados'                => 'Estado',
+            'id_ciudades'               => 'Ciudad',
+            'id_causas'                 => 'Causa',
+            'id_sexos'                  => 'Sexo',
+            'id_disponibilidades'       => 'Disponibilidad',
+            'id_horarios'               => 'Horario',
+            'id_tipo_ayudas'            => 'Tipo de Ayuda'
+        ],
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
         // "radiogroup","radios","editor","toggle","html","text", "hidden", "digit", "textarea", "password", "email","datetime","date","time","select","autocomplete","money","currency","file","document","audio","video","zip"
         //
-        "inputs"    => [],
+        "inputs"    => [
+            'aprobacion' => 'toggle',
+            'nacimiento' => 'date'
+        ],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
-        "fk_column" => [],
+        "fk_column" => [ 'id_causas' => 'titulo', 'id_estados' => 'name', 'id_ciudades' => 'name', 'id_tipo_ayudas' => 'name', 'id_sexos' => 'name', 'id_disponibilidades' => 'name', 'id_estudiantes' => 'name', 'id_horarios' => 'name' ],
         //
         // JOINS
         // Remember by default the framework create autojoins when you define id_(table)   
@@ -104,7 +115,12 @@ class Voluntarios extends \Crud {
         // [ "id_roles"  => ["roles","id_roles"] 
         // [ "id_parent" => ["current_table","id_primary_key"] 
         //    
-        "joins"      => [], 
+        "joins"      => [
+            'id_disponibilidades' => [ 'periodos', 'id_periodos' ],
+            'id_estudiantes'      => [ 'tipo_estudiantes', 'id_tipo_estudiantes' ],
+            'id_tipo_ayudas'      => [ 'tipo_ayudas', 'id_tipo_ayudas' ],
+            'id_sexos'            => [ 'tipo_sexos', 'id_tipo_sexos' ]
+        ], 
         // 
         // Tabs
         // Allways create names of tabs with snake case for example
@@ -117,7 +133,7 @@ class Voluntarios extends \Crud {
         // if you can change the columns and inputs you will go to model
         // for example users_notes go to app/models/UsersNotes.php
         //
-        //"default_tabs" => ["notes","logs"],
+        "default_tabs" => [],
         //
         // Validate inputs
         // Rules by column
@@ -136,17 +152,17 @@ class Voluntarios extends \Crud {
         "index"     => [],
         "show"      => [],
 
-        // "not_in_create" => ["created_at","updated_at"],
-        // "not_in_edit"   => ["created_at","updated_at"],
-        // "not_in_index"  => ["created_at","updated_at"],
-        // "not_in_show"   => ["created_at","updated_at"],
+        "not_in_create" => [ 'terminos', 'ip', 'browser', 'created_by', 'created_at', 'updated_at', 'updated_by' ],
+        "not_in_edit"   => [ 'ip', 'browser', 'terminos', 'created_by', 'created_at', 'updated_by', 'updated_at' ],
+        "not_in_index"  => [ 'id_voluntarios', 'id_estados', 'id_ciudades', 'nacimiento', 'id_sexos', 'id_disponibilidades', 'id_horarios', 'id_estudiantes', 'id_tipo_ayudas', 'terminos', 'ip', 'browser', 'created_at', 'created_by', 'updated_at', 'updated_by' ],
+        "not_in_show"   => [ 'created_at', 'created_by', 'updated_at', 'updated_by', 'ip', 'browser' ],
 
         //
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        // "btn_in_index"  => ["print","create","edit","show","delete","search","advance-search"],
-        // "btn_in_show"   => ["print","edit","cancel"],
+        "btn_in_index"  => [ "create", 'edit', "show", "search", "advance-search" ],
+        "btn_in_show"   => [ "cancel", 'edit' ],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],
 

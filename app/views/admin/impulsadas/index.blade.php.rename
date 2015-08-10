@@ -6,10 +6,8 @@
 			<thead>
 				<tr>
 
-					<td> {{ $columns->id_impulsadas->label }} </td>
 					<td> {{ $columns->id_causas->label }} </td>
 					<td> {{ $columns->email->label }} </td>
-					<td> {{ $columns->mostrar_perfil->label }} </td>
 
 
 					@include("crud.index-column-buttons")
@@ -23,10 +21,8 @@
 				<tr>
 
 
-					<td>{{ parseToHTML($columns->id_impulsadas,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->id_causas,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->email,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->mostrar_perfil,$record,$fk_column) }}</td>
 
 
 					@include("crud.index-buttons")
