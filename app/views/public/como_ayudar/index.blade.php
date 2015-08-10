@@ -24,13 +24,15 @@
 						<img src="images/fundacion_como_ayudar_video.jpg" alt="">
 					</div>
 					-->
-					@if ( isset( $video ) )
-						<div class="vi2">
-							<video controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '960x520' ) }}" class="video-js vjs-default-skin" data-setup="{}">
-								<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
-								<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
-							</video>
-						</div><!--termina vi2-->
+					@if ( isset( $videos ) )
+						@foreach ( $videos as $video )
+							<div class="vi2">
+								<video controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '960x520' ) }}" class="video-js vjs-default-skin" data-setup="{}">
+									<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
+									<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
+								</video>
+							</div><!--termina vi2-->
+						@endforeach
 					@endif
 					<div id="titulo_fca" class="ayudar">
 						<div class="titleM">FORMAS DE AYUDAR</div>

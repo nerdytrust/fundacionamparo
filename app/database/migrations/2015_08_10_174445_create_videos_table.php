@@ -18,7 +18,6 @@ class CreateVideosTable extends Migration {
 			$table->text('cover');
 			$table->text('video');
 			$table->boolean('id_secciones');
-			$table->enum('activo', array('Active','Inactive'));
 			$table->timestamps();
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();

@@ -19,7 +19,7 @@ class CreateMembresiasTable extends Migration {
 			$table->text('resena');
 			$table->text('url');
 			$table->bigInteger('me_gusta')->default(0);
-			$table->text('logo')->nullable();
+			$table->text('logo');
 			$table->boolean('orden')->nullable();
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();

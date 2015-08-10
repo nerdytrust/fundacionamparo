@@ -35,7 +35,6 @@ class StorageController extends \BaseController {
 
 
 	public function upload(){
-
         $file = "file";
         $destinationPath = app_path().'/storage/uploads/'; // upload path
         

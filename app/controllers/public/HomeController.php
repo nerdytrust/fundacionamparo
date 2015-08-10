@@ -24,7 +24,7 @@ class HomeController extends BaseController {
 	 * @return Vista del Home
 	 */
 	public function home() {
-		$video = Videos::where( 'activo', 'Active' )->where('id_secciones', 1 )->find(1);
+		$videos = Videos::where('id_secciones', 1 )->get();
 	    $causas = Causas:: select(DB::raw('*,meta as metaTotal'))
 	    				  ->orderBy( 'orden' )
 	    				  ->orderBy( 'causas.created_at','desc' )
@@ -73,7 +73,7 @@ class HomeController extends BaseController {
 
 		Session::put( 'total_donadores', $total_donadores );
 	    return View::make( 'public.home.index' )->with( [ 
-	    	'video' 			=> $video,
+	    	'videos' 			=> $videos,
 	    	'causas' 			=> $causas,
 	    	'ultimos'			=> $ultimos
 	    ] );

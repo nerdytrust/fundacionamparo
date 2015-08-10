@@ -3,9 +3,9 @@
 class AyudarController extends BaseController {
 	
 	public function index(){
-		$video = Videos::where( 'activo', 'Active' )->where('id_secciones', 2 )->find(1);
+		$videos = Videos::where('id_secciones', 2 )->get();
 		return View::make( 'public.como_ayudar.index' )->with([
-			'video' => $video
+			'videos' => $videos
 		]);
 	}
 }

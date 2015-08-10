@@ -13,13 +13,15 @@
 						<img src="{{ asset( 'images/amparo.png' ) }}" alt="">
 					</div>
 				</article>
-				@if ( isset( $video ) )
-					<div class="vi ">
-						<video controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '839x521' ) }}" class="video-js vjs-default-skin" data-setup="{}">
-							<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
-							<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
-						</video>
-					</div>
+				@if ( isset( $videos ) )
+					@foreach ( $videos as $video )
+						<div class="vi ">
+							<video controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '839x521' ) }}" class="video-js vjs-default-skin" data-setup="{}">
+								<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
+								<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
+							</video>
+						</div>
+					@endforeach
 				@endif
 				<aside class="btns">
 					<article id="btn_twitter" class="">

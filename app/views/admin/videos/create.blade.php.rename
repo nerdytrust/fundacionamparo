@@ -31,15 +31,6 @@
  <span class="help-block">{{ $errors->first('id_secciones') }}</span>
 </div>
 
-<div class="form-group @if ($errors->has('activo')) has-error @endif">
-
- {{ Form::label("toggle", "Activo") }}
-   
-      {{ Form::toggle("activo",$record->activo,[],$columns->activo->data); }}
-    
- <span class="help-block">{{ $errors->first('activo') }}</span>
-</div>
-
      
 
 @stop

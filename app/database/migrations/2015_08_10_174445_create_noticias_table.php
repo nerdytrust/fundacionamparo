@@ -18,7 +18,7 @@ class CreateNoticiasTable extends Migration {
 			$table->string('titulo', 180);
 			$table->text('contenido');
 			$table->string('extracto', 180)->nullable();
-			$table->text('imagen')->nullable();
+			$table->text('imagen');
 			$table->date('fecha_publicacion');
 			$table->bigInteger('me_gusta')->default(0);
 			$table->integer('created_by')->nullable();
