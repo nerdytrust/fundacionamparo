@@ -570,7 +570,7 @@ class CoversController extends BaseController {
 		$body = @file_get_contents('php://input');
 		$event_json = json_decode($body);
 
-		if ($event_json->type == 'charge.paid'){
+		if ($event_json->object->status == 'paid'){
 		 
 		    DB::table('donaciones')
              ->where('transaction_id', $event_json->object->id)
