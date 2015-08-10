@@ -59,12 +59,12 @@ class Causas extends \Crud {
             return $value;
     }
 
-    public function getMetaAttribute( $value ){
+    /*public function getMetaAttribute( $value ){
         $action = getCurrentAction();
 
         // if ( $action == "index" )
             return '$' . number_format( $value );
-    }
+    }*/
     
     /* 
         CRUD
