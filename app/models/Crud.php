@@ -1051,6 +1051,69 @@ class Crud extends \BaseModel {
         return $validations;
     }
 
+     public function getValidationsEdit($columns = [], $id = "")
+    {
+        $validations = [];
+        $numeric = ["smallint","integer","bigint","float","decimal","blob"];
+
+        $crud_validations = $this->getCrud("edit_validations");
+        $inputs           = $this->getCrud("inputs");
+
+        foreach ($columns as $column) {
+            $rule = [];
+
+            if (array_key_exists($column->name, $crud_validations))
+                $validations[$column->name] = $crud_validations[$column->name];
+            else
+            {
+                // without primary key
+
+                if($column->name != $this->getKeyName())
+                {
+                    if($column->required)
+                        $rule[] = "required";
+
+                    if($column->length > 0)
+                        $rule[] = "max:".$column->length;
+
+                    if($column->length >= 2)
+                        $rule[] = "min:2";
+
+                    if( $column->input == "email")
+                    {
+                        $rule[] = "email";
+
+                        if($id)
+                            $rule[] = "unique:".$this->getTable().",".$column->name.",".$id.",".$this->getKeyName();
+                        else
+                            $rule[] = "unique:".$this->getTable().",".$column->name;
+                    }
+
+                    if( in_array($column->input, $numeric))
+                        $rule[] = "numeric";
+                    
+
+                    $allowed = array_get($this->inputFiles, $column->input);
+                    
+                    
+                    if($allowed)
+                        $rule[] = "mimes:".implode(",", $this->allowed[$allowed]);
+                    /*
+                    if( $column->type == "enum" and count($column->data) > 0)
+                        $rule[] = "in:".implode(",",$column->data);
+                    */
+
+                    $validations[$column->name] = implode("|",$rule);
+                }
+
+            }
+
+        }
+
+        return $validations;
+    }
+
+
 
 
     protected function replaceUnderScore($text)

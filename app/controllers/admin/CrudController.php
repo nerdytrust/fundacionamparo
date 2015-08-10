@@ -524,7 +524,7 @@ class CrudController extends \BaseController {
 
         $class     = new $this->className();
         $columns   = $class->getColumnsByView("edit");
-        $validations     = $class->getValidations($columns,$id);
+        $validations     = $class->getValidationsEdit($columns,$id);
         $_inputs   = $class->getInputs($columns);
         $inputs    = \Input::only($class->getInputs($columns));
 

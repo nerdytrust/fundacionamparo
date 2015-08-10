@@ -133,6 +133,17 @@ class Membresias extends \Crud {
         //
         "validations"     => [],
         //
+        // Validate edit inputs
+        // Rules by column
+        // "email" => "required|min:10|email"
+        // without validation
+        // "imagen" => ""  
+        //
+        // http://laravel.com/docs/4.2/validation#available-validation-rules
+        // 
+        //
+        "edit_validations" => ["logo" => ""],
+        //
         // Columns enable by view
         // Default enable all columns
         //
