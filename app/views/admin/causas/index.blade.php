@@ -1,5 +1,5 @@
 @extends("crud.layout-index")
-
+	<?php setlocale(LC_MONETARY, 'en_US'); ?>
 	@section("table")
 
 		<table class="table table-striped table-bordered ">
@@ -28,7 +28,7 @@
 
 					<td>{{ parseToHTML($columns->titulo,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->fecha,$record,$fk_column) }}</td>
-					<td>{{ parseToHTML($columns->meta,$record,$fk_column) }}</td>
+					<td>{{ money_format('%.2n', $record->meta) }}</td>
 					<td>{{ parseToHTML($columns->orden,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->me_gusta_interno,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->id_categorias,$record,$fk_column) }}</td>

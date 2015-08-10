@@ -2,7 +2,6 @@
 
 class Causas extends \Crud {
 
-
     protected $primaryKey = 'id_causas'; // !important
 
     protected $table = 'causas';
@@ -58,13 +57,6 @@ class Causas extends \Crud {
         else
             return $value;
     }
-
-    /*public function getMetaAttribute( $value ){
-        $action = getCurrentAction();
-
-        // if ( $action == "index" )
-            return '$' . number_format( $value );
-    }*/
     
     /* 
         CRUD

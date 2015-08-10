@@ -1,5 +1,5 @@
 @extends("crud.layout-show")
-
+	<?php setlocale(LC_MONETARY, 'en_US'); ?>
 @section("form")
 
 	
@@ -41,7 +41,7 @@
 		{{ Form::label($columns->meta->input, $columns->meta->label) }}
 	</div>
 	<div class="col-xs-10 ">
-		{{ parseToHTML($columns->meta,$record,$fk_column) }}
+		{{ money_format('%.2n', $record->meta) }}
 	</div>
 </div>
 <div class="row">
