@@ -3,16 +3,19 @@
 	@stop
 	@section("content")
 		<section id="Contenedor">
-			<span class="como">
-				<h1>¿Cómo Ayudar?</h1>
-				<h2>Tus donaciones construyen sueños y cambian vidas <b>#TomandoAcciónFA</b></h2>
-				<button id="btn_dona">DONAR AHORA</button>
-			</span>
-			<div class="vi3">
-				<video loop preload="auto" poster="{{ asset( 'images/video_causa.png' ) }}" controls  class="video-js vjs-default-skin" data-setup="{}">
-					<source src="{{ asset( 'video/video.mp4' ) }}">
-				</video>
-			</div>
+			@if ( $video )
+				<span class="como">
+					<h1>¿Cómo Ayudar?</h1>
+					<h2>Tus donaciones construyen sueños y cambian vidas <b>#TomandoAcciónFA</b></h2>
+					<button id="btn_dona">DONAR AHORA</button>
+				</span>
+				<div class="vi3">
+					<video controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '1596x608' ) }}" class="video-js vjs-default-skin" data-setup="{}">
+						<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
+						<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
+					</video>
+				</div>
+			@endif
 			<div id="pleca_causas" class="">
 				<h1>CAUSAS FUNDACIÓN AMPARO</h1>
 			</div>

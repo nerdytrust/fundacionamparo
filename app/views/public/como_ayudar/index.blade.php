@@ -24,12 +24,14 @@
 						<img src="images/fundacion_como_ayudar_video.jpg" alt="">
 					</div>
 					-->
-					<div class="vi2">
-						<video controls loop preload="auto" poster="{{ asset( 'images/video_int_historia.png' ) }}" class="video-js vjs-default-skin" data-setup="{}">
-							<source src="{{ asset( 'video/video.mp4' ) }}">
-				  	    <!--<source src="http://www.w3schools.com/html/movie.mp4">-->
-						</video>
-					</div><!--termina vi2-->
+					@if ( isset( $video ) )
+						<div class="vi2">
+							<video controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '960x520' ) }}" class="video-js vjs-default-skin" data-setup="{}">
+								<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
+								<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
+							</video>
+						</div><!--termina vi2-->
+					@endif
 					<div id="titulo_fca" class="ayudar">
 						<div class="titleM">FORMAS DE AYUDAR</div>
 						<div class="subtitleM">Tus donaciones construyen sueños y cambian vidas. <span class="colorin">#TomandoAcciónFA</span></div>

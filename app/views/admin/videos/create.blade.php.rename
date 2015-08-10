@@ -24,9 +24,9 @@
 
 <div class="form-group @if ($errors->has('id_secciones')) has-error @endif">
 
- {{ Form::label("remotecombo", "Seccione") }}
+ {{ Form::label("remotecombo", "Sección") }}
    
-      {{ Form::remotecombo("id_secciones",$record->id_secciones,["table"=>$model,"class" => "form-control","placeholder"=>"Seccione"] ); }}
+      {{ Form::remotecombo("id_secciones",$record->id_secciones,["table"=>$model,"class" => "form-control","placeholder"=>"Sección"] ); }}
     
  <span class="help-block">{{ $errors->first('id_secciones') }}</span>
 </div>

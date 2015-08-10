@@ -5,13 +5,15 @@ class CausasVivasController extends BaseController {
 	public function index(){
 		$causas = Causas::select(DB::raw('*,meta as metaTotal'))->orderBy( 'created_at','desc' )->where( 'id_tipo_causas', 1)->where( 'fecha', '>', date('Y-m-d') )->get();
 		$causas = $this->getClass($causas);
+		$video = Videos::where( 'activo', 'Active' )->where('id_secciones', 3 )->find(1);
 	
 		$externas = Causas::select(DB::raw('*,meta as metaTotal'))->orderBy( 'created_at','desc' )->where( 'id_tipo_causas', 2 )->where( 'fecha', '>', date('Y-m-d') )->get();
 		$externas = $this->getClass($externas);
 
 		return View::make( 'public.causas.index' )->with( [
 			'causas' => $causas,
-			'externas' => $externas
+			'externas' => $externas,
+			'video'	=> $video
 		] );
 	}
 

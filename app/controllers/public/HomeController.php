@@ -24,7 +24,7 @@ class HomeController extends BaseController {
 	 * @return Vista del Home
 	 */
 	public function home() {
-		$video = Videos::where( 'activo', 'Active' )->where('id_secciones', 1 )->firstOrFail();
+		$video = Videos::where( 'activo', 'Active' )->where('id_secciones', 1 )->find(1);
 	    $causas = Causas:: select(DB::raw('*,meta as metaTotal'))
 	    				  ->orderBy( 'orden' )
 	    				  ->orderBy( 'causas.created_at','desc' )

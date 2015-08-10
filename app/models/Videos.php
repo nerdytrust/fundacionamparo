@@ -84,7 +84,9 @@ class Videos extends \Crud {
         //  if not wrote label the column rename like this: 
         //  ["first_name" => "First Name"]
         // 
-        "labels"    => [],
+        "labels"    => [
+            'id_secciones' => 'Sección'
+        ],
         //
         // Replace default inputs by column
         // ["first_name" => "text"] 
