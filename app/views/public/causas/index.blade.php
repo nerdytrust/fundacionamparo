@@ -48,9 +48,9 @@
 									</div>
 								<div id="cantidad">
 									<h1>META</h1>
-									<h2>{{ $causa->meta }}<span>MXN</span></h2>
+									<h2>${{ number_format( $causa->meta ) }}<span>MXN</span></h2>
 								</div>
-									<p>{{ number_format( floatval( $causa->recaudado ) ) }} MXN <span>RECAUDADOS</span></p>
+									<p>${{ number_format( floatval( $causa->recaudado ) ) }} MXN <span>RECAUDADOS</span></p>
 									<p>{{ Helper::getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 								</div>
 				 			</section>
@@ -88,9 +88,9 @@
 									</div>
 								<div id="cantidad">
 									<h1>META</h1>
-									<h2>{{ $externa->meta }}<span>MXN</span></h2>
+									<h2>${{ number_format($externa->meta) }}<span>MXN</span></h2>
 								</div>
-									<p>{{ number_format( floatval( $externa->recaudado ) ) }} MXN <span>RECAUDADOS</span></p>
+									<p>${{ number_format( floatval( $externa->recaudado ) ) }} MXN <span>RECAUDADOS</span></p>
 									<p>{{ Helper::getRemaining( $externa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 								</div>
 				 			</section>
