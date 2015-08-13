@@ -103,7 +103,7 @@ class CoreController extends BaseController {
 	 * @return
 	 */
 	private function likeMuro( $inputs = [] ){
-		Registrados::where( 'id_muros', $inputs['content_id'] )->increment( 'me_gusta' );
+		Muros::where( 'id_muros', $inputs['content_id'] )->increment( 'me_gusta' );
 	}
 }
 

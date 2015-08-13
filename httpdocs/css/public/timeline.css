@@ -23,6 +23,11 @@ header { display: inline-block !important; }
 #meenus #menu_dos li a { text-decoration: none; }
 #meenus #btn_dona { padding: .6em 1em; border: 2px solid #beda3e; outline: none; font-weight: 600; }
 
+.interior #social_top {
+  top: 155px;
+  padding-left: 0px;
+}
+
 .tooltip.bottom .tooltip-inner {
     margin-top: -40px;
     background-color: transparent;
