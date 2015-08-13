@@ -20,7 +20,7 @@
 								<ul>
 									{{ Helper::facebookShare( '', URL::to( 'muro-exito' ) ) }}
 									{{ Helper::twitterShare( $momento->titulo, URL::to( 'muro-exito' ) . '/' . $momento->id_momentos, '' ) }}
-									{{ Helper::like( $momento->id_momentos, 'causas' ) }}
+									{{ Helper::like( $momento->id_momentos, 'muros' ) }}
 									<p>{{ $momento->me_gusta }} likes</p>
 								</ul>
 							</section>

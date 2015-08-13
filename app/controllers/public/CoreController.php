@@ -28,6 +28,9 @@ class CoreController extends BaseController {
 				case 'donadores':
 					$this->likeDonadores( $inputs );
 					break;
+				case 'muros':
+					$this->likeMuro( $inputs );
+					break;
 			}
 		}
 
@@ -48,6 +51,9 @@ class CoreController extends BaseController {
 					break;
 				case 'donadores':
 					$this->likeDonadores( $inputs );
+					break;
+				case 'muros':
+					$this->likeMuro( $inputs );
 					break;
 			}
 		}
@@ -89,6 +95,15 @@ class CoreController extends BaseController {
 	 */
 	private function likeDonadores( $inputs = [] ){
 		Registrados::where( 'id_registrados', $inputs['content_id'] )->increment( 'me_gusta' );
+	}
+
+	/**
+	 * Método para guardar el like del tipo de contenido Muro del Éxito
+	 * @param  array  $inputs Datos del Contenido
+	 * @return
+	 */
+	private function likeMuro( $inputs = [] ){
+		Registrados::where( 'id_muros', $inputs['content_id'] )->increment( 'me_gusta' );
 	}
 }
 
