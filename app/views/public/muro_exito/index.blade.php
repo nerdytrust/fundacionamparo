@@ -29,13 +29,7 @@
 							</li>
 							@endforeach
 						@endif
-							
 						</ul>
-						<!--<div class="col-xs-12 col-md-12 controls-ol">
-							<button type="button" class="btn ct pull-left"></button>
-							<button type="button" class="btn ct2 pull-right"></button>
-							<p class="col-md-3">Seleccionar año</p>
-						</div>-->
 					</div>
 					
 				</section>

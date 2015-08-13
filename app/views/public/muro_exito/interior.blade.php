@@ -14,21 +14,21 @@
 								{{ $momento->titulo }}
 							</h1>
 		  	    	    	<h2>
-		  	    	    		{{ $momento->descripcion }}
+								{{ $momento->descripcion }}
 		  	    	    	</h2>
+		  	    	    	<section id="social_top">
+								<ul>
+									{{ Helper::facebookShare( '', URL::to( 'muro-exito' ) ) }}
+									{{ Helper::twitterShare( $momento->titulo, URL::to( 'muro-exito' ) . '/' . $momento->id_momentos, '' ) }}
+									{{ Helper::like( $momento->id_momentos, 'causas' ) }}
+									<p>{{ $momento->me_gusta }} likes</p>
+								</ul>
+							</section>
 		  	    	    </div>
 		  	    		</li>
 					@endforeach
 				@endif
 	          </ul>
-
-	          <!--<div class="col-xs-12 col-md-12 controls-ol">
-	          	<button type="button" class="btn ct pull-left"></button>
-	          	<button type="button" class="btn ct2 pull-right"></button>
-
-	          	<!--<p class="col-md-3">1980</p>
-	          	<p class="col-md-3 pull-right text-right">1980</p>-->
-
 	        </div>
 	      </section>
 	      </div>
