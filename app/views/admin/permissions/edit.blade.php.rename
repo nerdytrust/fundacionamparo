@@ -1,0 +1,38 @@
+@extends("crud.layout-form")
+
+@section("form")
+
+
+
+<div class="form-group @if ($errors->has('name')) has-error @endif">
+
+ {{ Form::label("text", "Name") }}
+   
+      {{ Form::text("name",$record->name,["class" => "form-control","placeholder"=>"Name"]); }}
+    
+ <span class="help-block">{{ $errors->first('name') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('display_name')) has-error @endif">
+
+ {{ Form::label("text", "Display name") }}
+   
+      {{ Form::text("display_name",$record->display_name,["class" => "form-control","placeholder"=>"Display name"]); }}
+    
+ <span class="help-block">{{ $errors->first('display_name') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('id_parent_permissions')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Parent_permission") }}
+   
+      {{ Form::remotecombo("id_parent_permissions",$record->id_parent_permissions,["table"=>$model,"class" => "form-control","placeholder"=>"Parent_permission"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_parent_permissions') }}</span>
+</div>
+
+     
+
+@stop
+
+
