@@ -56,12 +56,12 @@ class Users extends Crud implements UserInterface, RemindableInterface {
     public function beforeDestroy(&$params){}
     public function afterDestroy(&$params){}
 
-    public function beforeIndex(&$params){}
+    //public function beforeIndex(&$params){}
     public function beforeCreate(&$params){}
     public function beforeEdit(&$params){}
     public function beforePrint(&$params){}
 
-    public function beforeShow(&$params){}
+    //public function beforeShow(&$params){}
     
     /* 
         CRUD
@@ -118,8 +118,8 @@ class Users extends Crud implements UserInterface, RemindableInterface {
         "show"      => [],
 
         "not_in_create"   => [ 'last_ip', 'ip_mask', "remember_token", 'created_at', 'created_by', 'updated_at', 'updated_by' ],
-        "not_in_edit"     => [ "remember_token" ],
-        "not_in_show"     => [ "password","remember_token" ],
+        "not_in_edit"     => [ 'remember_token', 'last_ip', 'ip_mask', "remember_token", 'created_at', 'created_by', 'updated_at', 'updated_by'],
+        "not_in_show"     => [ 'password','remember_token', 'last_ip', 'ip_mask' ],
         "not_in_index"    => [ "ip_mask","last_ip","password","remember_token","created_at","updated_at" ],
         //
         // Buttons

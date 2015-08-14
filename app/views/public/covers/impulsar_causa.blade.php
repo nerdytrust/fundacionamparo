@@ -22,10 +22,95 @@
 					No mostrar mi perfil en el sitio
 				</div>
 				<button class="feis">
-					<div id="invitar" onclick="location.href='{{ URL::to( '/gracias-3' ) }}';">Invitar a 10 amigos</div>
+					<!--<div id="invitar" onclick="location.href='{{ URL::to( '/gracias-3' ) }}';">Invitar a 10 amigos</div>-->
+					<div id="invitar" onclick="renderMFS();">Invitar a 10 amigos</div>
 				</button>	
 				<a href="{{ URL::to( '/faqs' ) }}">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></a>			
 			</div>	
 		</div>
+		<script type="text/javascript">
+
+		window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '776167932490026',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+
+		function renderMFS() {
+	/*	FB.ui({
+  method: 'share',
+  href: 'http://amparo.design4causes.com/ficha-causas/1',
+}, function(response){
+	console.log(response);
+});*/
+
+/*FB.ui({
+  method: 'feed',
+  link: 'http://amparo.design4causes.com/impulsar-causa/1',
+  caption: 'An example caption',
+}, function(response){
+
+	console.log(response);
+});*/
+
+/*FB.api(
+    "/100006469513247/tagged",
+    function (response) {
+     console.log(response);
+    }
+);*/
+
+/*FB.api(
+    "/100006469513247/taggable_friends?fields=email,id,name,picture.type(large)",
+    function (response) {
+     console.log(response);
+    }
+);*/
+
+/*FB.api(
+    "/1877310539161245_1889226601302972/likes",
+    function (response) {
+      console.log(response);
+    }
+);*/
+
+/*FB.api(
+    "/me/friends?fields=email",
+    function (response) {
+     console.log(response);
+    }
+);*/
+
+/*FB.ui({
+  method: 'send',
+  link: 'http://amparo.design4causes.com/ficha-causas/1',
+  function (response) {
+      console.log(response);
+    }
+});*/
+
+
+/*FB.api(
+    "/100006469513247/friends",
+    function (response) {
+      console.log(response);
+    }
+);*/
+
+
+		}
+
+		</script>
 	@stop
 @stop

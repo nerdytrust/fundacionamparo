@@ -72,7 +72,7 @@ class PermissionsRoles extends \Crud {
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
         //
-        "fk_column" => [],
+        "fk_column" => ["id_roles" => "name","id_permissions" => "display_name"],
         // 
         // Tabs
         // Allways create names of tabs with snake case for example

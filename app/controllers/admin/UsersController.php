@@ -78,7 +78,7 @@ class UsersController extends CrudController {
 
 
 			if(\Auth::admin()->attempt($credentials))
-			{
+			{	
 				return \Redirect::intended(getenv('APP_ADMIN_PREFIX').'/dashboard')->with('success', 'You have logged in successfully');
 				//return Redirect::back();
 			}

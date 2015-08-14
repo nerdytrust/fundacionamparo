@@ -23,7 +23,11 @@ dashboard
 						<li>Administración de Usuarios</li>
 						<ul>
 							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/users','Usuarios') }}</li>
-							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/roles','Roles') }}</li>
+							 @if(Auth::admin()->id() == 2 || Auth::admin()->id() == 4)
+							 	<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/permissions','Permisos') }}</li>
+								<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/roles','Roles') }}</li>
+								<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/permissions_roles','Permisos Roles') }}</li>
+							@endif
 						</ul>
 					</ul>			
 				<li>Sitio</li>

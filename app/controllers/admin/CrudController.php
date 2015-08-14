@@ -826,7 +826,8 @@ class CrudController extends \BaseController {
         if (\Input::has('search'))
             $records = $records->search(\Input::get('search'));
 
-        $records    = $records->take(10)->get();
+        //$records    = $records->take(10)->get();
+        $records    = $records->get();
         $items = [];
 
         foreach ($records as $record) {

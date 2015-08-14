@@ -231,12 +231,89 @@ class Crud extends \BaseModel {
     public function beforeDestroy(&$params){}
     public function afterDestroy(&$params){}
 
-    public function beforeIndex(&$params){}
+    public function beforeIndex(&$params){
+        $rol   = USERS::find(\Auth::admin()->id());
+        $rol   = $rol->id_roles;
+        $count = PermissionsRoles::where('id_roles',$rol)->count();
+
+        if($count > 0){
+
+            $permiso = Permissions::
+                    where(array('name' => $this->getClassName(), 
+                                'id_parent_permissions' => 0))
+                    ->get();
+
+            $roles = PermissionsRoles::
+                join( 'permissions', 'permissions_roles.id_permissions', '=', 'permissions.id_permissions' )
+                ->where(array('id_roles' => $rol,
+                              'id_parent_permissions'=>$permiso[0]->id_permissions,
+                              'deny' => 'true'))
+                ->get();
+
+            foreach ($roles as $key => $role) {
+                 if(($keyDrop = array_search($role->name, $params->btn)) !== false) {
+                    unset($params->btn[$keyDrop]);
+                }       
+            }      
+        }
+    }
+
     public function beforeCreate(&$params){}
-    public function beforeEdit(&$params){}
+    public function beforeEdit(&$params){
+        $rol   = USERS::find(\Auth::admin()->id());
+        $rol   = $rol->id_roles;
+        $count = PermissionsRoles::where('id_roles',$rol)->count();
+
+        if($count > 0){
+
+            $permiso = Permissions::
+                    where(array('name' => $this->getClassName(), 
+                                'id_parent_permissions' => 0))
+                    ->get();
+
+            $roles = PermissionsRoles::
+                join( 'permissions', 'permissions_roles.id_permissions', '=', 'permissions.id_permissions' )
+                ->where(array('id_roles' => $rol,
+                              'id_parent_permissions'=>$permiso[0]->id_permissions,
+                              'deny' => 'true'))
+                ->get();
+
+            foreach ($roles as $key => $role) {
+                 if(($keyDrop = array_search($role->name, $params->btn)) !== false) {
+                    unset($params->btn[$keyDrop]);
+                }       
+            }      
+        }
+    }
+
     public function beforePrint(&$params){}
 
-    public function beforeShow(&$params){}
+    public function beforeShow(&$params){
+        $rol   = USERS::find(\Auth::admin()->id());
+        $rol   = $rol->id_roles;
+        $count = PermissionsRoles::where('id_roles',$rol)->count();
+
+        if($count > 0){
+
+            $permiso = Permissions::
+                    where(array('name' => $this->getClassName(), 
+                                'id_parent_permissions' => 0))
+                    ->get();
+
+            $roles = PermissionsRoles::
+                join( 'permissions', 'permissions_roles.id_permissions', '=', 'permissions.id_permissions' )
+                ->where(array('id_roles' => $rol,
+                              'id_parent_permissions'=>$permiso[0]->id_permissions,
+                              'deny' => 'true'))
+                ->get();
+                
+            foreach ($roles as $key => $role) {
+                 if(($keyDrop = array_search($role->name, $params->btn)) !== false) {
+                    unset($params->btn[$keyDrop]);
+                }       
+            }      
+        }
+    }
 
 
     protected $default_crud = [
@@ -343,6 +420,8 @@ class Crud extends \BaseModel {
         "btn_in_show"   => ["print","edit","cancel"],
         "btn_in_create" => ["create","cancel"],
         "btn_in_edit"   => ["edit","cancel"],
+
+        "deny" => 0,
 
     ];
 

@@ -48,12 +48,12 @@ class Muros extends \Crud {
     public function beforeDestroy(&$params){}
     public function afterDestroy(&$params){}
 
-    public function beforeIndex(&$params){}
+    //public function beforeIndex(&$params){}
     public function beforeCreate(&$params){}
-    public function beforeEdit(&$params){}
+    //public function beforeEdit(&$params){}
     public function beforePrint(&$params){}
 
-    public function beforeShow(&$params){}
+    //public function beforeShow(&$params){}
     
     // ===================================================================
     // FORMAT COLUMNS
