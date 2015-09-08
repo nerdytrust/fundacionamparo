@@ -18,7 +18,9 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/users','Usuarios') }}</li>
-						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/roles','Roles') }}</li>
+						@if(Auth::admin()->id() == 2 || Auth::admin()->id() == 4)
+							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/roles','Roles') }}</li>
+						@endif
 						<li class="divider"></li>
 						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/causas','Causas') }}</li>
 						<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/apoyamos_causa','Solicitudes de Causas') }}</li>

@@ -11,7 +11,9 @@
 					<div class="panel-group" id="accordion-helpdesk" role="tablist" aria-multiselectable="true">
 						<ul class="nav navmenu-nav">
 							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/users','Usuarios') }}</li>
-							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/roles','Roles') }}</li>
+							@if(Auth::admin()->id() == 2 || Auth::admin()->id() == 4)
+								<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/roles','Roles') }}</li>
+							@endif
 							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/causas','Causas') }}</li>
 							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/apoyamos_causa','Solicitudes de Causas') }}</li>
 							<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/donaciones','Donaciones') }}</li>
