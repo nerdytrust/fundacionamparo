@@ -4,6 +4,7 @@ class MuroExitoController extends BaseController {
 	
 	public function index(){
 		$padres = Muros::where('parent',0)
+			->orderby('year')
 			->orderby('orden')
 			->get();
 
