@@ -28,7 +28,7 @@
 						<div class="check-verde">
 							{{ Form::checkbox( 'terminos', 1, false, [ 'id' => 'check-verde' ] ) }}
 							<label for="check-verde"></label>
-							Acepto los terminos y condiciones
+							Acepto los <a class="terminos" href="{{ URL::to( 'terminos-y-condiciones' ) }}" target="_blank" >términos y condiciones</a>
 						</div>
 						<input type="submit" value="ENTRAR">
 					{{ Form::close() }}

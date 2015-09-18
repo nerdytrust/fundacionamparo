@@ -26,6 +26,11 @@ button, input{
 	font-family: 'Open Sans', sans-serif;
 }
 
+a.terminos{
+	top: -8px;
+	position: relative;
+}
+
 .cpointer{
 cursor: pointer;
 }

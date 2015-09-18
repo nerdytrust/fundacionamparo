@@ -50,7 +50,7 @@ header { display: inline-block !important; }
 
 .btn-cerrar {
     background: transparent;
-    background-image: url(../../images/x1.png);
+    background-image: url(../../images/x2.png);
     height: 40px;
     margin-top: 15px;
     position: absolute;
@@ -76,7 +76,7 @@ header { display: inline-block !important; }
   .btn-cerrar:hover{
     background-color: transparent;
     border: none;
-    background-image: url(../../images/x1.png);
+    background-image: url(../../images/x2.png);
   }
   .btn-cerrar:active{
      outline: none;

@@ -8,7 +8,7 @@ class HomeController extends BaseController {
 
 	private $rules_new_member = [
 		'name'					=> [ 'required', 'min:5', 'max:150' ],
-		'email'					=> [ 'required', 'email', 'unique:users' ],
+		'email'					=> [ 'required', 'email', 'unique:profiles' ],
 		'password'				=> [ 'required', 'min:8', 'max:16', 'confirmed' ],
 		'password_confirmation'	=> [ 'required', 'min:8' ],
 		'terminos'				=> [ 'accepted' ]
@@ -332,12 +332,12 @@ class HomeController extends BaseController {
 	 */
 	private function createNewRegister( $adapter_profile ){
 		$user = new Registrados;
+		$email = Profiles::where( 'email', $adapter_profile['email'] )->count();
 		$user->email = $adapter_profile['email'];
 		$user->password = Hash::make( $adapter_profile['password'] );
 		$user->terminos = $adapter_profile['terminos'];
 		if ( ! $user->save() )
 			return NULL;
-
 		return $user;
 	}
 
