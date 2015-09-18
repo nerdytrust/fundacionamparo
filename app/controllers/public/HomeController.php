@@ -153,6 +153,14 @@ class HomeController extends BaseController {
 	}
 
 	/**
+	 * Método para mostrar la vista de los terminos y condiciones
+	 * @return Vista de terminos y condiciones
+	 */
+	public function condiciones() {
+		return View::make( 'public.home.terms' );
+	}
+
+	/**
 	 * Método para mostrar el formulario de registro
 	 * @return
 	 */

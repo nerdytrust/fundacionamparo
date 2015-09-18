@@ -35,6 +35,7 @@ Route::get( 'contacto', [ 'uses' => 'ContactoController@index', 'as' => 'get.con
 Route::get( 'muro-exito', [ 'uses' => 'MuroExitoController@index', 'as' => 'get.muro-exito' ] );
 Route::get( 'voluntarios', [ 'uses' => 'VoluntariosController@index', 'as' => 'get.voluntarios' ] );
 Route::get( 'politicas-de-privacidad', [ 'uses' => 'HomeController@privacidad', 'as' => 'get.aviso-privacidad' ] );
+Route::get( 'terminos-y-condiciones', [ 'uses' => 'HomeController@condiciones', 'as' => 'get.terminos-condiciones' ] );
 Route::get( 'resultados/', [ 'uses' => 'HomeController@search', 'as' => 'get.resultados' ] )->where( 's', '[a-zA-Z0-9]+');
 
 ## Vistas del interior de LA FUNDACIÓN
