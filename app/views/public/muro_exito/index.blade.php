@@ -18,12 +18,12 @@
 
 							>
 								<img src="{{ asset( 'path_image/' . $momento->imagen ) }}" />
-								<div class="col-xs-12 col-sm-12 col-md-5 cuadro">
+								<div class="col-xs-12 col-sm-12 col-md-8 cuadro">
 									<h1><b>{{ $momento->year }}</b>
 										{{ $momento->titulo }}
 									</h1>
 									<h2>
-										{{ $momento->descripcion }}
+										{{ Str::limit( $momento->descripcion, 450 ) }}
 									</h2>
 								</div>
 							</li>

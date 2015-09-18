@@ -8,13 +8,13 @@
 					@foreach ( $momentos as $momento )
 						<li data-toggle="tooltip" data-title="{{ $momento->titulo }}" data-year=" " data-target="#carousel-timeline-moments" data-slide-to="0" class="col-md-12">
 		  	    	    <img src="{{ asset( 'path_image/' . $momento->imagen) }}" />
-		  	    	    <div class="col-xs-12 col-sm-12 col-md-5 cuadro">
+		  	    	    <div class="col-xs-12 col-sm-12 col-md-8 cuadro">
 		  	    	    	<span class="adorno">{{ $momento->nombre }}</span>
 		  	    	    	<h1><b>{{ $momento->year }}</b>
 								{{ $momento->titulo }}
 							</h1>
 		  	    	    	<h2>
-								{{ $momento->descripcion }}
+								{{ Str::limit( $momento->descripcion, 450 ) }}
 		  	    	    	</h2>
 		  	    	    	<section id="social_top">
 								<ul>
