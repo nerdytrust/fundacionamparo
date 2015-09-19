@@ -184,6 +184,36 @@ $(function(){
 	});
 
 	/**
+	 * Método para procesar el formulario de login
+	 */
+	$('#form_login').submit(function(){
+		var spinner = new Spinner(opts).spin(target);
+		$(this).ajaxSubmit({
+			beforeSubmit: function(){
+				$('#foo').css( 'display', 'block' );
+			},
+			success: function(data){
+				if(data.success != true ){
+					spinner.stop();
+					$('#foo').css('display','none');
+					$('#messages').html(data.errors);
+					$('#messages').css('display', 'block');
+				}else{
+					window.location.href = data.redirect;
+				}
+			},
+			error: function(data){
+				spinner.stop();
+				$('#foo').css('display','none');
+				$('#messages').html(data.errors);
+				$('#messages').css('display', 'block');
+			}
+		});
+		return false;
+	});
+
+
+	/**
 	 * Método para procesar el formulario de contacto
 	 */
 	$('#formulario_contacto').submit(function(){

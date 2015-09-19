@@ -10,8 +10,9 @@
 				<h1 class="bien">Bienvenido</h1>
 				<h2 class="entrar">Fundación Amparo</h2>
 				<label for="" class="vol intro">
-					{{ Form::open() }}
-						{{ Form::email( 'username', Input::old( 'username' ), [ 'class' => 'r', 'id' => 'username', 'placeholder' => 'Correo Electrónico', 'required' => true ] ) }}
+					{{ Form::open( [ 'url' => 'entrar', 'id' => 'form_login', 'autocomplete' => 'off', 'role' => 'form' ] ) }}
+						<div class="alert alert-danger" role="alert" id="messages"></div>
+						{{ Form::email( 'email', Input::old( 'email' ), [ 'class' => 'r', 'id' => 'email', 'placeholder' => 'Correo Electrónico', 'required' => true ] ) }}
 						{{ Form::password( 'password', [ 'class' => 'r', 'id' => 'password', 'placeholder' => 'Contraseña', 'required' => true ] ) }}
 						<a href="{{ URL::to( 'recuperar-password' ) }}" class="olvido">¿Olvidaste tu contraseña?</a>
 						<input type="submit" value="ENTRAR">

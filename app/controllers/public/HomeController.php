@@ -8,10 +8,15 @@ class HomeController extends BaseController {
 
 	private $rules_new_member = [
 		'name'					=> [ 'required', 'min:5', 'max:150' ],
-		'email'					=> [ 'required', 'email', 'unique:profiles' ],
+		'email'					=> [ 'required', 'email', 'unique:registrados' ],
 		'password'				=> [ 'required', 'min:8', 'max:16', 'confirmed' ],
 		'password_confirmation'	=> [ 'required', 'min:8' ],
 		'terminos'				=> [ 'accepted' ]
+	];
+
+	private $rules_auth = [
+		'email'	   => [ 'required', 'email' ],
+		'password' => [ 'required', 'min:8', 'max:16'],
 	];
 
 	public function __construct(){
@@ -88,6 +93,32 @@ class HomeController extends BaseController {
 	}
 
 	/**
+	 * Método para autenticarse
+	 * @return
+	 */
+	public function login() {
+		$inputs = Input::all();
+		$validate = Validator::make( $inputs, $this->rules_auth );
+
+		if ( $validate->fails() )
+			return Response::json( [ 'success' => false, 'errors' => $validate->messages()->all('<span class="error">:message</span>'), 'message' => '' ] );
+
+		$registrado = Registrados::where('email',$inputs['email'])
+								   ->first();
+
+		
+		if(Hash::check($inputs['password'], $registrado['password'])){
+			Auth::customer()->login($registrado);
+
+		if (Auth::customer()->check())
+			return Response::json( [ 'success' => true, 'redirect' => '/' ] );
+		}
+		
+		return Response::json( [ 'success' => false, 'errors' => '<span class="error">¡Ups! Ha ocurrido un problema al intetar <strong>logearte</strong>, El usuario y/o contraseña son incorrectos, intentalo de nuevo</span>', 'message' => '' ] );
+
+	}
+
+	/**
 	 * Método para mostrar la vista del formulario para recuperar el password
 	 * @return
 	 */
@@ -134,7 +165,7 @@ class HomeController extends BaseController {
 		if ( ! $user )
 			return Response::json( [ 'success' => true, 'errors' => '', 'message' => 'Se ha enviado tu <strong>contraseña</strong> al correo indicado' ] );
 		
-		$recovery = Mail::send( 'public.mail.recovery', [ 'username' => $user->email, 'password' => Crypt::decrypt( $user->password )  ], function( $message ) use ( $user ){
+		$recovery = Mail::send( 'public.mail.recovery', [ 'username' => $user->email, 'password' => bcrypt( $user->password )  ], function( $message ) use ( $user ){
 			$message
 				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
 				->to( $user->email, $user->nombre_completo )
@@ -332,9 +363,8 @@ class HomeController extends BaseController {
 	 */
 	private function createNewRegister( $adapter_profile ){
 		$user = new Registrados;
-		$email = Profiles::where( 'email', $adapter_profile['email'] )->count();
 		$user->email = $adapter_profile['email'];
-		$user->password = Hash::make( $adapter_profile['password'] );
+		$user->password =  Hash::make( $adapter_profile['password'] );
 		$user->terminos = $adapter_profile['terminos'];
 		if ( ! $user->save() )
 			return NULL;

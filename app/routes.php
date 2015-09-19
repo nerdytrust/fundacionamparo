@@ -104,4 +104,5 @@ Route::post( 'solicitar-beca', 'BecasController@processGrant' );
 Route::post( 'nuevo-voluntario', 'VoluntariosController@shortVoluntary' );
 Route::post( 'continuar-voluntario', 'VoluntariosController@complementaryVoluntary' );
 Route::post( 'nuevo-voluntario-completo', 'VoluntariosController@longVoluntary' );
+Route::post( 'entrar', 'HomeController@login' );
 

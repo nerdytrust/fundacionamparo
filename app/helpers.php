@@ -76,7 +76,9 @@ class Helper {
 	public static function getAvatar() {
 		$session = new Helper;
 		$avatar = Profiles::find( $session->getHybridAuth()->id_registrados );
-		return $avatar->photoURL;
+		if($avatar->photoURL!='')
+			return $avatar->photoURL;
+		return "http://lorempixel.com/200/200/abstract/";
 	}
 
 	/**
