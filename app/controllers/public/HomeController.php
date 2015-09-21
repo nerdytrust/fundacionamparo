@@ -144,6 +144,7 @@ class HomeController extends BaseController {
 			return Response::json( [ 'success' => false, 'errors' => '<span class="error">¡Ups! Ha ocurrido un problema al intetar <strong>registrarte</strong>, intenta nuevamente</span>', 'message' => '' ] );
 
 		$welcome = Mail::send( 'public.mail.welcome', [ 'username' => $inputs['name']], function( $message ) use ($inputs){
+			print_r($inputs);die;
 			$message
 				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
 				->to( $inputs['email'], $inputs['name'] )
