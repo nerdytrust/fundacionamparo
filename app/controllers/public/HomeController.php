@@ -103,10 +103,13 @@ class HomeController extends BaseController {
 		if ( $validate->fails() )
 			return Response::json( [ 'success' => false, 'errors' => $validate->messages()->all('<span class="error">:message</span>'), 'message' => '' ] );
 
-		$registrado = Registrados::where('email',$inputs['email'])
+		$registrado = Registrados::where('registrados.email',$inputs['email'])
+								   ->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 								   ->first();
+								   
+		if($registrado['provider'] == 'facebook')
+			return Response::json( [ 'success' => false, 'errors' => '<span class="error">Usted esta registrado mediante <strong>facebook</strong>, Favor de logearse por ese medio</span>', 'message' => '' ] );
 
-		
 		if(Hash::check($inputs['password'], $registrado['password'])){
 			Auth::customer()->login($registrado);
 
