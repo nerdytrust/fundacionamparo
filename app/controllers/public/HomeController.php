@@ -106,7 +106,7 @@ class HomeController extends BaseController {
 		$registrado = Registrados::where('registrados.email',$inputs['email'])
 								   ->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 								   ->first();
-								   
+
 		if($registrado['provider'] == 'facebook')
 			return Response::json( [ 'success' => false, 'errors' => '<span class="error">Usted esta registrado mediante <strong>facebook</strong>, Favor de logearse por ese medio</span>', 'message' => '' ] );
 
@@ -142,6 +142,13 @@ class HomeController extends BaseController {
 		$profile = $this->findProfile( 'manual', $inputs );
 		if ( ! $profile )
 			return Response::json( [ 'success' => false, 'errors' => '<span class="error">¡Ups! Ha ocurrido un problema al intetar <strong>registrarte</strong>, intenta nuevamente</span>', 'message' => '' ] );
+
+		$welcome = Mail::send( 'public.mail.welcome', [ 'username' => $inputs['name']], function( $message ) use ($inputs){
+			$message
+				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+				->to( $inputs['email'], $inputs['name'] )
+				->subject( 'Bienvenido a Fundación Amparo' );
+		});
 
 		return Response::json( [ 'success' => true, 'redirect' => 'gracias-registro' ] );
 	}
