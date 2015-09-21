@@ -29,6 +29,9 @@ class HomeController extends BaseController {
 	 * @return Vista del Home
 	 */
 	public function home() {
+		//echo $secret = Crypt::encrypt('some text here'); //encrypted
+
+		//echo $decrypted_secret = Crypt::decrypt("eyJpdiI6Ik9DajZmZit1Z2tuMnMyS0pCa2pMK2c9PSIsInZhbHVlIjoibHJ6VVdMUmM4R1prXC9CZ3JudjRCZ1E9PSIsIm1hYyI6IjBhNjNmYTM5ZTcxYmU4ZDMzYzczZDBlNzA2OTlhMzY0ZTlkY2IyODFiZmRmNmFkYzgwZGMyZDVjMmE5YjAyODUifQ==");die;
 		$videos = Videos::where('id_secciones', 1 )->get();
 	    $causas = Causas:: select(DB::raw('*,meta as metaTotal'))
 	    				  ->orderBy( 'orden' )
@@ -102,20 +105,20 @@ class HomeController extends BaseController {
 
 		if ( $validate->fails() )
 			return Response::json( [ 'success' => false, 'errors' => $validate->messages()->all('<span class="error">:message</span>'), 'message' => '' ] );
-
+		
 		$registrado = Registrados::where('registrados.email',$inputs['email'])
 								   ->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 								   ->first();
 
-		if($registrado['provider'] == 'facebook')
-			return Response::json( [ 'success' => false, 'errors' => '<span class="error">Usted esta registrado mediante <strong>facebook</strong>, Favor de logearse por ese medio</span>', 'message' => '' ] );
-
-		if(Hash::check($inputs['password'], $registrado['password'])){
-			Auth::customer()->login($registrado);
+		if($registrado && $inputs['password'] == Crypt::decrypt($registrado->password)){
+			if($registrado['provider'] == 'facebook')
+				return Response::json( [ 'success' => false, 'errors' => '<span class="error">Usted esta registrado mediante <strong>facebook</strong>, Favor de logearse por ese medio</span>', 'message' => '' ] );
+			else			
+				Auth::customer()->login($registrado);
+		}	
 
 		if (Auth::customer()->check())
 			return Response::json( [ 'success' => true, 'redirect' => '/' ] );
-		}
 		
 		return Response::json( [ 'success' => false, 'errors' => '<span class="error">¡Ups! Ha ocurrido un problema al intetar <strong>logearte</strong>, El usuario y/o contraseña son incorrectos, intentalo de nuevo</span>', 'message' => '' ] );
 
@@ -171,11 +174,16 @@ class HomeController extends BaseController {
 		if ( $validate->fails() )
 			return Response::json( [ 'success' => false, 'errors' => $validate->messages()->all('<span class="error">:message</span>'), 'message' => '' ] );
 
-		$user = Registrados::where( 'email', $inputs['username'] )->first();
+		$user = Registrados::where( 'registrados.email', $inputs['username'] )
+							->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
+							->first();
 		if ( ! $user )
-			return Response::json( [ 'success' => true, 'errors' => '', 'message' => 'Se ha enviado tu <strong>contraseña</strong> al correo indicado' ] );
+			return Response::json( [ 'success' => false, 'errors' => 'El correo <strong>'.$inputs['username'].'</strong> no esta registrado', 'message' => '' ] );
 		
-		$recovery = Mail::send( 'public.mail.recovery', [ 'username' => $user->email, 'password' => bcrypt( $user->password )  ], function( $message ) use ( $user ){
+		if ( $user->provider == 'facebook')
+			return Response::json( [ 'success' => false, 'errors' => 'El correo <strong>'.$inputs['username'].'</strong> esta registrado mediante facebook, Favor de logearse por ese medio', 'message' => '' ] );
+
+		$recovery = Mail::send( 'public.mail.recovery', [ 'username' => $user->email, 'password' => Crypt::decrypt( $user->password )  ], function( $message ) use ( $user ){
 			$message
 				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
 				->to( $user->email, $user->nombre_completo )
@@ -374,7 +382,7 @@ class HomeController extends BaseController {
 	private function createNewRegister( $adapter_profile ){
 		$user = new Registrados;
 		$user->email = $adapter_profile['email'];
-		$user->password =  Hash::make( $adapter_profile['password'] );
+		$user->password =  Crypt::encrypt( $adapter_profile['password'] );
 		$user->terminos = $adapter_profile['terminos'];
 		if ( ! $user->save() )
 			return NULL;
@@ -433,6 +441,7 @@ class HomeController extends BaseController {
 		
 		return  $causas;
 	}
+
 }
 
 /* End of file HomeController.php */
