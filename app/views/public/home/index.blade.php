@@ -14,23 +14,25 @@
 					</div>
 				</article>
 				@if ( isset( $videos ) )
-					@foreach ( $videos as $video )
+					
 						<div class="vi ">
-							<video controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '839x521' ) }}" class="video-js vjs-default-skin" data-setup="{}">
-								<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
+							<video controls loop preload="auto" poster="{{ asset( 'path_image/' . $videos->cover . '/' . '839x521' ) }}" class="video-js vjs-default-skin" data-setup="{}">
+								<source src="{{ asset ( 'path_video/' . $videos->video ) }}" type='video/mp4'>
 								<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
 							</video>
 						</div>
-					@endforeach
+					
 				@endif
 				<aside class="btns">
 					<article id="btn_twitter" class="">
 						<ul>
-							{{ Helper::twitterShare( getenv( 'APP_TITLE' ), Request::url(), '' ) }}
+							<a href="https://twitter.com/FundacioAmparo?lang=es" target="_blanck"><li class="fa fa-twitter"></li></a>
 						</ul>
 					</article>
 					<article id="btn_facebook" class="">
-						{{ Helper::facebookShare( '<ul>', Request::url(), '</ul>' ) }}
+						<ul>
+							<li class="fa fa-facebook"></li>
+						</ul>
 					</article>
 					<article id="btn_donar2" class="">
 						DONAR
