@@ -1354,6 +1354,7 @@ span#name span button:after{
 	display: inline-block;
 	margin: 70px 20px 0 20px;
 	cursor: pointer;
+	width: 10em;
 }
 .donador_clas h2{
 	color: #beda3e;
@@ -1369,11 +1370,15 @@ span#name span button:after{
 	text-align: center;
 	height: 32px;
 }
-#ultimos_dona h1{
+#ultimos_dona h1{	
+	white-space: nowrap;
+	overflow: hidden; 
+	text-overflow: ellipsis;
 	font-size: 2em;
 	line-height: 2;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
+	color:#000;
 }
 #ultimos_dona p{
 	color: #a3a3a3;

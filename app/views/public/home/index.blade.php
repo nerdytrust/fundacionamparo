@@ -16,7 +16,7 @@
 				@if ( isset( $videos ) )
 					
 						<div class="vi ">
-							<video autoplay="autoplay" controls="controls" loop preload="none" poster="{{ asset( 'path_image/' . $videos->cover . '/' . '839x521' ) }}" class="video-js vjs-default-skin" data-setup="{}">
+							<video controls loop preload="none" poster="{{ asset( 'path_image/' . $videos->cover . '/' . '839x521' ) }}" class="video-js vjs-default-skin" data-setup="{}">
 								<source src="{{ asset ( 'path_video/' . $videos->video ) }}" type='video/mp4'>
 								<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
 							</video>
@@ -123,35 +123,41 @@
 						@if ( is_array(  $ultimos ) )
 							@if ( isset( $ultimos['donadores'] ) )
 		 						@foreach ( $ultimos['donadores'] as $donador )
-					 				<div class="donador_clas">
-					 					<div class="img_redonda">
-					 					<img src="{{ $donador->photoURL }}" alt="">
-					 					</div>
-					 					<h1>{{ $donador->displayName }}</h1>
-					 					<h2>DONADOR</h2>
-					 				</div>
+			 						<a href="{{ URL::to( 'ficha-donador/' . $donador->id_registrados ) }}">
+						 				<div class="donador_clas">
+						 					<div class="img_redonda">
+						 					<img src="{{ $donador->photoURL }}" alt="">
+						 					</div>
+						 					<h1>{{ $donador->displayName }}</h1>
+						 					<h2>DONADOR</h2>
+						 				</div>
+						 			</a>	
 					 			@endforeach
 					 		@endif
 							@if ( isset( $ultimos['impulsores'] ) )
 					 			@foreach ( $ultimos['impulsores'] as $impulsor )
-					 				<div class="impulsor_clas">
-					 					<div class="img_redonda">
-					 					<img src="{{ $impulsor->photoURL }}" alt="">
-					 					</div>
-					 					<h1>{{ $impulsor->displayName }}</h1>
-					 					<h2>IMPULSOR</h2>
-					 				</div>
+						 			<a href="{{ URL::to( 'ficha-donador/' . $impulsor->id_registrados ) }}">
+						 				<div class="impulsor_clas">
+						 					<div class="img_redonda">
+						 					<img src="{{ $impulsor->photoURL }}" alt="">
+						 					</div>
+						 					<h1>{{ $impulsor->displayName }}</h1>
+						 					<h2>IMPULSOR</h2>
+						 				</div>
+						 			</a>	
 					 			@endforeach
 					 		@endif
 							@if ( isset( $ultimos['voluntarios'] ) )
 					 			@foreach ( $ultimos['voluntarios'] as $voluntario )
-					 				<div class="voluntario_clas">
-					 					<div class="img_redonda">
-					 					<img src="{{ $voluntario->photoURL }}" alt="">
-					 					</div>
-					 					<h1>{{ $voluntario->displayName }}</h1>
-					 					<h2>VOLUNTARIO</h2>
-					 				</div>
+						 			<a href="{{ URL::to( 'ficha-donador/' . $voluntario->id_registrados ) }}">
+						 				<div class="voluntario_clas">
+						 					<div class="img_redonda">
+						 					<img src="{{ $voluntario->photoURL }}" alt="">
+						 					</div>
+						 					<h1>{{ $voluntario->displayName }}</h1>
+						 					<h2>VOLUNTARIO</h2>
+						 				</div>
+					 				</a>
 					 			@endforeach
 					 		@endif
 				 		@else
