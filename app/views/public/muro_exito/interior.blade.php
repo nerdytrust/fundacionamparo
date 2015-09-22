@@ -16,7 +16,7 @@
 		  	    	    	<h2>
 								{{ Str::limit( $momento->descripcion, 450 ) }}
 		  	    	    	</h2>
-		  	    	    	<section id="social_top">
+		  	    	    	<section id="social_top" class="social_timeline">
 								<ul>
 									{{ Helper::facebookShare( '', URL::to( 'muro-exito' ) ) }}
 									{{ Helper::twitterShare( $momento->titulo, URL::to( 'muro-exito' ) . '/' . $momento->id_momentos, '' ) }}

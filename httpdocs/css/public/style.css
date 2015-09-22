@@ -1030,12 +1030,15 @@ span.esquina{
 }
 #social_top{
 	display: block;
-	/*position: absolute;*/
+	position: absolute;
 	padding: 20px 20px 0px 20px;;
 	text-align: left;
 	top:8px;
 	width: 100%;
 	z-index: 1000;
+}
+.social_timeline{
+	position: initial !important;
 }
 #social_top li{
 	color: #FFF;
