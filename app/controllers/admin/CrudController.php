@@ -294,7 +294,6 @@ class CrudController extends \BaseController {
         $_inputs   = $class->getInputs($columns);
         $inputs    = \Input::only($_inputs);
         
-
         $validator = \Validator::make($inputs, $validations);
 
         $key_value= "";
@@ -328,12 +327,9 @@ class CrudController extends \BaseController {
             {
                 return '{ "success": "false", "msg": "'.trans("crud.error-fields").'" }';
             }else{
-
-                //Input::get('name', 'Sally');
-
                 return \Redirect::back()
                     ->withErrors($validator)
-                    ->withInput(\Input::except("password")); 
+                    ->withInput(\Input::except(["password","imagen"])); 
             }
         }
 
