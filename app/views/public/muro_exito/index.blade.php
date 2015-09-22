@@ -25,6 +25,9 @@
 									<h2>
 										{{ Str::limit( $momento->descripcion, 450 ) }}
 									</h2>
+									@if ( $momento->hijos > 0 )
+										<h3 class="todos-momentos" id="momento"><a id="{{$momento->id_muros}}">VER TODOS LOS EVENTOS <span>+</span></a></h3>
+									@endif
 								</div>
 							</li>
 							@endforeach

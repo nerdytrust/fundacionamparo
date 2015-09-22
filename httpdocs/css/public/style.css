@@ -25,7 +25,9 @@ p{
 button, input{
 	font-family: 'Open Sans', sans-serif;
 }
-
+iframe{
+	display: none
+}
 a.terminos{
 	top: -8px;
 	position: relative;
@@ -362,7 +364,7 @@ hr{
 footer{
 	background: #212121;
 	position: relative;
-	/*bottom: 0px;*/bottom: -22px;
+	bottom: 0px;
 	text-align: center;
 	width: 100%;
 	padding: 40px 0;
@@ -1172,6 +1174,9 @@ span.esquina{
   	padding-left: 4%;
   	-webkit-transition: opacity 1s; /* Safari 3.1 to 6.0 */
     transition: opacity 1s;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 /**/
 .caja_fca_usu span.mio2{
@@ -1209,6 +1214,9 @@ span.esquina{
   	padding-left: 4%;
   	-webkit-transition: opacity 1s; /* Safari 3.1 to 6.0 */
     transition: opacity 1s;
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 /**/
 .caja_fca_usu span.mio3{
@@ -1247,6 +1255,10 @@ span.esquina{
   	padding-left: 4%;
   	-webkit-transition: opacity 1s; /* Safari 3.1 to 6.0 */
     transition: opacity 1s;
+    width: 100%; /* o el tamaño que quiere que corte la cadena. */
+	white-space: nowrap;
+	overflow: hidden; /* cualquier valor excepto "visible" para que funcione. */
+	text-overflow: ellipsis;
 }
 /**/
 span#name b{

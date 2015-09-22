@@ -28,6 +28,18 @@ header { display: inline-block !important; }
   padding-left: 0px;
 }
 
+.todos-momentos a{
+  color: #FFF;
+  text-decoration: none;
+  font-size: 0.7em;
+  line-height: 4em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+.todos-momentos span{
+    color: #beda3e;
+}
 .tooltip.bottom .tooltip-inner {
     margin-top: -40px;
     background-color: transparent;
@@ -339,6 +351,7 @@ html[xmlns] .flexslider .slides {
 }
 
 .flex-control-nav {
+  white-space: nowrap;
   width: 100%;
   position: absolute;
   top: 86.5%;
@@ -375,6 +388,8 @@ html[xmlns] .flexslider .slides {
   -moz-border-radius: 20px;
   border-radius: 20px;*/
 transform: rotate(-90deg);
+-webkit-transform: rotate(-90deg);
+-ms-transform: rotate(-90deg);
 color: #fff;
 text-align: right;
 vertical-align: middle;
