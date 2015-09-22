@@ -31,7 +31,7 @@
 					<h2>{{ $donador->city }}</h2>
 					<div class="datos-inf scrollbar" id="style-scroll">
 						@if( $causas )
-							<div class="force-overflow">
+							<div>
 								<h3>Causas en las que ha contribuido:</h3>
 								<ul>
 									@foreach ( $causas as $causa )
