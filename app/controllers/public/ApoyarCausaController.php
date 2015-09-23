@@ -35,6 +35,7 @@ class ApoyarCausaController extends BaseController {
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu petición</span>' ] ] );
 
 		$inputs = Input::all();
+
 		$validation = Validator::make( $inputs, $this->rules );
 
 		if ( $validation->fails() )
@@ -50,6 +51,13 @@ class ApoyarCausaController extends BaseController {
 
 		if ( ! $causa->save() )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu petición</span>' ] ] );
+
+		$welcome = Mail::send( 'public.mail.apoyamos', [ 'nombre' => $inputs['nombre'], 'telefono' => $inputs['telefono'], 'email' => $inputs['email'], 'descripcion' => $inputs['descripcion'] ], function( $message ){
+			$message
+				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+				->to( 'contacto@nerdytrust.com', 'Apoyamos tu causa' )
+				->subject( 'Bienvenido a Fundación Amparo' );
+		});
 
 		return Response::json( [ 'success' => true, 'redirect' => 'gracias-apoyamos-tu-causa' ] );
 
