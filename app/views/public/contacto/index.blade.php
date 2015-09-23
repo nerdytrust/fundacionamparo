@@ -26,7 +26,7 @@
 							<h2>Escríbenos si tienes alguna duda, en breve un asesor se pondrá en contacto contigo.</h2>
 							<div class="alert alert-danger" role="alert" id="messages"></div>
 							<span>
-								{{ Form::text( 'nombre', Input::old( 'nombre' ), [ 'id' => 'inpt_nombre', 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 120, 'title'="Este campo es obligatorio" ] ) }}
+								{{ Form::text( 'nombre', Input::old( 'nombre' ), [ 'id' => 'inpt_nombre', 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 120, 'title' => "Este campo es obligatorio" ] ) }}
 							</span>
 							<span>
 								{{ Form::text( 'telefono', Input::old( 'telefono' ), [ 'id' => 'inpt_telefono', 'placeholder' => 'Teléfono', 'required' => true, 'maxlenght' => 10 ] ) }}
