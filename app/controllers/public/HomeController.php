@@ -232,17 +232,26 @@ class HomeController extends BaseController {
 		$donaciones  = '';
 		$voluntarios = '';
 		$impulsadas  = '';
+		$faqs        = '';
 
 		$s = Input::get( 's' );
 		if (  isset( $s ) || ! empty ( $s )  || $s != '' ){
 			
+		$faqs = DB::table( 'faq' )->limit(3)->offset(0)
+				->where( 'pregunta',    'LIKE', "%$s%" )
+				->orWhere( 'respuesta', 'LIKE', "%$s%" )
+				->get();
+
+		$coutn_faqs = DB::table( 'faq' )->limit(3)->offset(0)
+				->where( 'pregunta',    'LIKE', "%$s%" )
+				->orWhere( 'respuesta', 'LIKE', "%$s%" )
+				->count();
 
 		$noticias = DB::table( 'noticias' )->limit(3)->offset(0)
 				->where( 'titulo',    'LIKE', "%$s%" )
 				->orWhere( 'contenido', 'LIKE', "%$s%" )
 				->orWhere( 'extracto',  'LIKE', "%$s%" )
 				->orderBy( 'fecha_publicacion','desc' )
-				->select( '*' )
 				->get();
 
 		$coutn_noticias = Noticias::where( 'titulo',    'LIKE', "%$s%" )
@@ -253,13 +262,14 @@ class HomeController extends BaseController {
 		$causas = DB::table( 'causas' )->limit(3)->offset(0)
 				->where( 'titulo',    'LIKE', "%$s%" )
 				->orWhere( 'descripcion', 'LIKE', "%$s%" )
+				->where( 'fecha', '>', date('Y-m-d') )
 				->orderBy( 'created_at','desc' )
-				->select( '*' )
 				->get();
 
 		$count_causas = DB::table( 'causas' )
 				->where( 'titulo',    'LIKE', "%$s%" )
 				->orWhere( 'descripcion', 'LIKE', "%$s%" )
+				->where( 'fecha', '>', date('Y-m-d') )
 				->count();
 
 		$donaciones = DB::table( 'donaciones' )->limit(3)->offset(0)
@@ -338,7 +348,8 @@ class HomeController extends BaseController {
 			'noticias' => $noticias,
 			'causas'   => $causas,
 			'perfiles' => $perfiles,
-			'count'    => $coutn_noticias + $count_causas + $count_impulsadas + $count_voluntarios + $count_donaciones
+			'faqs'     => $faqs,
+			'count'    => $coutn_noticias + $coutn_faqs + $count_causas + $count_impulsadas + $count_voluntarios + $count_donaciones
 
 		] );
 	}

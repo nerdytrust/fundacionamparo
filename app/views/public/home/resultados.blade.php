@@ -122,6 +122,35 @@
 
 
 					@endforeach
+					@endif
+					@if ( ! empty ( $faqs )  )
+
+					@foreach ( $faqs as $key => $faq )
+
+							<div id="cja_noticia">
+								<div id="caja_aporta2">
+									<article class="caja_fca2">
+										<a>
+											
+										</a>
+				 					</article>
+				 					<div id="txt_noticia">
+										<h1>{{ $faq->pregunta }}</h1>
+										<p>{{ Str::limit( $faq->respuesta, 180 ) }}</p>
+										<a href="{{ URL::to( 'faqs' )  }}"><h3>MÁS INFORMACIÓN <span>+</span></h3></a>
+										<nav>
+											<ul>
+												{{ Helper::facebookShare( '', URL::to( 'faqs' ) , '' ) }}
+												{{ Helper::twitterShare( 'FAQs', URL::to( 'faqs' ) , '' ) }}
+											</ul>
+										</nav>
+									</div>
+				 				</div>
+							</div>
+
+
+					@endforeach
+					@endif
 					<!--
 						<div id="cja_noticia">
 							<div id="caja_aporta2">
@@ -213,8 +242,8 @@
     					
 				
 					
-				@endif
-				@if ( empty ( $perfiles ) &&  empty ( $noticias ) && empty ( $causas ))
+				
+				@if ( empty ( $perfiles ) &&  empty ( $noticias ) && empty ( $causas )  && empty ( $faqs ))
 					<div class="txt_fundacion3">
 						<h2>No se encontraron resultados</h2>
 					</div>

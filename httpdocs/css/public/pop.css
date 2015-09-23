@@ -322,12 +322,11 @@ label.vol .line{
 }
 
 .vol a, .d a, .i a{
+	vertical-align: top;
 	text-decoration: none;
 	color: #fff;
 	width: auto;
-	display: inline-block;
-	font-size: 14px;
-	margin-top: 3%;
+	font-size: 12px;
 	/*margin-bottom: 5%;*/
 }
 
@@ -1727,8 +1726,8 @@ termina laghtbox*/
 .check-verde label {
 	cursor: pointer;
 	position: absolute;
-	width: 95%;
-	height: 22px;
+	width: 7%;
+	height: 30px;
 	top: 0;
 	left: 0;
 	background: url("../../images/input-v.png") no-repeat;
@@ -1843,7 +1842,7 @@ termina laghtbox*/
 .check-gris label {
 	cursor: pointer;
 	position: absolute;
-	width: 95%;
+	width: 7%;
 	height: 30px;
 	top: 0;
 	left: 0;

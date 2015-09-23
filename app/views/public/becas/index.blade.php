@@ -107,7 +107,7 @@
 									<div class="check-gris">
 										{{ Form::checkbox( 'terminos', 1, false, [ 'id' => 'check-verde' ] ) }}
 										<label for="check-verde"></label>
-										Acepto términos y condiciones
+										<a class="terminos" href="{{ URL::to( 'politicas-de-privacidad' ) }}" target="_blank">Acepto y he leído el aviso de privacidad</a>
 									</div>
 								</li>
 								<button class="str" type="submit">Aceptar</button>
