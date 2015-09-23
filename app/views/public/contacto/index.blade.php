@@ -22,9 +22,9 @@
 				<div class="text-contact">
 					<label class="contact" for="" id="fre">
 						{{ Form::open( [ 'url' => 'formulario-contacto', 'id' => 'formulario_contacto', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form' ] ) }}
-							<div class="alert alert-danger" role="alert" id="messages"></div>
 							<h1>Comunícate con nosotros</h1>
 							<h2>Escríbenos si tienes alguna duda, en breve un asesor se pondrá en contacto contigo.</h2>
+							<div class="alert alert-danger" role="alert" id="messages"></div>
 							<span>
 								{{ Form::text( 'nombre', Input::old( 'nombre' ), [ 'id' => 'inpt_nombre', 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 120 ] ) }}
 							</span>

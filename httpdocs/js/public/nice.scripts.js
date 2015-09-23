@@ -230,13 +230,7 @@ $(function(){
 					$('#messages').css('display', 'block');
 					$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
 				} else {
-					spinner.stop();
-					$('#foo').css('display','none');
-					$('#messages').addClass('alert-success');
-					$('#messages').html(data.message);
-					$('#messages').css('display', 'block');
-					$('#formulario_contacto')[0].reset();
-					$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
+					window.location.href = data.redirect;
 				}
 			},
 			error: function(data){
@@ -302,7 +296,7 @@ $(function(){
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
-					window.scrollTo(0, 200);
+					$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
 				}else{
 					window.location.href = data.redirect;
 				}
@@ -312,7 +306,7 @@ $(function(){
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
-				window.scrollTo(0, 0);
+				$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
 			}
 		});
 		return false;

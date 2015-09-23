@@ -8,7 +8,7 @@ class ApoyarCausaController extends BaseController {
 	 */
 	private $rules = [
 		'nombre'	  => [ 'required', 'min:3', 'max:150' ],
-		'telefono'	  => [ 'required', 'numeric:10' ],
+		'telefono'	  => [ 'required', 'numeric', 'min:10' ],
 		'email'		  => [ 'required', 'email', 'unique:apoyamos_causa' ],
 		'causa_tipo'  => [ 'required' ],
 		'descripcion' => [ 'required' ]
@@ -52,18 +52,27 @@ class ApoyarCausaController extends BaseController {
 		if ( ! $causa->save() )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu petición</span>' ] ] );
 
-		$welcome = Mail::send( 'public.mail.apoyamos', [ 'nombre' => $inputs['nombre'], 'telefono' => $inputs['telefono'], 'email' => $inputs['email'], 'descripcion' => $inputs['descripcion'] ], function( $message ){
-			$message
+		// Si se guardó, se procede a enviar un correo al staff de Fundación Amparo
+		$comment = Mail::send( 'public.mail.apoyamos', $inputs, function( $message ) use ( $causa ){
+			$message 
 				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
-				->to( 'contacto@nerdytrust.com', 'Apoyamos tu causa' )
-				->subject( 'Bienvenido a Fundación Amparo' );
-		});
+				->to( 'contacto@nerdytrust.com', 'Causas Fundación Amparo' )
+				->subject( 'Nueva causa desde el formulario' );
+		} );
+
+		// También se envía un mensaje de correo al usuario, para que sepa que si se envió su petición
+		/*$thanks = Mail::send( 'public.mail.apoyamos_gracias', $inputs, function( $message ) use ( $causa ){
+			$message 
+				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+				->to( $causa->email, $causa->nombre )
+				->subject( 'Gracias por agregar una causa' );
+		} );*/
 
 		return Response::json( [ 'success' => true, 'redirect' => 'gracias-apoyamos-tu-causa' ] );
 
 	}
 
-/**
+	/**
 	 * Método para visualizar la vista gracias
 	 * @return
 	 */

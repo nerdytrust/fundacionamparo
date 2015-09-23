@@ -6,12 +6,12 @@ class ContactoController extends BaseController {
 	 * Reglas de validación para el formulario
 	 * @var array
 	 */
-	private $rules = [
-        'nombre'        => 'required|min:3' ,
-        'telefono'      => 'required|digits:10' ,
-        'email'         => 'required|email' ,
-        'mensaje'   	=> 'required'
-    ];
+    private $rules = [
+		'nombre'	  => [ 'required', 'min:3', 'max:150' ],
+		'telefono'	  => [ 'required', 'numeric', 'min:10'],
+		'email'		  => [ 'required', 'email' ],
+		'mensaje'     => [ 'required' ],
+	];
 
     /**
      * Método para mostrar la vista de la sección de Contacto
@@ -50,7 +50,7 @@ class ContactoController extends BaseController {
 		$comment = Mail::send( 'public.mail.contacto', $inputs, function( $message ) use ( $contacto ){
 			$message 
 				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
-				->to( 'contacto@fundacionamparo.com', 'Contacto Fundación Amparo' )
+				->to( 'contacto@nerdytrust.com', 'Contacto Fundación Amparo' )
 				->subject( 'Nuevo mensaje desde el formulario de contacto' );
 		} );
 
@@ -62,7 +62,16 @@ class ContactoController extends BaseController {
 				->subject( 'Gracias por estar en contacto' );
 		} );
 
-		return Response::json( [ 'success' => true, 'errors' => false, 'message' => 'Gracias por estar en contacto, en breve recibirás una <strong>respuesta</strong> de un asesor.' ] );
+		//return Response::json( [ 'success' => true, 'errors' => false, 'message' => 'Gracias por estar en contacto, en breve recibirás una <strong>respuesta</strong> de un asesor.' ] );
+		return Response::json( [ 'success' => true, 'redirect' => 'gracias-contacto' ] );
+	}
+
+	/**
+	 * Método para visualizar la vista gracias
+	 * @return
+	 */
+	public function gracias(){
+		return View::make( 'public.contacto.gracias' );
 	}
 }
 

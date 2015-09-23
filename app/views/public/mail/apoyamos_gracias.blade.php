@@ -14,26 +14,18 @@
 		</tr>
 		<tr>
 			<td>
-				<h2>Apoyamos tu causa</h2>
+				<h2>Gracias por estar en contacto con {{ getenv( 'APP_TITLE' ) }}</h2>
 			</td>
 		</tr>
 		<tr>
 			<td style="font-size:13px">
-				<p style="margin:0; padding:0;">Han solicitado apoyar una nueva causa con los siguientes datos</p>
-				
-			</td>
-		</tr>
-		<tr>
-			<td style="font-size:13px;padding-top:15px;">
-				<p style="margin:0; padding:0;">Nombre: <strong>{{ $nombre }}</strong></p>
-				<p style="margin:0; padding:0;">Email: <strong>{{ $email }}</strong></p>
-				<p style="margin:0; padding:0;">Teléfono: <strong>{{ $telefono }}</strong></p>
-				<p style="margin:0; padding:0;">Descripción: <strong>{{ $descripcion }}</strong></p>
+				<p style="margin:0; padding:0;">Hemos recibido correctamente tu solicitud de causa.</p>
+				<p style="margin:0; padding:0;">En breve un asesor se pondrá en contacto contigo.</p>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<p style="font-style: italic">Equipo de {{ getenv('APP_TITLE') }}</p>
+				<p style="font-style: italic">Equipo de {{ getenv( 'APP_TITLE' ) }}, mensaje enviado automáticamente.  Favor de no contestar a este correo</p>
 			</td>
 		</tr>
 		<tr>
