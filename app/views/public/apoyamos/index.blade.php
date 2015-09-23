@@ -21,11 +21,12 @@
 			<section id="contenedor_int">
 				<div class="text-contact">
 					<label class="contact" for="">
-						{{ Form::open( [ 'url' => 'registrar-tu-causa', 'method' => 'POST', 'autocomplete' => 'off' ] ) }}
+						{{ Form::open( [ 'url' => 'registrar-tu-causa', 'id' => 'form_apoyamos_causa', 'method' => 'POST', 'autocomplete' => 'off' ] ) }}
 							<h1>Comunícate con nosotros</h1>
 							<h2>
 								Llena el siguiente formulario, una vez revisado nos pondremos en contacto para darte una respuesta
 							</h2>
+							<div class="alert alert-danger" role="alert" id="messages"></div>
 							{{ $errors->first( 'nombre', '<div class="alert alert-danger" role="alert">:message</div>') }}
 							<span>
 								{{ Form::text( 'nombre', '', [ 'placeholder' => 'Nombre', 'required' => true, 'maxlenght' => 120 ], Input::old( 'nombre' ) )}}

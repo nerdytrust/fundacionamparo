@@ -288,6 +288,37 @@ $(function(){
 	});
 
 	/**
+	 * Método para procesar el formulario de apoyamos tu causa 
+	 */
+	$('#form_apoyamos_causa').submit(function(){
+		var spinner = new Spinner(opts).spin(target);
+		$(this).ajaxSubmit({
+			beforeSubmit: function(){
+				$('#foo').css( 'display', 'block' );
+			},
+			success: function(data){
+				if(data.success != true ){
+					spinner.stop();
+					$('#foo').css('display','none');
+					$('#messages').html(data.errors);
+					$('#messages').css('display', 'block');
+					window.scrollTo(0, 200);
+				}else{
+					window.location.href = data.redirect;
+				}
+			},
+			error: function(data){
+				spinner.stop();
+				$('#foo').css('display','none');
+				$('#messages').html(data.errors);
+				$('#messages').css('display', 'block');
+				window.scrollTo(0, 0);
+			}
+		});
+		return false;
+	});
+
+	/**
 	 * Método para procesar el primer paso del formulario corto de voluntarios
 	 */
 	$('#form_nuevo_voluntario').submit(function(){

@@ -78,6 +78,7 @@ Route::get( 'ficha-causas/{id}', 'CoversController@fichaCausas' )->where( 'id', 
 Route::get( 'ficha-noticias', [ 'uses' => 'CoversController@fichaNoticias', 'as' => 'get.ficha-noticias' ] );
 Route::get( 'ficha-noticias/{id}', 'CoversController@fichaNoticias' )->where( 'id', '[0-9]+' );
 Route::get( 'gracias-registro', [ 'uses' => 'CoversController@thanksRegistro', 'as' => 'get.gracias-registro' ] );
+Route::get( 'gracias-apoyamos-tu-causa', [ 'uses' => 'ApoyarCausaController@gracias', 'as' => 'get.gracias-apoyamos-tu-causa' ] );
 
 
 Route::get( 'path_video/{id}', 'StoragePathController@videoStorage' );

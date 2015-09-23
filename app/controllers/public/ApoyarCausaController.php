@@ -7,12 +7,12 @@ class ApoyarCausaController extends BaseController {
 	 * @var array
 	 */
 	private $rules = [
-        'nombre'        => 'required|min:3' ,
-        'telefono'      => 'required|digits:10' ,
-        'email'         => 'required|email' ,
-        'causa_tipo'    => 'required' ,
-        'descripcion'   => 'required'
-    ];
+		'nombre'	  => [ 'required', 'min:3', 'max:150' ],
+		'telefono'	  => [ 'required', 'numeric:10' ],
+		'email'		  => [ 'required', 'email', 'unique:apoyamos_causa' ],
+		'causa_tipo'  => [ 'required' ],
+		'descripcion' => [ 'required' ]
+	];
 
     /**
      * Método para mostrar la vista de la sección Apoyamos tu Causa
@@ -30,11 +30,15 @@ class ApoyarCausaController extends BaseController {
 	 * @return
 	 */
 	public function registrar(){
+
+		if ( ! Request::ajax() )
+			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu petición</span>' ] ] );
+
 		$inputs = Input::all();
 		$validation = Validator::make( $inputs, $this->rules );
 
 		if ( $validation->fails() )
-			return Redirect::back()->withInput()->withErrors( $validation );
+			return Response::json( [ 'success' => false, 'errors' => $validation->messages()->all('<span class="error">:message</span>') ] );
 
 		$causa = new ApoyamosCausa;
 		$causa->nombre 			= Input::get( 'nombre' );
@@ -43,9 +47,20 @@ class ApoyarCausaController extends BaseController {
 		$causa->id_categorias	= Input::get( 'causa_tipo' );
 		$causa->descripcion		= Input::get( 'descripcion' );
 		$causa->ip				= Request::ip();
-		if ( $causa->save() )
-			return Redirect::to( 'apoyamos-tu-causa' );
 
+		if ( ! $causa->save() )
+			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu petición</span>' ] ] );
+
+		return Response::json( [ 'success' => true, 'redirect' => 'gracias-apoyamos-tu-causa' ] );
+
+	}
+
+/**
+	 * Método para visualizar la vista gracias
+	 * @return
+	 */
+	public function gracias(){
+		return View::make( 'public.apoyamos.gracias' );
 	}
 }
 
