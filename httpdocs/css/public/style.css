@@ -338,7 +338,7 @@ button{
 	background: #fff;
 	font-size: .7em;
 	font-weight: 600;
-	/*/*font-family: helveticaNeueMedium;*/*/
+	/*font-family: helveticaNeueMedium;*/
 }
 
 button:hover{
@@ -417,7 +417,7 @@ article.animacion:hover img{
 }
 #btn_dona{
 	font-size: 1.1em;
-	/*/*font-family: helveticaNeueMedium;*/*/
+	/*font-family: helveticaNeueMedium;*/
 }
 #btn_dona:hover{
 	background: #FFF;
@@ -455,7 +455,7 @@ article.animacion:hover img{
 	text-align: right;
 	vertical-align: middle;
 	margin: 5px;
-	/*/*font-family: helveticaNeueMedium;*/*/
+	/*font-family: helveticaNeueMedium;*/
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 }
@@ -825,7 +825,7 @@ font-size: 15px !important;
 .txt p{
 	color: #FFF;
 	font-size: 1em;
-	/*/*font-family: helveticaNeueMedium;*/*/
+	/*font-family: helveticaNeueMedium;*/
 }
 ::selection{
 	background: #beda3e;
@@ -1035,7 +1035,7 @@ span.esquina{
 #social_top{
 	display: block;
 	position: absolute;
-	padding: 20px 20px 0px 20px;;
+	padding: 20px 20px 0px 20px;
 	text-align: left;
 	top:8px;
 	width: 100%;
@@ -3493,7 +3493,7 @@ label.contact textarea{
 	}
 
 	#perfil:after{
-		padding: 1.5% 11px;;
+		padding: 1.5% 11px;
 	}
 
 	#txt_evento{
