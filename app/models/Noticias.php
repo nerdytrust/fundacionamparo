@@ -70,7 +70,10 @@ class Noticias extends \Crud {
         // ["first_name" => "text"] 
         // text,hidden,textarea,password,digit,file,email,title
         //
-        "inputs"    => [ "imagen" => "image" ],
+        "inputs"    => [ 
+            "imagen" => "image",
+            "contenido" => "html"
+         ],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
