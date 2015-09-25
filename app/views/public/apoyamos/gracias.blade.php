@@ -3,7 +3,7 @@
 	@section( 'class' )donar-gracias
 	@stop
 	@section( 'content' )
-		<div class="lightbox-h d" id="donar">
+		<div class="lightbox-h gracias" id="donar">
 			<div class="lightbox-h-cont donar">
 				<img src="{{ asset( 'images/icon_donadores-v.png' ) }}" alt="">
 				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/' ) }}';"></button>

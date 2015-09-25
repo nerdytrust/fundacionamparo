@@ -10,8 +10,8 @@ class BecasController extends BaseController {
 		'lugar_estudios'	=> [ 'required' ],
 		'nombre'			=> [ 'required', 'min:3', 'max:180' ],
 		'apellido'			=> [ 'required', 'min:3', 'max:180' ],
-		'email'				=> [ 'required', 'email' ],
-		'telefono'			=> [ 'required', 'digits:10' ],
+		'email'				=> [ 'required', 'email', 'unique:becas' ],
+		'telefono'			=> [ 'required', 'numeric', 'min:10' ],
 		'sexo'				=> [ 'required' ],
 		'terminos'			=> [ 'accepted' ],
 		'birth_day'			=> [ 'required' ],
@@ -38,6 +38,23 @@ class BecasController extends BaseController {
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu petición</span>' ] ] );
 
 		$inputs = Input::all();
+
+		if($inputs['lugar_estudios']==0){
+			$inputs[ 'country' ] = 0;
+			$inputs[ 'state' ]   = 0;
+			$inputs[ 'city' ]    = 0;
+		}
+		if($inputs['lugar_estudios']==1){
+			$this->rules_becas['country'] = [ 'required' ];
+			$this->rules_becas['state']   = [ 'required' ];
+			$this->rules_becas['city']    = [ 'required' ];
+		} 
+		if($inputs['lugar_estudios']==2){
+			$inputs[ 'country' ] = 142;
+			$this->rules_becas['state'] = [ 'required' ];
+			$this->rules_becas['city']  = [ 'required' ];			
+		}
+
 		$validate = Validator::make( $inputs, $this->rules_becas );
 		if ( $validate->fails() )
 			return Response::json( [ 'success' => false, 'errors' => $validate->messages()->all('<span class="error">:message</span>') ] );
@@ -63,7 +80,15 @@ class BecasController extends BaseController {
 		if ( ! $beca->save() )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu petición</span>' ] ] );
 
-		return Response::json( [ 'success' => true, 'errors' => false, 'message' => 'Tu <strong>solicitud</strong> ha sido enviada correctamente, serás contactado a la brevedad.' ] );
+		// Si se guardó, se procede a enviar un correo al staff de Fundación Amparo
+		$comment = Mail::send( 'public.mail.becas', $inputs, function( $message ) use ( $beca ){
+			$message 
+				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+				->to( 'contacto@nerdytrust.com', 'Beca Fundación Amparo' )
+				->subject( 'Nueva beca solicitada' );
+		} );
+
+		return Response::json( [ 'success' => true, 'redirect' => 'gracias-beca' ] );
 	}
 
 	/**
@@ -104,6 +129,14 @@ class BecasController extends BaseController {
 				] );
 				break;
 		}
+	}
+
+	/**
+	 * Método para visualizar la vista gracias
+	 * @return
+	 */
+	public function gracias(){
+		return View::make( 'public.becas.gracias' );
 	}
 }
 

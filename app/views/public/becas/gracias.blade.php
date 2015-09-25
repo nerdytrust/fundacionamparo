@@ -8,7 +8,7 @@
 				<img src="{{ asset( 'images/icon_donadores-v.png' ) }}" alt="">
 				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/' ) }}';"></button>
 				<h1>¡gracias!</h1>
-				<h2>Gracias por estar en contacto, en breve recibirás una <strong>respuesta</strong> de un asesor.</h2>
+				<h2>Gracias por solicitar una beca, en breve recibirás una <strong>respuesta</strong> de un asesor.</h2>
 			</div>
 		</div>
 	@stop

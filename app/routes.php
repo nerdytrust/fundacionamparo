@@ -80,6 +80,7 @@ Route::get( 'ficha-noticias/{id}', 'CoversController@fichaNoticias' )->where( 'i
 Route::get( 'gracias-registro', [ 'uses' => 'CoversController@thanksRegistro', 'as' => 'get.gracias-registro' ] );
 Route::get( 'gracias-apoyamos-tu-causa', [ 'uses' => 'ApoyarCausaController@gracias', 'as' => 'get.gracias-apoyamos-tu-causa' ] );
 Route::get( 'gracias-contacto', [ 'uses' => 'ContactoController@gracias', 'as' => 'get.gracias-contacto' ] );
+Route::get( 'gracias-beca', [ 'uses' => 'BecasController@gracias', 'as' => 'get.gracias-beca' ] );
 
 Route::get( 'path_video/{id}', 'StoragePathController@videoStorage' );
 Route::get( 'path_image/{id}/{size}', 'StoragePathController@imgStorage' );

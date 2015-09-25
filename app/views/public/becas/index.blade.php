@@ -60,13 +60,13 @@
 									<div class="f3">
 										Fecha de Nacimiento<br/>
 										{{ Form::selectRange( 'birth_day', 1, 31, Helper::getValidDay(),['class'=>'select-day'] ) }}
-										{{  Form::select('size', array('1' => 'Enero', 
+										{{  Form::select('birth_month', array('1' => 'Enero', 
 																	   '2' => 'Febrero',
 																	   '3' => 'Marzo',
 																	   '4' => 'Abril',
 																	   '5' => 'Mayo',
 																	   '6' => 'Junio',
-																	   '7' => 'Juio',
+																	   '7' => 'Julio',
 																	   '8' => 'Agosto',
 																	   '9' => 'Septiembre',
 																	   '10' => 'Octubre',
