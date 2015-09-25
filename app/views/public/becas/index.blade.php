@@ -59,8 +59,21 @@
 									{{ Form::text( 'telefono', Input::old( 'telefono' ), [ 'id' => 'inpt_telefono', 'placeholder' => 'Teléfono', 'required' => true, 'maxlength' => '10' ] ) }}
 									<div class="f3">
 										Fecha de Nacimiento<br/>
-										{{ Form::selectRange( 'birth_day', 1, 31, Helper::getValidDay() ) }}
-										{{ Form::selectMonth( 'birth_month', Helper::getValidMonth() ) }}
+										{{ Form::selectRange( 'birth_day', 1, 31, Helper::getValidDay(),['class'=>'select-day'] ) }}
+										{{  Form::select('size', array('1' => 'Enero', 
+																	   '2' => 'Febrero',
+																	   '3' => 'Marzo',
+																	   '4' => 'Abril',
+																	   '5' => 'Mayo',
+																	   '6' => 'Junio',
+																	   '7' => 'Juio',
+																	   '8' => 'Agosto',
+																	   '9' => 'Septiembre',
+																	   '10' => 'Octubre',
+																	   '11' => 'Noviembre',
+																	   '12' => 'Diciembre'),
+														  Helper::getValidMonth(), 
+														  ['class'=>'select-month']); }}
 										{{ Form::selectYear( 'birth_year', Helper::getValidYear(), 1940 ) }}
 									</div>
 									<div class="check">
