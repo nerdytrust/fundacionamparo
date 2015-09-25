@@ -1,4 +1,8 @@
-AddType video/mp4 .mp4
+AuthType Basic
+AuthName "restricted area"
+AuthUserFile /var/www/amparo.nerdytrust.com/web/.htpasswd
+require valid-user
+
 #Header add Access-Control-Allow-Origin: *
 
 <IfModule mod_rewrite.c>
