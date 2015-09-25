@@ -26,8 +26,7 @@
 							<div class="alert alert-danger" role="alert" id="messages"></div>
 							<h1>SOLICITUD DE BECAS</h1>
 							<h2>
-								La Fundación Amparo puede ayudarte a obtener una beca para que estudies en México o en el Extranjero<br/>
-								<b>El único requisito es que vivas en el estado de Puebla</b>
+								La Fundación Amparo puede ayudarte a obtener una beca para que estudies en México o en el Extranjero
 							</h2>
 							<ul class="pasos">
 								<li class="donde-quieres">
