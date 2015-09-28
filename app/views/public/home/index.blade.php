@@ -16,7 +16,7 @@
 				@if ( isset( $videos ) )
 					
 						<div class="vi ">
-							<video controls preload="auto" poster="{{ asset( 'path_image/' . $videos->cover . '/' . '839x521' ) }}" class="video-js vjs-default-skin" data-setup="{}">
+							<video controls preload="none" poster="{{ asset( 'path_image/' . $videos->cover . '/' . '839x521' ) }}" class="video-js vjs-default-skin" data-setup="{}">
 								<source src="{{ asset ( 'path_video/' . $videos->video ) }}" type='video/mp4' />
 								<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
 							</video>
