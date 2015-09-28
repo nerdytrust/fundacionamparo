@@ -18,6 +18,7 @@
 					</div>
 				@endforeach
 			@endif
+
 			<div id="pleca_causas" class="">
 				<h1>CAUSAS FUNDACIÓN AMPARO</h1>
 			</div>
@@ -60,12 +61,12 @@
 	 			@endif
 
 			</div><!--termina re-->
-
+			<div id="pleca_causas" class="">
+							<h1>CAUSAS EXTERNAS</h1>
+			</div>
 				@if ( isset( $externas ) )
 	 				@foreach ( $externas as $externa )
-	 					<div id="pleca_causas" class="">
-							<h1>CAUSAS EXTERNAS</h1>
-						</div>
+	 					
 	 					<article class="caja_2 {{{ isset($externa['class']) ?  'caja'.$externa['class'] : 'caja'.'33' }}}">
 				 			<img src="{{ asset( 'path_image/' . $externa->imagen . '/' . '559x548' ) }}" alt="{{ $externa->titulo }}">
 				 			<section id="social_top">
