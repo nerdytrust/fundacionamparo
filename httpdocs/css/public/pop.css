@@ -1269,7 +1269,16 @@ figure.cauf>span{
 		width: 25% !important;
 	}
 	.lightbox .datos .datos-inf{
+		height: 110px;
 		/*width: 100%;*/
+	}
+	.content-1 > b{
+		top:109px;
+	}
+
+	.content-1 > b > img{
+		vertical-align: middle;
+		margin: 0 !important
 	}
 
 	.lightbox .datos h1{
@@ -1644,7 +1653,7 @@ figure.cauf>span{
 		padding-top: 3% !important;
 	}
 
-	.datos-inf>p>b{
+	.content-1>b{
 		font-size: .9em;
 	}
 
