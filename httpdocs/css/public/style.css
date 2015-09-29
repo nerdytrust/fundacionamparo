@@ -4658,7 +4658,7 @@ label.contact textarea{
 	}
 
 	.lightbox .datos .datos-inf{
-		overflow-y: hidden !important;
+		/*overflow-y: hidden !important;*/
 	}
 
 	.force-overflow{
