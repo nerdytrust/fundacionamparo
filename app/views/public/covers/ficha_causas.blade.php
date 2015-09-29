@@ -40,14 +40,16 @@
 					    <div class="clear-shadow"></div>
 				        <div class="content">
 					        <div class="content-1">
-								<div class="datos-inf caudat">
+								<div class="datos-inf caudat scrollbar" id="style-scroll">
 									<p>
 										{{ $causa->descripcion }} <br/>
-										<b>Selecciona la forma en que deseas ayudar
+										
+									</p>	
+
+								</div><!--termina datos-inf-->
+								<b>Selecciona la forma en que deseas ayudar
 										<img src="{{ asset( 'images/inter.png' ) }}" alt="" id="icon">
 										</b>
-									</p>	
-								</div><!--termina datos-inf-->
 								<div class="fig">
 									<figure class="cauf" id="cauf-d" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';">
 									  <span>Haz tu donación</span>

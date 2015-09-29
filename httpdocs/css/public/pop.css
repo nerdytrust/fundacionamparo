@@ -964,7 +964,7 @@ width: 28% !important;
 .lightbox .datos .datos-inf{
 	width: 90%;
 	/*width: 100%;*/
-	height: 197px;
+	height: 136px;
 	display: block;
 	margin: 0 auto;
 	font-size: 14px;
@@ -996,7 +996,7 @@ width: 28% !important;
 
 .lightbox .datos .caudat{
 	width: 100%;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .lightbox .datos>.caudat{
@@ -1048,7 +1048,7 @@ background: url("../images/back-li3.png") repeat;
 	width: 93%;
 }
 
-.datos-inf > p > b{
+.content-1 > b{
 	color: #000;
 	font-weight: bolder;
 	width: auto;
@@ -1057,9 +1057,11 @@ background: url("../images/back-li3.png") repeat;
 	height: auto;
 	margin-top: 5px;
 	font-size: 1.1em;
+	top:134px;
+	position: relative;
 }
 
-.datos-inf > p > b > img{
+.content-1 > b > img{
 	vertical-align: middle;
 	margin: 0 !important
 }
