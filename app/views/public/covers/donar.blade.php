@@ -24,7 +24,7 @@
 								@endforeach
 							@endif
 						</select>
-						<p>Ingresa el monto que desaes donar</p>
+						<p>Ingresa el monto que deseas donar</p>
 						<span class="op">
 							{{ Form::text( 'monto', Input::old( 'monto'), [ 'placeholder' => '10.00', 'maxlength' => 8, 'required' => true, 'id' => 'r' ] ) }}
 						</span>

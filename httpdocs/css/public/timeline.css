@@ -70,6 +70,7 @@ header { display: inline-block !important; }
     right: 15px;
     width: 40px;
     z-index: 17;
+    border-radius: 0px;
     &:active {
       outline: none;
       -webkit-box-shadow: none;

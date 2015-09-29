@@ -1372,6 +1372,42 @@ span#name span button:after{
 	display: inline-block;
 	padding-top: 15px;
 }
+#becas_otor{
+	width: 70%;
+	display: inline-block;
+	padding-top: 15px;
+}
+#becas_otor h1{
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1em !important;
+    line-height: 2;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #000;
+    margin:0 !important;
+}
+#becas_otor h2{
+	color:#a3a3a3;
+	font-size: 0.9em !important;
+	top: -13px;
+    position: relative;
+}
+.list_amp{
+  margin-left: 0;
+  padding-left: 0;
+}
+.list_amp li{
+	list-style: disc;
+	margin-left: 20px;
+    color: #989898;
+	width: 45%;
+	text-align: left;
+	margin-right: 5px;
+	float: left;
+	position: relative;
+}
 .donador_clas, .impulsor_clas, .voluntario_clas{
 	display: inline-block;
 	margin: 70px 20px 0 20px;
@@ -2492,7 +2528,7 @@ label.becas{
 }
 label.becas h1{
 	text-align: center;
-	color: #beda3e;
+	color: #000;
 	font-size: 2.5em !important;
 }
 label.becas h2{

@@ -21,6 +21,8 @@ Route::get( 'recuperar-password', 'HomeController@forgotPassword' );
 
 ## Menú
 Route::get( 'becas', [ 'uses' => 'BecasController@index', 'as' => 'get.becas' ] );
+Route::get( 'becas-bases', [ 'uses' => 'BecasController@bases', 'as' => 'get.bases' ] );
+Route::get( 'becas-otorgadas', [ 'uses' => 'BecasController@otorgadas', 'as' => 'get.otorgadas' ] );
 Route::get( 'fundacion', [ 'uses' => 'FundacionController@index', 'as' => 'get.fundacion' ] );
 Route::get( 'como-ayudar', [ 'uses' => 'AyudarController@index', 'as' => 'get.como-ayudar'] );
 Route::get( 'apoyamos-tu-causa', [ 'uses' => 'ApoyarCausaController@index', 'as' => 'get.apoyamos-tu-causa' ] );

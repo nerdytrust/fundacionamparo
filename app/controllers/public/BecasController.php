@@ -30,6 +30,26 @@ class BecasController extends BaseController {
 	}
 
 	/**
+	 * Método para visualizar la vista bases
+	 * @return
+	 */
+	public function bases(){
+		return View::make( 'public.becas.bases' );
+	}
+
+	/**
+	 * Método para visualizar la vista bases
+	 * @return
+	 */
+	public function otorgadas(){
+		return View::make( 'public.becas.otorgadas' )->with( [
+			'becas' => Becas::where("otorgada",1)
+							->leftJoin( 'ciudades', 'becas.id_ciudades', '=', 'ciudades.id_ciudades' )
+							->get()
+		] );
+	}
+
+	/**
 	 * Método para procesar el formulario de Becas
 	 * @return string JSON con respuesta errors y success
 	 */

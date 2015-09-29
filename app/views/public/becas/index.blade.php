@@ -20,11 +20,20 @@
 				</div>
 			</section>
 			<section id="contenedor_int">
+				<div id="nav_int">
+					<nav >
+						<ul>
+						<li class="activo">{{ HTML::link( '/becas', 'APLICA PARA UNA BECA', [ 'class' => 'animsition-link' ] ) }}</li>
+							<li>{{ HTML::link( '/becas-bases', 'BASES', [ 'class' => 'animsition-link' ] ) }}</li>							
+							<li>{{ HTML::link( '/becas-otorgadas', 'BECAS OTORGADAS  2015', [ 'class' => 'animsition-link' ] ) }}</li>
+						</ul>
+					</nav>
+				</div>
 				<div class="text-contact">
 					<label class="contact becas" for="">
 						{{ Form::open( [ 'url' => 'solicitar-beca', 'id' => 'form_solicitud_beca', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form' ] ) }}
 							<div class="alert alert-danger" role="alert" id="messages"></div>
-							<h1>SOLICITUD DE BECAS</h1>
+							<h1>APLICA PARA UNA BECA</h1>
 							<h2>
 								La Fundación Amparo puede ayudarte a obtener una beca para que estudies en México o en el Extranjero
 							</h2>
