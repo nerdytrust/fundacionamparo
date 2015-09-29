@@ -640,12 +640,13 @@ vertical-align: middle;
       margin: 2% 0;
     }
     .cuadro h1{
-      overflow: scroll;
+      /*overflow: scroll;*/
       height: 50px;
     }
     .cuadro h2{
       overflow: scroll;
       height: 100px;
+      margin-top: 23px
     }
     .cuadro h3{
       margin-top: 0;
