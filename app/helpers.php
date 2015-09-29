@@ -79,7 +79,7 @@ class Helper {
 		$avatar = Profiles::find( $session->getHybridAuth()->id_registrados );
 		if($avatar->photoURL!='')
 			return $avatar->photoURL;
-		return "http://lorempixel.com/200/200/abstract/";
+		return asset( 'images/perfil_interno.jpg' );
 	}
 
 	/**

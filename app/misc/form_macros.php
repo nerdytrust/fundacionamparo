@@ -26,7 +26,7 @@ Form::macro('toggle', function($name, $default = 'false', $attrs = [],$data=[])
 
     $item .= '<input type="checkbox" data-toggle="toggle" name="'. $name .'" data-onstyle="success" data-offstyle="danger"';
 
-    $item .= 'value="'. $default .'" ';
+    $item .= 'value="1" ';
 
     // If Id not explicitly set, use name (Id is needed to associate with labels)
     if (! isset($attrs['id'])) $item .= 'id="' . $name .'" ';

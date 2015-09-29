@@ -86,10 +86,10 @@
 									</div>
 									<div class="check">
 										Sexo <br/>
-										{{ Form::radio( 'sexo', 1, true, [ 'id' => 'fem' ] ) }}
+										{{ Form::radio( 'sexo', 'femenino', true, [ 'id' => 'fem' ] ) }}
 										<label for="fem"></label>
 										<span class="label-fake">Femenino</span>
-										{{ Form::radio( 'sexo', 2, false, [ 'id' => 'mas' ] ) }}
+										{{ Form::radio( 'sexo', 'masculino', false, [ 'id' => 'mas' ] ) }}
 										<label for="mas"></label>
 										<span class="label-fake">Masculino</span>
 									</div>
@@ -104,10 +104,10 @@
 									</span>
 									<div class="check schedule-form">
 										Horario<br/>
-										{{ Form::radio( 'turno', 1, true, [ 'id' => 'mat' ] ) }}
+										{{ Form::radio( 'turno', 'matutino', true, [ 'id' => 'mat' ] ) }}
 										<label for="mat"></label>
 										<span class="label-fake">Matutino</span>
-										{{ Form::radio( 'turno', 2, false, [ 'id' => 'ves' ] ) }}
+										{{ Form::radio( 'turno', 'vespertino', false, [ 'id' => 'ves' ] ) }}
 										<label for="ves"></label>
 										<span class="label-fake">Vespertino</span>
 									</div>

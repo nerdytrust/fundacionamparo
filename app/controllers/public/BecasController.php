@@ -16,7 +16,8 @@ class BecasController extends BaseController {
 		'terminos'			=> [ 'accepted' ],
 		'birth_day'			=> [ 'required' ],
 		'birth_month'		=> [ 'required' ],
-		'birth_year'		=> [ 'required' ]
+		'birth_year'		=> [ 'required' ],
+		'motivo'	        => [ 'required' ],
 	];
 
 	/**
