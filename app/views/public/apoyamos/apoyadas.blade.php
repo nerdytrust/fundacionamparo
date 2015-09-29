@@ -34,7 +34,7 @@
 
 							<h1>CAUSAS APOYADAS 2015</h1>
 							<h2>
-								La Fundación Amparo puede ayudarte a obtener una beca para que estudies en México o en el Extranjero
+								
 							</h2>
 							
 					</label>
