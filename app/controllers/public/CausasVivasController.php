@@ -3,11 +3,11 @@
 class CausasVivasController extends BaseController {
 
 	public function index(){
-		$causas = Causas::select(DB::raw('*,meta as metaTotal'))->orderBy( 'created_at','desc' )->where( 'id_tipo_causas', 1)->where( 'fecha', '>', date('Y-m-d') )->get();
+		$causas = Causas::select(DB::raw('*,meta as metaTotal'))->orderBy( 'orden' )->orderBy( 'created_at','desc' )->where( 'id_tipo_causas', 1)->where( 'fecha', '>', date('Y-m-d') )->get();
 		$causas = $this->getClass($causas);
 		$videos = Videos::where('id_secciones', 3 )->get();
 	
-		$externas = Causas::select(DB::raw('*,meta as metaTotal'))->orderBy( 'created_at','desc' )->where( 'id_tipo_causas', 2 )->where( 'fecha', '>', date('Y-m-d') )->get();
+		$externas = Causas::select(DB::raw('*,meta as metaTotal'))->orderBy( 'orden' )->orderBy( 'created_at','desc' )->where( 'id_tipo_causas', 2 )->where( 'fecha', '>', date('Y-m-d') )->get();
 		$externas = $this->getClass($externas);
 
 		return View::make( 'public.causas.index' )->with( [
