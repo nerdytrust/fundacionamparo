@@ -631,6 +631,10 @@ vertical-align: middle;
   b{
       font-size: 25px;
     }
+   .interior h1 {
+      font-size: 19px;
+      margin-top: 8%;
+    }
    h1 {
       font-size: 19px;
       margin: 2% 0;
@@ -641,12 +645,11 @@ vertical-align: middle;
     }
     .cuadro h1{
       /*overflow: scroll;*/
-      height: 50px;
+      height: auto;
     }
     .cuadro h2{
       overflow: scroll;
       height: 100px;
-      margin-top: 23px
     }
     .cuadro h3{
       margin-top: 0;
@@ -658,8 +661,12 @@ vertical-align: middle;
     /*background: green !important;*/
   }
   span.adorno{
-    left: 4%;
-      top: -16%; 
+    left: 9%;
+    top: -6%; 
+  }
+  .interior #social_top{
+    top:-73px;
+    position: absolute !important;
   }
     
 }
