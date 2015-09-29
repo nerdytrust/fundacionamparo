@@ -910,7 +910,7 @@ width: 28% !important;
 .lightbox .datos{
 	width: 50%;
 	height: 100%;
-	display: inline-block;
+	/*display: inline-block;*/
 	margin-left: -5px;
 	position: relative;
 	overflow: hidden;
@@ -1537,7 +1537,7 @@ figure.cauf>span{
 		display: block;
 	}
 	.content-1 > b {
- 	   top: 186px;
+ 	   top: 200px;
 	}
 	.datos figure:last-child{
 		margin: 0 3% 0 3%;
