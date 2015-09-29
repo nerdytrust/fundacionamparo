@@ -26,6 +26,8 @@ Route::get( 'becas-otorgadas', [ 'uses' => 'BecasController@otorgadas', 'as' => 
 Route::get( 'fundacion', [ 'uses' => 'FundacionController@index', 'as' => 'get.fundacion' ] );
 Route::get( 'como-ayudar', [ 'uses' => 'AyudarController@index', 'as' => 'get.como-ayudar'] );
 Route::get( 'apoyamos-tu-causa', [ 'uses' => 'ApoyarCausaController@index', 'as' => 'get.apoyamos-tu-causa' ] );
+Route::get( 'apoyamos-tu-causa-bases', [ 'uses' => 'ApoyarCausaController@bases', 'as' => 'get.apoyamos-tu-causa-bases' ] );
+Route::get( 'apoyamos-tu-causa-apoyadas', [ 'uses' => 'ApoyarCausaController@apoyadas', 'as' => 'get.apoyamos-tu-causa-apoyadas' ] );
 Route::get( 'causas-vivas', [ 'uses' => 'CausasVivasController@index', 'as' => 'get.causas-vivas' ] );
 Route::get( 'noticias', [ 'uses' => 'NoticiasController@index', 'as' => 'get.noticias' ] );
 Route::get( 'carga-noticias/{limit}/{offset}/', [ 'uses' => 'NoticiasController@carga_noticias', 'as' => 'get.noticias' ] )->where( array('limit' => '[0-9]+', 'offset' => '[0-9]+'));

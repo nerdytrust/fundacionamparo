@@ -19,6 +19,15 @@
 				</div>
 			</section>
 			<section id="contenedor_int">
+				<div id="nav_int">
+					<nav >
+						<ul>
+							<li class="activo">{{ HTML::link( '/apoyamos-tu-causa', 'APLICA PARA OBTENER APOYO', [ 'class' => 'animsition-link' ] ) }}</li>
+							<li>{{ HTML::link( '/apoyamos-tu-causa-bases', 'BASES', [ 'class' => 'animsition-link' ] ) }}</li>							
+							<li>{{ HTML::link( '/apoyamos-tu-causa-apoyadas', 'CAUSAS APOYADAS 2015', [ 'class' => 'animsition-link' ] ) }}</li>
+						</ul>
+					</nav>
+				</div>
 				<div class="text-contact">
 					<label class="contact" for="">
 						{{ Form::open( [ 'url' => 'registrar-tu-causa', 'id' => 'form_apoyamos_causa', 'method' => 'POST', 'autocomplete' => 'off' ] ) }}

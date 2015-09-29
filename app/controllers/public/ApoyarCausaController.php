@@ -26,6 +26,24 @@ class ApoyarCausaController extends BaseController {
 	}
 
 	/**
+	 * Método para visualizar la vista bases
+	 * @return
+	 */
+	public function bases(){
+		return View::make( 'public.apoyamos.bases' );
+	}
+
+	/**
+	 * Método para visualizar la vista apoyadas
+	 * @return
+	 */
+	public function apoyadas(){
+		return View::make( 'public.apoyamos.apoyadas' )->with( [
+			'causas' => ApoyamosCausa::get()
+		] );
+	}
+
+	/**
 	 * Método para procesar la información del formulario de registro de Causa
 	 * @return
 	 */

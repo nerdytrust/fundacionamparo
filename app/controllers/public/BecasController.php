@@ -39,7 +39,7 @@ class BecasController extends BaseController {
 	}
 
 	/**
-	 * Método para visualizar la vista bases
+	 * Método para visualizar la vista otorgadas
 	 * @return
 	 */
 	public function otorgadas(){
