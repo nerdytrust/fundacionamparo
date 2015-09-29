@@ -81,7 +81,7 @@
 				 			<section class="txt_int" id="{{$externa->id_causas}}">
 				 				<h1>{{ strtoupper( $externa->id_categorias_record->nombre ) }}</h1>
 				 				<h2>{{ $externa->titulo }}</h2>
-				 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
+				 				<p>{{ Str::limit( $externa->descripcion, 110 ) }}</p>
 								<a href="{{ URL::to( 'ficha-causas/' . $externa->id_causas ) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
 								<div id="meta">
 									<div id="barra">
