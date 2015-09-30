@@ -670,6 +670,11 @@ vertical-align: middle;
     top:-73px;
     position: absolute !important;
   }
+
+  .todos-momentos{
+    top:182px;
+    position: absolute !important;
+  }
     
 }
 
@@ -691,7 +696,10 @@ vertical-align: middle;
 span.adorno{
     left: 9%;
     top: 1%; 
-  }    
+  }   
+  .cuadro h2{
+    height: 80px;
+  } 
 }
 
 /*iphone 6 y plus landscape*/
