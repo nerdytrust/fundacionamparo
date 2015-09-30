@@ -910,7 +910,7 @@ width: 28% !important;
 .lightbox .datos{
 	width: 50%;
 	height: 100%;
-	/*display: inline-block;*/
+	display: inline-block;
 	margin-left: -5px;
 	position: relative;
 	overflow: hidden;
