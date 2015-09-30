@@ -17,7 +17,11 @@
 						</nav>
 					</div><!--termina txt_evento-->
 					<span id="foto-usuario">
-						<img src="{{ $donador->photoURL }}" alt="{{ $donador->displayName }}" >
+						@if ( $donador->photoURL != "" )
+	 						<img src="{{ $donador->photoURL }}" alt="{{ $donador->displayName }}">
+	 					@else
+	 						<img src="{{ asset( 'images/default-donadores.jpg' ) }}" alt="{{ $donador->displayName }}" >
+	 					@endif	
 					</span><!--termina foto-usuario-->
 					<p>
 						Forma parte de nuestro círculo de donadores desde el 12 de Agosto 2014  una persona más que se suma.
