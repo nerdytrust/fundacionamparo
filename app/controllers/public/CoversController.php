@@ -585,6 +585,18 @@ class CoversController extends BaseController {
 		    DB::table('donaciones')
              ->where('transaction_id', $charge->id)
              ->update(array('status' => 1));
+
+            $donador =  DB::table('donaciones')
+             ->select('email')
+             ->where('transaction_id', $charge->id)
+             ->get();
+			$email = $donador[0]->email;
+            $donacionMail = Mail::send( 'public.mail.welcome', [], function( $message ) use ($email){
+					$message
+						->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+						->to( $email, "Donador" )
+						->subject( 'Bienvenido a Fundación Amparo' );
+			});
 		}
 
 	}
