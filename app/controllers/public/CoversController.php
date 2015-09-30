@@ -591,7 +591,7 @@ class CoversController extends BaseController {
              ->where('transaction_id', $charge->id)
              ->get();
 			$email = $donador[0]->email;
-            $donacionMail = Mail::send( 'public.mail.welcome', [], function( $message ) use ($email){
+            $donacionMail = Mail::send( 'public.mail.donacion', [], function( $message ) use ($email){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
 						->to( $email, "Donador" )

@@ -289,7 +289,7 @@ class DonacionesController extends BaseController {
 		$donacion->mostrar_perfil 		= $session['mostrar_perfil'];
 		if ( $donacion->save() ){
 			if ( $session['transaction_status'] == 'paid' ){
-				$donacionMail = Mail::send( 'public.mail.welcome', [], function( $message ) use ($session){
+				$donacionMail = Mail::send( 'public.mail.donacion', [], function( $message ) use ($session){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
 						->to( $session['email'], "Donador" )
