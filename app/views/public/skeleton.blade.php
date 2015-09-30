@@ -126,7 +126,7 @@
                             if ( data != false ){
                                 $('#moments_time').html(data);
                                 //coverImg();
-                                $('#main_time').fadeOut(1000, "swing", function(){
+                                $('#main_time').fadeOut(1000, "linear", function(){
                                    $(".flexslider").fitVids().flexslider({
                                         animation: "slide",
                                         useCSS: false,
