@@ -19,7 +19,7 @@
 		</tr>
 		<tr>
 			<td style="font-size:13px">
-				<p style="margin:0; padding:0;">Gracias por tu donacióno {{ $username }}</p>
+				<p style="margin:0; padding:0;">Gracias por tu donacióno</p>
 			</td>
 		</tr>
 		<tr>
