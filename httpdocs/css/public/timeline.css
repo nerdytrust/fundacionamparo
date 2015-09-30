@@ -640,7 +640,7 @@ vertical-align: middle;
       margin: 2% 0;
     }
     h2 {
-      font-size: 15px;
+      font-size: 13px;
       margin: 2% 0;
     }
     .cuadro h1{
@@ -663,6 +663,8 @@ vertical-align: middle;
   span.adorno{
     left: 9%;
     top: -6%; 
+    padding: 0px 4px;
+    font-size: .8em;
   }
   .interior #social_top{
     top:-73px;
