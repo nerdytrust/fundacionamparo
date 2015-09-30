@@ -397,6 +397,7 @@ class CoversController extends BaseController {
 	 				 ->where('transaction_id',Session::get( 'paypalhas_hash' ))
 	 				 ->select('reference_id', 'email')
 	 				 ->get();
+	 	print_r($paymentId);exit;
 	 	$paymentId = $paymentId[0]->reference_id;
 	 	$payment = $oPayment::get($paymentId,$this->_api); 
 	 	$execution = new \PayPal\Api\PaymentExecution;
