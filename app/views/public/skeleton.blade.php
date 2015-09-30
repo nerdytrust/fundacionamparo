@@ -126,7 +126,7 @@
                             if ( data != false ){
                                 $('#moments_time').html(data);
                                 //coverImg();
-                                $('#main_time').fadeOut(1000, "linear", function(){
+                                $('#main_time').fadeOut(500, "linear", function(){
                                    $(".flexslider").fitVids().flexslider({
                                         animation: "slide",
                                         useCSS: false,
@@ -141,7 +141,7 @@
                                             //$f(player).api('pause');
                                         }
                                     });
-                                    $('#moments_time').fadeIn(2800,"linear");
+                                    $('#moments_time').fadeIn(1000,"linear");
                                      $('[data-toggle="tooltip"]').tooltip();   
                                 });
                             }
