@@ -126,7 +126,11 @@
 			 						<a href="{{ URL::to( 'ficha-donador/' . $donador->id_registrados ) }}">
 						 				<div class="donador_clas">
 						 					<div class="img_redonda">
-						 					<img src="{{ $donador->photoURL }}" alt="">
+						 					@if ( $donador->photoURL != "" )
+						 						<img src="{{ $donador->photoURL }}" alt="{{ $donador->displayName }}">
+						 					@else
+						 						<img src="{{ asset( 'images/default-donadores.jpg' ) }}" alt="{{ $donador->displayName }}" >
+						 					@endif	
 						 					</div>
 						 					<h1>{{ $donador->displayName }}</h1>
 						 					<h2>DONADOR</h2>
