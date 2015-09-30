@@ -2749,6 +2749,7 @@ span.check label:before, div.check label:before{
 	left: 0;
 	bottom: 1px;
 	background: url("../../images/check.png");
+	vertical-align: bottom;
 }
 span.check label:last-child:before,
 div.check label:last-child:before{
