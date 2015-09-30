@@ -32,7 +32,7 @@
 							@endif
 						</span>
 						<div class="check-verde">
-							{{ Form::checkbox( 'mostrar_perfil', '1', false, [ 'id' => 'check-verde' ] ) }}
+							{{ Form::checkbox( 'mostrar_perfil', '0', false, [ 'id' => 'check-verde' ] ) }}
 							<label for="check-verde"></label>No mostrar mi perfil en el sitio
 						</div>
 						</br>

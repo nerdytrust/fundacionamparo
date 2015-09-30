@@ -356,11 +356,10 @@ class CoversController extends BaseController {
 	 	try{
 
 	 	  $payment->create( $this->_api );
-	 	  $mostrarPerfil = 1;
+
 	 	  $hash = md5($payment->getId());
   		  Session::put( 'paypalhas_hash', $hash );
-		  if(isset($session['mostrar_perfil']))
-		  	$mostrarPerfil = 0;
+
   		  $session = Session::get( 'donacion' );
   		  $donacion = new Donaciones;
   		  $donacion->email 				= $session['email'];
@@ -369,7 +368,7 @@ class CoversController extends BaseController {
 	 	  $donacion->reference_id 		= $payment->getId();
 	 	  $donacion->transaction_id		= Session::get( 'paypalhas_hash' );
 	 	  $donacion->transaction_type	= 'paypal';
-	 	  $donacion->mostrar_perfil 	= $mostrarPerfil;
+	 	  $donacion->mostrar_perfil 	= $session['mostrar_perfil'];
 
 	 	  $donacion->save();
 
