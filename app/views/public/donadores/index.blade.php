@@ -37,7 +37,11 @@
 											<span><button></button></span>
 										</span>							
 									</span>
-			 						<img src="{{ $donador->photoURL }}" alt="{{ $donador->displayName }}" >
+									@if ( $donador->photoURL != "" )
+			 							<img src="{{ $donador->photoURL }}" alt="{{ $donador->displayName }}" >
+			 						@else
+			 							<img src="{{ asset( 'images/default-donadores.jpg' ) }}" alt="{{ $donador->displayName }}" >
+			 						@endif
 			 					</article>
 			 				</a>
 						@endforeach
