@@ -141,7 +141,7 @@
                                             //$f(player).api('pause');
                                         }
                                     });
-                                    $('#moments_time').fadeIn(2500);
+                                    $('#moments_time').fadeIn(2800);
                                      $('[data-toggle="tooltip"]').tooltip();   
                                 });
                             }
