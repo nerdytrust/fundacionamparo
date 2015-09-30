@@ -411,7 +411,7 @@ class CoversController extends BaseController {
 	     $donacionMail = Mail::send( 'public.mail.donacion', [], function( $message ) use ($paymentId){
 				$message
 					->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
-					->to( $paymentId[0]->email; )
+					->to( $paymentId[0]->email )
 					->subject( 'Bienvenido a Fundación Amparo' );
 			});
 
