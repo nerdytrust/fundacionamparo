@@ -6,7 +6,7 @@
 		<div class="lightbox-h d" id="donar">
 			<div class="lightbox-h-cont donar">
 				<img src="{{ asset( 'images/icon_donadores-v.png' ) }}" alt="">
-				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/' ) }}';"></button>
+				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/login' ) }}';"></button>
 				<h1>¡gracias!</h1>
 				<h2>Por registrarte</h2>
 				<h3>Tus acciones dentro de la comunidad harán posible continuar con nuestra causa, pasa la voz</h3>

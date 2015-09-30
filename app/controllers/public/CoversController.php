@@ -395,7 +395,7 @@ class CoversController extends BaseController {
 	 	$payerId = $_GET['PayerID'];
 	 	$paymentId = DB::table( 'donaciones' )
 	 				 ->where('transaction_id',Session::get( 'paypalhas_hash' ))
-	 				 ->select('reference_id')
+	 				 ->select('reference_id', 'email')
 	 				 ->get();
 	 	$paymentId = $paymentId[0]->reference_id;
 	 	$payment = $oPayment::get($paymentId,$this->_api); 
@@ -407,6 +407,14 @@ class CoversController extends BaseController {
              ->update(array('status' => 1));
 
          Session::forget( 'paypalhas_hash' );
+
+	     $donacionMail = Mail::send( 'public.mail.donacion', [], function( $message ) use ($paymentId){
+				$message
+					->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+					->to( $paymentId[0]->email; )
+					->subject( 'Bienvenido a Fundación Amparo' );
+			});
+
          return Redirect::to( 'gracias' );
 	 }
 
