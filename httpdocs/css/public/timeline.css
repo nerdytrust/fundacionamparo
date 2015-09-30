@@ -692,7 +692,7 @@ vertical-align: middle;
    
 }
 
-@media screen and (min-width: 319px){
+@media screen and (max-width: 319px){
 span.adorno{
     left: 9%;
     top: 1%; 
