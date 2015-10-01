@@ -798,7 +798,7 @@ control positioning and full window mode. **
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: auto;
   height: 100%;
 }
 /* Fix for Firefox 9 fullscreen (only if it is enabled). Not needed when
