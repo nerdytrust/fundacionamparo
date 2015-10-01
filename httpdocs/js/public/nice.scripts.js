@@ -605,6 +605,24 @@ $(function(){
 		});
 	});
 
+	/**
+	 * Método para regresar el video
+	 */
+	var video = videojs('video').ready(function(){
+	  var player = this;
+	  player.on('ended', function() {
+	  	video.load();
+	  	$(".vjs-loading-spinner").hide();
+	  });
+	   player.on('error', function() {
+	  	video.load();
+	  	$(".vjs-loading-spinner").hide();
+	  });
+	});
+
+	/**
+	 * Método para cambiar el lenguaje de las alertas de html5
+	 */
 	var intputElements = document.getElementsByTagName("INPUT");
     for (var i = 0; i < intputElements.length; i++) {
         intputElements[i].oninvalid = function (e) {
