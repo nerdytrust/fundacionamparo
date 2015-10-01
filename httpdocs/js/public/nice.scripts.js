@@ -608,7 +608,31 @@ $(function(){
 	/**
 	 * Método para regresar el video
 	 */
-	var video = videojs('video').ready(function(){
+var video = videojs($('.vi').find('.video-js')[0]).ready(function(){
+	  var player = this;
+	  player.on('ended', function() {
+	  	video.load();
+	  	$(".vjs-loading-spinner").hide();
+	  });
+	   player.on('error', function() {
+	  	video.load();
+	  	$(".vjs-loading-spinner").hide();
+	  });
+	});
+
+var video = videojs($('.vi2').find('.video-js')[0]).ready(function(){
+	  var player = this;
+	  player.on('ended', function() {
+	  	video.load();
+	  	$(".vjs-loading-spinner").hide();
+	  });
+	   player.on('error', function() {
+	  	video.load();
+	  	$(".vjs-loading-spinner").hide();
+	  });
+	});
+
+var video = videojs($('.vi3').find('.video-js')[0]).ready(function(){
 	  var player = this;
 	  player.on('ended', function() {
 	  	video.load();

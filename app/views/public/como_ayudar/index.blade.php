@@ -27,7 +27,7 @@
 					@if ( isset( $videos ) )
 						@foreach ( $videos as $video )
 							<div class="vi2">
-								<video id="videos_" controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '960x520' ) }}" class="video-js vjs-default-skin" data-setup="{}" style="background-color: white">
+								<video controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '960x520' ) }}" class="video-js vjs-default-skin" data-setup="{}" style="background-color: white">
 									<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
 									<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
 								</video>
