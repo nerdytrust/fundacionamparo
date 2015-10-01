@@ -17,6 +17,21 @@
 						</video>
 					</div>
 				@endforeach
+				<script type="text/javascript">
+							document.addEventListener("DOMContentLoaded", function(event) { 
+								var video = videojs($('.vi3').find('.video-js')[0]).ready(function(){
+								  var player = this;
+								  player.on('ended', function() {
+								  	video.load();
+								  	$(".vjs-loading-spinner").hide();
+								  });
+								   player.on('error', function() {
+								  	video.load();
+								  	$(".vjs-loading-spinner").hide();
+								  });
+								});
+							});
+						</script>
 			@endif
 
 			<div id="pleca_causas" class="">

@@ -33,6 +33,21 @@
 								</video>
 							</div><!--termina vi2-->
 						@endforeach
+						<script type="text/javascript">
+							document.addEventListener("DOMContentLoaded", function(event) { 
+								var video = videojs($('.vi2').find('.video-js')[0]).ready(function(){
+								  var player = this;
+								  player.on('ended', function() {
+								  	video.load();
+								  	$(".vjs-loading-spinner").hide();
+								  });
+								   player.on('error', function() {
+								  	video.load();
+								  	$(".vjs-loading-spinner").hide();
+								  });
+								});
+							});
+						</script>
 					@endif
 					<div id="titulo_fca" class="ayudar">
 						<div class="titleM">FORMAS DE AYUDAR</div>

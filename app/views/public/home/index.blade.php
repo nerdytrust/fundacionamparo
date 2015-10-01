@@ -20,6 +20,21 @@
  								<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
  							</video>
 						</div>
+						<script type="text/javascript">
+						document.addEventListener("DOMContentLoaded", function(event) { 
+							var video = videojs($('.vi').find('.video-js')[0]).ready(function(){
+							  var player = this;
+							  player.on('ended', function() {
+							  	video.load();
+							  	$(".vjs-loading-spinner").hide();
+							  });
+							   player.on('error', function() {
+							  	video.load();
+							  	$(".vjs-loading-spinner").hide();
+							  });
+							});
+						});
+						</script>
 				@endif
 				<aside class="btns">
 					<article id="btn_twitter" class="">
