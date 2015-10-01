@@ -11,7 +11,7 @@
 				</span>
 				@foreach ( $videos as $video )
 					<div class="vi3">
-						<video controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '1596x608' ) }}" class="video-js vjs-default-skin" data-setup="{}" style="width:100%">
+						<video id="videos_" controls loop preload="auto" poster="{{ asset( 'path_image/' . $video->cover . '/' . '1596x608' ) }}" class="video-js vjs-default-skin" data-setup="{}" style="width:100%">
 							<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
 							<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
 						</video>
