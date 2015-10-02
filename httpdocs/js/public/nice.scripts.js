@@ -40,7 +40,7 @@ $(function(){
 	 	var $form;
 		$form = $("#form_paycard");
 		$form.find('.alert-danger').css('display', 'block');
-		$form.find('.alert-danger').text(token.message);
+		$form.find('.alert-danger').text(token.message_to_purchaser	);
 		$form.find("button").prop("disabled", true);
 	};
 

@@ -100,7 +100,7 @@ cursor: pointer;
 
 .alert {
 	border: 1px solid transparent;
-	border-radius: 4px;
+	/*border-radius: 4px;*/
 	display: none;
 	padding: 10px;
 	font-size: 12px;
@@ -109,9 +109,9 @@ cursor: pointer;
 }
 
 .alert-danger {
-	color: #a94442;
-	background-color: #f2dede;
-	border-color: #ebccd1;
+	color: #a3a3a3;
+	background-color: #fff;
+	border-color: #fff;
 }
 
 #formulario_buscador {
