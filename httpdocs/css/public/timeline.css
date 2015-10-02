@@ -512,6 +512,10 @@ vertical-align: middle;
     .interior .flex-control-nav li{
           margin: 0 -1.5%;
     }
+    .flex-control-nav li{
+      margin: 0 -15px;
+    }
+
 
  }
 @media only screen and (min-width: 1280px) and (max-width: 1365px){
