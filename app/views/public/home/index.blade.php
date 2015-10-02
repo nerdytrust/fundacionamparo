@@ -156,7 +156,11 @@
 						 			<a href="{{ URL::to( 'ficha-donador/' . $impulsor->id_registrados ) }}">
 						 				<div class="impulsor_clas">
 						 					<div class="img_redonda">
-						 					<img src="{{ $impulsor->photoURL }}" alt="">
+						 					@if ( $impulsor->photoURL != "" )
+						 						<img src="{{ $impulsor->photoURL }}" alt="{{ $impulsor->displayName }}">
+						 					@else
+						 						<img src="{{ asset( 'images/default-donadores.jpg' ) }}" alt="{{ $impulsor->displayName }}" >
+						 					@endif	
 						 					</div>
 						 					<h1>{{ $impulsor->displayName }}</h1>
 						 					<h2>IMPULSOR</h2>
@@ -169,7 +173,11 @@
 						 			<a href="{{ URL::to( 'ficha-donador/' . $voluntario->id_registrados ) }}">
 						 				<div class="voluntario_clas">
 						 					<div class="img_redonda">
-						 					<img src="{{ $voluntario->photoURL }}" alt="">
+						 					@if ( $voluntario->photoURL != "" )
+						 						<img src="{{ $voluntario->photoURL }}" alt="{{ $voluntario->displayName }}">
+						 					@else
+						 						<img src="{{ asset( 'images/default-donadores.jpg' ) }}" alt="{{ $voluntario->displayName }}" >
+						 					@endif	
 						 					</div>
 						 					<h1>{{ $voluntario->displayName }}</h1>
 						 					<h2>VOLUNTARIO</h2>
