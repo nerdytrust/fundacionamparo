@@ -36,7 +36,7 @@
 					{{ Form::close() }}
 				</label>
 				</br>
-				<a href="{{ URL::to( 'faqs' ) }}">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></br></a>
+				<a href="{{ URL::to( 'faqs' ) }}" target="_blank" class="help">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></br></a>
 			</div>
 		</div>
 	@stop

@@ -10,7 +10,7 @@
 				<h1>¡ups!</h1>
 				<h2>{{ $status }}</h2>
 				</br>
-				<a href="{{ URL::to( 'faqs' ) }}">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></br></a>
+				<a href="{{ URL::to( 'faqs' ) }}" target="_blank" class="help">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></br></a>
 			</div>
 		</div>
 	@stop

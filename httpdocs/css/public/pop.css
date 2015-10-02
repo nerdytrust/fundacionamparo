@@ -5,7 +5,10 @@ html, body {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 }
-
+.help{
+	position: relative;
+	top: 10px;
+} 
 .alert-danger span.error {
 	display: inline-block !important;
 	width: 100% !important;
@@ -336,6 +339,14 @@ label.vol .line{
 	display: inline-block;
 	vertical-align: bottom;
 	margin-left: 5px;
+	top: 2px;
+    position: relative;
+}
+
+@-moz-document url-prefix() {
+    .vol a img, .d a img, .i a img {
+        top: -2px;
+    }
 }
 
 label.donar-l{
@@ -464,6 +475,7 @@ label.vol select option{
 	border-bottom: 1px solid #a3a3a3;
 	-webkit-border-bottom: 1px solid #a3a3a3;*/
 	color: #a3a3a3;
+	background-color: #fff;
 }
 
 label.vol input{
@@ -1063,7 +1075,8 @@ background: url("../images/back-li3.png") repeat;
 
 .content-1 > b > img{
 	vertical-align: middle;
-	margin: 0 !important
+	margin: 0 !important;
+	cursor: pointer;
 }
 
 .datos-inf h3{
