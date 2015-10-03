@@ -107,7 +107,6 @@ cursor: pointer;
 	margin-bottom: 15px;
 	width: 97%;
 }
-
 .alert-danger {
 	color: #a3a3a3;
 	background-color: #fff;
@@ -220,6 +219,14 @@ div.subtitleM{
 		text-align: center;
 		color: #FFF;
 		display: inline-block;
+	}
+	.paycardCVC{
+		position: absolute;
+	    width: 23px;
+	    height: 23px !important;
+	    right: -33px;
+	    top: 389px;
+	    cursor: pointer;
 	}
 	#donador_sec{
 		margin-left: 0 !important;
@@ -5092,7 +5099,15 @@ label.contact textarea{
 	width: 310px !important;
 }
 
-
+@media only screen and (max-width : 414px) { 
+	.inputPayCardCVC{
+		    width: 250px !important;
+	}
+	.paycardCVC{
+		right: 0px;
+		top: 394px;
+	}
+}
 /*iphone4 portrait
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) { 
 	.cot-scroll{
