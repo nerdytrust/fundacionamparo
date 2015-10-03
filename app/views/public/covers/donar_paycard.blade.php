@@ -25,7 +25,7 @@
 						</span>
 						<span>
 							{{ Form::text( '', '', [ 'id' => 'cvc', 'placeholder' => 'CVC', 'size' => 4, 'data-conekta' => 'card[cvc]', 'class' => 'inputPayCardCVC' ] ) }}
-							<img src="{{ asset( 'images/i.png' ) }}" alt="" class="paycardCVC" title="Hooray!">
+							<img src="{{ asset( 'images/i.png' ) }}" alt="" class="paycardCVC" title="">
 						</span>
 						<span>
 							<label for="" class="form-control">Fecha de expiración (MM/AA)</label>
