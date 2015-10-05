@@ -255,7 +255,7 @@ class CoversController extends BaseController {
 		$expires = Session::get( 'donacion.oxxo_expires' );
 		return View::make( 'public.covers.donar_payoxxo' )->with( [ 
 			'monto' 		=> $monto, 
-			'causa' 		=> $causa, 
+			'causa' 		=> $causa['attributes']['titulo'], 
 			'captura' 		=> $charge,
 			'codigo_barras'	=> $barcode,
 			'expira'		=> date( 'Y-m-d', $expires )
@@ -279,7 +279,7 @@ class CoversController extends BaseController {
 		$expires = Session::get( 'donacion.spei_expires' );
 		return View::make( 'public.covers.donar_payspei' )->with( [ 
 			'monto' 		=> $monto, 
-			'causa' 		=> $causa, 
+			'causa' 		=> $causa['attributes']['titulo'], 
 			'clabe' 		=> $clabe,
 			'banco'			=> $bank,
 			'expira'		=> date( 'Y-m-d', $expires )

@@ -5,6 +5,11 @@ html, body {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 }
+@media print {
+	.hide_print{    display: none;
+}
+}
+
 .help{
 	position: relative;
 	top: 10px;
@@ -722,6 +727,10 @@ button.feis #invitar{
 	width: 100%;
 	margin: 25px auto;
 	font-size: 14px;
+}
+
+.p3 p.extra{
+	font-size: 11px;
 }
 
 .p3 img{
