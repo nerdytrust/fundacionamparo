@@ -609,20 +609,23 @@ $(function(){
 	/**
 	 * Método para cambiar el lenguaje de las alertas de html5
 	 */
-	var intputElements = document.getElementsByTagName("INPUT");
-    for (var i = 0; i < intputElements.length; i++) {
-        intputElements[i].oninvalid = function (e) {
-            e.target.setCustomValidity("");
-            console.log(e.target);
-            if (!e.target.validity.valid) {
-            	if(e.target.name == 'email' || e.target.name == 'correo')
-            		e.target.setCustomValidity("Email incorrecto");	
-            	else
-            		e.target.setCustomValidity("Completa este campo");
-                
-            }
-        };
-    }
+	var isFirefox = typeof InstallTrigger !== 'undefined';
+	if(!isFirefox){
+		var intputElements = document.getElementsByTagName("INPUT");
+	    for (var i = 0; i < intputElements.length; i++) {
+	        intputElements[i].oninvalid = function (e) {
+	            e.target.setCustomValidity("");
+	            console.log(e.target);
+	            if (!e.target.validity.valid) {
+	            	if(e.target.name == 'email' || e.target.name == 'correo')
+	            		e.target.setCustomValidity("Email incorrecto");	
+	            	else
+	            		e.target.setCustomValidity("Completa este campo");
+	                
+	            }
+	        };
+	    }
+	}
 
 });
 
