@@ -13,8 +13,8 @@
 				<h3>Tus donaciones hacen posible continuar con nuestra causa, pasa la voz</h3>
 				<span>
 					<h4>Compartir </h4>
-					<button class="face"></button>
-					<button class="twit"></button>
+					{{ Helper::facebookSharePop( '', URL::to( '/' ), '' ,'¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz #TomandoAcciónFA') }}
+					{{ Helper::twitterSharePop( '¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz', URL::to( '/' ) , 'TomandoAcciónFA' ) }}
 				</span>
 			</div>
 		</div>
