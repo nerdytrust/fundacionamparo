@@ -37,6 +37,9 @@
 								<label for="spei">Transferencia interbancaria (SPEI)</label>
 							</span>
 						</div>
+						<img src="{{ asset( 'images/visa.png' ) }}" class="card">
+						<img src="{{ asset( 'images/mastercard.png' ) }}" class="card">
+						<img src="{{ asset( 'images/americanexpress.png' ) }}" id="american" class="card">
 						<input type="submit" id="ac2" value="SIGUIENTE" />
 						{{ Form::hidden( 'causa_token', Crypt::encrypt( $causa->id_causas ) ) }}
 						{{ Form::hidden( 'causa_hash', Crypt::encrypt( $monto ) )}}

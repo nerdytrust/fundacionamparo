@@ -176,7 +176,20 @@ button.regresar{
 	width: 23px;
 	height: 63px;
 }
-
+img.card{
+	width: 60px;
+	height: 35px;
+	display: inline-block;
+	border: solid 1px #A1BF12;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 5px;
+	margin-bottom: 16px;
+}
+img.card#american{
+	padding: 5px 12px;
+}
 .lightbox-h-cont h1{
 	text-transform: uppercase;
 	margin: 0px 0 0px 0;
