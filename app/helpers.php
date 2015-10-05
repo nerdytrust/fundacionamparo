@@ -46,7 +46,17 @@ class Helper {
 		$share_twitter = '<a href="https://twitter.com/intent/tweet?via=' . getenv( 'APP_USER_TWITTER' ) . '&text=' . $text . '&url=' . $url . '&hashtags=' . $hashtags .'"><li class="fa fa-twitter"></li></a>';
 		return $share_twitter;
 	}
-
+	/**
+	 * Método para agregar un botón share twitter en los popups
+	 * @param  string $text Título del contenido
+	 * @param  string $url  Url de la sección o contenido
+	 * @param  string $hashtags  Hashtag con el que se hace el share
+	 * @return Html del botón de share twitter
+	 */
+	public static function twitterSharePop( $text, $url, $hashtags ){
+		$share_twitter = '<a href="https://twitter.com/intent/tweet?via=' . getenv( 'APP_USER_TWITTER' ) . '&text=' . $text . '&url=' . $url . '&hashtags=' . $hashtags .'"><button class="twit"></button></a>';
+		return $share_twitter;
+	}
 	/**
 	 * Método para agregar un botón share facebook
 	 * @param  string $after  Etiqueta HTML de apertura
@@ -59,7 +69,17 @@ class Helper {
 		$fb_share = '<a href="http://www.facebook.com/share.php?u='. Request::url().'" onClick="return fbs_click(640, 536)" target="_blank" title="Share on Facebook">' .$after . '<li class="fa fa-facebook"></li>' . $before . '</a>';
 		return $fb_share;
 	}
-
+	/**
+	 * Método para agregar un botón share facebook en los popups
+	 * @param  string $after  Etiqueta HTML de apertura
+	 * @param  string $url    URL de la sección o contenido
+	 * @param  string $before Etiqueta HTML de cierre
+	 * @return Html del botón de share de facebook
+	 */
+	public static function facebookSharePop( $after = '', $url, $before = '', $message = ''){
+		$fb_share = '<a href="http://www.facebook.com/share.php?u='. Request::url().'" onClick="return fbs_click(640, 536)" target="_blank" title="Share on Facebook">' .$after . '<button class="face"></button>' . $before . '</a>';
+		return $fb_share;
+	}
 	/**
 	 * Método para obtener las URL's sin http o https
 	 * @param  string $url URL
