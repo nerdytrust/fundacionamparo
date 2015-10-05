@@ -118,7 +118,7 @@
 					</div>
 				</div>
 				<div id="contenedor_btn" >
-					<button onclick="location.href='{{ URL::to( '/faqs' ) }}';" class="animsition-link">Ver Faq's</button>
+					<button onclick="location.href='{{ URL::to( 'faqs' ) }}';" class="animsition-link">Ver Faq's</button>
 				</div>
 				<div class="adorno_fa">
  					<img src="{{ asset( 'images/adorno_fa.png' ) }}" alt="">
