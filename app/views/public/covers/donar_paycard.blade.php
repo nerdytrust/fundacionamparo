@@ -21,7 +21,7 @@
 							{{ Form::text( '', '', [ 'id' => 'nombretarjetahabiente', 'placeholder' => 'Nombre del Títular', 'size' => 140, 'data-conekta' => 'card[name]' ] ) }}
 						</span>
 						<span>
-							{{ Form::text( '', '', [ 'id' => 'tarjeta', 'placeholder' => 'Número de la tarjeta de crédito', 'size' => 20, 'data-conekta' => 'card[number]' ] ) }}
+							{{ Form::text( '', '', [ 'id' => 'tarjeta', 'placeholder' => 'Número de la tarjeta', 'size' => 20, 'data-conekta' => 'card[number]' ] ) }}
 						</span>
 						<span>
 							{{ Form::text( '', '', [ 'id' => 'cvc', 'placeholder' => 'CVC', 'size' => 4, 'data-conekta' => 'card[cvc]', 'class' => 'inputPayCardCVC' ] ) }}
