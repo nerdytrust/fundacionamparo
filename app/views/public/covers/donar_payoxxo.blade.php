@@ -5,7 +5,7 @@
 	@section( 'content' )
 		<div class="lightbox-h d" id="verdeimagen">
 			<div class="lightbox-h-cont p3">
-				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/' ) }}';"></button>
+				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/gracias' ) }}';"></button>
 				<h1>PAGO EN OXXO</h1>
 				<p>
 					Tu aportación se verá reflejada en un máximo de 72 horas.</br>
