@@ -50,11 +50,11 @@
 					<article id="btn_donar2" class="">
 						DONAR
 					</article>
-					<article class="caja_1" onclick="location.href='{{ URL::to('/becas') }}';">
+					<article class="caja_1" onclick="location.href='{{ URL::to('/apoyamos-tu-causa') }}';">
 						<img src="{{ asset( 'images/becas_amparo.jpg' ) }}" alt="">
 						<section  class="txt">
-						<h1>BECAS</h1>
-						<p>Aplica para obtener una beca de estudios</p>
+						<h1>APOYAMOS TU CAUSA</h1>
+						<p>Fundación Amparo apoya causas externas</p>
 						</section>
 					</article>
 				</aside>
