@@ -21,7 +21,7 @@
 				</ul>
 				<ul id="menu_dos">
 					<li>{{ HTML::link( '/fundacion', 'La Fundación', [ 'class' => 'animsition-link' ] ) }}</li>
-					<li>{{ HTML::link( '/becas', 'Becas', [ 'class' => 'animsition-link' ] )}}</li>
+					<!--<li>{{ HTML::link( '/becas', 'Becas', [ 'class' => 'animsition-link' ] )}}</li>-->
 					<li>{{ HTML::link( '/apoyamos-tu-causa', 'Apoyamos tu causa', [ 'class' => 'animsition-link' ] ) }}</li>
 					<li>{{ HTML::link( '/noticias', 'Noticias', [ 'class' => 'animsition-link' ] ) }}</li>
 					<li>{{ HTML::link( '/faqs', "Faq's", [ 'class' => 'animsition-link' ] ) }}</li>

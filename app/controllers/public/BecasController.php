@@ -2,6 +2,13 @@
 
 class BecasController extends BaseController {
 
+	  /**
+	 * Método constructor para inicializar variables
+	 */
+	public function __construct(){
+		return Redirect::to('/')->send();
+	}
+
 	/**
 	 * Reglas de validación para el formulario de BECAS
 	 * @var array
