@@ -6,7 +6,7 @@ class BecasController extends BaseController {
 	 * Método constructor para inicializar variables
 	 */
 	public function __construct(){
-		return Redirect::to('/')->send();
+		//return Redirect::to('/')->send();
 	}
 
 	/**
@@ -32,6 +32,7 @@ class BecasController extends BaseController {
 	 * @return
 	 */
 	public function index(){
+		return Redirect::to('/')->send();
 		return View::make( 'public.becas.index' )->with( [
 			'becas_totales'	=> Becas::where( 'otorgada', 1 )->count()
 		] );
@@ -42,6 +43,7 @@ class BecasController extends BaseController {
 	 * @return
 	 */
 	public function bases(){
+		return Redirect::to('/')->send();
 		return View::make( 'public.becas.bases' );
 	}
 
@@ -50,6 +52,7 @@ class BecasController extends BaseController {
 	 * @return
 	 */
 	public function otorgadas(){
+		return Redirect::to('/')->send();
 		return View::make( 'public.becas.otorgadas' )->with( [
 			'becas' => Becas::where("otorgada",1)
 							->leftJoin( 'ciudades', 'becas.id_ciudades', '=', 'ciudades.id_ciudades' )
@@ -62,6 +65,7 @@ class BecasController extends BaseController {
 	 * @return string JSON con respuesta errors y success
 	 */
 	public function processGrant(){
+		return Redirect::to('/')->send();
 		if ( ! Request::ajax() )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu petición</span>' ] ] );
 
@@ -164,6 +168,7 @@ class BecasController extends BaseController {
 	 * @return
 	 */
 	public function gracias(){
+		return Redirect::to('/')->send();
 		return View::make( 'public.becas.gracias' );
 	}
 }
