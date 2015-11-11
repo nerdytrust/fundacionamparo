@@ -109,7 +109,7 @@ class HomeController extends BaseController {
 		$registrado = Registrados::where('registrados.email',$inputs['email'])
 								   ->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 								   ->first();
-
+								   
 		if($registrado && $inputs['password'] == Crypt::decrypt($registrado->password)){
 			if($registrado['provider'] == 'facebook')
 				return Response::json( [ 'success' => false, 'errors' => '<span class="error">Usted esta registrado mediante <strong>facebook</strong>, Favor de logearse por ese medio</span>', 'message' => '' ] );
@@ -414,12 +414,32 @@ class HomeController extends BaseController {
 		$profile->displayName = $adapter_profile['name'];
 		$profile->email = $adapter_profile['email'];
 		$profile->emailVerified = $adapter_profile['email'];
-		//$profile->region = $adapter_profile['estado'];
-		//$profile->city = $adapter_profile['ciudad'];
+		$region = $this->getRegion($adapter_profile['registro_estado']);
+		$profile->region = $region->name;
+		$city = $this->getCity($adapter_profile['registro_ciudad']);
+		$profile->city = $city->name;
 		if ( ! $profile->save() )
 			return NULL;
 
 		return $profile;
+	}
+
+	/**
+	 * Método para obtener el nombre de la region 
+	 * @param  array $idRegion  id de la region a buscar
+	 * @return array  Devuelve el nombre de la region o NULL en caso de no existir region
+	 */
+	private function getRegion($idRegion){
+		return Estados::select( 'id_estados', 'name' )->where( 'id_estados', $idRegion )->first();
+	}
+
+	/**
+	 * Método para obtener la ciudad
+	 * @param  array $idCity  id de la ciudad a buscar
+	 * @return array  Devuelve el nombre de la ciudad o NULL en caso de no existir ciudad
+	 */
+	private function getCity($idCity){
+		return Ciudades::select( 'id_ciudades', 'name' )->where( 'id_ciudades', $idCity )->first();
 	}
 
 	/**
