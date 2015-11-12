@@ -98,6 +98,71 @@
         {{ Minify::javascript($js,['js_build_path'=>'js/']) }}
         <script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.0/js/conekta.js"></script>
         <script type="text/javascript" src="{{ asset( 'js/public/nice.scripts.js' ) }}"></script>
+        @if ( isset( $tooltip ) )
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+            <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+            <style>
+               .ui-tooltip, .arrow:after {
+                background: white;
+                border: 1px solid white;
+              }
+              .ui-tooltip {
+                padding: 10px 20px;
+                color: #929292;
+                border-radius: 0px;
+                font-size: 12px;
+              }
+              .arrow {
+                width: 70px;
+                height: 16px;
+                overflow: hidden;
+                position: absolute;
+                left: 50%;
+                margin-left: -35px;
+                bottom: -16px;
+              }
+              .arrow.top {
+                top: -16px;
+                bottom: auto;
+              }
+              .arrow.left {
+                left: 20%;
+              }
+              .arrow:after {
+                content: "";
+                position: absolute;
+                left: 20px;
+                top: -20px;
+                width: 25px;
+                height: 25px;
+                box-shadow: 6px 5px 9px -9px black;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+              }
+              .arrow.top:after {
+                bottom: -20px;
+                top: auto;
+              }
+            </style>
+            <script> $(function() {
+                 $(".paycardCVC").tooltip({
+                  position: {
+                    my: "right bottom-20",
+                    at: "left top",
+                    using: function( position, feedback ) {
+                      $( this ).css( position );
+                      $( "<div>" )
+                        .addClass( "arrow" )
+                        .addClass( feedback.vertical )
+                        .addClass( feedback.horizontal )
+                        .appendTo( this );
+                    }
+                  }
+                });
+              });
+            </script>
+        @endif
         @if ( isset( $timeline ) )
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
             <script src="http://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.core.min.js"></script>

@@ -1,4 +1,4 @@
-<?php $disable_header = 1; $disable_footer = 1; ?>
+<?php $tooltip = 1; $disable_header = 1; $disable_footer = 1; ?>
 @extends( 'public.covers.layout' )
 	@section( 'class' )donar-spei
 	@stop
@@ -25,7 +25,7 @@
 						</span>
 						<span>
 							{{ Form::text( '', '', [ 'id' => 'cvc', 'placeholder' => 'CVC', 'size' => 4, 'data-conekta' => 'card[cvc]', 'class' => 'inputPayCardCVC' ] ) }}
-							<img src="{{ asset( 'images/i.png' ) }}" alt="" class="paycardCVC" title="">
+							<img src="{{ asset( 'images/i.png' ) }}" alt="" class="paycardCVC" title="Los 3 o 4 dígitos en la parte tracera de tu tarjeta Visa o MasterCard o los 4 dígitos al frente de tu tarjeta American Express.">
 						</span>
 						<span>
 							<label for="" class="form-control">Fecha de expiración (MM/AA)</label>
