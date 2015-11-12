@@ -2962,7 +2962,7 @@ ul.ben li:before{
 	width: 100%;
 	position: relative !important;
 	background: #000;
-	height: 519px !important;
+	height: auto !important;
 }
 #ski{
 	
