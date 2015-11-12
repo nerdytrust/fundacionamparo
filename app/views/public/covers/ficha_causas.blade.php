@@ -35,8 +35,8 @@
 					<section class="tabs">
 			            <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
 				        <label for="tab-1" class="tab-label-1">Descripción</label>
-			            <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
-				        <label for="tab-2" class="tab-label-2">Donadores</label>
+			            <!--< <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />-->
+				        <!--<label for="tab-2" class="tab-label-2">Donadores</label>-->
 					    <div class="clear-shadow"></div>
 				        <div class="content">
 					        <div class="content-1">
