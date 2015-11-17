@@ -1009,6 +1009,10 @@ width: 28% !important;
 	/*background: red;*/
 }
 
+.lightbox .datos .datos-inf a{
+	color: #428bca;
+}
+
 #style-4{
 	/*background: red;*/
 	height: 400px !important;
