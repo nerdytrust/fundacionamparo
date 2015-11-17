@@ -11,7 +11,8 @@ class ApoyarCausaController extends BaseController {
 		'telefono'	  => [ 'required', 'numeric', 'min:10' ],
 		'email'		  => [ 'required', 'email', 'unique:apoyamos_causa' ],
 		'causa_tipo'  => [ 'required' ],
-		'descripcion' => [ 'required' ]
+		'descripcion' => [ 'required' ],
+		'terminos'    => [ 'required' ]
 	];
 
     /**

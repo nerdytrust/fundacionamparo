@@ -64,6 +64,11 @@
 							<span>
 								{{ Form::textarea( 'descripcion', '', [ 'placeholder' => 'Describe tu causa', 'rows' => 4, 'cols' => 50 ], Input::old( 'descripcion' ) ) }}
 							</span>
+							<div class="check-gris">
+								{{ Form::checkbox( 'terminos', 1, false, [ 'id' => 'check-verde' ] ) }}
+								<label for="check-verde"></label>
+								<a class="terminos" href="{{ URL::to( 'politicas-de-privacidad' ) }}" target="_blank">Acepto y he leído el aviso de privacidad</a>
+							</div>
 							<button type="submit">Enviar</button>
 							<p>Campos obligarotios para enviar formulario</p>
 						{{ Form::close() }}
