@@ -4,15 +4,15 @@
 
 	@section("content")
 		<section id="Contenedor">
-			<section class="mask_head back_img14" >
+			<section class="mask_head back_img13" >
 				<div class="txt_mask">
 					<img src="{{ asset( 'images/logo_mask_header.jpg' ) }}" alt="">
-					<h1>BECAS</h1>
-					<h3>¿Cómo solicitar una beca?</h3>
+					<h1>APOYAMOS TU CAUSA</h1>
+					<h3>Fundación Amparo apoya causas externas</h3>
 					<nav class="social_mask">
 						<ul>
 							{{ Helper::facebookShare( '', Request::url(), '' ) }}
-							{{ Helper::twitterShare( 'Becas', Request::url(), '' ) }}
+							{{ Helper::twitterShare( 'Apoyamos tu Causa', Request::url(), '' ) }}
 							{{-- <a href=""><li class="fa fa-heart"></li></a>
 							<p>96 likes</p> --}}
 						</ul>
