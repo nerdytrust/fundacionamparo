@@ -231,7 +231,7 @@
                     || $('body').hasClass( 'donar-oxxo' ) 
                     || $('body').hasClass( 'donar-paypal' ) ){
                     $('body').css({
-                        'background': '#beda3e'
+                        'background': '#BBD53C'
                     });
                 } else if ( $('body').hasClass( 'impulsar' ) || $('body').hasClass( 'impulsar-causa' ) || $('body').hasClass( 'gracias-impulsar' )){
                     $('body').css({
