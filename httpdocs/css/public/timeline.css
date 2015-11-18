@@ -68,9 +68,10 @@ header { display: inline-block !important; }
     position: absolute;
     outline: none;
     right: 15px;
-    width: 41px;
+    width: 40px;
     z-index: 17;
     border-radius: 0px;
+    border: none;
   }
 
   .btn-cerrar:hover{

@@ -1,4 +1,4 @@
-<button class="btn btn-cerrar" id="close-momento"></button>
+<button class="btn-cerrar" id="close-momento"></button>
 		<div class="container-fluid">
 		<div class="row">
 		 <section class="slider">
