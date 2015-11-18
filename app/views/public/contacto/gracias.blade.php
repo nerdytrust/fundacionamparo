@@ -6,7 +6,7 @@
 		<div class="lightbox-h gracias" id="donar">
 			<div class="lightbox-h-cont donar">
 				<img src="{{ asset( 'images/icon_donadores-v.png' ) }}" alt="">
-				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/' ) }}';"></button>
+				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/contacto' ) }}';"></button>
 				<h1>¡gracias!</h1>
 				<h2>Gracias por estar en contacto, en breve recibirás una <strong>respuesta</strong> de un asesor.</h2>
 			</div>
