@@ -74,8 +74,6 @@ header { display: inline-block !important; }
   }
 
   .btn-cerrar:hover{
-    background-color: transparent;
-    border: none;
     background-image: url(../../images/x2.png);
   }
   /*.btn-cerrar:active{
