@@ -11,6 +11,7 @@ class ContactoController extends BaseController {
 		'telefono'	  => [ 'required', 'numeric', 'min:10'],
 		'email'		  => [ 'required', 'email' ],
 		'mensaje'     => [ 'required' ],
+		'terminos'    => [ 'required' ]
 	];
 
     /**
