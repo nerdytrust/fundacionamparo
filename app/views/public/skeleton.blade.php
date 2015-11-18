@@ -47,7 +47,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="animsition">
+        <div class="">
             <div id="foo"></div>
             @yield("skeleton")
         </div>
@@ -231,7 +231,7 @@
                     || $('body').hasClass( 'donar-oxxo' ) 
                     || $('body').hasClass( 'donar-paypal' ) ){
                     $('body').css({
-                        'background': '#BBD53C'
+                        'background': '#bbd53c'
                     });
                 } else if ( $('body').hasClass( 'impulsar' ) || $('body').hasClass( 'impulsar-causa' ) || $('body').hasClass( 'gracias-impulsar' )){
                     $('body').css({
