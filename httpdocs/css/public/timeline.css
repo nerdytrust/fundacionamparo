@@ -71,22 +71,9 @@ header { display: inline-block !important; }
     width: 41px;
     z-index: 17;
     border-radius: 0px;
-    &:active {
-      outline: none;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none;
-    }
-    &:hover {
-      background-color: transparent;
-      border: none;
-    }
-    &:focus {
-      outline: none;
-    }
   }
 
-  .btn-cerrar:hover{
+  /*.btn-cerrar:hover{
     background-color: transparent;
     border: none;
     background-image: url(../../images/x2.png);
@@ -96,7 +83,7 @@ header { display: inline-block !important; }
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       box-shadow: none;
-  }
+  }*/
   
 .container-fluid{
   height: 100% !important;
