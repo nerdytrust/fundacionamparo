@@ -73,12 +73,12 @@ header { display: inline-block !important; }
     border-radius: 0px;
   }
 
-  /*.btn-cerrar:hover{
+  .btn-cerrar:hover{
     background-color: transparent;
     border: none;
     background-image: url(../../images/x2.png);
   }
-  .btn-cerrar:active{
+  /*.btn-cerrar:active{
      outline: none;
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
