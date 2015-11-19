@@ -22,11 +22,13 @@
 								var video = videojs($('.vi3').find('.video-js')[0]).ready(function(){
 								  var player = this;
 								  player.on('ended', function() {
-								  	//video.load();
+								  	video.load();
 								  	$(".vjs-loading-spinner").hide();
+								  	//$(".vjs-poster").hide();								  	
+
 								  });
 								   player.on('error', function() {
-								  	//video.load();
+								  	video.load();
 								  	$(".vjs-loading-spinner").hide();
 								  });
 								});
