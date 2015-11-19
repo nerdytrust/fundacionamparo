@@ -216,6 +216,11 @@
             </script>
             
         @endif
+        @if ( isset( $video_causas ) )
+            <script type="text/javascript">
+                $('vjs-big-play-button').remove();
+            </script>
+        @endif 
         <script type="text/javascript">
             $(document).ready(function(){
 

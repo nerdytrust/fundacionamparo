@@ -1,3 +1,4 @@
+<?php $video_causas = 1; ?>
 @extends('public.layout')
 	@section('class')causas-vivas
 	@stop
