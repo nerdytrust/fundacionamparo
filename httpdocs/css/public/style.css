@@ -308,6 +308,7 @@ div.subtitleM{
 	vertical-align: top;
 	/*padding: 20px 0 0 0;*/
 	display: block;
+	position: relative;
 	}
 	#pleca_causas h1{
 		color: #FFF;
@@ -2962,7 +2963,7 @@ ul.ben li:before{
 	width: 100%;
 	position: relative !important;
 	background: #000;
-	height: 519px !important;
+	/*height: 519px !important;*/
 }
 #ski{
 	
