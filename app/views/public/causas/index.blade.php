@@ -31,7 +31,7 @@
 								  });
 								});
 
-								 $('.vjs-big-play-button').remove();    
+								 //$('.vjs-big-play-button').remove();    
 							});
 						</script>
 			@endif
