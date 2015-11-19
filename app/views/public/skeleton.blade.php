@@ -218,7 +218,20 @@
         @endif
         <script type="text/javascript">
             $(document).ready(function(){
-                if ( $('body').hasClass( 'donar' ) 
+
+                $('.animsition').animsition().fadeIn();
+
+                if(    $('body').hasClass( 'registro' )
+                    || $('body').hasClass( 'donar-causa' )
+                    || $('body').hasClass( 'donar-oxxo' )){
+                    $('.d').css({'height': 'auto'});
+                }else if ( $('body').hasClass( 'ficha-causas' ) ){
+                    $(".ficha-causas .lightbox .datos").hover(function(){
+                        $("#barra progress").toggleClass("barramover");
+                    });
+                }
+
+               /* if ( $('body').hasClass( 'donar' ) 
                     || $('body').hasClass( 'donar-causa' ) 
                     || $('body').hasClass( 'entrar' )
                     || $('body').hasClass( 'salir' ) 
@@ -245,9 +258,7 @@
                     $(".ficha-causas .lightbox .datos").hover(function(){
                         $("#barra progress").toggleClass("barramover");
                     });
-                }
-
-                $('.animsition').animsition().fadeIn();
+                }*/
             });
         </script>
     </body>

@@ -3,7 +3,7 @@
 	@section("class")voluntario
 	@stop
 	@section("content")
-		<div class="lightbox-h" id="naranja1">
+		<div class="lightbox-h v" id="naranja1">
 			<div class="lightbox-h-cont vol">
 				<img src="images/icon_donadores-v.png" alt="">
 				<!--<button class="cerrar-h"></button>-->

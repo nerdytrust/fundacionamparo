@@ -49,7 +49,8 @@ $(function(){
 	 */
 	$("#form_paycard").submit(function(event) {
 		event.preventDefault();
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		var $form;
 		$form = $(this);
 		/* Previene hacer submit más de una vez */
@@ -64,25 +65,35 @@ $(function(){
 	 * Método para procesar el paso uno del formulario de donación
 	 */
 	$('#form_nueva_donacion').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
+		$('body').css('background', '#ffffff');
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css('display','block');
 			},
 			success: function(data){
 				if(data.success != true){
-					spinner.stop();
+					//spinner.stop();
+					$('body').css('background', '#bbd53c');
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
 				}else{
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
+					$('body').css('background', '#bbd53c');
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					window.location.href = data.redirect;
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
+				$('body').css('background', '#bbd53c');
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -95,14 +106,16 @@ $(function(){
 	 * Método para procesar el paso dos del formulario de donación
 	 */
 	$('#form_step_two_donacion').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css( 'display', 'block' );
 			},
 			success: function(data){
 				if(data.success != true ){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -111,7 +124,8 @@ $(function(){
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -124,19 +138,22 @@ $(function(){
 	 * Método para procesar el formulario para recordar el password
 	 */
 	$('#form_forgot_password').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css( 'display', 'block' );
 			},
 			success: function(data){
 				if(data.success != true ){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
 				}else{
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').addClass('alert-success');
 					$('#messages').html(data.message);
@@ -145,7 +162,8 @@ $(function(){
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -158,14 +176,16 @@ $(function(){
 	 * Método para procesar el formulario de registro
 	 */
 	$('#form_new_member').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css( 'display', 'block' );
 			},
 			success: function(data){
 				if(data.success != true ){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -174,7 +194,8 @@ $(function(){
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -187,14 +208,16 @@ $(function(){
 	 * Método para procesar el formulario de login
 	 */
 	$('#form_login').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css( 'display', 'block' );
 			},
 			success: function(data){
 				if(data.success != true ){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -203,7 +226,8 @@ $(function(){
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -217,14 +241,16 @@ $(function(){
 	 * Método para procesar el formulario de contacto
 	 */
 	$('#formulario_contacto').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css( 'display', 'block' );
 			},
 			success: function(data){
 				if ( data.success != true ){
-					spinner.stop();
+					$('.animsition').animsition().fadeIn();
+					//spinner.stop();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -234,7 +260,8 @@ $(function(){
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -248,14 +275,16 @@ $(function(){
 	 * Método para procesar el formulario de becas
 	 */
 	$('#form_solicitud_beca').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		$(this).ajaxSubmit({
 			beforeSend: function(){
 				$('#foo').css( 'display', 'block' );
 			},
 			success: function(data){
 				if ( data.success != true ){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -265,7 +294,8 @@ $(function(){
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css( 'display', 'none' );
 				$('#messages').html( data.errors );
 				$('#messages').css( 'display', 'block' );
@@ -279,14 +309,16 @@ $(function(){
 	 * Método para procesar el formulario de apoyamos tu causa 
 	 */
 	$('#form_apoyamos_causa').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css( 'display', 'block' );
 			},
 			success: function(data){
 				if(data.success != true ){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -296,7 +328,8 @@ $(function(){
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -310,25 +343,29 @@ $(function(){
 	 * Método para procesar el primer paso del formulario corto de voluntarios
 	 */
 	$('#form_nuevo_voluntario').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css('display','block');
 			},
 			success: function(data){
 				if(data.success != true){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
 				}else{
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					window.location.href = data.redirect;
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -341,14 +378,16 @@ $(function(){
 	 * Método para procesar el segundo paso del formulario corto de voluntarios
 	 */
 	$('#form_continuacion_voluntario').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css( 'display', 'block' );
 			},
 			success: function(data){
 				if(data.success != true ){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -357,7 +396,8 @@ $(function(){
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -370,20 +410,23 @@ $(function(){
 	 * Método para procesar el formulario largo de Voluntarios
 	 */
 	$('#form_voluntario_full').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		$(this).ajaxSubmit({
 			beforeSend: function(){
 				$('#foo').css( 'display', 'block' );
 			},
 			success: function(data){
 				if ( data.success != true ){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
 					$('html,body').animate({scrollTop: $('#Contenedor').offset().top }, 2000 );
 				} else {
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').addClass('alert-success');
 					$('#messages').html(data.message);
@@ -393,7 +436,8 @@ $(function(){
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css( 'display', 'none' );
 				$('#messages').html( data.errors );
 				$('#messages').css( 'display', 'block' );
@@ -404,14 +448,16 @@ $(function(){
 	});
 
 	$('#form_paypal_donacion').submit(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css( 'display', 'block' );
 			},
 			success: function(data){
 				if(data.success != true ){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -420,7 +466,8 @@ $(function(){
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -433,7 +480,8 @@ $(function(){
 	 * Método para procesar un "ME GUSTA" de algún contenido
 	 */
 	$('.like-process').click(function(){
-		var spinner = new Spinner(opts).spin(target);
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
 		var content_id 		= $(this).attr( 'data-contenido' );
 		var content_type 	= $(this).attr( 'data-tipo' );
 		$.ajax({
@@ -449,7 +497,8 @@ $(function(){
 					window.location.reload();
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				console.log( data.errors );
 			}
@@ -516,25 +565,28 @@ $(function(){
 	 */
 	 var offset = 6;
 	$('#load-news').click(function(){
-		var spinner;
+		//var spinner;
 
 		$.ajax({
 			url: 'carga-noticias/6/'+offset,
 			dataType: 'json',
 			beforeSend: function(){
-				 spinner = new Spinner(opts).spin(target);
+				// spinner = new Spinner(opts).spin(target);
+				$('.animsition').animsition().fadeOut();
 				$('#foo').css( 'display', 'block' );
 				offset = offset + 6;
 			},
 			success: function(data){
 				if ( data.success ){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$( "#fnews" ).before( data.noticias );
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				console.log( data.errors );
 			}
@@ -544,25 +596,28 @@ $(function(){
 
 	var offset_resultado = 3;
 	$('#load-news-search').click(function(){
-		var spinner;
+		//var spinner;
 
 		$.ajax({
 			url: 'carga-noticias-resultado/3/'+offset_resultado+'/'+s,
 			dataType: 'json',
 			beforeSend: function(){
-				 spinner = new Spinner(opts).spin(target);
+				 //spinner = new Spinner(opts).spin(target);
+				 $('.animsition').animsition().fadeOut();
 				$('#foo').css( 'display', 'block' );
 				offset_resultado = offset_resultado + 3;
 			},
 			success: function(data){
 				if ( data.success ){
-					spinner.stop();
+					//spinner.stop();
+					$('.animsition').animsition().fadeIn();
 					$('#foo').css('display','none');
 					$( "#fnews" ).before( data.noticias );
 				}
 			},
 			error: function(data){
-				spinner.stop();
+				//spinner.stop();
+				$('.animsition').animsition().fadeIn();
 				$('#foo').css('display','none');
 				console.log( data.errors );
 			}
