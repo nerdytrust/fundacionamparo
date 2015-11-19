@@ -19,7 +19,8 @@
 				@endforeach
 				<script type="text/javascript">
 							document.addEventListener("DOMContentLoaded", function(event) { 
-								var video = videojs($('.vi3').find('.video-js')[0]).ready(function(){
+								  var height = $(".vi3").css('height');
+								  var video = videojs($('.vi3').find('.video-js')[0]).ready(function(){
 								  var player = this;
 								  player.on('play', function() {
 								  	console.log('play');
@@ -28,12 +29,12 @@
 								  player.on('ended', function() {
 								  	video.load();
 								  	$(".vjs-loading-spinner").hide();
-								  	$(".vi3 video").css('height','auto');
+								  	$(".vi3 video").css('height',height);
 								  });
 								   player.on('error', function() {
 								  	video.load();
 								  	$(".vjs-loading-spinner").hide();
-								  	$(".vi3 video").css('height','auto');
+								  	$(".vi3 video").css('height',height);
 								  });
 								});
 
