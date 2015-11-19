@@ -1,4 +1,3 @@
-<?php $video_causas = 1; ?>
 @extends('public.layout')
 	@section('class')causas-vivas
 	@stop
@@ -31,6 +30,8 @@
 								  	$(".vjs-loading-spinner").hide();
 								  });
 								});
+
+								 $('.vjs-big-play-button').remove();    
 							});
 						</script>
 			@endif
