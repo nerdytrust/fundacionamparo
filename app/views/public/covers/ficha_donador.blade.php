@@ -24,7 +24,7 @@
 	 					@endif	
 					</span><!--termina foto-usuario-->
 					<p>
-						Forma parte de nuestro círculo de donadores desde el 12 de Agosto 2014  una persona más que se suma.
+						Forma parte de nuestro círculo de donadores desde el {{ $donador->created_at }}  una persona más que se suma.
 						<b>Muchas gracias.</b>
 					</p>
 				</span><!--termina usuario-->

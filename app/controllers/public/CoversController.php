@@ -457,8 +457,12 @@ class CoversController extends BaseController {
 		$profile = DB::table( 'registrados' )
 				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 				->where( 'registrados.id_registrados', $id_profile )
-				->select( 'profiles.id_registrados','profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.me_gusta' )
+				->select( 'profiles.id_registrados','profiles.photoURL', 'profiles.displayName', 'profiles.city', 'profiles.created_at', 'registrados.me_gusta' )
 				->first();
+		$meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+		$fecha = explode('-', $profile->created_at);
+		$fecha = substr($fecha[2],0,2).' de '.$meses[$fecha[1]-1].' del '.$fecha[0];
+ 		$profile->created_at = $fecha;
 
 		return $profile;
 	}
