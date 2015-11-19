@@ -618,7 +618,8 @@ button.feis #invitar{
 
 .d{
 	/*background: url("../images/back-li3.png") !important; */
-	background: #beda3e;
+	background: #bbd53c;
+	height:100vh;
 }
 
 .gracias{
@@ -628,6 +629,11 @@ button.feis #invitar{
 .i{
 	/*background: url("../images/back-li4.png") !important;*/
 	background: #4f99d9;
+	height:100vh;
+}
+
+.v{
+	height:100vh;
 }
 
 .donar{
