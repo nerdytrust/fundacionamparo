@@ -23,14 +23,17 @@
 								  var player = this;
 								  player.on('play', function() {
 								  	console.log('play');
+								  	$(".vi3 video").css('height','100%');
 								  });
 								  player.on('ended', function() {
 								  	video.load();
 								  	$(".vjs-loading-spinner").hide();
+								  	$(".vi3 video").css('height','auto');
 								  });
 								   player.on('error', function() {
 								  	video.load();
 								  	$(".vjs-loading-spinner").hide();
+								  	$(".vi3 video").css('height','auto');
 								  });
 								});
 
