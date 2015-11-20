@@ -43,7 +43,7 @@
 						</script>
 			@endif
 
-			<div id="pleca_causas" class="">
+			<div id="pleca_causas" class="position_relative">
 				<h1>CAUSAS FUNDACIÓN AMPARO</h1>
 			</div>
 			<div class="re">
