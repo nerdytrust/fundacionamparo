@@ -198,7 +198,7 @@ div.subtitleM{
 		transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
 		-moz-transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
 		-webkit-transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
-		background: url("../../images/back-t1.png")repeat;
+		/*background: url("../../images/back-t1.png")repeat;*/
 		cursor: auto !important;
 
 	}
