@@ -44,7 +44,7 @@
 								  	if(window.screen.width >= 1650 && window.screen.width < 2400)
 								  		$('.vi video').attr('style', 'height: 750px !important');
 								  	else if(window.screen.width >= 2400)
-								  		$('.vi video').attr('style', 'height: 850px !important');
+								  		$('.vi video').attr('style', 'height: 950px !important');
 								  });
 								  player.on('ended', function() {
 								  	video.load();
