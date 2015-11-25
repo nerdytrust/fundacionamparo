@@ -23,7 +23,6 @@
 								  var video = videojs($('.vi3').find('.video-js')[0]).ready(function(){
 								  var player = this;
 								  player.on('play', function() {
-								  	console.log('play');
 								  	$(".vi3 video").css('height','100%');
 								  });
 								  player.on('ended', function() {
@@ -40,7 +39,7 @@
 
 								 //$('.vjs-big-play-button').remove();    
 							});
-						</script>
+				</script>
 			@endif
 
 			<div id="pleca_causas" class="position_relative">

@@ -35,6 +35,30 @@
 							});
 						});
 						</script>
+						<script type="text/javascript">
+							document.addEventListener("DOMContentLoaded", function(event) { 
+								  var height = $(".vi").css('height');
+								  var video = videojs($('.vi').find('.video-js')[0]).ready(function(){
+								  var player = this;
+								  player.on('play', function() {
+								  	if(window.screen.width > 1650)
+								  		$('.vi video').attr('style', 'height: 750px !important');
+								  });
+								  player.on('ended', function() {
+								  	video.load();
+								  	$(".vjs-loading-spinner").hide();
+								  	$(".vi video").css('height',height);
+								  });
+								   player.on('error', function() {
+								  	video.load();
+								  	$(".vjs-loading-spinner").hide();
+								  	$(".vi video").css('height',height);
+								  });
+								});
+
+								 //$('.vjs-big-play-button').remove();    
+							});
+						</script>
 				@endif
 				<aside class="btns">
 					<article id="btn_twitter" class="">
