@@ -1153,7 +1153,6 @@ span.esquina{
 	width: 100%;
 	height: auto;
 	display: block;
-	filter: grayscale(1);
 }
 .caja_fca_usu span.mio{
 	width: 100%;
