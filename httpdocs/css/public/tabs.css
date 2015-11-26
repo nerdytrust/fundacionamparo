@@ -20,7 +20,7 @@
 	cursor: pointer;
 }
 .tabs:after{
-content: "|";
+content: "";
 color: #919191;
 position: absolute;	
   left: 107px;
