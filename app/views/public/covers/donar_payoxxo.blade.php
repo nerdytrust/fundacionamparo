@@ -8,7 +8,7 @@
 				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/gracias' ) }}';"></button>
 				<h1>PAGO EN OXXO</h1>
 				<p>
-					<b>Fundación Amparo I.B.P de C.V.</b><br/>
+					<b>Fundación Amparo I.B.P</b><br/>
 					Calle 2 Sur No. 708, Centro Histórico, <br/>
 					72000 Heróica Puebla de Zaragoza, Pue.
 				</p>
