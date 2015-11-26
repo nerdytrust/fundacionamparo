@@ -77,14 +77,17 @@ $(function(){
 					//spinner.stop();
 					$('body').css('background', '#bbd53c');
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
 				}else{
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('body').css('background', '#bbd53c');
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					window.location.href = data.redirect;
 				}
@@ -92,8 +95,10 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('body').css('background', '#bbd53c');
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -116,6 +121,7 @@ $(function(){
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -126,6 +132,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -148,12 +155,14 @@ $(function(){
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
 				}else{
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').addClass('alert-success');
 					$('#messages').html(data.message);
@@ -164,6 +173,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -186,6 +196,8 @@ $(function(){
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -196,6 +208,8 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -218,6 +232,7 @@ $(function(){
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -228,6 +243,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -250,6 +266,7 @@ $(function(){
 			success: function(data){
 				if ( data.success != true ){
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					//spinner.stop();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
@@ -262,6 +279,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -285,6 +303,7 @@ $(function(){
 				if ( data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -296,6 +315,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css( 'display', 'none' );
 				$('#messages').html( data.errors );
 				$('#messages').css( 'display', 'block' );
@@ -319,6 +339,7 @@ $(function(){
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -330,6 +351,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -353,12 +375,14 @@ $(function(){
 				if(data.success != true){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
 				}else{
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					window.location.href = data.redirect;
 				}
@@ -366,6 +390,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -388,6 +413,7 @@ $(function(){
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -398,6 +424,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -420,6 +447,7 @@ $(function(){
 				if ( data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -427,6 +455,7 @@ $(function(){
 				} else {
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').addClass('alert-success');
 					$('#messages').html(data.message);
@@ -438,6 +467,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css( 'display', 'none' );
 				$('#messages').html( data.errors );
 				$('#messages').css( 'display', 'block' );
@@ -458,6 +488,7 @@ $(function(){
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -468,6 +499,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -499,6 +531,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				console.log( data.errors );
 			}
@@ -580,6 +613,7 @@ $(function(){
 				if ( data.success ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$( "#fnews" ).before( data.noticias );
 				}
@@ -587,6 +621,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				console.log( data.errors );
 			}
@@ -611,6 +646,7 @@ $(function(){
 				if ( data.success ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$( "#fnews" ).before( data.noticias );
 				}
@@ -618,6 +654,7 @@ $(function(){
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
+$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				console.log( data.errors );
 			}
