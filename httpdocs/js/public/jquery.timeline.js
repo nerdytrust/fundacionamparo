@@ -212,7 +212,7 @@
               item,
               slide;
 
-          slider.controlNavScaffold = $('<ol class="'+ namespace + 'control-nav ' + namespace + type + '"></ol>');
+          slider.controlNavScaffold = $('<div class="'+ namespace + 'control-nav ' + namespace + type + '"><ol class="'+ namespace + 'control-nav ' + namespace + type + '"></ol></div>');
 
           if (slider.pagingCount > 1) {
             for (var i = 0; i < slider.pagingCount; i++) {
