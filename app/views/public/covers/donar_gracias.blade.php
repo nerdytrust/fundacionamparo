@@ -6,7 +6,7 @@
 		<div class="lightbox-h d" id="donar">
 			<div class="lightbox-h-cont donar">
 				<img src="{{ asset( 'images/icon_donadores-v.png' ) }}" alt="">
-				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/donar' ) }}';"></button>
+				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/' ) }}';"></button>
 				<!--<button onClick="history.back()" class="regresar"> Regresar</button>-->
 				<h1>¡gracias!</h1>
 				<h2>Ya estás <br/> <b>#TomandoAcciónFA</b></h2>

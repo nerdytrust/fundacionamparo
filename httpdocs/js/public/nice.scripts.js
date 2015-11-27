@@ -75,30 +75,26 @@ $(function(){
 			success: function(data){
 				if(data.success != true){
 					//spinner.stop();
-					$('body').css('background', '#bbd53c');
+					//$('body').css('background', '#bbd53c');
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
 				}else{
 					//spinner.stop();
-					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
-					$('body').css('background', '#bbd53c');
-					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					/*$('.animsition').animsition().fadeIn();
+					$('.animsition-loading').remove();*/
+					//$('body').css('background', '#bbd53c');
 					$('#foo').css('display','none');
-					window.location.href = data.redirect;
+					setTimeout(function(){window.location.href = data.redirect;},2000);
 				}
 			},
 			error: function(data){
 				//spinner.stop();
-				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
 				$('body').css('background', '#bbd53c');
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -375,22 +371,22 @@ $('.animsition-loading').remove();
 				if(data.success != true){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
 				}else{
 					//spinner.stop();
-					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					/*$('.animsition').animsition().fadeIn();
+					$('.animsition-loading').remove();*/
 					$('#foo').css('display','none');
-					window.location.href = data.redirect;
+					setTimeout(function(){window.location.href = data.redirect;},2000);
 				}
 			},
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
