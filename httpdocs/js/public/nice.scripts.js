@@ -715,14 +715,12 @@ $(function(){
 	    }
 	}
 
-	$('#timeline_left').click(function(){
+	$('#timeline_right').click(function(){
 		var div = $('div.flex-control-nav');
 		var count_lis = $('div.flex-control-nav li').length;
 		realWidth = (count_lis*60.7826);
 		var resolution = window.screen.width;
 		var minLeft = (resolution-realWidth);
-console.log(minLeft);
-console.log(parseInt(div.css('left')));
 		if(parseInt(div.css('left')) >= minLeft){
 			div.animate({
         		'left': '-=100px',
@@ -730,7 +728,7 @@ console.log(parseInt(div.css('left')));
     	}	
 	});
 
-	$('#timeline_right').click(function(){
+	$('#timeline_left').click(function(){
 		var div = $('div.flex-control-nav');
 		if(parseInt(div.css('left')) < 0){
 			div.animate({
