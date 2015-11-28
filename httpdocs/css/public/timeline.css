@@ -347,16 +347,23 @@ html[xmlns] .flexslider .slides {
   background: transparent;
   height: auto;
   padding: 0 3%;
+  left: 0px;
 }
 .flex-control-nav::before{
   content: "";
   position: absolute;
-  top: 37%;
+  bottom: 25px;
   width: 99.9%;
-  left: 0;
+  left: -30px;
   background-color: #bfda3f;
   height: 2px;
   color: #fff;
+}
+div.flex-control-nav::before{
+  content: initial;
+}
+ol.flex-control-nav::before{
+  width: 500%;
 }
 .flex-control-nav li {
   margin: 0 -20px;
@@ -365,7 +372,7 @@ html[xmlns] .flexslider .slides {
   display: inline-table;
 }
 .flex-control-paging li a {
-  width: 85px;
+  width: 99px;
   height: 0px;
   display: table;
   /*background: #bfda3f;*/
