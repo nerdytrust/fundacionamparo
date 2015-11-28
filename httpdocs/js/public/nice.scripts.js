@@ -117,7 +117,7 @@ $(function(){
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -128,7 +128,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -151,14 +151,14 @@ $('.animsition-loading').remove();
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
 				}else{
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').addClass('alert-success');
 					$('#messages').html(data.message);
@@ -169,7 +169,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -192,7 +192,7 @@ $('.animsition-loading').remove();
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
@@ -204,7 +204,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
@@ -228,7 +228,7 @@ $('.animsition-loading').remove();
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -239,7 +239,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -262,7 +262,7 @@ $('.animsition-loading').remove();
 			success: function(data){
 				if ( data.success != true ){
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					//spinner.stop();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
@@ -275,7 +275,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -299,7 +299,7 @@ $('.animsition-loading').remove();
 				if ( data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -311,7 +311,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css( 'display', 'none' );
 				$('#messages').html( data.errors );
 				$('#messages').css( 'display', 'block' );
@@ -335,7 +335,7 @@ $('.animsition-loading').remove();
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -347,7 +347,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -409,7 +409,7 @@ $('.animsition-loading').remove();
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -420,7 +420,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -443,7 +443,7 @@ $('.animsition-loading').remove();
 				if ( data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -451,7 +451,7 @@ $('.animsition-loading').remove();
 				} else {
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').addClass('alert-success');
 					$('#messages').html(data.message);
@@ -463,7 +463,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css( 'display', 'none' );
 				$('#messages').html( data.errors );
 				$('#messages').css( 'display', 'block' );
@@ -484,7 +484,7 @@ $('.animsition-loading').remove();
 				if(data.success != true ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$('#messages').html(data.errors);
 					$('#messages').css('display', 'block');
@@ -495,7 +495,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				$('#messages').html(data.errors);
 				$('#messages').css('display', 'block');
@@ -527,7 +527,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				console.log( data.errors );
 			}
@@ -609,7 +609,7 @@ $('.animsition-loading').remove();
 				if ( data.success ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+    				$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$( "#fnews" ).before( data.noticias );
 				}
@@ -617,7 +617,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				console.log( data.errors );
 			}
@@ -642,7 +642,7 @@ $('.animsition-loading').remove();
 				if ( data.success ){
 					//spinner.stop();
 					$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+					$('.animsition-loading').remove();
 					$('#foo').css('display','none');
 					$( "#fnews" ).before( data.noticias );
 				}
@@ -650,7 +650,7 @@ $('.animsition-loading').remove();
 			error: function(data){
 				//spinner.stop();
 				$('.animsition').animsition().fadeIn();
-$('.animsition-loading').remove();
+				$('.animsition-loading').remove();
 				$('#foo').css('display','none');
 				console.log( data.errors );
 			}
@@ -714,6 +714,30 @@ $('.animsition-loading').remove();
 	        };
 	    }
 	}
+
+	$('#timeline_left').click(function(){
+		var div = $('div.flex-control-nav');
+		var count_lis = $('div.flex-control-nav li').length;
+		realWidth = (count_lis*60.7826);
+		var resolution = window.screen.width;
+		var minLeft = (resolution-realWidth);
+console.log(minLeft);
+console.log(parseInt(div.css('left')));
+		if(parseInt(div.css('left')) >= minLeft){
+			div.animate({
+        		'left': '-=100px',
+    		}, 'slow');
+    	}	
+	});
+
+	$('#timeline_right').click(function(){
+		var div = $('div.flex-control-nav');
+		if(parseInt(div.css('left')) < 0){
+			div.animate({
+        		'left': '+=100px',
+    		}, 'slow');	
+		}
+	});	
 
 });
 

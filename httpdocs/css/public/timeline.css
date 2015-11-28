@@ -347,6 +347,7 @@ html[xmlns] .flexslider .slides {
   background: transparent;
   height: auto;
   padding: 0 3%;
+  left: 0px;
 }
 .flex-control-nav::before{
   content: "";
@@ -371,7 +372,7 @@ ol.flex-control-nav::before{
   display: inline-table;
 }
 .flex-control-paging li a {
-  width: 85px;
+  width: 99px;
   height: 0px;
   display: table;
   /*background: #bfda3f;*/
