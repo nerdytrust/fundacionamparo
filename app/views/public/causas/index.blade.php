@@ -43,7 +43,7 @@
 			@endif
 
 			<div id="pleca_causas" class="position_relative">
-				<h1>CAUSAS FUNDACIÓN AMPARO</h1>
+				<h1>CAUSAS PERMANENTES</h1>
 			</div>
 			<div class="re">
 	 			
@@ -85,7 +85,7 @@
 
 			</div><!--termina re-->
 			<div id="pleca_causas" class="">
-							<h1>CAUSAS EXTERNAS</h1>
+				<h1>CAUSAS ESPECÍFICAS</h1>
 			</div>
 				@if ( isset( $externas ) )
 	 				@foreach ( $externas as $externa )

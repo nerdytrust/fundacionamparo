@@ -224,7 +224,7 @@
                 if(    $('body').hasClass( 'registro' )
                     || $('body').hasClass( 'donar-causa' )
                     || $('body').hasClass( 'donar-oxxo' )){
-                    $('.d').css({'height': 'auto'});
+                    $('.d').css({'height': '100vh'});
                 }else if ( $('body').hasClass( 'ficha-causas' ) ){
                     $(".ficha-causas .lightbox .datos").hover(function(){
                         $("#barra progress").toggleClass("barramover");
