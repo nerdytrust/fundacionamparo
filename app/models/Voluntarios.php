@@ -43,7 +43,23 @@ class Voluntarios extends \Crud {
     public function afterStore(&$params){}
 
     public function beforeUpdate(&$params){}
-    public function afterUpdate(&$params){}
+    public function afterUpdate(&$params){
+
+        $old_aprobacion = $params->old_values->aprobacion;
+        $new_aprobacion = $params->record->attributes['aprobacion'];
+
+        if($old_aprobacion == 0 && $new_aprobacion == 1){
+
+            $welcome = Mail::send( 'public.mail.welcome', [ 'username' => 'Francisco'], function( $message ) {
+            $message
+                ->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+                ->to( 'aslanlion56@gmail.com', 'Francisco' )
+                ->subject( 'Ya eres voluntario' );
+            });
+
+        }
+        
+    }
 
     public function beforeDestroy(&$params){}
     public function afterDestroy(&$params){}
@@ -143,6 +159,17 @@ class Voluntarios extends \Crud {
         // 
         //
         "validations"     => [],
+        //
+        // Validate edit inputs
+        // Rules by column
+        // "email" => "required|min:10|email"
+        // without validation
+        // "imagen" => ""  
+        //
+        // http://laravel.com/docs/4.2/validation#available-validation-rules
+        // 
+        //
+        "edit_validations" => ["email" => "required|max:180|min:10|email"],
         //
         // Columns enable by view
         // Default enable all columns
