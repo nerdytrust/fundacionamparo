@@ -1130,7 +1130,7 @@ class Crud extends \BaseModel {
         return $validations;
     }
 
-     public function getValidationsEdit($columns = [], $id = "")
+    public function getValidationsEdit($columns = [], $id = "")
     {
         $validations = [];
         $numeric = ["smallint","integer","bigint","float","decimal","blob"];
@@ -1192,7 +1192,14 @@ class Crud extends \BaseModel {
         return $validations;
     }
 
+     public function getOldValues($id = "",$model)
+    {
+        
+        $table     = $this->getTable();
+        $oldValues = DB::table($table)->where('id_'.$model,$id)->first();
 
+        return $oldValues;
+    }
 
 
     protected function replaceUnderScore($text)

@@ -533,27 +533,31 @@ class CrudController extends \BaseController {
             unset($validations["password"]);
         }
 
-        $key_value= $id;
-        $key_name = $class->getKeyName();
-        $model    = $this->modelName;
-        $path     = $this->viewName;
-
+        $key_value = $id;
+        $key_name  = $class->getKeyName();
+        $model     = $this->modelName;
+        $path      = $this->viewName;
+        if($model == 'voluntarios')
+            $oldValues = $class->getOldValues($id,$model);
+        else
+            $oldValues = '';
 
         $record = $class::find($key_value);
 
         $params = (object)[
-                    "me"        => &$this,
-                    "class"     => &$class,
-                    "model"     => &$model,
-                    "key_value" => &$key_value,
-                    "key_name"  => &$key_name,
-                    "record"    => &$record,
-                    "action"    => __FUNCTION__,
-                    "validations"     => &$validations,
-                    "validator" => &$validator,
-                    "inputs"    => &$_inputs,
-                    "columns"   => &$columns,
-                    "path"      => &$path
+                    "me"         => &$this,
+                    "class"      => &$class,
+                    "model"      => &$model,
+                    "key_value"  => &$key_value,
+                    "key_name"   => &$key_name,
+                    "record"     => &$record,
+                    "action"     => __FUNCTION__,
+                    "validations"=> &$validations,
+                    "validator"  => &$validator,
+                    "inputs"     => &$_inputs,
+                    "columns"    => &$columns,
+                    "path"       => &$path,
+                    "old_values" => &$oldValues
                   ];
 
         $class->beforeUpdate($params);
