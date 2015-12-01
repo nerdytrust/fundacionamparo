@@ -56,6 +56,15 @@
  <span class="help-block">{{ $errors->first('imagen') }}</span>
 </div>
 
+<div class="form-group @if ($errors->has('video')) has-error @endif">
+
+ {{ Form::label("video", "Video") }}
+   
+       {{ Form::filepicker("video",$record->video) }}
+    
+ <span class="help-block">{{ $errors->first('video') }}</span>
+</div>
+
 <div class="form-group @if ($errors->has('orden')) has-error @endif">
 
  {{ Form::label("text", "Orden") }}

@@ -9,6 +9,7 @@
 					<td> {{ $columns->year->label }} </td>
 					<td> {{ $columns->titulo->label }} </td>
 					<td> {{ $columns->id_categorias->label }} </td>
+					<td> {{ $columns->video->label }} </td>
 
 
 					@include("crud.index-column-buttons")
@@ -25,6 +26,7 @@
 					<td>{{ parseToHTML($columns->year,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->titulo,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->id_categorias,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->video,$record,$fk_column) }}</td>
 
 
 					@include("crud.index-buttons")

@@ -93,7 +93,7 @@ class Muros extends \Crud {
         // "password", "email","datetime","date","time","select","autocomplete","money","currency", 
         // "file","document","audio","video","zip", "category"
         //
-        "inputs"    => [ 'imagen' => 'image' ],
+        "inputs"    => [ 'imagen' => 'image', 'video' => 'video' ],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
