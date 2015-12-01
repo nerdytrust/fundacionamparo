@@ -719,7 +719,7 @@ $(function(){
 		var div = $('div.flex-control-nav');
 		var count_lis = $('div.flex-control-nav li').length;
 		realWidth = (count_lis*60.7826);
-		var resolution = window.screen.width;
+		var resolution = parseInt($('body').css('width'));
 		var minLeft = (resolution-realWidth);
 		if(parseInt(div.css('left')) >= minLeft){
 			div.animate({
