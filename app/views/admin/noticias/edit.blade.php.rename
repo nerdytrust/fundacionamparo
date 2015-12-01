@@ -15,9 +15,9 @@
 
 <div class="form-group @if ($errors->has('contenido')) has-error @endif">
 
- {{ Form::label("textarea", "Contenido") }}
+ {{ Form::label("html", "Contenido") }}
    
-      {{ Form::textarea("contenido", $record->contenido,["class" => "form-control","placeholder"=>"Contenido"]) }}
+      {{ Form::editor("contenido",$record->contenido,[]); }}
     
  <span class="help-block">{{ $errors->first('contenido') }}</span>
 </div>
