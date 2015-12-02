@@ -52,7 +52,7 @@
  					<div id="social_footer">
  						<ul>
  							{{ Helper::facebookShare( '', Request::url(), '' ) }}
-		 					{{ Helper::twitterShare( 'La Fundación - Historia', Request::url(), 'TomandoAcciónFA' ) }}
+		 					{{ Helper::twitterShare( '¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz', Request::url(), 'TomandoAcciónFA' ) }}
  						</ul>
  					</div>
  				</div>

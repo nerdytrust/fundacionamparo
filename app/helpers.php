@@ -47,6 +47,17 @@ class Helper {
 		return $share_twitter;
 	}
 	/**
+	 * Método para agregar un botón share twitter con el usuario alterno
+	 * @param  string $text Título del contenido
+	 * @param  string $url  Url de la sección o contenido
+	 * @param  string $hashtags  Hashtag con el que se hace el share
+	 * @return Html del botón de share twitter
+	 */
+	public static function twitterShare2( $text, $url, $hashtags ){
+		$share_twitter = '<a href="https://twitter.com/intent/tweet?via=' . getenv( 'APP_USER2_TWITTER' ) . '&text=' . $text . '&url=' . $url . '&hashtags=' . $hashtags .'"><li class="fa fa-twitter"></li></a>';
+		return $share_twitter;
+	}
+	/**
 	 * Método para agregar un botón share twitter en los popups
 	 * @param  string $text Título del contenido
 	 * @param  string $url  Url de la sección o contenido

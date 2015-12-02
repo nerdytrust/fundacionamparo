@@ -51,7 +51,7 @@
 										<nav class="red-cont">
 											<ul>
 												{{ Helper::facebookShare( '', Request::url(), '' ) }}
-												{{ Helper::twitterShare( $membresia->nombre, Request::url(), '' ) }}
+												{{ Helper::twitterShare2( $membresia->nombre, Request::url(), '' ) }}
 												{{ Helper::like( $membresia->id_membresias, 'membresias' ) }}
 												<p>{{ $membresia->me_gusta }} likes</p>
 											</ul>
@@ -72,7 +72,7 @@
  					<div id="social_footer">
  						<ul>
  							{{ Helper::facebookShare( '', Request::url(), '' ) }}
-							{{ Helper::twitterShare( 'La Fundación - Membresías', Request::url(), 'TomandoAcciónFA' ) }}
+							{{ Helper::twitterShare( '¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz', Request::url(), 'TomandoAcciónFA' ) }}
  						</ul>
  					</div>
  				</div>
