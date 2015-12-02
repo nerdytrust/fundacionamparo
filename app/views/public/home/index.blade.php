@@ -1,3 +1,4 @@
+<?php $video = 1; ?>
 @extends("public.layout")
 	@section("class")home
 	@stop
@@ -14,7 +15,18 @@
 					</div>
 				</article>
 				@if ( isset( $videos ) )
-					<div class="vi ">
+					<div class="vi">
+        				<a href="{{ asset ( 'path_video/' . $videos->video ) }}">
+        					<div class="vjs-poster" style="background-image: url({{ asset( 'path_image/' . $videos->cover . '/' . '839x521' ) }});"></div>
+        					<div class="button-play" role="button"><span aria-hidden="true"></span></div>
+        				</a>
+    				</div>
+    				<script type="text/javascript">
+						document.addEventListener("DOMContentLoaded", function(event) { 
+							baguetteBox.run('.vi');
+						});
+					</script>
+					<!--<div class="vi ">
 							<video controls preload="none" poster="{{ asset( 'path_image/' . $videos->cover . '/' . '839x521' ) }}" class="video-js vjs-default-skin" data-setup="{}">
  								<source src="{{ asset ( 'path_video/' . $videos->video ) }}" type='video/mp4'>
  								<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
@@ -60,7 +72,7 @@
 
 								 //$('.vjs-big-play-button').remove();    
 							});
-						</script>
+						</script>-->
 				@endif
 				<aside class="btns">
 					<article id="btn_twitter" class="">

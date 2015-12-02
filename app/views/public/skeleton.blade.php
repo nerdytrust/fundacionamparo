@@ -40,6 +40,9 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
             <link rel="stylesheet" href="{{ asset( 'css/public/timeline.css' ) }}">
         @endif
+        @if ( isset( $video ) )
+            <link rel="stylesheet" href="{{ asset('css/public/baguetteBox.css') }}">
+        @endif
         <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
         <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
     </head>
@@ -98,6 +101,10 @@
         {{ Minify::javascript($js,['js_build_path'=>'js/']) }}
         <script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.0/js/conekta.js"></script>
         <script type="text/javascript" src="{{ asset( 'js/public/nice.scripts.js' ) }}"></script>
+        @if ( isset( $video ) )
+            <script type="text/javascript" src="{{ asset( 'js/public/baguetteBox.js' ) }}"></script>
+            <script type="text/javascript" src="{{ asset( 'js/public/plugins.js' ) }}"></script>
+        @endif
         @if ( isset( $tooltip ) )
             <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
             <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>

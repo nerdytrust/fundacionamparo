@@ -404,8 +404,8 @@ nav li{
 	display: inline-block;
 	margin: 3px 8px;
 }
-video { width: 49.9%; height: 519px; background: black;}
-video source{ width: 100%;}
+/*video { width: 49.9%; height: 519px; background: black;}
+video source{ width: 100%;}*/
 
 /*Animacón ---------- */
 article.animacion img {
@@ -2941,6 +2941,30 @@ ul.ben li:before{
 	float: left;
 	overflow: hidden;
 	vertical-align: top;
+	position: relative;
+}
+.button-play{
+	left: 39%;
+    top: 34%;
+    font-size: 3em;
+    display: block;
+    z-index: 2;
+    position: absolute;
+    width: 20.5%;
+    height: 31.5%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    opacity: 1;
+    background: url("../../images/play.png") no-repeat center;
+    background-size: contain;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.button-play-timeline{
+	left: 55%;
 }
 .vi video, .vi2 video{
 	width: 100%;
@@ -2961,6 +2985,7 @@ ul.ben li:before{
 	height: 519px;
 	background: #000;
 	display: block;
+	position: relative;
 }
 .vi3 video{
 	width: 100%;
@@ -3007,6 +3032,27 @@ span.esquina-pop{
 		margin: 5% auto;
 	}
 /*termina contact*/
+@media screen and (max-width: 768px){
+	.button-play-timeline{
+		left: 39%;
+		top: 18%;
+	}
+}
+@media screen and (min-width: 1650px) and (max-width:2400px ){
+	video { 
+		height: 100%; 
+	}
+}
+@media screen and (min-width: 2400px) {
+	video { 
+		height: 120%; 
+	}
+}
+@media screen and (min-width: 640px) and (max-width:1024px ){
+	video { 
+		height: 80%; 
+	}
+}
 @media screen and (min-width: 1650px){
 	.caja_1 img {
 	  width: 100%;

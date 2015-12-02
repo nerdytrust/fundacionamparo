@@ -1,3 +1,4 @@
+<?php $video = 1; ?>
 @extends('public.layout')
 	@section('class')causas-vivas
 	@stop
@@ -9,14 +10,25 @@
 					<h2>Tus donaciones construyen sueños y cambian vidas <b>#TomandoAcciónFA</b></h2>
 					<button id="btn_dona">DONAR AHORA</button>
 				</span>
-				@foreach ( $videos as $video )
+				<div class="vi3">
+        				<a href="{{ asset ( 'path_video/' . $videos->video ) }}">
+        					<div class="vjs-poster" style="background-image: url({{ asset( 'path_image/' . $videos->cover . '/' . '1596x608' ) }});"></div>
+        					<div class="button-play" role="button"><span aria-hidden="true"></span></div>
+        				</a>
+    			</div>
+				<script type="text/javascript">
+					document.addEventListener("DOMContentLoaded", function(event) { 
+						baguetteBox.run('.vi3');
+					});
+				</script>
+				<!--
 					<div class="vi3">
-						<video controls preload="none" poster="{{ asset( 'path_image/' . $video->cover . '/' . '1596x608' ) }}" class="video-js vjs-default-skin" data-setup="{}" style="width:100%">
-							<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
+						<video controls preload="none" poster="" class="video-js vjs-default-skin" data-setup="{}" style="width:100%">
+							<source src="" type='video/mp4'>
 							<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
 						</video>
 					</div>
-				@endforeach
+				
 				<script type="text/javascript">
 							document.addEventListener("DOMContentLoaded", function(event) { 
 								  var height = $(".vi3").css('height');
@@ -39,7 +51,7 @@
 
 								 //$('.vjs-big-play-button').remove();    
 							});
-				</script>
+				</script>-->
 			@endif
 
 			<div id="pleca_causas" class="position_relative">
