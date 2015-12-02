@@ -8,7 +8,9 @@
 				<article id="titulo_txt" class="" onclick="location.href='{{ URL::to( 'fundacion' ) }}';">
 					<h1>Conoce Fundación Amparo</h1>
 					<h2>#TomandoAcciónFA</h2>
-					<p>Promover y apoyar actos de beneficio a la población de México</p>
+					<!--<p>Promover y apoyar actos de beneficio a la población de México</p>-->
+					<h3>¡TÚ PUEDES AYUDAR!</h3>
+					<p>Tus donaciones hacen posible que esto continúe, pasa la voz #TomandoAcciónFA</p>
 					<h3><a href="{{ URL::to( 'fundacion' ) }}">MÁS INFORMACIÓN <span>+</span></a></h3>
 					<div id="titulo_img">
 						<img src="{{ asset( 'images/amparo.png' ) }}" alt="">
