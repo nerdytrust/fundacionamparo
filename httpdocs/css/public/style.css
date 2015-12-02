@@ -3043,9 +3043,14 @@ span.esquina-pop{
 		height: 100%; 
 	}
 }
-@media screen and (min-width: 2400px) {
+@media screen and (min-width: 2400px) and (max-width:3250px ){
 	video { 
 		height: 120%; 
+	}
+}
+@media screen and (min-width: 3250px){
+	video { 
+		height: 150%; 
 	}
 }
 @media screen and (min-width: 640px) and (max-width:1024px ){
