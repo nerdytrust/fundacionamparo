@@ -66,7 +66,16 @@ class Helper {
 	 */
 	public static function facebookShare( $after = '', $url, $before = '' ){
 		//$fb_share = '<a href="https://www.facebook.com/dialog/share?app_id=776167932490026&href=' . Request::url() . '&display=popup&redirect_uri=' . URL::to( 'http://www.facebook.com' ) . '" onclick="return !window.open(this.href, \'Share on Facebook\', \'width=640, height=536\')">' .$after . '<li class="fa fa-facebook"></li>' . $before . '</a>';
-		$fb_share = '<a href="http://www.facebook.com/share.php?u='. Request::url().'" onClick="return fbs_click(640, 536)" target="_blank" title="Share on Facebook">' .$after . '<li class="fa fa-facebook"></li>' . $before . '</a>';
+		$fb_share  = '<a href="https://www.facebook.com/dialog/share?';
+        $fb_share .= 'app_id=776167932490026';
+  		$fb_share .= '&display=popup';
+  		$fb_share .= '&href='.$url;
+		$fb_share .= '&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer">';
+		$fb_share .= $after; 
+		$fb_share .= '<li class="fa fa-facebook"></li>';
+		$fb_share .= $before;
+		$fb_share .= '</a>';
+		//$fb_share = '<a href="http://www.facebook.com/share.php?u='. $url .'" onClick="return fbs_click(640, 536)" target="_blank" title="Share on Facebook">' .$after . '<li class="fa fa-facebook"></li>' . $before . '</a>';
 		return $fb_share;
 	}
 	/**
