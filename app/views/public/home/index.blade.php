@@ -102,7 +102,7 @@
 
 			<!-- CAUSAS -->
 				<div id="pleca_causas" class="">
-					<h1>CAUSAS</h1>
+					<h1>CAUSAS PERMANENTES</h1>
 		 		</div>
 		 		<div class="re">
 		 			@if ( isset( $causas ) )
