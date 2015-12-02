@@ -1096,7 +1096,7 @@ background: url("../images/back-li3.png") repeat;
 	width: 93%;
 }
 
-.content-1 > b{
+.content-1 > a{
 	color: #000;
 	font-weight: bolder;
 	width: auto;
@@ -1107,9 +1107,11 @@ background: url("../images/back-li3.png") repeat;
 	font-size: 1.1em;
 	top:134px;
 	position: relative;
+	cursor: pointer;
+	z-index: 9;
 }
 
-.content-1 > b > img{
+.content-1 > a > img{
 	vertical-align: middle;
 	margin: 0 !important;
 	cursor: pointer;
