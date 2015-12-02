@@ -47,9 +47,9 @@
 									</p>	
 
 								</div><!--termina datos-inf-->
-								<b>Selecciona la forma en que deseas ayudar
+								<a href="{{ URL::to( 'faqs' ) }}" target="_blank">Selecciona la forma en que deseas ayudar
 										<img src="{{ asset( 'images/inter.png' ) }}" alt="" id="icon">
-										</b>
+										</a>
 								<div class="fig">
 									<figure class="cauf" id="cauf-d" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';">
 									  <span>Haz tu donación</span>
