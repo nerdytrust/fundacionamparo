@@ -112,3 +112,6 @@ Route::post( 'continuar-voluntario', 'VoluntariosController@complementaryVolunta
 Route::post( 'nuevo-voluntario-completo', 'VoluntariosController@longVoluntary' );
 Route::post( 'entrar', 'HomeController@login' );
 
+Route::get('facebook-close', function () {
+    return '<script>document.addEventListener("DOMContentLoaded", function(event) { window.close();});</script>';
+});
