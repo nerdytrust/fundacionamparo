@@ -47,7 +47,7 @@
 									</p>	
 
 								</div><!--termina datos-inf-->
-								<a href="{{ URL::to( 'faqs' ) }}" target="_blank">Selecciona la forma en que deseas ayudar
+								<a href="{{ URL::to( 'como-ayudar' ) }}" target="_blank">Selecciona la forma en que deseas ayudar
 										<img src="{{ asset( 'images/inter.png' ) }}" alt="" id="icon">
 										</a>
 								<div class="fig">
