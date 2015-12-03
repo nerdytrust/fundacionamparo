@@ -48,7 +48,7 @@
 
 								</div><!--termina datos-inf-->
 								<a href="{{ URL::to( 'como-ayudar' ) }}" target="_blank">Selecciona la forma en que deseas ayudar
-										<img src="{{ asset( 'images/inter.png' ) }}" alt="" id="icon">
+										<img src="{{ asset( 'images/inter.png' ) }}" alt="" id="">
 										</a>
 								<div class="fig">
 									<figure class="cauf" id="cauf-d" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';">
