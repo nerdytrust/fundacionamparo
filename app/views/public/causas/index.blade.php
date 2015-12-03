@@ -62,7 +62,7 @@
 	 			@if ( isset( $causas ) )
 	 				@foreach ( $causas as $causa )
 
-	 					<article class="caja_2 {{{ isset($causa['class']) ?  'caja'.$causa['class'] : 'caja'.'33' }}}">
+	 					<article class="caja_2 {{ isset($causa['class']) ?  'caja'.$causa['class'] : 'caja'.'33' }}">
 				 			<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '559x548' ) }}" alt="{{ $causa->titulo }}">
 				 			<section id="social_top">
 								<ul>
@@ -73,7 +73,7 @@
 								</ul>
 								<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
 							</section>
-				 			<section class="txt_int" id="{{$causa->id_causas}}">
+				 			<section class="txt_int {{ isset($causa['class']) ?  'txt_int_'.'50' : '' }}" id="{{$causa->id_causas}}">
 				 				<h1>{{ strtoupper( $causa->id_categorias_record->nombre ) }}</h1>
 				 				<h2>{{ $causa->titulo }}</h2>
 				 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
@@ -113,7 +113,7 @@
 								</ul>
 								<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $externa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
 							</section>
-				 			<section class="txt_int" id="{{$externa->id_causas}}">
+				 			<section class="txt_int {{ isset($externa['class']) ?  'txt_int_'.'50' : '' }}" id="{{$externa->id_causas}}">
 				 				<h1>{{ strtoupper( $externa->id_categorias_record->nombre ) }}</h1>
 				 				<h2>{{ $externa->titulo }}</h2>
 				 				<p>{{ Str::limit( $externa->descripcion, 110 ) }}</p>

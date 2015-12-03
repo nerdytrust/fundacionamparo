@@ -118,7 +118,7 @@
 									</ul>
 									<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
 								</section>
-					 			<section class="txt_int" id="{{$causa->id_causas}}">
+					 			<section class="txt_int  {{ isset($causa['class']) ?  'txt_int_'.'50' : '' }}" id="{{$causa->id_causas}}">
 					 				<h1>{{ $causa->id_categorias_record->nombre }}</h1>
 					 				<h2>{{ $causa->titulo }}</h2>
 					 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
