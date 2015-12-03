@@ -17,6 +17,13 @@
 								{{ Str::limit( $momento->descripcion, 450 ) }}
 		  	    	    	</h2>
 		  	    	    	<section id="social_top" class="social_timeline">
+		  	    	    		@if ( $momento->video != '' )
+									<div class="vi-timeline">
+										<a href="{{ asset ( 'path_video/' . $momento->video ) }}">
+											<div class="button-play-timeline" role="button">VER VIDEO</div>
+										</a>
+									</div>	
+								@endif	
 								<ul>
 									{{ Helper::facebookShare( '', URL::to( 'muro-exito' ) ) }}
 									{{ Helper::twitterShare( $momento->titulo, URL::to( 'muro-exito' ) . '/' . $momento->id_momentos, '' ) }}
@@ -34,6 +41,9 @@
 	      </div>
 	</div><!--termina container fluid-->
 	<script type="text/javascript">
+		setTimeout(function() { 
+			baguetteBox.run('.vi-timeline');
+		},100);
 			/**
 			 * Objeto con las opciones del spinner
 			 * @type {Object}

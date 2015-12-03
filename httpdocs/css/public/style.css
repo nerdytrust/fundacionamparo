@@ -2984,7 +2984,49 @@ ul.ben li:before{
     transition: all 0.4s;
 }
 .button-play-timeline{
-	left: 55%;
+	/*left: 39%;
+    top: 34%;*/
+    font-size: 3em;
+    display: block;
+    z-index: 2;
+    width: auto;
+    height: 33%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    opacity: 1;
+    background: url("../../images/play_timeline.png") no-repeat left;
+    background-size: contain;
+    padding-left: 80px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 17px;
+    line-height: 4em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    display: inline-block;
+}
+.interior .button-play-timeline{
+	top: -11px;
+    position: relative;
+}
+.button-play-timeline:hover{
+	background: url("../../images/play_over_timeline.png") no-repeat left;
+	background-size: contain;
+}
+.todos-play_todos_momentos{
+	width: 100%
+}
+.todos-momentos h3{
+	display: inline-block;
+}
+.vi-timeline{
+	width: 168px;
+    display: inline-block;
+
 }
 .vi video, .vi2 video{
 	width: 100%;
@@ -3053,10 +3095,10 @@ span.esquina-pop{
 	}
 /*termina contact*/
 @media screen and (max-width: 768px){
-	.button-play-timeline{
+	/*.button-play-timeline{
 		left: 39%;
 		top: 18%;
-	}
+	}*/
 }
 @media screen and (min-width: 1650px) and (max-width:2400px ){
 	video { 

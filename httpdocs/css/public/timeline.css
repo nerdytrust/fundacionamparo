@@ -27,7 +27,9 @@ header { display: inline-block !important; }
   top: 155px;
   padding-left: 0px;
 }
-
+.todos-momentos{
+  margin-top: 10px;
+}
 .todos-momentos a{
   color: #FFF;
   text-decoration: none;
@@ -551,6 +553,9 @@ vertical-align: middle;
   body{
     padding-top: 100px;
   }
+  b{
+    font-size: 30px;
+  }
   .cuadro h2{
       overflow: scroll;
       height: 57px;
@@ -596,12 +601,12 @@ vertical-align: middle;
       position: relative;
   }
    h1 {
-      font-size: 33px;
+      font-size: 23px;
     }
     h2 {
-      font-size: 24px;
+      font-size: 19px;
+      margin-top: 16px
     }
-  
  }
 @media screen and (max-width: 640px){
   .cuadro {    
@@ -626,18 +631,18 @@ vertical-align: middle;
     height: 15px;
   }
   b{
-      font-size: 25px;
+      font-size: 21px;
     }
    .interior h1 {
-      font-size: 19px;
+      font-size: 15px;
       margin-top: 11%;
     }
    h1 {
-      font-size: 19px;
+      font-size: 15px;
       margin: 2% 0;
     }
     h2 {
-      font-size: 13px;
+      font-size: 11px;
       margin: 2% 0;
     }
     .cuadro h1{
@@ -649,14 +654,29 @@ vertical-align: middle;
       height: 100px;
     }
     .cuadro h3{
-      margin-top: 0;
+      margin-top: 2px;
       margin-bottom: 0;
       font-size: 19px;
     }
     .cuadro {    
     top: 50% !important;
     /*background: green !important;*/
-  }
+    }
+    .button-play-timeline{
+      font-size: 13.7px;
+      padding-left: 48px;
+      background: url("../../images/play_timeline.png") no-repeat left;
+      background-size: 42px;
+      background-position-y: 4px;
+    }
+    .button-play-timeline:hover{
+      background: url("../../images/play_over_timeline.png") no-repeat left;
+      background-size: 42px;
+      background-position-y: 4px;
+    }
+    .vi-timeline{
+      width: 122px;
+    }
   span.adorno{
     left: 9%;
     top: -6%; 
@@ -666,6 +686,12 @@ vertical-align: middle;
   .interior #social_top{
     top:-73px;
     position: absolute !important;
+    left: 10px;
+
+  }
+  .interior #social_top ul{
+    float: none;
+    margin-top: -1%;
   }
 
   .todos-momentos{

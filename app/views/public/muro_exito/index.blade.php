@@ -18,23 +18,25 @@
 
 							>	
 								<img src="{{ asset( 'path_image/' . $momento->imagen ) }}" />
-								@if ( $momento->video != '' )
-									<div class="vi-timeline">
-										<a href="{{ asset ( 'path_video/' . $momento->video ) }}">
-											<div class="button-play button-play-timeline" role="button"><span aria-hidden="true"></span></div>
-										</a>
-									</div>	
-								@endif	
-								<div class="col-xs-12 col-sm-12 col-md-6 cuadro">
+								<div class="col-xs-12 col-sm-12 col-md-8 cuadro">
 									<h1><b>{{ $momento->year }}</b>
 										{{ $momento->titulo }}
 									</h1>
 									<h2>
 										{{ Str::limit( $momento->descripcion, 450 ) }}
 									</h2>
-									@if ( $momento->hijos > 0 )
-										<h3 class="todos-momentos" id="momento"><a id="{{$momento->id_muros}}">VER TODOS LOS EVENTOS <span>+</span></a></h3>
-									@endif
+									<div class="play_todos_momentos">
+										@if ( $momento->video != '' )
+											<div class="vi-timeline">
+												<a href="{{ asset ( 'path_video/' . $momento->video ) }}">
+													<div class="button-play-timeline" role="button">VER VIDEO</div>
+												</a>
+											</div>	
+										@endif	
+										@if ( $momento->hijos > 0 )
+											<h3 class="todos-momentos" id="momento"><a id="{{$momento->id_muros}}">VER TODOS LOS EVENTOS <span>+</span></a></h3>
+										@endif
+									</div>
 								</div>
 
 							</li>
@@ -53,9 +55,9 @@
 			</div>
 		</div><!--termina container fluid-->
 		<script type="text/javascript">
-					document.addEventListener("DOMContentLoaded", function(event) { 
-						baguetteBox.run('.vi-timeline');
-					});
-				</script>
+			document.addEventListener("DOMContentLoaded", function(event) { 
+				baguetteBox.run('.vi-timeline');
+			});
+		</script>
 	@stop
 @stop
