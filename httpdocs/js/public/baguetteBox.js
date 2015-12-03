@@ -61,10 +61,15 @@
     var imagesElements = [];
     // Event handlers
     var imagedEventHandlers = {};
+    var count_pause = 0;
     var overlayClickHandler = function(event) {
         // When clicked on the overlay (outside displayed image) close it
-        if(event.target && event.target.nodeName !== 'IMG' && event.target.nodeName !== 'FIGCAPTION')
-            hideOverlay();
+        //if(event.target && event.target.nodeName !== 'IMG' && event.target.nodeName !== 'FIGCAPTION')
+        if((++count_pause % 2) == 1)
+            document.getElementById("ligthbox_video").pause(); 
+        else
+            document.getElementById("ligthbox_video").play(); 
+            //hideOverlay();
     };
     var previousButtonClickHandler = function(event) {
         /*jshint -W030 */
@@ -208,10 +213,10 @@
 
         closeButton = create('button');
         closeButton.id = 'close-button';
-        closeButton.innerHTML = supports.svg ? closeX : 'X';
+        //closeButton.innerHTML = supports.svg ? closeX : 'X';
         overlay.appendChild(closeButton);
 
-        previousButton.className = nextButton.className = closeButton.className = 'baguetteBox-button';
+        previousButton.className = nextButton.className = closeButton.className = 'btn-cerrar';
 
         bindEvents();
     }

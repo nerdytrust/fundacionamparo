@@ -87,7 +87,23 @@ cursor: pointer;
 	font-size: .7em;
 	font-weight: 600;
 }
-
+.btn-cerrar {
+    background: transparent;
+    background-image: url(../../images/x2.png);
+    height: 40px;
+    margin-top: 15px;
+    position: absolute;
+    outline: none;
+    right: 15px;
+    width: 40px;
+    z-index: 17;
+    border-radius: 0px;
+    border: none;
+}
+.btn-cerrar:hover {
+    background-image: url(../../images/x2.png);
+        border: none;
+}
 *, *:after, *:before{
 	border: 0;
 	-ms-box-sizing:border-box;
