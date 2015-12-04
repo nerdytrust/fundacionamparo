@@ -143,6 +143,20 @@ class Helper {
 		return $displayName->displayName; 
 	}
 
+	/**
+	 * Método para obtener el nombre de registro del usuario logueado
+	 * @return string fullname de registro del usuario logueado
+	 */
+	public static function getRegisterIsFB(){
+		if(Auth::customer()->check()){
+			$user = new Helper;
+			$isFB = Profiles::select('provider')->where('id_profiles',$user->getRegisterId())->first();
+			if($isFB->provider == 'facebook') 
+			return TRUE;
+		}
+		return FALSE;
+	}
+
 	public function getHybridAuth() {
 		return $this->hybridauth;
 	}

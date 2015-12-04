@@ -26,7 +26,11 @@
 					<label for="check-azul"></label>No mostrar mi perfil en el sitio
 				</div>
 				<button class="feis">
-					 <div id="invitar" onclick="location.href='{{ URL::to( '/gracias-3' ) }}';">Invitar a 10 amigos</div>
+					@if ( Helper::getRegisterIsFB() )
+						<div id="invitar" onclick="location.href='{{ URL::to( '/gracias-3' ) }}';">Invitar a 10 amigos</div>
+					@else
+						<div id="invitar">No estas logueado</div>
+          			@endif
 				</button>	
 				<a href="{{ URL::to( '/faqs' ) }}" target="_blank" class="help">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></a>			
 			</div>	

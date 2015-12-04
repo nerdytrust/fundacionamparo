@@ -148,7 +148,7 @@ class HomeController extends BaseController {
 
 		$welcome = Mail::send( 'public.mail.welcome', [ 'username' => $inputs['name']], function( $message ) use ($inputs){
 			$message
-				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+				->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
 				->to( $inputs['email'], $inputs['name'] )
 				->subject( 'Bienvenido a Fundación Amparo' );
 		});
@@ -185,9 +185,9 @@ class HomeController extends BaseController {
 
 		$recovery = Mail::send( 'public.mail.recovery', [ 'username' => $user->email, 'password' => Crypt::decrypt( $user->password )  ], function( $message ) use ( $user ){
 			$message
-				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+				->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
 				->to( $user->email, $user->nombre_completo )
-				->subject( 'Solicitud de Contraseña' );
+				->subject( 'Restablecer contraseña' );
 		});
 
 		return Response::json( [ 'success' => true, 'errors' => '', 'message' => 'Se ha enviado tu <strong>contraseña</strong> al correo indicado' ] );

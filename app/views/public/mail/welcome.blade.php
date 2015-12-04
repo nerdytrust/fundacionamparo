@@ -5,21 +5,25 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
-<body style="background-color: #beda3e; color: #fff; font-size: 16px">
-	<table align="center" border="0" cellpadding="0" cellspacing="0" style="font-family: Verdana" width="700px">
-		<tr>
-			<td style="text-align: center">
-				<img src="{{ asset( '/images/amparo2.png') }}" alt="">
-			</td>
-		</tr>
+<body style="font-size: 16px">
+	<table align="center" border="0" cellpadding="0" cellspacing="0" style="font-family:'Open Sans', sans-serif" width="700px">
 		<tr>
 			<td>
-				<h2>Bienvenido</h2>
+				<img src="http://design4causes.com/images/logo_mail.png" alt="" style="width:80px">
+				<h1 style="margin-top:0px;margin-bottom:0px;font-weight:bold;font-size:42px;color:#000;">Fundación <br />Amparo</h1>
+				<h2 style="margin-top:0px;color:#beda3e;">#TomadoAcciónFA</h2>
 			</td>
 		</tr>
 		<tr>
-			<td style="font-size:13px">
-				<p style="margin:0; padding:0;">Bienvenido a Fundación Amparo {{ $username }}</p>
+			<td style="font-size:15px">
+				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;">¡Bienvenido! </h2>
+				<p style="margin-top:5px;color:#c2c2c2;">Gracias por unirte a la comunidad de personas que están #TomandoAcciónFA a favor de causas de desarrollo social y cultural. </p>
+			</td>
+		</tr>
+		<tr>
+			<td style="font-size:15px">
+				<p style="margin-top:0px;">Haz que la gente conozca nuestras causas, ¡compártelas en tus redes!</p>
+				<!--<p style="margin-top:5px;color:#c2c2c2;">dsfsdfsdf dsf sd fd sf sdf sd fsdfds f sdf sd fsd </p>-->
 			</td>
 		</tr>
 		<tr>
@@ -27,19 +31,20 @@
 				<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
 					<tr>
 						<td style="vertical-align:top" width="30%">
-							<strong>Contáctanos</strong>
-							<p style="margin:0; padding:15px 0 0 0;">Tel: (222) 229 38 50</p>
+							<a href="#"><img src="http://design4causes.com/images/c1.png" alt="" style="width:30px;margin-left:5px;"></a>
+							<a href="#"><img src="http://design4causes.com/images/c1.png" alt="" style="width:30px;margin-left:5px;"></a>
+							<a href="#"><img src="http://design4causes.com/images/c1.png" alt="" style="width:30px;margin-left:5px;"></a>
+							<a href="#"><img src="http://design4causes.com/images/c1.png" alt="" style="width:30px;margin-left:5px;"></a>
 						</td>
 						<td style="vertical-align:top" width="30%">
-							<strong>Envíanos un Correo</strong>
-							<p style="margin:0;padding:15px 0 0 0">info@fundacionamparo.com</p>
+							<strong>Mantengamos el contacto:</strong>
+							<p style="margin:0;padding:15px 0 0 0">Tel. 222 229 3850</p>
+							<p style="margin:0;padding:0 0 0 0">info@fundacionamparo.com</p>
 						</td>
 						<td style="vertical-align:top" width="30%">
-							<strong>Síguenos en Redes Sociales</strong>
+							<strong>¡Síguenos!</strong>
 							<p style="margin:0;padding:15px 0 0 0">facebook/FundacionAmparo</p>
 							<p style="margin:0;padding:0">twitter/@FundacionAmparo</p>
-							<p style="margin:0;padding:0">youtube.com/FundacionAmparo</p>
-							<p style="margin:0;padding:0">instagram.com/FundacionAmparo</p>
 						</td>
 					</tr>
 				</table>
@@ -47,4 +52,4 @@
 		</tr>
 	</table>
 </body>
-</html>
+</html>	

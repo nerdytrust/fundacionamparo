@@ -154,6 +154,19 @@ class CoversController extends BaseController {
 	}
 
 	public function impulsarGracias(){
+		if ( Auth::customer()->check() ){
+			$nameImpulsor = Helper::getRegisterFullName();
+			$emailImpulsor = Helper::getEmail();
+
+			$ImpulsorDiploma = Mail::send( 'public.mail.impulsor_diploma', ['username' => $nameImpulsor], function( $message ) use ($emailImpulsor){
+					$message
+						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+						->to( $emailImpulsor, "Impulsor" )
+						->subject( '¡Felicidades! ' );
+				});
+
+		}
+
 		return View::make( 'public.covers.impulsar_gracias' );
 	}
 
