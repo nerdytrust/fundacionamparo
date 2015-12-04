@@ -14,12 +14,13 @@
 		</tr>
 		<tr>
 			<td>
-				<h2>Gracias por tu donación</h2>
+				<h2>¡Juntos cumplimos sueños!</h2>
 			</td>
 		</tr>
 		<tr>
 			<td style="font-size:13px">
-				<p style="margin:0; padding:0;">Gracias por tu donación</p>
+				<p style="margin:0; padding:0;">Fundación Amparo agradece tu donativo, con él estás contribuyendo a continuar trabajando a favor del desarrollo cultural y social de México.</p>
+				<p style="margin:0; padding:0;">Muestra tu altruismo al mundo y compártelo en tus redes sociales.</p>
 			</td>
 		</tr>
 		<tr>

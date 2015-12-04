@@ -9,8 +9,7 @@
 				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/' ) }}';"></button>
 				<!--<button onClick="history.back()" class="regresar"> Regresar</button>-->
 				<h1>¡grácias!</h1>
-				<h2>Ya estás <br/> <b>#TomandoAcciónFA</b></h2>
-				<h3>Tus donaciones hacen posible continuar con nuestra causa, pasa la voz</h3>
+				<h3>Por ayudarnos a difundir nuestra causa. No te detengas y ¡pasa la voz!</h3>
 				<span>
 					<h4>Compartir </h4>
 					{{ Helper::facebookSharePop( '', URL::to( '/' ), '' ,'¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz #TomandoAcciónFA') }}

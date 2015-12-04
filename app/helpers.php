@@ -133,6 +133,16 @@ class Helper {
 		return $id_register;
 	}
 
+	/**
+	 * Método para obtener el nombre de registro del usuario logueado
+	 * @return string fullname de registro del usuario logueado
+	 */
+	public static function getRegisterFullName(){
+		$user = new Helper;
+		$displayName = Profiles::select('displayName')->where('id_profiles',$user->getRegisterId())->first();
+		return $displayName->displayName; 
+	}
+
 	public function getHybridAuth() {
 		return $this->hybridauth;
 	}

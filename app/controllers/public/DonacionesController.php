@@ -279,6 +279,7 @@ class DonacionesController extends BaseController {
 		$donacion->monto_donacion 		= $session['monto'];
 		$donacion->reference_id 		= $session['reference_id'];
 		$donacion->transaction_id		= $session['transaction_id'];
+
 		if ( Session::has( 'donacion.transaction_brand' ) )
 			$donacion->transaction_brand	= $session['transaction_brand'];
 
@@ -288,14 +289,19 @@ class DonacionesController extends BaseController {
 		
 		$donacion->mostrar_perfil 		= $session['mostrar_perfil'];
 		if ( $donacion->save() ){
+			if ( ! Auth::customer()->check() )
+				$nameDonador = $donacion->email;
+			else 
+				$nameDonador = Helper::getRegisterFullName();
+
 			if ( $session['transaction_status'] == 'paid' ){
-				$donacionMail = Mail::send( 'public.mail.donacion', [], function( $message ) use ($session){
+				$donacionMail = Mail::send( 'public.mail.donacion', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
 						->to( $session['email'], "Donador" )
 						->subject( 'Gracias por tu donativo a Fundación Amparo' );
 				});
-				$donacionDiploma = Mail::send( 'public.mail.donacion_diploma', [], function( $message ) use ($session){
+				$donacionDiploma = Mail::send( 'public.mail.donacion_diploma', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
 						->to( $session['email'], "Donador" )

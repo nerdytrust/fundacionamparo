@@ -37,6 +37,8 @@ $(function(){
 	};
 
 	conektaErrorResponseHandler = function(token) {
+		$('.animsition').animsition().fadeIn();
+		$('.animsition-loading').remove();
 	 	var $form;
 		$form = $("#form_paycard");
 		$form.find('.alert-danger').css('display', 'block');

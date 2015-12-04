@@ -49,12 +49,14 @@ class Voluntarios extends \Crud {
         $new_aprobacion = $params->record->attributes['aprobacion'];
 
         if($old_aprobacion == 0 && $new_aprobacion == 1){
+            $data['email']          = $params->record->attributes['email'];
+            $data['nameVoluntario'] = $params->record->attributes['nombre'].' '.$params->record->attributes['apellidos'];
 
-            $welcome = Mail::send( 'public.mail.welcome', [ 'username' => 'Francisco'], function( $message ) {
+            $voluntarioDiploma = Mail::send( 'public.mail.voluntario_diploma', [ 'username' => $data['nameVoluntario']], function( $message ) use ($data) {
             $message
-                ->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
-                ->to( 'aslanlion56@gmail.com', 'Francisco' )
-                ->subject( 'Ya eres voluntario' );
+                ->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+                ->to( $data['email'], 'Voluntario' )
+                ->subject( '¡Bienvenido!' );
             });
 
         }

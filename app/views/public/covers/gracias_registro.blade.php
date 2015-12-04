@@ -8,14 +8,13 @@
 				<img src="{{ asset( 'images/icon_donadores-v.png' ) }}" alt="">
 				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/login' ) }}';"></button>
 				<h1>¡gracias!</h1>
-				<h2>Por registrarte</h2>
-				<h3>Tus acciones dentro de la comunidad harán posible continuar con nuestra causa, pasa la voz</h3>
-				<h2><b>#TomandoAcciónFA</b></h2>
-				{{-- <span>
+				<h2>Ya eres parte de la comunidad que están <b>#TomandoAcciónFA</b> </h2>
+				<h3>Tus acciones harán posible continuar con nuestra causa, ¡pasa la voz!</h3>
+				{{--<span>
 					<h4>Compartir </h4>
-					<button class="face"></button>
-					<button class="twit"></button>
-				</span> --}}
+					{{ Helper::facebookSharePop( '', URL::to( '/' ), '' ,'¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz #TomandoAcciónFA') }}
+					{{ Helper::twitterSharePop( '¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz', URL::to( '/' ) , 'TomandoAcciónFA' ) }}
+				</span>--}} 
 			</div>
 		</div>
 	@stop

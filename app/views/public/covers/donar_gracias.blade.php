@@ -10,12 +10,12 @@
 				<!--<button onClick="history.back()" class="regresar"> Regresar</button>-->
 				<h1>¡gracias!</h1>
 				<h2>Ya estás <br/> <b>#TomandoAcciónFA</b></h2>
-				<h3>Tus donaciones hacen posible continuar con nuestra causa, pasa la voz</h3>
-				<span>
+				<h3>Tus donativos hacen posible continuar con nuestra causa, ¡pasa la voz!</h3>
+				{{--<span>
 					<h4>Compartir </h4>
 					{{ Helper::facebookSharePop( '', URL::to( '/' ), '' ,'¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz #TomandoAcciónFA') }}
 					{{ Helper::twitterSharePop( '¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz', URL::to( '/' ) , 'TomandoAcciónFA' ) }}
-				</span> 
+				</span>--}} 
 			</div>
 		</div>
 	@stop

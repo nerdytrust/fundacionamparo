@@ -348,8 +348,8 @@ class CoversController extends BaseController {
 	 			->setTransactions([$transaction]);
 
 	 	//Redirect Urls
-	 	$redirectUrls->setReturnUrl('http://design4causes.com/donar/save-paypal')
-					 ->setCancelUrl('http://design4causes.com/donar/pago-error');
+	 	$redirectUrls->setReturnUrl(URL::to('donar/save-paypal'))
+					 ->setCancelUrl(URL::to('donar/pago-error'));
 
 	 	$payment->setRedirectUrls($redirectUrls);
 
@@ -407,14 +407,25 @@ class CoversController extends BaseController {
              ->where('reference_id', $paymentId)
              ->update(array('status' => 1));
 
-         Session::forget( 'paypalhas_hash' );
+        Session::forget( 'paypalhas_hash' );
 
-	     $donacionMail = Mail::send( 'public.mail.donacion', [], function( $message ) use ($email){
-				$message
-					->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
-					->to( $email, "Donador")
-					->subject( 'Bienvenido a Fundación Amparo' );
-			});
+        if ( ! Auth::customer()->check() )
+			$nameDonador = $email;
+		else 
+			$nameDonador = Helper::getRegisterFullName();
+
+	    $donacionMail = Mail::send( 'public.mail.donacion', ['username' => $nameDonador], function( $message ) use ($email){
+					$message
+						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+						->to( $email, "Donador" )
+						->subject( 'Gracias por tu donativo a Fundación Amparo' );
+				});
+		$donacionDiploma = Mail::send( 'public.mail.donacion_diploma', ['username' => $nameDonador], function( $message ) use ($email){
+					$message
+						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+						->to( $email, "Donador" )
+						->subject( '¡Felicidades! ' );
+				});
 
          return Redirect::to( 'gracias' );
 	 }
