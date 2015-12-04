@@ -725,8 +725,8 @@ $(function(){
 		var minLeft = (resolution-realWidth);
 		if(parseInt(div.css('left')) >= minLeft){
 			div.animate({
-        		'left': '-=100px',
-    		}, 'slow');
+        		'left': '-=200px',
+    		}, 100);
     	}	
 	});
 
@@ -734,8 +734,8 @@ $(function(){
 		var div = $('div.flex-control-nav');
 		if(parseInt(div.css('left')) < 0){
 			div.animate({
-        		'left': '+=100px',
-    		}, 'slow');	
+        		'left': '+=200px',
+    		}, 100);	
 		}
 	});
 
