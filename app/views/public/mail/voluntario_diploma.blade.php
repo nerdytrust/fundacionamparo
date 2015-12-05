@@ -28,12 +28,6 @@
 				<p style="color:#d8d8d8;margin-top:0px;margin-bottom:0px;padding-top:10px;font-size:13px;">
 					¡Gracias de corazón! 
 				</p>
-				<p style="color:#9f9f9f;margin-top:0px;margin-bottom:0px;padding-top:10px;font-size:13px;">
-					Voluntario
-				</p>
-				<p style="color:#d8d8d8;margin-top:0px;margin-bottom:0px;font-size:11px;font-style:italic;">
-					De momentos altruistas. 
-				</p>
 	</div>
 </body>
 </html>

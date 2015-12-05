@@ -50,7 +50,7 @@ class ContactoController extends BaseController {
 		// Si se guardó, se procede a enviar un correo al staff de Fundación Amparo
 		$comment = Mail::send( 'public.mail.contacto', $inputs, function( $message ) use ( $contacto ){
 			$message 
-				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+				->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
 				->to( 'contacto@nerdytrust.com', 'Contacto Fundación Amparo' )
 				->subject( 'Nuevo mensaje desde el formulario de contacto' );
 		} );
@@ -58,9 +58,9 @@ class ContactoController extends BaseController {
 		// También se envía un mensaje de correo al usuario, para que sepa que si se envió su petición
 		$thanks = Mail::send( 'public.mail.contacto_gracias', $inputs, function( $message ) use ( $contacto ){
 			$message 
-				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+				->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
 				->to( $contacto->correo, $contacto->nombre )
-				->subject( 'Gracias por estar en contacto' );
+				->subject( 'Gracias por contactarnos.' );
 		} );
 
 		//return Response::json( [ 'success' => true, 'errors' => false, 'message' => 'Gracias por estar en contacto, en breve recibirás una <strong>respuesta</strong> de un asesor.' ] );

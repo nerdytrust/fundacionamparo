@@ -74,7 +74,7 @@ class ApoyarCausaController extends BaseController {
 		// Si se guardó, se procede a enviar un correo al staff de Fundación Amparo
 		$comment = Mail::send( 'public.mail.apoyamos', $inputs, function( $message ) use ( $inputs ){
 			$message 
-				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+				->from( getenv( 'APP_NOREPLY' ), 'Causas Fundación Amparo' )
 				->to( 'contacto@nerdytrust.com', 'Causas Fundación Amparo' )
 				->subject( 'Nueva causa desde el formulario' );
 		} );
@@ -83,9 +83,9 @@ class ApoyarCausaController extends BaseController {
 
 		$thanks = Mail::send( 'public.mail.apoyamos_gracias', $inputs, function( $message ) use ( $inputs ){
 			$message 
-				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
+				->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
 				->to( $inputs['email'],$inputs['nombre'] )
-				->subject( 'Gracias por agregar una causa' );
+				->subject( 'Damos Amparo a tu causa.' );
 		} );
 		
 		return Response::json( [ 'success' => true, 'redirect' => 'gracias-apoyamos-tu-causa' ] );

@@ -9,7 +9,7 @@
 	<table align="center" border="0" cellpadding="0" cellspacing="0" style="font-family:'Open Sans', sans-serif" width="700px">
 		<tr>
 			<td>
-				<img src="http://design4causes.com/images/logo_mail.png" alt="" style="width:80px">
+				<img src="{{ asset( '/images/logo_mail.png') }}" alt="" style="width:80px">
 				<h1 style="margin-top:0px;margin-bottom:0px;font-weight:bold;font-size:42px;color:#000;">Fundación <br />Amparo</h1>
 				<h2 style="margin-top:0px;color:#beda3e;">#TomadoAcciónFA</h2>
 			</td>
@@ -38,10 +38,10 @@
 				<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
 					<tr>
 						<td style="vertical-align:top" width="30%">
-							<a href="#"><img src="http://design4causes.com/images/c1.png" alt="" style="width:30px;margin-left:5px;"></a>
-							<a href="#"><img src="http://design4causes.com/images/c1.png" alt="" style="width:30px;margin-left:5px;"></a>
-							<a href="#"><img src="http://design4causes.com/images/c1.png" alt="" style="width:30px;margin-left:5px;"></a>
-							<a href="#"><img src="http://design4causes.com/images/c1.png" alt="" style="width:30px;margin-left:5px;"></a>
+							<a href="#"><img src="{{ asset( '/images/mail_facebook_icon.jpg') }}" alt="" style="width:30px;margin-left:5px;"></a>
+							<a href="#"><img src="{{ asset( '/images/mail_twitter_icon.jpg') }}" alt="" style="width:30px;margin-left:5px;"></a>
+							<a href="#"><img src="{{ asset( '/images/mail_youtube_icon.jpg') }}" alt="" style="width:30px;margin-left:5px;"></a>
+							<a href="#"><img src="{{ asset( '/images/mail_instagram_icon.jpg') }}" alt="" style="width:30px;margin-left:5px;"></a>
 						</td>
 						<td style="vertical-align:top" width="30%">
 							<strong>Mantengamos el contacto:</strong>
