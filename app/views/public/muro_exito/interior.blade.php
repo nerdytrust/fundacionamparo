@@ -24,7 +24,11 @@
 										</a>
 									</div>	
 								@endif	
-								<ul>
+								@if ( $momento->video != '' )
+									<ul class="nofloat">
+								@else
+									<ul>
+								@endif
 									{{ Helper::facebookShare( '', URL::to( 'muro-exito' ) ) }}
 									{{ Helper::twitterShare( $momento->titulo, URL::to( 'muro-exito' ) . '/' . $momento->id_momentos, '' ) }}
 									{{ Helper::like( $momento->id_muros, 'muros' ) }}
