@@ -54,10 +54,10 @@
 </div>
 <div class="row">
 	<div class="col-xs-2 text-right ">
-		{{ Form::label($columns->probacion->input, $columns->probacion->label) }}
+		{{ Form::label($columns->aprobacion->input, $columns->aprobacion->label) }}
 	</div>
 	<div class="col-xs-10 ">
-		{{ parseToHTML($columns->probacion,$record,$fk_column) }}
+		{{ parseToHTML($columns->aprobacion,$record,$fk_column) }}
 	</div>
 </div>
 
