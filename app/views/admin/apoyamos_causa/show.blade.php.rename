@@ -52,6 +52,14 @@
 		{{ parseToHTML($columns->descripcion,$record,$fk_column) }}
 	</div>
 </div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->probacion->input, $columns->probacion->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->probacion,$record,$fk_column) }}
+	</div>
+</div>
 
 @stop
 

@@ -81,7 +81,7 @@ class ApoyamosCausa extends \Crud {
         // ["first_name" => "text"] 
         // text,hidden,textarea,password,digit,file,email,title
         //
-        "inputs"    => [],
+        "inputs"    => ['aprobacion' => 'toggle'],
         // 
         // Choose column or columns for the FK to show
         // ["id_roles" => "name"] or ["id_roles" => ["name","status"]]
@@ -121,7 +121,7 @@ class ApoyamosCausa extends \Crud {
         "show"      => [],
 
         // "not_in_create" => ["created_at","updated_at"],
-        // "not_in_edit"   => ["created_at","updated_at"],
+        "not_in_edit"   => [ "created_at","updated_at", "created_by", "updated_by", "ip" ],
         // "not_in_index"  => ["created_at","updated_at"],
         "not_in_show"   => [ "created_at","updated_at", "created_by", "updated_by", "ip" ],
 
@@ -129,7 +129,7 @@ class ApoyamosCausa extends \Crud {
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        "btn_in_index"  => [ "show", "delete", "search", "advance-search" ],
+        "btn_in_index"  => [ "edit", "show", "delete", "search", "advance-search" ],
         "btn_in_show"   => [ "cancel" ],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],

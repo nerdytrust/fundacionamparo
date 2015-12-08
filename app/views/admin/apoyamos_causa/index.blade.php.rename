@@ -12,6 +12,7 @@
 					<td> {{ $columns->email->label }} </td>
 					<td> {{ $columns->id_categorias->label }} </td>
 					<td> {{ $columns->descripcion->label }} </td>
+					<td> {{ $columns->probacion->label }} </td>
 					<td> {{ $columns->ip->label }} </td>
 
 
@@ -32,6 +33,7 @@
 					<td>{{ parseToHTML($columns->email,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->id_categorias,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->descripcion,$record,$fk_column) }}</td>
+					<td>{{ parseToHTML($columns->probacion,$record,$fk_column) }}</td>
 					<td>{{ parseToHTML($columns->ip,$record,$fk_column) }}</td>
 
 

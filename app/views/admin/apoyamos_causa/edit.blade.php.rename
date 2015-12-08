@@ -49,13 +49,13 @@
  <span class="help-block">{{ $errors->first('descripcion') }}</span>
 </div>
 
-<div class="form-group @if ($errors->has('ip')) has-error @endif">
+<div class="form-group @if ($errors->has('probacion')) has-error @endif">
 
- {{ Form::label("text", "Ip") }}
+ {{ Form::label("text", "Probacion") }}
    
-      {{ Form::text("ip",$record->ip,["class" => "form-control","placeholder"=>"Ip"]); }}
+      {{ Form::text("probacion",$record->probacion,["class" => "form-control","placeholder"=>"Probacion"]); }}
     
- <span class="help-block">{{ $errors->first('ip') }}</span>
+ <span class="help-block">{{ $errors->first('probacion') }}</span>
 </div>
 
      
