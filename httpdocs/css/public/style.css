@@ -1444,7 +1444,6 @@ span#name span button:after{
 	background-position: 153px 12px;
 
 	}
-}
 .donador_clas, .impulsor_clas, .voluntario_clas{
 	display: inline-block;
 	margin: 70px 20px 0 20px;
@@ -3854,10 +3853,12 @@ label.contact textarea{
 		height: 500px;
 	}
 	.flex-control-paging{
-		background: red !important;
+		/*background: red !important;*/
 		display: none;
 	}
-
+	.interior .flex-control-nav li{
+		margin: 0px !important;
+	}
 	#cja_donativos{
 		height: auto;
 	}
