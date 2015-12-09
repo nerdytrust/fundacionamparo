@@ -1405,7 +1405,7 @@ span#name span button:after{
 	padding-top: 15px;
 }
 #becas_otor{
-	width: 70%;
+	width: 90%;
 	display: inline-block;
 	padding-top: 15px;
 }
@@ -1431,7 +1431,6 @@ span#name span button:after{
   padding-left: 0;
 }
 .list_amp li{
-	list-style: disc;
 	margin-left: 20px;
     color: #989898;
 	width: 45%;
@@ -1439,6 +1438,12 @@ span#name span button:after{
 	margin-right: 5px;
 	float: left;
 	position: relative;
+	padding-left: 170px;
+	background:  url("../../images/circle.png") no-repeat;
+	background-size: 10px; 
+	background-position: 153px 12px;
+
+	}
 }
 .donador_clas, .impulsor_clas, .voluntario_clas{
 	display: inline-block;
@@ -3931,6 +3936,10 @@ label.contact textarea{
 
 	.usuario p{
 		display: none !important;		
+	}
+	.list_amp li{
+		padding-left: 15px;
+		background-position: 0px 12px;
 	}
 }	
 

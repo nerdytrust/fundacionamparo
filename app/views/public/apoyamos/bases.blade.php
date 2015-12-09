@@ -25,7 +25,7 @@
 						<ul>
 							<li>{{ HTML::link( '/apoyamos-tu-causa', 'APLICA PARA OBTENER APOYO', [ 'class' => 'animsition-link' ] ) }}</li>
 							<li class="activo">{{ HTML::link( '/apoyamos-tu-causa-bases', 'BASES', [ 'class' => 'animsition-link' ] ) }}</li>							
-							<li>{{ HTML::link( '/apoyamos-tu-causa-apoyadas', 'CAUSAS APOYADAS 2015', [ 'class' => 'animsition-link' ] ) }}</li>
+							<li>{{ HTML::link( '/apoyamos-tu-causa-apoyadas', 'CAUSAS APOYADAS '.date('Y'), [ 'class' => 'animsition-link' ] ) }}</li>
 						</ul>
 					</nav>
 				</div>

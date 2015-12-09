@@ -25,14 +25,14 @@
 						<ul>
 							<li>{{ HTML::link( '/apoyamos-tu-causa', 'APLICA PARA OBTENER APOYO', [ 'class' => 'animsition-link' ] ) }}</li>
 							<li>{{ HTML::link( '/apoyamos-tu-causa-bases', 'BASES', [ 'class' => 'animsition-link' ] ) }}</li>							
-							<li class="activo">{{ HTML::link( '/apoyamos-tu-causa-apoyadas', 'CAUSAS APOYADAS 2015', [ 'class' => 'animsition-link' ] ) }}</li>
+							<li class="activo">{{ HTML::link( '/apoyamos-tu-causa-apoyadas', 'CAUSAS APOYADAS '.date('Y'), [ 'class' => 'animsition-link' ] ) }}</li>
 						</ul>
 					</nav>
 				</div>
 				<div class="text-contact">
 					<label class="contact becas" for="">
 
-							<h1>CAUSAS APOYADAS 2015</h1>
+							<h1>CAUSAS APOYADAS {{date('Y')}}</h1>
 							<h2>
 								
 							</h2>
@@ -40,7 +40,17 @@
 					</label>
 					<section id="becas_otor">
 						<ul class="list_amp">
-						
+						@if ( $causas )
+							@foreach ( $causas as $causa )
+								<li>
+									<div>
+										<h1>{{ $causa->nombre_causa }}</h1>
+										<h2>{{ $causa->nombre_categoria}}</h2>
+										
+									</div>
+								</li>
+							@endforeach
+						@endif
 			 			</ul>
 	 				</section>
 	 				</div>

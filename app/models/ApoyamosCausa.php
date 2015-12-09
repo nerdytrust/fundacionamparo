@@ -38,7 +38,23 @@ class ApoyamosCausa extends \Crud {
     public function afterStore(&$params){}
 
     public function beforeUpdate(&$params){}
-    public function afterUpdate(&$params){}
+    public function afterUpdate(&$params){
+        $old_aprobacion = $params->old_values->aprobacion;
+        $new_aprobacion = $params->record->attributes['aprobacion'];
+
+        if($old_aprobacion == 0 && $new_aprobacion == 1){
+            $data['email']  = $params->record->attributes['email'];
+            $data['nombre'] = $params->record->attributes['nombre'];
+
+            $voluntarioDiploma = Mail::send( 'public.mail.apoyamos_aprobada', ['causa' => $data['nombre']], function( $message ) use ($data) {
+            $message
+                ->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+                ->to( $data['email'], 'Causa' )
+                ->subject( '¡Felicidades! Daremos Amparo a tu causa.' );
+            });
+
+        }
+    }
 
     public function beforeDestroy(&$params){}
     public function afterDestroy(&$params){}

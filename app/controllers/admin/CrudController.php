@@ -537,7 +537,7 @@ class CrudController extends \BaseController {
         $key_name  = $class->getKeyName();
         $model     = $this->modelName;
         $path      = $this->viewName;
-        if($model == 'voluntarios')
+        if($model == 'voluntarios' || $model == 'apoyamos_causa')
             $oldValues = $class->getOldValues($id,$model);
         else
             $oldValues = '';

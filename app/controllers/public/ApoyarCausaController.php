@@ -40,7 +40,11 @@ class ApoyarCausaController extends BaseController {
 	 */
 	public function apoyadas(){
 		return View::make( 'public.apoyamos.apoyadas' )->with( [
-			'causas' => ApoyamosCausa::get()
+			'causas' => ApoyamosCausa::select(['categorias.nombre as nombre_categoria','apoyamos_causa.nombre as nombre_causa'])
+									   ->where(DB::raw('YEAR(apoyamos_causa.created_at)'), '=', date('Y'))
+									   ->where('aprobacion',1)
+									   ->join( 'categorias', 'apoyamos_causa.id_categorias', '=', 'categorias.id_categorias' )
+			  						   ->get()
 		] );
 	}
 
