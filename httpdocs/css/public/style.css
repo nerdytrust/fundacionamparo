@@ -1186,13 +1186,20 @@ span.esquina{
 	transition: background 1s;
 }
 .caja_fca_usu span.mio:hover{
-	background: url("../../images/blue.png");
+	/*background: url("../../images/blue.png");*/
+	background-color: rgba(204, 229, 255, 0.4);
 	background-size: cover;
 }
 .caja_fca_usu span.mio span#name:hover{
 	opacity: 1;
 }
-
+.grayscale{
+	-webkit-filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-o-filter: grayscale(1);
+	-ms-filter: grayscale(1);
+	filter: grayscale(1);
+}
 #ultimos_dona h2{
 	font-weight: 600;
 	font-size: 20px

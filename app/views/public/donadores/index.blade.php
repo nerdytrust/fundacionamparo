@@ -32,16 +32,19 @@
 										@endif
 										
 			 						</section>
+			 						<div class="grayscale">
 									<span class="{{ $class }}">
 										<span id="name">{{ $donador->displayName }}<b>{{ $donador->city }}</b>
 											<span><button></button></span>
 										</span>							
 									</span>
+
 									@if ( $donador->photoURL != "" )
 			 							<img src="{{ $donador->photoURL }}" alt="{{ $donador->displayName }}" >
 			 						@else
 			 							<img src="{{ asset( 'images/default-donadores.jpg' ) }}" alt="{{ $donador->displayName }}" >
 			 						@endif
+			 						<div>
 			 					</article>
 			 				</a>
 						@endforeach
