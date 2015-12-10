@@ -223,30 +223,31 @@ class CrudController extends \BaseController {
         $columns       = $class->getColumnsByView("export");
         $fk_column     = $class->getCrud("fk_column");
         $sep = "\t";
-
-        header("Content-Type: application/xls");    
-        header("Content-Disposition: attachment; filename=$filename.xls");  
-        header("Pragma: no-cache"); 
-        header("Expires: 0");
-        header("Content-Type:   application/vnd.ms-excel; charset=iso-8859-1");
-
+        
+        header('Content-Disposition: attachment; filename=' . $filename.".xls" );
+        header("Content-Type:   application/vnd.ms-excel;");
+        header("Pragma: no-cache");
+        
         foreach($columns as $column) {
-            echo $column->label . "\t";
+            echo mb_convert_encoding($column->label, 'UTF-16LE', 'UTF-8') . "\t";
         }
         print("\n");    
 
         foreach($records as $record){
             $schema_insert = "";
             foreach ($columns as $column) {
-                if($column->is_foreign_key){
-                    $real_name = getFK($column,$record,$fk_column);
+                if($column->is_foreign_key){// si es lave foranea regresa el nombre correcto
+                    $real_name = mb_convert_encoding(getFK($column,$record,$fk_column), 'UTF-16LE', 'UTF-8');
                     $schema_insert .= "$real_name".$sep;
-                }else if($column->type == 'boolean'){
+                }else if($column->type == 'boolean'){// si es booleano regresa activo o inactivo
                     $boolean = ($record->{$column->name})?'Activo':'Inactivo';
                     $schema_insert .= "$boolean".$sep;
+                }else if ($column->name == 'email') { // si es email quita los tags de mailto
+                    $celda = strip_tags($record->{$column->name});
+                    $schema_insert .= "$celda".$sep;
                 }
-                else{
-                    $celda = $record->{$column->name};
+                else{// si es un campo normal
+                    $celda = mb_convert_encoding($record->{$column->name}, 'UTF-16LE', 'UTF-8');
                     $schema_insert .= "$celda".$sep;
                 }
             }

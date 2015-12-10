@@ -147,11 +147,11 @@ class Impulsadas extends \Crud {
         // Buttons
         // ["print","create","edit","show","delete","search","advance-search"]
 
-        "btn_in_index"  => [  "show", "search", "advance-search" ],
+        "btn_in_index"  => [  "export", "show", "search", "advance-search" ],
         "btn_in_show"   => [ "cancel" ],
         // "btn_in_create" => ["create","cancel"],
         // "btn_in_edit"   => ["edit","cancel"],
-
+        "not_in_export" => ['created_by', 'updated_by', 'updated_at', 'created_at'],
     ];
 
     

@@ -116,7 +116,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 *
 	 * @var array
 	 */
-	protected $resourceDefaults = array('index', 'create', 'store', 'show', 'edit', 'update', 'destroy','print','tab','remotecombo');
+	protected $resourceDefaults = array('index', 'create', 'store', 'show', 'edit', 'update', 'destroy','print','tab','remotecombo','export');
 
 	/**
 	 * Create a new Router instance.
@@ -589,6 +589,24 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 		$action = $this->getResourceAction($name, $controller, 'store', $options);
 
 		return $this->post($uri, $action);
+	}
+
+	/**
+	 * Add the show method for a resourceful route.
+	 *
+	 * @param  string  $name
+	 * @param  string  $base
+	 * @param  string  $controller
+	 * @param  array   $options
+	 * @return \Illuminate\Routing\Route
+	 */
+	protected function addResourceExport($name, $base, $controller, $options)
+	{
+		$uri = $this->getResourceUri($name).'/{'.$base.'}';
+
+		$action = $this->getResourceAction($name, $controller, 'export', $options);
+
+		return $this->get($uri, $action);
 	}
 
 	/**
