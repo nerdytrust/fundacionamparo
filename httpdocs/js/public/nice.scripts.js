@@ -112,7 +112,10 @@ $(function(){
 	$('#form_step_two_donacion').submit(function(){
 		//var spinner = new Spinner(opts).spin(target);
 		$('.animsition').animsition().fadeOut();
-		$('.animsition-loading').toggleClass('animsition-loading-enviando');
+		var value = $('input[name=metodo_pago]:checked', '#form_step_two_donacion').val();
+		if (value != "tarjeta")
+			$('.animsition-loading').toggleClass('animsition-loading-enviando');
+
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css( 'display', 'block' );
