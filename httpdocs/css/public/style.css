@@ -28,6 +28,9 @@ button, input{
 iframe{
 	display: none
 }
+.animsition-loading-enviando:after{
+	content: "Enviando Datos" !important;
+}
 .select-day{
 	width: 20% !important;
 }

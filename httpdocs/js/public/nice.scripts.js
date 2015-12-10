@@ -53,6 +53,7 @@ $(function(){
 		event.preventDefault();
 		//var spinner = new Spinner(opts).spin(target);
 		$('.animsition').animsition().fadeOut();
+		$('.animsition-loading').toggleClass('animsition-loading-enviando');
 		var $form;
 		$form = $(this);
 		/* Previene hacer submit más de una vez */
@@ -111,6 +112,7 @@ $(function(){
 	$('#form_step_two_donacion').submit(function(){
 		//var spinner = new Spinner(opts).spin(target);
 		$('.animsition').animsition().fadeOut();
+		$('.animsition-loading').toggleClass('animsition-loading-enviando');
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css( 'display', 'block' );

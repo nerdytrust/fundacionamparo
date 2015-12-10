@@ -39,6 +39,9 @@ button:hover{
 	background: #beda3e;
 
 }
+.animsition-loading-donar:after{
+	content: "Enviando Datos" !important;
+}
 #buscar .bus:hover{
 	border: 0px solid #beda3e;
 }
