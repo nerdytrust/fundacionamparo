@@ -11,7 +11,7 @@ class CrudController extends \BaseController {
     {
 
         $route =  \Route::currentRouteName();
-        
+
         $route = explode(".", $route);
         if(count($route) > 2)
             $route = $route[1];
@@ -39,7 +39,7 @@ class CrudController extends \BaseController {
 
     protected function getPathView($name,$default=null)
     {
-       
+     
         $view = "admin.".$this->viewName.".".$name;
 
         if(!$default)
@@ -174,7 +174,6 @@ class CrudController extends \BaseController {
                 
         }
         
-
         $path     = $this->getPathView(__FUNCTION__);
         $key_name = $class->getKeyName();
         $model    = $this->modelName;
@@ -210,13 +209,63 @@ class CrudController extends \BaseController {
     }
 
     /**
+     * Export database to excel.
+     *
+     * @return excel
+     */
+    public function export()
+    {   
+
+        $class         = new $this->className(); 
+        $filename      = $this->modelName;
+        $records       = $class;
+        $records       = $class->get();
+        $columns       = $class->getColumnsByView("export");
+        $fk_column     = $class->getCrud("fk_column");
+        $sep = "\t";
+
+        header("Content-Type: application/xls");    
+        header("Content-Disposition: attachment; filename=$filename.xls");  
+        header("Pragma: no-cache"); 
+        header("Expires: 0");
+
+        foreach($columns as $column) {
+            echo $column->label . "\t";
+        }
+        print("\n");    
+
+        foreach($records as $record){
+            $schema_insert = "";
+            foreach ($columns as $column) {
+                if($column->is_foreign_key){
+                    $real_name = getFK($column,$record,$fk_column);
+                    $schema_insert .= "$real_name".$sep;
+                }else if($column->type == 'boolean'){
+                    $boolean = ($record->{$column->name})?'Activo':'Inactivo';
+                    $schema_insert .= "$boolean".$sep;
+                }
+                else{
+                    $celda = $record->{$column->name};
+                    $schema_insert .= "$celda".$sep;
+                }
+            }
+            $schema_insert = str_replace($sep."$", "", $schema_insert);
+            $schema_insert = preg_replace("/\r\n|\n\r|\n|\r/", " ", $schema_insert);
+            $schema_insert .= "\t";
+            print(trim($schema_insert));
+            print "\n";
+
+        }
+        
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return Response
      */
     public function create()
     {
-
 
         $class     = new $this->className();
         $title     = $class->getCrud("title");

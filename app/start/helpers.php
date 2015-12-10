@@ -1,5 +1,30 @@
 <?php
 
+
+function getFK($column,$record,$fk_column)
+{
+    if($column->is_foreign_key)
+    {
+        if(count($fk_column) > 0)
+        {
+            $is_with_link = getFKColumn($column->name,$record,$fk_column);
+            if($is_with_link != "---" and $is_with_link!="")
+                return $is_with_link ;
+            else
+                return $is_with_link ;
+            
+        }
+        else if($record->{$column->name} == 0)
+            return $record->{$column->name};
+        else
+            return $record->{$column->name};
+       
+    }
+    else
+        return Purifier::clean($record->{$column->name});
+
+}
+
 function parseToHTML($column,$record,$fk_column)
 {
     if($column->is_foreign_key)

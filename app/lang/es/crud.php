@@ -15,6 +15,7 @@ return array(
 
 	'search' 			=> 'Buscar',
 	'advance_search' 	=> 'Buscador Avanzado',
+	'export'        	=> 'Exportar',
 	'not_records_found' => 'No se encontraron resultados ...',
 
 	'select_file' 		=> 'Selecciona una archivo',

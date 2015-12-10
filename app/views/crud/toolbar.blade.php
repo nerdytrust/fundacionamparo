@@ -60,6 +60,11 @@
 		        	<li class="@if(Input::has('is-advance-search')) active @endif"><a href="#" class="btn-advance-search">{{ trans('crud.advance_search') }}</a></li>
 
 		        @endif
+		        @if(!Entrust::can($model."/export") and in_array("export",$btn))
+
+		        	<li class=""><a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX')."/".$model."/export_excel") }}" class="">{{ trans('crud.export') }}</a></li>
+
+		        @endif
 		      </ul>
 
 
