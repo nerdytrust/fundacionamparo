@@ -26,9 +26,10 @@
 					-->
 					@if ( isset( $videos ) )
 						@foreach ( $videos as $video )
+						
 						<div class="vi2">
 	        				<a href="{{ asset ( 'path_video/' . $video->video ) }}">
-	        					<div class="vjs-poster" style="background-image: url({{ asset( 'path_image/' . $video->cover ) }});"></div>
+	        					<div class="vjs-poster" style="background-image: url({{ asset( 'path_image/' . $video->cover . '/' . '839x521' ) }});"></div>
 	        					<div class="button-play" role="button"><span aria-hidden="true"></span></div>
 	        				</a>
 	    				</div>
@@ -38,6 +39,21 @@
 								baguetteBox.run('.vi2');
 							});
 						</script>
+						<!--<script type="text/javascript">
+							document.addEventListener("DOMContentLoaded", function(event) { 
+								var video = videojs($('.vi2').find('.video-js')[0]).ready(function(){
+								  var player = this;
+								  player.on('ended', function() {
+								  	video.load();
+								  	$(".vjs-loading-spinner").hide();
+								  });
+								   player.on('error', function() {
+								  	video.load();
+								  	$(".vjs-loading-spinner").hide();
+								  });
+								});
+							});
+						</script>-->
 					@endif
 					<div id="titulo_fca" class="ayudar">
 						<div class="titleM">FORMAS DE AYUDAR</div>
