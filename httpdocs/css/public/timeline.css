@@ -577,6 +577,9 @@ vertical-align: middle;
 }
 
  @media screen and (max-width: 768px){
+  .interior span.adorno{
+    left: 4%;
+  }
    iframe{
     height: 100%;
   }
@@ -606,6 +609,9 @@ vertical-align: middle;
      left: 0;
   padding: 0 4%;
   }
+  .interior .cuadro{
+    top: 73% !important;
+  }
   .flexslider .slides > li{
     background: #000;
     overflow: hidden;
@@ -622,6 +628,10 @@ vertical-align: middle;
     h2 {
       font-size: 19px;
       margin-top: 16px
+    }
+    .interior h1{
+      max-height: 82px;
+      overflow: auto;
     }
  }
 @media screen and (max-width: 640px){
