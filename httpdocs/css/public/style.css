@@ -3055,6 +3055,7 @@ ul.ben li:before{
 	display: inline-block;
 	overflow: hidden;
 	margin: 35px auto;
+	position: relative;
 }
 .vi3{
 	width: 100%;

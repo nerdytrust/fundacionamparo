@@ -29,7 +29,7 @@
 						
 						<div class="vi2">
 	        				<a href="{{ asset ( 'path_video/' . $video->video ) }}">
-	        					<div class="vjs-poster" style="background-image: url({{ asset( 'path_image/' . $video->cover . '/' . '839x521' ) }});"></div>
+	        					<div class="vjs-poster" style="background-image: url({{ asset( 'path_image/' . $video->cover ) }});"></div>
 	        					<div class="button-play" role="button"><span aria-hidden="true"></span></div>
 	        				</a>
 	    				</div>
