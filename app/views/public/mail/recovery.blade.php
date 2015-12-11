@@ -18,12 +18,12 @@
 			<td style="font-size:15px">
 				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;">¡Restablecer mi contraseña </h2>
 				<p style="margin-top:5px;margin-bottom:0px;color:#c2c2c2;">Has solicitado recuperar tu contraseña.  Te compartimos los datos de tu cuenta actual.</p>
-				<p style="margin-top:5px;margin-bottom:0px;padding:0;color:#c2c2c2;">Ingresa a <a href="{{ URL::to( 'login' ) }}" style="font-weight: bold;">Iniciar Sesión</a> para acceder al sitio.</p>
+				<p style="margin-top:5px;margin-bottom:0px;padding:0;color:#c2c2c2;">Ingresa a <a href="{{ URL::to( 'login' ) }}" style="font-weight:bold;color:#beda3e">Iniciar Sesión</a> para acceder al sitio.</p>
 			</td>
 		</tr>
 		<tr>
 			<td style="font-size:15px;padding-top:15px;">
-				<p style="margin:0; padding:0;color:#c2c2c2;">Usuario: <strong style="color:#000;">{{ $username }}</strong></p>
+				<p style="margin:0; padding:0;color:#c2c2c2;">Usuario: <strong style="color:#beda3e"><a href="mailto:{{ $username }}" target="_blank" style="color:#beda3e">{{ $username }}</a></strong></p>
 				<p style="margin:0; padding:0;color:#c2c2c2;">Contraseña: <strong style="color:#000;">{{ $password }}</strong></p>
 			</td>
 		</tr>
@@ -46,7 +46,7 @@
 						<td style="vertical-align:top" width="30%">
 							<strong>Mantengamos el contacto:</strong>
 							<p style="margin:0;padding:15px 0 0 0">Tel. 222 229 3850</p>
-							<p style="margin:0;padding:0 0 0 0">info@fundacionamparo.com</p>
+							<p style="margin:0;padding:0 0 0 0"><a href="mailto:info@fundacionamparo.com" target="_blank" style="color:#beda3e">info@fundacionamparo.com</a></p>
 						</td>
 						<td style="vertical-align:top" width="30%">
 							<strong>¡Síguenos!</strong>

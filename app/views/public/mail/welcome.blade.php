@@ -39,7 +39,7 @@
 						<td style="vertical-align:top" width="30%">
 							<strong>Mantengamos el contacto:</strong>
 							<p style="margin:0;padding:15px 0 0 0">Tel. 222 229 3850</p>
-							<p style="margin:0;padding:0 0 0 0">info@fundacionamparo.com</p>
+							<p style="margin:0;padding:0 0 0 0"><a href="mailto:info@fundacionamparo.com" target="_blank" style="color:#beda3e">info@fundacionamparo.com</a></p>
 						</td>
 						<td style="vertical-align:top" width="30%">
 							<strong>¡Síguenos!</strong>
