@@ -609,15 +609,12 @@ vertical-align: middle;
      left: 0;
   padding: 0 4%;
   }
-  .interior .cuadro{
-    top: 73% !important;
-  }
   .flexslider .slides > li{
     background: #000;
     overflow: hidden;
   }
   .flexslider .slides img{
-       width: 195% !important;
+       width: 173% !important;
       height: auto !important;
       left: -50%;
       position: relative;
@@ -629,10 +626,10 @@ vertical-align: middle;
       font-size: 19px;
       margin-top: 16px
     }
-    .interior h1{
+    /*.interior h1{
       max-height: 82px;
       overflow: auto;
-    }
+    }*/
  }
 @media screen and (max-width: 640px){
   .cuadro {    
