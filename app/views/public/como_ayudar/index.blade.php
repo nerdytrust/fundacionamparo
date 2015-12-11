@@ -26,26 +26,16 @@
 					-->
 					@if ( isset( $videos ) )
 						@foreach ( $videos as $video )
-							<div class="vi2">
-								<video controls preload="none" poster="{{ asset( 'path_image/' . $video->cover ) }}" class="video-js vjs-default-skin" data-setup="{}" style="background-color: white">
-									<source src="{{ asset ( 'path_video/' . $video->video ) }}" type='video/mp4'>
-									<p>El video no es visible!, tu navegador no soporta video en HTML5</p>
-								</video>
-							</div><!--termina vi2-->
-						@endforeach
-						<script type="text/javascript">
+						<div class="vi2">
+	        				<a href="{{ asset ( 'path_video/' . $video->video ) }}">
+	        					<div class="vjs-poster" style="background-image: url({{ asset( 'path_image/' . $video->cover ) }});"></div>
+	        					<div class="button-play" role="button"><span aria-hidden="true"></span></div>
+	        				</a>
+	    				</div>
+	    				@endforeach
+	    				<script type="text/javascript">
 							document.addEventListener("DOMContentLoaded", function(event) { 
-								var video = videojs($('.vi2').find('.video-js')[0]).ready(function(){
-								  var player = this;
-								  player.on('ended', function() {
-								  	video.load();
-								  	$(".vjs-loading-spinner").hide();
-								  });
-								   player.on('error', function() {
-								  	video.load();
-								  	$(".vjs-loading-spinner").hide();
-								  });
-								});
+								baguetteBox.run('.vi2');
 							});
 						</script>
 					@endif
