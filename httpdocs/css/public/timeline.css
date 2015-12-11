@@ -591,10 +591,10 @@ vertical-align: middle;
   }
   .interior .flex-control-paging li a{
     width: 50px !important;
-    background-size: 15px;
+    background-size: 12px;
   }
   .interior .flex-control-paging li a.flex-active{
-    background-size: 17px;
+    background-size: 14px;
   }
   .interior .flex-control-nav{
     top: 14px;
@@ -697,7 +697,7 @@ vertical-align: middle;
       width: 122px;
     }
   span.adorno{
-    left: 10%;
+    left: 5%;
     top: 3%; 
     padding: 0px 4px;
     font-size: .8em;
