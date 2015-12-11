@@ -18,6 +18,7 @@
 			<td style="font-size:15px">
 				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;">¡Bienvenido! </h2>
 				<p style="margin-top:5px;color:#c2c2c2;">Gracias por unirte a la comunidad de personas que están <strong style="color:#000">#TomandoAcciónFA</strong> a favor de causas de desarrollo social y cultural. </p>
+				<p style="margin-top:5px;color:#c2c2c2;">Por favor valida tu correo dando <a href="{{ URL::to( 'confirmado'.'/'.$email )  }}" style="font-weight:bold;color:#beda3e">click aquí</a>  </p>
 			</td>
 		</tr>
 		<tr>

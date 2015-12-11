@@ -107,6 +107,7 @@ class HomeController extends BaseController {
 			return Response::json( [ 'success' => false, 'errors' => $validate->messages()->all('<span class="error">:message</span>'), 'message' => '' ] );
 		
 		$registrado = Registrados::where('registrados.email',$inputs['email'])
+								   ->where('registrados.confirmado',1)
 								   ->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
 								   ->first();
 								   
@@ -120,7 +121,7 @@ class HomeController extends BaseController {
 		if (Auth::customer()->check())
 			return Response::json( [ 'success' => true, 'redirect' => '/' ] );
 		
-		return Response::json( [ 'success' => false, 'errors' => '<span class="error">¡Ups! Ha ocurrido un problema al intetar <strong>logearte</strong>, El usuario y/o contraseña son incorrectos, intentalo de nuevo</span>', 'message' => '' ] );
+		return Response::json( [ 'success' => false, 'errors' => '<span class="error">¡Ups! Ha ocurrido un problema al intetar <strong>logearte</strong>, El usuario y/o contraseña son incorrectos o no haz confirmado tu correo electrónico, intentalo de nuevo</span>', 'message' => '' ] );
 
 	}
 
@@ -146,7 +147,7 @@ class HomeController extends BaseController {
 		if ( ! $profile )
 			return Response::json( [ 'success' => false, 'errors' => '<span class="error">¡Ups! Ha ocurrido un problema al intetar <strong>registrarte</strong>, intenta nuevamente</span>', 'message' => '' ] );
 
-		$welcome = Mail::send( 'public.mail.welcome', [ 'username' => $inputs['name']], function( $message ) use ($inputs){
+		$welcome = Mail::send( 'public.mail.welcome', [ 'email' => $inputs['email']], function( $message ) use ($inputs){
 			$message
 				->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
 				->to( $inputs['email'], $inputs['name'] )

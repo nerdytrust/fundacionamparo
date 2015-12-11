@@ -115,3 +115,11 @@ Route::post( 'entrar', 'HomeController@login' );
 Route::get('facebook-close', function () {
     return '<script>document.addEventListener("DOMContentLoaded", function(event) { window.close();});</script>';
 });
+Route::pattern('email', '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$');
+
+Route::get('confirmado/{email}', function($email)
+{
+    Registrados::where('email', $email)->update(array('confirmado' => 1));
+	return View::make( 'public.covers.validar_correo' );
+});
+

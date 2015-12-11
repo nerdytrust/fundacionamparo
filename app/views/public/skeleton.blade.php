@@ -230,7 +230,8 @@
 
                 if(    $('body').hasClass( 'registro' )
                     || $('body').hasClass( 'donar-causa' )
-                    || $('body').hasClass( 'donar-oxxo' )){
+                    || $('body').hasClass( 'donar-oxxo' )
+                    || $('body').hasClass( 'entrar' )){
                     $('.d').css({'height': '100vh'});
                     setTimeout(function(){
                         $('body').css({'background': '#bbd53c'})
