@@ -3011,7 +3011,7 @@ ul.ben li:before{
     opacity: 1;
     background: url("../../images/play_timeline.png") no-repeat left;
     background-size: contain;
-    padding-left: 80px;
+    padding-left: 85px;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     -o-transition: all 0.4s;
@@ -3038,7 +3038,7 @@ ul.ben li:before{
 	display: inline-block;
 }
 .vi-timeline{
-	width: 168px;
+	width: 175px;
     display: inline-block;
 
 }
