@@ -579,6 +579,7 @@ vertical-align: middle;
  @media screen and (max-width: 768px){
   .interior span.adorno{
     left: 4%;
+    margin-top: 5px;
   }
    iframe{
     height: 100%;
