@@ -33,6 +33,13 @@
 							<span class="pay-legend">/</span>
 							{{ Form::text( '', '', [ 'id' => 'exp_year', 'placeholder' => 'AA', 'data-conekta' => 'card[exp_year]', 'class' => 'col-sm-4' ] ) }}
 						</span>
+						<span>
+							<div class="check-verde">
+							{{ Form::checkbox( 'recurrente', 1, false, [ 'id' => 'check-verde' ] ) }}
+							<label for="check-verde"></label>
+							Deseas hacer una donación mensual
+						</div>
+						</span>
 						<input type="submit" value="SIGUIENTE" id="processPayment">
 					{{ Form::close() }}
 				</label>

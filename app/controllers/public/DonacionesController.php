@@ -109,12 +109,15 @@ class DonacionesController extends BaseController {
 	 */
 	public function payCard(){
 		$conektaTokenId = Input::get( 'conektaTokenId' );
+		$recurrente     = Input::get( 'recurrente' );
 		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
 		$monto = Session::get( 'donacion.monto' ) * 100;
 		if ( empty( $conektaTokenId ) )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
 
-		if ( $this->methodCard( $causa, $monto, $conektaTokenId ) )
+		$valid = $this->methodCard( $causa, $monto, $conektaTokenId, $recurrente );
+
+		if ( $valid )
 			return Redirect::to( 'gracias' );
 	}
 
@@ -138,44 +141,120 @@ class DonacionesController extends BaseController {
 	 * @param  string $monto Monto de la Donación
 	 * @return string Retorna en formato JSON un objeto con los campos "errors", "success", "redirect"
 	 */
-	private function methodCard( $causa = [], $monto = '', $conektaTokenId = '' ){
+	private function methodCard( $causa = [], $monto = '', $conektaTokenId = '', $recurrente = 0){
 		if ( empty( $causa ) || empty( $monto ) )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
 
-		try {
-			$charge = Conekta_Charge::create( [
-				'amount'		=> $monto,
-				'currency'		=> 'MXN',
-				'description'	=> 'Donación Amparo - Causa ' . $causa->titulo,
-				'reference_id'	=> 'FNDAMP-' . mt_rand() . '-' . time(),
-				'card'			=> $conektaTokenId,
-				'details'		=> [
-					'email'		=> Session::get( 'donacion.email' )
-				]
-			] );
+		if($recurrente == 1){
+			$new_plan = $this->createPlan( $causa, $monto );
+			if($new_plan){
+				$new_cliente = $this->createCliente( $new_plan, $conektaTokenId);
 
-			Session::reflash();
-			Session::put( 'donacion.transaction_id', $charge->id );
-			Session::put( 'donacion.transaction_brand', $charge->payment_method->brand );
-			Session::put( 'donacion.transaction_type', $charge->payment_method->type );
-			Session::put( 'donacion.transaction_status', $charge->status );
-			Session::put( 'donacion.reference_id', $charge->reference_id );
-			if ( ! $this->saveDonacion() ){
+				Session::reflash();
+				Session::put( 'donacion.transaction_id', $new_cliente->subscription->id );
+				Session::put( 'donacion.transaction_brand', $new_cliente->cards[0]->brand );
+				Session::put( 'donacion.transaction_type', $new_cliente->cards[0]->object );
+				Session::put( 'donacion.transaction_status', $new_cliente->subscription->status );
+				Session::put( 'donacion.reference_id','FNDAMP-' . mt_rand() . '-' . time() );
+				if ( ! $this->saveDonacion() ){
+					return View::make( 'public.covers.donar_error' )->with( [
+							'status'	=> 'No se pudo registrar en nuestro sistema tu donación, favor de contactarnos'
+					] );
+				}
+			}
+			
+		}
+		else{
+			try {
+				$charge = Conekta_Charge::create( [
+					'amount'		=> $monto,
+					'currency'		=> 'MXN',
+					'description'	=> 'Donación Amparo - Causa ' . $causa->titulo,
+					'reference_id'	=> 'FNDAMP-' . mt_rand() . '-' . time(),
+					'card'			=> $conektaTokenId,
+					'details'		=> [
+						'email'		=> Session::get( 'donacion.email' )
+					]
+				] );
+
+				Session::reflash();
+				Session::put( 'donacion.transaction_id', $charge->id );
+				Session::put( 'donacion.transaction_brand', $charge->payment_method->brand );
+				Session::put( 'donacion.transaction_type', $charge->payment_method->type );
+				Session::put( 'donacion.transaction_status', $charge->status );
+				Session::put( 'donacion.reference_id', $charge->reference_id );
+				if ( ! $this->saveDonacion() ){
+					return View::make( 'public.covers.donar_error' )->with( [
+							'status'	=> 'No se pudo registrar en nuestro sistema tu donación, favor de contactarnos'
+					] );
+				}
+			} catch (Conekta_Error $e) {
 				return View::make( 'public.covers.donar_error' )->with( [
-						'status'	=> 'No se pudo registrar en nuestro sistema tu donación, favor de contactarnos'
+					'status'	=> $e->getMessage()
 				] );
 			}
-		} catch (Conekta_Error $e) {
-			return View::make( 'public.covers.donar_error' )->with( [
-				'status'	=> $e->getMessage()
-			] );
 		}
 
 		// return Response::json( [ 'success' => true, 'redirect' => 'gracias' ] );
 		return TRUE;
 	}
 
-	
+	private function createPlan( $causa = [], $monto = ''){
+		if ( empty( $causa ) || empty( $monto ) )
+			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
+
+			try {
+
+				$session = Session::get( 'donacion' );
+				$email 	 = $session['email'];
+				$replace = array("@", ".");
+				$email    = str_replace($replace, "_", $email);
+				$micro_date = microtime();
+				$date_array = explode(" ",$micro_date);
+
+				$plan = Conekta_Plan::create(array(
+					'id'           => $email.'_'.$causa->titulo.'_'.$date_array[1],
+					'name'         => $email.'_'.$causa->titulo.'_'.$date_array[1],
+					'amount'       => $monto,
+					'currency'     => "MXN",
+					'expiry_count' => 12
+				));
+			} catch (Conekta_Error $e) {
+				return View::make( 'public.covers.donar_error' )->with( [
+					'status'	=> $e->getMessage()
+				] );
+			}	
+			$plan['name_clie'] = $email;
+			return $plan;
+
+	}
+
+	private function createCliente( $plan = [], $conektaTokenId = ''){
+		if ( empty( $plan ) || empty( $conektaTokenId))
+			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
+		
+			try {
+				$session = Session::get( 'donacion' );
+				$email 	 = $session['email'];
+				$customer = Conekta_Customer::create(
+				  array(
+				    'name'  => $plan['name_clie'],
+				    'email' => $email,
+				    'cards' => array($conektaTokenId),
+				    'plan'  => $plan->id
+				  )
+				);
+
+			} catch (Conekta_Error $e) {
+				return View::make( 'public.covers.donar_error' )->with( [
+					'status'	=> $e->getMessage()
+				] );
+			}	
+
+			return $customer;
+
+	}
+
 	private function methodPaypal( $causa = [], $monto = '' ){
 		if ( empty( $causa ) || empty( $monto ) )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
@@ -294,7 +373,7 @@ class DonacionesController extends BaseController {
 			else 
 				$nameDonador = Helper::getRegisterFullName();
 
-			if ( $session['transaction_status'] == 'paid' ){
+			if ( $session['transaction_status'] == 'paid' || $session['transaction_status'] == 'active'){
 				$donacionMail = Mail::send( 'public.mail.donacion', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
