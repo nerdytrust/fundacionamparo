@@ -2,7 +2,7 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
+use PayPal\Common\PayPalModel;
 
 /**
  * Class Patch
@@ -13,17 +13,17 @@ use PayPal\Common\PPModel;
  *
  * @property string op
  * @property string path
- * @property mixed value
+ * @property mixed  value
  * @property string from
  */
-class Patch extends PPModel
+class Patch extends PayPalModel
 {
     /**
      * The operation to perform.
      * Valid Values: ["add", "remove", "replace", "move", "copy", "test"]
      *
      * @param string $op
-     * 
+     *
      * @return $this
      */
     public function setOp($op)
@@ -43,10 +43,10 @@ class Patch extends PPModel
     }
 
     /**
-     * String containing a JSON-Pointer value that references a location within the target document where the operation is performed.
+     * String containing a JSON Pointer value that references a location within the target document where the operation is performed.
      *
      * @param string $path
-     * 
+     *
      * @return $this
      */
     public function setPath($path)
@@ -56,7 +56,7 @@ class Patch extends PPModel
     }
 
     /**
-     * String containing a JSON-Pointer value that references a location within the target document where the operation is performed.
+     * String containing a JSON Pointer value that references a location within the target document where the operation is performed.
      *
      * @return string
      */
@@ -66,10 +66,10 @@ class Patch extends PPModel
     }
 
     /**
-     * New value to apply based on the operation. op=remove does not require value.
+     * New value to apply based on the operation.
      *
      * @param mixed $value
-     * 
+     *
      * @return $this
      */
     public function setValue($value)
@@ -79,7 +79,7 @@ class Patch extends PPModel
     }
 
     /**
-     * New value to apply based on the operation. op=remove does not require value.
+     * New value to apply based on the operation.
      *
      * @return mixed
      */
@@ -89,10 +89,10 @@ class Patch extends PPModel
     }
 
     /**
-     * A string containing a JSON Pointer value that references the location in the target document from which to move the value. Required for use where op=move.
+     * A string containing a JSON Pointer value that references the location in the target document to move the value from.
      *
      * @param string $from
-     * 
+     *
      * @return $this
      */
     public function setFrom($from)
@@ -102,7 +102,7 @@ class Patch extends PPModel
     }
 
     /**
-     * A string containing a JSON Pointer value that references the location in the target document from which to move the value. Required for use where op=move.
+     * A string containing a JSON Pointer value that references the location in the target document to move the value from.
      *
      * @return string
      */

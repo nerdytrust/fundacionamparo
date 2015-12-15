@@ -35,10 +35,10 @@
 						</span>
 						<span>
 							<div class="check-verde">
-							{{ Form::checkbox( 'recurrente', 1, false, [ 'id' => 'check-verde' ] ) }}
-							<label for="check-verde"></label>
-							Deseas hacer una donación mensual
-						</div>
+								{{ Form::checkbox( 'recurrente', 1, false, [ 'id' => 'check-verde' ] ) }}
+								<label for="check-verde"></label>
+								Deseas hacer una donación mensual
+							</div>
 						</span>
 						<input type="submit" value="SIGUIENTE" id="processPayment">
 					{{ Form::close() }}

@@ -2,8 +2,6 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
-
 /**
  * Class ShippingAddress
  *
@@ -14,14 +12,15 @@ use PayPal\Common\PPModel;
  * @property string id
  * @property string recipient_name
  * @property bool default_address
+ * @property bool preferred_address
  */
-class ShippingAddress extends Address 
+class ShippingAddress extends Address
 {
     /**
      * Address ID assigned in PayPal system.
      *
      * @param string $id
-     * 
+     *
      * @return $this
      */
     public function setId($id)
@@ -44,7 +43,7 @@ class ShippingAddress extends Address
      * Name of the recipient at this address.
      *
      * @param string $recipient_name
-     * 
+     *
      * @return $this
      */
     public function setRecipientName($recipient_name)
@@ -64,35 +63,10 @@ class ShippingAddress extends Address
     }
 
     /**
-     * Name of the recipient at this address.
-     *
-     * @deprecated Instead use setRecipientName
-     *
-     * @param string $recipient_name
-     * @return $this
-     */
-    public function setRecipient_name($recipient_name)
-    {
-        $this->recipient_name = $recipient_name;
-        return $this;
-    }
-
-    /**
-     * Name of the recipient at this address.
-     * @deprecated Instead use getRecipientName
-     *
-     * @return string
-     */
-    public function getRecipient_name()
-    {
-        return $this->recipient_name;
-    }
-
-    /**
      * Default shipping address of the Payer.
      *
      * @param bool $default_address
-     * 
+     *
      * @return $this
      */
     public function setDefaultAddress($default_address)
@@ -112,28 +86,26 @@ class ShippingAddress extends Address
     }
 
     /**
-     * Default shipping address of the Payer.
+     * Shipping Address marked as preferred by Payer.
      *
-     * @deprecated Instead use setDefaultAddress
+     * @param bool $preferred_address
      *
-     * @param bool $default_address
      * @return $this
      */
-    public function setDefault_address($default_address)
+    public function setPreferredAddress($preferred_address)
     {
-        $this->default_address = $default_address;
+        $this->preferred_address = $preferred_address;
         return $this;
     }
 
     /**
-     * Default shipping address of the Payer.
-     * @deprecated Instead use getDefaultAddress
+     * Shipping Address marked as preferred by Payer.
      *
      * @return bool
      */
-    public function getDefault_address()
+    public function getPreferredAddress()
     {
-        return $this->default_address;
+        return $this->preferred_address;
     }
 
 }

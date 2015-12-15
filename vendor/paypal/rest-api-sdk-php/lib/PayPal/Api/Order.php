@@ -2,8 +2,9 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
+use PayPal\Common\PayPalResourceModel;
 use PayPal\Rest\ApiContext;
+use PayPal\Validation\ArgumentValidator;
 
 /**
  * Class Order
@@ -12,26 +13,28 @@ use PayPal\Rest\ApiContext;
  *
  * @package PayPal\Api
  *
- * @property string id
- * @property string purchase_unit_reference_id
- * @property string create_time
- * @property string update_time
- * @property \PayPal\Api\Amount amount
- * @property string payment_mode
- * @property string state
- * @property string reason_code
- * @property string protection_eligibility
- * @property string protection_eligibility_type
- * @property \PayPal\Api\Links links
+ * @property string                 id
+ * @property string                 purchase_unit_reference_id
+ * @property \PayPal\Api\Amount     amount
+ * @property string                 payment_mode
+ * @property string                 state
+ * @property string                 reason_code
+ * @property string                 pending_reason
+ * @property string                 protection_eligibility
+ * @property string                 protection_eligibility_type
+ * @property string                 parent_payment
+ * @property \PayPal\Api\FmfDetails fmf_details
+ * @property string                 create_time
+ * @property string                 update_time
+ * @property \PayPal\Api\Links[]    links
  */
-class Order extends PPModel
+class Order extends PayPalResourceModel
 {
     /**
      * Identifier of the order transaction.
-     * 
      *
      * @param string $id
-     * 
+     *
      * @return $this
      */
     public function setId($id)
@@ -51,11 +54,10 @@ class Order extends PPModel
     }
 
     /**
-     * Identifier to the purchase unit associated with this object
-     * 
+     * Identifier to the purchase unit associated with this object. Obsolete. Use one in cart_base.
      *
      * @param string $purchase_unit_reference_id
-     * 
+     *
      * @return $this
      */
     public function setPurchaseUnitReferenceId($purchase_unit_reference_id)
@@ -65,7 +67,7 @@ class Order extends PPModel
     }
 
     /**
-     * Identifier to the purchase unit associated with this object
+     * Identifier to the purchase unit associated with this object. Obsolete. Use one in cart_base.
      *
      * @return string
      */
@@ -75,134 +77,10 @@ class Order extends PPModel
     }
 
     /**
-     * Identifier to the purchase unit associated with this object
-     *
-     * @deprecated Instead use setPurchaseUnitReferenceId
-     *
-     * @param string $purchase_unit_reference_id
-     * @return $this
-     */
-    public function setPurchase_unit_reference_id($purchase_unit_reference_id)
-    {
-        $this->purchase_unit_reference_id = $purchase_unit_reference_id;
-        return $this;
-    }
-
-    /**
-     * Identifier to the purchase unit associated with this object
-     * @deprecated Instead use getPurchaseUnitReferenceId
-     *
-     * @return string
-     */
-    public function getPurchase_unit_reference_id()
-    {
-        return $this->purchase_unit_reference_id;
-    }
-
-    /**
-     * Time the resource was created in UTC ISO8601 format.
-     * 
-     *
-     * @param string $create_time
-     * 
-     * @return $this
-     */
-    public function setCreateTime($create_time)
-    {
-        $this->create_time = $create_time;
-        return $this;
-    }
-
-    /**
-     * Time the resource was created in UTC ISO8601 format.
-     *
-     * @return string
-     */
-    public function getCreateTime()
-    {
-        return $this->create_time;
-    }
-
-    /**
-     * Time the resource was created in UTC ISO8601 format.
-     *
-     * @deprecated Instead use setCreateTime
-     *
-     * @param string $create_time
-     * @return $this
-     */
-    public function setCreate_time($create_time)
-    {
-        $this->create_time = $create_time;
-        return $this;
-    }
-
-    /**
-     * Time the resource was created in UTC ISO8601 format.
-     * @deprecated Instead use getCreateTime
-     *
-     * @return string
-     */
-    public function getCreate_time()
-    {
-        return $this->create_time;
-    }
-
-    /**
-     * Time the resource was last updated in UTC ISO8601 format.
-     * 
-     *
-     * @param string $update_time
-     * 
-     * @return $this
-     */
-    public function setUpdateTime($update_time)
-    {
-        $this->update_time = $update_time;
-        return $this;
-    }
-
-    /**
-     * Time the resource was last updated in UTC ISO8601 format.
-     *
-     * @return string
-     */
-    public function getUpdateTime()
-    {
-        return $this->update_time;
-    }
-
-    /**
-     * Time the resource was last updated in UTC ISO8601 format.
-     *
-     * @deprecated Instead use setUpdateTime
-     *
-     * @param string $update_time
-     * @return $this
-     */
-    public function setUpdate_time($update_time)
-    {
-        $this->update_time = $update_time;
-        return $this;
-    }
-
-    /**
-     * Time the resource was last updated in UTC ISO8601 format.
-     * @deprecated Instead use getUpdateTime
-     *
-     * @return string
-     */
-    public function getUpdate_time()
-    {
-        return $this->update_time;
-    }
-
-    /**
      * Amount being collected.
-     * 
      *
      * @param \PayPal\Api\Amount $amount
-     * 
+     *
      * @return $this
      */
     public function setAmount($amount)
@@ -223,10 +101,10 @@ class Order extends PPModel
 
     /**
      * specifies payment mode of the transaction
-     * Valid Values: ["INSTANT_TRANSFER", "MANUAL_BANK_TRANSFER", "DELAYED_TRANSFER", "ECHECK"] 
+     * Valid Values: ["INSTANT_TRANSFER", "MANUAL_BANK_TRANSFER", "DELAYED_TRANSFER", "ECHECK"]
      *
      * @param string $payment_mode
-     * 
+     *
      * @return $this
      */
     public function setPaymentMode($payment_mode)
@@ -246,36 +124,11 @@ class Order extends PPModel
     }
 
     /**
-     * specifies payment mode of the transaction
-     *
-     * @deprecated Instead use setPaymentMode
-     *
-     * @param string $payment_mode
-     * @return $this
-     */
-    public function setPayment_mode($payment_mode)
-    {
-        $this->payment_mode = $payment_mode;
-        return $this;
-    }
-
-    /**
-     * specifies payment mode of the transaction
-     * @deprecated Instead use getPaymentMode
-     *
-     * @return string
-     */
-    public function getPayment_mode()
-    {
-        return $this->payment_mode;
-    }
-
-    /**
      * State of the order transaction.
-     * Valid Values: ["PENDING", "COMPLETED", "REFUNDED", "PARTIALLY_REFUNDED"] 
+     * Valid Values: ["pending", "completed", "refunded", "partially_refunded", "voided"]
      *
      * @param string $state
-     * 
+     *
      * @return $this
      */
     public function setState($state)
@@ -295,11 +148,11 @@ class Order extends PPModel
     }
 
     /**
-     * Reason code for the transaction state being Pending or Reversed.
-     * Valid Values: ["CHARGEBACK", "GUARANTEE", "BUYER_COMPLAINT", "REFUND", "UNCONFIRMED_SHIPPING_ADDRESS", "ECHECK", "INTERNATIONAL_WITHDRAWAL", "RECEIVING_PREFERENCE_MANDATES_MANUAL_ACTION", "PAYMENT_REVIEW", "REGULATORY_REVIEW", "UNILATERAL", "VERIFICATION_REQUIRED"] 
+     * Reason code for the transaction state being Pending or Reversed. Only supported when the `payment_method` is set to `paypal`.
+     * Valid Values: ["PAYER_SHIPPING_UNCONFIRMED", "MULTI_CURRENCY", "RISK_REVIEW", "REGULATORY_REVIEW", "VERIFICATION_REQUIRED", "ORDER", "OTHER"]
      *
      * @param string $reason_code
-     * 
+     *
      * @return $this
      */
     public function setReasonCode($reason_code)
@@ -309,7 +162,7 @@ class Order extends PPModel
     }
 
     /**
-     * Reason code for the transaction state being Pending or Reversed.
+     * Reason code for the transaction state being Pending or Reversed. Only supported when the `payment_method` is set to `paypal`.
      *
      * @return string
      */
@@ -319,150 +172,267 @@ class Order extends PPModel
     }
 
     /**
-     * Reason code for the transaction state being Pending or Reversed.
+     * [DEPRECATED] Reason the transaction is in pending state. Use reason_code field above instead.
+     * Valid Values: ["payer_shipping_unconfirmed", "multi_currency", "risk_review", "regulatory_review", "verification_required", "order", "other"]
      *
-     * @deprecated Instead use setReasonCode
+     * @param string $pending_reason
      *
-     * @param string $reason_code
      * @return $this
      */
-    public function setReason_code($reason_code)
+    public function setPendingReason($pending_reason)
     {
-        $this->reason_code = $reason_code;
+        $this->pending_reason = $pending_reason;
         return $this;
     }
 
     /**
-     * Reason code for the transaction state being Pending or Reversed.
-     * @deprecated Instead use getReasonCode
+     * @deprecated  [DEPRECATED] Reason the transaction is in pending state. Use reason_code field above instead.
      *
      * @return string
      */
-    public function getReason_code()
+    public function getPendingReason()
     {
-        return $this->reason_code;
+        return $this->pending_reason;
     }
 
     /**
-     * Protection Eligibility of the Payer 
-     * Valid Values: ["ELIGIBLE", "PARTIALLY_ELIGIBLE", "INELIGIBLE"] 
+     * The level of seller protection in force for the transaction.
+     * Valid Values: ["ELIGIBLE", "PARTIALLY_ELIGIBLE", "INELIGIBLE"]
      *
      * @param string $protection_eligibility
-     * 
+     *
      * @return $this
      */
     public function setProtectionEligibility($protection_eligibility)
     {
-        $this->{"protection-eligibility"} = $protection_eligibility;
+        $this->protection_eligibility = $protection_eligibility;
         return $this;
     }
 
     /**
-     * Protection Eligibility of the Payer 
+     * The level of seller protection in force for the transaction.
      *
      * @return string
      */
     public function getProtectionEligibility()
     {
-        return $this->{"protection-eligibility"};
+        return $this->protection_eligibility;
     }
 
     /**
-     * Protection Eligibility of the Payer 
-     *
-     * @deprecated Instead use setProtectionEligibility
-     *
-     * @param string $protection-eligibility
-     * @return $this
-     */
-    public function setProtection_eligibility($protection_eligibility)
-    {
-        $this->{"protection-eligibility"} = $protection_eligibility;
-        return $this;
-    }
-
-    /**
-     * Protection Eligibility of the Payer 
-     * @deprecated Instead use getProtectionEligibility
-     *
-     * @return string
-     */
-    public function getProtection_eligibility()
-    {
-        return $this->{"protection-eligibility"};
-    }
-
-    /**
-     * Protection Eligibility Type of the Payer 
-     * Valid Values: ["ELIGIBLE", "ITEM_NOT_RECEIVED_ELIGIBLE", "INELIGIBLE", "UNAUTHORIZED_PAYMENT_ELIGIBLE"] 
+     * The kind of seller protection in force for the transaction. This property is returned only when the `protection_eligibility` property is set to `ELIGIBLE`or `PARTIALLY_ELIGIBLE`. Only supported when the `payment_method` is set to `paypal`. Allowed values:<br> `ITEM_NOT_RECEIVED_ELIGIBLE`- Sellers are protected against claims for items not received.<br> `UNAUTHORIZED_PAYMENT_ELIGIBLE`- Sellers are protected against claims for unauthorized payments.<br> One or both of the allowed values can be returned.
+     * Valid Values: ["ITEM_NOT_RECEIVED_ELIGIBLE", "UNAUTHORIZED_PAYMENT_ELIGIBLE", "ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE"]
      *
      * @param string $protection_eligibility_type
-     * 
+     *
      * @return $this
      */
     public function setProtectionEligibilityType($protection_eligibility_type)
     {
-        $this->{"protection-eligibility_type"} = $protection_eligibility_type;
+        $this->protection_eligibility_type = $protection_eligibility_type;
         return $this;
     }
 
     /**
-     * Protection Eligibility Type of the Payer 
+     * The kind of seller protection in force for the transaction. This property is returned only when the `protection_eligibility` property is set to `ELIGIBLE`or `PARTIALLY_ELIGIBLE`. Only supported when the `payment_method` is set to `paypal`. Allowed values:<br> `ITEM_NOT_RECEIVED_ELIGIBLE`- Sellers are protected against claims for items not received.<br> `UNAUTHORIZED_PAYMENT_ELIGIBLE`- Sellers are protected against claims for unauthorized payments.<br> One or both of the allowed values can be returned.
      *
      * @return string
      */
     public function getProtectionEligibilityType()
     {
-        return $this->{"protection-eligibility_type"};
+        return $this->protection_eligibility_type;
     }
 
     /**
-     * Protection Eligibility Type of the Payer 
+     * ID of the Payment resource that this transaction is based on.
      *
-     * @deprecated Instead use setProtectionEligibilityType
+     * @param string $parent_payment
      *
-     * @param string $protection-eligibility_type
      * @return $this
      */
-    public function setProtection_eligibility_type($protection_eligibility_type)
+    public function setParentPayment($parent_payment)
     {
-        $this->{"protection-eligibility_type"} = $protection_eligibility_type;
+        $this->parent_payment = $parent_payment;
         return $this;
     }
 
     /**
-     * Protection Eligibility Type of the Payer 
-     * @deprecated Instead use getProtectionEligibilityType
+     * ID of the Payment resource that this transaction is based on.
      *
      * @return string
      */
-    public function getProtection_eligibility_type()
+    public function getParentPayment()
     {
-        return $this->{"protection-eligibility_type"};
+        return $this->parent_payment;
     }
 
     /**
-     * Sets Links
-     * 
+     * Fraud Management Filter (FMF) details applied for the payment that could result in accept/deny/pending action.
      *
-     * @param \PayPal\Api\Links $links
-     * 
+     * @param \PayPal\Api\FmfDetails $fmf_details
+     *
      * @return $this
      */
-    public function setLinks($links)
+    public function setFmfDetails($fmf_details)
     {
-        $this->links = $links;
+        $this->fmf_details = $fmf_details;
         return $this;
     }
 
     /**
-     * Gets Links
+     * Fraud Management Filter (FMF) details applied for the payment that could result in accept/deny/pending action.
      *
-     * @return \PayPal\Api\Links[]
+     * @return \PayPal\Api\FmfDetails
      */
-    public function getLinks()
+    public function getFmfDetails()
     {
-        return $this->links;
+        return $this->fmf_details;
+    }
+
+    /**
+     * Time the resource was created in UTC ISO8601 format.
+     *
+     * @param string $create_time
+     *
+     * @return $this
+     */
+    public function setCreateTime($create_time)
+    {
+        $this->create_time = $create_time;
+        return $this;
+    }
+
+    /**
+     * Time the resource was created in UTC ISO8601 format.
+     *
+     * @return string
+     */
+    public function getCreateTime()
+    {
+        return $this->create_time;
+    }
+
+    /**
+     * Time the resource was last updated in UTC ISO8601 format.
+     *
+     * @param string $update_time
+     *
+     * @return $this
+     */
+    public function setUpdateTime($update_time)
+    {
+        $this->update_time = $update_time;
+        return $this;
+    }
+
+    /**
+     * Time the resource was last updated in UTC ISO8601 format.
+     *
+     * @return string
+     */
+    public function getUpdateTime()
+    {
+        return $this->update_time;
+    }
+
+    /**
+     * Retrieve details about an order by passing the order_id in the request URI.
+     *
+     * @param string         $orderId
+     * @param ApiContext     $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param PayPalRestCall $restCall   is the Rest Call Service that is used to make rest calls
+     * @return Order
+     */
+    public static function get($orderId, $apiContext = null, $restCall = null)
+    {
+        ArgumentValidator::validate($orderId, 'orderId');
+        $payLoad = "";
+        $json = self::executeCall(
+            "/v1/payments/orders/$orderId",
+            "GET",
+            $payLoad,
+            null,
+            $apiContext,
+            $restCall
+        );
+        $ret = new Order();
+        $ret->fromJson($json);
+        return $ret;
+    }
+
+    /**
+     * Capture a payment. In addition, include the amount of the payment and indicate whether this is a final capture for the given authorization in the body of the request JSON.
+     *
+     * @param Capture        $capture
+     * @param ApiContext     $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param PayPalRestCall $restCall   is the Rest Call Service that is used to make rest calls
+     * @return Capture
+     */
+    public function capture($capture, $apiContext = null, $restCall = null)
+    {
+        ArgumentValidator::validate($this->getId(), "Id");
+        ArgumentValidator::validate($capture, 'capture');
+        $payLoad = $capture->toJSON();
+        $json = self::executeCall(
+            "/v1/payments/orders/{$this->getId()}/capture",
+            "POST",
+            $payLoad,
+            null,
+            $apiContext,
+            $restCall
+        );
+        $ret = new Capture();
+        $ret->fromJson($json);
+        return $ret;
+    }
+
+    /**
+     * Void (cancel) an order by passing the order_id in the request URI. Note that an order cannot be voided if payment has already been partially or fully captured.
+     *
+     * @param ApiContext     $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param PayPalRestCall $restCall   is the Rest Call Service that is used to make rest calls
+     * @return Order
+     */
+    public function void($apiContext = null, $restCall = null)
+    {
+        ArgumentValidator::validate($this->getId(), "Id");
+        $payLoad = "";
+        $json = self::executeCall(
+            "/v1/payments/orders/{$this->getId()}/do-void",
+            "POST",
+            $payLoad,
+            null,
+            $apiContext,
+            $restCall
+        );
+        $this->fromJson($json);
+        return $this;
+    }
+
+    /**
+     * Authorize an order by passing the order_id in the request URI. In addition, include an amount object in the body of the request JSON.
+     *
+     * @param Authorization $authorization Authorization Object with Amount value to be authorized
+     * @param ApiContext     $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param PayPalRestCall $restCall   is the Rest Call Service that is used to make rest calls
+     * @return Authorization
+     */
+    public function authorize($authorization, $apiContext = null, $restCall = null)
+    {
+        ArgumentValidator::validate($this->getId(), "Id");
+        ArgumentValidator::validate($authorization, 'Authorization');
+        $payLoad = $authorization->toJSON();
+        $json = self::executeCall(
+            "/v1/payments/orders/{$this->getId()}/authorize",
+            "POST",
+            $payLoad,
+            null,
+            $apiContext,
+            $restCall
+        );
+        $ret = new Authorization();
+        $ret->fromJson($json);
+        return $ret;
     }
 
 }

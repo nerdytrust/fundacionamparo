@@ -29,11 +29,13 @@ $item1 = new Item();
 $item1->setName('Ground Coffee 40 oz')
     ->setCurrency('USD')
     ->setQuantity(1)
+    ->setSku("123123") // Similar to `item_number` in Classic API
     ->setPrice(7.5);
 $item2 = new Item();
 $item2->setName('Granola bars')
     ->setCurrency('USD')
     ->setQuantity(5)
+    ->setSku("321321") // Similar to `item_number` in Classic API
     ->setPrice(2);
 
 $itemList = new ItemList();
@@ -98,21 +100,18 @@ $request = clone $payment;
 try {
     $payment->create($apiContext);
 } catch (Exception $ex) {
-    ResultPrinter::printError("Created Payment Using PayPal. Please visit the URL to Approve.", "Payment", null, $request, $ex);
+    // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ 	ResultPrinter::printError("Created Payment Using PayPal. Please visit the URL to Approve.", "Payment", null, $request, $ex);
     exit(1);
 }
 
 // ### Get redirect url
 // The API response provides the url that you must redirect
-// the buyer to. Retrieve the url from the $payment->getLinks()
+// the buyer to. Retrieve the url from the $payment->getApprovalLink()
 // method
-foreach ($payment->getLinks() as $link) {
-    if ($link->getRel() == 'approval_url') {
-        $approvalUrl = $link->getHref();
-        break;
-    }
-}
+$approvalUrl = $payment->getApprovalLink();
 
-ResultPrinter::printResult("Created Payment Using PayPal. Please visit the URL to Approve.", "Payment", "<a href='$approvalUrl' >$approvalUrl</a>", $request, $payment);
+// NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ ResultPrinter::printResult("Created Payment Using PayPal. Please visit the URL to Approve.", "Payment", "<a href='$approvalUrl' >$approvalUrl</a>", $request, $payment);
 
 return $payment;

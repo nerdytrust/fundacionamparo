@@ -2,7 +2,6 @@
 
 namespace PayPal\Test\Api;
 
-use PayPal\Common\PPModel;
 use PayPal\Api\CreditCardList;
 
 /**
@@ -18,7 +17,7 @@ class CreditCardListTest extends \PHPUnit_Framework_TestCase
      */
     public static function getJson()
     {
-        return '{"credit-cards":' .CreditCardTest::getJson() . ',"count":123,"next_id":"TestSample"}';
+        return '{"items":' .CreditCardTest::getJson() . ',"links":' .LinksTest::getJson() . ',"total_items":123,"total_pages":123}';
     }
 
     /**
@@ -39,9 +38,10 @@ class CreditCardListTest extends \PHPUnit_Framework_TestCase
     {
         $obj = new CreditCardList(self::getJson());
         $this->assertNotNull($obj);
-        $this->assertNotNull($obj->getCreditCards());
-        $this->assertNotNull($obj->getCount());
-        $this->assertNotNull($obj->getNextId());
+        $this->assertNotNull($obj->getItems());
+        $this->assertNotNull($obj->getLinks());
+        $this->assertNotNull($obj->getTotalItems());
+        $this->assertNotNull($obj->getTotalPages());
         $this->assertEquals(self::getJson(), $obj->toJson());
         return $obj;
     }
@@ -52,49 +52,10 @@ class CreditCardListTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetters($obj)
     {
-        $this->assertEquals($obj->getCreditCards(), CreditCardTest::getObject());
-        $this->assertEquals($obj->getCount(), 123);
-        $this->assertEquals($obj->getNextId(), "TestSample");
+        $this->assertEquals($obj->getItems(), CreditCardTest::getObject());
+        $this->assertEquals($obj->getLinks(), LinksTest::getObject());
+        $this->assertEquals($obj->getTotalItems(), 123);
+        $this->assertEquals($obj->getTotalPages(), 123);
     }
-
-    /**
-     * @depends testSerializationDeserialization
-     * @param CreditCardList $obj
-     */
-    public function testDeprecatedGetters($obj)
-    {
-        $this->assertEquals($obj->getCredit_cards(), CreditCardTest::getObject());
-        $this->assertEquals($obj->getNext_id(), "TestSample");
-    }
-
-    /**
-     * @depends testSerializationDeserialization
-     * @param CreditCardList $obj
-     */
-    public function testDeprecatedSetterNormalGetter($obj)
-    {
-
-        // Check for Credit_cards
-        $obj->setCreditCards(null);
-        $this->assertNull($obj->getCredit_cards());
-        $this->assertNull($obj->getCreditCards());
-        $this->assertSame($obj->getCreditCards(), $obj->getCredit_cards());
-        $obj->setCredit_cards(CreditCardTest::getObject());
-        $this->assertEquals($obj->getCredit_cards(), CreditCardTest::getObject());
-
-        // Check for Next_id
-        $obj->setNextId(null);
-        $this->assertNull($obj->getNext_id());
-        $this->assertNull($obj->getNextId());
-        $this->assertSame($obj->getNextId(), $obj->getNext_id());
-        $obj->setNext_id("TestSample");
-        $this->assertEquals($obj->getNext_id(), "TestSample");
-
-        //Test All Deprecated Getters and Normal Getters
-        $this->testDeprecatedGetters($obj);
-        $this->testGetters($obj);
-    }
-
-
 
 }

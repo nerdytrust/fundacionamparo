@@ -2,7 +2,6 @@
 
 namespace PayPal\Test\Api;
 
-use PayPal\Common\PPModel;
 use PayPal\Api\BankToken;
 
 /**
@@ -14,6 +13,7 @@ class BankTokenTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Gets Json String of Object BankToken
+     *
      * @return string
      */
     public static function getJson()
@@ -23,6 +23,7 @@ class BankTokenTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Gets Object Instance with Json data filled in
+     *
      * @return BankToken
      */
     public static function getObject()
@@ -33,6 +34,7 @@ class BankTokenTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Tests for Serialization and Deserialization Issues
+     *
      * @return BankToken
      */
     public function testSerializationDeserialization()
@@ -56,54 +58,6 @@ class BankTokenTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($obj->getExternalCustomerId(), "TestSample");
         $this->assertEquals($obj->getMandateReferenceNumber(), "TestSample");
     }
-
-    /**
-     * @depends testSerializationDeserialization
-     * @param BankToken $obj
-     */
-    public function testDeprecatedGetters($obj)
-    {
-        $this->assertEquals($obj->getBank_id(), "TestSample");
-        $this->assertEquals($obj->getExternal_customer_id(), "TestSample");
-        $this->assertEquals($obj->getMandate_reference_number(), "TestSample");
-    }
-
-    /**
-     * @depends testSerializationDeserialization
-     * @param BankToken $obj
-     */
-    public function testDeprecatedSetterNormalGetter($obj)
-    {
-
-        // Check for Bank_id
-        $obj->setBankId(null);
-        $this->assertNull($obj->getBank_id());
-        $this->assertNull($obj->getBankId());
-        $this->assertSame($obj->getBankId(), $obj->getBank_id());
-        $obj->setBank_id("TestSample");
-        $this->assertEquals($obj->getBank_id(), "TestSample");
-
-        // Check for External_customer_id
-        $obj->setExternalCustomerId(null);
-        $this->assertNull($obj->getExternal_customer_id());
-        $this->assertNull($obj->getExternalCustomerId());
-        $this->assertSame($obj->getExternalCustomerId(), $obj->getExternal_customer_id());
-        $obj->setExternal_customer_id("TestSample");
-        $this->assertEquals($obj->getExternal_customer_id(), "TestSample");
-
-        // Check for Mandate_reference_number
-        $obj->setMandateReferenceNumber(null);
-        $this->assertNull($obj->getMandate_reference_number());
-        $this->assertNull($obj->getMandateReferenceNumber());
-        $this->assertSame($obj->getMandateReferenceNumber(), $obj->getMandate_reference_number());
-        $obj->setMandate_reference_number("TestSample");
-        $this->assertEquals($obj->getMandate_reference_number(), "TestSample");
-
-        //Test All Deprecated Getters and Normal Getters
-        $this->testDeprecatedGetters($obj);
-        $this->testGetters($obj);
-    }
-
 
 
 }

@@ -6,9 +6,8 @@
 
 /** @var Authorization $authorization */
 $authorization = require 'AuthorizePayment.php';
-
+$authorizationId = $authorization->getId();
 use PayPal\Api\Authorization;
-use PayPal\Api\Payment;
 
 // ### GetAuthorization
 // You can retrieve info about an Authorization
@@ -18,12 +17,14 @@ use PayPal\Api\Payment;
 
 try {
     // Retrieve the authorization
-    $result = Authorization::get($authorization->getId(), $apiContext);
+    $result = Authorization::get($authorizationId, $apiContext);
 } catch (Exception $ex) {
-    ResultPrinter::printError("Get Authorization", "Authorization", null, null, $ex);
+    // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ 	ResultPrinter::printError("Get Authorization", "Authorization", null, null, $ex);
     exit(1);
 }
 
-ResultPrinter::printResult("Get Authorization", "Authorization", $authorization->getId(), null, $result);
+// NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ ResultPrinter::printResult("Get Authorization", "Authorization", $authorizationId, null, $result);
 
-return $authorization;
+return $result;

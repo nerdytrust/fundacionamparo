@@ -2,7 +2,7 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
+use PayPal\Common\PayPalModel;
 
 /**
  * Class Credit
@@ -13,15 +13,14 @@ use PayPal\Common\PPModel;
  *
  * @property string id
  * @property string type
- * @property string terms
  */
-class Credit extends PPModel
+class Credit extends PayPalModel
 {
     /**
      * Unique identifier of credit resource.
      *
      * @param string $id
-     * 
+     *
      * @return $this
      */
     public function setId($id)
@@ -41,11 +40,11 @@ class Credit extends PPModel
     }
 
     /**
-     * Specifies the type of credit.
+     * specifies type of credit
      * Valid Values: ["BILL_ME_LATER", "PAYPAL_EXTRAS_MASTERCARD", "EBAY_MASTERCARD", "PAYPAL_SMART_CONNECT"]
      *
      * @param string $type
-     * 
+     *
      * @return $this
      */
     public function setType($type)
@@ -55,36 +54,13 @@ class Credit extends PPModel
     }
 
     /**
-     * Specifies the type of credit.
+     * specifies type of credit
      *
      * @return string
      */
     public function getType()
     {
         return $this->type;
-    }
-
-    /**
-     * URI to the associated terms.
-     *
-     * @param string $terms
-     * 
-     * @return $this
-     */
-    public function setTerms($terms)
-    {
-        $this->terms = $terms;
-        return $this;
-    }
-
-    /**
-     * URI to the associated terms.
-     *
-     * @return string
-     */
-    public function getTerms()
-    {
-        return $this->terms;
     }
 
 }

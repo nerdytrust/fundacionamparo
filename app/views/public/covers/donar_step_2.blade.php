@@ -28,6 +28,11 @@
 								{{ Form::radio( 'metodo_pago', 'paypal', false, [ 'id' => 'pay' ] ) }}
 								<label for="pay">Pagar con Paypal</label>
 							</span>
+							<div class="check-verde check-verde-display-none">
+								{{ Form::checkbox( 'recurrente', 1, false, [ 'id' => 'check-verde' ] ) }}
+								<label for="check-verde" class="check"></label>
+								Deseas hacer una donación mensual
+							</div>
 							<span>
 								{{ Form::radio( 'metodo_pago', 'oxxo', false, [ 'id' => 'oxxo' ] ) }}
 								<label for="oxxo">Pago en OXXO</label>

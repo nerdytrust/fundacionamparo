@@ -4,15 +4,18 @@ namespace PayPal\Test\Common;
 use PayPal\Api\Amount;
 use PayPal\Api\Currency;
 use PayPal\Api\Details;
+use PayPal\Api\InvoiceItem;
 use PayPal\Api\Item;
-use PayPal\Common\FormatConverter;
-use PayPal\Common\PPModel;
+use PayPal\Api\Tax;
+use PayPal\Common\PayPalModel;
+use PayPal\Converter\FormatConverter;
 use PayPal\Test\Validation\NumericValidatorTest;
 
 class FormatConverterTest extends \PHPUnit_Framework_TestCase
 {
 
-    public static function classMethodListProvider(){
+    public static function classMethodListProvider()
+    {
         return array(
             array(new Item(), 'Price'),
             array(new Item(), 'Tax'),
@@ -26,6 +29,16 @@ class FormatConverterTest extends \PHPUnit_Framework_TestCase
             array(new Details(), 'Insurance'),
             array(new Details(), 'HandlingFee'),
             array(new Details(), 'GiftWrap'),
+            array(new InvoiceItem(), 'Quantity'),
+            array(new Tax(), 'Percent')
+        );
+    }
+
+    public static function CurrencyListWithNoDecimalsProvider()
+    {
+        return array(
+            array('JPY'),
+            array('TWD')
         );
     }
 
@@ -57,10 +70,48 @@ class FormatConverterTest extends \PHPUnit_Framework_TestCase
      */
     public function testFormatToTwoDecimalPlaces($input, $expected)
     {
-        $result = FormatConverter::formatToTwoDecimalPlaces($input);
+        $result = FormatConverter::formatToNumber($input);
         $this->assertEquals($expected, $result);
 
     }
+
+    /**
+     * @dataProvider CurrencyListWithNoDecimalsProvider
+     */
+    public function testPriceWithNoDecimalCurrencyInvalid($input)
+    {
+        try {
+            FormatConverter::formatToPrice("1.234", $input);
+        } catch (\InvalidArgumentException $ex) {
+            $this->assertContains("value cannot have decimals for", $ex->getMessage());
+        }
+    }
+
+    /**
+     * @dataProvider CurrencyListWithNoDecimalsProvider
+     */
+    public function testPriceWithNoDecimalCurrencyValid($input)
+    {
+        $result = FormatConverter::formatToPrice("1.0000000", $input);
+        $this->assertEquals("1", $result);
+    }
+
+    /**
+     *
+     * @dataProvider \PayPal\Test\Validation\NumericValidatorTest::positiveProvider
+     */
+    public function testFormatToNumber($input, $expected)
+    {
+        $result = FormatConverter::formatToNumber($input);
+        $this->assertEquals($expected, $result);
+    }
+
+    public function testFormatToNumberDecimals()
+    {
+        $result = FormatConverter::formatToNumber("0.0", 4);
+        $this->assertEquals("0.0000", $result);
+    }
+
 
     public function testFormat()
     {
@@ -71,7 +122,7 @@ class FormatConverterTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider apiModelSettersProvider
      *
-     * @param PPModel $class Class Object
+     * @param PayPalModel $class Class Object
      * @param string $method Method Name where the format is being applied
      * @param array $values array of ['input', 'expectedResponse'] is provided
      */

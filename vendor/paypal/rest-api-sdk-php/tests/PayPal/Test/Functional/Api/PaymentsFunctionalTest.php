@@ -2,19 +2,10 @@
 
 namespace PayPal\Test\Functional\Api;
 
-use PayPal\Api\Amount;
-use PayPal\Api\Patch;
-use PayPal\Api\PatchRequest;
 use PayPal\Api\Payment;
-use PayPal\Api\PaymentExecution;
 use PayPal\Api\Refund;
 use PayPal\Api\Sale;
-use PayPal\Common\PPModel;
-use PayPal\Rest\ApiContext;
-use PayPal\Rest\IResource;
-use PayPal\Api\CreateProfileResponse;
-use PayPal\Transport\PPRestCall;
-use PayPal\Api\WebProfile;
+use PayPal\Test\Functional\Setup;
 
 /**
  * Class WebProfile
@@ -28,9 +19,9 @@ class PaymentsFunctionalTest extends \PHPUnit_Framework_TestCase
 
     public $response;
 
-    public $mode = 'mock';
+    public $mockPayPalRestCall;
 
-    public $mockPPRestCall;
+    public $apiContext;
 
     public function setUp()
     {
@@ -42,21 +33,7 @@ class PaymentsFunctionalTest extends \PHPUnit_Framework_TestCase
         if (array_key_exists('body', $this->operation['response'])) {
             $this->response = json_encode($this->operation['response']['body']);
         }
-
-        $this->mode = getenv('REST_MODE') ? getenv('REST_MODE') : 'mock';
-        if ($this->mode != 'sandbox') {
-
-            // Mock PPRest Caller if mode set to mock
-            $this->mockPPRestCall = $this->getMockBuilder('\PayPal\Transport\PPRestCall')
-                ->disableOriginalConstructor()
-                ->getMock();
-
-            $this->mockPPRestCall->expects($this->any())
-                ->method('execute')
-                ->will($this->returnValue(
-                    $this->response
-                ));
-        }
+        Setup::SetUpForFunctionalTests($this);
     }
 
     /**
@@ -72,7 +49,7 @@ class PaymentsFunctionalTest extends \PHPUnit_Framework_TestCase
     {
         $request = $this->operation['request']['body'];
         $obj = new Payment($request);
-        $result = $obj->create(null, $this->mockPPRestCall);
+        $result = $obj->create($this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         return $result;
     }
@@ -81,7 +58,7 @@ class PaymentsFunctionalTest extends \PHPUnit_Framework_TestCase
     {
         $request = $this->operation['request']['body'];
         $obj = new Payment($request);
-        $result = $obj->create(null, $this->mockPPRestCall);
+        $result = $obj->create($this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         return $result;
     }
@@ -93,10 +70,9 @@ class PaymentsFunctionalTest extends \PHPUnit_Framework_TestCase
      */
     public function testGet($payment)
     {
-        $result = Payment::get($payment->getId(), null, $this->mockPPRestCall);
+        $result = Payment::get($payment->getId(), $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $this->assertEquals($payment->getId(), $result->getId());
-        $this->assertEquals($payment, $result, "", 0, 10, true);
         return $result;
     }
 
@@ -111,7 +87,7 @@ class PaymentsFunctionalTest extends \PHPUnit_Framework_TestCase
         $transaction = $transactions[0];
         $relatedResources = $transaction->getRelatedResources();
         $resource = $relatedResources[0];
-        $result = Sale::get($resource->getSale()->getId(), null, $this->mockPPRestCall);
+        $result = Sale::get($resource->getSale()->getId(), $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $this->assertEquals($resource->getSale()->getId(), $result->getId());
         return $result;
@@ -125,7 +101,7 @@ class PaymentsFunctionalTest extends \PHPUnit_Framework_TestCase
     public function testRefundSale($sale)
     {
         $refund = new Refund($this->operation['request']['body']);
-        $result = $sale->refund($refund, null, $this->mockPPRestCall);
+        $result = $sale->refund($refund, $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $this->assertEquals('completed', $result->getState());
         $this->assertEquals($sale->getId(), $result->getSaleId());
@@ -139,7 +115,7 @@ class PaymentsFunctionalTest extends \PHPUnit_Framework_TestCase
      */
     public function testExecute($payment)
     {
-        if ($this->mode == 'sandbox') {
+        if (Setup::$mode == 'sandbox') {
             $this->markTestSkipped('Not executable on sandbox environment. Needs human interaction');
         }
     }

@@ -15,3 +15,7 @@ atlassian-ide-plugin.xml
 # Composer
 vendor
 composer.lock
+
+# Project
+var
+tools

@@ -16,13 +16,14 @@
 		"intervention/image": "~2.0",
 		"intervention/imagecache": "~2.1",
 		"nicolaslopezj/searchable": "1.*",
-		"anouar/paypalpayment": "1.0",
 		"ceesvanegmond/minify": "2.0.*",
 		"ollieread/multiauth": "dev-master",
 		"mews/purifier": "dev-master-l4",
 		"torann/currency": "dev-master",
 		"atticmedia/anvard": "dev-master",
-		"conekta/conekta-php": "^2.0"
+		"conekta/conekta-php": "^2.0",
+		"paypal/rest-api-sdk-php":"*",
+		"paypal/merchant-sdk-php":"3.8.*"
 	},
 	"require-dev": {
 	    "way/generators": "~2.0",

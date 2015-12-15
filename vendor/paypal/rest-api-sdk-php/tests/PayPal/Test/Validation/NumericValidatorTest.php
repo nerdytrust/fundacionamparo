@@ -1,7 +1,6 @@
 <?php
 namespace PayPal\Test\Validation;
 
-use PayPal\Common\FormatConverter;
 use PayPal\Validation\NumericValidator;
 
 class NumericValidatorTest extends \PHPUnit_Framework_TestCase
@@ -10,6 +9,8 @@ class NumericValidatorTest extends \PHPUnit_Framework_TestCase
     public static function positiveProvider()
     {
         return array(
+            array(".5", "0.50"),
+            array(".55", "0.55"),
             array("0", "0.00"),
             array(null, null),
             array("01", "1.00"),

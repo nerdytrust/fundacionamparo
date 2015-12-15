@@ -131,7 +131,6 @@ return array(
 		//'Zofe\Rapyd\RapydServiceProvider',
 		'Jenssegers\Date\DateServiceProvider',
 		'Schickling\Backup\BackupServiceProvider',
-		'Anouar\Paypalpayment\PaypalpaymentServiceProvider',
 		'CeesVanEgmond\Minify\MinifyServiceProvider',
 		'Jenssegers\Agent\AgentServiceProvider',
 
@@ -212,7 +211,6 @@ return array(
 		'Date'            => 'Jenssegers\Date\Date',
 		'Agent'           => 'Jenssegers\Agent\Facades\Agent',
 		//https://github.com/xroot/laravel-paypalpayment
-		'Paypal'   		  => 'Anouar\Paypalpayment\Facades\PaypalPayment',
 		// https://github.com/mewebstudio/Purifier/tree/master-l4
 		'Purifier' 		  => 'Mews\Purifier\Facades\Purifier',
 		//https://github.com/Torann/laravel-currency

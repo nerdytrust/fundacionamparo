@@ -10,8 +10,9 @@ $apiContext = require __DIR__ . '/../bootstrap.php';
 // (See bootstrap.php for more on `ApiContext`)
 try {
     $list = \PayPal\Api\WebProfile::get_list($apiContext);
-} catch (\PayPal\Exception\PPConnectionException $ex) {
-    ResultPrinter::printError("Get List of All Web Profiles", "Web Profiles", null, null, $ex);
+} catch (\PayPal\Exception\PayPalConnectionException $ex) {
+    // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ 	ResultPrinter::printError("Get List of All Web Profiles", "Web Profiles", null, null, $ex);
     exit(1);
 }
 $result = '';
@@ -19,6 +20,7 @@ foreach ($list as $object) {
     $result .= $object->toJSON(128) . PHP_EOL;
 }
 
-ResultPrinter::printResult("Get List of All Web Profiles", "Web Profiles", null, null, $result);
+// NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ ResultPrinter::printResult("Get List of All Web Profiles", "Web Profiles", null, null, $result);
 
 return $list;

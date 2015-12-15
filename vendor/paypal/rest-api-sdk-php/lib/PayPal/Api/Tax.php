@@ -2,7 +2,9 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
+use PayPal\Common\PayPalModel;
+use PayPal\Converter\FormatConverter;
+use PayPal\Validation\NumericValidator;
 
 /**
  * Class Tax
@@ -16,7 +18,7 @@ use PayPal\Common\PPModel;
  * @property \PayPal\Api\number percent
  * @property \PayPal\Api\Currency amount
  */
-class Tax extends PPModel
+class Tax extends PayPalModel
 {
     /**
      * Identifier of the resource.
@@ -67,12 +69,14 @@ class Tax extends PPModel
     /**
      * Rate of the specified tax. Range of 0.001 to 99.999.
      *
-     * @param \PayPal\Api\number $percent
+     * @param string|double $percent
      * 
      * @return $this
      */
     public function setPercent($percent)
     {
+        NumericValidator::validate($percent, "Percent");
+        $percent = FormatConverter::formatToPrice($percent);
         $this->percent = $percent;
         return $this;
     }
@@ -80,7 +84,7 @@ class Tax extends PPModel
     /**
      * Rate of the specified tax. Range of 0.001 to 99.999.
      *
-     * @return \PayPal\Api\number
+     * @return string
      */
     public function getPercent()
     {

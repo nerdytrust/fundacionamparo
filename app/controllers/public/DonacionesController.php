@@ -22,6 +22,13 @@ class DonacionesController extends BaseController {
 	private $_api;
 	private $_ClientId     = 'Ab_PyKePqSHu26uPKjtbhBVYq4iB5bx0dZAX_N9D0dYB_1Qzh3kB8O97oOWE54CqTNGmd6kcV8l4Rha2';
     private $_ClientSecret = 'EDAp5eZ9kqpYl9R7KuBPhxfY7yOCmJv00oJ5VHM4ufKgPmiEKF_Uf0Lfm57p2kbITmG65B0LnSZ_JtLj';
+    private $_ConfigPaypalRecurring = array (
+ 						'mode'            => 'sandbox' , 
+ 						'acct1.UserName'  => 'yolandanunez-facilitator_api1.hotmail.com',
+						'acct1.Password'  => '9YS9Z7F9VBV2NMSF', 
+						'acct1.Signature' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AeWjfuP4BP-bzs-SUp4exHf5UURz'
+						);
+    private $_RedirectRecurrent = 'https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=';
 
 	/**
 	 * Método constructor para inicializar variables
@@ -90,6 +97,8 @@ class DonacionesController extends BaseController {
 				return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-tarjeta' ] );
 				break;
 			case 'paypal':
+				if(isset($inputs['recurrente']))
+					return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-paypal-recurrent' ] );
 				return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-paypal' ] );
 				break;
 			case 'oxxo':
@@ -122,18 +131,304 @@ class DonacionesController extends BaseController {
 	}
 
 	/**
-	 * Método para procesar el formulario de pago mediante PayPal
-	 * @return 
+	 * Método para mostrar el resultante del API Paypal
+	 * @return
 	 */
-	public function payPal(){
-		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
-		$monto = Session::get( 'donacion.monto' ) * 100;
-		if ( empty( $monto ) )
-			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
+	 public function donarPaypal(){
+	 	$donacion = Session::get( 'donacion' );
 
-		if ( $this->methodPaypal( $causa, $monto ) )
-			return Redirect::to( 'gracias' );
+	 	if ( ! isset( $donacion ) )
+	 		return Redirect::to( 'donar' );
+
+	 	$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
+	 	$monto = Session::get( 'donacion.monto' );
+	 	
+	 	$payer        = new \PayPal\Api\Payer;
+	 	$details      = new \PayPal\Api\Details;
+	 	$amount       = new \PayPal\Api\Amount;
+	 	$transaction  = new \PayPal\Api\Transaction;
+	 	$payment      = new \PayPal\Api\Payment;
+	 	$redirectUrls = new \PayPal\Api\RedirectUrls;
+
+	 	//Payer
+	 	$payer->setPaymentMethod('paypal');
+
+	 	//Details
+	 	$details->setShipping('0.00')
+	 			->setTax('0.00')
+	 			->setSubtotal($monto);
+
+	 	//Amount
+	 	$amount->setCurrency('MXN') 
+	 		   ->setTotal($monto)
+	 		   ->setDetails($details);
+
+	 	//Transaction
+	 	$transaction->setAmount($amount)
+	 				->setDescription('Fundación Amparo - ' . $causa->titulo );
+
+	 	//Payment
+	 	$payment->setIntent('sale')
+	 			->setPayer($payer)
+	 			->setTransactions([$transaction]);
+
+	 	//Redirect Urls
+	 	$redirectUrls->setReturnUrl(URL::to('donar/save-paypal'))
+					 ->setCancelUrl(URL::to('donar/pago-error'));
+
+	 	$payment->setRedirectUrls($redirectUrls);
+
+	 	try{
+
+	 	  $payment->create( $this->_api );
+
+	 	  $hash = md5($payment->getId());
+  		  Session::put( 'paypalhas_hash', $hash );
+
+  		  $session = Session::get( 'donacion' );
+  		  $donacion = new Donaciones;
+  		  $donacion->email 				= $session['email'];
+	 	  $donacion->id_causas 			= $session['causa_donar'];
+	 	  $donacion->monto_donacion 	= $session['monto'];
+	 	  $donacion->reference_id 		= $payment->getId();
+	 	  $donacion->transaction_id		= Session::get( 'paypalhas_hash' );
+	 	  $donacion->transaction_type	= 'paypal';
+	 	  $donacion->mostrar_perfil 	= $session['mostrar_perfil'];
+
+	 	  $donacion->save();
+
+	 	}catch(PPConnetionException $e){
+	 		return View::make( 'public.covers.donar_error' )->with( [
+	 			'status'	=> $e->getMessage()
+	 		] );
+	 	}
+
+	 	foreach ($payment->getLinks() as $link){
+	 		if ( $link->getRel() == 'approval_url' )
+	 			$redirect = $link->getHref();
+	 	}
+
+	 	return Redirect::to( $redirect );
+
+	 }
+
+	/**
+	* Método para mostrar el resultante del API Paypal
+	* @return
+	*/
+	public function donarPaypalRecurring(){
+		$donacion = Session::get( 'donacion' );
+
+	 	if ( ! isset( $donacion ) )
+	 		return Redirect::to( 'donar' );
+
+	 	$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
+	 	$monto = Session::get( 'donacion.monto' );
+
+	 	try{
+			$paypalService = new \PayPal\Service\PayPalAPIInterfaceServiceService($this->_ConfigPaypalRecurring);
+			$paymentDetails= new \PayPal\EBLBaseComponents\PaymentDetailsType();
+
+			$orderTotal = new \PayPal\CoreComponentTypes\BasicAmountType();
+			$orderTotal->currencyID = 'MXN';
+			$orderTotal->value = $monto;
+
+			$paymentDetails->OrderTotal = $orderTotal;
+			$paymentDetails->PaymentAction = 'Sale';
+
+			$setECReqDetails = new \PayPal\EBLBaseComponents\SetExpressCheckoutRequestDetailsType();
+			$setECReqDetails->PaymentDetails[0] = $paymentDetails;
+			$setECReqDetails->CancelURL = URL::to('donar/pago-error');
+			$setECReqDetails->ReturnURL = URL::to('donar/save-paypal-recurrent');
+			  
+			$billingAgreementDetails = new \PayPal\EBLBaseComponents\BillingAgreementDetailsType('RecurringPayments');
+			$billingAgreementDetails->BillingAgreementDescription = 'Pago recurrente para causa '.$causa->titulo;
+			$setECReqDetails->BillingAgreementDetails = array($billingAgreementDetails);
+
+			$setECReqType = new \PayPal\PayPalAPI\SetExpressCheckoutRequestType();
+			$setECReqType->Version = '104.0';
+			$setECReqType->SetExpressCheckoutRequestDetails = $setECReqDetails;
+
+			$setECReq = new \PayPal\PayPalAPI\SetExpressCheckoutReq();
+			$setECReq->SetExpressCheckoutRequest = $setECReqType;
+
+			$setECResponse = $paypalService->SetExpressCheckout($setECReq);
+
+		}catch(PPConnetionException $e){
+	 		return View::make( 'public.covers.donar_error' )->with( [
+	 			'status'	=> $e->getMessage()
+	 		] );
+	 	}
+
+	 	if($setECResponse->Ack == 'Success' || $setECResponse->Ack == 'SuccessWithWarning'){
+
+			$redirect = $this->_RedirectRecurrent.$setECResponse->Token;
+
+			$hash = md5($setECResponse->Token);
+  		  	Session::put( 'paypalhas_hash_rec', $hash );
+
+			$session = Session::get( 'donacion' );
+	  		$donacion = new Donaciones;
+	  		$donacion->email 			= $session['email'];
+		 	$donacion->id_causas 		= $session['causa_donar'];
+		 	$donacion->monto_donacion 	= $session['monto'];
+		 	$donacion->reference_id 	= $setECResponse->Token;
+		 	$donacion->transaction_id	= Session::get( 'paypalhas_hash_rec' );
+		 	$donacion->transaction_type	= 'paypal-rec';
+		 	$donacion->mostrar_perfil 	= $session['mostrar_perfil'];
+
+		 	$donacion->save();
+
+	 		return Redirect::to( $redirect );
+
+	 	}else{
+	 		return View::make( 'public.covers.donar_error' )->with( [
+							'status'	=> 'No se pudo registrar en nuestro sistema tu donación, favor de contactarnos'
+					] );
+	 	}
+	 	
+
 	}
+
+	 /**
+	 * Método para guardar en BD en la tabla donaciones el registro de donación
+	 * @return
+	 */
+	 public function saveDonacionPaypal(){
+	 	$oPayment = new \PayPal\Api\Payment;
+	 	$payerId = $_GET['PayerID'];
+	 	$paymentId = DB::table( 'donaciones' )
+	 				 ->where('transaction_id',Session::get( 'paypalhas_hash' ))
+	 				 ->select('reference_id', 'email')
+	 				 ->first();
+	 	$email = $paymentId->email;
+	 	$paymentId = $paymentId->reference_id;
+	 	$payment = $oPayment::get($paymentId,$this->_api); 
+	 	$execution = new \PayPal\Api\PaymentExecution;
+	 	$execution->setPayerId($payerId);	
+	 	$executionFinal = $payment->execute($execution,$this->_api);
+
+		if($executionFinal->state == 'approved'){
+		 	DB::table('donaciones')
+	             ->where('reference_id', $paymentId)
+	             ->update(array('status' => 1));
+
+	        Session::forget( 'paypalhas_hash' );
+
+	        if ( ! Auth::customer()->check() )
+				$nameDonador = $email;
+			else 
+				$nameDonador = Helper::getRegisterFullName();
+
+		    $donacionMail = Mail::send( 'public.mail.donacion', ['username' => $nameDonador], function( $message ) use ($email){
+						$message
+							->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+							->to( $email, "Donador" )
+							->subject( 'Gracias por tu donativo a Fundación Amparo' );
+					});
+			$donacionDiploma = Mail::send( 'public.mail.donacion_diploma', ['username' => $nameDonador], function( $message ) use ($email){
+						$message
+							->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+							->to( $email, "Donador" )
+							->subject( '¡Felicidades! ' );
+					});
+
+	        return Redirect::to( 'gracias' );
+
+	    } else {
+
+	    	return View::make( 'public.covers.donar_error' )->with( [
+							'status'	=> 'No se pudo registrar en nuestro sistema tu donación, favor de contactarnos'
+					] );
+
+	    }
+
+	 }
+
+	 /**
+	 * Método para guardar en BD en la tabla donaciones el registro de donación
+	 * @return
+	 */
+	 public function saveDonacionPaypalRecurring(){
+
+	 	$causa   = Causas::find( Session::get( 'donacion.causa_donar' ) );
+	 	$monto   = Session::get( 'donacion.monto' );
+	 	$token   = $_GET['token'];
+	 	$PayerID = $_GET['PayerID'];
+
+		$profileDetails = new \PayPal\EBLBaseComponents\RecurringPaymentsProfileDetailsType();
+		$profileDetails->BillingStartDate = date("Y-m-d")."T00:00:00:000Z";
+
+		$paymentBillingPeriod = new \PayPal\EBLBaseComponents\BillingPeriodDetailsType();
+		$paymentBillingPeriod->BillingFrequency = 1;
+		$paymentBillingPeriod->BillingPeriod = "Month";
+		$paymentBillingPeriod->TotalBillingCycles = 12;
+		$paymentBillingPeriod->Amount = new \PayPal\CoreComponentTypes\BasicAmountType("MXN", $monto);
+
+		$scheduleDetails = new \PayPal\EBLBaseComponents\ScheduleDetailsType();
+		$scheduleDetails->Description = 'Pago recurrente para causa '.$causa->titulo;
+		$scheduleDetails->PaymentPeriod = $paymentBillingPeriod;
+
+		$createRPProfileRequestDetails = new \PayPal\EBLBaseComponents\CreateRecurringPaymentsProfileRequestDetailsType();
+		$createRPProfileRequestDetails->Token = $token;
+
+		$createRPProfileRequestDetails->ScheduleDetails = $scheduleDetails;
+		$createRPProfileRequestDetails->RecurringPaymentsProfileDetails = $profileDetails;
+
+		$createRPProfileRequest = new \PayPal\PayPalAPI\CreateRecurringPaymentsProfileRequestType();
+		$createRPProfileRequest->CreateRecurringPaymentsProfileRequestDetails = $createRPProfileRequestDetails;
+
+		$createRPProfileReq = new \PayPal\PayPalAPI\CreateRecurringPaymentsProfileReq();
+		$createRPProfileReq->CreateRecurringPaymentsProfileRequest = $createRPProfileRequest;
+
+		$paypalService = new \PayPal\Service\PayPalAPIInterfaceServiceService($this->_ConfigPaypalRecurring);
+		$createRPProfileResponse = $paypalService->CreateRecurringPaymentsProfile($createRPProfileReq); 
+
+		if($createRPProfileResponse->Ack == 'Success'){
+
+		 	$paymentId = DB::table( 'donaciones' )
+		 				 ->where('transaction_id',Session::get( 'paypalhas_hash_rec' ))
+		 				 ->select('reference_id', 'email')
+		 				 ->first();
+
+		 	$email = $paymentId->email;
+		 	$paymentId = $paymentId->reference_id; 
+
+			DB::table('donaciones')
+	             ->where('reference_id', $paymentId)
+	             ->update(array('status' => 1));
+
+	        Session::forget( 'paypalhas_hash_rec' );
+
+	        if ( ! Auth::customer()->check() )
+				$nameDonador = $email;
+			else 
+				$nameDonador = Helper::getRegisterFullName();
+
+		    $donacionMail = Mail::send( 'public.mail.donacion', ['username' => $nameDonador], function( $message ) use ($email){
+						$message
+							->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+							->to( $email, "Donador" )
+							->subject( 'Gracias por tu donativo a Fundación Amparo' );
+					});
+			$donacionDiploma = Mail::send( 'public.mail.donacion_diploma', ['username' => $nameDonador], function( $message ) use ($email){
+						$message
+							->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+							->to( $email, "Donador" )
+							->subject( '¡Felicidades! ' );
+					});
+
+	         return Redirect::to( 'gracias' );
+
+		} else {
+
+			return View::make( 'public.covers.donar_error' )->with( [
+							'status'	=> 'No se pudo registrar en nuestro sistema tu donación, favor de contactarnos'
+					] );
+
+		}
+
+	 }
 
 	/**
 	 * Método para procesar la información de pago de una donación mediante Tarjetas Débito/Crédito
@@ -255,7 +550,7 @@ class DonacionesController extends BaseController {
 
 	}
 
-	private function methodPaypal( $causa = [], $monto = '' ){
+	/*private function methodPaypal( $causa = [], $monto = '' ){
 		if ( empty( $causa ) || empty( $monto ) )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
 
@@ -264,7 +559,7 @@ class DonacionesController extends BaseController {
 		} catch (PPConnetionException $e) {
 			
 		}
-	}
+	}*/
 
 	/**
 	 * Método para procesar la información de pago de una donación mediante Oxxo

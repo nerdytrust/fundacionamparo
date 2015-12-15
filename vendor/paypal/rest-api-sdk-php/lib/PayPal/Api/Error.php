@@ -2,7 +2,7 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
+use PayPal\Common\PayPalModel;
 
 /**
  * Class Error
@@ -11,20 +11,20 @@ use PayPal\Common\PPModel;
  *
  * @package PayPal\Api
  *
- * @property string name
- * @property string debug_id
- * @property string message
- * @property string information_link
+ * @property string                     name
+ * @property string                     message
  * @property \PayPal\Api\ErrorDetails[] details
- * @property \PayPal\Api\Links[] links
+ * @property string                     information_link
+ * @property string                     debug_id
+ * @property \PayPal\Api\Links[]        links
  */
-class Error extends PPModel
+class Error extends PayPalModel
 {
     /**
      * Human readable, unique name of the error.
      *
      * @param string $name
-     * 
+     *
      * @return $this
      */
     public function setName($name)
@@ -44,58 +44,35 @@ class Error extends PPModel
     }
 
     /**
-     * PayPal internal identifier used for correlation purposes.
+     * Reference ID of the purchase_unit associated with this error
      *
-     * @param string $debug_id
-     * 
+     * @deprecated Not publicly available
+     * @param string $purchase_unit_reference_id
+     *
      * @return $this
      */
-    public function setDebugId($debug_id)
+    public function setPurchaseUnitReferenceId($purchase_unit_reference_id)
     {
-        $this->debug_id = $debug_id;
+        $this->purchase_unit_reference_id = $purchase_unit_reference_id;
         return $this;
     }
 
     /**
-     * PayPal internal identifier used for correlation purposes.
+     * Reference ID of the purchase_unit associated with this error
      *
+     * @deprecated Not publicly available
      * @return string
      */
-    public function getDebugId()
+    public function getPurchaseUnitReferenceId()
     {
-        return $this->debug_id;
-    }
-
-    /**
-     * PayPal internal identifier used for correlation purposes.
-     *
-     * @deprecated Instead use setDebugId
-     *
-     * @param string $debug_id
-     * @return $this
-     */
-    public function setDebug_id($debug_id)
-    {
-        $this->debug_id = $debug_id;
-        return $this;
-    }
-
-    /**
-     * PayPal internal identifier used for correlation purposes.
-     * @deprecated Instead use getDebugId
-     *
-     * @return string
-     */
-    public function getDebug_id()
-    {
-        return $this->debug_id;
+        return $this->purchase_unit_reference_id;
     }
 
     /**
      * Message describing the error.
      *
      * @param string $message
-     * 
+     *
      * @return $this
      */
     public function setMessage($message)
@@ -115,58 +92,35 @@ class Error extends PPModel
     }
 
     /**
-     * URI for detailed information related to this error for the developer.
+     * PayPal internal error code.
      *
-     * @param string $information_link
-     * 
+     * @deprecated Not publicly available
+     * @param string $code
+     *
      * @return $this
      */
-    public function setInformationLink($information_link)
+    public function setCode($code)
     {
-        $this->information_link = $information_link;
+        $this->code = $code;
         return $this;
     }
 
     /**
-     * URI for detailed information related to this error for the developer.
+     * PayPal internal error code.
      *
+     * @deprecated Not publicly available
      * @return string
      */
-    public function getInformationLink()
+    public function getCode()
     {
-        return $this->information_link;
-    }
-
-    /**
-     * URI for detailed information related to this error for the developer.
-     *
-     * @deprecated Instead use setInformationLink
-     *
-     * @param string $information_link
-     * @return $this
-     */
-    public function setInformation_link($information_link)
-    {
-        $this->information_link = $information_link;
-        return $this;
-    }
-
-    /**
-     * URI for detailed information related to this error for the developer.
-     * @deprecated Instead use getInformationLink
-     *
-     * @return string
-     */
-    public function getInformation_link()
-    {
-        return $this->information_link;
+        return $this->code;
     }
 
     /**
      * Additional details of the error
      *
      * @param \PayPal\Api\ErrorDetails[] $details
-     * 
+     *
      * @return $this
      */
     public function setDetails($details)
@@ -216,10 +170,106 @@ class Error extends PPModel
     }
 
     /**
+     * response codes returned from a payment processor such as avs, cvv, etc. Only supported when the `payment_method` is set to `credit_card`.
+     *
+     * @deprecated Not publicly available
+     * @param \PayPal\Api\ProcessorResponse $processor_response
+     *
+     * @return $this
+     */
+    public function setProcessorResponse($processor_response)
+    {
+        $this->processor_response = $processor_response;
+        return $this;
+    }
+
+    /**
+     * response codes returned from a payment processor such as avs, cvv, etc. Only supported when the `payment_method` is set to `credit_card`.
+     *
+     * @deprecated Not publicly available
+     * @return \PayPal\Api\ProcessorResponse
+     */
+    public function getProcessorResponse()
+    {
+        return $this->processor_response;
+    }
+
+    /**
+     * Fraud filter details.  Only supported when the `payment_method` is set to `credit_card`
+     *
+     * @deprecated Not publicly available
+     * @param \PayPal\Api\FmfDetails $fmf_details
+     *
+     * @return $this
+     */
+    public function setFmfDetails($fmf_details)
+    {
+        $this->fmf_details = $fmf_details;
+        return $this;
+    }
+
+    /**
+     * Fraud filter details.  Only supported when the `payment_method` is set to `credit_card`
+     *
+     * @deprecated Not publicly available
+     * @return \PayPal\Api\FmfDetails
+     */
+    public function getFmfDetails()
+    {
+        return $this->fmf_details;
+    }
+
+    /**
+     * URI for detailed information related to this error for the developer.
+     *
+     * @param string $information_link
+     *
+     * @return $this
+     */
+    public function setInformationLink($information_link)
+    {
+        $this->information_link = $information_link;
+        return $this;
+    }
+
+    /**
+     * URI for detailed information related to this error for the developer.
+     *
+     * @return string
+     */
+    public function getInformationLink()
+    {
+        return $this->information_link;
+    }
+
+    /**
+     * PayPal internal identifier used for correlation purposes.
+     *
+     * @param string $debug_id
+     *
+     * @return $this
+     */
+    public function setDebugId($debug_id)
+    {
+        $this->debug_id = $debug_id;
+        return $this;
+    }
+
+    /**
+     * PayPal internal identifier used for correlation purposes.
+     *
+     * @return string
+     */
+    public function getDebugId()
+    {
+        return $this->debug_id;
+    }
+
+    /**
      * Sets Links
      *
      * @param \PayPal\Api\Links[] $links
-     * 
+     *
      * @return $this
      */
     public function setLinks($links)

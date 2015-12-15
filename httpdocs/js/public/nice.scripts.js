@@ -744,6 +744,13 @@ $(function(){
 		}
 	});
 
+	$("input[name=metodo_pago]:radio").change(function () {
+		if ($(this).val() == 'paypal')
+			$('.check-verde-display-none').show("slow");
+		else
+			$('.check-verde-display-none').hide("slow");
+	});
+
 });
 
 function fbs_click(width, height) {

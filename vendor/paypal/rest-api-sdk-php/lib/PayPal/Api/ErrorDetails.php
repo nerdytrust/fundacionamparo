@@ -2,7 +2,7 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
+use PayPal\Common\PayPalModel;
 
 /**
  * Class ErrorDetails
@@ -14,13 +14,13 @@ use PayPal\Common\PPModel;
  * @property string field
  * @property string issue
  */
-class ErrorDetails extends PPModel
+class ErrorDetails extends PayPalModel
 {
     /**
      * Name of the field that caused the error.
      *
      * @param string $field
-     * 
+     *
      * @return $this
      */
     public function setField($field)
@@ -43,7 +43,7 @@ class ErrorDetails extends PPModel
      * Reason for the error.
      *
      * @param string $issue
-     * 
+     *
      * @return $this
      */
     public function setIssue($issue)
@@ -60,6 +60,56 @@ class ErrorDetails extends PPModel
     public function getIssue()
     {
         return $this->issue;
+    }
+
+    /**
+     * Reference ID of the purchase_unit associated with this error
+     *
+     * @deprecated Not publicly available
+     * @param string $purchase_unit_reference_id
+     *
+     * @return $this
+     */
+    public function setPurchaseUnitReferenceId($purchase_unit_reference_id)
+    {
+        $this->purchase_unit_reference_id = $purchase_unit_reference_id;
+        return $this;
+    }
+
+    /**
+     * Reference ID of the purchase_unit associated with this error
+     *
+     * @deprecated Not publicly available
+     * @return string
+     */
+    public function getPurchaseUnitReferenceId()
+    {
+        return $this->purchase_unit_reference_id;
+    }
+
+    /**
+     * PayPal internal error code.
+     *
+     * @deprecated Not publicly available
+     * @param string $code
+     *
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+        return $this;
+    }
+
+    /**
+     * PayPal internal error code.
+     *
+     * @deprecated Not publicly available
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 
 }

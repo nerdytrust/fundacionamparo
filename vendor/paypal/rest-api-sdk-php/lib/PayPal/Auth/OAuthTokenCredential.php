@@ -2,20 +2,30 @@
 
 namespace PayPal\Auth;
 
-use PayPal\Common\PPUserAgent;
-use PayPal\Common\ResourceModel;
-use PayPal\Core\PPConstants;
-use PayPal\Core\PPHttpConfig;
-use PayPal\Core\PPHttpConnection;
-use PayPal\Core\PPLoggingManager;
-use PayPal\Exception\PPConfigurationException;
-use PayPal\Rest\RestHandler;
+use PayPal\Cache\AuthorizationCache;
+use PayPal\Common\PayPalResourceModel;
+use PayPal\Core\PayPalHttpConfig;
+use PayPal\Core\PayPalHttpConnection;
+use PayPal\Core\PayPalLoggingManager;
+use PayPal\Exception\PayPalConfigurationException;
+use PayPal\Exception\PayPalConnectionException;
+use PayPal\Handler\IPayPalHandler;
+use PayPal\Rest\ApiContext;
+use PayPal\Security\Cipher;
 
 /**
  * Class OAuthTokenCredential
  */
-class OAuthTokenCredential extends ResourceModel
+class OAuthTokenCredential extends PayPalResourceModel
 {
+
+    public static $CACHE_PATH = '/../../../var/auth.cache';
+
+    /**
+     * @var string Default Auth Handler
+     */
+    public static $AUTH_HANDLER = 'PayPal\Handler\OauthHandler';
+
     /**
      * Private Variable
      *
@@ -26,7 +36,7 @@ class OAuthTokenCredential extends ResourceModel
     /**
      * Private Variable
      *
-     * @var \PayPal\Core\PPLoggingManager $logger
+     * @var \PayPal\Core\PayPalLoggingManager $logger
      */
     private $logger;
 
@@ -66,6 +76,13 @@ class OAuthTokenCredential extends ResourceModel
     private $tokenCreateTime;
 
     /**
+     * Instance of cipher used to encrypt/decrypt data while storing in cache.
+     *
+     * @var Cipher
+     */
+    private $cipher;
+
+    /**
      * Construct
      *
      * @param string $clientId     client id obtained from the developer portal
@@ -75,7 +92,8 @@ class OAuthTokenCredential extends ResourceModel
     {
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
-        $this->logger = PPLoggingManager::getInstance(__CLASS__);
+        $this->cipher = new Cipher($this->clientSecret);
+        $this->logger = PayPalLoggingManager::getInstance(__CLASS__);
     }
 
     /**
@@ -107,6 +125,30 @@ class OAuthTokenCredential extends ResourceModel
      */
     public function getAccessToken($config)
     {
+        // Check if we already have accessToken in Cache
+        if ($this->accessToken && (time() - $this->tokenCreateTime) < ($this->tokenExpiresIn - self::$expiryBufferTime)) {
+            return $this->accessToken;
+        }
+        // Check for persisted data first
+        $token = AuthorizationCache::pull($config, $this->clientId);
+        if ($token) {
+            // We found it
+            // This code block is for backward compatibility only.
+            if (array_key_exists('accessToken', $token)) {
+                $this->accessToken = $token['accessToken'];
+            }
+
+            $this->tokenCreateTime = $token['tokenCreateTime'];
+            $this->tokenExpiresIn = $token['tokenExpiresIn'];
+
+            // Case where we have an old unencrypted cache file
+            if (!array_key_exists('accessTokenEncrypted', $token)) {
+                AuthorizationCache::push($config, $this->clientId, $this->encrypt($this->accessToken), $this->tokenCreateTime, $this->tokenExpiresIn);
+            } else {
+                $this->accessToken = $this->decrypt($token['accessTokenEncrypted']);
+            }
+        }
+
         // Check if Access Token is not null and has not expired.
         // The API returns expiry time as a relative time unit
         // We use a buffer time when checking for token expiry to account
@@ -119,13 +161,17 @@ class OAuthTokenCredential extends ResourceModel
             $this->accessToken = null;
         }
 
+
         // If accessToken is Null, obtain a new token
         if ($this->accessToken == null) {
+            // Get a new one by making calls to API
             $this->updateAccessToken($config);
+            AuthorizationCache::push($config, $this->clientId, $this->encrypt($this->accessToken), $this->tokenCreateTime, $this->tokenExpiresIn);
         }
 
         return $this->accessToken;
     }
+
 
     /**
      * Get a Refresh Token from Authorization Code
@@ -156,12 +202,14 @@ class OAuthTokenCredential extends ResourceModel
         if ($response != null && isset($response["refresh_token"])) {
             return $response['refresh_token'];
         }
+
+        return null;
     }
 
     /**
      * Updates Access Token based on given input
      *
-     * @param      $config
+     * @param array $config
      * @param string|null $refreshToken
      * @return string
      */
@@ -175,24 +223,29 @@ class OAuthTokenCredential extends ResourceModel
      * Retrieves the token based on the input configuration
      *
      * @param array $config
+     * @param string $clientId
+     * @param string $clientSecret
      * @param string $payload
      * @return mixed
-     * @throws PPConfigurationException
-     * @throws \PayPal\Exception\PPConnectionException
+     * @throws PayPalConfigurationException
+     * @throws \PayPal\Exception\PayPalConnectionException
      */
-    private function getToken($config, $clientId, $clientSecret, $payload)
+    protected function getToken($config, $clientId, $clientSecret, $payload)
     {
-        $base64ClientID = base64_encode($clientId . ":" . $clientSecret);
-        $headers = array(
-            "User-Agent"    => PPUserAgent::getValue(PPConstants::SDK_NAME, PPConstants::SDK_VERSION),
-            "Authorization" => "Basic " . $base64ClientID,
-            "Accept"        => "*/*"
-        );
+        $httpConfig = new PayPalHttpConfig(null, 'POST', $config);
 
-        $httpConfiguration = self::getOAuthHttpConfiguration($config);
-        $httpConfiguration->setHeaders($headers);
+        $handlers = array(self::$AUTH_HANDLER);
 
-        $connection = new PPHttpConnection($httpConfiguration, $config);
+        /** @var IPayPalHandler $handler */
+        foreach ($handlers as $handler) {
+            if (!is_object($handler)) {
+                $fullHandler = "\\" . (string)$handler;
+                $handler = new $fullHandler(new ApiContext($this));
+            }
+            $handler->handle($httpConfig, $payload, array('clientId' => $clientId, 'clientSecret' => $clientSecret));
+        }
+
+        $connection = new PayPalHttpConnection($httpConfig, $config);
         $res = $connection->execute($payload);
         $response = json_decode($res, true);
 
@@ -204,7 +257,9 @@ class OAuthTokenCredential extends ResourceModel
      * Generates a new access token
      *
      * @param array $config
+     * @param null|string $refreshToken
      * @return null
+     * @throws PayPalConnectionException
      */
     private function generateAccessToken($config, $refreshToken = null)
     {
@@ -222,8 +277,9 @@ class OAuthTokenCredential extends ResourceModel
             $this->accessToken = null;
             $this->tokenExpiresIn = null;
             $this->logger->warning(
-                "Could not generate new Access token. Invalid response from server: " . $response
+                "Could not generate new Access token. Invalid response from server: "
             );
+            throw new PayPalConnectionException(null, "Could not generate new Access token. Invalid response from server: ");
         } else {
             $this->accessToken = $response["access_token"];
             $this->tokenExpiresIn = $response["expires_in"];
@@ -234,38 +290,24 @@ class OAuthTokenCredential extends ResourceModel
     }
 
     /**
-     * Get HttpConfiguration object for OAuth API
+     * Helper method to encrypt data using clientSecret as key
      *
-     * @param array $config
-     *
-     * @return PPHttpConfig
-     * @throws \PayPal\Exception\PPConfigurationException
+     * @param $data
+     * @return string
      */
-    private static function getOAuthHttpConfiguration($config)
+    public function encrypt($data)
     {
-        if (isset($config['oauth.EndPoint'])) {
-            $baseEndpoint = $config['oauth.EndPoint'];
-        } else if (isset($config['service.EndPoint'])) {
-            $baseEndpoint = $config['service.EndPoint'];
-        } else if (isset($config['mode'])) {
-            switch (strtoupper($config['mode'])) {
-                case 'SANDBOX':
-                    $baseEndpoint = PPConstants::REST_SANDBOX_ENDPOINT;
-                    break;
-                case 'LIVE':
-                    $baseEndpoint = PPConstants::REST_LIVE_ENDPOINT;
-                    break;
-                default:
-                    throw new PPConfigurationException('The mode config parameter must be set to either sandbox/live');
-            }
-        } else {
-            throw new PPConfigurationException(
-                'You must set one of service.endpoint or mode parameters in your configuration'
-            );
-        }
+        return $this->cipher->encrypt($data);
+    }
 
-        $baseEndpoint = rtrim(trim($baseEndpoint), '/');
-
-        return new PPHttpConfig($baseEndpoint . "/v1/oauth2/token", "POST");
+    /**
+     * Helper method to decrypt data using clientSecret as key
+     *
+     * @param $data
+     * @return string
+     */
+    public function decrypt($data)
+    {
+        return $this->cipher->decrypt($data);
     }
 }

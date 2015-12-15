@@ -2,11 +2,8 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
+use PayPal\Common\PayPalResourceModel;
 use PayPal\Rest\ApiContext;
-use PayPal\Rest\IResource;
-use PayPal\Api\Capture;
-use PayPal\Transport\PPRestCall;
 use PayPal\Validation\ArgumentValidator;
 
 /**
@@ -16,45 +13,29 @@ use PayPal\Validation\ArgumentValidator;
  *
  * @package PayPal\Api
  *
- * @property string id
- * @property string create_time
- * @property string update_time
- * @property \PayPal\Api\Amount amount
- * @property string payment_mode
- * @property string state
- * @property string protection_eligibility
- * @property string protection_eligibility_type
- * @property string parent_payment
- * @property string clearing_time
- * @property string valid_until
- * @property \PayPal\Api\Links links
+ * @property string                 id
+ * @property \PayPal\Api\Amount     amount
+ * @property string                 payment_mode
+ * @property string                 state
+ * @property string                 reason_code
+ * @property string                 pending_reason
+ * @property string                 protection_eligibility
+ * @property string                 protection_eligibility_type
+ * @property \PayPal\Api\FmfDetails fmf_details
+ * @property string                 parent_payment
+ * @property \PayPal\Api\ProcessorResponse processor_response
+ * @property string                 valid_until
+ * @property string                 create_time
+ * @property string                 update_time
+ * @property \PayPal\Api\Links[]    links
  */
-class Authorization extends PPModel implements IResource
+class Authorization extends PayPalResourceModel
 {
     /**
-     * OAuth Credentials to use for this call
-     *
-     * @var \PayPal\Auth\OAuthTokenCredential $credential
-     */
-    protected static $credential;
-
-    /**
-     * Sets Credential
-     *
-     * @deprecated Pass ApiContext to create/get methods instead
-     * @param \PayPal\Auth\OAuthTokenCredential $credential
-     */
-    public static function setCredential($credential)
-    {
-        self::$credential = $credential;
-    }
-
-    /**
-     * Identifier of the authorization transaction.
-     * 
+     * ID of the authorization transaction.
      *
      * @param string $id
-     * 
+     *
      * @return $this
      */
     public function setId($id)
@@ -64,7 +45,7 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * Identifier of the authorization transaction.
+     * ID of the authorization transaction.
      *
      * @return string
      */
@@ -74,109 +55,10 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * Time the resource was created in UTC ISO8601 format.
-     * 
-     *
-     * @param string $create_time
-     * 
-     * @return $this
-     */
-    public function setCreateTime($create_time)
-    {
-        $this->create_time = $create_time;
-        return $this;
-    }
-
-    /**
-     * Time the resource was created in UTC ISO8601 format.
-     *
-     * @return string
-     */
-    public function getCreateTime()
-    {
-        return $this->create_time;
-    }
-
-    /**
-     * Time the resource was created in UTC ISO8601 format.
-     *
-     * @deprecated Instead use setCreateTime
-     *
-     * @param string $create_time
-     * @return $this
-     */
-    public function setCreate_time($create_time)
-    {
-        $this->create_time = $create_time;
-        return $this;
-    }
-
-    /**
-     * Time the resource was created in UTC ISO8601 format.
-     * @deprecated Instead use getCreateTime
-     *
-     * @return string
-     */
-    public function getCreate_time()
-    {
-        return $this->create_time;
-    }
-
-    /**
-     * Time the resource was last updated in UTC ISO8601 format.
-     * 
-     *
-     * @param string $update_time
-     * 
-     * @return $this
-     */
-    public function setUpdateTime($update_time)
-    {
-        $this->update_time = $update_time;
-        return $this;
-    }
-
-    /**
-     * Time the resource was last updated in UTC ISO8601 format.
-     *
-     * @return string
-     */
-    public function getUpdateTime()
-    {
-        return $this->update_time;
-    }
-
-    /**
-     * Time the resource was last updated in UTC ISO8601 format.
-     *
-     * @deprecated Instead use setUpdateTime
-     *
-     * @param string $update_time
-     * @return $this
-     */
-    public function setUpdate_time($update_time)
-    {
-        $this->update_time = $update_time;
-        return $this;
-    }
-
-    /**
-     * Time the resource was last updated in UTC ISO8601 format.
-     * @deprecated Instead use getUpdateTime
-     *
-     * @return string
-     */
-    public function getUpdate_time()
-    {
-        return $this->update_time;
-    }
-
-    /**
-     * Amount being authorized for.
-     * 
+     * Amount being authorized.
      *
      * @param \PayPal\Api\Amount $amount
-     * 
+     *
      * @return $this
      */
     public function setAmount($amount)
@@ -186,7 +68,7 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * Amount being authorized for.
+     * Amount being authorized.
      *
      * @return \PayPal\Api\Amount
      */
@@ -196,11 +78,11 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * specifies payment mode of the transaction
-     * Valid Values: ["INSTANT_TRANSFER", "MANUAL_BANK_TRANSFER", "DELAYED_TRANSFER", "ECHECK"] 
+     * Specifies the payment mode of the transaction.
+     * Valid Values: ["INSTANT_TRANSFER"]
      *
      * @param string $payment_mode
-     * 
+     *
      * @return $this
      */
     public function setPaymentMode($payment_mode)
@@ -210,7 +92,7 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * specifies payment mode of the transaction
+     * Specifies the payment mode of the transaction.
      *
      * @return string
      */
@@ -220,36 +102,11 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * specifies payment mode of the transaction
-     *
-     * @deprecated Instead use setPaymentMode
-     *
-     * @param string $payment_mode
-     * @return $this
-     */
-    public function setPayment_mode($payment_mode)
-    {
-        $this->payment_mode = $payment_mode;
-        return $this;
-    }
-
-    /**
-     * specifies payment mode of the transaction
-     * @deprecated Instead use getPaymentMode
-     *
-     * @return string
-     */
-    public function getPayment_mode()
-    {
-        return $this->payment_mode;
-    }
-
-    /**
-     * State of the authorization transaction.
-     * Valid Values: ["pending", "authorized", "partially_captured", "captured", "expired", "voided"] 
+     * State of the authorization.
+     * Valid Values: ["pending", "authorized", "partially_captured", "captured", "expired", "voided"]
      *
      * @param string $state
-     * 
+     *
      * @return $this
      */
     public function setState($state)
@@ -259,7 +116,7 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * State of the authorization transaction.
+     * State of the authorization.
      *
      * @return string
      */
@@ -269,11 +126,59 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * Protection Eligibility of the Payer 
-     * Valid Values: ["ELIGIBLE", "PARTIALLY_ELIGIBLE", "INELIGIBLE"] 
+     * Reason code, `AUTHORIZATION`, for a transaction state of `pending`.
+     * Valid Values: ["AUTHORIZATION"]
+     *
+     * @param string $reason_code
+     *
+     * @return $this
+     */
+    public function setReasonCode($reason_code)
+    {
+        $this->reason_code = $reason_code;
+        return $this;
+    }
+
+    /**
+     * Reason code, `AUTHORIZATION`, for a transaction state of `pending`.
+     *
+     * @return string
+     */
+    public function getReasonCode()
+    {
+        return $this->reason_code;
+    }
+
+    /**
+     * [DEPRECATED] Reason code for the transaction state being Pending.Obsolete. use reason_code field instead.
+     * Valid Values: ["AUTHORIZATION"]
+     *
+     * @param string $pending_reason
+     *
+     * @return $this
+     */
+    public function setPendingReason($pending_reason)
+    {
+        $this->pending_reason = $pending_reason;
+        return $this;
+    }
+
+    /**
+     * @deprecated  [DEPRECATED] Reason code for the transaction state being Pending.Obsolete. use reason_code field instead.
+     *
+     * @return string
+     */
+    public function getPendingReason()
+    {
+        return $this->pending_reason;
+    }
+
+    /**
+     * The level of seller protection in force for the transaction. Only supported when the `payment_method` is set to `paypal`. Allowed values:<br>  `ELIGIBLE`- Merchant is protected by PayPal's Seller Protection Policy for Unauthorized Payments and Item Not Received.<br> `PARTIALLY_ELIGIBLE`- Merchant is protected by PayPal's Seller Protection Policy for Item Not Received or Unauthorized Payments. Refer to `protection_eligibility_type` for specifics. <br> `INELIGIBLE`- Merchant is not protected under the Seller Protection Policy.
+     * Valid Values: ["ELIGIBLE", "PARTIALLY_ELIGIBLE", "INELIGIBLE"]
      *
      * @param string $protection_eligibility
-     * 
+     *
      * @return $this
      */
     public function setProtectionEligibility($protection_eligibility)
@@ -283,7 +188,7 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * Protection Eligibility of the Payer 
+     * The level of seller protection in force for the transaction. Only supported when the `payment_method` is set to `paypal`. Allowed values:<br>  `ELIGIBLE`- Merchant is protected by PayPal's Seller Protection Policy for Unauthorized Payments and Item Not Received.<br> `PARTIALLY_ELIGIBLE`- Merchant is protected by PayPal's Seller Protection Policy for Item Not Received or Unauthorized Payments. Refer to `protection_eligibility_type` for specifics. <br> `INELIGIBLE`- Merchant is not protected under the Seller Protection Policy.
      *
      * @return string
      */
@@ -293,36 +198,11 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * Protection Eligibility of the Payer 
-     *
-     * @deprecated Instead use setProtectionEligibility
-     *
-     * @param string $protection_eligibility
-     * @return $this
-     */
-    public function setProtection_eligibility($protection_eligibility)
-    {
-        $this->protection_eligibility = $protection_eligibility;
-        return $this;
-    }
-
-    /**
-     * Protection Eligibility of the Payer 
-     * @deprecated Instead use getProtectionEligibility
-     *
-     * @return string
-     */
-    public function getProtection_eligibility()
-    {
-        return $this->protection_eligibility;
-    }
-
-    /**
-     * Protection Eligibility Type of the Payer 
-     * Valid Values: ["ELIGIBLE", "ITEM_NOT_RECEIVED_ELIGIBLE", "INELIGIBLE", "UNAUTHORIZED_PAYMENT_ELIGIBLE"] 
+     * The kind of seller protection in force for the transaction. This property is returned only when the `protection_eligibility` property is set to `ELIGIBLE`or `PARTIALLY_ELIGIBLE`. Only supported when the `payment_method` is set to `paypal`. Allowed values:<br> `ITEM_NOT_RECEIVED_ELIGIBLE`- Sellers are protected against claims for items not received.<br> `UNAUTHORIZED_PAYMENT_ELIGIBLE`- Sellers are protected against claims for unauthorized payments.<br> One or both of the allowed values can be returned.
+     * Valid Values: ["ITEM_NOT_RECEIVED_ELIGIBLE", "UNAUTHORIZED_PAYMENT_ELIGIBLE", "ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE"]
      *
      * @param string $protection_eligibility_type
-     * 
+     *
      * @return $this
      */
     public function setProtectionEligibilityType($protection_eligibility_type)
@@ -332,7 +212,7 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * Protection Eligibility Type of the Payer 
+     * The kind of seller protection in force for the transaction. This property is returned only when the `protection_eligibility` property is set to `ELIGIBLE`or `PARTIALLY_ELIGIBLE`. Only supported when the `payment_method` is set to `paypal`. Allowed values:<br> `ITEM_NOT_RECEIVED_ELIGIBLE`- Sellers are protected against claims for items not received.<br> `UNAUTHORIZED_PAYMENT_ELIGIBLE`- Sellers are protected against claims for unauthorized payments.<br> One or both of the allowed values can be returned.
      *
      * @return string
      */
@@ -342,36 +222,33 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * Protection Eligibility Type of the Payer 
+     * Fraud Management Filter (FMF) details applied for the payment that could result in accept, deny, or pending action. Returned in a payment response only if the merchant has enabled FMF in the profile settings and one of the fraud filters was triggered based on those settings. See [Fraud Management Filters Summary](https://developer.paypal.com/docs/classic/fmf/integration-guide/FMFSummary/) for more information.
      *
-     * @deprecated Instead use setProtectionEligibilityType
+     * @param \PayPal\Api\FmfDetails $fmf_details
      *
-     * @param string $protection_eligibility_type
      * @return $this
      */
-    public function setProtection_eligibility_type($protection_eligibility_type)
+    public function setFmfDetails($fmf_details)
     {
-        $this->protection_eligibility_type = $protection_eligibility_type;
+        $this->fmf_details = $fmf_details;
         return $this;
     }
 
     /**
-     * Protection Eligibility Type of the Payer 
-     * @deprecated Instead use getProtectionEligibilityType
+     * Fraud Management Filter (FMF) details applied for the payment that could result in accept, deny, or pending action. Returned in a payment response only if the merchant has enabled FMF in the profile settings and one of the fraud filters was triggered based on those settings. See [Fraud Management Filters Summary](https://developer.paypal.com/docs/classic/fmf/integration-guide/FMFSummary/) for more information.
      *
-     * @return string
+     * @return \PayPal\Api\FmfDetails
      */
-    public function getProtection_eligibility_type()
+    public function getFmfDetails()
     {
-        return $this->protection_eligibility_type;
+        return $this->fmf_details;
     }
 
     /**
      * ID of the Payment resource that this transaction is based on.
-     * 
      *
      * @param string $parent_payment
-     * 
+     *
      * @return $this
      */
     public function setParentPayment($parent_payment)
@@ -391,85 +268,33 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * ID of the Payment resource that this transaction is based on.
+     * Response codes returned by the processor concerning the submitted payment. Only supported when the `payment_method` is set to `credit_card`.
      *
-     * @deprecated Instead use setParentPayment
+     * @param \PayPal\Api\ProcessorResponse $processor_response
      *
-     * @param string $parent_payment
      * @return $this
      */
-    public function setParent_payment($parent_payment)
+    public function setProcessorResponse($processor_response)
     {
-        $this->parent_payment = $parent_payment;
+        $this->processor_response = $processor_response;
         return $this;
     }
 
     /**
-     * ID of the Payment resource that this transaction is based on.
-     * @deprecated Instead use getParentPayment
+     * Response codes returned by the processor concerning the submitted payment. Only supported when the `payment_method` is set to `credit_card`.
      *
-     * @return string
+     * @return \PayPal\Api\ProcessorResponse
      */
-    public function getParent_payment()
+    public function getProcessorResponse()
     {
-        return $this->parent_payment;
+        return $this->processor_response;
     }
 
     /**
-     * Expected clearing time for eCheck Transactions
-     * 
-     *
-     * @param string $clearing_time
-     * 
-     * @return $this
-     */
-    public function setClearingTime($clearing_time)
-    {
-        $this->clearing_time = $clearing_time;
-        return $this;
-    }
-
-    /**
-     * Expected clearing time for eCheck Transactions
-     *
-     * @return string
-     */
-    public function getClearingTime()
-    {
-        return $this->clearing_time;
-    }
-
-    /**
-     * Expected clearing time for eCheck Transactions
-     *
-     * @deprecated Instead use setClearingTime
-     *
-     * @param string $clearing_time
-     * @return $this
-     */
-    public function setClearing_time($clearing_time)
-    {
-        $this->clearing_time = $clearing_time;
-        return $this;
-    }
-
-    /**
-     * Expected clearing time for eCheck Transactions
-     * @deprecated Instead use getClearingTime
-     *
-     * @return string
-     */
-    public function getClearing_time()
-    {
-        return $this->clearing_time;
-    }
-
-    /**
-     * Date/Time until which funds may be captured against this resource.
-     * 
+     * Authorization expiration time and date as defined in [RFC 3339 Section 5.6](http://tools.ietf.org/html/rfc3339#section-5.6).
      *
      * @param string $valid_until
-     * 
+     *
      * @return $this
      */
     public function setValidUntil($valid_until)
@@ -479,7 +304,7 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * Date/Time until which funds may be captured against this resource.
+     * Authorization expiration time and date as defined in [RFC 3339 Section 5.6](http://tools.ietf.org/html/rfc3339#section-5.6).
      *
      * @return string
      */
@@ -489,135 +314,144 @@ class Authorization extends PPModel implements IResource
     }
 
     /**
-     * Date/Time until which funds may be captured against this resource.
+     * Time of authorization as defined in [RFC 3339 Section 5.6](http://tools.ietf.org/html/rfc3339#section-5.6).
      *
-     * @deprecated Instead use setValidUntil
+     * @param string $create_time
      *
-     * @param string $valid_until
      * @return $this
      */
-    public function setValid_until($valid_until)
+    public function setCreateTime($create_time)
     {
-        $this->valid_until = $valid_until;
+        $this->create_time = $create_time;
         return $this;
     }
 
     /**
-     * Date/Time until which funds may be captured against this resource.
-     * @deprecated Instead use getValidUntil
+     * Time of authorization as defined in [RFC 3339 Section 5.6](http://tools.ietf.org/html/rfc3339#section-5.6).
      *
      * @return string
      */
-    public function getValid_until()
+    public function getCreateTime()
     {
-        return $this->valid_until;
+        return $this->create_time;
     }
 
     /**
-     * Sets Links
-     * 
+     * Time that the resource was last updated.
      *
-     * @param \PayPal\Api\Links $links
-     * 
+     * @param string $update_time
+     *
      * @return $this
      */
-    public function setLinks($links)
+    public function setUpdateTime($update_time)
     {
-        $this->links = $links;
+        $this->update_time = $update_time;
         return $this;
     }
 
     /**
-     * Gets Links
+     * Time that the resource was last updated.
      *
-     * @return \PayPal\Api\Links[]
+     * @return string
      */
-    public function getLinks()
+    public function getUpdateTime()
     {
-        return $this->links;
+        return $this->update_time;
     }
 
     /**
-     * Obtain the Authorization transaction resource for the given identifier.
+     * Retrieve details about a previously created authorization by passing the authorization_id in the request URI.
      *
-     * @param string $authorizationId
-     * @param \PayPal\Rest\ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param string         $authorizationId
+     * @param ApiContext     $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param PayPalRestCall $restCall   is the Rest Call Service that is used to make rest calls
      * @return Authorization
      */
-    public static function get($authorizationId, $apiContext = null)
+    public static function get($authorizationId, $apiContext = null, $restCall = null)
     {
         ArgumentValidator::validate($authorizationId, 'authorizationId');
-
         $payLoad = "";
-        if ($apiContext == null) {
-            $apiContext = new ApiContext(self::$credential);
-        }
-        $call = new PPRestCall($apiContext);
-        $json = $call->execute(array('PayPal\Rest\RestHandler'), "/v1/payments/authorization/$authorizationId", "GET", $payLoad);
+        $json = self::executeCall(
+            "/v1/payments/authorization/$authorizationId",
+            "GET",
+            $payLoad,
+            null,
+            $apiContext,
+            $restCall
+        );
         $ret = new Authorization();
         $ret->fromJson($json);
         return $ret;
     }
 
     /**
-     * Creates (and processes) a new Capture Transaction added as a related resource.
+     * Capture and process a previously created authorization by passing the authorization_id in the request URI. To use this request, the original payment call must have the intent set to authorize.
      *
-     * @param Capture $capture
-     * @param \PayPal\Rest\ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param Capture        $capture
+     * @param ApiContext     $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param PayPalRestCall $restCall   is the Rest Call Service that is used to make rest calls
      * @return Capture
      */
-    public function capture($capture, $apiContext = null)
+    public function capture($capture, $apiContext = null, $restCall = null)
     {
         ArgumentValidator::validate($this->getId(), "Id");
         ArgumentValidator::validate($capture, 'capture');
-
         $payLoad = $capture->toJSON();
-        if ($apiContext == null) {
-            $apiContext = new ApiContext(self::$credential);
-        }
-        $call = new PPRestCall($apiContext);
-        $json = $call->execute(array('PayPal\Rest\RestHandler'), "/v1/payments/authorization/{$this->getId()}/capture", "POST", $payLoad);
+        $json = self::executeCall(
+            "/v1/payments/authorization/{$this->getId()}/capture",
+            "POST",
+            $payLoad,
+            null,
+            $apiContext,
+            $restCall
+        );
         $ret = new Capture();
         $ret->fromJson($json);
         return $ret;
     }
 
     /**
-     * Voids (cancels) an Authorization.
+     * Void (cancel) a previously authorized payment by passing the authorization_id in the request URI. Note that a fully captured authorization cannot be voided.
      *
-     * @param \PayPal\Rest\ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param ApiContext     $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param PayPalRestCall $restCall   is the Rest Call Service that is used to make rest calls
      * @return Authorization
      */
-    public function void($apiContext = null)
+    public function void($apiContext = null, $restCall = null)
     {
         ArgumentValidator::validate($this->getId(), "Id");
-
         $payLoad = "";
-        if ($apiContext == null) {
-            $apiContext = new ApiContext(self::$credential);
-        }
-        $call = new PPRestCall($apiContext);
-        $json = $call->execute(array('PayPal\Rest\RestHandler'), "/v1/payments/authorization/{$this->getId()}/void", "POST", $payLoad);
+        $json = self::executeCall(
+            "/v1/payments/authorization/{$this->getId()}/void",
+            "POST",
+            $payLoad,
+            null,
+            $apiContext,
+            $restCall
+        );
         $this->fromJson($json);
         return $this;
     }
 
     /**
-     * Reauthorizes an expired Authorization.
+     * Reauthorize a PayPal account payment by passing the authorization_id in the request URI. You should reauthorize a payment after the initial 3-day honor period to ensure that funds are still available. Request supports only amount field
      *
-     * @param \PayPal\Rest\ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param ApiContext     $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
+     * @param PayPalRestCall $restCall   is the Rest Call Service that is used to make rest calls
      * @return Authorization
      */
-    public function reauthorize($apiContext = null)
+    public function reauthorize($apiContext = null, $restCall = null)
     {
         ArgumentValidator::validate($this->getId(), "Id");
-
         $payLoad = $this->toJSON();
-        if ($apiContext == null) {
-            $apiContext = new ApiContext(self::$credential);
-        }
-        $call = new PPRestCall($apiContext);
-        $json = $call->execute(array('PayPal\Rest\RestHandler'), "/v1/payments/authorization/{$this->getId()}/reauthorize", "POST", $payLoad);
+        $json = self::executeCall(
+            "/v1/payments/authorization/{$this->getId()}/reauthorize",
+            "POST",
+            $payLoad,
+            null,
+            $apiContext,
+            $restCall
+        );
         $this->fromJson($json);
         return $this;
     }

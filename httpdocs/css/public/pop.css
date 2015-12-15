@@ -768,6 +768,16 @@ div.check.p2 input[type="radio"]:checked + label:before {
 	background: url("../../images/checkedp2.png");
 }
 
+div.check.p2 label.check:before {
+	background: none;
+}
+
+div.check.p2 .check-verde{
+	margin-left: 36px !important;
+}
+div.check.p2 .check-verde-display-none{
+	display: none;
+}
 .imagen{
 	width: 282px;
 	height: 280px;

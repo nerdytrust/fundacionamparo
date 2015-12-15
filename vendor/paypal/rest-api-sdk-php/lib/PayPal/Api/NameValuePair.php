@@ -2,8 +2,7 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
-use PayPal\Rest\ApiContext;
+use PayPal\Common\PayPalModel;
 
 /**
  * Class NameValuePair
@@ -15,11 +14,10 @@ use PayPal\Rest\ApiContext;
  * @property string name
  * @property string value
  */
-class NameValuePair extends PPModel
+class NameValuePair extends PayPalModel
 {
     /**
      * Key for the name value pair.  The value name types should be correlated 
-     * 
      *
      * @param string $name
      * 
@@ -43,7 +41,6 @@ class NameValuePair extends PPModel
 
     /**
      * Value for the name value pair.
-     * 
      *
      * @param string $value
      * 

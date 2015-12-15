@@ -1,14 +1,14 @@
 <?php
 
-use PayPal\Common\PPUserAgent;
+use PayPal\Common\PayPalUserAgent;
 
 class UserAgentTest extends PHPUnit_Framework_TestCase
 {
 
     public function testGetValue()
     {
-        $ua = PPUserAgent::getValue("name", "version");
-        list($id, $version, $features) = sscanf($ua, "PayPalSDK/%s %s (%s)");
+        $ua = PayPalUserAgent::getValue("name", "version");
+        list($id, $version, $features) = sscanf($ua, "PayPalSDK/%s %s (%[^[]])");
 
         // Check that we pass the useragent in the expected format
         $this->assertNotNull($id);
@@ -19,10 +19,9 @@ class UserAgentTest extends PHPUnit_Framework_TestCase
         $this->assertEquals("version", $version);
 
         // Check that we pass in these mininal features
-        $this->assertThat($features, $this->stringContains("OS="));
-        $this->assertThat($features, $this->stringContains("Bit="));
-        $this->assertThat($features, $this->stringContains("Lang="));
-        $this->assertThat($features, $this->stringContains("V="));
+        $this->assertThat($features, $this->stringContains("os="));
+        $this->assertThat($features, $this->stringContains("bit="));
+        $this->assertThat($features, $this->stringContains("platform-ver="));
         $this->assertGreaterThan(5, count(explode(';', $features)));
     }
 }

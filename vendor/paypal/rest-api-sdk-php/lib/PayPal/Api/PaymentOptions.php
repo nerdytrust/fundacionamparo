@@ -2,8 +2,7 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
-use PayPal\Rest\ApiContext;
+use PayPal\Common\PayPalModel;
 
 /**
  * Class PaymentOptions
@@ -14,14 +13,14 @@ use PayPal\Rest\ApiContext;
  *
  * @property string allowed_payment_method
  */
-class PaymentOptions extends PPModel
+class PaymentOptions extends PayPalModel
 {
     /**
-     * Payment method requested for this purchase unit
-     * Valid Values: ["UNRESTRICTED", "INSTANT_FUNDING_SOURCE", "IMMEDIATE_PAY"] 
+     * Optional payment method type. If specified, the transaction will go through for only instant payment. Only for use with the paypal payment_method, not relevant for the credit_card payment_method.
+     * Valid Values: ["UNRESTRICTED", "INSTANT_FUNDING_SOURCE", "IMMEDIATE_PAY"]
      *
      * @param string $allowed_payment_method
-     * 
+     *
      * @return $this
      */
     public function setAllowedPaymentMethod($allowed_payment_method)
@@ -31,7 +30,7 @@ class PaymentOptions extends PPModel
     }
 
     /**
-     * Payment method requested for this purchase unit
+     * Optional payment method type. If specified, the transaction will go through for only instant payment. Only for use with the paypal payment_method, not relevant for the credit_card payment_method.
      *
      * @return string
      */
@@ -41,28 +40,53 @@ class PaymentOptions extends PPModel
     }
 
     /**
-     * Payment method requested for this purchase unit
+     * Indicator if this payment request is a recurring payment. Only supported when the `payment_method` is set to `credit_card`
      *
-     * @deprecated Instead use setAllowedPaymentMethod
+     * @deprecated Not publicly available
+     * @param bool $recurring_flag
      *
-     * @param string $allowed_payment_method
      * @return $this
      */
-    public function setAllowed_payment_method($allowed_payment_method)
+    public function setRecurringFlag($recurring_flag)
     {
-        $this->allowed_payment_method = $allowed_payment_method;
+        $this->recurring_flag = $recurring_flag;
         return $this;
     }
 
     /**
-     * Payment method requested for this purchase unit
-     * @deprecated Instead use getAllowedPaymentMethod
+     * Indicator if this payment request is a recurring payment. Only supported when the `payment_method` is set to `credit_card`
      *
-     * @return string
+     * @deprecated Not publicly available
+     * @return bool
      */
-    public function getAllowed_payment_method()
+    public function getRecurringFlag()
     {
-        return $this->allowed_payment_method;
+        return $this->recurring_flag;
+    }
+
+    /**
+     * Indicator if fraud management filters (fmf) should be skipped for this transaction. Only supported when the `payment_method` is set to `credit_card`
+     *
+     * @deprecated Not publicly available
+     * @param bool $skip_fmf
+     *
+     * @return $this
+     */
+    public function setSkipFmf($skip_fmf)
+    {
+        $this->skip_fmf = $skip_fmf;
+        return $this;
+    }
+
+    /**
+     * Indicator if fraud management filters (fmf) should be skipped for this transaction. Only supported when the `payment_method` is set to `credit_card`
+     *
+     * @deprecated Not publicly available
+     * @return bool
+     */
+    public function getSkipFmf()
+    {
+        return $this->skip_fmf;
     }
 
 }

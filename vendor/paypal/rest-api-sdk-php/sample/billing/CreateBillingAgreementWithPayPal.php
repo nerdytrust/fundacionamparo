@@ -12,8 +12,8 @@
 $createdPlan = require 'UpdatePlan.php';
 
 use PayPal\Api\Agreement;
-use PayPal\Api\Plan;
 use PayPal\Api\Payer;
+use PayPal\Api\Plan;
 use PayPal\Api\ShippingAddress;
 
 /* Create a new instance of Agreement object
@@ -39,7 +39,7 @@ $agreement = new Agreement();
 
 $agreement->setName('Base Agreement')
     ->setDescription('Basic Agreement')
-    ->setStartDate('2015-06-17T9:45:04Z');
+    ->setStartDate('2019-06-17T9:45:04Z');
 
 // Add Plan ID
 // Please note that the plan Id should be only set in this case.
@@ -71,20 +71,17 @@ try {
 
     // ### Get redirect url
     // The API response provides the url that you must redirect
-    // the buyer to. Retrieve the url from the $agreement->getLinks()
+    // the buyer to. Retrieve the url from the $agreement->getApprovalLink()
     // method
-    foreach ($agreement->getLinks() as $link) {
-        if ($link->getRel() == 'approval_url') {
-            $approvalUrl = $link->getHref();
-            break;
-        }
-    }
+    $approvalUrl = $agreement->getApprovalLink();
 
 } catch (Exception $ex) {
+    // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
     ResultPrinter::printError("Created Billing Agreement.", "Agreement", null, $request, $ex);
     exit(1);
 }
 
-ResultPrinter::printResult("Created Billing Agreement. Please visit the URL to Approve.", "Agreement", "<a href='$approvalUrl' >$approvalUrl</a>", $request, $agreement);
+// NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ ResultPrinter::printResult("Created Billing Agreement. Please visit the URL to Approve.", "Agreement", "<a href='$approvalUrl' >$approvalUrl</a>", $request, $agreement);
 
 return $agreement;

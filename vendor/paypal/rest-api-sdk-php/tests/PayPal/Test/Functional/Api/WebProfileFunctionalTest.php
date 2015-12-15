@@ -2,13 +2,10 @@
 
 namespace PayPal\Test\Functional\Api;
 
-use PayPal\Api\Patch;
-use PayPal\Common\PPModel;
-use PayPal\Rest\ApiContext;
-use PayPal\Rest\IResource;
 use PayPal\Api\CreateProfileResponse;
-use PayPal\Transport\PPRestCall;
+use PayPal\Api\Patch;
 use PayPal\Api\WebProfile;
+use PayPal\Test\Functional\Setup;
 
 /**
  * Class WebProfile
@@ -22,9 +19,9 @@ class WebProfileFunctionalTest extends \PHPUnit_Framework_TestCase
 
     public $response;
 
-    public $mode = 'mock';
+    public $mockPayPalRestCall;
 
-    public $mockPPRestCall;
+    public $apiContext;
 
     public function setUp()
     {
@@ -37,20 +34,7 @@ class WebProfileFunctionalTest extends \PHPUnit_Framework_TestCase
             $this->response = json_encode($this->operation['response']['body']);
         }
 
-        $this->mode = getenv('REST_MODE') ? getenv('REST_MODE') : 'mock';
-        if ($this->mode != 'sandbox') {
-
-            // Mock PPRest Caller if mode set to mock
-            $this->mockPPRestCall = $this->getMockBuilder('\PayPal\Transport\PPRestCall')
-                ->disableOriginalConstructor()
-                ->getMock();
-
-            $this->mockPPRestCall->expects($this->any())
-                ->method('execute')
-                ->will($this->returnValue(
-                    $this->response
-                ));
-        }
+        Setup::SetUpForFunctionalTests($this);
     }
 
     /**
@@ -67,7 +51,7 @@ class WebProfileFunctionalTest extends \PHPUnit_Framework_TestCase
         $request = $this->operation['request']['body'];
         $obj = new WebProfile($request);
         $obj->setName(uniqid());
-        $result = $obj->create(null, $this->mockPPRestCall);
+        $result = $obj->create($this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         return $result;
     }
@@ -79,7 +63,7 @@ class WebProfileFunctionalTest extends \PHPUnit_Framework_TestCase
      */
     public function testGet($createProfileResponse)
     {
-        $result = WebProfile::get($createProfileResponse->getId(), null, $this->mockPPRestCall);
+        $result = WebProfile::get($createProfileResponse->getId(), $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $this->assertEquals($createProfileResponse->getId(), $result->getId());
         $this->assertEquals($this->operation['response']['body']['presentation']['logo_image'], $result->getPresentation()->getLogoImage());
@@ -96,7 +80,7 @@ class WebProfileFunctionalTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetList($webProfile)
     {
-        $result = WebProfile::get_list(null, $this->mockPPRestCall);
+        $result = WebProfile::get_list($this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $found = false;
         $foundObject = null;
@@ -124,7 +108,7 @@ class WebProfileFunctionalTest extends \PHPUnit_Framework_TestCase
         $boolValue = $webProfile->getInputFields()->getNoShipping();
         $newValue = ($boolValue + 1) % 2;
         $webProfile->getInputFields()->setNoShipping($newValue);
-        $result = $webProfile->update(null, $this->mockPPRestCall);
+        $result = $webProfile->update($this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $this->assertEquals($webProfile->getInputFields()->getNoShipping(), $newValue);
     }
@@ -146,7 +130,7 @@ class WebProfileFunctionalTest extends \PHPUnit_Framework_TestCase
             "path": "/flow_config/landing_page_type"
 
           }');
-        $result = $webProfile->partial_update($patches, null, $this->mockPPRestCall);
+        $result = $webProfile->partial_update($patches, $this->apiContext, $this->mockPayPalRestCall);
         $this->assertTrue($result);
     }
 
@@ -158,7 +142,7 @@ class WebProfileFunctionalTest extends \PHPUnit_Framework_TestCase
     {
         $webProfile = new WebProfile();
         $webProfile->setId($createProfileResponse->getId());
-        $result = $webProfile->delete(null, $this->mockPPRestCall);
+        $result = $webProfile->delete($this->apiContext, $this->mockPayPalRestCall);
         $this->assertTrue($result);
     }
 

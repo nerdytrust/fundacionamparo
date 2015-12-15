@@ -51,11 +51,13 @@ $request = clone $webProfile;
 try {
     // Use this call to create a profile.
     $createProfileResponse = $webProfile->create($apiContext);
-} catch (\PayPal\Exception\PPConnectionException $ex) {
-    ResultPrinter::printError("Created Web Profile", "Web Profile", null, $request, $ex);
+} catch (\PayPal\Exception\PayPalConnectionException $ex) {
+    // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ 	ResultPrinter::printError("Created Web Profile", "Web Profile", null, $request, $ex);
     exit(1);
 }
 
-ResultPrinter::printResult("Created Web Profile", "Web Profile", $createProfileResponse->getId(), $request, $createProfileResponse);
+// NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ ResultPrinter::printResult("Created Web Profile", "Web Profile", $createProfileResponse->getId(), $request, $createProfileResponse);
 
 return $createProfileResponse;

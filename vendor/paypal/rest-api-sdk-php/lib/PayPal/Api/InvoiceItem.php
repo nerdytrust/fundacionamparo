@@ -2,7 +2,9 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
+use PayPal\Common\PayPalModel;
+use PayPal\Converter\FormatConverter;
+use PayPal\Validation\NumericValidator;
 
 /**
  * Class InvoiceItem
@@ -19,7 +21,7 @@ use PayPal\Common\PPModel;
  * @property string date
  * @property \PayPal\Api\Cost discount
  */
-class InvoiceItem extends PPModel
+class InvoiceItem extends PayPalModel
 {
     /**
      * Name of the item. 60 characters max.
@@ -70,12 +72,14 @@ class InvoiceItem extends PPModel
     /**
      * Quantity of the item. Range of 0 to 9999.999.
      *
-     * @param \PayPal\Api\number $quantity
+     * @param string|double $quantity
      * 
      * @return $this
      */
     public function setQuantity($quantity)
     {
+        NumericValidator::validate($quantity, "Percent");
+        $quantity = FormatConverter::formatToPrice($quantity);
         $this->quantity = $quantity;
         return $this;
     }
@@ -83,7 +87,7 @@ class InvoiceItem extends PPModel
     /**
      * Quantity of the item. Range of 0 to 9999.999.
      *
-     * @return \PayPal\Api\number
+     * @return string
      */
     public function getQuantity()
     {
@@ -109,31 +113,6 @@ class InvoiceItem extends PPModel
      * @return \PayPal\Api\Currency
      */
     public function getUnitPrice()
-    {
-        return $this->unit_price;
-    }
-
-    /**
-     * Unit price of the item. Range of -999999.99 to 999999.99.
-     *
-     * @deprecated Instead use setUnitPrice
-     *
-     * @param \PayPal\Api\Currency $unit_price
-     * @return $this
-     */
-    public function setUnit_price($unit_price)
-    {
-        $this->unit_price = $unit_price;
-        return $this;
-    }
-
-    /**
-     * Unit price of the item. Range of -999999.99 to 999999.99.
-     * @deprecated Instead use getUnitPrice
-     *
-     * @return \PayPal\Api\Currency
-     */
-    public function getUnit_price()
     {
         return $this->unit_price;
     }

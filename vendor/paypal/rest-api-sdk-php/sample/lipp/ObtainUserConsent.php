@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../bootstrap.php';
 
-use PayPal\Auth\Openid\PPOpenIdSession;
+use PayPal\Api\OpenIdSession;
 
 $baseUrl = getBaseUrl() . '/UserConsentRedirect.php?success=true';
 
@@ -10,13 +10,15 @@ $baseUrl = getBaseUrl() . '/UserConsentRedirect.php?success=true';
 // The clientId is stored in the bootstrap file
 
 //Get Authorization URL returns the redirect URL that could be used to get user's consent
-$redirectUrl = PPOpenIdSession::getAuthorizationUrl(
+$redirectUrl = OpenIdSession::getAuthorizationUrl(
     $baseUrl,
-    array('profile', 'email', 'phone'),
+    array('openid', 'profile', 'address', 'email', 'phone',
+        'https://uri.paypal.com/services/paypalattributes', 'https://uri.paypal.com/services/expresscheckout'),
     null,
     null,
     null,
     $apiContext
 );
 
-ResultPrinter::printResult("Generated the User Consent URL", "URL", '<a href="'. $redirectUrl . '" >Click Here to Obtain User Consent</a>', $baseUrl, $redirectUrl);
+// NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ ResultPrinter::printResult("Generated the User Consent URL", "URL", '<a href="'. $redirectUrl . '" >Click Here to Obtain User Consent</a>', $baseUrl, $redirectUrl);

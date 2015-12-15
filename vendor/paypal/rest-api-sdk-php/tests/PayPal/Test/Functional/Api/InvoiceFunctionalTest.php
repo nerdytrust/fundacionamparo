@@ -7,6 +7,7 @@ use PayPal\Api\Notification;
 use PayPal\Api\PaymentDetail;
 use PayPal\Api\RefundDetail;
 use PayPal\Api\Search;
+use PayPal\Test\Functional\Setup;
 
 /**
  * Class Invoice
@@ -22,9 +23,9 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
 
     public $response;
 
-    public $mode = 'mock';
+    public $mockPayPalRestCall;
 
-    public $mockPPRestCall;
+    public $apiContext;
 
     public function setUp()
     {
@@ -42,20 +43,7 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
             $this->response = json_encode($this->operation['response']['body']);
         }
 
-        $this->mode = getenv('REST_MODE') ? getenv('REST_MODE') : 'mock';
-        if ($this->mode != 'sandbox') {
-
-            // Mock PPRest Caller if mode set to mock
-            $this->mockPPRestCall = $this->getMockBuilder('\PayPal\Transport\PPRestCall')
-                ->disableOriginalConstructor()
-                ->getMock();
-
-            $this->mockPPRestCall->expects($this->any())
-                ->method('execute')
-                ->will($this->returnValue(
-                    $this->response
-                ));
-        }
+        Setup::SetUpForFunctionalTests($this);
     }
 
 
@@ -72,7 +60,7 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
     {
         $request = $this->operation['request']['body'];
         $obj = new Invoice($request);
-        $result = $obj->create(null, $this->mockPPRestCall);
+        $result = $obj->create($this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         self::$obj = $result;
         return $result;
@@ -85,7 +73,7 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
      */
     public function testGet($invoice)
     {
-        $result = Invoice::get($invoice->getId(), null, $this->mockPPRestCall);
+        $result = Invoice::get($invoice->getId(), $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $this->assertEquals($invoice->getId(), $result->getId());
         return $result;
@@ -98,7 +86,7 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
      */
     public function testSend($invoice)
     {
-        $result = $invoice->send(null, $this->mockPPRestCall);
+        $result = $invoice->send($this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         return $invoice;
     }
@@ -108,22 +96,9 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
      * @param $invoice Invoice
      * @return Invoice
      */
-    public function testUpdate($invoice)
-    {
-        $this->markTestSkipped('Skipped as the fix is on the way. #PPTIPS-1932');
-        $result = $invoice->update(null, $this->mockPPRestCall);
-        $this->assertNotNull($result);
-        $this->assertEquals($invoice->getId(), $result->getId());
-    }
-
-    /**
-     * @depends testSend
-     * @param $invoice Invoice
-     * @return Invoice
-     */
     public function testGetAll($invoice)
     {
-        $result = Invoice::getAll(array('page_size' => '20', 'total_count_required' => 'true'), null, $this->mockPPRestCall);
+        $result = Invoice::getAll(array('page_size' => '20', 'total_count_required' => 'true'), $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $this->assertNotNull($result->getTotalCount());
         $totalPages = ceil($result->getTotalCount()/20);
@@ -138,12 +113,25 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
                 }
             }
             if (!$found) {
-                $result = Invoice::getAll(array('page' => --$totalPages, 'page_size' => '20', 'total_required' => 'yes'), null, $this->mockPPRestCall);
+                $result = Invoice::getAll(array('page' => --$totalPages, 'page_size' => '20', 'total_required' => 'yes'), $this->apiContext, $this->mockPayPalRestCall);
 
             }
         } while ($totalPages > 0 && $found == false);
         $this->assertTrue($found, "The Created Invoice was not found in the get list");
         $this->assertEquals($invoice->getId(), $foundObject->getId());
+    }
+
+
+    /**
+     * @depends testSend
+     * @param $invoice Invoice
+     * @return Invoice
+     */
+    public function testUpdate($invoice)
+    {
+        $result = $invoice->update($this->apiContext, $this->mockPayPalRestCall);
+        $this->assertNotNull($result);
+        $this->assertEquals($invoice->getId(), $result->getId());
     }
 
     /**
@@ -155,7 +143,7 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
     {
         $request = $this->operation['request']['body'];
         $search = new Search($request);
-        $result = Invoice::search($search, null, $this->mockPPRestCall);
+        $result = Invoice::search($search, $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $this->assertNotNull($result->getTotalCount());
     }
@@ -169,7 +157,7 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
     {
         $request = $this->operation['request']['body'];
         $notification = new Notification($request);
-        $result = $invoice->remind($notification, null, $this->mockPPRestCall);
+        $result = $invoice->remind($notification, $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
     }
 
@@ -182,7 +170,7 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
     {
         $request = $this->operation['request']['body'];
         $notification = new CancelNotification($request);
-        $result = $invoice->cancel($notification, null, $this->mockPPRestCall);
+        $result = $invoice->cancel($notification, $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
     }
 
@@ -193,7 +181,7 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
      */
     public function testQRCode($invoice)
     {
-        $result = Invoice::qrCode($invoice->getId(), array(), null, $this->mockPPRestCall);
+        $result = Invoice::qrCode($invoice->getId(), array(), $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $this->assertNotNull($result->getImage());
     }
@@ -212,7 +200,7 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
         $this->setupTest($this->getClassName(), 'testRecordPayment');
         $request = $this->operation['request']['body'];
         $paymentDetail = new PaymentDetail($request);
-        $result = $invoice->recordPayment($paymentDetail, null, $this->mockPPRestCall);
+        $result = $invoice->recordPayment($paymentDetail, $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         return $invoice;
     }
@@ -227,7 +215,7 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
     {
         $request = $this->operation['request']['body'];
         $refundDetail = new RefundDetail($request);
-        $result = $invoice->recordRefund($refundDetail, null, $this->mockPPRestCall);
+        $result = $invoice->recordRefund($refundDetail, $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $this->setupTest($this->getClassName(), 'testDelete');
         $invoice = $this->testDelete($invoice);
@@ -244,7 +232,7 @@ class InvoiceFunctionalTest extends \PHPUnit_Framework_TestCase
         $this->setupTest($this->getClassName(), 'testCreate');
         $invoice = $this->testCreate($invoice);
         $this->setupTest($this->getClassName(), 'testDelete');
-        $result = $invoice->delete(null, $this->mockPPRestCall);
+        $result = $invoice->delete($this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
     }
 

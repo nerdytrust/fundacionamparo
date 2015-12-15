@@ -2,7 +2,6 @@
 
 namespace PayPal\Test\Api;
 
-use PayPal\Common\PPModel;
 use PayPal\Api\FundingInstrument;
 
 /**
@@ -14,15 +13,17 @@ class FundingInstrumentTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Gets Json String of Object FundingInstrument
+     *
      * @return string
      */
     public static function getJson()
     {
-        return '{"credit_card":' .CreditCardTest::getJson() . ',"credit_card_token":' .CreditCardTokenTest::getJson() . ',"payment_card":' .PaymentCardTest::getJson() . ',"payment_card_token":' .PaymentCardTokenTest::getJson() . ',"bank_account":' .ExtendedBankAccountTest::getJson() . ',"bank_account_token":' .BankTokenTest::getJson() . ',"credit":' .CreditTest::getJson() . '}';
+        return '{"credit_card":' . CreditCardTest::getJson() . ',"credit_card_token":' . CreditCardTokenTest::getJson() . ',"payment_card":' . PaymentCardTest::getJson() . ',"bank_account":' . ExtendedBankAccountTest::getJson() . ',"bank_account_token":' . BankTokenTest::getJson() . ',"credit":' . CreditTest::getJson() . ',"incentive":' . IncentiveTest::getJson() . ',"external_funding":' . ExternalFundingTest::getJson() . ',"carrier_account_token":' . CarrierAccountTokenTest::getJson() . ',"carrier_account":' . CarrierAccountTest::getJson() . ',"private_label_card":' . PrivateLabelCardTest::getJson() . ',"billing":' . BillingTest::getJson() . ',"alternate_payment":' . AlternatePaymentTest::getJson() . '}';
     }
 
     /**
      * Gets Object Instance with Json data filled in
+     *
      * @return FundingInstrument
      */
     public static function getObject()
@@ -33,6 +34,7 @@ class FundingInstrumentTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Tests for Serialization and Deserialization Issues
+     *
      * @return FundingInstrument
      */
     public function testSerializationDeserialization()
@@ -42,10 +44,16 @@ class FundingInstrumentTest extends \PHPUnit_Framework_TestCase
         $this->assertNotNull($obj->getCreditCard());
         $this->assertNotNull($obj->getCreditCardToken());
         $this->assertNotNull($obj->getPaymentCard());
-        $this->assertNotNull($obj->getPaymentCardToken());
         $this->assertNotNull($obj->getBankAccount());
         $this->assertNotNull($obj->getBankAccountToken());
         $this->assertNotNull($obj->getCredit());
+        $this->assertNotNull($obj->getIncentive());
+        $this->assertNotNull($obj->getExternalFunding());
+        $this->assertNotNull($obj->getCarrierAccountToken());
+        $this->assertNotNull($obj->getCarrierAccount());
+        $this->assertNotNull($obj->getPrivateLabelCard());
+        $this->assertNotNull($obj->getBilling());
+        $this->assertNotNull($obj->getAlternatePayment());
         $this->assertEquals(self::getJson(), $obj->toJson());
         return $obj;
     }
@@ -59,86 +67,17 @@ class FundingInstrumentTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($obj->getCreditCard(), CreditCardTest::getObject());
         $this->assertEquals($obj->getCreditCardToken(), CreditCardTokenTest::getObject());
         $this->assertEquals($obj->getPaymentCard(), PaymentCardTest::getObject());
-        $this->assertEquals($obj->getPaymentCardToken(), PaymentCardTokenTest::getObject());
         $this->assertEquals($obj->getBankAccount(), ExtendedBankAccountTest::getObject());
         $this->assertEquals($obj->getBankAccountToken(), BankTokenTest::getObject());
         $this->assertEquals($obj->getCredit(), CreditTest::getObject());
+        $this->assertEquals($obj->getIncentive(), IncentiveTest::getObject());
+        $this->assertEquals($obj->getExternalFunding(), ExternalFundingTest::getObject());
+        $this->assertEquals($obj->getCarrierAccountToken(), CarrierAccountTokenTest::getObject());
+        $this->assertEquals($obj->getCarrierAccount(), CarrierAccountTest::getObject());
+        $this->assertEquals($obj->getPrivateLabelCard(), PrivateLabelCardTest::getObject());
+        $this->assertEquals($obj->getBilling(), BillingTest::getObject());
+        $this->assertEquals($obj->getAlternatePayment(), AlternatePaymentTest::getObject());
     }
-
-    /**
-     * @depends testSerializationDeserialization
-     * @param FundingInstrument $obj
-     */
-    public function testDeprecatedGetters($obj)
-    {
-        $this->assertEquals($obj->getCredit_card(), CreditCardTest::getObject());
-        $this->assertEquals($obj->getCredit_card_token(), CreditCardTokenTest::getObject());
-        $this->assertEquals($obj->getPayment_card(), PaymentCardTest::getObject());
-        $this->assertEquals($obj->getPayment_card_token(), PaymentCardTokenTest::getObject());
-        $this->assertEquals($obj->getBank_account(), ExtendedBankAccountTest::getObject());
-        $this->assertEquals($obj->getBank_account_token(), BankTokenTest::getObject());
-    }
-
-    /**
-     * @depends testSerializationDeserialization
-     * @param FundingInstrument $obj
-     */
-    public function testDeprecatedSetterNormalGetter($obj)
-    {
-
-        // Check for Credit_card
-        $obj->setCreditCard(null);
-        $this->assertNull($obj->getCredit_card());
-        $this->assertNull($obj->getCreditCard());
-        $this->assertSame($obj->getCreditCard(), $obj->getCredit_card());
-        $obj->setCredit_card(CreditCardTest::getObject());
-        $this->assertEquals($obj->getCredit_card(), CreditCardTest::getObject());
-
-        // Check for Credit_card_token
-        $obj->setCreditCardToken(null);
-        $this->assertNull($obj->getCredit_card_token());
-        $this->assertNull($obj->getCreditCardToken());
-        $this->assertSame($obj->getCreditCardToken(), $obj->getCredit_card_token());
-        $obj->setCredit_card_token(CreditCardTokenTest::getObject());
-        $this->assertEquals($obj->getCredit_card_token(), CreditCardTokenTest::getObject());
-
-        // Check for Payment_card
-        $obj->setPaymentCard(null);
-        $this->assertNull($obj->getPayment_card());
-        $this->assertNull($obj->getPaymentCard());
-        $this->assertSame($obj->getPaymentCard(), $obj->getPayment_card());
-        $obj->setPayment_card(PaymentCardTest::getObject());
-        $this->assertEquals($obj->getPayment_card(), PaymentCardTest::getObject());
-
-        // Check for Payment_card_token
-        $obj->setPaymentCardToken(null);
-        $this->assertNull($obj->getPayment_card_token());
-        $this->assertNull($obj->getPaymentCardToken());
-        $this->assertSame($obj->getPaymentCardToken(), $obj->getPayment_card_token());
-        $obj->setPayment_card_token(PaymentCardTokenTest::getObject());
-        $this->assertEquals($obj->getPayment_card_token(), PaymentCardTokenTest::getObject());
-
-        // Check for Bank_account
-        $obj->setBankAccount(null);
-        $this->assertNull($obj->getBank_account());
-        $this->assertNull($obj->getBankAccount());
-        $this->assertSame($obj->getBankAccount(), $obj->getBank_account());
-        $obj->setBank_account(ExtendedBankAccountTest::getObject());
-        $this->assertEquals($obj->getBank_account(), ExtendedBankAccountTest::getObject());
-
-        // Check for Bank_account_token
-        $obj->setBankAccountToken(null);
-        $this->assertNull($obj->getBank_account_token());
-        $this->assertNull($obj->getBankAccountToken());
-        $this->assertSame($obj->getBankAccountToken(), $obj->getBank_account_token());
-        $obj->setBank_account_token(BankTokenTest::getObject());
-        $this->assertEquals($obj->getBank_account_token(), BankTokenTest::getObject());
-
-        //Test All Deprecated Getters and Normal Getters
-        $this->testDeprecatedGetters($obj);
-        $this->testGetters($obj);
-    }
-
 
 
 }

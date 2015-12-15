@@ -2,7 +2,6 @@
 
 namespace PayPal\Test\Api;
 
-use PayPal\Common\PPModel;
 use PayPal\Api\ErrorDetails;
 
 /**
@@ -14,15 +13,17 @@ class ErrorDetailsTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Gets Json String of Object ErrorDetails
+     *
      * @return string
      */
     public static function getJson()
     {
-        return '{"field":"TestSample","issue":"TestSample"}';
+        return '{"field":"TestSample","issue":"TestSample","purchase_unit_reference_id":"TestSample","code":"TestSample"}';
     }
 
     /**
      * Gets Object Instance with Json data filled in
+     *
      * @return ErrorDetails
      */
     public static function getObject()
@@ -33,6 +34,7 @@ class ErrorDetailsTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Tests for Serialization and Deserialization Issues
+     *
      * @return ErrorDetails
      */
     public function testSerializationDeserialization()
@@ -41,6 +43,8 @@ class ErrorDetailsTest extends \PHPUnit_Framework_TestCase
         $this->assertNotNull($obj);
         $this->assertNotNull($obj->getField());
         $this->assertNotNull($obj->getIssue());
+        $this->assertNotNull($obj->getPurchaseUnitReferenceId());
+        $this->assertNotNull($obj->getCode());
         $this->assertEquals(self::getJson(), $obj->toJson());
         return $obj;
     }
@@ -53,28 +57,9 @@ class ErrorDetailsTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals($obj->getField(), "TestSample");
         $this->assertEquals($obj->getIssue(), "TestSample");
+        $this->assertEquals($obj->getPurchaseUnitReferenceId(), "TestSample");
+        $this->assertEquals($obj->getCode(), "TestSample");
     }
-
-    /**
-     * @depends testSerializationDeserialization
-     * @param ErrorDetails $obj
-     */
-    public function testDeprecatedGetters($obj)
-    {
-    }
-
-    /**
-     * @depends testSerializationDeserialization
-     * @param ErrorDetails $obj
-     */
-    public function testDeprecatedSetterNormalGetter($obj)
-    {
-
-        //Test All Deprecated Getters and Normal Getters
-        $this->testDeprecatedGetters($obj);
-        $this->testGetters($obj);
-    }
-
 
 
 }

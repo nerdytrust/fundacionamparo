@@ -5,12 +5,7 @@ namespace PayPal\Test\Functional\Api;
 use PayPal\Api\Patch;
 use PayPal\Api\PatchRequest;
 use PayPal\Api\Plan;
-use PayPal\Common\PPModel;
-use PayPal\Rest\ApiContext;
-use PayPal\Rest\IResource;
-use PayPal\Api\CreateProfileResponse;
-use PayPal\Transport\PPRestCall;
-use PayPal\Api\WebProfile;
+use PayPal\Test\Functional\Setup;
 
 /**
  * Class Billing Plans
@@ -28,7 +23,9 @@ class BillingPlansFunctionalTest extends \PHPUnit_Framework_TestCase
 
     public $mode = 'mock';
 
-    public $mockPPRestCall;
+    public $mockPayPalRestCall;
+
+    public $apiContext;
 
     public function setUp()
     {
@@ -46,20 +43,7 @@ class BillingPlansFunctionalTest extends \PHPUnit_Framework_TestCase
             $this->response = json_encode($this->operation['response']['body']);
         }
 
-        $this->mode = getenv('REST_MODE') ? getenv('REST_MODE') : 'mock';
-        if ($this->mode != 'sandbox') {
-
-            // Mock PPRest Caller if mode set to mock
-            $this->mockPPRestCall = $this->getMockBuilder('\PayPal\Transport\PPRestCall')
-                ->disableOriginalConstructor()
-                ->getMock();
-
-            $this->mockPPRestCall->expects($this->any())
-                ->method('execute')
-                ->will($this->returnValue(
-                    $this->response
-                ));
-        }
+        Setup::SetUpForFunctionalTests($this);
     }
 
     /**
@@ -94,7 +78,7 @@ class BillingPlansFunctionalTest extends \PHPUnit_Framework_TestCase
     {
         $request = $this->operation['request']['body'];
         $obj = new Plan($request);
-        $result = $obj->create(null, $this->mockPPRestCall);
+        $result = $obj->create($this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         self::$obj = $result;
         return $result;
@@ -104,7 +88,7 @@ class BillingPlansFunctionalTest extends \PHPUnit_Framework_TestCase
     {
         $request = $this->operation['request']['body'];
         $obj = new Plan($request);
-        $result = $obj->create(null, $this->mockPPRestCall);
+        $result = $obj->create($this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         return $result;
     }
@@ -116,7 +100,7 @@ class BillingPlansFunctionalTest extends \PHPUnit_Framework_TestCase
      */
     public function testGet($plan)
     {
-        $result = Plan::get($plan->getId(), null, $this->mockPPRestCall);
+        $result = Plan::get($plan->getId(), $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $this->assertEquals($plan->getId(), $result->getId());
         $this->assertEquals($plan, $result, "", 0, 10, true);
@@ -129,7 +113,7 @@ class BillingPlansFunctionalTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetList($plan)
     {
-        $result = Plan::all(array('page_size' => '20', 'total_required' => 'yes'), null, $this->mockPPRestCall);
+        $result = Plan::all(array('page_size' => '20', 'total_required' => 'yes'), $this->apiContext, $this->mockPayPalRestCall);
         $this->assertNotNull($result);
         $totalPages = $result->getTotalPages();
         $found = false;
@@ -143,7 +127,7 @@ class BillingPlansFunctionalTest extends \PHPUnit_Framework_TestCase
                 }
             }
             if (!$found) {
-                $result = Plan::all(array('page' => --$totalPages, 'page_size' => '20', 'total_required' => 'yes'), null, $this->mockPPRestCall);
+                $result = Plan::all(array('page' => --$totalPages, 'page_size' => '20', 'total_required' => 'yes'), $this->apiContext, $this->mockPayPalRestCall);
 
             }
         } while ($totalPages > 0 && $found == false);
@@ -168,7 +152,7 @@ class BillingPlansFunctionalTest extends \PHPUnit_Framework_TestCase
         $patches[] = $patch;
         $patchRequest = new PatchRequest();
         $patchRequest->setPatches($patches);
-        $result = $plan->update($patchRequest, null, $this->mockPPRestCall);
+        $result = $plan->update($patchRequest, $this->apiContext, $this->mockPayPalRestCall);
         $this->assertTrue($result);
     }
 
@@ -189,7 +173,7 @@ class BillingPlansFunctionalTest extends \PHPUnit_Framework_TestCase
         $patches[] = $patch;
         $patchRequest = new PatchRequest();
         $patchRequest->setPatches($patches);
-        $result = $plan->update($patchRequest, null, $this->mockPPRestCall);
+        $result = $plan->update($patchRequest, $this->apiContext, $this->mockPayPalRestCall);
         $this->assertTrue($result);
     }
 
@@ -210,8 +194,8 @@ class BillingPlansFunctionalTest extends \PHPUnit_Framework_TestCase
         $patches[] = $patch;
         $patchRequest = new PatchRequest();
         $patchRequest->setPatches($patches);
-        $result = $plan->update($patchRequest, null, $this->mockPPRestCall);
+        $result = $plan->update($patchRequest, $this->apiContext, $this->mockPayPalRestCall);
         $this->assertTrue($result);
-        return Plan::get($plan->getId(), null, $this->mockPPRestCall);
+        return Plan::get($plan->getId(), $this->apiContext, $this->mockPayPalRestCall);
     }
 }

@@ -2,27 +2,25 @@
 
 namespace PayPal\Api;
 
-use PayPal\Common\PPModel;
-use PayPal\Rest\ApiContext;
+use PayPal\Common\PayPalModel;
 
 /**
  * Class PaymentHistory
  *
- * A list of Payment Resources
+ * List of Payments made by the seller.
  *
  * @package PayPal\Api
  *
- * @property \PayPal\Api\Payment payments
+ * @property \PayPal\Api\Payment[] payments
  * @property int count
  * @property string next_id
  */
-class PaymentHistory extends PPModel
+class PaymentHistory extends PayPalModel
 {
     /**
      * A list of Payment resources
-     * 
      *
-     * @param \PayPal\Api\Payment $payments
+     * @param \PayPal\Api\Payment[] $payments
      * 
      * @return $this
      */
@@ -43,8 +41,37 @@ class PaymentHistory extends PPModel
     }
 
     /**
+     * Append Payments to the list.
+     *
+     * @param \PayPal\Api\Payment $payment
+     * @return $this
+     */
+    public function addPayment($payment)
+    {
+        if (!$this->getPayments()) {
+            return $this->setPayments(array($payment));
+        } else {
+            return $this->setPayments(
+                array_merge($this->getPayments(), array($payment))
+            );
+        }
+    }
+
+    /**
+     * Remove Payments from the list.
+     *
+     * @param \PayPal\Api\Payment $payment
+     * @return $this
+     */
+    public function removePayment($payment)
+    {
+        return $this->setPayments(
+            array_diff($this->getPayments(), array($payment))
+        );
+    }
+
+    /**
      * Number of items returned in each range of results. Note that the last results range could have fewer items than the requested number of items.
-     * 
      *
      * @param int $count
      * 
@@ -68,7 +95,6 @@ class PaymentHistory extends PPModel
 
     /**
      * Identifier of the next element to get the next range of results.
-     * 
      *
      * @param string $next_id
      * 
@@ -86,31 +112,6 @@ class PaymentHistory extends PPModel
      * @return string
      */
     public function getNextId()
-    {
-        return $this->next_id;
-    }
-
-    /**
-     * Identifier of the next element to get the next range of results.
-     *
-     * @deprecated Instead use setNextId
-     *
-     * @param string $next_id
-     * @return $this
-     */
-    public function setNext_id($next_id)
-    {
-        $this->next_id = $next_id;
-        return $this;
-    }
-
-    /**
-     * Identifier of the next element to get the next range of results.
-     * @deprecated Instead use getNextId
-     *
-     * @return string
-     */
-    public function getNext_id()
     {
         return $this->next_id;
     }

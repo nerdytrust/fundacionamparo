@@ -2,8 +2,8 @@
 
 require __DIR__ . '/../bootstrap.php';
 
-use PayPal\Auth\Openid\PPOpenIdTokeninfo;
-use PayPal\Exception\PPConnectionException;
+use PayPal\Api\OpenIdTokeninfo;
+use PayPal\Exception\PayPalConnectionException;
 
 session_start();
 
@@ -16,12 +16,14 @@ if (isset($_GET['success']) && $_GET['success'] == 'true') {
 
     try {
         // Obtain Authorization Code from Code, Client ID and Client Secret
-        $accessToken = PPOpenIdTokeninfo::createFromAuthorizationCode(array('code' => $code), null, null, $apiContext);
-    } catch (PPConnectionException $ex) {
-        ResultPrinter::printError("Obtained Access Token", "Access Token", null, $_GET['code'], $ex);
+        $accessToken = OpenIdTokeninfo::createFromAuthorizationCode(array('code' => $code), null, null, $apiContext);
+    } catch (PayPalConnectionException $ex) {
+        // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ 	ResultPrinter::printError("Obtained Access Token", "Access Token", null, $_GET['code'], $ex);
         exit(1);
     }
 
-    ResultPrinter::printResult("Obtained Access Token", "Access Token", $accessToken->getAccessToken(), $_GET['code'], $accessToken);
+    // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ ResultPrinter::printResult("Obtained Access Token", "Access Token", $accessToken->getAccessToken(), $_GET['code'], $accessToken);
 
 }

@@ -30,10 +30,29 @@ try {
     // (See bootstrap.php for more on `ApiContext`)
     $recordStatus = $invoice->recordPayment($record, $apiContext);
 } catch (Exception $ex) {
-    ResultPrinter::printError("Payment for Invoice", "Invoice", null, null, $ex);
+    // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ 	ResultPrinter::printError("Payment for Invoice", "Invoice", null, null, $ex);
     exit(1);
 }
 
-ResultPrinter::printResult("Payment for Invoice", "Invoice", $invoice->getId(), $record, null);
+// NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ ResultPrinter::printResult("Payment for Invoice", "Invoice", $invoice->getId(), $record, null);
+
+// ### Retrieve Invoice
+// Retrieve the invoice object by calling the
+// static `get` method
+// on the Invoice class by passing a valid
+// Invoice ID
+// (See bootstrap.php for more on `ApiContext`)
+try {
+    $invoice = Invoice::get($invoice->getId(), $apiContext);
+} catch (Exception $ex) {
+    // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ 	ResultPrinter::printError("Get Invoice (Not Required - For Sample Only)", "Invoice", $invoice->getId(), $invoice->getId(), $ex);
+    exit(1);
+}
+
+// NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
+ ResultPrinter::printResult("Get Invoice (Not Required - For Sample Only)", "Invoice", $invoice->getId(), $invoice->getId(), $invoice);
 
 return $invoice;

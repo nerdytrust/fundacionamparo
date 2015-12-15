@@ -2,7 +2,6 @@
 
 namespace PayPal\Test\Api;
 
-use PayPal\Common\PPModel;
 use PayPal\Api\PatchRequest;
 
 /**
@@ -51,27 +50,5 @@ class PatchRequestTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals($obj->getPatches(), PatchTest::getObject());
     }
-
-    /**
-     * @depends testSerializationDeserialization
-     * @param PatchRequest $obj
-     */
-    public function testDeprecatedGetters($obj)
-    {
-    }
-
-    /**
-     * @depends testSerializationDeserialization
-     * @param PatchRequest $obj
-     */
-    public function testDeprecatedSetterNormalGetter($obj)
-    {
-
-        //Test All Deprecated Getters and Normal Getters
-        $this->testDeprecatedGetters($obj);
-        $this->testGetters($obj);
-    }
-
-
 
 }
