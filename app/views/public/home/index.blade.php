@@ -112,8 +112,8 @@
 					 			<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '559x548' ) }}" alt="">
 					 			<section id="social_top">
 									<ul>
-										{{ Helper::facebookShare( '', URL::to( 'ficha-causas' ) . '/' . $causa->id_causas, '' ) }}
-										{{ Helper::twitterShare( $causa->titulo, URL::to( 'ficha-causas' ) . '/' . $causa->id_causas, '' ) }}
+										{{ Helper::facebookShare( '', URL::to( 'ficha-causas' ) . '/' . $causa->id_causas . '/' . Str::slug($causa->titulo), '' ) }}
+										{{ Helper::twitterShare( $causa->titulo, URL::to( 'ficha-causas' ) . '/' . $causa->id_causas . '/' . Str::slug($causa->titulo), '' ) }}
 										{{ Helper::like( $causa->id_causas, 'causas' ) }}
 										<p>{{ $causa->me_gusta_interno }} likes</p>
 									</ul>
@@ -123,7 +123,7 @@
 					 				<h1>{{ $causa->id_categorias_record->nombre }}</h1>
 					 				<h2>{{ $causa->titulo }}</h2>
 					 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
-									<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas ) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
+									<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas . '/' . Str::slug($causa->titulo)) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
 									<div id="meta">
 										<div id="barra">
 											<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>

@@ -80,7 +80,8 @@ Route::get( 'ficha-donador/{id}', [ 'uses' => 'CoversController@fichaDonador', '
 Route::get( 'ficha-impulsor', [ 'uses' => 'CoversController@fichaImpulsor', 'as' => 'get.ficha-impulsor' ] );
 Route::get( 'ficha-voluntario', [ 'uses' => 'CoversController@fichaVoluntario', 'as' => 'get.ficha-voluntario' ] );
 Route::get( 'ficha-causas', 'CoversController@fichaCausas' );
-Route::get( 'ficha-causas/{id}', 'CoversController@fichaCausas' )->where( 'id', '[0-9]+' );
+Route::get( 'ficha-causas/{id}', 'CoversController@fichaCausas' )->where( 'id', '[0-9]+');
+Route::get( 'ficha-causas/{id}/{slug}', 'CoversController@fichaCausas' )->where( 'id' , '[0-9]+'); 
 Route::get( 'ficha-noticias', [ 'uses' => 'CoversController@fichaNoticias', 'as' => 'get.ficha-noticias' ] );
 Route::get( 'ficha-noticias/{id}', 'CoversController@fichaNoticias' )->where( 'id', '[0-9]+' );
 Route::get( 'gracias-registro', [ 'uses' => 'CoversController@thanksRegistro', 'as' => 'get.gracias-registro' ] );

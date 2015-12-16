@@ -164,22 +164,22 @@ class NoticiasController extends BaseController {
 			$string .=	'<div id="cja_noticia">';
 			$string .=	'	<div id="caja_aporta2">';
 			$string .=	'		<article class="caja_fca2">';
-			$string .=	'			<a href="'.URL::to( 'ficha-causas/' . $causa->id_causas ).'">';
+			$string .=	'			<a href="'.URL::to( 'ficha-causas/' . $causa->id_causas . '/' . Str::slug($causa->titulo) ).'">';
 			$string .=	'				<img src="'.asset( 'path_image/' . $causa->imagen . '/' . '245x245' ).'" alt="">';
 			$string .=	'			</a>';
 			$string .=	'			</article>';
 			$string .=	'			<div id="txt_noticia">';
-			$string .=	'			<a href="'.URL::to( 'ficha-causas/' . $causa->id_causas ).'" class="black-link"><h1>'.$causa->titulo.'</h1></a>';
+			$string .=	'			<a href="'.URL::to( 'ficha-causas/' . $causa->id_causas . '/' . Str::slug($causa->titulo) ).'" class="black-link"><h1>'.$causa->titulo.'</h1></a>';
 			$string .=	'			<h2>'.date("d M Y",strtotime($causa->created_at)) .'</h2>';
 								
 			
 								
 			$string .=	'				<p>'.Str::limit( $causa->descripcion, 180 ) .'</p>';
 		
-			$string .=	'			<a href="'. URL::to( 'ficha-causas/' . $causa->id_causas ) .'"><h3>MÁS INFORMACIÓN <span>+</span></h3></a>';
+			$string .=	'			<a href="'. URL::to( 'ficha-causas/' . $causa->id_causas . '/' . Str::slug($causa->titulo) ) .'"><h3>MÁS INFORMACIÓN <span>+</span></h3></a>';
 			$string .=	'			<nav>';
 			$string .=	'				<ul>';
-			$string .=						Helper::facebookShare( '', URL::to( 'ficha-causas' ) . '/' . $causa->id_causas, '' );
+			$string .=						Helper::facebookShare( '', URL::to( 'ficha-causas' ) . '/' . $causa->id_causas . '/' . Str::slug($causa->titulo), '' );
 			$string .=						Helper::twitterShare( $causa->titulo, URL::to( 'ficha-noticias' ) . '/' . $causa->id_causas, '' );
 			$string .=						Helper::like( $causa->id_causas, 'causas' );
 			$string .=	'					<p>'. $causa->me_gusta_interno .' likes</p>';
