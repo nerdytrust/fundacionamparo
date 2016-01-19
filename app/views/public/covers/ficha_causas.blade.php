@@ -13,7 +13,7 @@
 					<div id="txt_evento">						
 						<nav>
 							<ul>
-								{{ Helper::facebookShare( '', Request::url().'?v='.str_random(10);, '' ) }}
+								{{ Helper::facebookShare( '', Request::url().'?v='.str_random(10), '' ) }}
 								{{ Helper::twitterShare( $causa->titulo, Request::url(), '' ) }}
 								{{ Helper::like( $causa->id_causas, 'causas' ) }}
 								<p>{{ $causa->me_gusta_interno }} likes</p>
