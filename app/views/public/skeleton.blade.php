@@ -5,7 +5,11 @@
 <!--[if gt IE 8]><!--> <html lang="es" class="no-js"> <!--<![endif]-->
     <head>
         <base href="{{ asset("") }}">
-        <title>{{ getenv('APP_TITLE') }}</title>
+        @if ( isset( $title ) )
+            <title>{{ $title }}</title>
+        @else
+            <title>{{ getenv('APP_TITLE') }}</title>
+        @endif
         <meta charset="utf-8">
         
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">

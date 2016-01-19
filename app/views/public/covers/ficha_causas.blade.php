@@ -1,4 +1,7 @@
-<?php $disable_header = 1; $disable_footer = 1; ?>
+<?php 
+	$disable_header = 1; $disable_footer = 1; 
+	$title = $causa->id_categorias_record->nombre .' '. $causa->titulo;
+?>
 @extends( "public.covers.layout" )
 	@section("class")ficha-causas
 	@stop
@@ -10,7 +13,7 @@
 					<div id="txt_evento">						
 						<nav>
 							<ul>
-								{{ Helper::facebookShare( '', Request::url(), '' ) }}
+								{{ Helper::facebookShare( '', Request::url().'?v='.str_random(10);, '' ) }}
 								{{ Helper::twitterShare( $causa->titulo, Request::url(), '' ) }}
 								{{ Helper::like( $causa->id_causas, 'causas' ) }}
 								<p>{{ $causa->me_gusta_interno }} likes</p>
