@@ -1,3 +1,9 @@
+<?php	
+	$share_fb  = [ 
+		'title'       => getenv('APP_TITLE') . " - Preparando a nuestros niños para un futuro de oportunidad",
+		'image'       => asset( 'images/fundacion_educacion.jpg')
+	];
+?>
 @extends( 'public.layout' )
 	@section("class")educacion
 	@stop

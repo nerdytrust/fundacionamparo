@@ -1,7 +1,7 @@
 <?php	
 	$share_fb  = [ 
-		'title'       => getenv('APP_TITLE') . " - Preparando a nuestros niños para un futuro de oportunidad",
-		'image'       => asset( 'images/fundacion_educacion.jpg')
+		'title'       => getenv('APP_TITLE') . " - “Impulso al desarrollo y la sana competencia",
+		'image'       => asset( 'images/fundacion_deporte.jpg')
 	];
 ?>
 @extends( 'public.layout' )
