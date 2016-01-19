@@ -76,7 +76,7 @@ class Helper {
 	 * @return Html del botón de share de facebook
 	 */
 	public static function facebookShare( $after = '', $url, $before = '' ){
-		$fb_share = '<a href="https://www.facebook.com/dialog/share?app_id=776167932490026&href=' . $url . '&display=popup&redirect_uri=' . URL::to('facebook-close') . '" >' .$after . '<li class="fa fa-facebook"></li>' . $before . '</a>';
+		$fb_share = '<a href="https://www.facebook.com/dialog/share?app_id=776167932490026&href=' . $url . '&display=popup&redirect_uri=' . URL::to('facebook-close') . '" onclick="return fbs_click(640, 536, this)">' .$after . '<li class="fa fa-facebook"></li>' . $before . '</a>';
 		//$fb_share = '<a href="http://www.facebook.com/share.php?u='. Request::url().'" onClick="return fbs_click(640, 536)" target="_blank" title="Share on Facebook">' .$after . '<li class="fa fa-facebook"></li>' . $before . '</a>';
 		return $fb_share;
 	}
