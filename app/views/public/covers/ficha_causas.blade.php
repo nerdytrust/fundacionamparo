@@ -1,6 +1,6 @@
 <?php 
 	$disable_header = 1; $disable_footer = 1; 
-	$title = $causa->id_categorias_record->nombre .' '. $causa->titulo;
+	$title = camel_case($causa->id_categorias_record->nombre .' '. $causa->titulo);
 ?>
 @extends( "public.covers.layout" )
 	@section("class")ficha-causas
