@@ -753,15 +753,14 @@ $(function(){
 
 });
 
-function fbs_click(width, height, obj) {
+function fbs_click(width, height) {
     var leftPosition, topPosition;
     leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
     topPosition = (window.screen.height / 2) - ((height / 2) + 50);
     var windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
-    u=this.href;
+    u=location.href;
     t=document.title;
-    //window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer', windowFeatures);
-    window.open(encodeURIComponent(u),'sharer', windowFeatures);
+    window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer', windowFeatures);
     return false;
 }
 
