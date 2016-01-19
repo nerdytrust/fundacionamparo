@@ -66,7 +66,7 @@
 				 			<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '559x548' ) }}" alt="{{ $causa->titulo }}">
 				 			<section id="social_top">
 								<ul>
-									{{ Helper::facebookShare( '', URL::to( 'ficha-causas' ) . '/' . $causa->id_causas . '/' . Str::slug($causa->titulo), '' ) }}
+									{{ Helper::facebookShare( '', URL::to( 'ficha-causas' ) . '/' . $causa->id_causas . '/' . Str::slug($causa->titulo).'?v='.str_random(10), '' ) }}
 									{{ Helper::twitterShare( $causa->titulo, URL::to( 'ficha-causas' ) . '/' . $causa->id_causas. '/' . Str::slug($causa->titulo), '' ) }}
 									{{ Helper::like( $causa->id_causas, 'causas' ) }}
 									<p>{{ $causa->me_gusta_interno }} likes</p>
@@ -106,7 +106,7 @@
 				 			<img src="{{ asset( 'path_image/' . $externa->imagen . '/' . '559x548' ) }}" alt="{{ $externa->titulo }}">
 				 			<section id="social_top">
 								<ul>
-									{{ Helper::facebookShare( '', URL::to( 'ficha-causas' ) . '/' . $externa->id_causas . '/' . Str::slug($externa->titulo), '' ) }}
+									{{ Helper::facebookShare( '', URL::to( 'ficha-causas' ) . '/' . $externa->id_causas . '/' . Str::slug($externa->titulo).'?v='.str_random(10), '' ) }}
 									{{ Helper::twitterShare( $externa->titulo, URL::to( 'ficha-causas' ) . '/' . $externa->id_causas . '/' . Str::slug($externa->titulo), '' ) }}
 									{{ Helper::like( $externa->id_causas, 'causas' ) }}
 									<p>{{ $externa->me_gusta_interno }} likes</p>
