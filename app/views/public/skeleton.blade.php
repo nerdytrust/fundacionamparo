@@ -11,9 +11,15 @@
         <meta charset="utf-8">
         
         @if ( isset( $share_fb ) )
-            <meta property="og:title"       content="{{ $share_fb['title'] }}" />
-            <meta property="og:description" content="{{ $share_fb['description'] }}" />
-            <meta property="og:image"       content="{{ $share_fb['image'] }}" />
+            @if ( isset( $share_fb['title'] ) )
+                <meta property="og:title"       content="{{ $share_fb['title'] }}" />
+            @endif
+            @if ( isset( $share_fb['description'] ) )
+                <meta property="og:description" content="{{ $share_fb['description'] }}" />
+            @endif
+            @if ( isset( $share_fb['image'] ) )
+                <meta property="og:image"       content="{{ $share_fb['image'] }}" />
+            @endif
         @endif
 
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
