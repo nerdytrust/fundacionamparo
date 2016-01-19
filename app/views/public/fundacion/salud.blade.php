@@ -1,3 +1,9 @@
+<?php	
+	$share_fb  = [ 
+		'title'       => getenv('APP_TITLE') . " - Protegiendo el bienestar de la vida",
+		'image'       => asset( 'images/fundacion_salud.jpg')
+	];
+?>
 @extends( 'public.layout' )
 	@section("class")salud
 	@stop

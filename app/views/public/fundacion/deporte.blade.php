@@ -1,6 +1,6 @@
 <?php	
 	$share_fb  = [ 
-		'title'       => getenv('APP_TITLE') . " - “Impulso al desarrollo y la sana competencia",
+		'title'       => getenv('APP_TITLE') . " - Impulso al desarrollo y la sana competencia",
 		'image'       => asset( 'images/fundacion_deporte.jpg')
 	];
 ?>
