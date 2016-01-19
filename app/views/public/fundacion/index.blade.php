@@ -16,7 +16,7 @@
 					<h3>En apoyo a un México de corazones vivos</h3>
 					<nav class="social_mask">
 						<ul>
-							{{ Helper::facebookShare( '', Request::url().'?v='.str_random(10), '' ) }}
+							{{ Helper::facebookShare( '', Request::url(), '' ) }}
 							{{ Helper::twitterShare( 'La Fundación', Request::url(), '' ) }}
 							{{-- <a href=""><li class="fa fa-heart"></li></a>
 							<p>96 likes</p> --}}
