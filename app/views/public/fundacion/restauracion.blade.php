@@ -1,3 +1,9 @@
+<?php	
+	$share_fb  = [ 
+		'title'       => getenv('APP_TITLE') . " - Viendo por nuestro patrimonio, el hogar de los mexicanos",
+		'image'       => asset( 'images/fundacion_restauracion.jpg')
+	];
+?>
 @extends( 'public.layout' )
 	@section("class")restauracion
 	@stop
