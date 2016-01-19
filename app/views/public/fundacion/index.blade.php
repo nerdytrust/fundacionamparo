@@ -1,7 +1,7 @@
 <?php	
 	$share_fb  = [ 
 		'title'       => getenv('APP_TITLE') . " - En apoyo a un México de corazones vivos",
-		'image'       => asset( 'path_image/logo_footer.png')
+		'image'       => asset( 'images/logo_footer.png')
 	];
 ?>
 @extends( 'public.layout' )
