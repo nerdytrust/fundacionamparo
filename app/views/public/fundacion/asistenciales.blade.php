@@ -1,3 +1,9 @@
+<?php	
+	$share_fb  = [ 
+		'title'       => getenv('APP_TITLE') . " - Al llamado del pueblo en grito de esperanza",
+		'image'       => asset( 'images/fundacion_asistenciales.jpg')
+	];
+?>
 @extends( 'public.layout' )
 	@section("class")asistenciales
 	@stop
