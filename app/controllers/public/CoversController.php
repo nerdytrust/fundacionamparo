@@ -134,6 +134,8 @@ class CoversController extends BaseController {
 	}
 
 	public function impulsar(){
+		Session::forget( 'fbImpulsar');
+		Session::forget( 'fbImpulsarCausa');
 		$causas = Causas::orderBy( 'created_at','desc' )->where( 'fecha', '>', date('Y-m-d') )->get();
 		return View::make( 'public.covers.impulsar' )->with( [ 
 			'causas' => $causas
@@ -141,6 +143,8 @@ class CoversController extends BaseController {
 	}
 
 	public function impulsarCausa( $id_causa = null ){
+		Session::forget( 'fbImpulsar');
+		Session::forget( 'fbImpulsarCausa');
 		if ( ! isset( $id_causa ) || empty( $id_causa ) )
 			return Redirect::to( 'home' );
 
@@ -483,6 +487,22 @@ class CoversController extends BaseController {
 			});
 		}
 
+	}
+
+	/**
+	 * Método para procesar el login con facebook desde impulsar
+	 */
+	public function fbImpulsar(){
+		Session::put( 'fbImpulsar', TRUE );
+		return Redirect::to( 'login/facebook' );
+	}
+
+	/**
+	 * Método para procesar el login con facebook desde impulsar
+	 */
+	public function fbImpulsarCausa($id_causas = NULL){
+		Session::put( 'fbImpulsarCausa', $id_causas );
+		return Redirect::to( 'login/facebook' );
 	}
 
 }

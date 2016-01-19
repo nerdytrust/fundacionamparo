@@ -29,6 +29,10 @@ class HomeController extends BaseController {
 	 * @return Vista del Home
 	 */
 	public function home() {
+		if(Session::has( 'fbImpulsar'))
+			return Redirect::to( 'impulsar' );
+		if(Session::has( 'fbImpulsarCausa'))
+			return Redirect::to( 'impulsar-causa/'.Session::get( 'fbImpulsarCausa') );
 		//echo $secret = Crypt::encrypt('some text here'); //encrypted
 
 		//echo $decrypted_secret = Crypt::decrypt("eyJpdiI6Ik9DajZmZit1Z2tuMnMyS0pCa2pMK2c9PSIsInZhbHVlIjoibHJ6VVdMUmM4R1prXC9CZ3JudjRCZ1E9PSIsIm1hYyI6IjBhNjNmYTM5ZTcxYmU4ZDMzYzczZDBlNzA2OTlhMzY0ZTlkY2IyODFiZmRmNmFkYzgwZGMyZDVjMmE5YjAyODUifQ==");die;

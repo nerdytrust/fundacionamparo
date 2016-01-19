@@ -126,3 +126,5 @@ Route::get('confirmado/{email}', function($email)
 	return View::make( 'public.covers.validar_correo' );
 });
 
+Route::get( 'fb-impulsar', 'CoversController@fbImpulsar' );
+Route::get( 'fb-impulsar-causa/{id}', [ 'uses' => 'CoversController@fbImpulsarCausa', 'as' => 'get.impulsar-causa' ] )->where( 'id', '[0-9]+');

@@ -9,7 +9,7 @@
 				<h1>impulsar</h1>
 				<p>Lleguemos a más oídos y toquemos más corazones en una sola voz</p>
 				<!--<button class="cerrar-h"></button>-->
-				<button onClick="history.back()" class="regresar"> Regresar</button>
+				<button onclick="location.href='{{ URL::to( 'ficha-causas/'.$causa->id_causas ) }}';" class="regresar"> Regresar</button>
 				<div class="imagen">
 					<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '282x280' ) }}" alt="">
 						<button>{{ $causa->id_categorias_record->nombre }}</button>
@@ -21,14 +21,13 @@
 					<label for="check-azul"></label>
 					No mostrar mi perfil en el sitio
 				</div>
-				<button class="feis">
-					<!--<div id="invitar" onclick="location.href='{{ URL::to( '/gracias-3' ) }}';">Invitar a 10 amigos</div>-->
+				<button class="feis"> 
           @if ( Helper::getRegisterIsFB() )
             <div id="invitar" onclick="location.href='{{ URL::to( '/gracias-3' ) }}';">Invitar a 10 amigos</div>
           @else
-            <div id="invitar">No estas logueado</div>
+            <div id="invitar" onclick="location.href='{{ URL::to( '/fb-impulsar-causa/'.$causa->id_causas ) }}';">Entra con FaceBook</div>
           @endif
-				</button>	
+        </button> 
 				<a href="{{ URL::to( '/faqs' ) }}" target="_blank" class="help">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></a>			
 			</div>	
 		</div>
