@@ -1,3 +1,9 @@
+<?php	
+	$share_fb  = [ 
+		'title'       => getenv('APP_TITLE') . " - Expansión de nuestra herencia mexicana rica en arte y cultura",
+		'image'       => asset( 'images/fundacion_cultura.jpg')
+	];
+?>
 @extends( 'public.layout' )
 	@section("class")cultura
 	@stop
