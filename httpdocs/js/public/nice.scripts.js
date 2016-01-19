@@ -759,8 +759,6 @@ function fbs_click(width, height, obj) {
     topPosition = (window.screen.height / 2) - ((height / 2) + 50);
     var windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
     u=obj.href;
-    t=document.title;
-    console.log(encodeURIComponent(u));
     window.open(u,'sharer', windowFeatures);
     return false;
 }
