@@ -5,13 +5,17 @@
 <!--[if gt IE 8]><!--> <html lang="es" class="no-js"> <!--<![endif]-->
     <head>
         <base href="{{ asset("") }}">
-        @if ( isset( $title ) )
-            <title>{{ $title }}</title>
-        @else
-            <title>{{ getenv('APP_TITLE') }}</title>
-        @endif
+
+        <title>{{ getenv('APP_TITLE') }}</title>
+        
         <meta charset="utf-8">
         
+        @if ( isset( $share_fb ) )
+            <meta property="og:title"       content="{{ $share_fb['title'] }}" />
+            <meta property="og:description" content="{{ $share_fb['description'] }}" />
+            <meta property="og:image"       content="{{ $share_fb['image'] }}" />
+        @endif
+
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta http-equiv="Content-Language" content="es"/>

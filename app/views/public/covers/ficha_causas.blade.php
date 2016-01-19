@@ -1,6 +1,10 @@
 <?php 
 	$disable_header = 1; $disable_footer = 1; 
-	$title = ucwords(strtolower($causa->id_categorias_record->nombre .' '. $causa->titulo));
+	$share_fb  = [ 
+		'title'       => ucwords(strtolower($causa->id_categorias_record->nombre .' '. $causa->titulo)),
+		'description' => $causa->descripcion,
+		'image'       => asset( 'path_image/' . $causa->imagen . '/' . '540x565')
+		];
 ?>
 @extends( "public.covers.layout" )
 	@section("class")ficha-causas
