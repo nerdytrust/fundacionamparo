@@ -8,7 +8,8 @@
 							Puebla, Pue. México. 
 							C. P. 72000 
 							T. + (222) 229 38 50
-							info@fundacionamparo.com'
+							info@fundacionamparo.com',
+		'image'       => asset( 'images/favicon-152.png' )
 	];
 ?>
 @extends( 'public.layout' )
