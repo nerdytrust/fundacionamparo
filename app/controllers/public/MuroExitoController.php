@@ -2,7 +2,15 @@
 
 class MuroExitoController extends BaseController {
 	
-	public function index(){
+	public function index($idMomento = NULL){
+
+		$momentoFB = NULL;
+
+		if($idMomento){
+			$momentoFB = Muros::where('id_muros',$idMomento)
+			->first();
+		}
+		
 		$padres = Muros::where('parent',0)
 			->orderby('year')
 			->orderby('orden')
@@ -15,7 +23,8 @@ class MuroExitoController extends BaseController {
 		}
 
 		return View::make( 'public.muro_exito.index' )->with( [
-			'momentos'	=> $padres
+			'momentos'	=> $padres, 
+			'momentoFB' => $momentoFB
 		] );
 	}
 

@@ -37,6 +37,7 @@ Route::get( 'donadores', [ 'uses' => 'DonadoresController@index', 'as' => 'get.d
 Route::get( 'donadores/{filtro}', [ 'uses' => 'DonadoresController@index', 'as' => 'get.donadores' ] )->where( 'filtro', '[a-zA-Z]+' );
 Route::get( 'contacto', [ 'uses' => 'ContactoController@index', 'as' => 'get.contacto' ] );
 Route::get( 'muro-exito', [ 'uses' => 'MuroExitoController@index', 'as' => 'get.muro-exito' ] );
+Route::get( 'muro-exito/{id}', 'MuroExitoController@index' )->where( 'id', '[0-9]+');
 Route::get( 'voluntarios', [ 'uses' => 'VoluntariosController@index', 'as' => 'get.voluntarios' ] );
 Route::get( 'politicas-de-privacidad', [ 'uses' => 'HomeController@privacidad', 'as' => 'get.aviso-privacidad' ] );
 Route::get( 'terminos-y-condiciones', [ 'uses' => 'HomeController@condiciones', 'as' => 'get.terminos-condiciones' ] );

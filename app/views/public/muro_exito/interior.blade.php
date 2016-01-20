@@ -29,7 +29,7 @@
 								@else
 									<ul>
 								@endif
-									{{ Helper::facebookShare( '', URL::to( 'muro-exito' ) ) }}
+									{{ Helper::facebookShare( '', URL::to( 'muro-exito'.'/'.$momento->id_muros ) ) }}
 									{{ Helper::twitterShare( $momento->titulo, URL::to( 'muro-exito' ) . '/' . $momento->id_momentos, '' ) }}
 									{{ Helper::like( $momento->id_muros, 'muros' ) }}
 									<p>{{ $momento->me_gusta }} likes</p>

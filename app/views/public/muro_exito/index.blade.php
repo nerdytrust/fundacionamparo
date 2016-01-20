@@ -1,4 +1,14 @@
-<?php $timeline = 1; $disable_footer = 1; $video = 1 ?>
+<?php 
+	$timeline = 1; $disable_footer = 1; $video = 1; 
+
+	if($momentoFB){
+		$share_fb  = [ 
+			'title'       => $momentoFB->titulo,
+			'description' => Str::limit( $momentoFB->descripcion, 450 ),
+			'image'       => asset( 'path_image/' . $momentoFB->imagen ) 
+		];		
+	} 
+?>
 @extends( 'public.layout' )
 	@section( 'class' )timeline-section
 	@stop
