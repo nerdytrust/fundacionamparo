@@ -1,4 +1,11 @@
-<?php $disable_header = 1; $disable_footer = 1; ?>
+<?php 
+	$disable_header = 1; $disable_footer = 1; 
+	$share_fb  = [ 
+		'title'       => $noticia->titulo,
+		'description' => $noticia->fecha_publicacion,
+		'image'       => asset( 'path_image/' . $noticia->imagen . '/' . '540x565' )
+	];
+?>
 @extends( 'public.covers.layout' )
 	@section( 'class' )ficha-noticias
 	@stop
