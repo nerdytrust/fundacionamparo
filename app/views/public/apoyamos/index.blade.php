@@ -4,7 +4,7 @@
 		'description' => 'Comunícate con nosotros
 						  Llena el siguiente formulario, una vez revisado nos pondremos en contacto para darte
 						  una respuesta',
-		'image'       => asset( 'images/favicon-152.png')
+		'image'       => asset( 'images/fundacion_apoyo.png')
 	];
 ?>
 @extends( 'public.layout' )
