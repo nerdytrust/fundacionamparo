@@ -1,7 +1,7 @@
 <?php	
 	$share_fb  = [ 
 		'title'       => 'APOYAMOS TU CAUSA - Fundación Amparo apoya causas externas',
-		'descripcion' => 'Comunícate con nosotros
+		'description' => 'Comunícate con nosotros
 						  Llena el siguiente formulario, una vez revisado nos pondremos en contacto para darte
 						  una respuesta',
 		'image'       => asset( 'images/favicon-152.png')
