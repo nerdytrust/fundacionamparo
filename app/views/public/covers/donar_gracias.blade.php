@@ -3,7 +3,7 @@
 	$share_fb  = [ 
 		'title'       => '#TOMANDOACCIÓNFA',
 		'description' => 'Ya estoy #TomandoAcciónFA. Los donativos hacen posible continuar con la causa, ¡pasa la voz!',
-		'image'       => asset( 'path_images/favicon-152.png')
+		'image'       => asset( 'images/favicon-152.png')
 		];
 ?>
 @extends( 'public.covers.layout' )
