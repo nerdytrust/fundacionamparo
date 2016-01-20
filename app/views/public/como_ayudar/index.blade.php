@@ -6,7 +6,7 @@ Sólo tienes que seguir estos sencillos pasos para apoyar nuestras causas:
 * Busca la causa en la que deseas contribuir
 *Selecciona la forma en que puedes ayudar
 *¡Listo! Ya estás #Tomando Acción ",
-		'image'       => asset( 'images/fundacion_asistenciales.jpg')
+		'image'       => asset( 'images/fundacion_como_ayudar.png')
 	];
 ?>
 @extends( 'public.layout' )
