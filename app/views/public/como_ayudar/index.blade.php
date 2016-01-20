@@ -2,10 +2,10 @@
 	$share_fb  = [ 
 		'title'       => 'CÓMO AYUDAR - Es muy fácil tomar acción, sólo necesitas dar un poco más',
 		'description' => "¡Es muy fácil tomar acción!
-Sólo tienes que seguir estos sencillos pasos para apoyar nuestras causas:
-* Busca la causa en la que deseas contribuir
-*Selecciona la forma en que puedes ayudar
-*¡Listo! Ya estás #Tomando Acción ",
+						  Sólo tienes que seguir estos sencillos pasos para apoyar nuestras causas:
+						  * Busca la causa en la que deseas contribuir
+						  * Selecciona la forma en que puedes ayudar
+						  * ¡Listo! Ya estás #Tomando Acción ",
 		'image'       => asset( 'images/fundacion_como_ayudar.png')
 	];
 ?>

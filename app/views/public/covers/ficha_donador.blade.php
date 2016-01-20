@@ -1,4 +1,8 @@
-<?php $disable_header = 1; $disable_footer = 1; ?>
+<?php $disable_header = 1; $disable_footer = 1; 
+	$share_fb  = [ 
+		'title'       => $donador->displayName
+		];
+?>
 @extends( "public.covers.layout" )
 	@section("class")ficha-donador
 	@stop
