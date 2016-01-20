@@ -1,3 +1,16 @@
+<?php	
+	if($idMembresia){
+		foreach ( $membresias as $membresia ){
+			if($membresia->id_membresias == $idMembresia){
+				$share_fb  = [ 
+					'title'       => $membresia->nombre,
+					'description' => $membresia->resena,
+					'image'       => asset( 'path_image/' . $membresia->logo . '/' . '267x176' ) 
+				];
+			}	
+		}
+	} 
+?>
 @extends( 'public.layout' )
 	@section("class")membresias
 	@stop
@@ -50,7 +63,7 @@
 									<div id="txt_evento" class="membresia-red">
 										<nav class="red-cont">
 											<ul>
-												{{ Helper::facebookShare( '', Request::url(), '' ) }}
+												{{ Helper::facebookShare( '', URL::to('membresias').'/'.$membresia->id_membresias, '' ) }}
 												{{ Helper::twitterShare2( $membresia->nombre, Request::url(), '' ) }}
 												{{ Helper::like( $membresia->id_membresias, 'membresias' ) }}
 												<p>{{ $membresia->me_gusta }} likes</p>

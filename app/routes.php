@@ -46,6 +46,7 @@ Route::get( 'resultados/', [ 'uses' => 'HomeController@search', 'as' => 'get.res
 Route::get( 'historia', [ 'uses' => 'FundacionController@historia', 'as' => 'get.historia' ] );
 Route::get( 'aportaciones', [ 'uses' => 'FundacionController@aportaciones', 'as' => 'get.aportaciones' ] );
 Route::get( 'membresias', [ 'uses' => 'FundacionController@membresias', 'as' => 'get.membresias' ] );
+Route::get( 'membresias/{id}', 'FundacionController@membresias' )->where( 'id', '[0-9]+');
 Route::get( 'consideraciones', [ 'uses' => 'FundacionController@consideraciones', 'as' => 'get.consideraciones' ] );
 Route::get( 'educacion', [ 'uses' => 'FundacionController@educacion', 'as' => 'get.educacion' ] );
 Route::get( 'salud', [ 'uses' => 'FundacionController@salud', 'as' => 'get.salud' ] );

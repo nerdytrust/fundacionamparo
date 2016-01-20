@@ -34,10 +34,11 @@ class FundacionController extends BaseController {
 		return View::make( 'public.fundacion.historia' );
 	}
 
-	public function membresias(){
+	public function membresias($idMembresia = NULL){
 		$membresias = Membresias::orderBy( 'orden' )->get();
 		return View::make( 'public.fundacion.membresias' )->with( [
-			'membresias'	=> $membresias
+			'membresias'  => $membresias, 
+			'idMembresia' => $idMembresia
 		] );
 	}
 
