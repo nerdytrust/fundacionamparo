@@ -1,8 +1,8 @@
 <?php 
 	$disable_header = 1; $disable_footer = 1; 
 	$share_fb  = [ 
-		'title'       => $noticia->titulo,
-		'description' => $noticia->fecha_publicacion,
+		'title'       => $noticia->titulo .' - '. $noticia->fecha_publicacion,
+		'description' => $noticia->contenido,
 		'image'       => asset( 'path_image/' . $noticia->imagen . '/' . '540x565' )
 	];
 ?>
