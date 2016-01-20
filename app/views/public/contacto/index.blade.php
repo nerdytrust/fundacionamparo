@@ -1,3 +1,17 @@
+<?php  
+	$share_fb  = [ 
+		'title'       => 'CONTACTO FUNDACIÓN AMPARO - Contáctanos para cualquier duda o sugerencia', 
+		'description' => 'Lunes a miércoles 10:00 a 18:00 horas
+							Sábados de 10:00 a 21:00 horas
+
+							2 Sur 708, Centro Histórico, 
+							Puebla, Pue. México. 
+							C. P. 72000 
+							T. + (222) 229 38 50
+							info@fundacionamparo.com',
+		'image'       => asset( 'images/favicon-152.png' )
+	];
+?>
 @extends( 'public.layout' )
 	@section( 'class' )contacto-view
 	@stop
