@@ -1,3 +1,10 @@
+<?php	
+	$share_fb  = [ 
+		'title'       => 'NOTICIAS',
+		'description' => 'Hechos y acontecimientos relevantes',
+		'image'       => asset( 'images/fundacion_noticias.png')
+	];
+?>
 @extends( 'public.layout' )
 	@section( 'class' )
 	@stop
