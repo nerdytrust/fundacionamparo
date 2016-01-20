@@ -1,4 +1,12 @@
-<?php $video = 1; ?>
+<?php 
+	$video = 1; 
+	$share_fb  = [ 
+		'title'       => '¡TÚ PUEDES AYUDAR',
+		'description' => 'Tus donaciones hacen posible que esto continúe, pasa la voz
+						 #TomandoAcciónFA. Y el enlace debe llevar al home de la página',
+		'image'       => asset( 'images/favicon-152.png')
+		];	
+?>
 @extends("public.layout")
 	@section("class")home
 	@stop
@@ -281,7 +289,7 @@
 		 					<h2>Tus donaciones hacen posible que esto continúe, pasa la voz <span>#TomandoAcciónFA</span></h2>
 		 					<div id="social_footer">
 		 						<ul>
-		 							{{ Helper::facebookShare( '', Request::url(), '' ) }}
+		 							{{ Helper::facebookShare( '', URL::to('/'), '' ) }}
 		 							{{ Helper::twitterShare( '¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz', Request::url(), 'TomandoAcciónFA' ) }}
 		 						</ul>
 		 					</div>
