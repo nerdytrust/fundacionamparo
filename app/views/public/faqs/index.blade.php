@@ -1,3 +1,10 @@
+<?php  
+	$share_fb  = [ 
+		'title'       => getenv('APP_TITLE') .' - FAQ’S'., 
+		'description' => 'Comunícate, resolvemos tus dudas',
+		'image'       => asset( 'images/favicon-152.png' )
+	];
+?>
 @extends( "public.layout" )
 	@section("class")faqs-section
 	@stop
