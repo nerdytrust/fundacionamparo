@@ -3,7 +3,7 @@
 	$share_fb  = [ 
 		'title'       => '¡TÚ PUEDES AYUDAR¡',
 		'description' => 'Tus donaciones hacen posible que esto continúe, pasa la voz
-						 #TomandoAcciónFA. Y el enlace debe llevar al home de la página',
+						 #TomandoAcciónFA.',
 		'image'       => asset( 'images/favicon-152.png')
 		];	
 ?>
