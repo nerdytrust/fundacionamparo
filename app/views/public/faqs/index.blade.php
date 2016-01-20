@@ -1,6 +1,6 @@
 <?php  
 	$share_fb  = [ 
-		'title'       => getenv('APP_TITLE') .' - FAQ’S'., 
+		'title'       => getenv('APP_TITLE') .' - FAQ’S', 
 		'description' => 'Comunícate, resolvemos tus dudas',
 		'image'       => asset( 'images/favicon-152.png' )
 	];
