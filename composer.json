@@ -23,7 +23,8 @@
 		"atticmedia/anvard": "dev-master",
 		"conekta/conekta-php": "^2.0",
 		"paypal/rest-api-sdk-php":"*",
-		"paypal/merchant-sdk-php":"3.8.*"
+		"paypal/merchant-sdk-php":"3.8.*",
+		"facebook/php-sdk-v4": "^5.0"
 	},
 	"require-dev": {
 	    "way/generators": "~2.0",

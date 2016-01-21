@@ -2081,12 +2081,12 @@
         "target-dir": "Symfony/Component/Routing",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/Routing.git",
+            "url": "https://github.com/symfony/routing.git",
             "reference": "9b7d9f6121e45243cc18e4ed682d8faa418d04bc"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Routing/zipball/9b7d9f6121e45243cc18e4ed682d8faa418d04bc",
+            "url": "https://api.github.com/repos/symfony/routing/zipball/9b7d9f6121e45243cc18e4ed682d8faa418d04bc",
             "reference": "9b7d9f6121e45243cc18e4ed682d8faa418d04bc",
             "shasum": ""
         },
@@ -2661,7 +2661,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Xethron/migrations-generator/zipball/953d3db746e0f96ecfb73e87a9add37d1973f860",
+            "url": "https://api.github.com/repos/Xethron/migrations-generator/zipball/5b46d3d7b8ffb5b8fbad154536dc7a688831670d",
             "reference": "e382c0c0b8f5774432e95134dfd501b94fe09291",
             "shasum": ""
         },
@@ -3864,6 +3864,63 @@
         "keywords": [
             "paypal",
             "php",
+            "sdk"
+        ]
+    },
+    {
+        "name": "facebook/php-sdk-v4",
+        "version": "5.1.2",
+        "version_normalized": "5.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/facebook/facebook-php-sdk-v4.git",
+            "reference": "2c42fb3002953355f12d3c6e8003a9fd5af563d9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/2c42fb3002953355f12d3c6e8003a9fd5af563d9",
+            "reference": "2c42fb3002953355f12d3c6e8003a9fd5af563d9",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "guzzlehttp/guzzle": "~5.0",
+            "mockery/mockery": "~0.8",
+            "phpunit/phpunit": "~4.0"
+        },
+        "suggest": {
+            "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
+        },
+        "time": "2015-11-19 21:07:36",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Facebook\\": "src/Facebook/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Facebook Platform"
+        ],
+        "authors": [
+            {
+                "name": "Facebook",
+                "homepage": "https://github.com/facebook/facebook-php-sdk-v4/contributors"
+            }
+        ],
+        "description": "Facebook SDK for PHP",
+        "homepage": "https://github.com/facebook/facebook-php-sdk-v4",
+        "keywords": [
+            "facebook",
             "sdk"
         ]
     }

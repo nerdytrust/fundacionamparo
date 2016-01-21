@@ -22,11 +22,12 @@
 					No mostrar mi perfil en el sitio
 				</div>
 				<button class="feis"> 
-          @if ( Helper::getRegisterIsFB() )
+         <div id="invitar" onclick="renderMFS();">Invitar a 10 amigos</div>
+         <!-- @if ( Helper::getRegisterIsFB() )
             <div id="invitar" onclick="location.href='{{ URL::to( '/gracias-3' ) }}';">Invitar a 10 amigos</div>
           @else
             <div id="invitar" onclick="location.href='{{ URL::to( '/fb-impulsar-causa/'.$causa->id_causas ) }}';">Entra con FaceBook</div>
-          @endif
+          @endif-->
         </button> 
 				<a href="{{ URL::to( '/faqs' ) }}" target="_blank" class="help">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></a>			
 			</div>	
@@ -51,12 +52,12 @@
 
 
 		function renderMFS() {
-	/*	FB.ui({
+		FB.ui({
   method: 'share',
-  href: 'http://amparo.design4causes.com/ficha-causas/1',
+  href: 'http://design4causes.com/ficha-causas/1',
 }, function(response){
 	console.log(response);
-});*/
+});
 
 /*FB.ui({
   method: 'feed',
@@ -80,6 +81,15 @@
      console.log(response);
     }
 );*/
+
+/*FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    var accessToken = response.authResponse.accessToken;
+    console.log(accessToken);
+  } else{
+    console.log('error');
+  }
+} );*/
 
 /*FB.api(
     "/1877310539161245_1889226601302972/likes",
