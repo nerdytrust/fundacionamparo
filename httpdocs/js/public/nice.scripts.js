@@ -763,6 +763,29 @@ function fbs_click(width, height, obj) {
     return false;
 }
 
+function fbs_click1(width, height, obj, url, id_impulsor) {
+    var leftPosition, topPosition;
+    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
+    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
+    var windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
+   
+    u  = 'https://www.facebook.com/dialog/share?app_id=776167932490026';
+    u += '&href='+url+'/ficha-causas/'+$('#causa_impulsar').val()+'/'+convertToSlug($("#causa_impulsar option:selected").text())+'/'+id_impulsor;
+    u += '&display=popup&redirect_uri=';
+    u += url+'/gracias-3/'+$('#causa_impulsar').val()+'/'+id_impulsor ;
+
+    window.open(u,'sharer', windowFeatures);
+    return false;
+}
+
+function convertToSlug(Text)
+{
+    return Text
+        .toLowerCase()
+        .replace(/ /g,'-')
+        .replace(/[^\w-]+/g,'')
+        ;
+}
 
 function esEntero(numero){
     if (numero % 1 == 0) 

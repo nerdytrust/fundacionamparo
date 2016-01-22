@@ -12,7 +12,7 @@
 				<button onClick="location.href='{{ URL::to( '/' );}}'" class="regresar"> Regresar</button>
 				<label for="" class="vol" id="imp-r">
 					<p>Escoge la causa que quieras impulsar</p>
-					<select name="causa_impulsar" id="">
+					<select name="causa_impulsar" id="causa_impulsar">
 						@if ( isset( $causas ) )
 							@foreach ( $causas as $causa )
 								<option value="{{ $causa->id_causas }}">{{ $causa->titulo }}</option>
@@ -28,7 +28,7 @@
 				
 				<button class="feis">	
 					@if ( Helper::getRegisterIsFB() )
-						<div id="invitar" onclick="location.href='{{ URL::to( '/gracias-3' ) }}';">Invitar a 10 amigos</div>
+						{{ Helper::facebookShareImpulsor2( '<div id="invitar">Comparte</div>', URL::to( '/' ),'' ) }}   
 					@else
 						<div id="invitar" onclick="location.href='{{ URL::to( '/fb-impulsar' ) }}';">Entra con FaceBook</div>
 					@endif

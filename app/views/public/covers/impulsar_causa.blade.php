@@ -23,8 +23,7 @@
 				</div>
 				<button class="feis"> 
          @if ( Helper::getRegisterIsFB() )
-            {{ Helper::facebookShareImpulsor( '<div id="invitar">Comparte</div>', URL::to( '/ficha-causas/'.$causa->id_causas.'/'.Str::slug($causa->titulo).'/'.Helper::getRegisterId() ),  URL::to( '/gracias-3/'.$causa->id_causas.'/'.Helper::getRegisterId() ),'' ) }}
-            
+            {{ Helper::facebookShareImpulsor( '<div id="invitar">Comparte</div>', URL::to( '/ficha-causas/'.$causa->id_causas.'/'.Str::slug($causa->titulo).'/'.Helper::getRegisterId() ),  URL::to( '/gracias-3/'.$causa->id_causas.'/'.Helper::getRegisterId() ),'' ) }}   
           @else
             <div id="invitar" onclick="location.href='{{ URL::to( '/fb-impulsar-causa/'.$causa->id_causas ) }}';">Entra con FaceBook</div>
           @endif

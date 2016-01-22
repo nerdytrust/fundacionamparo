@@ -98,6 +98,17 @@ class Helper {
 	 * @param  string $before Etiqueta HTML de cierre
 	 * @return Html del botón de share de facebook
 	 */
+	public static function facebookShareImpulsor2( $after = '', $url, $before = ''){
+		$fb_share = '<span onclick="return fbs_click1(640, 536, this, \''.$url.'\','.Helper::getRegisterId().')">' .$after . $before . '</span>';
+		return $fb_share;
+	}
+	/**
+	 * Método para agregar un botón share facebook en los popups
+	 * @param  string $after  Etiqueta HTML de apertura
+	 * @param  string $url    URL de la sección o contenido
+	 * @param  string $before Etiqueta HTML de cierre
+	 * @return Html del botón de share de facebook
+	 */
 	public static function facebookSharePop( $after = '', $url, $before = '', $message = ''){
 		$fb_share = '<a href="https://www.facebook.com/dialog/share?app_id=776167932490026&href=' . $url.'?v='.str_random(10) . '&display=popup&redirect_uri=' . URL::to('facebook-close') . '" onclick="return fbs_click(640, 536, this)">' .$after . '<button class="face"></button>' . $before . '</a>';
 		return $fb_share;
