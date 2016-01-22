@@ -34,7 +34,7 @@
 				</span><!--termina usuario-->
 				<span class="datos sr">
 					<img src="{{ asset( 'images/icon_donadores-d.png' ) }}" alt="">
-					<button value="" class="cerrar" onClick="history.back()"></button>
+					<button value="" class="cerrar" onClick="historyBack('{{ URL::to('/') }}')"></button>
 					<h1>{{ $donador->displayName }}</h1>
 					<h2>{{ $donador->city }}&nbsp;</h2>
 					<div class="datos-inf scrollbar" id="style-scroll">
