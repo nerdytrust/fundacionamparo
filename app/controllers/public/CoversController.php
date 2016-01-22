@@ -237,9 +237,9 @@ class CoversController extends BaseController {
 	 * @return [type] [description]
 	 */
 	public function voluntarioGracias(){
-		$voluntario = Session::get( 'voluntario' );
+		/*$voluntario = Session::get( 'voluntario' );
 		if ( ! isset( $voluntario ) )
-			return Redirect::to( 'voluntario' );
+			return Redirect::to( 'voluntario' );*/
 		
 		return View::make( 'public.covers.voluntario_gracias' );	
 	}
