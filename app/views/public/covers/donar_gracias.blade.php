@@ -30,7 +30,9 @@
 			<?php 
 				if(isset($_GET['v'])):
 			?>
-				location.href = {{ URL::to( '/' ) }}	
+				setTimeout(function (){ 
+					location.href = {{ URL::to( '/' ) }}	
+				},100);
 			<?php
 				endif;
 			?>
