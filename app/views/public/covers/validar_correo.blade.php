@@ -10,11 +10,6 @@
 				<h1>¡Validado!</h1>
 				<h2>Ya estás  <b>#TomandoAcciónFA</b> </h2>
 				<h3>Tus acciones dentro de la comunicad harán posible continuar con nuestra causa, ¡pasa la voz!</h3>
-				<span>
-					<h4>Compartir </h4>
-					{{ Helper::facebookSharePop( '', URL::to( '/' ), '' ,'¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz #TomandoAcciónFA') }}
-					{{ Helper::twitterSharePop( '¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz', URL::to( '/' ) , 'TomandoAcciónFA' ) }}
-				</span>
 			</div>
 		</div>
 	@stop
