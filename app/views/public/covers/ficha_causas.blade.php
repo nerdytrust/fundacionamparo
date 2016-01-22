@@ -35,7 +35,7 @@
 				</span><!--termina usuario-->
 				<span class="datos">
 					<button class="centros">{{ $causa->id_categorias_record->nombre }}</button>
-					<button value="" class="cerrar" onClick="history.back()" class="regresar"></button>
+					<button value="" class="cerrar" onClick="historyBack('{{ URL::to('/') }}')" class="regresar"></button>
 					<!--<button onClick="history.back()" class="regresar"> Regresar</button>-->
 					<h1>{{ $causa->titulo }}</h1>
 					<!--tabs-->

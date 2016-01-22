@@ -793,3 +793,12 @@ function esEntero(numero){
     return false;
   
 }
+
+function historyBack(url){
+	if(history.length <= 1){
+		location.href = url; 
+	} else {
+		history.back();
+	}
+
+}
