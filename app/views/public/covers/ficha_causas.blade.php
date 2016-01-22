@@ -1,7 +1,7 @@
 <?php 
 	$disable_header = 1; $disable_footer = 1; 
 	$share_fb  = [ 
-		'title'       => ucfirst(strtolower($causa->id_categorias_record->nombre.' '.$causa->titulo)),
+		'title'       => ucwords(strtolower($causa->id_categorias_record->nombre.' '.$causa->titulo)),
 		'description' => $causa->descripcion,
 		'image'       => asset( 'path_image/' . $causa->imagen . '/' . '540x565')
 		];
