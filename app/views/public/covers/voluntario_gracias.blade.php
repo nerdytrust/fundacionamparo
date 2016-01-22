@@ -1,4 +1,11 @@
-<?php $disable_header = 1; $disable_footer = 1; ?>
+<?php 
+	$disable_header = 1; $disable_footer = 1; 
+	$share_fb  = [ 
+		'title'       => '#TOMANDOACCIÓNFA',
+		'description' => 'Ya estoy #TomandoAcciónFA. Tu tiempo es un tesoro invaluable para continuar nuestra causa, ¡pasa la voz!',
+		'image'       => asset( 'images/compartir_voluntario.jpg')
+		];
+?>
 @extends( 'public.covers.layout' )
 	@section( 'class' )gracias-voluntario
 	@stop
@@ -18,5 +25,16 @@
 				</span>
 			</div>
 		</div>
+		<script type="text/javascript">
+			<?php 
+				if(isset($_GET['v'])):
+			?>
+				setTimeout(function (){ 
+					location.href = "{{ URL::to( '/' ) }}";	
+				},100);
+			<?php
+				endif;
+			?>
+		</script>
 	@stop
 @stop
