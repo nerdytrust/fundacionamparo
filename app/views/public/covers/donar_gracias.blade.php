@@ -1,7 +1,4 @@
-<?php 
-
-	if(isset($_GET['v']))
-		header("Location: http://".$_SERVER['SERVER_NAME']);
+<?php
 
 	$disable_header = 1; $disable_footer = 1; 
 	$share_fb  = [ 
@@ -29,5 +26,11 @@
 				</span>
 			</div>
 		</div>
+		<script type="text/javascript">
+			<?php 
+				if(isset($_GET['v'])):
+			?>
+				location.href = {{ URL::to( '/' ) }}	
+		</script>
 	@stop
 @stop
