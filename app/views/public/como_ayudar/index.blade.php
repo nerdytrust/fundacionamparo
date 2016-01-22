@@ -1,6 +1,6 @@
 <?php	
 	$share_fb  = [ 
-		'title'       => getenv('APP_TITLE'). 'CÓMO AYUDAR - Es muy fácil tomar acción, sólo necesitas dar un poco más',
+		'title'       => 'FUNDACIÓN AMPARO - CÓMO AYUDAR - Es muy fácil tomar acción, sólo necesitas dar un poco más',
 		'description' => "¡Es muy fácil tomar acción!
 						  Sólo tienes que seguir estos sencillos pasos para apoyar nuestras causas:
 						  * Busca la causa en la que deseas contribuir
