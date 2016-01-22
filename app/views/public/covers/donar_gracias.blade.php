@@ -1,4 +1,8 @@
 <?php 
+
+	if(isset($_GET['v']))
+		header("Location: http://".$_SERVER['SERVER_NAME']);
+
 	$disable_header = 1; $disable_footer = 1; 
 	$share_fb  = [ 
 		'title'       => '#TOMANDOACCIÓNFA',
