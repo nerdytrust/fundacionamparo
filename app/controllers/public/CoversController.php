@@ -566,6 +566,8 @@ class CoversController extends BaseController {
 			}
 		}
 
+		echo date('d-m-Y h:i');
+
 	}
 
   	private function social_counter($url, $service) 
