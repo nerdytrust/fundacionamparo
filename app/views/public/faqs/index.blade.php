@@ -2,7 +2,7 @@
 	$share_fb  = [ 
 		'title'       => getenv('APP_TITLE') .' - FAQ’S', 
 		'description' => 'Comunícate, resolvemos tus dudas',
-		'image'       => asset( 'images/favicon-152.png' )
+		'image'       => asset( 'images/fundacion_faqs.png' )
 	];
 ?>
 @extends( "public.layout" )
