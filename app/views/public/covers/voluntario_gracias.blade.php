@@ -20,7 +20,7 @@
 				<h3>Tu tiempo es un tesoro invaluable para continuar nuestra causa, ¡pasa la voz!</h3>
 				<span>
 					<h4>Compartir </h4>
-					{{ Helper::facebookSharePop( '', URL::to( '/' ), '' ,'¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz #TomandoAcciónFA') }}
+					{{ Helper::facebookSharePop( '', URL::to( '/voluntario/gracias' ), '' ,'¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz #TomandoAcciónFA') }}
 					{{ Helper::twitterSharePop( '¡TÚ PUEDES AYUDAR! Tus donaciones hacen posible que esto continúe, pasa la voz', URL::to( '/' ) , 'TomandoAcciónFA' ) }}
 				</span>
 			</div>
