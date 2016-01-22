@@ -87,8 +87,8 @@ class Helper {
 	 * @param  string $before Etiqueta HTML de cierre
 	 * @return Html del botón de share de facebook
 	 */
-	public static function facebookShareImpulsor( $after = '', $url, $before = '', $message = ''){
-		$fb_share = '<a href="https://www.facebook.com/dialog/share?app_id=776167932490026&href=' . $url . '&display=popup&redirect_uri=' . URL::to('facebook-close') . '" onclick="return fbs_click(640, 536, this)">' .$after . $before . '</a>';
+	public static function facebookShareImpulsor( $after = '', $url, $url_close, $before = ''){
+		$fb_share = '<a href="https://www.facebook.com/dialog/share?app_id=776167932490026&href=' . $url . '&display=popup&redirect_uri=' . $url_close . '" onclick="return fbs_click(640, 536, this)">' .$after . $before . '</a>';
 		return $fb_share;
 	}
 	/**

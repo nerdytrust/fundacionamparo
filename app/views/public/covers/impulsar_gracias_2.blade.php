@@ -10,7 +10,7 @@
 				<!--<button onClick="history.back()" class="regresar"> Regresar</button>-->
 				<h1>¡grácias!</h1>
 				<h3>Por ayudarnos a difundir nuestra causa. No te detengas y ¡pasa la voz!</h3>
-				<h2>Ahora soló espera que tus amigos compartan la publicación 10 veces o más y te convertiras en impulsor</h2>
+				<h2>Ya haz compartido esta causa espera a que la compartan tus amigos  para volverte un impulsor</h2>
 			</div>
 		</div>
 	@stop

@@ -22,12 +22,12 @@
 					No mostrar mi perfil en el sitio
 				</div>
 				<button class="feis"> 
-         <div id="invitar" onclick="renderMFS();">Invitar a 10 amigos</div>
-         <!-- @if ( Helper::getRegisterIsFB() )
-            <div id="invitar" onclick="location.href='{{ URL::to( '/gracias-3' ) }}';">Invitar a 10 amigos</div>
+         @if ( Helper::getRegisterIsFB() )
+            {{ Helper::facebookShareImpulsor( '<div id="invitar">Comparte</div>', URL::to( '/ficha-causas/'.$causa->id_causas.'/'.Str::slug($causa->titulo).'/'.Helper::getRegisterId() ),  URL::to( '/gracias-3/'.$causa->id_causas.'/'.Helper::getRegisterId() ),'' ) }}
+            
           @else
             <div id="invitar" onclick="location.href='{{ URL::to( '/fb-impulsar-causa/'.$causa->id_causas ) }}';">Entra con FaceBook</div>
-          @endif-->
+          @endif
         </button> 
 				<a href="{{ URL::to( '/faqs' ) }}" target="_blank" class="help">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></a>			
 			</div>	
@@ -38,7 +38,8 @@
         FB.init({
           appId      : '776167932490026',
           xfbml      : true,
-          version    : 'v2.4'
+          cookie: true,
+          oauth: true
         });
       };
 
@@ -53,11 +54,13 @@
 
 		function renderMFS() {
 		FB.ui({
-  method: 'share',
-  href: 'http://design4causes.com/ficha-causas/1',
-}, function(response){
-	console.log(response);
-});
+      method: 'share',
+      href: 'http://design4causes.com/ficha-causas/1',
+    }, function(response){
+    	console.log(response);
+    });
+
+
 
 /*FB.ui({
   method: 'feed',

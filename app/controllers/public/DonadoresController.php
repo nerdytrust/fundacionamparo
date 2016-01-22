@@ -32,7 +32,7 @@ class DonadoresController extends BaseController {
 				->distinct()
 				->join( 'registrados', 'impulsadas.email', '=', 'registrados.email' )
 				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
-				//->where( 'impulsadas.status', 1 )
+				->where( 'impulsadas.estatus', 1 )
 				->where( 'impulsadas.mostrar_perfil', 1 )
 				->select( 'profiles.id_profiles', 'profiles.photoURL', 'profiles.displayName', 'profiles.city','registrados.id_registrados' )
 				->get();
@@ -78,7 +78,7 @@ class DonadoresController extends BaseController {
 				->distinct()
 				->join( 'registrados', 'impulsadas.email', '=', 'registrados.email' )
 				->join( 'profiles', 'registrados.id_registrados', '=', 'profiles.id_registrados' )
-				//->where( 'impulsadas.status', 1 )
+				->where( 'impulsadas.estatus', 1 )
 				->where( 'impulsadas.mostrar_perfil', 1 )
 				->select( 'profiles.photoURL', 'profiles.displayName', 'profiles.city', 'registrados.id_registrados' )
 				->get();

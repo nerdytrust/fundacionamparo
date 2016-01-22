@@ -254,6 +254,8 @@
                     $(".ficha-causas .lightbox .datos").hover(function(){
                         $("#barra progress").toggleClass("barramover");
                     });
+                }else if($('body').hasClass( 'gracias-impulsar' )){
+                     $('body').css({'background': '#4f99d9'})
                 }
 
                /* if ( $('body').hasClass( 'donar' ) 

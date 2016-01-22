@@ -68,7 +68,7 @@ Route::get( 'donar/pago-paypal-recurrent', [ 'uses' => 'DonacionesController@don
 Route::get( 'donar/save-paypal-recurrent', [ 'uses' => 'DonacionesController@saveDonacionPaypalRecurring', 'as' => 'get.donar/save-paypal-recurrent' ] );
 Route::get( 'donar/pago-error', [ 'uses' => 'CoversController@donarError', 'as' => 'get.donar/pago-error' ] );
 Route::get( 'gracias', [ 'uses' => 'CoversController@donarThanks', 'as' => 'get.gracias' ] );
-Route::get( 'gracias-3', [ 'uses' => 'CoversController@impulsarGracias', 'as' => 'get.gracias-3' ] );
+Route::get( 'gracias-3/{id_causas}/{id_impulsor}', [ 'uses' => 'CoversController@impulsarGracias', 'as' => 'get.gracias-3' ] )->where( array('id_causas' => '[0-9]+','id_impulsor' => '[0-9]+'));
 Route::get( 'donar-causa', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causa' ] );
 Route::get( 'donar-causa/{id}', [ 'uses' => 'CoversController@donarCausas', 'as' => 'get.donar-causa' ] )->where( 'id', '[0-9]+' );
 Route::get( 'impulsar', [ 'uses' => 'CoversController@impulsar', 'as' => 'get.impulsar' ] );
@@ -118,9 +118,12 @@ Route::post( 'continuar-voluntario', 'VoluntariosController@complementaryVolunta
 Route::post( 'nuevo-voluntario-completo', 'VoluntariosController@longVoluntary' );
 Route::post( 'entrar', 'HomeController@login' );
 
+Route::get( 'check-impulsar', 'CoversController@checkImpulsadas' );
+
 Route::get('facebook-close', function () {
     return '<script>document.addEventListener("DOMContentLoaded", function(event) { window.close();});</script>';
 });
+
 Route::pattern('email', '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$');
 
 Route::get('confirmado/{email}', function($email)

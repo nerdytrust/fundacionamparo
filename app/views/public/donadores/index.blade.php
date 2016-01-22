@@ -18,7 +18,7 @@
 											<div class="nar_bull" title="Voluntario"></div>
 										@endif
 										@if ( isset($type[$key]['impulsor']) )
-											<div class="nar_bull" title="Impulsor"></div>
+											<div class="azul_bull" title="Impulsor"></div>
 										@endif
 
 										@if (isset( $type['all']['donador']) )
@@ -28,7 +28,7 @@
 											<div class="nar_bull" title="Voluntario"></div>
 										@endif
 										@if ( isset($type['all']['impulsor']) )
-											<div class="nar_bull" title="Impulsor"></div>
+											<div class="azul_bull" title="Impulsor"></div>
 										@endif
 										
 			 						</section>

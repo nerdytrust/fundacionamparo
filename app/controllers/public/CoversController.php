@@ -144,7 +144,7 @@ class CoversController extends BaseController {
 		] );
 	}
 
-	public function impulsarCausa( $id_causa = null, $id_impulsor = null ){
+	public function impulsarCausa( $id_causa = null ){
 		Session::forget( 'fbImpulsar');
 		Session::forget( 'fbImpulsarCausa');
 		//echo $this->social_counter('http://design4causes.com/ficha-causas/1/roberto-alonso-espinosa','facebook');die;
@@ -160,8 +160,39 @@ class CoversController extends BaseController {
 		 ] );
 	}
 
-	public function impulsarGracias(){
+	public function impulsarGracias($id_causa = null, $id_impulsor = null ){
+
+
 		if ( Auth::customer()->check() ){
+
+			$causas = new Causas;
+			$causa = $causas->where('id_causas',$id_causa)->first();
+
+	  		$impulsadas = Impulsadas::where('id_causas',$id_causa)
+								    ->where('id_profiles',Helper::getRegisterId())
+								    ->get();
+											    
+	  		if(count($impulsadas) > 0){
+
+	  			return View::make( 'public.covers.impulsar_gracias_2' );
+
+		 	} else {
+		 		$impulsadasSave = new Impulsadas;
+		 		$impulsadasSave->email 	     = Helper::getEmail();
+	  			$impulsadasSave->id_profiles = Helper::getRegisterId();
+		 		$impulsadasSave->id_causas   = $id_causa;
+		 		$impulsadasSave->url 	     = URL::to( '/ficha-causas/'.$causa->id_causas.'/'.Str::slug($causa->titulo).'/'.Helper::getRegisterId() );
+
+		 		if($impulsadasSave->save())
+		 			return View::make( 'public.covers.impulsar_gracias' );
+
+		 		return Redirect::to( 'facebook-close' );
+		 	}
+
+		 	
+
+		}
+		/*if ( Auth::customer()->check() ){
 			$nameImpulsor = Helper::getRegisterFullName();
 			$emailImpulsor = Helper::getEmail();
 
@@ -172,9 +203,9 @@ class CoversController extends BaseController {
 						->subject( '¡Felicidades! ' );
 				});
 
-		}
+		}*/
 
-		return View::make( 'public.covers.impulsar_gracias' );
+		
 	}
 
 	/**
@@ -508,110 +539,118 @@ class CoversController extends BaseController {
 		return Redirect::to( 'login/facebook' );
 	}
 
-	private function post_url($url, $params) {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params, null, '&'));
-    $ret = curl_exec($ch);
-    curl_close($ch);
-    return $ret;
-  }
+	public function checkImpulsadas(){
+		$impulsadas = new Impulsadas;
+		$result = $impulsadas->where('estatus',0)->get();
 
-   private function get_app_access_token($app_id, $secret) {
-    $url = 'https://graph.facebook.com/oauth/access_token';
-    $token_params = array(
-        "grant_type" => "client_credentials",
-        "client_id" => $app_id,
-        "client_secret" => $secret
-        );
-    return str_replace('access_token=', '', $this->post_url($url, $token_params));
-  }
+		$impulsadasUpdate = new Impulsadas;
+		$profiles         = new Profiles;
 
-  private function social_counter($url, $service) 
-{
-
-
-	$tnwsc_config = array(
-		'services' => array(
-			'facebook' => array('url' => "https://graph.facebook.com/?id=%s&access_token=776167932490026|Y-gk_zfRGJaOzjNp8pwteYKtNl0"),
-			'twitter' => array('url' => "http://urls.api.twitter.com/1/urls/count.json?url=%s"),
-			'linkedin' => array('url' => "http://www.linkedin.com/countserv/count/share?url=%s"),
-			'google' => array('url' => "https://clients6.google.com/rpc")
-		)
-	);
-
-	//global $tnwsc_config;
-	$social_count = 0;
-	
-	// Google+ is an special, hack-ish case
-	if( $service == 'google' ) 
-	{
-		// GET +1s. Credits to Tom Anthony: http://www.tomanthony.co.uk/blog/google_plus_one_button_seo_count_api/
-	    $curl = curl_init();
-	    curl_setopt( $curl, CURLOPT_URL, "https://clients6.google.com/rpc" );
-	    curl_setopt( $curl, CURLOPT_POST, 1 );
-	    curl_setopt( $curl, CURLOPT_POSTFIELDS, '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"' . $url . '","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"p","apiVersion":"v1"}]' );
-	    curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
-	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Content-type: application/json' ) );
-	    $curl_results = curl_exec ( $curl );
-	    curl_close ( $curl );
-	 
-	    $json = json_decode($curl_results, true);
-	    $social_count = intval( $json[0]['result']['metadata']['globalCounts']['count'] );
-    	
-	} else {
-
-		$permalink  = $url;
-		if($service == 'facebook' && isset( $tnwsc_config['services'][$service]["params"] ) ) {
-			$permalink = sprintf( $tnwsc_config['services'][$service]["params"], $url );
-			//echo $permalink;
-		}
-		
-		$url = sprintf( $tnwsc_config['services'][$service]["url"], urlencode ( $permalink ) );
-		//$url = sprintf( $tnwsc_config['services'][$service]["url"], urlencode ( $url ) );
-		//echo $url;
-
-	    $ch = curl_init();
-	    curl_setopt ($ch, CURLOPT_URL, $url);
-	    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-		$return = curl_exec( $ch );
-	
-		if( curl_errno( $ch ) ) { 
-	        $error = print_r( curl_error( $ch ), true );
-	        // TODO: Notify curl errors via email or log files 
-		} else {
-			switch( $service ) {
-				case 'facebook':
-					 $return = json_decode( $return, true );
-					 //print_r($return);die;
-					//$social_count = ( isset( $return['data'][0]['total_count'] ) ) ? $return['data'][0]['total_count'] : 0;
-					$social_count = ( isset( $return['share'] ) ) ? $return['share']['share_count'] : 0;
-					// TODO: Better handling of errors	
-					//echo '<div style="display:none;" id="facebook_counter">';
-					//	print_r($return);
-					//echo '</div>';
+		foreach ($result as $key => $impulsada) {
+			if($this->social_counter($impulsada->url,'facebook') >= 10){
+				$impulsadasUpdate->where('url',$impulsada->url);
+				
+				if ( $impulsadasUpdate->update(array('estatus' => 1)) ){
 					
-					if( isset( $return['error'] ) ) { 
-						//tnwsc_log( "Error ".$return["code"]." (".$return["type"].") - ".$return["message"] );
-						return 0;
-					}
-				break;
-				
-				case 'twitter':
-					$return = json_decode( $return, true );
-					$social_count = ( isset($return['count'] ) ) ? $return['count'] : 0;
-				break;
-				
-				case 'linkedin':
-					$return = json_decode( str_replace( 'IN.Tags.Share.handleCount(', '', str_replace( ');', '', $return ) ), true );
-					$social_count = ( isset( $return['count'] ) ) ? $return['count'] : 0;
-				break;
+					$impulsor = $profiles->where('id_profiles',$impulsada->id_profiles)->first();
+					$nombre   = $impulsor->displayName;
+					$email    = $impulsor->email;
+					$ImpulsorDiploma = Mail::send( 'public.mail.impulsor_diploma', ['username' => $nombre], function( $message ) use ($email){
+							$message
+								->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+								->to( $email, "Impulsor" )
+								->subject( '¡Felicidades! ' );
+						});
+
+				}
 			}
 		}
+
 	}
-	return intval( $social_count );
-}
+
+  	private function social_counter($url, $service) 
+	{
+
+		$tnwsc_config = array(
+			'services' => array(
+				'facebook' => array('url' => "https://graph.facebook.com/?id=%s&access_token=776167932490026|Y-gk_zfRGJaOzjNp8pwteYKtNl0"),
+				'twitter' => array('url' => "http://urls.api.twitter.com/1/urls/count.json?url=%s"),
+				'linkedin' => array('url' => "http://www.linkedin.com/countserv/count/share?url=%s"),
+				'google' => array('url' => "https://clients6.google.com/rpc")
+			)
+		);
+
+		//global $tnwsc_config;
+		$social_count = 0;
+		
+		// Google+ is an special, hack-ish case
+		if( $service == 'google' ) 
+		{
+			// GET +1s. Credits to Tom Anthony: http://www.tomanthony.co.uk/blog/google_plus_one_button_seo_count_api/
+		    $curl = curl_init();
+		    curl_setopt( $curl, CURLOPT_URL, "https://clients6.google.com/rpc" );
+		    curl_setopt( $curl, CURLOPT_POST, 1 );
+		    curl_setopt( $curl, CURLOPT_POSTFIELDS, '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"' . $url . '","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"p","apiVersion":"v1"}]' );
+		    curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
+		    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Content-type: application/json' ) );
+		    $curl_results = curl_exec ( $curl );
+		    curl_close ( $curl );
+		 
+		    $json = json_decode($curl_results, true);
+		    $social_count = intval( $json[0]['result']['metadata']['globalCounts']['count'] );
+	    	
+		} else {
+
+			$permalink  = $url;
+			if($service == 'facebook' && isset( $tnwsc_config['services'][$service]["params"] ) ) {
+				$permalink = sprintf( $tnwsc_config['services'][$service]["params"], $url );
+				//echo $permalink;
+			}
+			
+			$url = sprintf( $tnwsc_config['services'][$service]["url"], urlencode ( $permalink ) );
+			//$url = sprintf( $tnwsc_config['services'][$service]["url"], urlencode ( $url ) );
+			//echo $url;
+
+		    $ch = curl_init();
+		    curl_setopt ($ch, CURLOPT_URL, $url);
+		    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+			$return = curl_exec( $ch );
+		
+			if( curl_errno( $ch ) ) { 
+		        $error = print_r( curl_error( $ch ), true );
+		        // TODO: Notify curl errors via email or log files 
+			} else {
+				switch( $service ) {
+					case 'facebook':
+						 $return = json_decode( $return, true );
+						 //print_r($return);die;
+						//$social_count = ( isset( $return['data'][0]['total_count'] ) ) ? $return['data'][0]['total_count'] : 0;
+						$social_count = ( isset( $return['share'] ) ) ? $return['share']['share_count'] : 0;
+						// TODO: Better handling of errors	
+						//echo '<div style="display:none;" id="facebook_counter">';
+						//	print_r($return);
+						//echo '</div>';
+						
+						if( isset( $return['error'] ) ) { 
+							//tnwsc_log( "Error ".$return["code"]." (".$return["type"].") - ".$return["message"] );
+							return 0;
+						}
+					break;
+					
+					case 'twitter':
+						$return = json_decode( $return, true );
+						$social_count = ( isset($return['count'] ) ) ? $return['count'] : 0;
+					break;
+					
+					case 'linkedin':
+						$return = json_decode( str_replace( 'IN.Tags.Share.handleCount(', '', str_replace( ');', '', $return ) ), true );
+						$social_count = ( isset( $return['count'] ) ) ? $return['count'] : 0;
+					break;
+				}
+			}
+		}
+		return intval( $social_count );
+	}
 
 }
 
