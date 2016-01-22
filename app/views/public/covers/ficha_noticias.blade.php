@@ -26,7 +26,7 @@
 					<img src="{{ asset( 'path_image/' . $noticia->imagen . '/' . '540x565' ) }}" alt="" id="ev-im">
 				</span>
 				<span class="datos ev">
-					<button value="" class="cerrar" onClick="history.back()"></button>
+					<button value="" class="cerrar" onClick="historyBack('{{ URL::to('/') }}')"></button>
 					<h1>{{ $noticia->titulo }}</h1>
 						<h2>{{ $noticia->fecha_publicacion }}</h2>
 					<div class="datos-inf" id="style-4">
