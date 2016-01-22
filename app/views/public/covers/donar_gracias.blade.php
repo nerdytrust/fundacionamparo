@@ -31,6 +31,9 @@
 				if(isset($_GET['v'])):
 			?>
 				location.href = {{ URL::to( '/' ) }}	
+			<?php
+				endif;
+			?>
 		</script>
 	@stop
 @stop
