@@ -181,7 +181,7 @@ class DonacionesController extends BaseController {
 	 	try{
 
 	 	  $payment->create( $this->_api );
-	 	  echo 'hasta aquí';die;
+	 	  
 	 	  $hash = md5($payment->getId());
   		  Session::put( 'paypalhas_hash', $hash );
 
