@@ -202,7 +202,7 @@ class DonacionesController extends BaseController {
 	 			'status'	=> $e->getMessage()
 	 		] );
 	 	}
-
+echo 'hasta aqui';die;
 	 	foreach ($payment->getLinks() as $link){
 	 		if ( $link->getRel() == 'approval_url' )
 	 			$redirect = $link->getHref();

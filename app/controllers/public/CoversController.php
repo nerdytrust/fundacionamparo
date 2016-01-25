@@ -1,18 +1,15 @@
 <?php
-use Facebook\FacebookRequest;
-use Facebook\FacebookSession;
-
 class CoversController extends BaseController {
 	
-	private $_api;
+	/*private $_api;
 	private $_ClientId     = 'Ab_PyKePqSHu26uPKjtbhBVYq4iB5bx0dZAX_N9D0dYB_1Qzh3kB8O97oOWE54CqTNGmd6kcV8l4Rha2';
     private $_ClientSecret = 'EDAp5eZ9kqpYl9R7KuBPhxfY7yOCmJv00oJ5VHM4ufKgPmiEKF_Uf0Lfm57p2kbITmG65B0LnSZ_JtLj';
-
+	*/
     /**
 	 * Método constructor para inicializar variables
 	 */
 	public function __construct(){
-		$this->_api = new \PayPal\Rest\ApiContext(
+		/*$this->_api = new \PayPal\Rest\ApiContext(
 		  new \PayPal\Auth\OAuthTokenCredential(
 		    $this->_ClientId,
 		    $this->_ClientSecret
@@ -25,7 +22,7 @@ class CoversController extends BaseController {
 		 	'log.LogEnabled' => true,
 		 	'log.FileName' => __DIR__.'/../../storage/logs/PayPal.log',
 		 	'log.LogLevel' => 'FINE'
-		 ));
+		 ));*/
 	}
 
 	/**
