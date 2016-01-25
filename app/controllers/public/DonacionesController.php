@@ -179,7 +179,7 @@ class DonacionesController extends BaseController {
 	 	$payment->setRedirectUrls($redirectUrls);
 
 	 	try{
-
+echo 'hasta aquí';die;
 	 	  $payment->create( $this->_api );
 
 	 	  $hash = md5($payment->getId());
@@ -202,7 +202,7 @@ class DonacionesController extends BaseController {
 	 			'status'	=> $e->getMessage()
 	 		] );
 	 	}
-echo 'hasta aqui';die;
+
 	 	foreach ($payment->getLinks() as $link){
 	 		if ( $link->getRel() == 'approval_url' )
 	 			$redirect = $link->getHref();
