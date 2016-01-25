@@ -179,9 +179,9 @@ class DonacionesController extends BaseController {
 	 	$payment->setRedirectUrls($redirectUrls);
 
 	 	try{
-echo 'hasta aquí';die;
-	 	  $payment->create( $this->_api );
 
+	 	  $payment->create( $this->_api );
+	 	  echo 'hasta aquí';die;
 	 	  $hash = md5($payment->getId());
   		  Session::put( 'paypalhas_hash', $hash );
 
