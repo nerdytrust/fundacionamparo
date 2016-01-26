@@ -30,10 +30,34 @@
 </div>
 <div class="row">
 	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->id_profiles->input, $columns->id_profiles->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->id_profiles,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
 		{{ Form::label($columns->mostrar_perfil->input, $columns->mostrar_perfil->label) }}
 	</div>
 	<div class="col-xs-10 ">
 		{{ parseToHTML($columns->mostrar_perfil,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->estatus->input, $columns->estatus->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->estatus,$record,$fk_column) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-2 text-right ">
+		{{ Form::label($columns->url->input, $columns->url->label) }}
+	</div>
+	<div class="col-xs-10 ">
+		{{ parseToHTML($columns->url,$record,$fk_column) }}
 	</div>
 </div>
 <div class="row">

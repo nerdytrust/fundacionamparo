@@ -22,6 +22,15 @@
  <span class="help-block">{{ $errors->first('email') }}</span>
 </div>
 
+<div class="form-group @if ($errors->has('id_profiles')) has-error @endif">
+
+ {{ Form::label("remotecombo", "Profile") }}
+   
+      {{ Form::remotecombo("id_profiles",$record->id_profiles,["table"=>$model,"class" => "form-control","placeholder"=>"Profile"] ); }}
+    
+ <span class="help-block">{{ $errors->first('id_profiles') }}</span>
+</div>
+
 <div class="form-group @if ($errors->has('mostrar_perfil')) has-error @endif">
 
  {{ Form::label("text", "Mostrar perfil") }}
@@ -29,6 +38,24 @@
       {{ Form::text("mostrar_perfil",$record->mostrar_perfil,["class" => "form-control","placeholder"=>"Mostrar perfil"]); }}
     
  <span class="help-block">{{ $errors->first('mostrar_perfil') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('estatus')) has-error @endif">
+
+ {{ Form::label("text", "Estatus") }}
+   
+      {{ Form::text("estatus",$record->estatus,["class" => "form-control","placeholder"=>"Estatus"]); }}
+    
+ <span class="help-block">{{ $errors->first('estatus') }}</span>
+</div>
+
+<div class="form-group @if ($errors->has('url')) has-error @endif">
+
+ {{ Form::label("text", "Url") }}
+   
+      {{ Form::text("url",$record->url,["class" => "form-control","placeholder"=>"Url"]); }}
+    
+ <span class="help-block">{{ $errors->first('url') }}</span>
 </div>
 
      
