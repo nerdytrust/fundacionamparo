@@ -36,7 +36,7 @@ return array(
     'PayPal\\EnhancedDataTypes' => array($vendorDir . '/paypal/merchant-sdk-php/lib'),
     'PayPal\\EBLBaseComponents' => array($vendorDir . '/paypal/merchant-sdk-php/lib'),
     'PayPal\\CoreComponentTypes' => array($vendorDir . '/paypal/merchant-sdk-php/lib'),
-    'PayPal' => array($vendorDir . '/paypal/rest-api-sdk-php/lib', $vendorDir . '/paypal/sdk-core-php/lib'),
+    'PayPal' => array($vendorDir . '/paypal/sdk-core-php/lib', $vendorDir . '/paypal/rest-api-sdk-php/lib'),
     'Patchwork' => array($vendorDir . '/patchwork/utf8/class'),
     'PHPParser' => array($vendorDir . '/nikic/php-parser/lib'),
     'Ollieread\\Multiauth' => array($vendorDir . '/ollieread/multiauth/src'),
