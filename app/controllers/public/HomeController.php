@@ -29,7 +29,6 @@ class HomeController extends BaseController {
 	 * @return Vista del Home
 	 */
 	public function home() {
-		phpinfo();die;
 		if(Session::has( 'fbImpulsar'))
 			return Redirect::to( 'impulsar' );
 		if(Session::has( 'fbImpulsarCausa'))
