@@ -99,7 +99,7 @@ class Helper {
 	 * @return Html del botón de share de facebook
 	 */
 	public static function facebookShareImpulsor2( $after = '', $url, $before = ''){
-		$fb_share = '<span onclick="return fbs_click1(640, 536, this, \''.$url.'\','.Helper::getRegisterId().')">' .$after . $before . '</span>';
+		$fb_share = '<a onclick="return fbs_click1(640, 536, this, \''.$url.'\','.Helper::getRegisterId().')">' .$after . $before . '</a>';
 		return $fb_share;
 	}
 	/**
@@ -172,7 +172,7 @@ class Helper {
 	public static function getRegisterIsFB(){
 		if(Auth::customer()->check()){
 			$user = new Helper;
-			$isFB = Profiles::select('provider')->where('id_profiles',$user->getRegisterId())->first();
+			$isFB = Profiles::select('provider')->where('id_registrados',$user->getRegisterId())->first();
 			if($isFB->provider == 'facebook') 
 			return TRUE;
 		}

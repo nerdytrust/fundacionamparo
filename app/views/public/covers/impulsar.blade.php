@@ -26,13 +26,13 @@
 					<label for="check-azul"></label>No mostrar mi perfil en el sitio
 				</div>
 				
-				<button class="feis">	
+				<span class="feis">	
 					@if ( Helper::getRegisterIsFB() )
 						{{ Helper::facebookShareImpulsor2( '<div id="invitar">Comparte</div>', URL::to( '/' ),'' ) }}   
 					@else
-						<div id="invitar" onclick="location.href='{{ URL::to( '/fb-impulsar' ) }}';">Entra con FaceBook</div>
+						<div id="entrarfb" onclick="location.href='{{ URL::to( '/fb-impulsar' ) }}';">Entra con FaceBook</div>
 					@endif
-				</button>	
+				</span>	
 				
 					
 				
