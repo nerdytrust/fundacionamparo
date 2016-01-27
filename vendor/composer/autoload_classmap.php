@@ -3586,7 +3586,7 @@ return array(
     'PayPal\\PayPalAPI\\UpdateRecurringPaymentsProfileReq' => $vendorDir . '/paypal/merchant-sdk-php/lib/PayPal/PayPalAPI/UpdateRecurringPaymentsProfileReq.php',
     'PayPal\\PayPalAPI\\UpdateRecurringPaymentsProfileRequestType' => $vendorDir . '/paypal/merchant-sdk-php/lib/PayPal/PayPalAPI/UpdateRecurringPaymentsProfileRequestType.php',
     'PayPal\\PayPalAPI\\UpdateRecurringPaymentsProfileResponseType' => $vendorDir . '/paypal/merchant-sdk-php/lib/PayPal/PayPalAPI/UpdateRecurringPaymentsProfileResponseType.php',
-    'PayPal\\Rest\\ApiContext' => $vendorDir . '/paypal/sdk-core-php/lib/PayPal/Rest/ApiContext.php',
+    'PayPal\\Rest\\ApiContext' => $vendorDir . '/paypal/rest-api-sdk-php/lib/PayPal/Rest/ApiContext.php',
     'PayPal\\Rest\\IResource' => $vendorDir . '/paypal/sdk-core-php/lib/PayPal/Rest/IResource.php',
     'PayPal\\Rest\\RestHandler' => $vendorDir . '/paypal/sdk-core-php/lib/PayPal/Rest/RestHandler.php',
     'PayPal\\Security\\Cipher' => $vendorDir . '/paypal/rest-api-sdk-php/lib/PayPal/Security/Cipher.php',
