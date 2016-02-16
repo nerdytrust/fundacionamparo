@@ -620,7 +620,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 */
 	protected function addResourceShow($name, $base, $controller, $options)
 	{
-		$uri = $this->getResourceUri($name).'/{'.$base.'}';
+		$uri = $this->getResourceUri($name).'/{'.$base.'}/show';
 
 		$action = $this->getResourceAction($name, $controller, 'show', $options);
 

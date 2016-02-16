@@ -8,7 +8,7 @@
 
 	  @if(!Entrust::can($model."/show") and in_array("show",$btn))
 		  <div class="btn-group" role="group">
-		    <a class="btn btn-small btn-success" href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/' . $record->{ $key_name }) }}">{{ trans('crud.show') }}</a>
+		    <a class="btn btn-small btn-success" href="{{ URL::to(getenv('APP_ADMIN_PREFIX').'/'.$model.'/' . $record->{ $key_name } . '/show') }}">{{ trans('crud.show') }}</a>
 		  </div>
 	  @endif
 	  @if(!Entrust::can($model."/print") and in_array("print",$btn))
