@@ -35,7 +35,7 @@ crud form
   		  {{ Form::submit(trans('crud.'.$action), array('class' => 'btn btn-lg btn-success')) }}
       @endif
       @if(in_array("cancel",$btn))
-        <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value) }}" class="btn btn-lg btn-default">{{ trans('crud.cancel') }}</a>
+        <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model) }}" class="btn btn-lg btn-default">{{ trans('crud.cancel') }}</a>
       @endif
       @if(in_array("create",$btn))
         {{ Form::close() }}
@@ -47,7 +47,7 @@ crud form
         {{ Form::submit(trans('crud.'.$action), array('class' => 'btn btn-lg btn-success')) }}
       @endif
       @if(in_array("cancel",$btn))
-        <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model."/".$key_value) }}" class="btn btn-lg btn-default">{{ trans('crud.cancel') }}</a>
+        <a href="{{ call_user_func("URL::to",getenv('APP_ADMIN_PREFIX').'/'.$model) }}" class="btn btn-lg btn-default">{{ trans('crud.cancel') }}</a>
       @endif
       @if(in_array("edit",$btn))
         {{ Form::close() }}
