@@ -128,19 +128,21 @@
 									<div id="donativo" onclick="location.href='{{ URL::to( 'donar-causa/' . $causa->id_causas ) }}';" >HAZ TU DONACIÓN</div>
 								</section>
 								
-						 			<section class="txt_int cursor-pointer {{ isset($causa['class']) ?  'txt_int_'.'50' : '' }}" id="{{$causa->id_causas}}" onclick="location.href='{{ URL::to( 'ficha-causas/' . $causa->id_causas . '/' . Str::slug($causa->titulo)) }}'">
+						 			<section class="txt_int {{ isset($causa['class']) ?  'txt_int_'.'50' : '' }}" id="{{$causa->id_causas}}" onclick="location.href='{{ URL::to( 'ficha-causas/' . $causa->id_causas . '/' . Str::slug($causa->titulo)) }}'">
 						 				<h1>{{ $causa->id_categorias_record->nombre }}</h1>
 						 				<h2>{{ $causa->titulo }}</h2>
 						 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
 										<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas . '/' . Str::slug($causa->titulo)) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
 										<div id="meta">
-											<div id="barra">
-												<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
+										@if($causa->meta > 0)	
+												<div id="barra">
+													<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
+												</div>
+											<div id="cantidad">
+												<h1>META</h1>
+												<h2>${{ number_format($causa->meta) }}<span>MXN</span></h2>
 											</div>
-										<div id="cantidad">
-											<h1>META</h1>
-											<h2>${{ number_format($causa->meta) }}<span>MXN</span></h2>
-										</div>
+										@endif
 											<p>${{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
 											<p>{{ Helper::getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 										</div>
