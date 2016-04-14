@@ -218,7 +218,7 @@ div.subtitleM{
 		-moz-transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
 		-webkit-transition:bottom 500ms ease-in-out, background 500ms ease-in-out;
 		background: url("../../images/back-t1.png")repeat;
-		cursor: auto !important;
+		cursor: pointer !important;
 
 	}
 	.txt_int_50{
@@ -3959,6 +3959,9 @@ label.contact textarea{
 }	
 
 @media screen and (max-width:640px) {
+	.content-1 > a{
+		margin-top: 40px !important;
+	}
 	#txt_noticia{
 		margin: 5% 0 0 0 !important;
 	}

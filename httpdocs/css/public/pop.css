@@ -1637,6 +1637,7 @@ figure.cauf>span{
 		margin-left: 0%;
 		height: 203px;
 		display: block;
+		padding-left: 16px;
 	}
 	.content-1 > b {
  	   top: 200px;
