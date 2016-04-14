@@ -46,7 +46,7 @@
 				<div class="txt_fundacion2">
 					<div id="titulo_fca">
 						<h1 class="tt">MEMBRESÍAS U ORGANISMOS</h1>
-						<h4>A los que pertenece Fundación Amparo</h4>
+						<h4>A los que pertenece Fundación Amparo IAP</h4>
 					</div>
 					@if ( isset( $membresias ) )
 						@foreach ( $membresias as $membresia )

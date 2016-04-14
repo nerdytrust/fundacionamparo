@@ -41,9 +41,9 @@
 					<div id="titulo_fca" class="colorin">
 						<h1>ASISTENCIALES</h1>
 					</div>
-					<p>La Fundación Amparo tuvo presencia tanto asignando recursos para ayudar a personas que resultaron damnificadas en el terremoto en 1985, como a los damnificados en la Sierra Norte de Puebla por las tormentas que causaron caos en 1999, aportando, en este último caso, al Consejo Pro-Construcción de la Vivienda de la Sierra Norte de Puebla, todos los elementos para lograr la construcción de viviendas que permitieron reubicar a las familias siniestradas.</p>
+					<p>La Fundación Amparo IAP tuvo presencia tanto asignando recursos para ayudar a personas que resultaron damnificadas en el terremoto en 1985, como a los damnificados en la Sierra Norte de Puebla por las tormentas que causaron caos en 1999, aportando, en este último caso, al Consejo Pro-Construcción de la Vivienda de la Sierra Norte de Puebla, todos los elementos para lograr la construcción de viviendas que permitieron reubicar a las familias siniestradas.</p>
 					<br>
-					<p>Independientemente de apoyos a diversos municipios y comunidades en el Estado de Puebla, la Fundación Amparo amplió su ámbito de beneficencia a diversos puntos del país, como se puede apreciar al haber atendido la conservación que auspició de la Parroquia de San Miguel, en Cozumel, Quintana Roo, así como el apoyo otorgado para la creación del Centro de Desarrollo Infantil y Juvenil Renacimiento, en el puerto de Acapulco, Guerrero.</p>
+					<p>Independientemente de apoyos a diversos municipios y comunidades en el Estado de Puebla, la Fundación Amparo IAP amplió su ámbito de beneficencia a diversos puntos del país, como se puede apreciar al haber atendido la conservación que auspició de la Parroquia de San Miguel, en Cozumel, Quintana Roo, así como el apoyo otorgado para la creación del Centro de Desarrollo Infantil y Juvenil Renacimiento, en el puerto de Acapulco, Guerrero.</p>
 					<br>
 					<p>Las aportaciones asistenciales han sido también un destacado rubro en sus asignaturas de apoyo, ya sea a través de la Beneficencia Pública del Estado de Puebla, o del apoyo a Ayuntamientos poblanos específicos como los de Izúcar de Matamoros, de San Andrés Cholula y de la misma Ciudad de Puebla.</p>
 					<br/>

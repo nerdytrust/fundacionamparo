@@ -23,7 +23,7 @@
 					<div id="titulo_fca">
 						<h1>POLÍTICAS DE PRIVACIDAD</h1>
 					</div>
-					<p>Fundaci&oacute;n Amparo I.B.P. , mejor conocido como fundaci&oacute;n Amparo , con domicilio en calle 2 Sur 708, colonia centro Hist&oacute;rico, ciudad puebla, c.p. 72000, en la entidad de puebla, m&eacute;xico , y portal de internet <span><a href="{{ URL::to( 'http://www.fundacionamparo.com' ) }}" target="_blank">www.fundacionamparo.com</a></span> , es el responsable del uso y protecci&oacute;n de sus datos personales, y al respecto le informamos lo siguiente:</p>
+					<p>Fundaci&oacute;n Amparo IAP , mejor conocido como fundaci&oacute;n Amparo IAP , con domicilio en calle 2 Sur 708, colonia centro Hist&oacute;rico, ciudad puebla, c.p. 72000, en la entidad de puebla, m&eacute;xico , y portal de internet <span><a href="{{ URL::to( 'http://www.fundacionamparo.com' ) }}" target="_blank">www.fundacionamparo.com</a></span> , es el responsable del uso y protecci&oacute;n de sus datos personales, y al respecto le informamos lo siguiente:</p>
 					<br/>
 					<h3>&iquest;Para qu&eacute; fines utilizaremos sus datos personales?</h3>
 					<br/>
@@ -31,8 +31,7 @@
 					<ul class="ben">
 						<li>Realizar alg&uacute;n donativo</li>
 						<li>Apoyar una causa</li>
-						<li>Contactar a la Fundaci&oacute;n Amparo</li>
-						<li>Solicitar una beca</li>
+						<li>Contactar a la Fundaci&oacute;n Amparo IAP</li>
 						<li>Para ser voluntario</li>
 					</ul>
 					<br />
@@ -48,7 +47,6 @@
 						<li>Domicilio</li>
 						<li>Teléfono particular</li>
 						<li>Correo electrónico</li>
-						<li>Trayectoria educativa</li>
 					</ul>
 					<br/>
 					<h3>&iquest;Cómo puede acceder, rectificar o cancelar sus datos personales, u oponerse a su uso?</h3>
@@ -59,7 +57,7 @@
 					<br />
 					<p>Para conocer el procedimiento y requisitos para el ejercicio de los derechos ARCO, ponemos a su disposición el siguiente medio:</p>
 					<ul class="ben">
-						<li>En la página de internet de Fundación Amparo</li>
+						<li>En la página de internet de Fundación Amparo IAP</li>
 					</ul>
 					<br />
 					<p>Los datos de contacto de la persona o departamento de datos personales, que está a cargo de dar trámite a las solicitudes de derechos ARCO, son los siguientes:</p>
@@ -81,7 +79,7 @@
 					<br />
 					<p>Para conocer el procedimiento y requisitos para la revocación del consentimiento, ponemos a su disposición el siguiente medio:</p>
 					<ul class="ben">
-						<li>La página de internet de la Fundación Amparo {{ HTML::link( 'http://www.fundacionamparo.com', 'www.fundacionamparo.com', [ 'class' => 'black-link' ] ) }}</li>
+						<li>La página de internet de la Fundación Amparo IAP {{ HTML::link( 'http://www.fundacionamparo.com', 'www.fundacionamparo.com', [ 'class' => 'black-link' ] ) }}</li>
 					</ul>
 					<br />
 					<h3>&iquest;Cómo puede limitar el uso o divulgación de su información personal?</h3>
@@ -95,8 +93,8 @@
 					<p>Le informamos que en nuestra página de internet utilizamos cookies, web beacons u otras tecnologías, a través de las cuales es posible monitorear su comportamiento como usuario de internet, así como brindarle un mejor servicio y experiencia al navegar en nuestra página. Los datos personales que recabamos a través de estas tecnologías, los utilizaremos para los siguientes fines:</p>
 					<ul class="ben">
 						<li>para verificar la identidad de un usuario, para solicitar datos y apoyar a una causa,</li>
-						<li>para poder ser voluntario en algúna acción generada por Fundación Amparo,</li>
-						<li>para poder solicitar una beca, para poder realizar algún donativo</li>
+						<li>para poder ser voluntario en algúna acción generada por Fundación Amparo IAP,</li>
+						<li>para poder realizar algún donativo</li>
 					</ul>
 					<br />
 					<p>Los datos personales que obtenemos de estas tecnologías de rastreo son los siguientes:</p>
@@ -116,7 +114,7 @@
 					</ul>
 					<br />
 					<h3>&iquest;Cómo puede conocer los cambios en este aviso de privacidad?</h3>
-					<p>El presente aviso de privacidad puede sufrir modificaciones, cambios o actualizaciones derivadas de nuevos requerimientos legales; de nuestras propias necesidades por los productos o servicios que ofrecemos; de nuestras prácticas de privacidad; de cambios en nuestro modelo de negocio, o por otras causas.</p>
+					<p>El presente aviso de privacidad puede sufrir modificaciones, cambios o actualizaciones derivadas de nuevos requerimientos legales; de nuestras propias necesidades por los productos o servicios que ofrecemos; de nuestras prácticas de privacidad, o por otras causas.</p>
 					<br/>
 					<p>Nos comprometemos a mantenerlo informado sobre los cambios que pueda sufrir el presente aviso de privacidad, a través de: correo electrónico al titular.</p>
 					<br/>

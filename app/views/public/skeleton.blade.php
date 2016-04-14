@@ -245,6 +245,9 @@
                 if(    $('body').hasClass( 'registro' )
                     || $('body').hasClass( 'donar-causa' )
                     || $('body').hasClass( 'donar-oxxo' )
+                    || $('body').hasClass( 'ficha-causas' )
+                    || $('body').hasClass( 'ficha-donador' )
+                    || $('body').hasClass( 'ficha-noticias' )
                     || $('body').hasClass( 'entrar' )){
                     $('.d').css({'height': '100vh'});
                     setTimeout(function(){

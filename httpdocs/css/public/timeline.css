@@ -28,12 +28,12 @@ header { display: inline-block !important; }
   padding-left: 0px;
 }
 .todos-momentos{
-  margin-top: 10px;
+  margin-top: 1px;
 }
 .todos-momentos a{
   color: #FFF;
   text-decoration: none;
-  font-size: 0.7em;
+  font-size: 0.6em;
   line-height: 4em;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
@@ -64,20 +64,20 @@ header { display: inline-block !important; }
 
 .btn-cerrar {
     background: transparent;
-    background-image: url(../../images/x2.png);
+    background-image: url(../../images/cerrar.png);
     height: 40px;
     margin-top: 15px;
     position: absolute;
     outline: none;
     right: 15px;
-    width: 40px;
+    width: 90px;
     z-index: 17;
     border-radius: 0px;
     border: none;
   }
 
   .btn-cerrar:hover{
-    background-image: url(../../images/x2.png);
+    background-image: url(../../images/cerrar2.png);
   }
   /*.btn-cerrar:active{
      outline: none;
@@ -107,12 +107,17 @@ header { display: inline-block !important; }
 .flexslider .slides img{
   /*width: auto !important;*/
   min-width: 100% !important;
-   height: 150% !important;
+   height: 120% !important;
    position: relative;
-   top: -15%;
+   top: -5%;
 }
 button:hover{
   border: none;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 /* ====================================================================================================================
@@ -208,7 +213,7 @@ html[xmlns] .flexslider .slides {
   display: block;
   width: 34px;
   height: 60px;
-  margin: -20px 0 0;
+  margin: -30px 0 0;
   position: absolute;
   top: 16%;
   z-index: 10;
@@ -463,17 +468,17 @@ vertical-align: middle;
     display: none;
     }
     h1{
-      font-size: 33px;
+      font-size: 26px;
       color: #fff;
     }
     h2{
-      font-size: 16px;
+      font-size: 15px;
       color: #fff;
     }
     b{
       display: block;
       color: #bfda3f;
-      font-size: 49px;
+      font-size: 42px;
     }
     span.adorno{
     background: #FFF;
@@ -486,7 +491,7 @@ vertical-align: middle;
     letter-spacing: -.8px;
     text-transform: uppercase;
     position: absolute;
-    top: -9%;
+    top: -15%;
     left: 0%;
     /*font-weight: bolder;*/
   }
@@ -515,7 +520,7 @@ vertical-align: middle;
  }
 @media only screen and (min-width: 1280px) and (max-width: 1365px){
     .flexslider .slides img{
-      height: 145% !important;
+      height: 135% !important;
     }
      .flex-control-paging li a.flex-active{
     background-size: 25px;
@@ -608,7 +613,7 @@ vertical-align: middle;
     z-index: 1000 !important;
   background: #000 !important;    
      left: 0;
-  padding: 0 4%;
+  padding: 0 2em;
   }
   .flexslider .slides > li{
     background: #000;
@@ -694,7 +699,7 @@ vertical-align: middle;
       padding-left: 48px;
       background: url("../../images/play_timeline.png") no-repeat left;
       background-size: 42px;
-      background-position-y: 4px;
+      background-position-y: 0px;
     }
     .button-play-timeline:hover{
       background: url("../../images/play_over_timeline.png") no-repeat left;
@@ -745,7 +750,7 @@ vertical-align: middle;
     /*background: red !important;*/
 }
 .flexslider .slides img {
- width: 100% !important;
+ width: 120% !important;
  height: 238px !important;
   left: 0;
   }

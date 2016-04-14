@@ -35,7 +35,7 @@
 						<h1 class="tt">CONSIDERACIONES FISCALES</h1>
 						<h4>Actualmente la Fundación es considerada Donatoria Autorizada</h4>
 					</div>
-					<p>Al ser la Fundación Amparo una Institución de Beneficencia Privada que tiene como objeto principal el desarrollo de programas de promoción a la cultura y educación, de beneficio social y de auxilio a la comunidad, se encuentra registrada como entidad no lucrativa para fines fiscales. Actualmente la Fundación es considerada Donataria Autorizada.</p>
+					<p>Al ser la Fundación Amparo IAP una Institución de Asistencia Privada que tiene como objeto principal el desarrollo de programas de promoción a la cultura y educación, de beneficio social y de auxilio a la comunidad, se encuentra registrada como entidad no lucrativa para fines fiscales. Actualmente la Fundación es considerada Donataria Autorizada.</p>
 				</div>
 				<div class="adorno_fa">
  					<img src="{{ asset( 'images/adorno_fa.png' ) }}" alt="">

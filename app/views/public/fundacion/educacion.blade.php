@@ -43,11 +43,11 @@
 					</div>
 					<p>Se ha apoyado a estudiantes destacados para que concluyan exitosamente sus estudios, esto a través de becas otorgadas después de una cuidadosa evaluación.</p>
 					<br/>
-					<p>En el mismo sentido, y considerando la importancia que tiene para los mexicanos, sobre todo para los estudiantes, el afianzar las relaciones y nexos con nuestro vecino del norte, se han aportado a la Universidad Rockefeller en Nueva York importantes cantidades que han creado esa inercia de apoyo mutuo entre las dos naciones.  Recientemente se dieron apoyos para la creación y operación del “David Rockefeller Center for Latin American Studies” en la universidad de Harvard.</p>
+					<p>En el mismo sentido, y considerando la importancia que tiene para los mexicanos, sobre todo para los estudiantes, el afianzar las relaciones y nexos con nuestro vecino del norte, se han aportado a la Universidad Rockefeller en Nueva York importantes cantidades que han creado esa inercia de apoyo mutuo entre las dos naciones.  Se dieron apoyos para la creación y operación del “David Rockefeller Center for Latin American Studies” en la universidad de Harvard.</p>
 					<br/>
-					<p>Dentro de las obras educativas y de carácter social, podemos mencionar la creación de los Centros de Desarrollo Comunitario Roberto Alonso Espinosa, ubicados en Lomas de Chamontoya, D.F. y en Zacatlán Puebla. Los cuales tienen como misión generar oportunidades de educación integral y alternativa  para niños de escasos recursos, involucrando a su familia y comunidad en un proceso de cambio. Este trabajo se realiza a través de la capacitación a madres educadoras y del impulso a la participación comunitaria.</p>
+					<p>Dentro de las obras educativas y de carácter social, podemos mencionar la creación de los Centros de Desarrollo Comunitario Roberto Alonso Espinosa, ubicados en Lomas de Chamontoya, D.F. y en Zacatlán Puebla. Los cuales tienen como misión generar oportunidades de educación integral y alternativa para niños en desventaja socioeconómica, involucrando a su familia y comunidad en un proceso de cambio. Este trabajo se realiza a través de la capacitación a madres educadoras y del impulso a la participación comunitaria.</p>
 					<br/>
-					<p>Es la atención a la niñez, aspiración del creador de la Fundación Amparo que se ha cristalizado a través de este Proyecto,  que apoya integralmente a niños y familias de escasos recursos.</p>
+					<p>Es la atención a la niñez, aspiración del creador de la Fundación Amparo IAP que se ha cristalizado a través de este Proyecto,  que apoya integralmente a niños y familias en desventaja socioeconómica.</p>
 					<br/>
 					<h3>Beneficiarios</h3>
 					<ul class="ben">

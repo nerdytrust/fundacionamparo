@@ -42,10 +42,10 @@
 						<h1>RESTAURACIÓN DE EDIFICIOS</h1>
 					</div>
 					<h3>Centro Comercial “La Victoria”</h3>
-					<p>Observando la misma temática de procurar obras para el beneficio común, la Fundación Amparo rescató con maestría, un ancestral centro de comercio ubicado en el Centro Histórico de la Ciudad de Puebla, convirtiendo el antiguo Mercado “La Victoria”, en un centro comercial digno, que representa un punto de fuentes de trabajo y recreación para la sociedad.</p>
+					<p>Observando la misma temática de procurar obras para el beneficio común, la Fundación Amparo IAP rescató con maestría, un ancestral centro de comercio ubicado en el Centro Histórico de la Ciudad de Puebla, convirtiendo el antiguo Mercado “La Victoria”, en un centro comercial digno, que representa un punto de fuentes de trabajo y recreación para la sociedad.</p>
 					<br/>
 					<h3>Iluminación exterior de la Catedral y el Palacio de Gobierno Municipal de la Ciudad de Puebla</h3>
-					<p>En marzo 2009, la Fundación Amparo celebró un convenio de colaboración y apoyo financiero con el H. Ayuntamiento del Municipio de Puebla, para participar en la recuperación y dignificación del Centro Histórico de la Ciudad de Puebla, a través de tres acciones:</p>
+					<p>En marzo 2009, la Fundación Amparo IAP celebró un convenio de colaboración y apoyo financiero con el H. Ayuntamiento del Municipio de Puebla, para participar en la recuperación y dignificación del Centro Histórico de la Ciudad de Puebla, a través de tres acciones:</p>
 					<br/>
 					<p><span class="colorin"><b>1.</b></span> Revitalización de la Senda que lleva el nombre de Ángeles y que comprende las calles ubicadas sobre la 2 Sur, de la 3 a la 9 Oriente. Misma en la que se realizó urbanización del segmento vial, repavimentación del área de rodamiento y banquetas, así como la colocación de postes dragones y bolardos. Pintura a casas y al Templo de San Juan de Letrán (Hospitalito). Con estas acciones se logró la dignificación de la imagen urbana en estas calles. 
 					</p>
@@ -56,12 +56,12 @@
 					<p><span class="colorin"><b>3.</b></span> Iluminación exterior de la Catedral y el Palacio de Gobierno Municipal de la Ciudad de Puebla.
 					</p>
 					<br/>
-					<p>La Catedral de Puebla, inmueble emblemático y sede de la máxima autoridad de la Iglesia Católica, representa toda esa tradición religiosa y expresa una parte importante del acervo que posee esta ciudad, que con orgullo es patrimonio no tan sólo de los poblanos sino de la humanidad, de ahí el interés de la Fundación Amparo, de poder exaltar las cualidades y características de este edificio histórico, ícono de la arquitectura religiosa, mediante un proyecto de intervención de iluminación, con los sistemas y técnicas de alta tecnología, logrando su realce, respetándolo y alineándose con los principios de conservación a nivel internacional, esto con el único objetivo de poder lograr el reencuentro de la sociedad con sus raíces.</p>
+					<p>La Catedral de Puebla, inmueble emblemático y sede de la máxima autoridad de la Iglesia Católica, representa toda esa tradición religiosa y expresa una parte importante del acervo que posee esta ciudad, que con orgullo es patrimonio no tan sólo de los poblanos sino de la humanidad, de ahí el interés de la Fundación Amparo IAP, de poder exaltar las cualidades y características de este edificio histórico, ícono de la arquitectura religiosa, mediante un proyecto de intervención de iluminación, con los sistemas y técnicas de alta tecnología, logrando su realce, respetándolo y alineándose con los principios de conservación a nivel internacional, esto con el único objetivo de poder lograr el reencuentro de la sociedad con sus raíces.</p>
 					<br/>
 					<p>De igual manera, ha sido iluminado el Palacio de Gobierno Municipal, majestuoso edificio, que ha fungido como sede de los poderes que han regido a la capital, logrando con esto, participar y apoyar a la administración municipal para el engrandecimiento de nuestro entorno arquitectónico.</p>
 					<br/>
 					<h3>Otros</h3>
-					<p>La Fundación Amparo apoyó también las obras de reconstrucción de una gran cantidad de edificios afectados por el sismo de 1999 en el estado de Puebla, entre los que podemos mencionar la Catedral Angelopolitana, el Templo de San Agustín y la Catedral de la ciudad de Tehuacán; así mismo, la restauración de una parte significativa de los murales del exconvento franciscano de Izúcar de Matamoros y la restauración del Teatro Principal de la ciudad de Puebla, primer teatro de América.</p>
+					<p>La Fundación Amparo IAP apoyó también las obras de reconstrucción de una gran cantidad de edificios afectados por el sismo de 1999 en el estado de Puebla, entre los que podemos mencionar la Catedral Angelopolitana, el Templo de San Agustín y la Catedral de la ciudad de Tehuacán; así mismo, la restauración de una parte significativa de los murales del exconvento franciscano de Izúcar de Matamoros y la restauración del Teatro Principal de la ciudad de Puebla, primer teatro de América.</p>
 					<br/>
 					<ul class="ben">
 						<li>Restauración, operación y administración del Ex - Mercado "La victoria" en Puebla, Puebla</li>

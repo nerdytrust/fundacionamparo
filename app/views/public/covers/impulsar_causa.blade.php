@@ -9,7 +9,7 @@
 				<h1>impulsar</h1>
 				<p>Lleguemos a más oídos y toquemos más corazones en una sola voz</p>
 				<!--<button class="cerrar-h"></button>-->
-				<button onClick="history.back()" class="regresar"> Regresar</button>
+				<button onClick="location.href='{{ URL::to( '/ficha-causas/'.$causa->id_causas.'/'.Str::slug($causa->titulo) );}}'" class="regresar"> Regresar</button>
 				<div class="imagen">
 					<img src="{{ asset( 'path_image/' . $causa->imagen . '/' . '282x280' ) }}" alt="">
 						<button>{{ $causa->id_categorias_record->nombre }}</button>

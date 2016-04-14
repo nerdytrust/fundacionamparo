@@ -17,7 +17,7 @@
 					<li>{{ HTML::link( '/como-ayudar', 'Cómo ayudar', [ 'class' => 'animsition-link' ] ) }}</li>
 					<li>{{ HTML::link( '/causas-vivas', 'Causas vivas', [ 'class' => 'animsition-link' ] )}}</li>
 					<li>{{ HTML::link( '/donadores', 'Donadores', [ 'class' => 'animsition-link' ] ) }}</li>
-					<li>{{ HTML::link( '/muro-exito', 'Muro del Éxito', [ 'class' => 'animsition-link' ]) }}</li>
+					<li>{{ HTML::link( '/muro-exito', 'Historia de la Fundación', [ 'class' => 'animsition-link' ]) }}</li>
 				</ul>
 				<ul id="menu_dos">
 					<li>{{ HTML::link( '/fundacion', 'La Fundación', [ 'class' => 'animsition-link' ] ) }}</li>

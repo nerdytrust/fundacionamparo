@@ -41,7 +41,7 @@
 					<div id="titulo_fca" class="colorin">
 						<h1>SALUD</h1>
 					</div>
-					<p>La Fundación Amparo, entre los objetivos principales que contempló en el momento de su creación, abarcaba la búsqueda y apoyo de soluciones para grandes problemas, tales como el alcoholismo y todo tipo de dependencias destructivas. Para cumplir con esta finalidad, se brindó especial apoyo y respaldo económico a la Clínica Monte Fénix, sede del Centro de Integración para Alcohólicos y Familiares, A. C., asociación que recibió constantes aportaciones que le permitieron, incluso, contar con un importante centro de atención que brindaba apoyo tanto a quienes sufrían de dependencias de alcoholismo y drogadicción, como a sus familiares. </p>
+					<p>La Fundación Amparo IAP, entre los objetivos principales que contempló en el momento de su creación, abarcaba la búsqueda y apoyo de soluciones para grandes problemas, tales como el alcoholismo y todo tipo de dependencias destructivas. Para cumplir con esta finalidad, se brindó especial apoyo y respaldo económico a la Clínica Monte Fénix, sede del Centro de Integración para Alcohólicos y Familiares, A. C., asociación que recibió constantes aportaciones que le permitieron, incluso, contar con un importante centro de atención que brindaba apoyo tanto a quienes sufrían de dependencias de alcoholismo y drogadicción, como a sus familiares. </p>
 					<br/>
 					<h3>Beneficiarios</h3>
 					<ul class="ben">

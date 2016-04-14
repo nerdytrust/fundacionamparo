@@ -83,7 +83,7 @@ cursor: pointer;
 
 .btn .btn-default {
 	padding: .6em 1em;
-	border: 2px solid #beda3e;
+	borde: 2px solid #beda3e;
 	outline: none;
 	background: #fff;
 	color: #000;
@@ -762,7 +762,7 @@ font-size: 15px !important;
 }
 #titulo_txt h3{
 	font-size: 1em;
-	line-height: 4em;
+	line-height: 2em;
 }
 #titulo_txt h3 span{
 	color: #beda3e;
@@ -861,6 +861,7 @@ font-size: 15px !important;
 .txt h1{
 	color: #FFF;
 	font-size: 2em;
+	line-height: 1em;
 }
 .txt p{
 	color: #FFF;
@@ -1456,7 +1457,7 @@ span#name span button:after{
 	}
 .donador_clas, .impulsor_clas, .voluntario_clas{
 	display: inline-block;
-	margin: 70px 20px 0 20px;
+	margin: 40px 20px 0 20px;
 	cursor: pointer;
 	width: 10em;
 }
@@ -1738,7 +1739,7 @@ span#name span button:after{
 	text-align: left;
 }
 #titulo_fca{
-	margin: 15px 0 25px 0;
+	margin: 10px 0 45px 0;
 	text-align: center;
 }
 #titulo_fca h2{
@@ -1832,11 +1833,11 @@ b{color: #beda3e; font-weight: normal;}
 	border: 2px solid #beda3e;
 }
 #contenedor_btn{
-	padding: 2.5em 0 0;
+	padding: 1.5em 0 .5em;
 	font-size: 1.4em;
 }
 #contenedor_btn button{
-	width: 200px; height: 50px;
+	width: 250px; height: 50px;
 }
 #social_footer{
 	display: block;
@@ -2500,6 +2501,8 @@ label.contact textarea{
 	font-size: 1em;
 }
 label.contact button{
+	margin-top: 14px;
+    margin-left: 15px;
 	width: 150px;
 	height: 50px;
 	font-size: 1em;
@@ -3011,14 +3014,14 @@ ul.ben li:before{
     opacity: 1;
     background: url("../../images/play_timeline.png") no-repeat left;
     background-size: contain;
-    padding-left: 85px;
+    padding-left: 65px;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     -o-transition: all 0.4s;
     transition: all 0.4s;
     color: #fff;
     font-size: 17px;
-    line-height: 4em;
+    line-height: 3em;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     display: inline-block;
@@ -3444,7 +3447,7 @@ span.esquina-pop{
 		height: 551px;
 	}
 	.flex-next, .flex-prev {
-		top: 7% !important;
+		top: 8.5% !important;
 	}
 	.info-v{
 		overflow: auto;
@@ -3737,7 +3740,7 @@ label.contact textarea{
 	}
 
 	#social_top{
-		text-align: center;
+		text-align: left;
 	}
 	
 	/*.txt_int:hover{
@@ -4056,7 +4059,7 @@ label.contact textarea{
 	}
 
 	#titulo_txt h1{
-		font-size: 4em;
+		font-size: 3.8em;
 	}
 
 	.cau{
@@ -4298,7 +4301,7 @@ label.contact textarea{
 	}
 
 	.flex-prev{
-		left: 5% !important;
+		left: 6.5% !important;
 	}
 
 	.cont-time{
@@ -4466,7 +4469,7 @@ label.contact textarea{
 		margin-left: 1px;
 	}
 	#titulo_txt {
- 		padding: 45px 25px 25px 10px;
+ 		padding: 45px 25px 25px 20px;
 	}
 	#btn_donar2 {
 		font-size: 48px;

@@ -34,14 +34,14 @@
 					<div id="titulo_fca">
 						<h1>HISTORIA</h1>
 					</div>
-					<p>En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa, y con el pleno consentimiento de sus hijos, quienes con la nobleza de sentimientos que les caracteriza estuvieron totalmente de acuerdo con la misma.</p>
+					<p>En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo IAP, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa, y con el pleno consentimiento de sus hijos, quienes con la nobleza de sentimientos que les caracteriza estuvieron totalmente de acuerdo con la misma.</p>
 				</div>
 				<img src="{{ asset( 'images/imagen_historia.jpg' ) }}" alt="" class="fr">
 				<div class="txt_fundacion li">
 					<p>Conoce los hechos que forman parte de nuestra labor a través de los años así como los objetivos cumplidos a lo largo de nuestra historia.</p>
 				</div>
 				<div id="contenedor_btn" >
-					<button onclick="location.href='{{ URL::to( 'muro-exito') }}';">Ver muro del éxito</button>
+					<button onclick="location.href='{{ URL::to( 'muro-exito') }}';">Historia de la fundación</button>
 				</div>
 				<div class="adorno_fa">
  					<img src="images/adorno_fa.png" alt="">

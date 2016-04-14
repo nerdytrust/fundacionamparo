@@ -140,7 +140,7 @@
 				</div>
 				<div>
 					<h1 onclick="{{ URL::to( '/apoyamos-tu-causa' ) }}';">APOYAMOS TU CAUSA</h1>
-					<h2>Fundación Amparo apoya causas externas</h2>
+					<h2>Fundación Amparo IAP apoya causas externas</h2>
 					<p>
 						Inscribe tu causa llenando un breve formulario, la información será revisada
 						detalladamente para determinar una respuesta

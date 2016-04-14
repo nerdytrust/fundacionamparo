@@ -103,7 +103,7 @@
 						<img src="{{ asset( 'images/becas_amparo.jpg' ) }}" alt="">
 						<section  class="txt">
 						<h1>APOYAMOS TU CAUSA</h1>
-						<p>Fundación Amparo apoya causas externas</p>
+						<p>Fundación Amparo IAP apoya causas externas</p>
 						</section>
 					</article>
 				</aside>
@@ -279,7 +279,7 @@
 		 				<div id="titulo_fca">
 		 					<h1>FUNDACIÓN AMPARO</h1>
 		 				</div>
-		 				<p>En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa, y con el pleno consentimiento de sus hijos, quienes con la nobleza de sentimientos que les caracteriza estuvieron totalmente de acuerdo con la misma.</p>
+		 				<p>En abril de 1979, Don Manuel Espinosa Yglesias sienta las bases constitutivas de la Fundación Amparo IAP, estableciendo que su constitución la realizaba con parte de la fortuna que había formado con ayuda de su inolvidable esposa Doña Amparo Rugarcía de Espinosa, y con el pleno consentimiento de sus hijos, quienes con la nobleza de sentimientos que les caracteriza estuvieron totalmente de acuerdo con la misma.</p>
 		 			</div>
 		 			<div class="adorno_fa">
 		 				<img src="{{ asset( 'images/adorno_fa.png' ) }}" alt="">

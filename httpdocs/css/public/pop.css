@@ -910,7 +910,8 @@ width: 28% !important;
 .lightbox{
 	width: 100%;
 	height: auto;
-	background: url("../../images/back-li.png");
+	background: #bbd53c;
+	/*background: url("../../images/back-li.png");*/
 	position: relative;
 	top: 0;
 	z-index: 100000;
@@ -1030,9 +1031,9 @@ width: 28% !important;
 
 .lightbox .datos button{
 	border:none;
-	background: url("../../images/x.png");
-	width: 40px;
-	height: 40px;
+	background: url("../../images/cerrar_v.png");
+	width: 58px;
+	height: 13px;
 	padding: 0;
 	margin: 0;
 	position: absolute;
@@ -1529,11 +1530,12 @@ figure.cauf>span{
 
 	.lightbox{
 		background: #fff;
+		padding-top: 1px;
 	}
 
 	.lightbox .datos button{
-		top: -42px;
-		right: 16px;
+		top: -30px;
+		right: 18px;
 	}
 
 	.content-1>.fig{
@@ -1563,8 +1565,8 @@ figure.cauf>span{
 	}
 
 	button.cerrar{
-		width: 30px !important;
-		height: 30px !important;
+		width: 65px !important;
+		height: 15px !important;
 		background-size: contain !important;
 	}
 
@@ -1606,7 +1608,7 @@ figure.cauf>span{
 	}
 
 	.datos .fig{
-		width: 98%;
+		width: 94%;
 		padding: 0;
 		display: flex;
 		justify-content: space-between;
@@ -1631,7 +1633,8 @@ figure.cauf>span{
 	.lightbox .datos .datos-inf{
 		width: 100%;
 		/*margin: 0 0 12% 0;*/
-		text-align: center;
+		text-align: left;
+		margin-left: 0%;
 		height: 203px;
 		display: block;
 	}
@@ -1959,7 +1962,7 @@ termina laghtbox*/
 .check-gris label {
 	cursor: pointer;
 	position: absolute;
-	width: 7%;
+	width: 12%;
 	height: 30px;
 	top: 0;
 	left: 0;

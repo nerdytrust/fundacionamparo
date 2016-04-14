@@ -79,15 +79,15 @@
 								<a class="terminos" href="{{ URL::to( 'politicas-de-privacidad' ) }}" target="_blank">Acepto y he leído el aviso de privacidad</a>
 							</div>
 							<button type="submit">Enviar</button>
-							<p>Campos obligarotios para enviar formulario</p>
+							<p>Campos obligatorios para enviar formulario</p>
 						{{ Form::close() }}
 					</label>
 					<div class="contact-inf rt">
 						<b>T. + (222) 229 38 50<br/>info@fundacionamparo.com</b>
 						<br/>
 						<p>
-							<b>Lunes a miércoles 10:00 a 18:00 horas<br/>
-							Sábados de 10:00 a 21:00 horas</b><br/>
+							<b>Lunes a viernes <br/>
+							9:00 a 18:00 horas</b><br/>
 
 							2 Sur 708, Centro Histórico, <br/>
 							Puebla, Pue. México. <br/>
