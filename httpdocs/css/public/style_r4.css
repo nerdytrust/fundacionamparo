@@ -537,7 +537,6 @@ article.animacion:hover img{
 	vertical-align: middle;
 	display: inline-block;
 	margin: 5px;
-	margin-top: -1px;
 	/*display: none;*/
 }
 #section_menu{
@@ -3961,8 +3960,8 @@ label.contact textarea{
 
 @media screen and (max-width:640px) {
 	.content-1 > a{
- 		margin-top: 40px !important;
- 	}
+		margin-top: 40px !important;
+	}
 	#txt_noticia{
 		margin: 5% 0 0 0 !important;
 	}

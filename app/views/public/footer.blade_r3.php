@@ -16,11 +16,10 @@
 				<br />
 				<br />
 				<br />
-				<br />
 				<a href="{{ URL::to( 'politicas-de-privacidad' ) }}" target="_blank">TÉRMINOS Y CONDICIONES</a> | 
 				<a href="{{ URL::to( 'politicas-de-privacidad' ) }}" target="_blank">POLÍTICAS DE PRIVACIDAD</a> 
 				<br />
-				<span>© TODOS LOS DERECHOS RESERVADOS POR FUNDACIÓN AMPARO IAP {{ date( 'Y' ) }} </span></h1>
+				<span>© TODOS LOS DERECHOS RESERVADOS POR FUNDACIÓN AMPARO {{ date( 'Y' ) }} </span></h1>
 		</div>
 		<div id="logo_3indesign">
 			<a href="http://3indesign.com/" target="_blank"><img src="{{ asset('images/3indesign_footer.png') }}" alt=""></a>

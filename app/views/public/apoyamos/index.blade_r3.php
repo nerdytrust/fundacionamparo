@@ -16,7 +16,7 @@
 				<div class="txt_mask">
 					<img src="{{ asset( 'images/logo_mask_header.jpg' ) }}" alt="">
 					<h1>APOYAMOS TU CAUSA</h1>
-					<h3>Fundación Amparo IAP apoya causas externas</h3>
+					<h3>Fundación Amparo apoya causas externas</h3>
 					<nav class="social_mask">
 						<ul>
 							{{ Helper::facebookShare( '', Request::url(), '' ) }}
