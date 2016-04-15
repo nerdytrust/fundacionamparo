@@ -79,15 +79,13 @@
 				 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
 								<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas . '/' . Str::slug($causa->titulo)) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
 								<div id="meta">
-								@if($causa->meta > 0)
-										<div id="barra">
-												<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
-										</div>
-									<div id="cantidad">
-										<h1>META</h1>
-										<h2>${{ number_format( $causa->meta ) }}<span>MXN</span></h2>
+									<div id="barra">
+											<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
 									</div>
-								@endif
+								<div id="cantidad">
+									<h1>META</h1>
+									<h2>${{ number_format( $causa->meta ) }}<span>MXN</span></h2>
+								</div>
 									<p>${{ number_format( floatval( $causa->recaudado ) ) }} MXN <span>RECAUDADOS</span></p>
 									<p>{{ Helper::getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 								</div>
@@ -121,7 +119,6 @@
 				 				<p>{{ Str::limit( $externa->descripcion, 110 ) }}</p>
 								<a href="{{ URL::to( 'ficha-causas/' . $externa->id_causas . '/' . Str::slug($externa->titulo)) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
 								<div id="meta">
-								@if($externa->meta > 0)
 										<div id="barra">
 												<span id="b{{$externa->id_causas}}" style="width: {{ $externa->porcentaje }}%"></span>
 										</div>
@@ -129,7 +126,6 @@
 										<h1>META</h1>
 										<h2>${{ number_format($externa->meta) }}<span>MXN</span></h2>
 									</div>
-								@endif
 									<p>${{ number_format( floatval( $externa->recaudado ) ) }} MXN <span>RECAUDADOS</span></p>
 									<p>{{ Helper::getRemaining( $externa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 								</div>
