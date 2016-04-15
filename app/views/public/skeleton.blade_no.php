@@ -245,20 +245,20 @@
                 if(    $('body').hasClass( 'registro' )
                     || $('body').hasClass( 'donar-causa' )
                     || $('body').hasClass( 'donar-oxxo' )
-                    || $('body').hasClass( 'ficha-donador' )
-                    || $('body').hasClass( 'ficha-noticias' )
                     || $('body').hasClass( 'entrar' )){
                     $('.d').css({'height': '100vh'});
                     setTimeout(function(){
                         $('body').css({'background': '#bbd53c'})
                     },350);
                 }else if ( $('body').hasClass( 'ficha-causas' ) ){
-                    $('html').css({'background': 'url("../../images/back_fichas.jpg")'})
-                        $(".ficha-causas .lightbox .datos").hover(function(){
-                            $("#barra progress").toggleClass("barramover");
+                    $(".ficha-causas .lightbox .datos").hover(function(){
+                        $("#barra progress").toggleClass("barramover");
                     });
                 }else if($('body').hasClass( 'gracias-impulsar' )){
                      $('body').css({'background': '#4f99d9'})
+                    });
+                }else if($('body').hasClass( 'ficha-causas' )){
+                     $('body').css({'background: url("../../images/back_fichas.jpg")'})
                 }
 
                /* if ( $('body').hasClass( 'donar' ) 

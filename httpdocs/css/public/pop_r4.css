@@ -910,7 +910,7 @@ width: 28% !important;
 .lightbox{
 	width: 100%;
 	height: auto;
-	/*background: #bbd53c;*/
+	background: #bbd53c;
 	/*background: url("../../images/back-li.png");*/
 	position: relative;
 	top: 0;
@@ -1637,6 +1637,7 @@ figure.cauf>span{
 		margin-left: 0%;
 		height: 203px;
 		display: block;
+		padding-left: 16px;
 	}
 	.content-1 > b {
  	   top: 200px;
