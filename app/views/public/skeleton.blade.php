@@ -253,7 +253,7 @@
                         $('body').css({'background': '#bbd53c'})
                     },350);
                 }else if ( $('body').hasClass( 'ficha-causas' ) ){
-                    $('html').css({'background': 'url("../../images/back_fichas.jpg")'})
+                    $('body').css({'background': 'url("../../images/back_fichas.jpg")'})
                         $(".ficha-causas .lightbox .datos").hover(function(){
                             $("#barra progress").toggleClass("barramover");
                     });
