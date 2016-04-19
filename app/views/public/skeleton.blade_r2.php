@@ -242,9 +242,11 @@
 
                 $('.animsition').animsition().fadeIn();
 
-                 if(    $('body').hasClass( 'registro' )
+                if(    $('body').hasClass( 'registro' )
                     || $('body').hasClass( 'donar-causa' )
                     || $('body').hasClass( 'donar-oxxo' )
+                    || $('body').hasClass( 'ficha-donador' )
+                    || $('body').hasClass( 'ficha-noticias' )
                     || $('body').hasClass( 'entrar' )){
                     $('.d').css({'height': '100vh'});
                     setTimeout(function(){
@@ -255,10 +257,6 @@
                         $(".ficha-causas .lightbox .datos").hover(function(){
                             $("#barra progress").toggleClass("barramover");
                     });
-                }else if ( $('body').hasClass( 'ficha-donador' ) ){
-                    $('body').css({'background': 'url("../../images/back_fichas.jpg")'})
-                }else if ( $('body').hasClass( 'ficha-noticias' ) ){
-                    $('body').css({'background': 'url("../../images/back_fichas.jpg")'})
                 }else if($('body').hasClass( 'gracias-impulsar' )){
                      $('body').css({'background': '#4f99d9'})
                 }
