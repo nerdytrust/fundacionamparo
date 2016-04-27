@@ -641,7 +641,7 @@ button.feis{
 
 button.feis #invitar{
 	color: #4892d2;
-	font-size: 1.5em;
+	font-size: 1.7em;
 	padding-left: 43px;
 	text-transform: uppercase;
 	width: 100%;
@@ -1052,7 +1052,6 @@ width: 28% !important;
 	border-radius: 5px;
 	text-transform: uppercase;
 	margin: 35px 0 12px 5%;
-	cursor: default;
 }
 
 .lightbox .datos .datos-inf{
