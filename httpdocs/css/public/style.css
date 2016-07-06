@@ -3558,7 +3558,7 @@ label.contact textarea{
 			display: block;
 		}
 		#perfil:after{
-			  content: "Cerrar sesión";
+			  /*content: "Cerrar sesión";*/
 			  position: absolute;
 			  color: #747474;
 			  left: 0;
@@ -3573,7 +3573,7 @@ label.contact textarea{
 			  /*border-bottom: 1px solid #212121;*/
 		}
 		#perfil img{
-			visibility: hidden;
+			/*visibility: hidden;*/
 		}
 		.vi{
 			width: 100%;
