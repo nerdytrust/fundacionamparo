@@ -1121,7 +1121,7 @@ span.esquina{
 
 #social_top ul{
 	display: inline-block;
-	width: 80%;
+	width: 69%;
 	vertical-align: top;
 }
 #donativo{
@@ -1797,7 +1797,7 @@ font-weight: 600;
 	margin: 0 auto;
 }
 #contenedor_int_usuarios{
-	margin: -5px auto;
+	margin: 0 auto;
 	background: #212121;
 }
 #caja_aporta_usuarios{
