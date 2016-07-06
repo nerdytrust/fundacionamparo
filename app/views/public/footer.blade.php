@@ -2,8 +2,8 @@
 	<div id="in_footer">
 		<nav id="footer_nav">
 			<ul>
-				<a href=""><li class="fa fa-facebook"></li></a>
-				<a href=""><li class="fa fa-twitter"></li></a>
+				<a href="https://www.facebook.com/Fundaci%C3%B3n-Amparo-IAP-1241582942526809/" target="_blanck"><li class="fa fa-facebook"></li></a>
+				<a href="https://twitter.com/FundacioAmparo?lang=es"><li class="fa fa-twitter" target="_blanck"></li></a>
 				<a href=""><li class="fa fa-youtube"></li></a>
 				<a href=""><li class="fa fa-instagram"></li></a>
 			</ul>
