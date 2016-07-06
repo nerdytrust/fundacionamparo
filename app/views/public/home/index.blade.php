@@ -93,7 +93,7 @@
 					</article>
 					<article id="btn_facebook" class="">
 						<ul>
-							<li class="fa fa-facebook"></li>
+							<a href="https://www.facebook.com/Fundaci%C3%B3n-Amparo-IAP-1241582942526809/" target="_blanck"><li class="fa fa-facebook"></li></a>
 						</ul>
 					</article>
 					<article id="btn_donar2" class="">
