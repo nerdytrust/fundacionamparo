@@ -34,7 +34,8 @@ class DonacionesController extends BaseController {
 	 * Método constructor para inicializar variables
 	 */
 	public function __construct(){
-		Conekta::setApiKey( 'key_pSoXGLrXKoYxKfrvtsVvtw' );
+		//Llave privada
+		Conekta::setApiKey( 'key_jnxj5og4XVrrCEpyhSTYkg' );
 		//Llave publica //Conekta::setApiKey( 'key_Cxkxn8imrq4nosMpnnr3nVA' );
 		Conekta::setLocale( 'es' );
 		$this->expires = strtotime('+2 day', time() );
