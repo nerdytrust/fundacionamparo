@@ -6,7 +6,7 @@
 		<div class="lightbox-h d" id="donar">
 			<div class="lightbox-h-cont donar">
 				<img src="{{ asset( 'images/icon_donadores-v.png' ) }}" alt="">
-				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/login' ) }}';"></button>
+				<button class="cerrar-h" onclick="location.href='{{ URL::to( '/' ) }}';"></button>
 				<h1>¡gracias!</h1>
 				<h2>Ya estás  <b>#TomandoAcciónFA</b> </h2>
 				<h3>Tus acciones dentro de la comunicad harán posible continuar con nuestra causa, ¡pasa la voz!</h3>
