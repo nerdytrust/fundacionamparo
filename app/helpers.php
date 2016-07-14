@@ -130,7 +130,7 @@ class Helper {
 	public static function getAvatar() {
 		$session = new Helper;
 		//$avatar = Profiles::find( $session->getHybridAuth()->id_registrados );
-		$avatar = Profiles::where('email', $session->getHybridAuth()->email )>get();
+		$avatar = Profiles::where('email', $session->getHybridAuth()->email )->get();
 		if($avatar->photoURL!='')
 			return $avatar->photoURL;
 		return asset( 'images/perfil_interno.jpg' );
