@@ -28,7 +28,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+        <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>-->
+        <link rel="stylesheet" href="{{ asset('css/public/fonts.googleapis.css') }}">
         <link rel="apple-touch-icon-precomposed" href="{{ asset( 'images/favicon-152.png' ) }}">
         <meta name="msapplication-TileColor" content="#FFFFFF">
         <meta name="msapplication-TileImage" content="{{ asset( 'images/favicon-144.png' ) }}">
