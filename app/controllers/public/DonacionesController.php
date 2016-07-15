@@ -20,8 +20,6 @@ class DonacionesController extends BaseController {
 	private $expires = null;
 
 	private $_api;
-	//private $_ClientId     = 'Ab_PyKePqSHu26uPKjtbhBVYq4iB5bx0dZAX_N9D0dYB_1Qzh3kB8O97oOWE54CqTNGmd6kcV8l4Rha2';
-    //private $_ClientSecret = 'EDAp5eZ9kqpYl9R7KuBPhxfY7yOCmJv00oJ5VHM4ufKgPmiEKF_Uf0Lfm57p2kbITmG65B0LnSZ_JtLj';
     private $_ClientId     = 'AdydXrLI9dLKqyzpD4HsrzP3ktC9dgdD0vrFJ53b6_4ITIo7nXv60SgfMysx8bHOUMRShZUJrCnMDHIc';
     private $_ClientSecret = 'EOfNLKXOCmJCWzUW6okXxEd_qqWtXgN63Ld2ZT0Aj-RsJl5Dhrg4LIG3TVZtkkJlxCvA39uY-RlFfoNB';
     private $_ConfigPaypalRecurring = array (
@@ -262,7 +260,7 @@ class DonacionesController extends BaseController {
 	 			'status'	=> $e->getMessage()
 	 		] );
 	 	}
-	 	
+
 	 	if($setECResponse->Ack == 'Success' || $setECResponse->Ack == 'SuccessWithWarning'){
 
 			$redirect = $this->_RedirectRecurrent.$setECResponse->Token;
