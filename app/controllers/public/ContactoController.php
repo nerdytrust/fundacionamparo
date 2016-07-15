@@ -51,7 +51,7 @@ class ContactoController extends BaseController {
 		$comment = Mail::send( 'public.mail.contacto', $inputs, function( $message ) use ( $contacto ){
 			$message 
 				->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
-				->to( 'contacto@nerdytrust.com', 'Contacto Fundación Amparo' )
+				->to( 'contacto@fundacionamparo.com', 'Contacto Fundación Amparo' )
 				->subject( 'Nuevo mensaje desde el formulario de contacto' );
 		} );
 
