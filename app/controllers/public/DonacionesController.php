@@ -26,7 +26,7 @@ class DonacionesController extends BaseController {
     private $_ClientSecret = 'EOfNLKXOCmJCWzUW6okXxEd_qqWtXgN63Ld2ZT0Aj-RsJl5Dhrg4LIG3TVZtkkJlxCvA39uY-RlFfoNB';
     private $_ConfigPaypalRecurring = array (
  						'mode'            => 'sandbox' , 
- 						'acct1.UserName'  => 'yolandanunez-facilitator_api1.hotmail.com',
+ 						'acct1.UserName'  => 'l.espinosa-facilitator_api1.fundacionamparo.com',
 						'acct1.Password'  => '3WS9A8X32VMKG7F9', 
 						'acct1.Signature' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31A7y0b.aSpVqYkXo8rpq6RXcwasRS'
 						);
@@ -262,7 +262,7 @@ class DonacionesController extends BaseController {
 	 			'status'	=> $e->getMessage()
 	 		] );
 	 	}
-	 	print_r($setECResponse);die;
+	 	
 	 	if($setECResponse->Ack == 'Success' || $setECResponse->Ack == 'SuccessWithWarning'){
 
 			$redirect = $this->_RedirectRecurrent.$setECResponse->Token;
