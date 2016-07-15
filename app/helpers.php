@@ -162,7 +162,8 @@ class Helper {
 	 */
 	public static function getRegisterFullName(){
 		$user = new Helper;
-		$displayName = Profiles::select('displayName')->where('id_profiles',$user->getRegisterId())->first();
+		//$displayName = Profiles::select('displayName')->where('id_profiles',$user->getRegisterId())->first();
+		$displayName = Profiles::select('displayName')->where('email', $user->getHybridAuth()->email )->first();
 		return $displayName->displayName; 
 	}
 
@@ -173,7 +174,8 @@ class Helper {
 	public static function getRegisterIsFB(){
 		if(Auth::customer()->check()){
 			$user = new Helper;
-			$isFB = Profiles::select('provider')->where('id_registrados',$user->getRegisterId())->first();
+			//$isFB = Profiles::select('provider')->where('id_registrados',$user->getRegisterId())->first();
+			$isFB = Profiles::select('provider')->where('email', $user->getHybridAuth()->email )->first();
 			if($isFB->provider == 'facebook') 
 			return TRUE;
 		}
