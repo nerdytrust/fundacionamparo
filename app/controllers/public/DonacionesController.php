@@ -228,7 +228,7 @@ class DonacionesController extends BaseController {
 	 	$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
 	 	$monto = Session::get( 'donacion.monto' );
 
-	 	try{
+	 	//try{
 			$paypalService = new \PayPal\Service\PayPalAPIInterfaceServiceService($this->_ConfigPaypalRecurring);
 			$paymentDetails= new \PayPal\EBLBaseComponents\PaymentDetailsType();
 
@@ -257,11 +257,11 @@ class DonacionesController extends BaseController {
 
 			$setECResponse = $paypalService->SetExpressCheckout($setECReq);
 
-		}catch(PPConnetionException $e){
+		/*}catch(PPConnetionException $e){
 	 		return View::make( 'public.covers.donar_error' )->with( [
 	 			'status'	=> $e->getMessage()
 	 		] );
-	 	}
+	 	}*/
 
 	 	if($setECResponse->Ack == 'Success' || $setECResponse->Ack == 'SuccessWithWarning'){
 
