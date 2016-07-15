@@ -133,18 +133,25 @@
 						 				<h2>{{ $causa->titulo }}</h2>
 						 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
 										<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas . '/' . Str::slug($causa->titulo)) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
-										<div id="meta">
-											<div id="barra">
-												<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
+										@if ( $causa->meta != 0 || $causa->meta != "")
+											<div id="meta">
+												<div id="barra">
+													<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
+												</div>
+												<div id="cantidad">
+													<h1>META</h1>
+													<h2>${{ number_format($causa->meta) }}<span>MXN</span></h2>
+												</div>
+												<p>${{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
+												<p>{{ Helper::getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
 											</div>
-										<div id="cantidad">
-											<h1>META</h1>
-											<h2>${{ number_format($causa->meta) }}<span>MXN</span></h2>
-										</div>
-											<p>${{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
-											<p>{{ Helper::getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
-										</div>
-						 			</section>
+										@else
+											<div id="meta">
+												<p>${{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
+												<p>{{ Helper::getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
+											</div>
+										@endif
+										</section>
 					 			
 					 			<span class="esquina"></span>
 					 		</article>
