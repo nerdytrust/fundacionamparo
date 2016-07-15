@@ -78,7 +78,7 @@
 				 				<h2>{{ $causa->titulo }}</h2>
 				 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
 								<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas . '/' . Str::slug($causa->titulo)) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
-								@if ( $causa->meta != 0 || $causa->meta != "")
+								@if ( $causa->meta != 0 )
 									<div id="meta">
 										<div id="barra">
 												<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
@@ -125,7 +125,7 @@
 				 				<h2>{{ $externa->titulo }}</h2>
 				 				<p>{{ Str::limit( $externa->descripcion, 110 ) }}</p>
 								<a href="{{ URL::to( 'ficha-causas/' . $externa->id_causas . '/' . Str::slug($externa->titulo)) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
-								@if ( $externa->meta != 0 || $externa->meta != "")
+								@if ( $externa->meta != 0 )
 									<div id="meta">
 											<div id="barra">
 													<span id="b{{$externa->id_causas}}" style="width: {{ $externa->porcentaje }}%"></span>

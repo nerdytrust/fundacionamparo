@@ -3558,7 +3558,7 @@ label.contact textarea{
 			display: block;
 		}
 		#perfil:after{
-			  /*content: "Cerrar sesión";*/
+			  content: "Registro";
 			  position: absolute;
 			  color: #747474;
 			  left: 0;

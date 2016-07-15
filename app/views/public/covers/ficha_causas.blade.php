@@ -74,17 +74,25 @@
 										<span>Ser</br>voluntario</span>
 									</figure>
 								</div>
-								<div id="meta" class="caum">
-								<div id="barra">
-										<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
-								</div>
-								<div id="cantidad">
-									<h1>META</h1>
-									<h2>${{ number_format( $causa->meta) }}<span>MXN</span></h2>
-								</div>
-									<p>${{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
-									<p>{{ Helper::getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
-								</div>					
+								@if( $causa->meta != 0)
+									<div id="meta" class="caum">
+										<div id="barra">
+												<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
+										</div>
+										<div id="cantidad">
+											<h1>META</h1>
+											<h2>${{ number_format( $causa->meta) }}<span>MXN</span></h2>
+										</div>
+											<p>${{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
+											<p>{{ Helper::getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
+									</div>		
+								@else
+									<div id="meta" class="caum">
+											<p>${{ number_format( $causa->recaudado ) }} MXN <span>RECAUDADOS</span></p>
+											<p>{{ Helper::getRemaining( $causa->fecha ) }} <span>DÍAS RESTANTES</span></p>
+									</div>	
+
+								@endif			
 						    </div>
 					        <div class="content-2">
 								<!--<div class="donadores-c">

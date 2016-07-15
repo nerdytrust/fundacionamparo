@@ -133,8 +133,7 @@
 						 				<h2>{{ $causa->titulo }}</h2>
 						 				<p>{{ Str::limit( $causa->descripcion, 110 ) }}</p>
 										<a href="{{ URL::to( 'ficha-causas/' . $causa->id_causas . '/' . Str::slug($causa->titulo)) }}"><h3>MÁS INFORMACIÓN<span class="colorin">+</span></h3></a>
-										{{ $causa->meta }}
-										@if ( $causa->meta != 0 || $causa->meta != "")
+										@if ( $causa->meta != 0 )
 											<div id="meta">
 												<div id="barra">
 													<span id="b{{$causa->id_causas}}" style="width: {{ $causa->porcentaje }}%"></span>
