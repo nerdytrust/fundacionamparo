@@ -79,7 +79,7 @@ class ApoyarCausaController extends BaseController {
 		$comment = Mail::send( 'public.mail.apoyamos', $inputs, function( $message ) use ( $inputs ){
 			$message 
 				->from( getenv( 'APP_NOREPLY' ), 'Causas Fundación Amparo' )
-				->to( 'contacto@nerdytrust.com', 'Causas Fundación Amparo' )
+				->to( 'contacto@fundacionamparo.com', 'Causas Fundación Amparo' )
 				->subject( 'Nueva causa desde el formulario' );
 		} );
 
