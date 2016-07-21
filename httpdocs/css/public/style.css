@@ -6,7 +6,7 @@
 font-family: helveticaNeueMedium;
 	src: url(../fonts/helvetica-neue-medium.woff);
 }*/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
 html, body { 
 	/*height: 100%; 
 	width: 100%;*/
@@ -1121,7 +1121,7 @@ span.esquina{
 
 #social_top ul{
 	display: inline-block;
-	width: 80%;
+	width: 72%;
 	vertical-align: top;
 }
 #donativo{
@@ -3558,7 +3558,7 @@ label.contact textarea{
 			display: block;
 		}
 		#perfil:after{
-			  /*content: "Registro";*/
+			  /*content: "Cerrar sesión";*/
 			  position: absolute;
 			  color: #747474;
 			  left: 0;
@@ -5253,6 +5253,7 @@ label.contact textarea{
 		top: 394px;
 	}
 }
+
 .mobile-landscape{
     	display: none;
     	width: 100%; 
@@ -5274,6 +5275,7 @@ label.contact textarea{
     	display: block;
     }
 }
+
 /*iphone4 portrait
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) { 
 	.cot-scroll{
