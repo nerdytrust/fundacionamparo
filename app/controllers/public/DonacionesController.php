@@ -20,15 +20,15 @@ class DonacionesController extends BaseController {
 	private $expires = null;
 
 	private $_api;
-    private $_ClientId     = 'AdydXrLI9dLKqyzpD4HsrzP3ktC9dgdD0vrFJ53b6_4ITIo7nXv60SgfMysx8bHOUMRShZUJrCnMDHIc';
-    private $_ClientSecret = 'EOfNLKXOCmJCWzUW6okXxEd_qqWtXgN63Ld2ZT0Aj-RsJl5Dhrg4LIG3TVZtkkJlxCvA39uY-RlFfoNB';
+    private $_ClientId     = 'AR1HoGPERMVv6OmQpLqPF7-mmuz8EN_mrLV7wS3PciqO5ykSOumGFoWqA7aazDCmzc3aj8daxvTt-urK';
+    private $_ClientSecret = 'EKb9eFb9lEDEHRKcRjjnt8Bmwrz8EgVb0UNUbJH4m5fuVRVzfxMZ9bSeYDqAtJEnOEyXsAj9WpmM4A6D';
     private $_ConfigPaypalRecurring = array (
- 						'mode'            => 'sandbox' , 
- 						'acct1.UserName'  => 'l.espinosa-facilitator_api1.fundacionamparo.com',
-						'acct1.Password'  => '3WS9A8X32VMKG7F9', 
-						'acct1.Signature' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31A7y0b.aSpVqYkXo8rpq6RXcwasRS'
+ 						'mode'            => 'live' , 
+ 						'acct1.UserName'  => 'l.espinosa_api1.fundacionamparo.com',
+						'acct1.Password'  => 'AWTRZW6GHGGA73RK', 
+						'acct1.Signature' => 'AySlr4fJMXSTJ2bW7QBPRYCcWeAAAOopPGcXQrsykeZKRSxwcR4hqayQ'
 						);
-    private $_RedirectRecurrent = 'https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=';
+    private $_RedirectRecurrent = 'https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=';
 
 	/**
 	 * Método constructor para inicializar variables
@@ -48,7 +48,7 @@ class DonacionesController extends BaseController {
 		);
 
 		 $this->_api->setConfig(array(
-		 	'mode' => 'sandbox',
+		 	'mode' => 'live',
 			'http.ConnectionTimeOut' => 30,
 		 	'log.LogEnabled' => true,
 		 	'log.FileName' => __DIR__.'/../../storage/logs/PayPal.log',
