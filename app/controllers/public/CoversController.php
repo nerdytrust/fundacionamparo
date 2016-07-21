@@ -299,6 +299,7 @@ class CoversController extends BaseController {
 		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
 		$monto = Session::get( 'donacion.monto' );
 		$charge = Session::get( 'donacion.oxxo' );
+		$charge = str_replace("http","https",$charge);
 		$barcode = Session::get( 'donacion.oxxo_barcode' );
 		$expires = Session::get( 'donacion.oxxo_expires' );
 		return View::make( 'public.covers.donar_payoxxo' )->with( [ 
