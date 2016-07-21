@@ -69,6 +69,10 @@
             <div id="foo"></div>
             @yield("skeleton")
         </div>
+
+        <div class="mobile-landscape">
+            <img src="{{ asset('images/i_phone_rotar.gif') }}"/>
+        </div>
         
         <!-- Modal -->
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

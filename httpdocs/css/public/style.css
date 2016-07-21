@@ -5253,6 +5253,27 @@ label.contact textarea{
 		top: 394px;
 	}
 }
+.mobile-landscape{
+    	display: none;
+    	width: 100%; 
+    	height: 100%;
+    	top: 0; 
+    	left: 0;
+    	z-index: 99999999;
+    	position: fixed;
+    }
+.mobile-landscape img{
+    	width: 100%; 
+    	height: 100%;
+    }
+@media only screen and (min-device-width: 479px) 
+                   and (max-device-width: 641px) 
+                   and (orientation: landscape) {
+
+    .mobile-landscape{
+    	display: block;
+    }
+}
 /*iphone4 portrait
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) { 
 	.cot-scroll{
