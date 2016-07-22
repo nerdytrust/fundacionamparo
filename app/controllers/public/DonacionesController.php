@@ -35,7 +35,7 @@ class DonacionesController extends BaseController {
 	 */
 	public function __construct(){
 		//Llave privada
-		Conekta::setApiKey( 'key_jnxj5og4XVrrCEpyhSTYkg' );
+		Conekta::setApiKey( 'key_qFtiznAhzf7xzTDy8MqVWQ' );
 		//Llave publica //Conekta::setApiKey( 'key_Cxkxn8imrq4nosMpnnr3nVA' );
 		Conekta::setLocale( 'es' );
 		$this->expires = strtotime('+2 day', time() );
