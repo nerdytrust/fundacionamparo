@@ -83,7 +83,7 @@ class VoluntariosController extends BaseController {
 		$validate = Validator::make( $inputs, $this->rules_step_two );
 		if ( $validate->fails() )
 			return Response::json( [ 'success' => false, 'errors' => $validate->messages()->all('<span class="error">:message</span>') ] );
-
+print_r($inputs);
 		Session::reflash();
 		Session::put( 'voluntario.nombre', $inputs['nombre'] );
 		Session::put( 'voluntario.apellidos', $inputs['apellidos'] );
