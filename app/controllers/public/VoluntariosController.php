@@ -19,7 +19,8 @@ class VoluntariosController extends BaseController {
 		'nombre'	=> [ 'required', 'min:3', 'max:180' ],
 		'apellidos'	=> [ 'required', 'min:3', 'max:180' ],
 		'email'		=> [ 'required', 'email' ],
-		'telefono'	=> [ 'required', 'digits:10' ]
+		'telefono'	=> [ 'required', 'digits:10' ],
+		'edad'	    => [ 'required', 'digits:2' ]
 	];
 
 	/**
@@ -147,8 +148,8 @@ class VoluntariosController extends BaseController {
 		$voluntario->porque 			= $session['porque'];
 		$voluntario->ip 				= Request::ip();
 		$voluntario->browser 			= $_SERVER['HTTP_USER_AGENT'];
-		//if ( ! $voluntario->save() )
-		//	return FALSE;
+		if ( ! $voluntario->save() )
+			return FALSE;
 
 		// Si se guardó, se procede a enviar un correo al staff de Fundación Amparo
 		$causa_   = Causas::find($session['causa_voluntario']);
@@ -160,7 +161,7 @@ class VoluntariosController extends BaseController {
 		$session['estado'] = $estado_->name;
 		$session['ciudad'] = $ciudad_->name;
 		$session['horario'] = $horario_->name;
-		
+
 		$voluntario_mail = Mail::send( 'public.mail.voluntario', $session, function( $message ) use ( $voluntario ){
 			$message 
 				->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
