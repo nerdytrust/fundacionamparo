@@ -89,6 +89,16 @@ class VoluntariosController extends BaseController {
 		Session::put( 'voluntario.apellidos', $inputs['apellidos'] );
 		Session::put( 'voluntario.email', $inputs['email'] );
 		Session::put( 'voluntario.telefono', $inputs['telefono'] );
+
+		Session::put( 'voluntario.id_estados', $inputs['id_estados'] );
+		Session::put( 'voluntario.id_ciudades', $inputs['id_ciudades'] );
+		Session::put( 'voluntario.edad', $inputs['edad'] );
+		Session::put( 'voluntario.ocupacion', $inputs['ocupacion'] );
+		Session::put( 'voluntario.id_horarios', $inputs['id_horarios'] );
+		Session::put( 'voluntario.tipo_ayuda', $inputs['tipo_ayuda'] );
+		Session::put( 'voluntario.porque', $inputs['porque'] );
+
+
 		if ( ! $this->saveShortVoluntary() )
 			return Response::json( [ 'success' => false, 'errors' => '<span class="error">No se pudo registrar en nuestro sistema tu <strong>solicitud</strong>, favor de intenta nuevamente</span>' ] );
 
@@ -122,12 +132,19 @@ class VoluntariosController extends BaseController {
 		$session = Session::get( 'voluntario' );
 		$voluntario = new Voluntarios;
 		$voluntario->id_causas 			= $session['causa_voluntario'];
-		$voluntario->id_tipo_ayudas 	= $session['tipo_ayuda'];
+		//$voluntario->id_tipo_ayudas 	= $session['tipo_ayuda'];
 		$voluntario->nombre 			= $session['nombre'];
 		$voluntario->apellidos 			= $session['apellidos'];
 		$voluntario->email 				= $session['email'];
 		$voluntario->telefono 			= $session['telefono'];
 		$voluntario->terminos 			= 1;
+		$voluntario->id_estados 		= $session['id_estados'];
+		$voluntario->id_ciudades 		= $session['id_ciudades'];
+		$voluntario->edad 			    = $session['edad'];
+		$voluntario->ocupacion 			= $session['ocupacion'];
+		$voluntario->id_horarios 		= $session['id_horarios'];
+		$voluntario->tipo_ayuda 		= $session['tipo_ayuda'];
+		$voluntario->porque 			= $session['porque'];
 		$voluntario->ip 				= Request::ip();
 		$voluntario->browser 			= $_SERVER['HTTP_USER_AGENT'];
 		if ( ! $voluntario->save() )
