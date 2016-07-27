@@ -4,7 +4,7 @@
 	@stop
 	@section("content")
 		<div class="lightbox-h v" id="naranja1">
-			<div class="lightbox-h-cont vol">
+			<div class="lightbox-h-cont vol_1">
 				<img src="{{ asset( 'images/icon_donadores-v.png' ) }}" alt="">
 				<!--<button class="cerrar-h"></button>-->
 				<button onClick="history.back()" class="regresar"> Regresar</button>

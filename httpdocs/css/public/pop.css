@@ -167,6 +167,14 @@ button.regresar{
 	/*background: gold;*/
 }
 
+.vol_1{
+	/*width:381px !important;*/
+	width:281px !important;
+	height: 100vh;
+	top: 3% !important; 
+	/*background: gold;*/
+}
+
 .line{
 	width: 100%;
 	height: 2px;
