@@ -157,9 +157,9 @@ class VoluntariosController extends BaseController {
 		$horario_ = Horarios::find($session['id_horarios']);
 
 		$session['causa'] = $causa_->titulo;
-		$session['estado'] = $causa_->name;
-		$session['ciudad'] = $causa_->name;
-		$session['horario'] = $causa_->name;
+		$session['estado'] = $estado_->name;
+		$session['ciudad'] = $ciudad_->name;
+		$session['horario'] = $horario_->name;
 		
 		$voluntario_mail = Mail::send( 'public.mail.voluntario', $session, function( $message ) use ( $voluntario ){
 			$message 
