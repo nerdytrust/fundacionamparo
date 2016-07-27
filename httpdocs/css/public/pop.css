@@ -168,11 +168,7 @@ button.regresar{
 }
 
 .vol_1{
-	/*width:381px !important;*/
-	width:281px !important;
-	height: 100vh;
-	top: 3% !important; 
-	/*background: gold;*/
+	height: 100vh !important;
 }
 
 .line{

@@ -39,8 +39,6 @@
 							<option value="0">Selecciona una Ciudad</option>
 						</select>
 
-						{{ Form::text( 'calle', Input::old( 'calle' ), [ 'id' => 'r', 'placeholder' => 'Calle', 'required' => true ] ) }}
-
 						{{ Form::text( 'edad', Input::old( 'edad' ), [ 'id' => 'r', 'placeholder' => 'Edad', 'required' => true ] ) }}	
 
 						{{ Form::text( 'ocupacion', Input::old( 'ocupacion' ), [ 'id' => 'r', 'placeholder' => 'Ocupación', 'required' => true ] ) }}
