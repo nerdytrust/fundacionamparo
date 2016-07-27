@@ -25,6 +25,14 @@
 				<p style="margin:0; padding:0;">Nombre: <strong>{{ $nombre .' '. $apellidos}}</strong></p>
 				<p style="margin:0; padding:0;">Email: <strong>{{ $email }}</strong></p>
 				<p style="margin:0; padding:0;">Teléfono: <strong>{{ $telefono }}</strong></p>
+				<p style="margin:0; padding:0;">Lugar de Residencia</p>
+				<p style="margin:0; padding:0;">Estado: <strong>{{ $estado }}</strong></p>
+				<p style="margin:0; padding:0;">Ciudad: <strong>{{ $ciudad }}</strong></p>
+				<p style="margin:0; padding:0;">Edad: <strong>{{ $edad }}</strong></p>
+				<p style="margin:0; padding:0;">Ocupación: <strong>{{ $ocupacion }}</strong></p>
+				<p style="margin:0; padding:0;">Horario disponible: <strong>{{ $horario }}</strong></p>
+				<p style="margin:0; padding:0;">Área en la que le gustaría participar: <strong>{{ $tipo_ayuda }}</strong></p>
+				<p style="margin:0; padding:0;">¿Por qué le gustaría ser voluntario en la Fundacion Amparo?: <strong>{{ $porque }}</strong></p>
 			</td>
 		</tr>
 		<tr>
