@@ -165,8 +165,7 @@ class VoluntariosController extends BaseController {
 		$voluntario_mail = Mail::send( 'public.mail.voluntario', $session, function( $message ) use ( $voluntario ){
 			$message 
 				->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
-				//->to( 'voluntarios@fundacionamparo.com', 'Contacto Fundación Amparo' )
-				->to( 'fsanchez@nerdytrust.com', 'Voluntario Fundación Amparo' )
+				->to( 'voluntarios@fundacionamparo.com', 'Contacto Fundación Amparo' )
 				->subject( 'Nuevo VOLUNTARIO desde el formulario' );
 		} );
 
