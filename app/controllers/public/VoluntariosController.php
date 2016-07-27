@@ -147,8 +147,8 @@ class VoluntariosController extends BaseController {
 		$voluntario->porque 			= $session['porque'];
 		$voluntario->ip 				= Request::ip();
 		$voluntario->browser 			= $_SERVER['HTTP_USER_AGENT'];
-		if ( ! $voluntario->save() )
-			return FALSE;
+		//if ( ! $voluntario->save() )
+		//	return FALSE;
 
 		// Si se guardó, se procede a enviar un correo al staff de Fundación Amparo
 		$voluntario_mail = Mail::send( 'public.mail.voluntario', $inputs, function( $message ) use ( $session ){
