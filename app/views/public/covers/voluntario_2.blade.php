@@ -54,7 +54,7 @@
 
 						<p>Área en la que le gustaría participar</p>
 
-						{{ Form::text( 'area', Input::old( 'area' ), [ 'id' => 'r', 'placeholder' => 'Área', 'required' => true ] ) }}
+						{{ Form::text( 'tipo_ayuda', Input::old( 'tipo_ayuda' ), [ 'id' => 'r', 'placeholder' => 'Área', 'required' => true ] ) }}
 
 						<p>¿Por qué le gustaría ser voluntario en la Fundacion Amparo?</p>
 
