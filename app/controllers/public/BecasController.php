@@ -113,7 +113,6 @@ class BecasController extends BaseController {
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu petición</span>' ] ] );
 
 		// Si se guardó, se procede a enviar un correo al staff de Fundación Amparo
-		$beca->causa = 'Pako';
 		$comment = Mail::send( 'public.mail.becas', $inputs, function( $message ) use ( $beca ){
 			$message 
 				->from( getenv( 'APP_NOREPLY' ), 'no-reply' )
