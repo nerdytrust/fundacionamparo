@@ -28,14 +28,14 @@
 						{{ Form::text( 'telefono', Input::old( 'telefono' ), [ 'id' => 'r', 'placeholder' => 'Teléfono', 'required' => true ] ) }}
 						<p>Lugar de residencia</p>
 			
-						<select name="state" id="vol_estado">
+						<select name="id_estados" id="vol_estado">
 							<option value="0">Selecciona un Estado</option>
 							@foreach ( $estados as $estado )
 								<option value="{{ $estado->id_estados }}">{{ $estado->name }}</option>
 							@endforeach
 						</select>
 				
-						<select name="city" id="vol_ciudad">
+						<select name="id_ciudades" id="vol_ciudad">
 							<option value="0">Selecciona una Ciudad</option>
 						</select>
 
@@ -45,7 +45,7 @@
 
 						<p>Horarios o tiempos disponibles</p>
 
-						<select name="horario" id="id_horario">
+						<select name="id_horarios" id="id_horario">
 							<option value="0">Selecciona un horario</option>
 							@foreach ( $horarios as $horario )
 								<option value="{{ $horario->id_horarios }}">{{ $horario->name }}</option>
