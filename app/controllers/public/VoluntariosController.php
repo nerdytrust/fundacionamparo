@@ -150,6 +150,15 @@ class VoluntariosController extends BaseController {
 		if ( ! $voluntario->save() )
 			return FALSE;
 
+		// Si se guardó, se procede a enviar un correo al staff de Fundación Amparo
+		$voluntario_mail = Mail::send( 'public.mail.voluntario', $inputs, function( $message ) use ( $session ){
+			$message 
+				->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+				//->to( 'voluntarios@fundacionamparo.com', 'Contacto Fundación Amparo' )
+				->to( 'fsanchez@nerdytrust.com', 'Voluntario Fundación Amparo' )
+				->subject( 'Nuevo VOLUNTARIO desde el formulario' );
+		} );
+
 		return TRUE;
 	}
 
