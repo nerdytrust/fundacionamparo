@@ -7,8 +7,8 @@ class VoluntariosController extends BaseController {
 	 * @var array
 	 */
 	private $rules_step_one = [
-		'causa_voluntario'	=> [ 'required' ],
-        'tipo_ayuda'		=> [ 'required' ]
+		'causa_voluntario'	=> [ 'required' ]/*,
+        'tipo_ayuda'		=> [ 'required' ]*/
 	];
 
 	/**

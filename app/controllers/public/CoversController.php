@@ -226,7 +226,10 @@ class CoversController extends BaseController {
 		if ( ! isset( $voluntario ) )
 			return Redirect::to( 'voluntario' );
 
-		return View::make( 'public.covers.voluntario_2' );
+		return View::make( 'public.covers.voluntario_2' )->with( [
+					'estados'	=> Estados::where( 'id_paises', 142 )->get(),
+					'horarios'	=> Horarios::get()
+				 ] );
 	}
 
 	/**

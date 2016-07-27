@@ -26,6 +26,44 @@
 							{{ Form::email( 'email', Input::old( 'email' ), [ 'id' => 'r', 'placeholder' => 'Correo electrónico', 'required' => true, 'class' => 'form-control' ] ) }}
 						@endif
 						{{ Form::text( 'telefono', Input::old( 'telefono' ), [ 'id' => 'r', 'placeholder' => 'Teléfono', 'required' => true ] ) }}
+						<p>Lugar de residencia</p>
+			
+						<select name="state" id="vol_estado">
+							<option value="0">Selecciona un Estado</option>
+							@foreach ( $estados as $estado )
+								<option value="{{ $estado->id_estados }}">{{ $estado->name }}</option>
+							@endforeach
+						</select>
+				
+						<select name="city" id="vol_ciudad">
+							<option value="0">Selecciona una Ciudad</option>
+						</select>
+
+						{{ Form::text( 'calle', Input::old( 'calle' ), [ 'id' => 'r', 'placeholder' => 'Calle', 'required' => true ] ) }}
+
+						{{ Form::text( 'edad', Input::old( 'edad' ), [ 'id' => 'r', 'placeholder' => 'Edad', 'required' => true ] ) }}	
+
+						{{ Form::text( 'ocupacion', Input::old( 'ocupacion' ), [ 'id' => 'r', 'placeholder' => 'Ocupación', 'required' => true ] ) }}
+
+						<p>Horarios o tiempos disponibles</p>
+
+						<select name="horario" id="id_horario">
+							<option value="0">Selecciona un horario</option>
+							@foreach ( $horarios as $horario )
+								<option value="{{ $horario->id_horarios }}">{{ $horario->name }}</option>
+							@endforeach
+						</select>
+
+						<p>Área en la que le gustaría participar</p>
+
+						{{ Form::text( 'area', Input::old( 'area' ), [ 'id' => 'r', 'placeholder' => 'Área', 'required' => true ] ) }}
+
+						<p>¿Por qué le gustaría ser voluntario en la Fundacion Amparo?</p>
+
+						{{ Form::text( 'porque', Input::old( 'porque' ), [ 'id' => 'r', 'placeholder' => '¿Por qué le gustaría ser voluntario?', 'required' => true ] ) }}	
+						
+						<script type="text/javascript" src="{{ asset( 'js/public/jquery.min.js' ) }}"></script>
+						<script type="text/javascript" src="{{ asset( 'js/public/combos.voluntarios.scripts.js' ) }}"></script>
 						<input type="submit" value="ACEPTAR">
 					</label>
 				{{ Form::close() }}

@@ -23,12 +23,12 @@
 									@endforeach
 								@endif
 							</select>
-							<p>¿Cómo puedes ayudar?</p>							
+							<!--<p>¿Cómo puedes ayudar?</p>							
 							<select name="tipo_ayuda" id="tipo_ayuda">
 								@foreach ( $ayudas as $ayuda )
 									<option value="{{ $ayuda->id_tipo_ayudas }}">{{ $ayuda->name }}</option>
 								@endforeach
-							</select>
+							</select>-->
 							<input type="submit" value="Siguiente">
 						</label>
 					{{ Form::close() }}
