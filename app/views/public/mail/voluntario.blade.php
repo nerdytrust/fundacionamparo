@@ -17,8 +17,10 @@
 		<tr>
 			<td style="font-size:15px">
 				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;">¡Hola! </h2>
-				<p style="margin-top:5px;color:#c2c2c2;">Se han registrado para ser voluntario para la causa <strong> </strong></p>
+				<p style="margin-top:5px;color:#c2c2c2;">Se han registrado para ser voluntario para la causa <strong> {{ $causa }} </strong></p>
 			</td>
+		</tr>
+		<tr>
 			<td style="font-size:13px;padding-top:15px;">
 				<p style="margin:0; padding:0;">Nombre: <strong>{{ $nombre .' '. $apellidos}}</strong></p>
 				<p style="margin:0; padding:0;">Email: <strong>{{ $email }}</strong></p>
