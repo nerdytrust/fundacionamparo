@@ -78,6 +78,10 @@ class DonacionesController extends BaseController {
 			return Response::json( [ 'success' => true, 'redirect' => 'donar/recibo' ] );
 	}
 
+	public function reciboDonacion(){
+		return View::make( 'public.covers.recibo' );
+	}
+
 	/**
 	 * Método para procesar los pagos de las donaciones
 	 * Dependiendo el tipo de pago se invoca a otro método que puede ser Card (Tarjetas), Oxxo, SPEI
