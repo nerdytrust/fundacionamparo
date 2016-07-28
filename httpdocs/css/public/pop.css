@@ -1881,7 +1881,7 @@ termina laghtbox*/
 	width: 282px;
 	margin: 4% auto;
 	display: inline-block;
-	height: 21px;
+	/*height: 21px;*/
 	position: relative;
 	vertical-align: top;
 	text-align: left;
