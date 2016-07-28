@@ -35,17 +35,20 @@
 								{{ Form::email( 'email', Input::old( 'email' ), [ 'id' => 'email', 'placeholder' => 'Correo electrónico', 'required' => true, 'class' => 'form-control' ] ) }}
 							</span>
 						@endif
-						<div class="check-verde">
+
+						<div class="check-recibo">
 							{{ Form::checkbox( 'recibo', '0', false, [ 'id' => 'check-recibo' ] ) }}
-							<label for="check-verde"></label>¿Necesitas un recibo de donativo?
-							<div class="check-verde" style="display:none;">
+							<label for="check-recibo"></label>¿Necesitas un recibo de donativo?
+							<div class="check-recibo" style="display:none;">
 								PARA DONATIVOS REALIZADOS EN EFECTIVO, HAY UN TOPE MARCADO POR LA LEY ANTICORRUPCIÓN
 							</div>
 						</div>
+
 						<div class="check-verde">
 							{{ Form::checkbox( 'mostrar_perfil', '0', false, [ 'id' => 'check-verde' ] ) }}
 							<label for="check-verde"></label>No mostrar mi perfil en el sitio
 						</div>
+
 						</br></br>
 						<input type="submit" value="ACEPTAR">
 					{{ Form::close() }}
