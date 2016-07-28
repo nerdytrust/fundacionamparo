@@ -39,7 +39,7 @@
 						<div class="check-recibo">
 							{{ Form::checkbox( 'recibo', '0', false, [ 'id' => 'check-recibo' ] ) }}
 							<label for="check-recibo"></label>¿Necesitas un recibo de donativo?
-							<div class="check-recibo-hide" style="display:none;">
+							<div class="check-recibo-hide" style="display:none;font-weight: bold;">
 								PARA DONATIVOS REALIZADOS EN EFECTIVO, HAY UN TOPE MARCADO POR LA LEY ANTICORRUPCIÓN
 							</div>
 						</div>
