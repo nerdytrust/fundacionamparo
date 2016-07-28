@@ -753,9 +753,9 @@ $(function(){
 
 	$("#check-recibo").change(function () {
 		if (this.checked)
-			$('.check-verde-display-none').show("slow");
+			$('.check-recibo-hide').show("slow");
 		else
-			$('.check-verde-display-none').hide("slow");
+			$('.check-recibo-hide').hide("slow");
 	});
 
 });
