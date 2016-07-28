@@ -72,9 +72,9 @@ class DonacionesController extends BaseController {
 
 		Session::put( 'donacion', $inputs );
 
-		if($inputs['recibo']==1)
+		if(!isset($inputs['recibo']) || $inputs['recibo']==1)
 			return Response::json( [ 'success' => true, 'redirect' => 'donar/paso-2' ] );
-		else
+		else if(isset($inputs['recibo']) && $inputs['recibo']==0)
 			return Response::json( [ 'success' => true, 'redirect' => 'donar/recibo' ] );
 	}
 
