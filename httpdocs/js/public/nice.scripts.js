@@ -751,6 +751,13 @@ $(function(){
 			$('.check-verde-display-none').hide("slow");
 	});
 
+	$("#check-recibo").change(function () {
+		if (this.checked)
+			$('.check-verde-display-none').show("slow");
+		else
+			$('.check-verde-display-none').hide("slow");
+	});
+
 });
 
 function fbs_click(width, height, obj) {
