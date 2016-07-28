@@ -37,8 +37,8 @@
 						@endif
 						<div class="check-verde">
 							{{ Form::checkbox( 'recibo', '0', false, [ 'id' => 'check-recibo' ] ) }}
-							<label for="check-verde"></label>necesitas un recibo de donativo
-							<div class="check-verde check-verde-display-none">
+							<label for="check-verde"></label>¿Necesitas un recibo de donativo?
+							<div class="check-verde" style="display:none;">
 								PARA DONATIVOS REALIZADOS EN EFECTIVO, HAY UN TOPE MARCADO POR LA LEY ANTICORRUPCIÓN
 							</div>
 						</div>
