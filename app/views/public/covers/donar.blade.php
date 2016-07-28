@@ -35,7 +35,7 @@
 								{{ Form::email( 'email', Input::old( 'email' ), [ 'id' => 'email', 'placeholder' => 'Correo electrónico', 'required' => true, 'class' => 'form-control' ] ) }}
 							</span>
 						@endif
-						<div class="check-verde">
+						<div class="check-recibo">
 							{{ Form::checkbox( 'recibo', '0', false, [ 'id' => 'check-recibo' ] ) }}
 							<label for="check-verde"></label>¿Necesitas un recibo de donativo?
 							<div class="check-verde" style="display:none;">
