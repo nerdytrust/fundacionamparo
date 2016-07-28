@@ -1848,18 +1848,6 @@ termina laghtbox*/
 	font-size: 14px;
 }
 
-.check-recibo {
-	/*width: 70%;	*/
-	width: 282px;
-	margin: 4% auto;
-	display: inline-block;
-	height: 21px;
-	position: relative;
-	vertical-align: top;
-	text-align: left;
-	font-size: 14px;
-}
-
 .check-verde label {
 	cursor: pointer;
 	position: absolute;
