@@ -67,7 +67,7 @@ class Profiles extends Crud {
         //
         "create"    => [],
         "edit"      => [],
-        "index"     => ['id_profiles'],
+        "index"     => ['id_profiles','provider','displayName','firstName','lastName','email'],
         "show"      => [],
 
         
