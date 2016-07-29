@@ -75,6 +75,7 @@ class Profiles extends Crud {
         // "not_in_edit"   => ["created_at","updated_at"],
         //"not_in_index"  => ["created_at","updated_at"],
         //"not_in_show"   => ["created_at","updated_at"],
+        "not_in_export" => ['browser','ip','created_by', 'updated_by', 'updated_at', 'created_at','userName','zip','coverInfoURL','address','phone','emailVerified','age','language','description','photoURL','profileURL','webSiteURL','identifier','id_registrados'],
 
         //
         // Buttons
