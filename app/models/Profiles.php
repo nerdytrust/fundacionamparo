@@ -80,8 +80,8 @@ class Profiles extends Crud {
         // Buttons
         //
 
-        "btn_in_index"  => ["show","search"],
-        // "btn_in_show"   => [],
+        "btn_in_index"  => ["export","show","search"],
+        "btn_in_show"   => ["cancel"],
         // "btn_in_create" => [],
         // "btn_in_edit"   => [],
 
