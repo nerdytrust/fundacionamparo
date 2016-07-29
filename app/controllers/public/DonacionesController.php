@@ -605,7 +605,8 @@ class DonacionesController extends BaseController {
 			if ( ! $this->saveDonacion() )
 				return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar registrar tu donación, ponte en contacto con nostros.</span>' ] ] );
 		} catch ( Conekta_Error $e ) {
-			return Response::json( [ 'success' => false, 'errors' => $e->getMessage() ] );
+			//return Response::json( [ 'success' => false, 'errors' => $e->getMessage() ] );
+			return Response::json( [ 'success' => false, 'errors' => '!Ups¡, ha ocurrido un error, revisa tus datos nuevamente, recuerda que para OXXO el monto minimo es $15' ] );
 		}
 		return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-oxxo' ] );
 	}
@@ -645,7 +646,8 @@ class DonacionesController extends BaseController {
 			if ( ! $this->saveDonacion() )
 				return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar registrar tu donación, ponte en contacto con nostros.</span>' ] ] );
 		} catch ( Conekta_Error $e ) {
-			return Response::json( [ 'success' => false, 'errors' => $e->getMessage() ] );
+			//return Response::json( [ 'success' => false, 'errors' => $e->getMessage() ] );
+			return Response::json( [ 'success' => false, 'errors' => '!Ups¡, ha ocurrido un error, revisa tus datos nuevamente, recuerda que para SPEI el monto minimo es $15' ] );
 		}
 		return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-spei' ] );
 	}
