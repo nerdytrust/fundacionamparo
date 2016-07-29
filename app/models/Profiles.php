@@ -1,6 +1,6 @@
 <?php
 
-class Profiles extends Eloquent {
+class Profiles extends Crud {
 
 
     protected $primaryKey = 'id_profiles'; // !important
