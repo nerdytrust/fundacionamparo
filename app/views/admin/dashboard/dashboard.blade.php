@@ -44,7 +44,7 @@ dashboard
 					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/muros','Muro') }}</li>
 					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/noticias','Noticias') }}</li>
 					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/contacto','Contacto') }}</li>
-					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/registrados','Registrados') }}</li>
+					<li>{{ HTML::link(getenv('APP_ADMIN_PREFIX').'/profiles','Registrados') }}</li>
 				</ul>
 			</ul>
 	      </div>
