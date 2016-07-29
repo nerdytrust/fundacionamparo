@@ -2,7 +2,7 @@
 
 use Illuminate\Auth\UserInterface;
 
-class Registrados extends Eloquent implements UserInterface {
+class Registrados extends Crud implements UserInterface {
 
 
     protected $primaryKey = 'id_registrados'; // !important
