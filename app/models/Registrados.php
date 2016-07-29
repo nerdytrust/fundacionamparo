@@ -142,8 +142,6 @@ class Registrados extends Crud implements UserInterface {
         // "btn_in_edit"   => ["edit","cancel"],
 
     ];
-    
-}
 
     /**
      * Log a user into the application.
