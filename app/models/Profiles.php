@@ -67,13 +67,14 @@ class Profiles extends Crud {
         //
         "create"    => [],
         "edit"      => [],
-        "index"     => [],
+        "index"     => ['id_profiles'],
         "show"      => [],
+
         
         // "not_in_create" => ["created_at","updated_at"],
         // "not_in_edit"   => ["created_at","updated_at"],
-        "not_in_index"  => ["id_registrados","identifier","webSiteURL","description","profileURL","photoURL","gender","age","birthDay","birthMonth","birthYear","language","created_at","updated_at"],
-        "not_in_show"   => ["created_at","updated_at"],
+        //"not_in_index"  => ["created_at","updated_at"],
+        //"not_in_show"   => ["created_at","updated_at"],
 
         //
         // Buttons
