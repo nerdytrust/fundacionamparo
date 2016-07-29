@@ -129,8 +129,8 @@ class Registrados extends Crud implements UserInterface {
 
         "not_in_create" => [ "created_at", "updated_at", 'created_by', 'updated_by' ],
         "not_in_edit"   => [ "created_at", "updated_at", 'created_by', 'updated_by' ],
-        "not_in_index"  => [ 'remember_token','password',"created_at", "updated_at", 'created_by', 'updated_by' ],
-        "not_in_show"   => [ 'created_at', 'updated_at', 'created_by', 'updated_by' ],
+        "not_in_index"  => [ 'terminos', 'remember_token','password',"created_at", "updated_at", 'created_by', 'updated_by' ],
+        "not_in_show"   => [ 'terminos', 'remember_token','password','created_at', 'updated_at', 'created_by', 'updated_by' ],
 
         //
         // Buttons
