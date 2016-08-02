@@ -15,7 +15,7 @@
 				<label for="" class="vol">
 						<p>Nombre</p>
 						<span class="form-group">
-							{{ Form::text( 'r_nombre', Input::old( 'r_nombre'), [ 'placeholder' => 'Nombre', 'required' => true, 'id' => 'r_nombre' ] ) }}
+							{{ Form::text( 'r_nombre', Input::old( 'r_nombre'), [ 'placeholder' => 'Nombre', 'required' => true, 'id' => 'r_nombre', 'class' => 'form-control'] ) }}
 						</span>
 						
 						<p>RFC</p>
@@ -23,7 +23,7 @@
 							{{ Form::text( 'r_rfc', Input::old( 'r_rfc' ), [ 'id' => 'r_rfc', 'placeholder' => 'RFC', 'required' => true, 'class' => 'form-control' ] ) }}
 						</span>
 
-						<p>Domiciolo Fiscal</p>
+						<p>Domicilio Fiscal</p>
 						<span class="form-group">
 							{{ Form::text( 'r_domicilo_fiscal', Input::old( 'r_domicilo_fiscal' ), [ 'id' => 'r_domicilo_fiscal', 'placeholder' => 'Domicilio Fisca', 'required' => true, 'class' => 'form-control' ] ) }}
 						</span>
