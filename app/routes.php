@@ -107,6 +107,7 @@ Route::post( 'registrar-tu-causa', 'ApoyarCausaController@registrar' );
 Route::post( 'formulario-contacto', 'ContactoController@enviarContacto' );
 Route::post( 'nueva-donacion', 'DonacionesController@nuevaDonacion' );
 Route::get(  'donar/recibo', 'DonacionesController@reciboDonacion' );
+Route::post( 'recibo', 'DonacionesController@reciboInputsDonacion' );
 Route::post( 'donacion-pago-tarjeta', 'DonacionesController@payCard' );
 Route::post( 'paso-dos-donacion', 'DonacionesController@metodoPago' );
 Route::post( 'pasarela-paypal', 'DonacionesController@payPal' );
