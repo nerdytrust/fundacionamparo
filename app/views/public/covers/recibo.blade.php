@@ -27,7 +27,7 @@
 
 						<p>Domicilio Fiscal</p>
 						<span class="form-group">
-							{{ Form::text( 'r_domicilo_fiscal', Input::old( 'r_domicilo_fiscal' ), [ 'id' => 'r_domicilo_fiscal', 'placeholder' => 'Domicilio Fisca', 'required' => true, 'class' => 'form-control' ] ) }}
+							{{ Form::text( 'r_domicilio_fiscal', Input::old( 'r_domicilio_fiscal' ), [ 'id' => 'r_domicilio_fiscal', 'placeholder' => 'Domicilio Fisca', 'required' => true, 'class' => 'form-control' ] ) }}
 						</span>
 
 						<p>Email</p>
