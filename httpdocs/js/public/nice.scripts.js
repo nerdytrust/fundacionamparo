@@ -107,6 +107,49 @@ $(function(){
 	});
 
 	/**
+	 * Método para procesar el paso uno del formulario de recibo donación
+	 */
+	$('#form_recibo').submit(function(){
+		//var spinner = new Spinner(opts).spin(target);
+		$('.animsition').animsition().fadeOut();
+		$('body').css('background', '#ffffff');
+		$(this).ajaxSubmit({
+			beforeSubmit: function(){
+				$('#foo').css('display','block');
+			},
+			success: function(data){
+				if(data.success != true){
+					//spinner.stop();
+					//$('body').css('background', '#bbd53c');
+					$('.animsition').animsition().fadeIn();
+					$('.animsition-loading').remove();
+					$('#foo').css('display','none');
+					$('#messages').html(data.errors);
+					$('#messages').css('display', 'block');
+				}else{
+					//spinner.stop();
+					/*$('.animsition').animsition().fadeIn();
+					$('.animsition-loading').remove();*/
+					//$('body').css('background', '#bbd53c');
+					$('#foo').css('display','none');
+					setTimeout(function(){window.location.href = data.redirect;},2000);
+				}
+			},
+			error: function(data){
+				//spinner.stop();
+				$('body').css('background', '#bbd53c');
+				$('.animsition').animsition().fadeIn();
+				$('.animsition-loading').remove();
+				$('#foo').css('display','none');
+				$('#messages').html(data.errors);
+				$('#messages').css('display', 'block');
+			}
+		});
+		return false;
+	});
+
+
+	/**
 	 * Método para procesar el paso dos del formulario de donación
 	 */
 	$('#form_step_two_donacion').submit(function(){
