@@ -13,30 +13,25 @@
 					PARA DONATIVOS REALIZADOS EN EFECTIVO, HAY UN TOPE MARCADO POR LA LEY ANTICORRUPCIÓN
 				</p>
 				<label for="" class="vol">
-						<p>Ingresa el monto que deseas donar</p>
+						<p>Nombre</p>
 						<span class="op">
-							{{ Form::text( 'monto', Input::old( 'monto'), [ 'placeholder' => '10.00', 'maxlength' => 8, 'required' => true, 'id' => 'r' ] ) }}
+							{{ Form::text( 'r_nombre', Input::old( 'r_nombre'), [ 'placeholder' => 'Nombre', 'required' => true, 'id' => 'r_nombre' ] ) }}
 						</span>
-						@if ( Auth::customer()->check() )
-							{{ Form::hidden( 'email', Helper::getEmail() ) }}
-						@else
-							<span class="form-group">
-								{{ Form::email( 'email', Input::old( 'email' ), [ 'id' => 'email', 'placeholder' => 'Correo electrónico', 'required' => true, 'class' => 'form-control' ] ) }}
-							</span>
-						@endif
+						
+						<p>RFC</p>
+						<span class="form-group">
+							{{ Form::text( 'r_rfc', Input::old( 'r_rfc' ), [ 'id' => 'r_rfc', 'placeholder' => 'RFC', 'required' => true, 'class' => 'form-control' ] ) }}
+						</span>
 
-						<div class="check-recibo">
-							{{ Form::checkbox( 'recibo', '0', false, [ 'id' => 'check-recibo' ] ) }}
-							<label for="check-recibo"></label>¿Necesitas un recibo de donativo?
-							<div class="check-recibo-hide" style="display:none;font-weight: bold;">
-								PARA DONATIVOS REALIZADOS EN EFECTIVO, HAY UN TOPE MARCADO POR LA LEY ANTICORRUPCIÓN
-							</div>
-						</div>
+						<p>Domiciolo Fiscal</p>
+						<span class="form-group">
+							{{ Form::text( 'r_domicilo_fiscal', Input::old( 'r_domicilo_fiscal' ), [ 'id' => 'r_domicilo_fiscal', 'placeholder' => 'Domicilio Fisca', 'required' => true, 'class' => 'form-control' ] ) }}
+						</span>
 
-						<div class="check-verde">
-							{{ Form::checkbox( 'mostrar_perfil', '0', false, [ 'id' => 'check-verde' ] ) }}
-							<label for="check-verde"></label>No mostrar mi perfil en el sitio
-						</div>
+						<p>Email</p>
+						<span class="form-group">
+							{{ Form::email( 'r_email', Input::old( 'r_email' ), [ 'id' => 'r_email', 'placeholder' => 'Correo electrónico', 'required' => true, 'class' => 'form-control' ] ) }}
+						</span>
 
 						</br></br>
 						<input type="submit" value="ACEPTAR">
