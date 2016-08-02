@@ -17,6 +17,13 @@ class DonacionesController extends BaseController {
 		'causa_hash'		=> [ 'required' ]
 	];
 
+	private $rules_recibo = [
+		'r_nombre'		     => [ 'required' ],
+		'r_rfc'		         => [ 'required' ],
+		'r_domicilio_fiscal' => [ 'required' ],
+		'r_email'            => [ 'required','email' ]
+	];
+
 	private $expires = null;
 
 	private $_api;
@@ -80,6 +87,21 @@ class DonacionesController extends BaseController {
 
 	public function reciboDonacion(){
 		return View::make( 'public.covers.recibo' );
+	}
+
+	public function reciboInputsDonacion(){
+		if ( ! Request::ajax() )
+			return Response::json( [ 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ], 'success' => false ] );
+
+		$inputs = Input::all();
+		$validate = Validator::make( $inputs, $this->rules_recibo );
+		if ( $validate->fails() )
+			return Response::json( [ 'errors' => $validate->messages()->all('<span class="error">:message</span>'), 'success' => false ] );
+
+		Session::put( 'recibo', $inputs );
+
+		return Response::json( [ 'success' => true, 'redirect' => 'donar/paso-2' ] );
+		
 	}
 
 	/**
