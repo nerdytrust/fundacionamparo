@@ -14,6 +14,7 @@
 				</p>
 				<label for="" class="vol">
 						<p>Nombre</p>
+						{{ Form::open( [ 'url' => 'recibo', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form', 'id' => 'form_recibo' ] ) }}
 						<span class="form-group">
 							{{ Form::text( 'r_nombre', Input::old( 'r_nombre'), [ 'placeholder' => 'Nombre', 'required' => true, 'id' => 'r_nombre', 'class' => 'form-control'] ) }}
 						</span>

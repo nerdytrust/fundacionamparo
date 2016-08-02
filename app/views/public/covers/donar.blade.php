@@ -14,7 +14,7 @@
 				</p>
 				<label for="" class="vol">
 					<p>Escoge la causa que quieras apoyar</p>
-					{{ Form::open( [ 'url' => 'recibo', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form', 'id' => 'form_nueva_donacion' ] ) }}
+					{{ Form::open( [ 'url' => 'nueva-donacion', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form', 'id' => 'form_nueva_donacion' ] ) }}
 						{{ Form::hidden( 'mostrar_perfil', '1' ) }}
 						<div class="alert alert-danger" role="alert" id="messages"></div>
 						<select name="causa_donar" id="">
