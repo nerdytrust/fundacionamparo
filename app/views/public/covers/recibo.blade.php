@@ -14,7 +14,7 @@
 				</p>
 				<label for="" class="vol">
 						<p>Nombre</p>
-						<span class="op">
+						<span class="form-group">
 							{{ Form::text( 'r_nombre', Input::old( 'r_nombre'), [ 'placeholder' => 'Nombre', 'required' => true, 'id' => 'r_nombre' ] ) }}
 						</span>
 						
