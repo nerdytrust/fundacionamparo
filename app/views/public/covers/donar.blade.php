@@ -58,8 +58,7 @@
 		</div>
 		<script type="text/javascript">
 			(function() {
-			   document.getElementsByTagName("html").style.backgroundColor = "#bbd53c";
-
+			   document.body.style.backgroundColor = "#bbd53c";
 			})();
 		</script>
 	@stop
