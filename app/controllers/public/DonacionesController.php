@@ -736,7 +736,7 @@ class DonacionesController extends BaseController {
 			if ( ! Auth::customer()->check() )
 				$nameDonador = $donacion->email;
 			else 
-				$nameDonador = Helper::getRegisterFullName();
+				$nameDonador = $donacion->nombre.' '.$donacion->apellidos;
 
 			if ( $session['transaction_status'] == 'paid' || $session['transaction_status'] == 'active'){
 				$donacionMail = Mail::send( 'public.mail.donacion', ['username' => $nameDonador], function( $message ) use ($session){
@@ -750,6 +750,12 @@ class DonacionesController extends BaseController {
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
 						->to( $session['email'], "Donador" )
 						->subject( '¡Felicidades! ' );
+				});
+				$donacionFundacion = Mail::send( 'public.mail.donacion_fundacion', ['username' => $nameDonador], function( $message ) use ($session){
+					$message
+						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
+						->to( 'fsanchez@nerdytrust.com', "Donador" )
+						->subject( '¡Nueva donación! ' );
 				});
 			}	
 
