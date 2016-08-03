@@ -219,6 +219,7 @@ class DonacionesController extends BaseController {
   		  Session::put( 'paypalhas_hash', $hash );
 
   		  $session = Session::get( 'donacion' );
+  		  $recibo  = Session::get( 'recibo' );
   		  $donacion = new Donaciones;
   		  $donacion->email 				= $session['email'];
 	 	  $donacion->id_causas 			= $session['causa_donar'];
@@ -227,6 +228,14 @@ class DonacionesController extends BaseController {
 	 	  $donacion->transaction_id		= Session::get( 'paypalhas_hash' );
 	 	  $donacion->transaction_type	= 'paypal';
 	 	  $donacion->mostrar_perfil 	= $session['mostrar_perfil'];
+
+	 	  $donacion->nombre				   = $session['nombre'];
+		  $donacion->apellidos  		   = $session['apellidos'];
+
+		  $donacion->comprobante_nombre	   = $recibo['r_nombre'];
+		  $donacion->comprobante_rfc	   = $recibo['r_rfc'];
+		  $donacion->comprobante_direccion = $recibo['r_domicilio_fiscal'];
+		  $donacion->comprobante_email	   = $recibo['r_email'];
 
 	 	  $donacion->save();
 
@@ -301,6 +310,7 @@ class DonacionesController extends BaseController {
   		  	Session::put( 'paypalhas_hash_rec', $hash );
 
 			$session = Session::get( 'donacion' );
+			$recibo  = Session::get( 'recibo' );
 	  		$donacion = new Donaciones;
 	  		$donacion->email 			= $session['email'];
 		 	$donacion->id_causas 		= $session['causa_donar'];
@@ -309,6 +319,14 @@ class DonacionesController extends BaseController {
 		 	$donacion->transaction_id	= Session::get( 'paypalhas_hash_rec' );
 		 	$donacion->transaction_type	= 'paypal-rec';
 		 	$donacion->mostrar_perfil 	= $session['mostrar_perfil'];
+
+		 	$donacion->nombre				 = $session['nombre'];
+			$donacion->apellidos  			 = $session['apellidos'];
+
+			$donacion->comprobante_nombre	 = $recibo['r_nombre'];
+			$donacion->comprobante_rfc	     = $recibo['r_rfc'];
+			$donacion->comprobante_direccion = $recibo['r_domicilio_fiscal'];
+			$donacion->comprobante_email	 = $recibo['r_email'];
 
 		 	$donacion->save();
 
