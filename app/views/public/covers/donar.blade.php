@@ -37,7 +37,7 @@
 						@endif
 
 						<span class="form-group">
-							{{ Form::text( 'nombre', Input::old( 'nombre'), [ 'placeholder' => 'Nombre', 'required' => true, 'id' => 'nombre', 'class' => 'form-control'] ) }}
+							{{ Form::text( 'nombre', Input::old( 'nombre'), [ 'placeholder' => 'Nombre', 'required' => true, 'id' => 'd-nombre', 'class' => 'form-control'] ) }}
 						</span>
 
 						<span class="form-group">
