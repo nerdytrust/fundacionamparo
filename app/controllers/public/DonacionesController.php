@@ -233,10 +233,12 @@ class DonacionesController extends BaseController {
 	 	  $donacion->nombre				   = $session['nombre'];
 		  $donacion->apellidos  		   = $session['apellidos'];
 
-		  $donacion->comprobante_nombre	   = $recibo['r_nombre'];
-		  $donacion->comprobante_rfc	   = $recibo['r_rfc'];
-		  $donacion->comprobante_direccion = $recibo['r_domicilio_fiscal'];
-		  $donacion->comprobante_email	   = $recibo['r_email'];
+		if($recibo){
+			$donacion->comprobante_nombre	 = $recibo['r_nombre'];
+			$donacion->comprobante_rfc	     = $recibo['r_rfc'];
+			$donacion->comprobante_direccion = $recibo['r_domicilio_fiscal'];
+			$donacion->comprobante_email	 = $recibo['r_email'];
+		}	
 
 	 	  $donacion->save();
 
@@ -324,10 +326,12 @@ class DonacionesController extends BaseController {
 		 	$donacion->nombre				 = $session['nombre'];
 			$donacion->apellidos  			 = $session['apellidos'];
 
-			$donacion->comprobante_nombre	 = $recibo['r_nombre'];
-			$donacion->comprobante_rfc	     = $recibo['r_rfc'];
-			$donacion->comprobante_direccion = $recibo['r_domicilio_fiscal'];
-			$donacion->comprobante_email	 = $recibo['r_email'];
+			if($recibo){
+				$donacion->comprobante_nombre	 = $recibo['r_nombre'];
+				$donacion->comprobante_rfc	     = $recibo['r_rfc'];
+				$donacion->comprobante_direccion = $recibo['r_domicilio_fiscal'];
+				$donacion->comprobante_email	 = $recibo['r_email'];
+			}	
 
 		 	$donacion->save();
 
@@ -713,10 +717,12 @@ class DonacionesController extends BaseController {
 		$donacion->nombre				= $session['nombre'];
 		$donacion->apellidos  			= $session['apellidos'];
 
-		$donacion->comprobante_nombre	 = $recibo['r_nombre'];
-		$donacion->comprobante_rfc	     = $recibo['r_rfc'];
-		$donacion->comprobante_direccion = $recibo['r_domicilio_fiscal'];
-		$donacion->comprobante_email	 = $recibo['r_email'];
+		if($recibo){
+			$donacion->comprobante_nombre	 = $recibo['r_nombre'];
+			$donacion->comprobante_rfc	     = $recibo['r_rfc'];
+			$donacion->comprobante_direccion = $recibo['r_domicilio_fiscal'];
+			$donacion->comprobante_email	 = $recibo['r_email'];
+		}	
 
 		if ( Session::has( 'donacion.transaction_brand' ) )
 			$donacion->transaction_brand	= $session['transaction_brand'];
