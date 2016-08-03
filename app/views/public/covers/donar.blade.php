@@ -57,9 +57,10 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			$(function(){
-				$('html').css('background','#bbd53c');
-			});
+			(function() {
+			   document.getElementsByTagName("html").style.background = "#bbd53c";
+
+			})();
 		</script>
 	@stop
 @stop
