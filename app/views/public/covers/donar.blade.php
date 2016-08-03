@@ -56,5 +56,10 @@
 				<a href="{{ URL::to( 'faqs' ) }}" target="_blank" class="help">Si necesitas ayuda da click aquí <img src="{{ asset( 'images/i.png' ) }}" alt="" class="icon"></a>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$(function(){
+				$('html').css('background','#bbd53c');
+			});
+		</script>
 	@stop
 @stop
