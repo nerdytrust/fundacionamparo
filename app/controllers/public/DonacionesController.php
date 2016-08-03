@@ -680,6 +680,7 @@ class DonacionesController extends BaseController {
 	 */
 	private function saveDonacion(){
 		$session = Session::get( 'donacion' );
+		$recibo  = Session::get( 'recibo' );
 		$donacion 						= new Donaciones;
 		$donacion->email 				= $session['email'];
 		$donacion->id_causas 			= $session['causa_donar'];
