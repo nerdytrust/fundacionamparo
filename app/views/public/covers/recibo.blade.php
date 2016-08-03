@@ -8,7 +8,7 @@
 				<img src="{{ asset( 'images/icon_donadores-v.png' ) }}" alt="">
 				<button class="cerrar-h"></button>
 				<button onClick="history.back()" class="regresar">Regresar</button>
-				<h1>Recibo de donativo</h1>
+				<h1>comprobante deducible de impuestos</h1>
 				<p>
 					PARA DONATIVOS REALIZADOS EN EFECTIVO, HAY UN TOPE MARCADO POR LA LEY ANTICORRUPCIÓN
 				</p>
