@@ -44,7 +44,7 @@ class DonacionesController extends BaseController {
 	 */
 	public function __construct(){
 		//Llave privada
-		Conekta::setApiKey( 'key_qFtiznAhzf7xzTDy8MqVWQ' );
+		Conekta::setApiKey( 'key_jnxj5og4XVrrCEpyhSTYkg' );
 		//Llave publica //Conekta::setApiKey( 'key_Cxkxn8imrq4nosMpnnr3nVA' );
 		Conekta::setLocale( 'es' );
 		$this->expires = strtotime('+2 day', time() );
@@ -738,7 +738,7 @@ class DonacionesController extends BaseController {
 			else 
 				$nameDonador = $donacion->nombre.' '.$donacion->apellidos;
 
-			//if ( $session['transaction_status'] == 'paid' || $session['transaction_status'] == 'active'){
+			if ( $session['transaction_status'] == 'paid' || $session['transaction_status'] == 'active'){
 				$donacionMail = Mail::send( 'public.mail.donacion', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
@@ -757,7 +757,7 @@ class DonacionesController extends BaseController {
 						->to( 'fsanchez@nerdytrust.com', "Donador" )
 						->subject( '¡Nueva donación! ' );
 				});
-			//}	
+			}	
 
 			return TRUE;
 		}
