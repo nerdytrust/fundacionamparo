@@ -8,7 +8,9 @@ class DonacionesController extends BaseController {
 	private $rules_step_one = [
 		'causa_donar'	=> [ 'required' ],
         'monto'			=> [ 'required', 'numeric', 'between:10,99999999' ],
-        'email'			=> [ 'required', 'email' ]	
+        'email'			=> [ 'required', 'email' ],
+        'nombre'		=> [ 'required' ],
+		'apellidos'     => [ 'required' ]
 	];
 
 	private $rules_step_two = [
@@ -681,12 +683,21 @@ class DonacionesController extends BaseController {
 	private function saveDonacion(){
 		$session = Session::get( 'donacion' );
 		$recibo  = Session::get( 'recibo' );
+
 		$donacion 						= new Donaciones;
 		$donacion->email 				= $session['email'];
 		$donacion->id_causas 			= $session['causa_donar'];
 		$donacion->monto_donacion 		= $session['monto'];
 		$donacion->reference_id 		= $session['reference_id'];
 		$donacion->transaction_id		= $session['transaction_id'];
+
+		$donacion->nombre				= $session['nombre'];
+		$donacion->apellidos  			= $session['apellidos'];
+
+		$donacion->comprobante_nombre	 = $recibo['r_nombre'];
+		$donacion->comprobante_rfc	     = $recibo['r_rfc'];
+		$donacion->comprobante_direccion = $recibo['r_domicilio_fiscal'];
+		$donacion->comprobante_email	 = $recibo['r_email'];
 
 		if ( Session::has( 'donacion.transaction_brand' ) )
 			$donacion->transaction_brand	= $session['transaction_brand'];
