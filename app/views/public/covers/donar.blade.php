@@ -36,6 +36,15 @@
 							</span>
 						@endif
 
+						<span class="form-group">
+							{{ Form::text( 'nombre', Input::old( 'nombre'), [ 'placeholder' => 'Nombre', 'required' => true, 'id' => 'nombre', 'class' => 'form-control'] ) }}
+						</span>
+
+						<span class="form-group">
+							{{ Form::text( 'apellidos', Input::old( 'apellidos'), [ 'placeholder' => 'Apellidos', 'required' => true, 'id' => 'apellidos', 'class' => 'form-control'] ) }}
+						</span>
+
+
 						<div class="check-recibo">
 							{{ Form::checkbox( 'recibo', '0', false, [ 'id' => 'check-recibo' ] ) }}
 							<label for="check-recibo"></label>¿Necesitas un comprobante deducible de impuestos?
