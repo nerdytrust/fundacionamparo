@@ -80,6 +80,7 @@ class DonacionesController extends BaseController {
 			return Response::json( [ 'errors' => $validate->messages()->all('<span class="error">:message</span>'), 'success' => false ] );
 
 		Session::put( 'donacion', $inputs );
+		Session::forget( 'recibo' );
 
 		if(!isset($inputs['recibo']) || $inputs['recibo']==1)
 			return Response::json( [ 'success' => true, 'redirect' => 'donar/paso-2' ] );
