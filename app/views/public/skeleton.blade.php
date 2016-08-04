@@ -109,7 +109,7 @@
                 '/js/public/pop.js',
                 '/js/public/script.js',
                 '/js/public/complements.js',
-                '/js/public/video.js',
+                //'/js/public/video.js',
                 '/js/public/spin.min.js',
                 '/js/public/jquery.timeline.js',
                 '/js/public/froogaloop.js',
