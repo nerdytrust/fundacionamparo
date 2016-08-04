@@ -40,6 +40,11 @@
    						 <source src="{{ asset ( 'path_video/prueba_ch.mp4' ) }}" type='video/mp4'>
   					</video>
 
+  					<video id="my-video" class="video-js" controls preload="auto" width="800" height="450"
+  					poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+   						 <source src="{{ asset ( 'path_video/out_1.mp4' ) }}" type='video/mp4'>
+  					</video>
+
   					 <div class="vi2">
 	        				<a href="{{ asset ( 'path_video/prueba_ch.mp4' ) }}">
 	        					<div class="vjs-poster" style="background-image: url();"></div>
