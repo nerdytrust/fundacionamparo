@@ -35,6 +35,10 @@
 						<img src="images/fundacion_como_ayudar_video.jpg" alt="">
 					</div>
 					-->
+					<video id="my-video" class="video-js" controls preload="auto" width="800" height="450"
+  poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+    <source src="http://104.236.135.188/video_/video/prueba_ch.mp4" type='video/mp4'>
+  </video>
 					@if ( isset( $videos ) )
 						@foreach ( $videos as $video )
 						
