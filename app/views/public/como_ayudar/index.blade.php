@@ -38,16 +38,23 @@
 					<video id="my-video" class="video-js" controls preload="auto" width="800" height="450"
   					poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
    						 <source src="video/prueba_ch.mp4" type='video/mp4'>
+
+   						 <div class="vi2">
+	        				<a href="{{ asset ( 'path_video/prueba_ch.mp4' ) }}">
+	        					<div class="vjs-poster" style="background-image: url();"></div>
+	        					<div class="button-play" role="button"><span aria-hidden="true"></span></div>
+	        				</a>
+	    				</div>
   					</video>
 					@if ( isset( $videos ) )
 						@foreach ( $videos as $video )
 						
-						<div class="vi2">
+						<!--<div class="vi2">
 	        				<a href="{{ asset ( 'path_video/' . $video->video ) }}">
 	        					<div class="vjs-poster" style="background-image: url({{ asset( 'path_image/' . $video->cover ) }});"></div>
 	        					<div class="button-play" role="button"><span aria-hidden="true"></span></div>
 	        				</a>
-	    				</div>
+	    				</div>-->
 	    				@endforeach
 	    				<script type="text/javascript">
 							document.addEventListener("DOMContentLoaded", function(event) { 
