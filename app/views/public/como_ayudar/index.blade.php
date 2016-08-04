@@ -37,8 +37,14 @@
 					-->
 					<video id="my-video" class="video-js" controls preload="auto" width="800" height="450"
   poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
-    <source src="http://104.236.135.188/video_/video/prueba_ch.mp4" type='video/mp4'>
+    <source src="" type='video/mp4'>
   </video>
+  <div class="vi2">
+	        				<a href="http://104.236.135.188/video_/video/prueba_ch.mp4">
+	        					<div class="vjs-poster" style="background-image: url();"></div>
+	        					<div class="button-play" role="button"><span aria-hidden="true"></span></div>
+	        				</a>
+	    				</div>
 					@if ( isset( $videos ) )
 						@foreach ( $videos as $video )
 						
