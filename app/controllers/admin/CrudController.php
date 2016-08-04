@@ -407,8 +407,6 @@ class CrudController extends \BaseController {
                     if (\Input::file($file)->isValid()) {
                         print_r($file);die;
                       $fileName = md5($class->getTable()."|".$file."|".$params->key_value); // renameing image
-
-                      $fileName =   $columns->{$file}->type
                       \Input::file($file)->move($destinationPath, $fileName); // uploading file to given path
 
                       if($columns->{$file}->type == "text")
