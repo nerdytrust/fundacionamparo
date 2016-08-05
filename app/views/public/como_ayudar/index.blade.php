@@ -37,10 +37,10 @@
 					-->
 					<video id="my-video" class="video-js" controls preload="auto" width="800" height="450"
   					 data-setup="{}">
-   						 <source src="{{ asset ( 'path_video/prueba_ch.mp4' ) }}" type='video/mp4' codecs=avc1.42E01E,mp4a.40.2>
+   						 <source src="{{ asset ( 'path_video/pr6.mp4' ) }}" type='video/mp4' codecs=avc1.42E01E,mp4a.40.2>
   					</video>
 
-  					<video id="my-video" class="video-js" controls preload="auto" width="800" height="450"
+  					<video id="my-video" class="video-js" controls preload="false" width="800" height="450"
   					 data-setup="{}">
    						 <source src="{{ asset ( 'path_video/out_1.mp4' ) }}" type='video/mp4' codecs=avc1.42E01E,mp4a.40.2>
   					</video>
