@@ -35,55 +35,15 @@
 						<img src="images/fundacion_como_ayudar_video.jpg" alt="">
 					</div>
 					-->
-					<video id="my-video" class="video-js" controls preload="auto" width="800" height="450"
-  					 data-setup="{}">
-   						 <source src="{{ asset ( 'path_video/pr6.mp4' ) }}" type='video/mp4' codecs=avc1.42E01E,mp4a.40.2>
-  					</video>
-
-  					<video id="my-video" class="video-js" controls preload="false" width="800" height="450"
-  					 data-setup="{}">
-   						 <source src="{{ asset ( 'path_video/out_1.mp4' ) }}" type='video/mp4' codecs=avc1.42E01E,mp4a.40.2>
-  					</video>
-
-  					<video id="movie" width="320" height="240" preload controls>
-  <source src="{{ asset ( 'path_video/pr6.mp4' ) }}" />
-  <object width="320" height="240" type="application/x-shockwave-flash"
-    data="flowplayer-3.2.1.swf">
-    <param name="movie" value="flowplayer-3.2.1.swf" />
-    <param name="allowfullscreen" value="true" />
-    <param name="flashvars" value="config={'clip': {'url': '{{ asset ( 'path_video/pr6.mp4' ) }}', 'autoPlay':false, 'autoBuffering':true}}" />
-  </object>
-</video>
-<script>
-  var v = document.getElementById("movie");
-  v.onclick = function() {
-    if (v.paused) {
-      v.play();
-    } else {
-      v.pause();
-    }
-  };
-</script>
-
-
-  					<br>
-  					<br>
-  					<br>
-  					 <div class="vi2">
-	        				<a href="{{ asset ( 'path_video/prueba_ch.mp4' ) }}">
-	        					<div class="vjs-poster" style="background-image: url();"></div>
-	        					<div class="button-play" role="button"><span aria-hidden="true"></span></div>
-	        				</a>
-	    				</div>
 					@if ( isset( $videos ) )
 						@foreach ( $videos as $video )
 						
-						<!--<div class="vi2">
+						<div class="vi2">
 	        				<a href="{{ asset ( 'path_video/' . $video->video ) }}">
 	        					<div class="vjs-poster" style="background-image: url({{ asset( 'path_image/' . $video->cover ) }});"></div>
 	        					<div class="button-play" role="button"><span aria-hidden="true"></span></div>
 	        				</a>
-	    				</div>-->
+	    				</div>
 	    				@endforeach
 	    				<script type="text/javascript">
 							document.addEventListener("DOMContentLoaded", function(event) { 
