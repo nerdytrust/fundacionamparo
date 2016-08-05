@@ -51,9 +51,9 @@ class StoragePathController extends BaseController {
  			fpassthru( $stream );
  		}, 200, $headers );*/
 
- 		return Response::stream(function() use ($path) {
+ 		return Response::stream(function() use ($hash) {
         try {
-            $stream = fopen($path, 'r');
+            $stream = fopen($hash, 'r');
             fpassthru($stream);
         } catch(Exception $e) {
             Log::error($e);
