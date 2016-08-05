@@ -25,6 +25,8 @@
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta http-equiv="Content-Language" content="es"/>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+        <meta name="generator" content="2015.1.2.344"/>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
