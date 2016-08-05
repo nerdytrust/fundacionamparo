@@ -41,7 +41,7 @@ class StoragePathController extends BaseController {
  	 */
  	public function videoStorage( $hash ){
  		$this->storage_path = storage_path();
- 		echo $this->storage_path;die;
+ 		
  		$content = $this->storage_path . '/uploads/' . $hash;
  		$headers = [
  			'Content-Type'	=> 'video/mp4'
@@ -61,7 +61,7 @@ class StoragePathController extends BaseController {
     }, 200, $headers);
 
 
- 		
+
  	}
 }
 
