@@ -44,6 +44,28 @@
   					 data-setup="{}">
    						 <source src="{{ asset ( 'path_video/out_1.mp4' ) }}" type='video/mp4' codecs=avc1.42E01E,mp4a.40.2>
   					</video>
+
+  					<video id="movie" width="320" height="240" preload controls>
+  <source src="{{ asset ( 'path_video/pr6.mp4' ) }}" />
+  <object width="320" height="240" type="application/x-shockwave-flash"
+    data="flowplayer-3.2.1.swf">
+    <param name="movie" value="flowplayer-3.2.1.swf" />
+    <param name="allowfullscreen" value="true" />
+    <param name="flashvars" value="config={'clip': {'url': '{{ asset ( 'path_video/pr6.mp4' ) }}', 'autoPlay':false, 'autoBuffering':true}}" />
+  </object>
+</video>
+<script>
+  var v = document.getElementById("movie");
+  v.onclick = function() {
+    if (v.paused) {
+      v.play();
+    } else {
+      v.pause();
+    }
+  };
+</script>
+
+
   					<br>
   					<br>
   					<br>
