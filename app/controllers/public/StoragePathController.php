@@ -46,10 +46,22 @@ class StoragePathController extends BaseController {
  		$headers = [
  			'Content-Type'	=> 'video/mp4'
  		];
- 		return Response::stream( function() use ($content ) {
+ 		/*return Response::stream( function() use ($content ) {
  			$stream = fopen( $content, 'r' );
  			fpassthru( $stream );
- 		}, 200, $headers );
+ 		}, 200, $headers );*/
+
+ 		return Response::stream(function() use ($path) {
+        try {
+            $stream = fopen($path, 'r');
+            fpassthru($stream);
+        } catch(Exception $e) {
+            Log::error($e);
+        }
+    }, 200, $headers);
+
+
+ 		
  	}
 }
 
