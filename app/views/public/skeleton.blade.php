@@ -300,7 +300,7 @@
 
             function getIphone(){
                 if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-                    if(window.innerHeight > window.innerWidth){
+                    if(window.innerHeight < window.innerWidth){
                        console.log('iphone landscape');
                     }
                 }
