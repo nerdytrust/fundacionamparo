@@ -61,7 +61,7 @@
         <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
         <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
     </head>
-    <body class="@yield('class')">
+    <body class="@yield('class')" onresize="getIphone()">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -297,6 +297,13 @@
                     });
                 }*/
             });
+
+            function getIphone(){
+                if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) 
+                    console.log('iphone');
+                else
+                    console.log('no iphone');
+            }
         </script>
     </body>
 </html>
