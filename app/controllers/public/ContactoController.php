@@ -27,7 +27,8 @@ class ContactoController extends BaseController {
 	 * @return
 	 */
 	public function enviarContacto(){
-		if ( ! Request::ajax() )
+echo 'contacto';
+		/*if ( ! Request::ajax() )
 			return Response::json( [ 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu petición</span>' ], 'success' => false ] );
 
 		$inputs = Input::all();
@@ -64,7 +65,7 @@ class ContactoController extends BaseController {
 		} );
 
 		//return Response::json( [ 'success' => true, 'errors' => false, 'message' => 'Gracias por estar en contacto, en breve recibirás una <strong>respuesta</strong> de un asesor.' ] );
-		return Response::json( [ 'success' => true, 'redirect' => 'gracias-contacto' ] );
+		return Response::json( [ 'success' => true, 'redirect' => 'gracias-contacto' ] );*/
 	}
 
 	/**
