@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => 'amparo@123',
+	'password' => 'fundacionamparo.com',
 
 	/*
 	|--------------------------------------------------------------------------
