@@ -61,7 +61,7 @@
         <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
         <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
     </head>
-    <body class="@yield('class')" onresize="getIphone()">
+    <body class="@yield('class')" onresize="getIphone()" onload="getIphone()">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
