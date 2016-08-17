@@ -28,6 +28,9 @@ button, input{
 iframe{
 	display: none
 }
+video{
+	height: 100% !important;
+}
 .animsition-loading-enviando:after{
 	content: "Enviando Datos" !important;
 }
