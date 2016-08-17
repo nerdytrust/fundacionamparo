@@ -4862,7 +4862,7 @@ label.contact textarea{
 		/*bottom: -115px;*/
 	}
 	.txt_int:hover{
-		bottom: -115px !important;
+		/*bottom: -115px !important;*/
 		/*background: none !important;*/
 	}
 	#meta{
