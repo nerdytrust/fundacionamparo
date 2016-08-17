@@ -26,11 +26,11 @@
 					<li>{{ HTML::link( '/noticias', 'Noticias', [ 'class' => 'animsition-link' ] ) }}</li>
 					<li>{{ HTML::link( '/faqs', "Faq's", [ 'class' => 'animsition-link' ] ) }}</li>
 					<li>{{ HTML::link( '/contacto', 'Contacto', [ 'class' => 'animsition-link' ] ) }}</li>
-					@if ( ! Auth::customer()->check() )
+					<!--@if ( ! Auth::customer()->check() )
 						<li>{{ HTML::link( '/login', 'Login', [ 'class' => 'animsition-link' ] ) }}</li>
 					@else
 						<li>{{ HTML::link( '/salir', 'Cerrar Sesión', [ 'class' => 'animsition-link' ] ) }}</li>
-					@endif
+					@endif-->
 				</ul>
 			</nav>
 			<button id="btn_dona">DONAR</button>
