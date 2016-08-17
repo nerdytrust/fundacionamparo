@@ -4859,7 +4859,7 @@ label.contact textarea{
 		font-size: 1.4em !important;
 	}
 	.txt_int{
-		bottom: -115px;
+		/*bottom: -115px;*/
 	}
 	.txt_int:hover{
 		bottom: -115px !important;
