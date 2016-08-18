@@ -3516,7 +3516,7 @@ span.esquina-pop{
   padding: 0px 0px;
 	}
 	#perfil{
-		/*display: none !important;*/
+		display: none !important;
 	}
 	.img_redonda2 {
   margin: 0 !important;
