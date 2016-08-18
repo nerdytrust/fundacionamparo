@@ -35,7 +35,7 @@
 				</ul>
 			</nav>
 			<button id="btn_dona">DONAR</button>
-			<div id="perfil">
+			<!--<div id="perfil">
 				@if ( ! Auth::customer()->check() )
 					<a href="{{ URL::to( 'login' ) }}">
 						<img src="{{ asset( 'images/default-profile.jpg' ) }}" alt="" class="avatar-session" />
@@ -45,7 +45,7 @@
 						<img src="{{ Helper::getAvatar() }}" alt="" class="avatar-session" />
 					</a>
 				@endif
-			</div>
+			</div>-->
 		</div>
 	</header>
 	<div id="conteo_donadores" >
