@@ -14,18 +14,19 @@
 		<div id="section_menu" class="pull">
 			<nav id="menu_principal">
 				<ul id="menu_uno">
-					<li>{{ HTML::link( '/como-ayudar', 'Cómo ayudar', [ 'class' => 'animsition-link' ] ) }}</li>
+					<li>{{ HTML::link( '/fundacion', '¿Quíenes somos?', [ 'class' => 'animsition-link' ] ) }}</li>
+					<li>{{ HTML::link( '/causas-vivas', 'Causas Vivas', [ 'class' => 'animsition-link' ] ) }}</li>
+					<li>{{ HTML::link( '/contacto', 'Contacto', [ 'class' => 'animsition-link' ] ) }}</li>
+					<!--<li>{{ HTML::link( '/como-ayudar', 'Cómo ayudar', [ 'class' => 'animsition-link' ] ) }}</li>
 					<li>{{ HTML::link( '/causas-vivas', 'Causas vivas', [ 'class' => 'animsition-link' ] )}}</li>
 					<li>{{ HTML::link( '/donadores', 'Donadores', [ 'class' => 'animsition-link' ] ) }}</li>
-					<li>{{ HTML::link( '/muro-exito', 'Historia de la Fundación', [ 'class' => 'animsition-link' ]) }}</li>
+					<li>{{ HTML::link( '/muro-exito', 'Historia de la Fundación', [ 'class' => 'animsition-link' ]) }}</li>-->
 				</ul>
 				<ul id="menu_dos">
-					<li>{{ HTML::link( '/fundacion', 'La Fundación', [ 'class' => 'animsition-link' ] ) }}</li>
-					<!--<li>{{ HTML::link( '/becas', 'Becas', [ 'class' => 'animsition-link' ] )}}</li>-->
-					<li>{{ HTML::link( '/apoyamos-tu-causa', 'Apoyamos tu causa', [ 'class' => 'animsition-link' ] ) }}</li>
-					<li>{{ HTML::link( '/noticias', 'Noticias', [ 'class' => 'animsition-link' ] ) }}</li>
 					<li>{{ HTML::link( '/faqs', "Faq's", [ 'class' => 'animsition-link' ] ) }}</li>
-					<li>{{ HTML::link( '/contacto', 'Contacto', [ 'class' => 'animsition-link' ] ) }}</li>
+					<li>{{ HTML::link( '/noticias', 'Noticias', [ 'class' => 'animsition-link' ] ) }}</li>
+					<li>{{ HTML::link( '/apoyamos-tu-causa', 'Apoyamos tu causa', [ 'class' => 'animsition-link' ] ) }}</li>
+					<li>{{ HTML::link( '/donadores', 'Donadores', [ 'class' => 'animsition-link' ] ) }}</li>
 					<!--@if ( ! Auth::customer()->check() )
 						<li>{{ HTML::link( '/login', 'Login', [ 'class' => 'animsition-link' ] ) }}</li>
 					@else
