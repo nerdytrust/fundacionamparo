@@ -541,8 +541,7 @@ echo $recurrente;
 					]
 					 
 				] );
-				print_r($charge);
-				echo "try"; die;
+				
 				Session::reflash();
 				Session::put( 'donacion.transaction_id', $charge->id );
 				Session::put( 'donacion.transaction_brand', $charge->payment_method->brand );
