@@ -46,8 +46,9 @@
 		@if($r_nombre!="")
 			<tr>
 				<td style="font-size:15px">
-					<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Datos de Comprobante deducible de impuestos</h2>
+					<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e">Datos de Comprobante deducible de impuestos</h2>
 				</td>
+				<br/>
 			</tr>
 			<tr>
 				<td style="font-size:15px">
