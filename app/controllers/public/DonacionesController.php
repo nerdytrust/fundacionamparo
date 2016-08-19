@@ -19,7 +19,7 @@ class DonacionesController extends BaseController {
 		'causa_hash'		=> [ 'required' ]
 	];
 
-	private $rules_step_tworecibo = [
+	private $rules_step_two_recibo = [
 		'metodo_pago'		 => [ 'required' ],
 		'causa_token'		 => [ 'required' ],
 		'causa_hash'		 => [ 'required' ],
@@ -128,6 +128,10 @@ class DonacionesController extends BaseController {
 
 		if ( $validate->fails() )
 			return Response::json( [ 'errors' => $validate->messages()->all( '<span class="error">:message</span>' ), 'success' => false ] );
+
+		if(isset($inputs['recibo']) && $inputs['recibo']==0){
+			Session::put( 'recibo', $inputs );
+		}
 
 		if ( Session::get( 'donacion.monto') != Crypt::decrypt( $inputs[ 'causa_hash' ] ) && Session::get( 'donacion.causa_donar' ) != Crypt::decrypt( $inputs[ 'causa_token' ] ) )
 			return Response::json( [ 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ], 'success' => false ] );
