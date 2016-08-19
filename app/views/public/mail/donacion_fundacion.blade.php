@@ -27,6 +27,12 @@
 			</td>
 		</tr>
 		<tr>
+			<td style="font-size:15px">
+				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:10px">Causa</h2>
+				<p style="margin-top:5px;color:#c2c2c2;">{{$causa}}</p>
+			</td>
+		</tr>
+		<tr>
 			<td style="font-size:12px;">
 				<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
 					<tr>

@@ -760,9 +760,9 @@ class DonacionesController extends BaseController {
 
 				$causa = Causas::find( $session['causa_donar'] );
 
-				$session['causa'] = $causa;
+				$session['causa'] = $causa->titulo;
 
-				print_r($session);die;
+				//print_r($session);die;
 
 				$donacionMailFundacion = Mail::send( 'public.mail.donacion_fundacion', $session, function( $message ) use ($session){
 					$message
