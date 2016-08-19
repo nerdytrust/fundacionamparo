@@ -30,6 +30,7 @@ class CoversController extends BaseController {
 	 * @return
 	 */
 	public function donar(){
+		Session::forget( 'tipo_donacion' );
 		if ( Session::has( 'donacion.oxxo_barcode' ) )
 			return Redirect::to( 'donar/pago-oxxo' );
 
