@@ -40,7 +40,7 @@ class DonacionesController extends BaseController {
 						'acct1.Password'  => 'AWTRZW6GHGGA73RK', 
 						'acct1.Signature' => 'AySlr4fJMXSTJ2bW7QBPRYCcWeAAAOopPGcXQrsykeZKRSxwcR4hqayQ'
 						);
-    private $_RedirectRecurrent = 'https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=';
+    private $_RedirectRecurrent = 'https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=';
 
 	/**
 	 * Método constructor para inicializar variables
@@ -759,7 +759,7 @@ class DonacionesController extends BaseController {
 		$donacion->transaction_type		= $session['transaction_type'];
 		if ( $session['transaction_status'] == 'paid' )
 			$donacion->status 				= 1;
-		
+		print_r($session);die;
 		$donacion->mostrar_perfil 		= $session['mostrar_perfil'];
 		if ( $donacion->save() ){
 			/*if ( ! Auth::customer()->check() )
@@ -774,6 +774,7 @@ class DonacionesController extends BaseController {
 
 				$causa = Causas::find( $session['causa_donar'] );
 
+				$session['causa'] = $causa->titulo;
 				$session['causa'] = $causa->titulo;
 
 				//print_r($session);die;
