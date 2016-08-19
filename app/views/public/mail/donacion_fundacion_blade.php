@@ -14,7 +14,7 @@
 				<h2 style="margin-top:0px;color:#beda3e;">#TomadoAcciónFA</h2>
 			</td>
 		</tr>
-		<tr>
+		<!--<tr>
 			<td style="font-size:15px">
 				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;">Nombre</h2>
 				<p style="margin-top:5px;color:#c2c2c2;">{{$nombre}}</p>
@@ -25,7 +25,7 @@
 				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;">Apellidos</h2>
 				<p style="margin-top:5px;color:#c2c2c2;">{{$apellidos}}</p>
 			</td>
-		</tr>
+		</tr>-->
 		<tr>
 			<td style="font-size:12px;">
 				<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
