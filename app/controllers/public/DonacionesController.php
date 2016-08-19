@@ -162,6 +162,8 @@ class DonacionesController extends BaseController {
 
 		if ( $valid )
 			return Redirect::to( 'gracias' );
+		else
+			return Redirect::to( 'donar/pago-error' );
 	}
 
 	/**
@@ -552,6 +554,7 @@ class DonacionesController extends BaseController {
 					] );
 				}
 			} catch (Conekta_Error $e) {
+				return FALSE;
 				return View::make( 'public.covers.donar_error' )->with( [
 					'status'	=> $e->message_to_purchaser
 				] );
