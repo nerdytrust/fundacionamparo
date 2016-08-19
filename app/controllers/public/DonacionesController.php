@@ -765,7 +765,7 @@ class DonacionesController extends BaseController {
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
 						->to( "acontacto@fundacionamparo.com", "Donador" )
-						->subject( 'Gracias por tu donativo a Fundación Amparo' );
+						->subject( 'Gracias por tu donativo a Fundación Amparo (Generada en desarrollo)' );
 				});
 				$donacionDiploma = Mail::send( 'public.mail.donacion_diploma', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
