@@ -758,6 +758,12 @@ class DonacionesController extends BaseController {
 				$session['r_email']            = (isset($recibo['r_email']))?$recibo['r_email']:'';
 				$session['r_nombre']           = (isset($recibo['r_nombre']))?$recibo['r_nombre']:'';
 
+				$causa = Causas::find( $session['causa_donar'] );
+
+				$session['causa'] = $causa;
+
+				print_r($session);die;
+
 				$donacionMailFundacion = Mail::send( 'public.mail.donacion_fundacion', $session, function( $message ) use ($session){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
@@ -778,14 +784,6 @@ class DonacionesController extends BaseController {
 						->to( $session['email'], "Donador" )
 						->subject( '¡Felicidades! ' );
 				});
-			
-
-				/*$donacionFundacion = Mail::send( 'public.mail.donacion_fundacion', ['username' => $nameDonador], function( $message ) use ($session){
-					$message
-						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
-						->to( 'fsanchez@nerdytrust.com', "Donador" )
-						->subject( '¡Nueva donación! ' );
-				});*/
 			}	
 
 			return TRUE;
