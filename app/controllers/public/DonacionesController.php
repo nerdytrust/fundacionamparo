@@ -519,7 +519,7 @@ echo $recurrente;
 		else{
 			echo "else";
 			try {
-				
+				print_r(Session::get( 'donacion' ));
 				$charge = Conekta_Charge::create( [
 					'amount'		=> $monto,
 					'currency'		=> 'MXN',
