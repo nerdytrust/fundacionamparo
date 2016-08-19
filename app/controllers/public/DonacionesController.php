@@ -546,7 +546,7 @@ echo $recurrente;
 				}
 			} catch (Conekta_Error $e) {
 				print_r($e->getMessage());
-				print_r($e->message_to_purchaser());
+				print_r($e->message_to_purchaser);
 				echo "catch"; die;
 				return View::make( 'public.covers.donar_error' )->with( [
 					'status'	=> $e->message_to_purchaser()
