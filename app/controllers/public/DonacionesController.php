@@ -497,7 +497,7 @@ class DonacionesController extends BaseController {
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
 echo $recurrente;
 		if($recurrente == 1){
-			echo "if";
+			echo "if";die;
 			$new_plan = $this->createPlan( $causa, $monto );
 			if($new_plan){
 				$new_cliente = $this->createCliente( $new_plan, $conektaTokenId);
@@ -517,7 +517,7 @@ echo $recurrente;
 			
 		}
 		else{
-			echo "else";
+			echo "else";die;
 			try {
 				$charge = Conekta_Charge::create( [
 					'amount'		=> $monto,
