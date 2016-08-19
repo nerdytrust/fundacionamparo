@@ -17,12 +17,7 @@
 		<tr>
 			<td style="font-size:15px">
 				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Nombre</h2>
-				<p style="margin-top:5px;color:#c2c2c2;">{{$nombre}}</p>
-			</td>
-		
-			<td style="font-size:15px">
-				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Apellidos</h2>
-				<p style="margin-top:5px;color:#c2c2c2;">{{$apellidos}}</p>
+				<p style="margin-top:5px;color:#c2c2c2;">{{$nombre.' '.$apellidos}}</p>
 			</td>
 		</tr>
 		<tr>
