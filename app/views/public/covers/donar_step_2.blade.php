@@ -41,6 +41,13 @@
 								{{ Form::radio( 'metodo_pago', 'spei', false, [ 'id' => 'spei' ] ) }}
 								<label for="spei">Transferencia interbancaria (SPEI)</label>
 							</span>
+							<div class="check-recibo">
+							{{ Form::checkbox( 'recibo', '0', false, [ 'id' => 'check-recibo' ] ) }}
+							<label for="check-recibo"></label>¿Necesitas un comprobante deducible de impuestos?
+							<div class="check-recibo-hide" style="display:none;font-weight: bold;">
+								PARA DONATIVOS REALIZADOS EN EFECTIVO, HAY UN TOPE MARCADO POR LA LEY ANTICORRUPCIÓN
+							</div>
+						</div>
 						</div>
 						<img src="{{ asset( 'images/visa.png' ) }}" class="card">
 						<img src="{{ asset( 'images/mastercard.png' ) }}" class="card">
