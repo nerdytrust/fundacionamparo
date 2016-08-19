@@ -38,6 +38,18 @@
 				<p style="margin-top:5px;color:#c2c2c2;">{{$monto}}</p>
 			</td>
 		</tr>
+		<tr>
+			<td style="font-size:15px">
+				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Tipo</h2>
+				<p style="margin-top:5px;color:#c2c2c2;">{{$transaction_type}}</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="font-size:15px">
+				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Estatus</h2>
+				<p style="margin-top:5px;color:#c2c2c2;">{{$transaction_status}}</p>
+			</td>
+		</tr>
 		@if($r_nombre!="")
 			<tr>
 				<td style="font-size:15px">

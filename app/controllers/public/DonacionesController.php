@@ -759,7 +759,7 @@ class DonacionesController extends BaseController {
 		$donacion->transaction_type		= $session['transaction_type'];
 		if ( $session['transaction_status'] == 'paid' )
 			$donacion->status 				= 1;
-		print_r($session);die;
+		
 		$donacion->mostrar_perfil 		= $session['mostrar_perfil'];
 		if ( $donacion->save() ){
 			/*if ( ! Auth::customer()->check() )
