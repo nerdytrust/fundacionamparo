@@ -529,6 +529,7 @@ echo $recurrente;
 					'details'		=> [
 						'name'		=> Session::get( 'donacion.nombre' ),
 						'email'		=> Session::get( 'donacion.email' ),
+						'phone'		=> '000-000-0000',
 						'line_items'=> [
 						    	[
 						        'name'=> $causa->titulo,
