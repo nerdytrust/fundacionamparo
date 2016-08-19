@@ -756,16 +756,16 @@ class DonacionesController extends BaseController {
 				$donacionMail = Mail::send( 'public.mail.donacion', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
-						->to( $session['email'], "Donador" )
-						->subject( 'Nueva donación a Fundación Amparo' );
+						->to( "acontacto@fundacionamparo.com", "Fundación Amparo" )
+						->subject( 'Nueva donación a Fundación Amparo (Generada en desarrollo)' );
 				});
 
 			if ( $session['transaction_status'] == 'paid' || $session['transaction_status'] == 'active'){
 				$donacionMail = Mail::send( 'public.mail.donacion', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
-						->to( "acontacto@fundacionamparo.com", "Donador" )
-						->subject( 'Gracias por tu donativo a Fundación Amparo (Generada en desarrollo)' );
+						->to( $session['email'], "Donador" )
+						->subject( 'Gracias por tu donativo a Fundación Amparo ' );
 				});
 				$donacionDiploma = Mail::send( 'public.mail.donacion_diploma', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
