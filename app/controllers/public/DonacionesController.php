@@ -526,7 +526,7 @@ class DonacionesController extends BaseController {
 					'reference_id'	=> 'FNDAMP-' . mt_rand() . '-' . time(),
 					//'card'			=> $conektaTokenId,
 					'card'=> 'tok_test_visa_4242',
-					/*'details'		=> [
+					'details'		=> [
 						'name'		=> Session::get( 'donacion.nombre' ),
 						'email'		=> Session::get( 'donacion.email' ),
 						'phone'		=> '000-000-0000',
@@ -538,7 +538,7 @@ class DonacionesController extends BaseController {
 						        'quantity'=> 1,
 						      	]
 						]
-					]*/
+					]
 					 
 				] );
 
