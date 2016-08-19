@@ -19,7 +19,10 @@ class DonacionesController extends BaseController {
 		'causa_hash'		=> [ 'required' ]
 	];
 
-	private $rules_recibo = [
+	private $rules_step_tworecibo = [
+		'metodo_pago'		 => [ 'required' ],
+		'causa_token'		 => [ 'required' ],
+		'causa_hash'		 => [ 'required' ]
 		'r_nombre'		     => [ 'required' ],
 		'r_rfc'		         => [ 'required' ],
 		'r_domicilio_fiscal' => [ 'required' ],
@@ -117,11 +120,11 @@ class DonacionesController extends BaseController {
 			return Response::json( [ 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ], 'success' => false ] );
 
 		$inputs = Input::all();
-
-		if(Session::has( 'tipo_donacion' ))
-			$validate = Validator::make( $inputs, $this->rules_recibo );
-		else
+		
+		if(!isset($inputs['recibo']) || $inputs['recibo']==1)
 			$validate = Validator::make( $inputs, $this->rules_step_two );
+		else if(isset($inputs['recibo']) && $inputs['recibo']==0)
+			$validate = Validator::make( $inputs, $this->rules_step_two_recibo );
 
 		if ( $validate->fails() )
 			return Response::json( [ 'errors' => $validate->messages()->all( '<span class="error">:message</span>' ), 'success' => false ] );
@@ -131,19 +134,8 @@ class DonacionesController extends BaseController {
 
 		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
 		$monto = Session::get( 'donacion.monto' ) * 100;
-	
-		if((!isset($inputs['recibo']) || $inputs['recibo']==1)){
-			
-			if(Session::has( 'tipo_donacion' )){
-				
-				if ( $validate->fails() )
-					return Response::json( [ 'errors' => $validate->messages()->all('<span class="error">:message</span>'), 'success' => false ] );
 
-				Session::put( 'recibo', $inputs );
-			}
-
-			$method = (Session::has( 'tipo_donacion' ))?Session::get( 'tipo_donacion' ):$inputs['metodo_pago'];
-			switch ( $method ) {
+		switch ( $inputs['metodo_pago'] ) {
 				case 'tarjeta':
 					return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-tarjeta' ] );
 					break;
@@ -160,14 +152,7 @@ class DonacionesController extends BaseController {
 					$response = $this->methodSpei( $causa, $monto );
 					return $response;
 					break;
-			}
 		}
-		else if(isset($inputs['recibo']) && $inputs['recibo']==0){
-			Session::set( 'tipo_donacion',$inputs['metodo_pago'] );
-			return Response::json( [ 'success' => true, 'redirect' => 'donar/recibo' ] );
-		}
-		
-
 		
 	}
 

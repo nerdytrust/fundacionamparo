@@ -47,11 +47,33 @@
 						<div class="check-recibo">
 							{{ Form::checkbox( 'recibo', '0', false, [ 'id' => 'check-recibo' ] ) }}
 							<label for="check-recibo"></label>¿Necesitas un comprobante deducible de impuestos?
-							<div class="check-recibo-hide" style="display:none;font-weight: bold;">
-								PARA DONATIVOS REALIZADOS EN EFECTIVO, HAY UN TOPE MARCADO POR LA LEY ANTICORRUPCIÓN
-							</div>
 						</div>
+
+						<label for="" class="vol">
+							<p>Nombre</p>
+							
+							<div class="alert alert-danger" role="alert" id="messages"></div>
+							<span class="form-group">
+								{{ Form::text( 'r_nombre', Input::old( 'r_nombre'), [ 'placeholder' => 'Nombre', 'required' => true, 'id' => 'r_nombre', 'class' => 'form-control'] ) }}
+							</span>
+							
+							<p>RFC</p>
+							<span class="form-group">
+								{{ Form::text( 'r_rfc', Input::old( 'r_rfc' ), [ 'id' => 'r_rfc', 'placeholder' => 'RFC', 'required' => true, 'class' => 'form-control' ] ) }}
+							</span>
+
+							<p>Domicilio Fiscal</p>
+							<span class="form-group">
+								{{ Form::text( 'r_domicilio_fiscal', Input::old( 'r_domicilio_fiscal' ), [ 'id' => 'r_domicilio_fiscal', 'placeholder' => 'Domicilio Fisca', 'required' => true, 'class' => 'form-control' ] ) }}
+							</span>
+
+							<p>Email</p>
+							<span class="form-group">
+								{{ Form::email( 'r_email', Input::old( 'r_email' ), [ 'id' => 'r_email', 'placeholder' => 'Correo electrónico', 'required' => true, 'class' => 'form-control' ] ) }}
+							</span>
 						
+						</label>
+
 						<img src="{{ asset( 'images/visa.png' ) }}" class="card">
 						<img src="{{ asset( 'images/mastercard.png' ) }}" class="card">
 						<img src="{{ asset( 'images/americanexpress.png' ) }}" id="american" class="card">
