@@ -44,14 +44,13 @@
 							{{ Form::text( 'apellidos', Input::old( 'apellidos'), [ 'placeholder' => 'Apellidos', 'required' => true, 'id' => 'apellidos', 'class' => 'form-control'] ) }}
 						</span>
 
-
-						<div class="check-recibo">
+						<!--<div class="check-recibo">
 							{{ Form::checkbox( 'recibo', '0', false, [ 'id' => 'check-recibo' ] ) }}
 							<label for="check-recibo"></label>¿Necesitas un comprobante deducible de impuestos?
 							<div class="check-recibo-hide" style="display:none;font-weight: bold;">
 								PARA DONATIVOS REALIZADOS EN EFECTIVO, HAY UN TOPE MARCADO POR LA LEY ANTICORRUPCIÓN
 							</div>
-						</div>
+						</div>-->
 
 						<div class="check-verde">
 							{{ Form::checkbox( 'mostrar_perfil', '0', false, [ 'id' => 'check-verde' ] ) }}
