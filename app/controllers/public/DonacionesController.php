@@ -527,7 +527,7 @@ echo $recurrente;
 					//'card'			=> $conektaTokenId,
 					'card'=> 'tok_test_visa_4242',
 					'details'		=> [
-						'name'		=> Session::get( 'donacion.nombre' )
+						'name'		=> Session::get( 'donacion.nombre' ),
 						'email'		=> Session::get( 'donacion.email' )
 					]
 				] );
