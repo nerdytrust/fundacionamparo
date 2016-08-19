@@ -519,7 +519,6 @@ echo $recurrente;
 		else{
 			echo "else";
 			try {
-				print_r(Session::get( 'donacion' ));
 				$charge = Conekta_Charge::create( [
 					'amount'		=> $monto,
 					'currency'		=> 'MXN',
@@ -528,6 +527,7 @@ echo $recurrente;
 					//'card'			=> $conektaTokenId,
 					'card'=> 'tok_test_visa_4242',
 					'details'		=> [
+						'name'		=> Session::get( 'donacion.nombre' )
 						'email'		=> Session::get( 'donacion.email' )
 					]
 				] );
