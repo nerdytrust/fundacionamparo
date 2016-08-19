@@ -495,7 +495,10 @@ class DonacionesController extends BaseController {
 	private function methodCard( $causa = [], $monto = '', $conektaTokenId = '', $recurrente = 0){
 		if ( empty( $causa ) || empty( $monto ) )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
-		print_r('die');die;
+		print_r($causa);
+		print_r($monto );
+		print_r($conektaTokenId);
+		print_r($recurrente);die;
 
 		if($recurrente == 1){
 			$new_plan = $this->createPlan( $causa, $monto );
