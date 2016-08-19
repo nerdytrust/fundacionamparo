@@ -128,7 +128,8 @@ class DonacionesController extends BaseController {
 		$monto = Session::get( 'donacion.monto' ) * 100;
 	
 		if((!isset($inputs['recibo']) || $inputs['recibo']==1)){
-			$v = isset(Session::get( 'tipo_donacion' ));
+			$v = Session::get( 'tipo_donacion' );
+			echo $v;die;
 			if($v){
 				$inputs = Input::all();
 				$validate = Validator::make( $inputs, $this->rules_recibo );
