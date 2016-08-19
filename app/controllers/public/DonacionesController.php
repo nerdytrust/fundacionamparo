@@ -495,9 +495,8 @@ class DonacionesController extends BaseController {
 	private function methodCard( $causa = [], $monto = '', $conektaTokenId = '', $recurrente = 0){
 		if ( empty( $causa ) || empty( $monto ) )
 			return Response::json( [ 'success' => false, 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ] ] );
-echo $recurrente;
+
 		if($recurrente == 1){
-			echo "if";die;
 			$new_plan = $this->createPlan( $causa, $monto );
 			if($new_plan){
 				$new_cliente = $this->createCliente( $new_plan, $conektaTokenId);
@@ -517,7 +516,6 @@ echo $recurrente;
 			
 		}
 		else{
-			echo "else";
 			try {
 				$charge = Conekta_Charge::create( [
 					'amount'		=> $monto,
@@ -526,7 +524,7 @@ echo $recurrente;
 					'reference_id'	=> 'FNDAMP-' . mt_rand() . '-' . time(),
 					//'card'			=> $conektaTokenId,
 					'card'=> 'tok_test_visa_4242',
-					'details'		=> [
+					/*'details'		=> [
 						'name'		=> Session::get( 'donacion.nombre' ),
 						'email'		=> Session::get( 'donacion.email' ),
 						'phone'		=> '000-000-0000',
@@ -538,10 +536,10 @@ echo $recurrente;
 						        'quantity'=> 1,
 						      	]
 						]
-					]
+					]*/
 					 
 				] );
-				
+
 				Session::reflash();
 				Session::put( 'donacion.transaction_id', $charge->id );
 				Session::put( 'donacion.transaction_brand', $charge->payment_method->brand );
@@ -554,15 +552,12 @@ echo $recurrente;
 					] );
 				}
 			} catch (Conekta_Error $e) {
-				print_r($e->getMessage());
-				print_r($e->message_to_purchaser);
-				echo "catch"; die;
 				return View::make( 'public.covers.donar_error' )->with( [
 					'status'	=> $e->message_to_purchaser()
 				] );
 			}
 		}
-die;
+
 		// return Response::json( [ 'success' => true, 'redirect' => 'gracias' ] );
 		return TRUE;
 	}
