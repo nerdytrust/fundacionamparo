@@ -525,7 +525,8 @@ echo $recurrente;
 					'currency'		=> 'MXN',
 					'description'	=> 'Donación Amparo - Causa ' . $causa->titulo,
 					'reference_id'	=> 'FNDAMP-' . mt_rand() . '-' . time(),
-					'card'			=> $conektaTokenId,
+					//'card'			=> $conektaTokenId,
+					'card'=> 'tok_test_visa_4242',
 					'details'		=> [
 						'email'		=> Session::get( 'donacion.email' )
 					]
@@ -544,10 +545,11 @@ echo $recurrente;
 					] );
 				}
 			} catch (Conekta_Error $e) {
-				print_r($e);
+				print_r($e->getMessage());
+				print_r($e->message_to_purchaser());
 				echo "catch"; die;
 				return View::make( 'public.covers.donar_error' )->with( [
-					'status'	=> $e->getMessage()
+					'status'	=> $e->message_to_purchaser()
 				] );
 			}
 		}
