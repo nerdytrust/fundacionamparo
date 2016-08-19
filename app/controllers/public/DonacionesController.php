@@ -757,7 +757,7 @@ class DonacionesController extends BaseController {
 				$session['r_domicilio_fiscal'] = (isset($recibo['r_domicilio_fiscal']))?$recibo['r_domicilio_fiscal']:'';
 				$session['r_email']            = (isset($recibo['r_email']))?$recibo['r_email']:'';
 				$session['r_nombre']           = (isset($recibo['r_nombre']))?$recibo['r_nombre']:'';
-
+print_r($session);die;
 				$donacionMailFundacion = Mail::send( 'public.mail.donacion_fundacion', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
