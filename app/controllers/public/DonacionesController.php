@@ -753,10 +753,15 @@ class DonacionesController extends BaseController {
 			else */
 				$nameDonador = $donacion->nombre.' '.$donacion->apellidos;
 
-				$donacionMail = Mail::send( 'public.mail.donacion', ['username' => $nameDonador], function( $message ) use ($session){
+				$session['r_rfc']              = (isset($recibo['r_rfc']))?$recibo['r_rfc']:'';
+				$session['r_domicilio_fiscal'] = (isset($recibo['r_domicilio_fiscal']))?$recibo['r_domicilio_fiscal']:'';
+				$session['r_email']            = (isset($recibo['r_email']))?$recibo['r_email']:'';
+				$session['r_nombre']           = (isset($recibo['r_nombre']))?$recibo['r_nombre']:'';
+
+				$donacionMailFundacion = Mail::send( 'public.mail.donacion_fundacion', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
-						->to( "acontacto@fundacionamparo.com", "Fundación Amparo" )
+						->to( "aslanlion56@gmail.com", "Fundación Amparo" )
 						->subject( 'Nueva donación a Fundación Amparo (Generada en desarrollo)' );
 				});
 
@@ -773,11 +778,7 @@ class DonacionesController extends BaseController {
 						->to( $session['email'], "Donador" )
 						->subject( '¡Felicidades! ' );
 				});
-				
-				$session['r_rfc']              = (isset($recibo['r_rfc']))?$recibo['r_rfc']:'';
-				$session['r_domicilio_fiscal'] = (isset($recibo['r_domicilio_fiscal']))?$recibo['r_domicilio_fiscal']:'';
-				$session['r_email']            = (isset($recibo['r_email']))?$recibo['r_email']:'';
-				$session['r_nombre']           = (isset($recibo['r_nombre']))?$recibo['r_nombre']:'';
+			
 
 				/*$donacionFundacion = Mail::send( 'public.mail.donacion_fundacion', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
