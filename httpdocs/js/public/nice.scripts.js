@@ -796,9 +796,9 @@ $(function(){
 
 	$("#check-recibo").change(function () {
 		if (this.checked)
-			$('.check-recibo-hide').show("slow");
+			$('#form_recibo_2').show("slow");
 		else
-			$('.check-recibo-hide').hide("slow");
+			$('#form_recibo_2').hide("slow");
 	});
 
 });

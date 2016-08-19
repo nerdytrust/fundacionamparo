@@ -49,7 +49,7 @@
 							<label for="check-recibo"></label>¿Necesitas un comprobante deducible de impuestos?
 						</div>
 
-						<label for="" class="vol">
+						<label for="" class="vol" id="form_recibo_2">
 							<p>Nombre</p>
 							
 							<div class="alert alert-danger" role="alert" id="messages"></div>
