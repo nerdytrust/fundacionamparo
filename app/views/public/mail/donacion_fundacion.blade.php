@@ -16,20 +16,20 @@
 		</tr>
 		<tr>
 			<td style="font-size:15px">
-				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;">Nombre</h2>
+				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:15px">Nombre</h2>
 				<p style="margin-top:5px;color:#c2c2c2;">{{$nombre}}</p>
 			</td>
 		</tr>
 		<tr>
 			<td style="font-size:15px">
-				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;">Apellidos</h2>
+				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:15px">Apellidos</h2>
 				<p style="margin-top:5px;color:#c2c2c2;">{{$apellidos}}</p>
 			</td>
 		</tr>
 		<tr>
 			<td style="font-size:15px">
 				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:15px">Email</h2>
-				<p style="margin-top:5px;color:#c2c2c2;">{{$causa}}</p>
+				<p style="margin-top:5px;color:#c2c2c2;">{{$email}}</p>
 			</td>
 		</tr>
 		<tr>
@@ -41,7 +41,7 @@
 		<tr>
 			<td style="font-size:15px">
 				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:15px">Monto</h2>
-				<p style="margin-top:5px;color:#c2c2c2;">{{$causa}}</p>
+				<p style="margin-top:5px;color:#c2c2c2;">{{$monto}}</p>
 			</td>
 		</tr>
 		<tr>
