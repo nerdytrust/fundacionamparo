@@ -757,13 +757,12 @@ class DonacionesController extends BaseController {
 				$session['r_email']            = (isset($recibo['r_email']))?$recibo['r_email']:'';
 				$session['r_nombre']           = (isset($recibo['r_nombre']))?$recibo['r_nombre']:'';
 
-				$donacionFundacion = Mail::send( 'public.mail.donacion_fundacion', ['username' => $nameDonador], function( $
-					message ) use ($session){
+				/*$donacionFundacion = Mail::send( 'public.mail.donacion_fundacion', ['username' => $nameDonador], function( $message ) use ($session){
 					$message
 						->from( getenv( 'APP_NOREPLY' ), 'Fundación Amparo' )
 						->to( 'fsanchez@nerdytrust.com', "Donador" )
 						->subject( '¡Nueva donación! ' );
-				});
+				});*/
 			}	
 
 			return TRUE;
