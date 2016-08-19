@@ -22,7 +22,7 @@ class DonacionesController extends BaseController {
 	private $rules_step_tworecibo = [
 		'metodo_pago'		 => [ 'required' ],
 		'causa_token'		 => [ 'required' ],
-		'causa_hash'		 => [ 'required' ]
+		'causa_hash'		 => [ 'required' ],
 		'r_nombre'		     => [ 'required' ],
 		'r_rfc'		         => [ 'required' ],
 		'r_domicilio_fiscal' => [ 'required' ],
