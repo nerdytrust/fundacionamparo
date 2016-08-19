@@ -117,7 +117,12 @@ class DonacionesController extends BaseController {
 			return Response::json( [ 'errors' => [ '<span class="error">¡Ups! Ha ocurrido un problema al intentar procesar tu donación.</span>' ], 'success' => false ] );
 
 		$inputs = Input::all();
-		$validate = Validator::make( $inputs, $this->rules_step_two );
+		
+		if(Session::get( 'tipo_donacion' ))
+			$validate = Validator::make( $inputs, $this->rules_recibo );
+		else
+			$validate = Validator::make( $inputs, $this->rules_step_two );
+
 		if ( $validate->fails() )
 			return Response::json( [ 'errors' => $validate->messages()->all( '<span class="error">:message</span>' ), 'success' => false ] );
 
@@ -128,16 +133,14 @@ class DonacionesController extends BaseController {
 		$monto = Session::get( 'donacion.monto' ) * 100;
 	
 		if((!isset($inputs['recibo']) || $inputs['recibo']==1)){
-			$v = Session::get( 'tipo_donacion' );
-			if($v){
-				$inputs = Input::all();
-				$validate = Validator::make( $inputs, $this->rules_recibo );
+			
+			if(Session::get( 'tipo_donacion' )){
+				
 				if ( $validate->fails() )
 					return Response::json( [ 'errors' => $validate->messages()->all('<span class="error">:message</span>'), 'success' => false ] );
 
 				Session::put( 'recibo', $inputs );
 			}
-
 
 			$method = (Session::get( 'tipo_donacion' ))?Session::get( 'tipo_donacion' ):$inputs['metodo_pago'];
 			switch ( $method ) {
