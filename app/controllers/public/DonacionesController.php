@@ -32,7 +32,7 @@ class DonacionesController extends BaseController {
     private $_ClientId     = 'AR1HoGPERMVv6OmQpLqPF7-mmuz8EN_mrLV7wS3PciqO5ykSOumGFoWqA7aazDCmzc3aj8daxvTt-urK';
     private $_ClientSecret = 'EKb9eFb9lEDEHRKcRjjnt8Bmwrz8EgVb0UNUbJH4m5fuVRVzfxMZ9bSeYDqAtJEnOEyXsAj9WpmM4A6D';
     private $_ConfigPaypalRecurring = array (
- 						'mode'            => 'live' , 
+ 						'mode'            => 'sandbox' , 
  						'acct1.UserName'  => 'l.espinosa_api1.fundacionamparo.com',
 						'acct1.Password'  => 'AWTRZW6GHGGA73RK', 
 						'acct1.Signature' => 'AySlr4fJMXSTJ2bW7QBPRYCcWeAAAOopPGcXQrsykeZKRSxwcR4hqayQ'
@@ -57,7 +57,7 @@ class DonacionesController extends BaseController {
 		);
 
 		 $this->_api->setConfig(array(
-		 	'mode' => 'live',
+		 	'mode' => 'sandbox',
 			'http.ConnectionTimeOut' => 30,
 		 	'log.LogEnabled' => true,
 		 	'log.FileName' => __DIR__.'/../../storage/logs/PayPal.log',
@@ -126,7 +126,17 @@ class DonacionesController extends BaseController {
 
 		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
 		$monto = Session::get( 'donacion.monto' ) * 100;
-		switch ( $inputs['metodo_pago'] ) {
+		$method = $inputs['metodo_pago'];
+
+		if(!isset($inputs['recibo']) || $inputs['recibo']==1)
+			$$method = $method;
+		else if(isset($inputs['recibo']) && $inputs['recibo']==0)
+			$method = "recibo";
+
+		switch ( $method ) {
+			case 'recibo':
+				return Response::json( [ 'success' => true, 'redirect' => 'donar/recibo' ] );
+				break;
 			case 'tarjeta':
 				return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-tarjeta' ] );
 				break;
