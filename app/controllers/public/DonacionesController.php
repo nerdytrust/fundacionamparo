@@ -519,7 +519,7 @@ echo $recurrente;
 		else{
 			echo "else";
 			try {
-				echo "try"; die;
+				
 				$charge = Conekta_Charge::create( [
 					'amount'		=> $monto,
 					'currency'		=> 'MXN',
@@ -530,7 +530,8 @@ echo $recurrente;
 						'email'		=> Session::get( 'donacion.email' )
 					]
 				] );
-
+				print_r($charge);
+				echo "try"; die;
 				Session::reflash();
 				Session::put( 'donacion.transaction_id', $charge->id );
 				Session::put( 'donacion.transaction_brand', $charge->payment_method->brand );
