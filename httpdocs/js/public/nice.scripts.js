@@ -795,10 +795,14 @@ $(function(){
 	});
 
 	$("#check-recibo").change(function () {
-		if (this.checked)
+		if (this.checked){
 			$('#form_recibo_2').show("slow");
-		else
+			$('#form_step_2').hide("slow");
+		}
+		else{
 			$('#form_recibo_2').hide("slow");
+			$('#form_step_2').show("slow");
+		}
 	});
 
 });

@@ -19,7 +19,7 @@
 							<p id="apor"><b>Aportacion</b> ${{ $monto }} MXM</p>
 						</div>
 						<div class="line"></div>
-						<div class="check p2">
+						<div class="check p2" id="form_step_2">
 							<span>
 								{{ Form::radio( 'metodo_pago', 'tarjeta', true, [ 'id' => 'tarjeta' ] ) }}
 								<label for="tarjeta">Pagar con tarjeta de crédito/débito</label>
@@ -49,7 +49,7 @@
 							<label for="check-recibo"></label>¿Necesitas un comprobante deducible de impuestos?
 						</div>
 
-						<label for="" class="vol" id="form_recibo_2" style="display:none;">
+						<div class="vol" id="form_recibo_2" style="display:none;">
 							<p>Nombre</p>
 							
 							<div class="alert alert-danger" role="alert" id="messages"></div>
@@ -72,7 +72,7 @@
 								{{ Form::email( 'r_email', Input::old( 'r_email' ), [ 'id' => 'r_email', 'placeholder' => 'Correo electrónico', 'required' => true, 'class' => 'form-control' ] ) }}
 							</span>
 						
-						</label>
+						</div>
 
 						<img src="{{ asset( 'images/visa.png' ) }}" class="card">
 						<img src="{{ asset( 'images/mastercard.png' ) }}" class="card">
