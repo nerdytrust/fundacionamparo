@@ -16,34 +16,65 @@
 		</tr>
 		<tr>
 			<td style="font-size:15px">
-				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:15px">Nombre</h2>
+				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Nombre</h2>
 				<p style="margin-top:5px;color:#c2c2c2;">{{$nombre}}</p>
 			</td>
-		</tr>
-		<tr>
+		
 			<td style="font-size:15px">
-				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:15px">Apellidos</h2>
+				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Apellidos</h2>
 				<p style="margin-top:5px;color:#c2c2c2;">{{$apellidos}}</p>
 			</td>
 		</tr>
 		<tr>
 			<td style="font-size:15px">
-				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:15px">Email</h2>
+				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Email</h2>
 				<p style="margin-top:5px;color:#c2c2c2;">{{$email}}</p>
 			</td>
 		</tr>
 		<tr>
 			<td style="font-size:15px">
-				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:15px">Causa</h2>
+				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Causa</h2>
 				<p style="margin-top:5px;color:#c2c2c2;">{{$causa}}</p>
 			</td>
 		</tr>
 		<tr>
 			<td style="font-size:15px">
-				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:15px">Monto</h2>
+				<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Monto</h2>
 				<p style="margin-top:5px;color:#c2c2c2;">{{$monto}}</p>
 			</td>
 		</tr>
+		@if($r_nombre!="")
+			<tr>
+				<td style="font-size:15px">
+					<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Datos de Comprobante deducible de impuestos</h2>
+				</td>
+			</tr>
+			<tr>
+				<td style="font-size:15px">
+					<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">RFC</h2>
+					<p style="margin-top:5px;color:#c2c2c2;">{{$r_rfc}}</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="font-size:15px">
+					<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Nombre</h2>
+					<p style="margin-top:5px;color:#c2c2c2;">{{$r_nombre}}</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="font-size:15px">
+					<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Email</h2>
+					<p style="margin-top:5px;color:#c2c2c2;">{{$r_email}}</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="font-size:15px">
+					<h2 style="margin-top:0px;margin-bottom:0px;color:#beda3e;font-size:17px">Domicilio Fiscal</h2>
+					<p style="margin-top:5px;color:#c2c2c2;">{{$r_domicilio_fiscal}}</p>
+				</td>
+			</tr>
+
+		@endif 
 		<tr>
 			<td style="font-size:12px;">
 				<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
