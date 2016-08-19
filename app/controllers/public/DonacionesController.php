@@ -126,34 +126,46 @@ class DonacionesController extends BaseController {
 
 		$causa = Causas::find( Session::get( 'donacion.causa_donar' ) );
 		$monto = Session::get( 'donacion.monto' ) * 100;
-		$method = $inputs['metodo_pago'];
+	
+		if((!isset($inputs['recibo']) || $inputs['recibo']==1)){
 
-		if(!isset($inputs['recibo']) || $inputs['recibo']==1)
-			$$method = $method;
-		else if(isset($inputs['recibo']) && $inputs['recibo']==0)
-			$method = "recibo";
+			if(isset(Session::get( 'tipo_donacion' )){
+				$inputs = Input::all();
+				$validate = Validator::make( $inputs, $this->rules_recibo );
+				if ( $validate->fails() )
+					return Response::json( [ 'errors' => $validate->messages()->all('<span class="error">:message</span>'), 'success' => false ] );
 
-		switch ( $method ) {
-			case 'recibo':
-				return Response::json( [ 'success' => true, 'redirect' => 'donar/recibo' ] );
-				break;
-			case 'tarjeta':
-				return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-tarjeta' ] );
-				break;
-			case 'paypal':
-				if(isset($inputs['recurrente']))
-					return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-paypal-recurrent' ] );
-				return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-paypal' ] );
-				break;
-			case 'oxxo':
-				$response = $this->methodOxxo( $causa, $monto );
-				return $response;
-				break;
-			case 'spei':
-				$response = $this->methodSpei( $causa, $monto );
-				return $response;
-				break;
+				Session::put( 'recibo', $inputs );
+			}
+
+
+			$method = (isset(Session::get( 'tipo_donacion' ))):Session::get( 'tipo_donacion' )?$inputs['metodo_pago'];
+			switch ( $method ) {
+				case 'tarjeta':
+					return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-tarjeta' ] );
+					break;
+				case 'paypal':
+					if(isset($inputs['recurrente']))
+						return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-paypal-recurrent' ] );
+					return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-paypal' ] );
+					break;
+				case 'oxxo':
+					$response = $this->methodOxxo( $causa, $monto );
+					return $response;
+					break;
+				case 'spei':
+					$response = $this->methodSpei( $causa, $monto );
+					return $response;
+					break;
+			}
 		}
+		else if(isset($inputs['recibo']) && $inputs['recibo']==0){
+			Session::set( 'tipo_donacion',$inputs['metodo_pago'] );
+			return Response::json( [ 'success' => true, 'redirect' => 'donar/recibo' ] );
+		}
+		
+
+		
 	}
 
 	/**
