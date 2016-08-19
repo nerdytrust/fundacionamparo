@@ -553,7 +553,7 @@ class DonacionesController extends BaseController {
 				}
 			} catch (Conekta_Error $e) {
 				return View::make( 'public.covers.donar_error' )->with( [
-					'status'	=> $e->message_to_purchaser()
+					'status'	=> $e->message_to_purchaser
 				] );
 			}
 		}
