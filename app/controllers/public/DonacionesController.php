@@ -748,9 +748,9 @@ class DonacionesController extends BaseController {
 		
 		$donacion->mostrar_perfil 		= $session['mostrar_perfil'];
 		if ( $donacion->save() ){
-			if ( ! Auth::customer()->check() )
+			/*if ( ! Auth::customer()->check() )
 				$nameDonador = $donacion->email;
-			else 
+			else */
 				$nameDonador = $donacion->nombre.' '.$donacion->apellidos;
 
 			if ( $session['transaction_status'] == 'paid' || $session['transaction_status'] == 'active'){
