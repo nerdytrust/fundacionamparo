@@ -129,7 +129,6 @@ class DonacionesController extends BaseController {
 	
 		if((!isset($inputs['recibo']) || $inputs['recibo']==1)){
 			$v = Session::get( 'tipo_donacion' );
-			echo $v;die;
 			if($v){
 				$inputs = Input::all();
 				$validate = Validator::make( $inputs, $this->rules_recibo );
@@ -140,7 +139,7 @@ class DonacionesController extends BaseController {
 			}
 
 
-			$method = (isset(Session::get( 'tipo_donacion' ))):Session::get( 'tipo_donacion' )?$inputs['metodo_pago'];
+			$method = (Session::get( 'tipo_donacion' )):Session::get( 'tipo_donacion' )?$inputs['metodo_pago'];
 			switch ( $method ) {
 				case 'tarjeta':
 					return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-tarjeta' ] );
