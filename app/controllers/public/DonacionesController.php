@@ -527,7 +527,7 @@ class DonacionesController extends BaseController {
 						'email'		=> Session::get( 'donacion.email' )
 					]
 				] );
-
+print_r($charge);die;
 				Session::reflash();
 				Session::put( 'donacion.transaction_id', $charge->id );
 				Session::put( 'donacion.transaction_brand', $charge->payment_method->brand );
