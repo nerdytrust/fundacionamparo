@@ -139,7 +139,7 @@ class DonacionesController extends BaseController {
 			}
 
 
-			$method = (Session::get( 'tipo_donacion' )):Session::get( 'tipo_donacion' )?$inputs['metodo_pago'];
+			$method = (Session::get( 'tipo_donacion' ))?Session::get( 'tipo_donacion' ):$inputs['metodo_pago'];
 			switch ( $method ) {
 				case 'tarjeta':
 					return Response::json( [ 'success' => true, 'redirect' => 'donar/pago-tarjeta' ] );
