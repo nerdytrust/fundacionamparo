@@ -529,7 +529,15 @@ echo $recurrente;
 					'details'		=> [
 						'name'		=> Session::get( 'donacion.nombre' ),
 						'email'		=> Session::get( 'donacion.email' )
-					]
+					],
+					 'line_items'=> [
+						    array[
+						        'name'=> $causa->titulo,
+						        'description'=> 'donación para la causa'. $causa->titulo,
+						        'unit_price'=> $monto,
+						        'quantity'=> 1,
+						      ]
+						    ]
 				] );
 				print_r($charge);
 				echo "try"; die;
