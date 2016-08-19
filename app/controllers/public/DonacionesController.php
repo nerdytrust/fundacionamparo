@@ -517,8 +517,9 @@ echo $recurrente;
 			
 		}
 		else{
-			echo "else";die;
+			echo "else";
 			try {
+				echo "try"; die;
 				$charge = Conekta_Charge::create( [
 					'amount'		=> $monto,
 					'currency'		=> 'MXN',
@@ -542,6 +543,7 @@ echo $recurrente;
 					] );
 				}
 			} catch (Conekta_Error $e) {
+				echo "catch"; die;
 				return View::make( 'public.covers.donar_error' )->with( [
 					'status'	=> $e->getMessage()
 				] );
