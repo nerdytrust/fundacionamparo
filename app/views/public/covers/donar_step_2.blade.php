@@ -49,7 +49,7 @@
 							<label for="check-recibo"></label>¿Necesitas un comprobante deducible de impuestos?
 						</div>
 
-						<label for="" class="vol" id="form_recibo_2">
+						<label for="" class="vol" id="form_recibo_2" style="display:none;">
 							<p>Nombre</p>
 							
 							<div class="alert alert-danger" role="alert" id="messages"></div>
@@ -86,5 +86,10 @@
 				<a href="{{ URL::to( 'faqs' ) }}" target="_blank">Si necesitas ayuda da click aquí<img src="{{ asset( 'images/i.png' ) }}" alt=""></br></a>
 			</div>
 		</div>
+		<script type="text/javascript">
+			(function() {
+			   document.body.style.backgroundColor = "#bbd53c";
+			})();
+		</script>
 	@stop
 @stop
